@@ -1,0 +1,9 @@
+image:
+  file: .docker/gitpod/Dockerfile
+
+vscode:
+  extensions:
+    - James-Yu.latex-workshop
+
+tasks:
+  - init: make
