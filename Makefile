@@ -22,7 +22,6 @@ FORCE-FLAGS = -g -use-make $(TEX_FLAGS)
 force: force-cn force-en
 
 force-cn:
-	echo "force flag: " $(FORCE_FLAGS) "book cn: " $(BOOK_CN)
 	latexmk -cd -lualatex $(FORCE-FLAGS) $(BOOK-CN)
 
 force-en:
