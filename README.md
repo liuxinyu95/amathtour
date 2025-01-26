@@ -1,11 +1,11 @@
-Elementary Functional Algorithms
+A tour of numbers
 ====
 
 Edition: $\displaystyle \phi = \frac{\sqrt{5} - 1}{2} = 0.618$
 
 2025/01
 
-This project is to collaboratively draft the popular science book, _a tour of number_. The book targets to present the historic introduction to numbers. As a central notion in mathematics, it connects varies of theories. We are going to introduce interesting stories and great mathematicians along with the history of numbers. We plan to release the book in both English and Chinese by 2027. We'll draft in Chinese first, then follow with the English version.
+This project is to collaboratively draft the popular science book, _a tour of numbers_. The book targets to present the historic introduction to numbers. As a central notion in mathematics, it connects varies of theories. We are going to introduce interesting stories and great mathematicians along with the history of numbers. We plan to release the book in both English and Chinese by 2027. We'll draft in Chinese first, then follow with the English version.
 
 Contents
 --------
