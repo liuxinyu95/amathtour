@@ -27,8 +27,10 @@ Contents
   **(a) Commensurable**, concept of common measure; The story that Hippasus found the irrational number. The classic construction puzzle in ancient Greece: double the cube, trisect the angle, and square the circle. **(b) Euclid's algorithm**. How ancient Greeks solve the greatest common divisor with Euclid's algorithm. Define irrational number with Euclid's algorithm. **(c) The treatment of irrational number**. Odoxos's treatment. $\pi$ and Archimedes; Apollonius and conics sections. **(d) e**. (1) Decartes and coordinate geometry; (2) Napier and logarithm; (3) The development of calculus, Newton and Leibniz; (4) Euler
 - Chapter 8, **Real number** \
   **(a) Rigor of calculus**. Criticism from Bishop Berkeley to Calculus. Cauchy; Weierstras, father of modern math anlysis. **(b) the Sword of thought**. Dedekind cut; the number axis and how arithmetic operations act on it. **(c) number and the set theory**. Infinity and infinitesimal; Cantor and the naive set theory. **(d) Paradox and lgoic**. Russel and his paradox; Hilbert's 23 questions in 1900; Gödel's incompleteness theorems. Gödel and Hao Wang. Turing machine and computable problem. Turing and artificial intellegence. 
-- Chapter 9, **Complex number**
-- Chapter 10, **Algebraic number**
+- Chapter 9, **Complex number** \
+  **(a) Solving equation**. Varies of ancient civiliations developped solution to quadratic equation. Italian mathematicians broke through cubic and quartic equation and encountered intermediate imaginary solution. **(b) The fundamental theorem of algebra**. Story of Gauss, constructed 17-gon at age of 17. Example of pentagon with straight edge and compass. Gausss proved the fundamental theorem of algebra in four ways in his life. **(c) Radical solution**. Quintic equation and Abel-Ruffiny theorem; Galois theory and abstract algebra.
+- Chapter 10, **Algebraic number** \
+  **(a) Fermat's last theorem**. Story of Fermat and his last theorem; Pythagorean theorm and Pythagorean triple. **(b) Kummer and the ideal numbers**.
 - Chapter 11, **Numbers with structure**
 - Appendices and answers
 
