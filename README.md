@@ -12,7 +12,7 @@ Contents
 
 - Preface
 - Chapter 1, **Ancient time** \
-  Multiple ancient civilizations, including ancient Babylonia, ancient Egypt, and ancient China, developed the notion of number independently. People abstracted the number from concrete things.
+  Ancient civilizations, such as ancient Babylonia, ancient Egypt, and ancient China, developed the notion of number independently. People abstracted the number from concrete things.
 - Chapter 2, **Zero** \
   Ancient Indian people developed the notion of zero. How did people reject, debate, and finally accept it.
 - Chapter 3, **Numeral system** \
@@ -28,7 +28,7 @@ Contents
 - Chapter 8, **Real numbers** \
   **(a) Rigor of calculus**. Criticism from Bishop Berkeley to Calculus. Cauchy; Weierstras, father of modern math analysis. **(b) the Sword of thought**. Dedekind cut; the number axis and how arithmetic operations act on it. **(c) number and the set theory**. Infinity and infinitesimal; Cantor and the naive set theory. **(d) Paradox and logic**. Russel and his paradox; Hilbert's 23 questions in 1900; Gödel's incompleteness theorems. Gödel and Hao Wang. Turing machine and computable problem. Turing and artificial intelligence.
 - Chapter 9, **Complex numbers** \
-  **(a) Solving equation**. Varies of ancient civilizations developed solution to quadratic equation. Italian mathematicians broke through cubic and quartic equation and encountered intermediate imaginary solution. **(b) The fundamental theorem of algebra**. Story of Gauss, constructed 17-gon at age of 17. Example of pentagon with straight edge and compass. Gauss proved the fundamental theorem of algebra in four ways in his life. **(c) Radical solution**. Quintic equation and Abel-Ruffini theorem; Galois theory and abstract algebra.
+  **(a) Solving equation**. Varies of ancient civilizations developed solution to quadratic equation. Italian mathematicians broke through cubic and quartic equations and encountered intermediate imaginary solution. **(b) The fundamental theorem of algebra**. Story of Gauss, constructed 17-gon at age of 17. Example of pentagon with straight edge and compass. Gauss proved the fundamental theorem of algebra in four ways in his life. **(c) Radical solution**. Quintic equation and Abel-Ruffini theorem; Galois theory and abstract algebra.
 - Chapter 10, **Algebraic numbers** \
   **(a) Fermat's last theorem (FLT)**. Story of Fermat and his last theorem; Pythagorean theorem and Pythagorean triple. **(b) Kummer and the ideal numbers**. Sophie Germain's contribution to FLT; The fundamental theorem of number theory, Unique Factorization, Kummer, and ideal numbers. **(c) From ideal number to ideal**. Dedekind and ideal; Emmy Noether and Emil Artin. **(d) Transcendental numbers**. Abstraction of numbers; Liouville numbers; The transcendent of $\pi$ and $e$. Cordiality of transcendental of algebraic numbers by Cantor's diagonal method.
 - Chapter 11, **Numbers with structure** \

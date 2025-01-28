@@ -3,6 +3,7 @@ semantic.cache
 ~*
 *#
 .#*
+*.synctex.gz
 *.aux
 *.dvi
 *.log
