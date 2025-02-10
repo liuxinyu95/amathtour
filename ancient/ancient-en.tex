@@ -1,0 +1,58 @@
+\ifx\wholebook\relax \else
+
+\documentclass[b5paper]{article}
+\usepackage[nomarginpar
+  %, margin=.5in
+]{geometry}
+
+\addtolength{\oddsidemargin}{-0.05in}
+\addtolength{\evensidemargin}{-0.05in}
+\addtolength{\textwidth}{0.1in}
+
+\usepackage[en]{../prelude}
+
+\setcounter{page}{1}
+
+\begin{document}
+
+\title{Ancient time}
+
+\author{Xinyu LIU
+\thanks{{\bfseries Xinyu LIU} \newline
+  Email: liuxinyu99@hotmail.com \newline}
+  }
+
+\maketitle
+\fi
+
+\markboth{Ancient time}{A tour of numbers}
+
+\ifx\wholebook\relax
+\chapter{Ancient time}
+\numberwithin{Exercise}{chapter}
+\fi
+
+%% \epigraph{Numbers are the highest degree of knowledge. It is knowledge itself.}{Plato}
+
+
+\ifx\wholebook\relax \else
+\section{Answer}
+\shipoutAnswer
+
+\begin{thebibliography}{99}
+
+%% \bibitem{wiki-number}
+%% Wikipedia. ``History of ancient numeral systems''. \url{https://en.wikipedia.org/wiki/History_of_ancient_numeral_systems}
+
+%% \bibitem{Calvin-Clawson-1994}
+%% Calvin C Clawson. ``The Mathematical Traveler, Exploring the Grand History of Numbers''. Springer. 1994, ISBN: 9780306446450
+
+%% \bibitem{wiki-babylonian-num}
+%% Wikipedia. ``Babylonian numerals''. \url{https://en.wikipedia.org/wiki/Babylonian_numerals}
+
+\end{thebibliography}
+
+\expandafter\enddocument
+%\end{document}
+
+\fi
