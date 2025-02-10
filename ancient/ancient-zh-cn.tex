@@ -32,7 +32,9 @@
 \numberwithin{Exercise}{chapter}
 \fi
 
-\epigraph{一二三四五，金木水火土。天地分上下，日月照今古。}{——部编小学一年级语文课本第一课}
+\epigraph{一二三四五，金木水火土。\\ 
+天地分上下，日月照今古。}{部编小学一年级\\
+语文课本第一课}
 
 数充满了我们的生活。早上6:30起床，日历上是2025年2月17日。手机电量已经充到99\%。有同学在社交网络的班级群里说：“2025年是神奇的一年，2025是45的平方。”我点了“+1”，现在这条消息有36个\heartsuit{}了。我喝了200毫升牛奶，吃掉了3个包子，花了15分钟骑自行车到学校。今天的8节课中有2节是数学……
 
@@ -41,6 +43,8 @@
 \section{罗塞塔石碑}
 
 走进大英博物馆第4展厅，有一件展品吸引着观众。这是一块残缺的石碑，长114厘米，宽72厘米，上面刻满了文字（\cref{fig:rosetta-stone}）。人们能一眼辨认出有一部分是希腊字母（\cref{fig:rosetta-greek}，参见附录x希腊字母表），但剩下的部分犹如天书。仔细观察会发现余下的文字大致分成两种，一种是弯弯曲曲的符号，如\cref{fig:rosetta-demotic}，另一种是奇妙的图案，如\cref{fig:rosetta-hieroglyphs}。
+
+这一展品叫做罗塞塔石碑。1799年法军远征埃及。拿破仑还随军带有一群厉害的数学家。这位未来的法兰西皇帝，从一名炮兵军官脱颖而出。他敏锐地看出数学不仅可以算出大炮的弹道，还关乎法兰西的国运。7月15日，一位士兵在尼罗河三角洲前线的小镇罗塞塔（Rosetta）发掘防御工事。他偶然发现了一块断碑砌在一段古老的墙中。尽管并不完整（如\cref{fig:rosetta-stone-recons}）,这仍是一个重大的发现。1801年，英军击败了拿破仑，罗塞塔石碑也落入了英军之手。1802年2月，它被运抵英国朴次茅斯港，并最终收藏于大英博物馆。
 
 \begin{figure}[htbp]
  \centering
@@ -51,13 +55,20 @@
 
 \begin{figure}[htbp]
   \centering
-  \subcaptionbox{古希腊文，共54行\label{fig:rosetta-greek}}{\includegraphics[scale=0.6]{img/Rosetta-Greek.png}} \\
-  \subcaptionbox{古埃及世俗文字，共32行\label{fig:rosetta-demotic}}{\includegraphics[scale=0.6]{img/Rosetta-Demotic.png}} \\
-  \subcaptionbox{古埃及象形文字，共14行\label{fig:rosetta-hieroglyphs}}{\includegraphics[scale=0.6]{img/Rosetta-Hieroglyphs.png}}
+  \subcaptionbox{古希腊文，共54行\label{fig:rosetta-greek}}{\includegraphics[scale=0.6]{img/Rosetta-Greek}} \\
+  \subcaptionbox{古埃及世俗文字，共32行\label{fig:rosetta-demotic}}{\includegraphics[scale=0.6]{img/Rosetta-Demotic}} \\
+  \subcaptionbox{古埃及象形文字，共14行\label{fig:rosetta-hieroglyphs}}{\includegraphics[scale=0.6]{img/Rosetta-Hieroglyphs}}
   \caption{罗赛塔石碑上的三种文字}
   \label{fig:rosetta-stone}
  \end{figure}
  
+ \begin{figure}[htbp]
+  \centering
+  \includegraphics[scale=0.4]{img/Rosetta-stone-recons}
+  \caption{罗赛塔石碑并不完整，从中间断裂。}
+  \label{fig:rosetta-stone-recons}
+ \end{figure}
+
 \ifx\wholebook\relax \else
 \section{参考答案}
 \shipoutAnswer
