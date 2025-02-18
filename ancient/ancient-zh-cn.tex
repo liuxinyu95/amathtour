@@ -232,14 +232,31 @@ n = a_m b^m + a_{m-1} b^{m-1} + \cdots + a_a b + a_0
 
 \begin{figure}[htbp]
  \centering
- \includegraphics[scale=0.35]{img/sexagenary-chinese}
+ \includegraphics[scale=0.3]{img/sexagenary-chinese}
  \caption{干支纪年}
  \label{fig:sexagenary}
 \end{figure}
 
 \end{example}
 
-罗马数字的一个问题就是歧义——一个数字有多种写法或一个写法可以代表不同的数字。位值制能解决这个问题么？明显8 = 08 = 008。我们在电梯、数字钟，汽车里程表上都见过类似的情况。可以在一个数字前放任意多个零而不改变值。如果对最高位的数字加以限制，规定\cref{eq:pos-rep}中的$a_m \neq 0$，那么一个数的位值制表示是唯一的。我们来证明这一点。
+罗马数字的一个问题就是歧义——一个数字有多种写法或一个写法可以代表不同的数字。位值制能解决这个问题么？明显8 = 08 = 008。我们在电梯、数字钟，汽车里程表上都见过类似的情况。可以在一个数字前放任意多个零而不改变值。如果对最高位的数字加以限制，规定\cref{eq:pos-rep}中的$a_m \neq 0$，那么一个数的位值制表示是唯一的（见\cref{qn:unique-pos-rep}）。
+
+在历史的长河中，玛雅人和古巴比伦人的计数系统都湮没了。20和60以内的数字并非单一符号，混合进制难于计算。今天的现代位值制系统是印度文明发展出并经由阿拉伯人传入西方的，被称作“印度——阿拉伯系统”（Hindu-Arabic system）。在公元前三世纪，印度的碑铭中出现了1、4、6这样的符号；在公元一、二世纪的岩洞中，形如2、3、4、5、6、7、9的符号也出现了。可以看出2从二、3从三中演化的迹象，但直到公元九世纪，0仍未出现（\cref{fig:hindu-arabic-numerals}）。
+
+% (1) Brahmi, 1st Century CE, (2) Indian (Gwalior), 9th Century, (3) Sanskrit Davanagari, Indian, 11th Cenntury, (4) West Arabic (Gubar? Gobar?), 11th Century, (5) East Arabic, 11th Centry, (still used in Turkey), (6) 15th Century, (7) 16th Century (Dürer)
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[scale=0.3]{img/Hindu-arabic-num}
+ \caption{印度——阿拉伯数字的演进：1、婆罗门（Brahmi）数字出现在公元一世纪；2、印度瓜廖尔（Gwalior）数字包括0出现在公元九世纪；3、4、5、梵文天成体、东、西阿拉伯数字出现在公元十一世纪，其中西阿拉伯数字至今在土耳其仍然使用；6、7、十五世纪和十六世纪。}
+ \label{fig:hindu-arabic-numerals}
+\end{figure}
+
+\begin{Exercise}[label={ex:numerals}]
+\Question{证明一个数的位值制表示是唯一的。 \label{qn:unique-pos-rep}}
+\end{Exercise}
+
+\begin{Answer}[ref={ex:numerals}]
+\Question{证明一个数的位值制表示是唯一的。
 
 \begin{proof}
 假设一个数还有另一个表示。如果它们的位数不同，我们在较短的前面添加0，使它们一样长。令补0后的表示分别为$a_{m} a_{m-1} \cdots a_1 a_0$和$c_m c_{m-1} \cdots c_1 c_0$。按照\cref{eq:pos-rep}计算的值相等，即：
@@ -262,8 +279,10 @@ n = a_m b^m + a_{m-1} b^{m-1} + \cdots + a_a b + a_0
 \]
 
 同样可以推出$c_1 = a_1$。重复这个步骤$m$次，最后得到$a_m = c_m$。这就证明了两种表示是一样的，即位值制表示是唯一的。
-
 \end{proof}
+}
+\end{Answer}
+
 
 \ifx\wholebook\relax \else
 \section{参考答案}
