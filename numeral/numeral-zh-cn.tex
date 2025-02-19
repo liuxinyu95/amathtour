@@ -242,8 +242,6 @@ n = a_m b^m + a_{m-1} b^{m-1} + \cdots + a_a b + a_0
 
 罗马数字的一个问题就是歧义——一个数字有多种写法或一个写法可以代表不同的数字。位值制能解决这个问题么？明显8 = 08 = 008。我们在电梯、数字钟，汽车里程表上都见过类似的情况。可以在一个数字前放任意多个零而不改变值。如果对最高位的数字加以限制，规定\cref{eq:pos-rep}中的$a_m \neq 0$，那么一个数的位值制表示是唯一的（见\cref{qn:unique-pos-rep}）。
 
-在历史的长河中，玛雅人和古巴比伦人的计数系统都湮没了。20和60以内的数字并非单一符号，混合进制难于计算。今天的现代位值制系统是印度文明发展出并经由阿拉伯人传入西方的，被称作“印度——阿拉伯系统”（Hindu-Arabic system）。在公元前三世纪，印度的碑铭中出现了1、4、6这样的符号；在公元一、二世纪的岩洞中，形如2、3、4、5、6、7、9的符号也出现了。可以看出2从二、3从三中演化的迹象，但直到公元九世纪以前，0仍未出现（\cref{fig:hindu-arabic-numerals}）。印度人首先用一个点或小圆圈表示零，命名为sunya，梵文的意思是“空位”。传入阿拉伯后译为sifr，意思是“保持完整”。约公元1200年，音译为拉丁文，最后变为今天英语中的zero。
-
 % (1) Brahmi, 1st Century CE, (2) Indian (Gwalior), 9th Century, (3) Sanskrit Davanagari, Indian, 11th Cenntury, (4) West Arabic (Gubar? Gobar?), 11th Century, (5) East Arabic, 11th Centry, (still used in Turkey), (6) 15th Century, (7) 16th Century (Dürer)
 \begin{figure}[htbp]
  \centering
@@ -252,20 +250,23 @@ n = a_m b^m + a_{m-1} b^{m-1} + \cdots + a_a b + a_0
  \label{fig:hindu-arabic-numerals}
 \end{figure}
 
-印度的天文资料从八世纪开始逐渐传入巴格达并被学者译为阿拉伯文。大约在公元825年，阿拉伯学者数学家阿尔·花拉子密（al-Khwārizmī）的著作被译为拉丁文《印度数字算术》（Liber Algorismi de numero Indorum）并传入欧洲。
+在历史的长河中，玛雅人和古巴比伦人的计数系统都湮没了。20和60以内的数字并非单一符号，混合进制难于计算。今天的现代位值制系统是印度文明发展出并经由阿拉伯人传入西方的，被称作“印度——阿拉伯系统”（Hindu-Arabic system）。在公元前三世纪，印度的碑铭中出现了1、4、6这样的符号；在公元一、二世纪的岩洞中，形如2、3、4、5、6、7、9的符号也出现了。可以看出2从二、3从三中演化的迹象，但直到公元九世纪以前，0仍未出现（\cref{fig:hindu-arabic-numerals}）。印度人首先用一个点或小圆圈表示零，命名为sunya，梵文的意思是“空位”。传入阿拉伯后译为sifr，意思是“保持完整”。1140年，它伴随着阿拉伯学者花拉子密的著作被音译为拉丁文，最后变为今天英语中的zero。
 
 \begin{mdframed}
-花拉子密的介绍
 
 \begin{center}
  \includegraphics[scale=0.35]{img/Khwarizmi}
- \captionof{figure}{前苏联1983年发行的阿尔·花拉子密纪念邮票}
+ \captionof{figure}{前苏联1983年发行的花拉子密纪念邮票}
  \label{fig:hindu-arabic-numerals}
 \end{center}
 
-（补充斐波那契的介绍）
+公元七世纪初，阿拉伯文明崛起。罗马帝国分裂后，古希腊、拜占庭、印度的数学成果逐渐在八世纪汇集到阿拉伯帝国。阿拔斯王朝于公元830年在巴格达设立了著名的“智慧宫”，聚集了大批学者研究整理来自世界各地的天文地理资料和学术成果。公元813年，著名学者阿尔·花拉子密（al-Khwārizmī，约780～约850）来到巴格达，并成为智慧宫的主要学者之一。关于花拉子密的生平，我们知之甚少。甚至他的名字可能只是个“绰号”。阿拉伯文al是“来自”的意思，Khwārizmī是地名“花剌子模”，位于今天中亚的乌兹别克斯坦境内。金庸先生的小说《射雕英雄传》中有黄蓉帮着成吉思汗用计攻下花剌子模的故事，说的就是这个地方。花拉子密在数学方面完成了两部传世之作：《代数学》（成书于820年）和《印度数字算术》（成书于825年）。此外他还完成了地理和天文方面的著作。《代数学》的拉丁文译名为Hisab al-jabr w'al-muqabala，意思是还原与对消的科学。其中al-jabr后来演变为英文algebra。1859年清代学者李善兰与传教士伟烈亚力创造性地把它译为中文“代数”\cite{HanXueTao2009}。花拉子密在《代数学》中系统地给出了一元一次、二次方程的代数解法。但是他所在的时代还没有代数符号系统，因此完全使用文字来描述问题和解题步骤，并附加上几何解释来说明正确性。《印度数字算术》在十二世纪被翻译为拉丁文（Liber Algorismi de numero Indorum）并传入欧洲，促进了印度——阿拉伯十进制计数系统的传播。花拉子密名字的拉丁音译Algorismi后来成了“算法”一词Algorithm\cite{Britannica-25}。
 
+%% https://www.britannica.com/print/article/317171
+%% https://mathshistory.st-andrews.ac.uk/Biographies/Al-Khwarizmi/
 \end{mdframed}
+
+（补充斐波那契的介绍）
 
 十进制位值制计数系统带来了巨大的优势。便于计算并可以处理任意大的数字。我们可以想象用罗马数字计算MMXXVV - CXXXVII有多么困难，而小学生也可以用竖式快速算出结果：
 
@@ -391,6 +392,12 @@ British Museum. ``Everything you ever wanted to know about the Rosetta Stone''. 
 
 \bibitem{LeVeque-Smith-25}
 LeVeque, William Judson, Smith, David Eugene. ``numerals and numeral systems''. Encyclopedia Britannica, 7 Jan. 2025, \url{https://www.britannica.com/science/numeral}. Accessed 14 February 2025.
+
+\bibitem{HanXueTao2009}
+韩雪涛. 好的数学——“下金蛋”的数学问题 [M]. 长沙：湖南科学技术出版社, 2009. %ISBN: 9787535756725
+
+\bibitem{Britannica-25}
+The Editors of Encyclopaedia Britannica. "al-Khwārizmī". Encyclopedia Britannica, 13 Feb. 2025, \url{https://www.britannica.com/biography/al-Khwarizmi}. Accessed 18 February 2025.
 
 %% \bibitem{wiki-number}
 %% Wikipedia. ``古代计数系统的历史''. \url{https://en.wikipedia.org/wiki/History_of_ancient_numeral_systems}
