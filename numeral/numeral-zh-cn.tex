@@ -193,7 +193,7 @@ tredecillion  & $10^{42}$ & seprvigintillion & $10^{84}$ & & \\
 
 \begin{figure}[htbp]
  \centering
- \subcaptionbox{20以内采用5进制}{\includegraphics[scale=1.0]{img/Maya-numerals}}
+ \subcaptionbox{20以内采用5进制}{\includegraphics[scale=1.0]{img/Maya-numerals}} \qquad
  \subcaptionbox{$2(20^3) + 6(20) + 13 = 16133$}{\includegraphics[scale=0.4]{img/Maya-num-eg}}
  \caption{玛雅数字}
  \label{fig:maya-numerals}
@@ -330,15 +330,27 @@ n = a_m b^m + a_{m-1} b^{m-1} + \cdots + a_a b + a_0
 这四个方法中，哪些利用了十进制位值制计数系统的优势？
 }
 
-\Question{进制转换}
+\Question{可以利用$n = a_m b^m + a_{m-1} b^{m-1} + \cdots + a_a b + a_0$进行进制转换：
+  \begin{enumerate}[(i)]
+    \item 用$n$除以$b$得到余数$a_0$、商$q_0$。
+    \item 把$n$替换为$q_0$，再次用$n$除以$b$得到余数$a_1$、商$q_1$。
+    \item 把$n$替换为$q_1$，重复上述步骤知道商$q_m = 0$。
+  \end{enumerate}
+  则$n$的$b$进制表示为$a_m \cdots a_1a_0$。请将十进制数123转换为（a）玛雅文；（b）古巴比伦文；（c）计算机二进制表示。
+}
 
-\Question{编程进制转换}
+\Question{如果你会编程，请用自己熟悉的语言实现二进制到十进制的相互转换。}
 
-\Question{证明一个数的位值制表示是唯一的。 \label{qn:unique-pos-rep}}
+\Question{证明一个数的位值制表示是唯一的。提示：考虑如果一个数有两种表示会怎样？ \label{qn:unique-pos-rep}}
 \end{Exercise}
 
 \begin{Answer}[ref={ex:numerals}]
 \Question{ \textcircled{1}、\textcircled{3}、\textcircled{4} }
+
+\Question{将十进制数123转换为（a）玛雅文；（b）古巴比伦文；（c）计算机二进制表示。
+}
+
+\Question{编程实现二进制到十进制的相互转换。}
 
 \Question{证明一个数的位值制表示是唯一的。
 
