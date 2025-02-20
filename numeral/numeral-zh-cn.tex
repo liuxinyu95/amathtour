@@ -424,11 +424,11 @@ n = a_m b^m + a_{m-1} b^{m-1} + \cdots + a_a b + a_0
 120 &= 2 (60) + 3
 \end{align*}
 
-计算机二进制表示：1111101
+计算机二进制表示：1111001
 \begin{align*}
-123 \div 2 &= 60 \cdots 1 &
-60 \div 2 &= 30 \cdots 0   &
-30 \div 2 &= 15 \cdots 1 \\
+123 \div 2 &= 61 \cdots 1 &
+61 \div 2 &= 30 \cdots 1   &
+30 \div 2 &= 15 \cdots 0 \\
 15 \div 2 &= 7 \cdots 1 &
 7 \div 2 &= 3 \cdots 1 &
 3 \div 2 &= 1 \cdots 1 \\
@@ -436,7 +436,14 @@ n = a_m b^m + a_{m-1} b^{m-1} + \cdots + a_a b + a_0
 \end{align*}
 }
 
-\Question{编程实现二进制到十进制的相互转换。}
+\Question{编程实现二进制到十进制的相互转换。
+
+Haskell语言例子代码：
+\begin{Haskell}
+toBin x = if x < 2 then [x] else toBin (x `div` 2) ++ [x `mod` 2]
+toDec = foldl (\n x -> n*2 + x) 0
+\end{Haskell}
+}
 
 \Question{证明一个数的位值制表示是唯一的。
 
