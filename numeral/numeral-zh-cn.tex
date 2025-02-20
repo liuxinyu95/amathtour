@@ -51,7 +51,7 @@
  \label{fig:rosetta-stone-recons}
 \end{figure}
 
-走进大英博物馆第4展厅，有一件展品吸引着观众。这是一块残缺的石碑，长114厘米，宽72厘米，上面刻满了文字（\cref{fig:rosetta-stone-recons}）。人们能一眼辨认出位于底部的内容是希腊字母（\cref{fig:rosetta-greek}，参见\cref{ch:greek-letters}希腊字母表），但上面的部分犹如天书。仔细观察会发现余下的文字大致分成两种：一种是弯弯曲曲的符号，如\cref{fig:rosetta-demotic}，位于石碑中部；另一种是奇妙的图案，如\cref{fig:rosetta-hieroglyphs}，位于石碑上部。
+走进大英博物馆第4展厅，有一件展品吸引着观众。这是一块残缺的石碑，长114厘米，宽72厘米，上面刻满了文字（\cref{fig:rosetta-stone-recons}）。人们能一眼辨认出位于底部的内容是希腊字母（\cref{fig:rosetta-greek}，见\cref{tab:greek-alphabet}希腊字母表），但上面的部分犹如天书。仔细观察会发现余下的文字大致分成两种：一种是弯弯曲曲的符号，如\cref{fig:rosetta-demotic}，位于石碑中部；另一种是奇妙的图案，如\cref{fig:rosetta-hieroglyphs}，位于石碑上部。
 
 \begin{figure}[htbp]
   \centering
@@ -484,6 +484,30 @@ toDec = foldl (\n x -> n*2 + x) 0
 \ifx\wholebook\relax \else
 \section{参考答案}
 \shipoutAnswer
+
+ \begin{table}[htbp]
+     \centering
+     \begin{tabular}{|c|c|c||c|c|c|}
+         \hline
+         大写 & 小写 & 读音 & 大写 & 小写 & 读音 \\
+         \hline
+         A         & $\alpha$    & Alpha &      N         & $\nu$         & Nu \\
+         B         & $\beta$     & Beta &       $\Xi$         & $\xi$         & Xi \\
+         $\Gamma$  & $\gamma$    & Gamma &      O    & o    & Omicron \\
+         $\Delta$  & $\delta$    & Delta &      $\Pi$         & $\pi$         & Pi \\
+         E         & $\epsilon$  & Epsilon &    P        & $\rho$        & Rho \\
+         Z         & $\zeta$     & Zeta &       $\Sigma$      & $\sigma$      & Sigma \\
+         H         & $\eta$      & Eta &        T        & $\tau$        & Tau \\
+         $\Theta$  & $\theta$    & Theta &      Y    & $\upsilon$    & Upsilon \\
+         I         & $\iota$     & Iota &       $\Phi$        & $\phi$        & Phi \\
+         K         & $\kappa$    & Kappa &      X        & $\chi$        & Chi \\
+         $\Lambda$ & $\lambda$   & Lambda &     $\Psi$        & $\psi$        & Psi \\
+         M         & $\mu$       & Mu &         $\Omega$      & $\omega$      & Omega \\
+         \hline
+     \end{tabular}
+     \caption{希腊字母表}
+     \label{tab:greek-alphabet}
+ \end{table}
 
 \begin{thebibliography}{99}
 
