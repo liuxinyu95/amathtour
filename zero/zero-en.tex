@@ -1,0 +1,47 @@
+\ifx\wholebook\relax \else
+
+\documentclass[b5paper]{article}
+\usepackage[nomarginpar
+  %, margin=.5in
+]{geometry}
+
+\addtolength{\oddsidemargin}{-0.05in}
+\addtolength{\evensidemargin}{-0.05in}
+\addtolength{\textwidth}{0.1in}
+
+\usepackage[en]{../prelude}
+
+\setcounter{page}{1}
+
+\begin{document}
+
+\title{Numerals}
+
+\author{Xinyu LIU
+\thanks{{\bfseries Xinyu LIU} \newline
+  Email: liuxinyu99@hotmail.com \newline}
+  }
+
+\maketitle
+\fi
+
+\markboth{Zero}{A tour of numbers}
+
+\ifx\wholebook\relax
+\chapter{Zero}
+\fi
+
+%\epigraph{The total number of minds in the universe is one.}{Erwin Schrödinger}
+
+
+\ifx\wholebook\relax \else
+\section{Answer}
+\shipoutAnswer
+
+
+\begin{thebibliography}{99}
+
+\end{thebibliography}
+
+\expandafter\enddocument
+\fi
