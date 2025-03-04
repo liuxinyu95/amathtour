@@ -96,8 +96,32 @@
 
 \item 乘除法的可逆性
 
-除法被定义为乘法的逆运算。既然$2 \times 3 = 6$则$6 \div 2 = 3$；既然$3 \times 4 = 12$则$12 \div 3 = 4$……据此$2 \times 0 = 0$则$0 \div 2 = 0$，并且$a \times 0 = 0$故$0 \div a = 0$。但是0可以作除数么？
+除法被定义为乘法的逆运算。既然$2 \times 3 = 6$则$6 \div 2 = 3$；既然$3 \times 4 = 12$则$12 \div 3 = 4$……据此$2 \times 0 = 0$则$0 \div 2 = 0$，并且$a \times 0 = 0$故$0 \div a = 0$。但是0可以作除数么？根据逆运算，除法$a \div b$相当于求$c$使得$bc = a$，则$a \div 0$相当于求一个数$x$使得$0x = a$。但$0x = 0$，若$a \ne 0$，则不存在任何数$x$满足这个要求，因为：$0x = 0 \ne a$；若$a = 0$，虽然$0 \times 0 = 0$，看似$0 \div 0 = 0$；但$1 \times 0 = 0$，这样$0 \div 0 = 1$看似也可以；同样$2 \times 0 = 0$，故似乎$0 \div 0 = 2$……既然任何$a \times 0 = 0$则$0 \div 0 = a$，即$0 \div 0$等于任何值。但这意味着$(0 \div 0) = 0 = 1 = 2 = 3 = \cdots$，代表“无”的0，等于代表“有”的1、2、3……无即是有，空即是色。逻辑学家罗素指出从一个假命题可以推出任何命题。如果$0 = 1$，我们可以推出$1 + 1 = 3$：
+
+\begin{align*}
+0 = 1 & \Rightarrow 1 = 2     & \text{两边} + 1 \\
+      & \Rightarrow 1 + 1 = 3 & \text{把} 1 = 1 \text{加到两边}
+\end{align*}
+
+伊恩·斯图尔特给出了这样一个荒唐的例子\cite{Stewart-2019}：
+
+一只猫有一只尾巴；
+
+没有猫有八只尾巴。
+
+把这两句话加起来：一只猫有九只尾巴。
 \end{enumerate}
+
+鉴于0的这些奇特的“破坏”性质，人们把0归为1、2、3……之外的异类，如\cref{fig:keyboard}所示，0被放到了1到9的后面。
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[scale=0.35]{img/keyboard}
+ \caption{0在键盘上的位置}
+ \label{fig:keyboard}
+\end{figure}
+
+\subsection{序数}
 
 \ifx\wholebook\relax \else
 \section{参考答案}
@@ -108,6 +132,9 @@
 
 \bibitem{Seife-2000}
 Charles Seife. ``Zero: the biography of a number'' Penguin Books, 2000. ISBN: 9-781-1011-9960-2
+
+\bibitem{Stewart-2019}
+[英]伊恩·斯图尔特 著，何生 译. ``不可思议的数'' 人民邮电出版社. 2019. ISBN: 978-7-115-51051-8
 
 \end{thebibliography}
 
