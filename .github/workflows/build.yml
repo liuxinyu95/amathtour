@@ -10,7 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Before build
         run: |
           sed -i 's/SimSun/Noto Serif CJK SC/; s/SimHei/Noto Sans CJK SC/; s/Consolas/FreeMono/' prelude.sty
@@ -26,7 +26,7 @@ jobs:
           mv amathtour-en.pdf "amathtour-en-$GIT_HASH.pdf"
           mv amathtour-zh-cn.pdf "amathtour-zh-cn-$GIT_HASH.pdf"
       - name: Upload Artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: amathtour
           path: amathtour-*.pdf
