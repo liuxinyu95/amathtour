@@ -20,39 +20,27 @@
 \maketitle
 \fi
 
-\markboth{希腊字母表}{数的旅程}
+\chapter{参考答案}
+\label{ch:answers}
+\phantomsection
+\shipoutAnswer
 
-\ifx\wholebook\relax
-\chapter{希腊字母表} \label[appendix]{ch:greek-letters}
+\chapter{希腊字母表} \label{ch:greek-letters}
 \phantomsection  % so hyperref creates bookmarks
-\fi
 
- \begin{table}[h!]
-     \centering
-     \begin{tabular}{|c|c|c||c|c|c|}
-         \hline
-         大写 & 小写 & 读音 & 大写 & 小写 & 读音 \\
-         \hline
-         A         & $\alpha$    & Alpha &      N         & $\nu$         & Nu \\
-         B         & $\beta$     & Beta &       $\Xi$         & $\xi$         & Xi \\
-         $\Gamma$  & $\gamma$    & Gamma &      O    & o    & Omicron \\
-         $\Delta$  & $\delta$    & Delta &      $\Pi$         & $\pi$         & Pi \\
-         E         & $\epsilon$  & Epsilon &    P        & $\rho$        & Rho \\
-         Z         & $\zeta$     & Zeta &       $\Sigma$      & $\sigma$      & Sigma \\
-         H         & $\eta$      & Eta &        T        & $\tau$        & Tau \\
-         $\Theta$  & $\theta$    & Theta &      Y    & $\upsilon$    & Upsilon \\
-         I         & $\iota$     & Iota &       $\Phi$        & $\phi$        & Phi \\
-         K         & $\kappa$    & Kappa &      X        & $\chi$        & Chi \\
-         $\Lambda$ & $\lambda$   & Lambda &     $\Psi$        & $\psi$        & Psi \\
-         M         & $\mu$       & Mu &         $\Omega$      & $\omega$      & Omega \\
-         \hline
-     \end{tabular}
-     \caption{Greek Alphabet}
-     \label{tab:greek_alphabet}
- \end{table}
+\subimport{../numeral/inc/}{greek-zh-cn}
 
+%% Reference
+%% =============================================
+\markboth{\bibname}{}
+\phantomsection  % so hyperref creates bookmarks
+\addcontentsline{toc}{chapter}{\bibname}
+
+\begin{thebibliography}{99}
+  \subimport{../numeral/inc/}{bib-zh-cn}
+  \subimport{../zero/inc/}{bib-zh-cn}
+\end{thebibliography}
 
 \ifx\wholebook\relax \else
-
 \expandafter\enddocument
 \fi
