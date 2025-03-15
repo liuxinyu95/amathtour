@@ -283,14 +283,15 @@ TODO：（1）补充编程中的数组，（2）植树问题。
 \item 用$a < b$表示负数$-(b - a)$。
 \end{itemize}
 
-接下来为这种特殊的表示定义加法和乘法：
+接下来为数偶定义加法和乘法：
 
-\begin{align*}
+\begin{align}
 (a, b) + (c, d) &= (a + c, b + d) \\
-(a, b) \dot (c, d) &= (ac + bd, ad + bc)
-\end{align*}
+(a, b) \cdot (c, d) &= (ac + bd, ad + bc)
+\label{eq:pair-add-mul}
+\end{align}
 
-
+例如
 
 数轴——运算的作用，负负为正的解释
 
@@ -303,6 +304,28 @@ TODO：（1）补充编程中的数组，（2）植树问题。
 加法和乘法的单位元
 
 自然数的公理化
+
+\begin{Exercise}[label={ex:zero}]
+\Question{定义数偶的减法和除法}
+\Question{验证数偶的加法乘法满足交换律、结合律、分配律}
+\Question{用乘法对加法的分配律证明$(-1) \cdot (-1) = 1$}
+\end{Exercise}
+
+\begin{Answer}[ref={ex:zero}]
+\Question{定义数偶的减法和除法}
+\Question{验证数偶的加法乘法满足交换律、结合律、分配律}
+\Question{用乘法对加法的分配律证明$(-1) \cdot (-1) = 1$
+  \begin{proof}
+    \begin{align*}
+      (-1) \cdot (-1) & = (-1) \cdot (-1) + 0 & \text{0加上任何数不变} \\
+                      & = (-1) \cdot (-1) + (-1 + 1) & \text{-1和1互为相反数} \\
+                      & = (-1) \cdot (-1) + (-1) \cdot 1 + 1 & \text{1乘以任何数不变} \\
+                      & = (-1) \cdot (-1 + 1) + 1 & \text{反向用乘法分配律} \\
+                      & = (-1) \cdot 0 + 1 = 0 + 1 = 1 & \qedhere
+    \end{align*}
+  \end{proof}
+}
+\end{Answer}
 
 \ifx\wholebook\relax \else
 \section{参考答案}
