@@ -83,6 +83,7 @@
  \label{fig:rectangle-vanish}
 \end{figure}
 
+\label{sec:mul-as-zoom}
 乘法还表示缩放。把一把尺子放大2倍，不仅尺子长度乘以2，尺子上的刻度间隔也乘以2；同样把尺子放大3倍，尺子的长度乘以3，刻度间隔也乘以3，如\cref{fig:ruler-vanish}。相反，把图中最大的尺子缩小3倍，即乘以$\frac{1}{3}$，则得到图中最小的尺子。但是如果缩放0倍，乘以0，整条尺子连同上面的刻度都“坍缩”成一点。尺子消失了。
 
 \begin{figure}[htbp]
@@ -402,7 +403,7 @@ $a + b$ & 向右     & 向左    & 不动
   \label{fig:plus-1-numline}
 \end{figure}
 
-奇怪，竟然向左移动了1格。$\{\cdots, -2, -1, 0, 1, 2, \cdots \}$各自加1后变成了$\{\cdots, -1, 0, 1, 2, 3, \cdots \}$，的确向左移动了1格单位。那么$-1$一定是反向，也就是向右移动了。
+奇怪，竟然向左移动了1格。$\{\cdots -2, -1, 0, 1, 2 \cdots \}$各自加1后变成了$\{\cdots -1, 0, 1, 2, 3 \cdots \}$，的确向左移动了1格单位。那么$-1$一定是反向，也就是向右移动了。
 
 \begin{figure}[htbp]
   \centering
@@ -501,12 +502,34 @@ $a + b$ & 向右     & 向左    & 不动
 取相反数$a \rightsquigarrow -a$等效于乘以$-1$，即$-a = a (-1) = (-1) a$，两次取反复原就解释了“负负为正”：$-(-a) = (-1)(-a) = a$。
 
 \subsection{缩放}
-逆运算——四则运算的简化
+第\ref{sec:mul-as-zoom}节说乘除相当于缩放。$\times 2$把数轴放大2倍，$\times 3$把数轴放大3倍，$\div 2$把数轴缩小到$\frac{1}{2}$，$\div 3$缩小到$\frac{1}{3}$。除法是乘法的逆运算，所以$\div 2$也可以认为是$\times \frac{1}{2}$，即缩放到$\frac{1}{2}$倍，$\div 3$即缩放到$\frac{1}{3}$。这样乘除法就统一成乘法一种情况：
+
+\begin{center}
+  \begin{tabular}{c|c|c|c}
+             & $a > 1$ & $0 < a < 1$ & $a = 1$ \\
+  \hline
+  $\times a$ & 放大     & 缩小    & 不变 \\
+  \end{tabular}
+\end{center}
+
+引入负数后，如上节所说，$\times (-1)$相当于取相反数，数轴反向。$\times (-2)$相当于放大2倍后反转数轴，即$(-1) \times 2$，当然也等效于先反转数轴再放大2倍，即$2 \times (-1) = (-1) \times 2$。同样$\times (-3)$相当于放大3倍后反向，或反向后放大3倍。这样乘除法可以归纳如下：
+
+\begin{center}
+  \begin{tabular}{c|c|c|c|c|c|c}
+             & $a > 1$ & $a = 1$ & $0 < a < 1$  & $-1 < a < 0$ & $a = -1$ & $a < -1$ \\
+  \hline
+  $\times a$ & 放大     & 不变    & 缩小          & 缩小 + 反向 & 反向 & 放大 + 反向
+  \end{tabular}
+\end{center}
+
+有一种特殊情况$\times 0$数轴“坍缩”成一点。上述“动作”可以组合：先平移$a$再平移$b$，当然这等效于先平移$b$再平移$a$，即$a + b = b + a$，这说明了加法的交换律。同样，先缩放$a$倍，再缩放$b$倍和先缩放$b$倍，再缩放$a$倍等效，即$ab = ba$，这说明了乘法交换率。我们把结合率的数轴意义作为\cref{qn:assiciative-numline}。
+
+更复杂的组合，如先平移再缩放或反向，如$x \rightsquigarrow ax + b$，即先缩放$a$倍，再平移$-b$。\cref{qn:transform-numline}要求读者考虑如何先平移再缩放。
 
 \section{单位元}
 
 加法和乘法的单位元
-
+逆运算——四则运算的简化
 自然数的公理化
 
 \begin{Exercise}[label={ex:zero}]
@@ -514,6 +537,8 @@ $a + b$ & 向右     & 向左    & 不动
 \Question{验证数偶的加法乘法满足交换律、结合律、分配律\label{qn:pair-arithmetic}}
 \Question{用乘法对加法的分配律证明$(-1) \times (-1) = 1$}
 \Question{证明一个数的相反数是唯一的。}
+\Question{说明加法、乘法结合律的数轴意义。\label{qn:assiciative-numline}}
+\Question{考虑$x \rightsquigarrow 2x + 1$, 如果先平移再缩放，应先向哪个方向平移多少？再缩放几倍？一般地，$x \rightsquigarrow ax + b$应如何变换？\label{qn:transform-numline}}
 \end{Exercise}
 
 \begin{Answer}[ref={ex:zero}]
