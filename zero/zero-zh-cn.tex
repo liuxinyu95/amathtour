@@ -528,7 +528,43 @@ $a + b$ & 向右     & 向左    & 不动
 
 \section{单位元}
 
-加法和乘法的单位元
+0和负数成了1、2、3……一样的一等公民。它们有序数（再数轴上的合法、确定的位置），有基数（确定的值）。0和其它数比起来仍是如此特殊，它是起点，它是原点，它是产生万物的“无”，还有谁像它这样独特么？1站了出来要和0比一比。
+
+\begin{align*}
+  0     &             &  1 & \\
+  1 + 0 & = 0 + 1 = 1  &  1 \times 0 &= 0 \times 1 = 1 \\
+  2 + 0 &= 0 + 2 = 2  &  1 \times 2  &= 2 \times 1 = 2 \\
+  \cdots &            & \cdots & \\
+  a + 0 &= 0 + a = a  &  1 \times a  &= a \times 1 =  a
+\end{align*}
+
+0加上任何数都不变，而1乘以任何数（包括0）也都不变。我们看看0和1对数轴的作用：
+\begin{enumerate}[(1)]
+\item 加法把数轴左右平移，$+a$后数轴移动$-a$个单位（$a > 0$向左，$a < 0$向右），则0的作用是固定数轴不动。
+\item 乘法把数轴放大缩小，$\times a$则缩放$a$倍（$|a| > 1$放大，$0 < |a| < 1$缩小），则1的作用是固定数轴不变。
+\end{enumerate}
+
+0说：任何一个数$a$都能找到它的“加法双胞胎”兄弟，相反数$-a$，使得$a + (-a) = 0$。1说：任何一个数$a$也能找到它的“乘法双胞胎”兄弟，倒数$\frac{1}{a}$，使得$a \times \frac{1}{a} = 1$，不过0没有“乘法双胞胎”兄弟。读者朋友们，你们觉得0和1谁更特殊呢？
+
+像0和1这样“鹤立鸡群”的例子比比皆是。英语中有单词、短语、句子、段落……我们把一列英语字符叫做“字符串”，如``apple''、``hello''、``to be or not to be''、`` ''（空格）我们可以把字符串连接在一起，如：``hello'' $\doubleplus$ `` '' = ``hello ''，``hello '' $\doubleplus$ ``apple'' = ``hello apple''。不包含任何字符的串叫空串``''，把空串连接到任何字符上都不变：
+
+\[
+\text{``''} \doubleplus S = S \doubleplus \text{``''} = S
+\]
+
+如``'' $\doubleplus$ ``hello'' = ``hello'' $\doubleplus$ ``'' = ``hello''。再比如集合的并。把两个集合中包含的元素不重复地放在一起组成新的集合，如$\{a, b, c\} \cup \{1, 2, 3\} = \{a, b, c, 1, 2, 3\}$，$\{a, b, c\} \cup \{c, d, e\} = \{a, b, c, d, e\}$。空集与任何集合的并都不变：
+
+\[
+\varnothing \cup S = S \cup \varnothing = S
+\]
+
+如$\varnothing \cup \{a, b, c\} = \{a, b, c\} \cup \varnothing = \{a, b, c\}$。数学上我们把0叫做加法的单位元，1叫做乘法的单位元，空串叫做字符串连接的单位元，空集叫集合并的单位元。一般地在集合（可以有限也可以无限）$M$中，如果存在一个元素$e$，在某种二元运算$\odot$下使得：
+
+\[
+  e \odot a = a \odot e = a
+\]
+对所有$M$中的$a$都成立，我们把$e$叫做运算$\odot$在$M$中的单位元。单位元和集合中的其它元素一样是一等公民，但它是特殊的唯一的（见\cref{qn:unique-e}）。
+
 逆运算——四则运算的简化
 自然数的公理化
 
@@ -539,6 +575,7 @@ $a + b$ & 向右     & 向左    & 不动
 \Question{证明一个数的相反数是唯一的。}
 \Question{说明加法、乘法结合律的数轴意义。\label{qn:assiciative-numline}}
 \Question{考虑$x \rightsquigarrow 2x + 1$, 如果先平移再缩放，应先向哪个方向平移多少？再缩放几倍？一般地，$x \rightsquigarrow ax + b$应如何变换？\label{qn:transform-numline}}
+\Question{证明单位元是唯一的。\label{qn:unique-e}}
 \end{Exercise}
 
 \begin{Answer}[ref={ex:zero}]
