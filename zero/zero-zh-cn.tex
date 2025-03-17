@@ -379,10 +379,103 @@ $a + b$ & 向右     & 向左    & 不动
 0能“无中生有”：$0 \begin{cases} n \\ -n \end{cases}$，“分裂”成任何数$n$和它的相反数$-n$。反之，$n$和$-n$遇到一起“湮灭”为0，如同一对正负电荷。以上我们固定数轴，移动数轴上的数（点）。运动是相对的，我们也可以移动变换整条数轴：
 
 \begin{enumerate}[(a)]
-\item $+1$：
-\end{enumerate}
+\item $+1$：把数轴上的\underdot{所有}数$+1$相当于把整条数轴怎样移动呢？向右？请看\cref{fig:plus-1-numline}:
 
-逆元——有、无的变易
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}
+      \draw[->] (-3,0) -- (4,0);
+      \foreach \x in {-2,-1,0,1,2,3}
+      {
+          \draw (\x,0.1) -- (\x,-0.1) node[below] {$\x$};
+      }
+      \draw[fill=black] (0,0) circle (0.05); % origin
+
+      {
+          \pgfmathsetmacro{\k}{-2}
+          \draw[->] (-3,0+\k) -- (4,0+\k);
+          \foreach \x in {-2,-1,0,1,2,3}
+          {
+              \pgfmathtruncatemacro{\y}{\x+1}
+              \draw (\x,0.1+\k) -- (\x,-0.1+\k) node[below] {$\y$};
+          }
+          \draw[fill=black] (0-1,0+\k) circle (0.05); % origin
+          \draw[->, decorate, decoration={snake, amplitude=.4mm, segment length=2mm, post length=1mm}]
+            (0,0-0.8) -- (0,0+\k+0.3) node[above right] {$+1$};
+      }
+  \end{tikzpicture}
+  \caption{将数轴上每个数$+1$}
+  \label{fig:plus-1-numline}
+\end{figure}
+
+奇怪，竟然向左移动了1格。$\{\cdots, -2, -1, 0, 1, 2, \cdots \}$各自加1后变成了$\{\cdots, -1, 0, 1, 2, 3, \cdots \}$，的确向左移动了1格单位。那么$-1$一定是反向，也就是向右移动了。
+
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}
+      \draw[->] (-3,0) -- (4,0);
+      \foreach \x in {-2,-1,0,1,2,3}
+      {
+          \draw (\x,0.1) -- (\x,-0.1) node[below] {$\x$};
+      }
+      \draw[fill=black] (0,0) circle (0.05); % origin
+
+      {
+          \pgfmathsetmacro{\k}{-2}
+          \draw[->] (-3,0+\k) -- (4,0+\k);
+          \foreach \x in {-2,-1,0,1,2,3}
+          {
+              \pgfmathtruncatemacro{\y}{\x-1}
+              \draw (\x,0.1+\k) -- (\x,-0.1+\k) node[below] {$\y$};
+          }
+          \draw[fill=black] (0-1,0+\k) circle (0.05); % origin
+          \draw[->, decorate, decoration={snake, amplitude=.4mm, segment length=2mm, post length=1mm}]
+            (0,0-0.8) -- (0,0+\k+0.3) node[above right] {$-1$};
+      }
+  \end{tikzpicture}
+  \caption{将数轴上每个数$-1$}
+  \label{fig:plus-1-numline}
+\end{figure}
+
+一般地，$+a$将数轴移动$-a$；$-a$将数轴移动$a$。
+
+\begin{center}
+  \begin{tabular}{c|c|c|c}
+                   & $a > 0$ & $a < 0$ & $a = 0$ \\
+  \hline
+  $\mathbb{Z} + a$ & 向左     & 向右    & \multirow{2}{*}{不动} \\
+  \cline{1-3}
+  $\mathbb{Z} - a$ & 向右     & 向左
+  \end{tabular}
+\end{center}
+
+这是为什么呢？记原数轴为$A$，移动后的数轴为$A'$。$A$上的每个数$x \rightsquigarrow x + a$，变成了$x' = x + a$，$A$上的$-a \rightsquigarrow -a + a = 0$，变成了$A'$上的原点。所以$A'$上的原点\underdot{对应}着原数轴上的$-a$。若$a > 0$，自然新原点（对应$-a$）在老原点（对应0）的左边，如\cref{fig:translate-number-line}。
+
+\begin{figure}[htpb]
+  \centering
+  \begin{tikzpicture}{
+      \draw[->] (-3,0) -- (1,0) node[right] {$A$};
+      \draw (-2,0.1) -- (-2,-0.1) node[below] {$-a$};
+      \draw (0, 0.1) -- (0, -0.1) node[below] {$0$};
+
+      \pgfmathsetmacro{\k}{-2}
+      \draw[->] (-3,0+\k) -- (1,0+\k) node[right] {$A'$};
+      \draw (-2,0.1+\k) -- (-2,-0.1+\k) node[below] {$0$};
+      \draw (0, 0.1+\k) -- (0, -0.1+\k) node[below] {$a$};
+
+      \draw[->, decorate, decoration={snake, amplitude=.4mm, segment length=2mm, post length=1mm}]
+        (-2,0-0.8) -- (-2,0+\k+0.3) node[above right] {$+a$};
+      \draw[->, decorate, decoration={snake, amplitude=.4mm, segment length=2mm, post length=1mm}]
+        (0,0-0.8) -- (0,0+\k+0.3) node[above right] {$+a$};
+}
+  \end{tikzpicture}
+  \caption{数轴平移}
+  \label{fig:translate-number-line}
+\end{figure}
+
+\item 相反数：
+
+\end{enumerate}
 
 逆运算——四则运算的简化
 
