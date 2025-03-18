@@ -186,7 +186,18 @@ int a[10];
  \label{fig:array}
 \end{figure}
 
-注意首个元素的地址从\lstinline|a|开始，它与地址\lstinline|a|的距离为0，记作\lstinline|a[0]|，次一个元素的地址从\lstinline|a + sizeof(int) = a + 16|开始，记作\lstinline|a[1]|，下一个地址从\lstinline|a + 2 * sizeof(int)|开始\footnote{计算机系统用“*”表示乘法}，记作\lstinline|a[2]|……计算机从\lstinline|a + i * sizeof(int)|找到\lstinline|a[i]|，所以数组中的10个元素从0开始索引，依次是\lstinline|a[0], a[1], ..., a[9]|。很多人初学编程不知为何数组从0开始到$n-1$结束。其原因即在于此：数组的下标$i$表示了元素\lstinline|a[i]|到数组起始位置的距离。距离从0开始，0才是真正的起点。
+注意首个元素的地址从\lstinline|a|开始，它与地址\lstinline|a|的距离为0，记作\lstinline|a[0]|，次一个元素的地址从\lstinline|a + sizeof(int) = a + 16|开始，记作\lstinline|a[1]|，下一个地址从\lstinline|a + 2 * sizeof(int)|开始\footnote{计算机系统用“*”表示乘法}，记作\lstinline|a[2]|……计算机从\lstinline|a + i * sizeof(int)|找到\lstinline|a[i]|，所以数组中的10个元素从0开始索引，依次是\lstinline|a[0], a[1], ..., a[9]|。很多人初学编程不知为何数组从0开始到$n-1$结束。其原因即在于此：数组的下标$i$表示了元素\lstinline|a[i]|到数组起始位置的距离。距离从0开始，0才是真正的起点。以下例子程序将1到10装入数组：
+
+\begin{lstlisting}[language=C, frame=single]
+int a[10];
+for (int i = 0; i < 10; ++i) { a[i] = i + 1; }
+\end{lstlisting}
+
+有一个程序员自嘲的笑话。某程序员经过痛苦的熬夜加班，终得休息，决心全家吃顿饺子庆贺。他问孩子：“妈妈包了多少个饺子？”小孩子耳濡目染，指着盘中的饺子数道：0、1、2、3……妈妈无奈地感叹：“天生加班的程序员命。”
+
+类似的困扰也出现在小学数学中的“植树问题”中。一条100米长的路，每隔10米种一棵树，共需要几棵树？围绕400米长的操场跑道，每20米种一棵树，需要多少棵数？对于前者，我们只要把路想成数轴，意识到0是起点，从0数起：第0棵、第1棵、第2棵……第10棵。第$i$棵到起点的距离就是$10i$米。$100 \div 10 = 10$故第10棵树距起点100米。而0、1、2……10共11个数，故共种11棵数。对于后者，也从0开始数。400米是一圈，所以$400 \div 20 = 20$，第20棵树距离起点恰好是一圈400米，它和第0棵树位置重合，不需要种了，故0、1、2……19、$\cancel{20}$，共20棵树。
+
+生活中我们一般从1开始数数1、2、3……，除了程序员和他可爱的孩子，似乎没有人从0开始数数。读者朋友们，你觉得什么情况下应该从1开始数，什么情况下应该从0开始数呢？（见\cref{qn:count-from}）
 
 \subsection{基数}
 
@@ -642,6 +653,7 @@ $a + b$ & 向右     & 向左    & 不动
 \end{mdframed}
 
 \begin{Exercise}[label={ex:zero}]
+\Question{什么情况下应从1开始数数，什么情况下应从0开始数数？\label{qn:count-from}}
 \Question{定义数偶的减法和除法}
 \Question{验证数偶的加法乘法满足交换律、结合律、分配律\label{qn:pair-arithmetic}}
 \Question{用乘法对加法的分配律证明$(-1) \times (-1) = 1$}
