@@ -292,6 +292,7 @@ n = a_m b^m + a_{m-1} b^{m-1} + \cdots + a_a b + a_0
  \label{fig:Fibonacci}
 \end{figure}
 
+\label{sec:binary-numerals}
 越来越多的学者和在各国往来贸易的商人把印度——阿拉伯计数系统传播到了全球。它成了全人类的通用语言。十七世纪时，德国数学家莱布尼茨提出了二进制，它导致了计数系统在二十世纪产生了革命性的应用。电子计算机内部使用二进制对数字和信息编码。尽管二进制只有0、1两种数字，表示很长，例如2025写成二进制是1111 1101 001，但0、1两种状态可以通过电路的通、断或电平（电压）的高、低方便地实现。还有一个好处：0、1可以对应逻辑的真、假；事物的有、无；答案的对、错，从而方便用机器统一处理数和逻辑，如\cref{tab:binary-arithmatic-logic}。
 
 \begin{table}
@@ -448,7 +449,7 @@ n = a_m b^m + a_{m-1} b^{m-1} + \cdots + a_a b + a_0
 说明：\lstinline|round|是四舍五入。对$n/2$ - 0.5四舍五入相当于对$n/2$取整，求得$n$除以2的除数。$bs$中的二进制数字低位在前，高位在后。与Scratch的循环不同，下面的Haskell例子给出了递归实现。其中的二进制数字高位在前、低位在后。
 
 \begin{Haskell}[frame=single]
-bin x = if x < 2 then [x] else bin (x `div` 2) ++ [x `mod` 2]
+bin x = if x < 2 then [x] else (bin (x `div` 2)) ++ [x `mod` 2]
 dec = foldl (\n x -> n*2 + x) 0
 \end{Haskell}
 }

@@ -169,7 +169,24 @@
 \label{sec:zero-as-ordinal}
 一个数$a$在$b$的左边，表明$a$在$b$之\underdot{前}，即$a < b$，它们距离$b - a$。反之，$a$在$b$的右边，表明$a$在$b$之\underdot{后}，即$a > b$，它们距离$a - b$\footnote{从节约一致的观点出发，我们可只用$a<b$定义前，用它的否定定义另一种情况。}。从运动的观点看$a + d$表示向前（右）移动$d$，$a - d$表示向后（左）移动$d$。如果$d = 0$，则$a + 0 = a - 0 = a$，表示固定$a$\underdot{不动}。在序数的意义下，0被赋予了合法的地位，不再是“二等公民”，而与1、2、3……一样是一个序数。
 
-TODO：（1）补充编程中的数组，（2）植树问题。
+在计算机系统中，有一种叫做数组（array）的数据结构。它使用一段连续的空间存储一组值，比如：
+
+\begin{lstlisting}[language=C, frame=single]
+int a[10];
+\end{lstlisting}
+
+声明一个数组$a$，它连续存储10个整数，在计算机内部，一个整数占16个二进制位，即用16个bit表示一个整数。对于正整数，最大可以表示到$2^{16}-1 = 65535$，即16个二进制位都是1。例如314写成二进制100111010(=256 + 32 + 16 + 8 + 2)，即第9、6、5、4、2位是1，其它11位是0（见第\ref{sec:binary-numerals}节）。每8个二进制位称为一个字节（Byte），所以一个16位整数占用2个字节，记为：\lstinline|sizeof(int) = 2B = 16|。一个容纳10个整数的数组占用$2 \times 10 = 20$字节的存储空间。
+
+计算机执行到\lstinline|int a[10]|时，就会在系统存储器\footnote{有两种情况：栈和堆。这个例子使用栈。}中找到一个位置，称为地址，让\lstinline|a|指向它。从这之后预留出连续20个字节来，供程序使用。接下来程序用这个地址索引数组的各个元素。比如从\lstinline|a|开始两个字节保存首个元素，\lstinline|a|后面第3、4字节保存次一个元素，如\cref{fig:array}把1、2……9、10存入了数组。
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[scale=0.35]{img/array}
+ \caption{数组}
+ \label{fig:array}
+\end{figure}
+
+注意首个元素的地址从\lstinline|a|开始，它与地址\lstinline|a|的距离为0，记作\lstinline|a[0]|，次一个元素的地址从\lstinline|a + sizeof(int) = a + 16|开始，记作\lstinline|a[1]|，下一个地址从\lstinline|a + 2 * sizeof(int)|开始\footnote{计算机系统用“*”表示乘法}，记作\lstinline|a[2]|……计算机从\lstinline|a + i * sizeof(int)|找到\lstinline|a[i]|，所以数组中的10个元素从0开始索引，依次是\lstinline|a[0], a[1], ..., a[9]|。很多人初学编程不知为何数组从0开始到$n-1$结束。其原因即在于此：数组的下标$i$表示了元素\lstinline|a[i]|到数组起始位置的距离。距离从0开始，0才是真正的起点。
 
 \subsection{基数}
 
