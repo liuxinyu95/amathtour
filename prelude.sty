@@ -294,8 +294,9 @@
     }\fi % end if windows
   } % end if exits noto cjk
 
-  %%   \XeTeXlinebreaklocale "zh"  % to solve the line breaking issue
-  %%   \XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
+  \ctexset{
+      chapter/number = \arabic{chapter}
+  }
 
   % Simplified way to customize Chinese. Or \usepackage[chinese, english]{babel}
   % However, it need install the additional texlive-lang-chinese.
