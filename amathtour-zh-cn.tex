@@ -7,9 +7,13 @@
 
 % ==================== Book flag==========================
 
-\global\let\wholebook=\relax %without relax, we build article, esle book
+\global\let\wholebook=\relax %without relax, we build article, else book
 
 \usepackage[cn]{prelude}
+
+\ctexset{
+    chapter/number = \arabic{chapter}
+}
 
 \setcounter{page}{1}
 
@@ -55,6 +59,7 @@
 
 \subimport{numeral/}{numeral-zh-cn}
 \subimport{zero/}{zero-zh-cn}
+\subimport{fraction/}{fraction-zh-cn}
 
 \appendix
 \subimport{appendix/}{appendix-zh-cn}

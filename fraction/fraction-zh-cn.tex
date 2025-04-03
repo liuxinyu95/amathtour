@@ -1,0 +1,54 @@
+\ifx\wholebook\relax \else
+
+\documentclass[b5paper]{ctexart}
+\usepackage[nomarginpar
+  %, margin=.5in
+]{geometry}
+
+\addtolength{\oddsidemargin}{-0.05in}
+\addtolength{\evensidemargin}{-0.05in}
+\addtolength{\textwidth}{0.1in}
+
+\usepackage[cn]{../prelude}
+
+\setcounter{page}{1}
+
+\begin{document}
+
+\title{分数}
+
+\author{刘新宇
+\thanks{{\bfseries 刘新宇} \newline
+  Email: liuxinyu99@hotmail.com \newline}
+  }
+
+\maketitle
+\fi
+
+\markboth{分数}{数的旅程}
+
+\ifx\wholebook\relax
+\chapter{分数}
+\fi
+
+\epigraph{此曲只应天上有，人间能得几回闻。}{杜甫《赠花卿》}
+
+2015年9月14日，美国LIGO\footnote{激光干涉引力波}天文台探测到一个神秘信号GW150914。它来自13亿光年之外的一次惊天动地的奇观：一对双黑洞天体彼此靠近、吸引，旋转着合并到一起（如\cref{fig:gravitational-wave}）。它们巨大引力激起的“涟漪”穿越13亿年时空\footnote{根据爱因斯坦的广义相对论，引力波以光速传播。}到达了地球。物理学家们花了几个月的事件进行数据分析，排除了可能的干扰因素，最终于2016年2月11日正式宣布：这是人类首次探测到了引力波，证实了爱因斯坦在百年前通过广义相对论做出的预言。LIGO的物理学家们把引力波转换成声音信号，我们得以首次听到来自宇宙深处的“天籁之音”。
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[scale=0.35]{img/gravitational-wave}
+ \caption{双黑洞彼此合并过程中产生的引力波示意。}
+ \label{fig:gravitational-wave}
+\end{figure}
+
+\ifx\wholebook\relax \else
+\section{参考答案}
+\shipoutAnswer
+
+\begin{thebibliography}{99}
+%% \subimport{inc/}{bib-zh-cn}
+\end{thebibliography}
+
+\expandafter\enddocument
+\fi
