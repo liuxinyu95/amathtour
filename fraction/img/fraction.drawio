@@ -1,0 +1,43 @@
+<mxfile host="Electron" modified="2025-04-04T04:13:25.601Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.2 Chrome/114.0.5735.289 Electron/25.9.4 Safari/537.36" etag="_Grf__DbWfSoWhvQpeRW" version="22.1.2" type="device">
+  <diagram name="cups" id="wT2eMNuc1yAczIeZKwd1">
+    <mxGraphModel dx="1026" dy="673" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="1" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Bjz-hhU1X5G7KChYBwUP-2" value="" style="shape=trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rotation=-180;" vertex="1" parent="1">
+          <mxGeometry x="210" y="180" width="120" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="Bjz-hhU1X5G7KChYBwUP-1" value="" style="shape=trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rotation=-180;" vertex="1" parent="1">
+          <mxGeometry x="60" y="180" width="120" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="Bjz-hhU1X5G7KChYBwUP-3" value="" style="shape=trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rotation=-180;size=10;fillColor=#eeeeee;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="220" y="270" width="100" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="Bjz-hhU1X5G7KChYBwUP-4" value="$$\frac{1}{3}$$" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="240" y="290" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Bjz-hhU1X5G7KChYBwUP-5" value="" style="shape=trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rotation=-180;" vertex="1" parent="1">
+          <mxGeometry x="360" y="180" width="120" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="Bjz-hhU1X5G7KChYBwUP-6" value="" style="shape=trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rotation=-180;size=10;fillColor=#eeeeee;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="370" y="260" width="100" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Bjz-hhU1X5G7KChYBwUP-7" value="$$\frac{1}{2}$$" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="390" y="290" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Bjz-hhU1X5G7KChYBwUP-8" value="" style="shape=trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rotation=-180;" vertex="1" parent="1">
+          <mxGeometry x="510" y="180" width="120" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="Bjz-hhU1X5G7KChYBwUP-9" value="" style="shape=trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rotation=-180;size=12;fillColor=#eeeeee;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="516" y="230" width="108" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="Bjz-hhU1X5G7KChYBwUP-10" value="$$\frac{3}{4}$$" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="540" y="290" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Bjz-hhU1X5G7KChYBwUP-11" value="" style="shape=trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rotation=-180;fillColor=#eeeeee;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="660" y="180" width="120" height="160" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
