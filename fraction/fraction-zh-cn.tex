@@ -218,6 +218,20 @@
 \begin{Answer}[ref={ex:fractions}]
 \Question{找出三个儿子按照$\frac{1}{a}$、$\frac{1}{b}$、$\frac{1}{c}$分配$n$个动物的所有可能数值和比例。要求大儿子分得的财产多于二儿子，二儿子分得的财产多于小儿子。}
 \Question{如果你会编程，请用计算机枚举上面的所有解。}
+\Question{若$p$为大于2的素数，证明$\frac{2}{p}$可唯一分解为两个埃及分数$\frac{2}{p} = \frac{1}{a} + \frac{1}{b} (a \ne b)$。
+
+  \begin{proof}
+  上式等价于$(2a - p)(2b - p) = p^2$。因为$p$是素数，$p^2$的因子只有1、$p$、$p^2$。由$a \ne b$可以排除掉$p$，所以$2a - p = 1$，$2b - p = p^2$，即：
+\[
+a = \frac{p+1}{2}, b = \frac{p(p+1)}{2}
+\]
+即：
+\[
+\frac{2}{p} = \frac{1}{\frac{1}{2}(p + 1)} + \frac{1}{\frac{1}{2}p(p+1)}
+\]
+  \end{proof}
+
+}
 \end{Answer}
 
 \ifx\wholebook\relax \else
