@@ -160,8 +160,27 @@
 
 读者朋友们，你觉得古埃及人为何如此设计他们的分数系统呢？以后来的眼光来看埃及分数，一方面它的计算很复杂，逐渐被历史的长河淘汰了，另一方面，数学家思考这样的问题：1）是否每个分数都可以分解成埃及分数？2）如果可以分解，怎样的分解方式最好？其中第一个问题在1202年由斐波那契在《算盘书》中解决了。而第二个问题催生了至今仍未解决的数学猜想。在此之前，我们现看两个相对简单的问题。
 
-\begin{theorem}每个埃及分数都可以分解为两个不同的埃及分数之和，即$\frac{1}{n} = \frac{1}{a} + \frac{1}{b}$。
-\end{theorem}
+\begin{proposition}每个埃及分数都可以分解为两个不同的埃及分数之和，即$\frac{1}{n} = \frac{1}{a} + \frac{1}{b}$。
+\end{proposition}
+
+\begin{proof}
+  \begin{align*}
+    \frac{1}{n} &= \frac{n+1}{n(n+1)} & \text{上下同}\times (n + 1) \\
+                &= \frac{n}{n(n+1)} + \frac{1}{n(n+1)} & \\
+                &= \frac{1}{n+1} + \frac{1}{n(n+1)} & \qedhere
+  \end{align*}
+\end{proof}
+
+\begin{proposition}
+每个$\frac{2}{n}$都能分解为埃及分数。
+\end{proposition}
+
+\begin{proof}
+  \begin{align*}
+    \frac{2}{n} &= \frac{1}{n} + \frac{1}{n} && \\
+                &= \frac{1}{n} + \frac{1}{n+1} + \frac{1}{n(n+1)} & \text{上面证明的结论} & \qedhere
+  \end{align*}
+\end{proof}
 
 \section{古巴比伦的分数}
 
