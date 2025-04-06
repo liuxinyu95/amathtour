@@ -160,16 +160,18 @@
 
 读者朋友们，你觉得古埃及人为何如此设计他们的分数系统呢？以后来的眼光来看埃及分数，一方面它的计算很复杂，逐渐被历史的长河淘汰了，另一方面，数学家思考这样的问题：1）是否每个分数都可以分解成埃及分数？2）如果可以分解，怎样的分解方式最好？其中第一个问题在1202年由斐波那契在《算盘书》中解决了。而第二个问题催生了至今仍未解决的数学猜想。在此之前，我们现看两个相对简单的问题。
 
-\begin{proposition}每个埃及分数都可以分解为两个不同的埃及分数之和，即$\frac{1}{n} = \frac{1}{a} + \frac{1}{b}$。
+\begin{proposition}每个埃及分数都可以分解为两个不同的埃及分数之和，即$\frac{1}{n} = \frac{1}{a} + \frac{1}{b}$。\label{th:egyptian-fraction-split}
 \end{proposition}
 
 \begin{proof}
   \begin{align*}
-    \frac{1}{n} &= \frac{n+1}{n(n+1)} & \text{上下同}\times (n + 1) \\
-                &= \frac{n}{n(n+1)} + \frac{1}{n(n+1)} & \\
-                &= \frac{1}{n+1} + \frac{1}{n(n+1)} & \qedhere
+    \frac{1}{n} &= \frac{n+1}{n(n+1)} & \text{上下同}\times (n + 1) & \\
+                &= \frac{n}{n(n+1)} + \frac{1}{n(n+1)} && \\
+                &= \frac{1}{n+1} + \frac{1}{n(n+1)} && \qedhere
   \end{align*}
 \end{proof}
+
+我们可以立即用这个结论推出：
 
 \begin{proposition}
 每个$\frac{2}{n}$都能分解为埃及分数。
@@ -181,6 +183,18 @@
                 &= \frac{1}{n} + \frac{1}{n+1} + \frac{1}{n(n+1)} & \text{上面证明的结论} & \qedhere
   \end{align*}
 \end{proof}
+
+当$n$是奇数时，我们能得到更好的结果：$\frac{1}{n}$一定能分解为两个埃及分数：
+
+\begin{proof}
+  \begin{align*}
+    \frac{1}{n} &= \frac{1}{n+1} + \frac{1}{n(n+1)} & \text{由命题\ref{th:egyptian-fraction-split}} & \\
+    \frac{2}{n} &= \frac{2}{n+1} + \frac{2}{n(n+1)} & \text{左右同} \times 2 & \\
+                &= \frac{1}{\frac{1}{2}(n+1)} + \frac{1}{\frac{1}{2}n(n+1)} & n\text{是奇数} &\qedhere
+  \end{align*}
+\end{proof}
+
+进一步，\cref{qn:unique-decompose-r}要求证明当$n$是奇素数时，这种分解是唯一的。莱茵德纸草书中有一张表记录了从$\frac{2}{5}$到$\frac{2}{101}$的所有分解，印证了这个结论。
 
 \section{古巴比伦的分数}
 
@@ -198,6 +212,7 @@
 \begin{Exercise}[label={ex:fractions}]
 \Question{找出三个儿子按照$\frac{1}{a}$、$\frac{1}{b}$、$\frac{1}{c}$分配$n$个动物的所有可能数值和比例。要求大儿子分得的财产多于二儿子，二儿子分得的财产多于小儿子。\label{qn:three-sons}}
 \Question{如果你会编程，请用计算机枚举上面的所有解。}
+\Question{$\bigstar$若$p$为大于2的素数，证明$\frac{2}{p}$可\underdot{唯一}分解为两个埃及分数$\frac{2}{p} = \frac{1}{a} + \frac{1}{b} (a \ne b)$。提示：这个式子等价于$(2a - p)(2b - p) = p^2$。\label{qn:unique-decompose-r}}
 \end{Exercise}
 
 \begin{Answer}[ref={ex:fractions}]
