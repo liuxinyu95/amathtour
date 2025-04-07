@@ -188,7 +188,7 @@
 
 \begin{proof}
   \begin{align*}
-    \frac{1}{n} &= \frac{1}{n+1} + \frac{1}{n(n+1)} & \text{由命题\ref{th:egyptian-fraction-split}} & \\
+    \frac{1}{n} &= \frac{1}{n+1} + \frac{1}{n(n+1)} & \text{由\cref{th:egyptian-fraction-split}} & \\
     \frac{2}{n} &= \frac{2}{n+1} + \frac{2}{n(n+1)} & \text{左右同} \times 2 & \\
                 &= \frac{1}{\frac{1}{2}(n+1)} + \frac{1}{\frac{1}{2}n(n+1)} & n\text{是奇数} &\qedhere
   \end{align*}
@@ -197,7 +197,7 @@
 进一步，\cref{qn:unique-decompose-r}要求证明当$n$是奇素数时，这种分解是唯一的。莱茵德纸草书中有一张表记录了从$\frac{2}{5}$到$\frac{2}{101}$的所有分解，印证了这个结论。回到斐波那契证明的定理，考虑任何即约分数\footnote{分子、分母不能进一步约分的分数。}。如果它是假分数，可以先转化成带分数，然后只考虑分解真分数部分。所以只需要证明：
 
 \begin{theorem}[斐波那契]
-$b < a$时任何即约分数$\frac{b}{a}$可分解为埃及分数。
+任何即约真分数$\frac{b}{a}$可分解为埃及分数。
 \end{theorem}
 
 \begin{proof}
@@ -265,12 +265,12 @@ $b < a$时任何即约分数$\frac{b}{a}$可分解为埃及分数。
 \section{数系的扩展}
 
 \begin{Exercise}[label={ex:fractions}]
-\Question{找出三个儿子按照$\frac{1}{a}$、$\frac{1}{b}$、$\frac{1}{c}$分配$n$个动物的所有可能数值和比例。要求大儿子分得的财产多于二儿子，二儿子分得的财产多于小儿子。\label{qn:three-sons}}
+\Question{找出三个儿子按照$\frac{1}{a}$、$\frac{1}{b}$、$\frac{1}{c}$分配$n$个动物的所有可能数值和比例。要求大儿子分得的财产多于二儿子，二儿子分得的财产多于小儿子。恰好借来一只动物后可以分好并余下一只动物。\label{qn:three-sons}}
 \Question{如果你会编程，请用计算机枚举上面的所有解。}
 \Question{$\bigstar$若$p$为大于2的素数，证明$\frac{2}{p}$可\underdot{唯一}分解为两个埃及分数$\frac{2}{p} = \frac{1}{a} + \frac{1}{b} (a \ne b)$。提示：这个式子等价于$(2a - p)(2b - p) = p^2$。\label{qn:unique-decompose-r}}
 \Question{证明埃尔德什——斯特劳斯猜想对所有偶数$n$成立。}
 \Question{实际上我们只要证明埃尔德什——斯特劳斯猜想对于所有素数成立即可。这是为什么？}
-\Question{证明埃尔德什——斯特劳斯猜想对所有$4k+3$型的素数成立。}
+\Question{证明埃尔德什——斯特劳斯猜想对所有$4k+3$型的素数成立。提示：利用\cref{qn:unique-decompose-r}的结论。}
 \Question{$\bigstar$斐波那契的方法保证即约真分数$\frac{b}{a}$最多可以分解为$b$个埃及分数。我们可以机械化地找出“最优”分解，即用最少的埃及分数分解。若这样的分解不止一个，则分母的值越小越好。
   \begin{enumerate}[1)]
   \item 对$\frac{b}{a}$寻找不超过$b$埃及分数的分解。首先尝试用$\frac{b}{a} = \frac{1}{a+1} + \frac{d}{c}$分解。若$d = 1$则找到了一个\underdot{候选解}；否则\underdot{递归地}寻找$\frac{d}{c}$的不超过$b' = b - 1$个埃及分数的分解。
@@ -307,14 +307,26 @@ $b < a$时任何即约分数$\frac{b}{a}$可分解为埃及分数。
   \end{proof}
 }
 
-\Question{证明埃尔德什——斯特劳斯猜想对所有偶数$n$成立。}
+\Question{%证明埃尔德什——斯特劳斯猜想对所有偶数$n$成立。
+令$n = 2m$，则$\frac{4}{2m} = \frac{2}{m}$，这就是\cref{th:egyptian-fraction-split}。
+}
 
 \Question{ %实际上我们只要证明埃尔德什——斯特劳斯猜想对于所有素数成立即可。这是为什么？
 注意到：\[
 \frac{4}{mp} = \frac{1}{ma} + \frac{1}{mb} + \frac{1}{mc}
 \]
 }
-\Question{证明埃尔德什——斯特劳斯猜想对所有$4k+3$型的素数成立。}
+\Question{证明埃尔德什——斯特劳斯猜想对所有$4k+3$型的素数成立。
+  \begin{proof}
+    利用\cref{qn:unique-decompose-r}的结论
+    \begin{align*}
+      \frac{2}{p} &= \frac{1}{\frac{1}{2}(p + 1)} + \frac{1}{\frac{1}{2}p(p + 1)} && \\
+      \frac{4}{p} &= \frac{2}{\frac{1}{2}(p + 1)} + \frac{2}{\frac{1}{2}p(p + 1)} & \text{左右} \times 2 & \\
+      \frac{4}{4k + 3} &= \frac{2}{\frac{1}{2}(4k + 4)} + \frac{2}{\frac{1}{2}(4k + 3)(4k + 4)} & \text{带入} p = 4k + 3 & \\
+      \frac{4}{4k + 3} &= \frac{1}{k + 1} + \frac{1}{(4k + 3)(k + 1)} & & \qedhere
+    \end{align*}
+  \end{proof}
+}
 \Question{$\bigstar$斐波那契的方法保证即约真分数$\frac{b}{a}$最多可以分解为$b$个埃及分数。我们可以机械化地找出“最优”分解，即用最少的埃及分数分解。若这样的分解不止一个，则分母的值越小越好。}
 \end{Answer}
 
