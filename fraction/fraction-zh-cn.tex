@@ -250,8 +250,61 @@
 \frac{4}{n} = \frac{1}{a} + \frac{1}{b} + \frac{1}{c}
 \]
 总成立，其中$a > b > c$。也就是说$\frac{4}{n}$总能分解为3个两两不同的埃及分数。这个著名的数论问题称为埃尔德什——斯特劳斯猜想\footnote{Erdős - Straus}，迄今（2015）仍未解决。
+% https://mathworld.wolfram.com/Erdos-StrausConjecture.html
 
 \section{古巴比伦的分数}
+以今天的眼光来看，埃及分数不便于计算，像是在数学上走了一段弯路。它的形式意义大于它的实用意义。此后的古希腊、古罗马并未发展出独立的分数系统，而是用一些特定的词汇表示部分的量。古罗马表示部分的词汇来源于其重量单位系统。单位重量叫做as，它的$\frac{1}{12}$叫做uncia，是英制重量盎司ounce的词源。下标列出了常用的罗马分数名词：
+
+% https://mathshistory.st-andrews.ac.uk/Miller/mathsym/fractions/
+\begin{table}
+  \begin{tabular}{|c|l|l||c|l|l|}
+  \hline
+  值 & 词汇 & 意义 & 值 & 词汇 & 意义 \\
+  \hline
+  $\frac{1}{12}$ & uncia    & 十二分之一 & $\frac{9}{12}$ & dodrans    & 拿走四分之一 \\
+  \hline
+  $\frac{2}{12}$ & sextans  & 六分之一 & $\frac{10}{12}$ & dextans   & 拿走六分之一 \\
+  \hline
+  $\frac{3}{12}$ & quadrans & 四分之一 & $\frac{11}{12}$ & deunx    & 拿走一个uncia \\
+  \hline
+  $\frac{4}{12}$ & triens   & 三分之一 & $\frac{1}{24}$ & semuncia   & uncia的一半  \\
+  \hline
+  $\frac{5}{12}$ & quincunx & 五个uncia & $\frac{1}{48}$ & sicilicus &  \\
+  \hline
+  $\frac{6}{12}$ & semis    & 一半    & $\frac{1}{72}$ & scriptulum    &  \\
+  \hline
+  $\frac{7}{12}$ & septunx  & 七个uncia & $\frac{1}{144}$ & scripulum  &  $\frac{1}{12} \times \frac{1}{12}$ \\
+  \hline
+  $\frac{8}{12}$ & bes      & 三分之二 & $\frac{1}{288}$ & scrupulum    &  $\frac{1}{24} \times \frac{1}{12}$\\
+  \hline
+  \end{tabular}
+  \caption{罗马分数词汇}
+\end{table}
+
+有许多词至今仍影响着我们的语言，如表示$\frac{1}{2}$的semi，常用作“半”的词根。例如半圆semicircle、分号semicolon、半导体semiconductor等。表示$\frac{1}{4} = \frac{3}{12}$的quadrans在英语中是quarter，仍表示一刻钟、一季度。
+
+古巴比伦发展出了分数系统。我们从耶鲁大学收藏的一块泥板中找到了“物证”，如\cref{fig:babylonian-yale}所示。此图描绘了一个正方形和对角线。正方形的一边刻有楔形文字30（右上角的3个楔形），在对角线下刻有文字42, 25, 35，贯穿着这同一对角线还刻有文字1, 24, 51, 10。我们在初中数学课上学到过正方形的对角线长度是边长的$\sqrt{2}$倍。简单计算$30 \times \sqrt{2} \approx 30 \times 1.4142 = 42.426$，其中42恰好是对角线下刻的文字的第一个。古巴比伦人使用60进制，我们怀疑接下来的25, 35是小数部分。这很容易验证：
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[scale=0.8]{img/babylonian-yale}
+ \caption{耶鲁大学古巴比伦泥板，编号Y7289}
+ \label{fig:babylonian-yale}
+\end{figure}
+
+\[
+\frac{25}{60} + \frac{35}{60^2} \approx 0.4264
+\]
+
+这说明古巴比伦人正确地计算出了对角线长度。42, 25, 35代表$42.426 \approx 30 \times \sqrt{2}$。那么1, 24, 51, 10会不会也是个小数呢？我们试一试：
+
+\[
+1 + \frac{24}{60} + \frac{51}{60^2} + 、frac{10}{60^3} \approx 1.414213
+\]
+
+竟然是$\sqrt{2}$的小数表示，并且精度达到了百万分位（小数点后6位）！我们由此确知古巴比伦人发展出了60进制小数系统。但由于没有小数点，他们的数字是有歧义的。例如12, 15（形如<YY, <YYYYY）既可能是$12 \times 60 + 15 = 720$也可能是$12 + \frac{15}{60} = 12.25$。再加上0没有被统一使用，我们只能通过上下文加以猜测一个数的真正含义。
+
+我们猜想由于使用60进制，古巴比伦人可以比较精细、准确地表示$\frac{1}{60}$～$\frac{59}{60}$之间的部分量。当使用2～3位60进制小数时，已足够生产、生活、乃至天文观测所需的精度。此外，60的真因数\footnote{除1和$n$以外的因数称$n$的真因数。}足够丰富（包括2, 3, 4, 5, 6, 10, 12, 15, 20, 30），除不尽产生循环小数的机会较少（10进制只有2和5两个真因数，只有少数情况能除尽而不循环，参见第X.X节）。这些可能原因可能造成了古巴比伦人只使用60进制小数而没有发展出一般的分数系统。
 
 \section{古代中国的分数}
 \label{sec:chinese-fractions}
@@ -263,6 +316,8 @@
 \section{分数的其它形式}
 
 \section{数系的扩展}
+
+数学家小传：埃尔德什。
 
 \begin{Exercise}[label={ex:fractions}]
 \Question{找出三个儿子按照$\frac{1}{a}$、$\frac{1}{b}$、$\frac{1}{c}$分配$n$个动物的所有可能数值和比例。要求大儿子分得的财产多于二儿子，二儿子分得的财产多于小儿子。恰好借来一只动物后可以分好并余下一只动物。\label{qn:three-sons}}
