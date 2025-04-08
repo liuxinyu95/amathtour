@@ -253,10 +253,11 @@
 % https://mathworld.wolfram.com/Erdos-StrausConjecture.html
 
 \section{古巴比伦的分数}
-以今天的眼光来看，埃及分数不便于计算，像是在数学上走了一段弯路。它的形式意义大于它的实用意义。此后的古希腊、古罗马并未发展出独立的分数系统，而是用一些特定的词汇表示部分的量。古罗马表示部分的词汇来源于其重量单位系统。单位重量叫做as，它的$\frac{1}{12}$叫做uncia，是英制重量盎司ounce的词源。下标列出了常用的罗马分数名词：
+以今天的眼光来看，埃及分数不便于计算，像是在数学上走了一段弯路。它的形式意义大于它的实用意义。此后的古希腊、古罗马并未发展出独立的分数系统，而是用一些特定的词汇表示部分的量。古罗马表示部分的词汇来源于其重量单位系统。单位重量叫做as，它的$\frac{1}{12}$叫做uncia，是英制重量盎司ounce的词源。\cref{tab:roman-fractions}列出了常用的罗马分数名词：
 
 % https://mathshistory.st-andrews.ac.uk/Miller/mathsym/fractions/
 \begin{table}
+  \centering
   \begin{tabular}{|c|l|l||c|l|l|}
   \hline
   值 & 词汇 & 意义 & 值 & 词汇 & 意义 \\
@@ -279,6 +280,7 @@
   \hline
   \end{tabular}
   \caption{罗马分数词汇}
+  \label{tab:roman-fractions}
 \end{table}
 
 有许多词至今仍影响着我们的语言，如表示$\frac{1}{2}$的semi，常用作“半”的词根。例如半圆semicircle、分号semicolon、半导体semiconductor等。表示$\frac{1}{4} = \frac{3}{12}$的quadrans在英语中是quarter，仍表示一刻钟、一季度。
@@ -299,7 +301,7 @@
 这说明古巴比伦人正确地计算出了对角线长度。42, 25, 35代表$42.426 \approx 30 \times \sqrt{2}$。那么1, 24, 51, 10会不会也是个小数呢？我们试一试：
 
 \[
-1 + \frac{24}{60} + \frac{51}{60^2} + 、frac{10}{60^3} \approx 1.414213
+1 + \frac{24}{60} + \frac{51}{60^2} + \frac{10}{60^3} \approx 1.414213
 \]
 
 竟然是$\sqrt{2}$的小数表示，并且精度达到了百万分位（小数点后6位）！我们由此确知古巴比伦人发展出了60进制小数系统。但由于没有小数点，他们的数字是有歧义的。例如12, 15（形如<YY, <YYYYY）既可能是$12 \times 60 + 15 = 720$也可能是$12 + \frac{15}{60} = 12.25$。再加上0没有被统一使用，我们只能通过上下文加以猜测一个数的真正含义。
