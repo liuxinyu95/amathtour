@@ -490,10 +490,10 @@ s(1 + \frac{1}{10} + \frac{1}{100} + \cdots) = 100\times(1 + 0.1 + 0.01 + \cdots
 
 \subsection{无限循环小数}
 
-为了把即约分数$\frac{b}{a}$转化为小数，我们用$b$除以$a$，有的除得尽，如$\frac{1}{2} = 0.5$、$\frac{1}{8} = 0.125$、$\frac{1}{25} = 0.4$，有的除不尽产生循环，如$\frac{1}{3} = 0.\dot{3} = 0.333\cdots$、$\frac{1}{7} = 0.\dot{1}\dot{4}\dot{2}\dot{8}\dot{5}\dot{7}$。什么时候除得尽？什么时候除不尽？这好像是一个运气问题。实际上我们的运气非常“差”，通常是除不尽的。下面的定理揭示了我们要有多幸运才能除尽。
+为了把即约分数$\frac{b}{a}$转化为小数，我们用$b$除以$a$。有的能除尽，如$\frac{1}{2} = 0.5$、$\frac{1}{8} = 0.125$、$\frac{1}{25} = 0.4$，有的除不尽产生循环，如$\frac{1}{3} = 0.\dot{3} = 0.333\cdots$、$\frac{1}{7} = 0.\dot{1}\dot{4}\dot{2}\dot{8}\dot{5}\dot{7}$。什么时候能除尽？什么时候除不尽？这好像是一个运气问题。实际上我们的运气非常“差”，通常是除不尽的。下面的定理揭示了我们要有多幸运才能除尽。
 
 \begin{theorem}
-  当且仅当分数$\frac{b}{a} = \frac{b}{2^{\alpha}3^{\beta}}$时能化成有限小数，其中$\alpha$、$\beta$是非负整数。
+  当且仅当分数$\dfrac{b}{a} = \dfrac{b}{2^{\alpha}3^{\beta}}$时能化成有限小数，其中$\alpha$、$\beta$是非负整数。
 \end{theorem}
 
 \begin{proof}
@@ -508,7 +508,7 @@ s(1 + \frac{1}{10} + \frac{1}{100} + \cdots) = 100\times(1 + 0.1 + 0.01 + \cdots
 反过来，$n$位有限小数$0.a_1 a_2 \cdots a_n$展开成分数和为：
 
 \begin{align*}
-\frac{a_1}{10} + \frac{a_2}{10^2} + \cdots + \frac{a_n}{16^n} &= \frac{a_1 10^{n-1} + a_2 10^{n-2} + \cdots + a_n}{10^n} & \text{通分} \\
+\frac{a_1}{10} + \frac{a_2}{10^2} + \cdots + \frac{a_n}{10^n} &= \frac{a_1 10^{n-1} + a_2 10^{n-2} + \cdots + a_n}{10^n} & \text{通分} \\
   &= \frac{B}{10^n} & \text{记分子为}B \\
   &= \frac{B}{2^n 5^n} = \frac{b}{a} & \text{约分}
 \end{align*}
@@ -518,10 +518,10 @@ s(1 + \frac{1}{10} + \frac{1}{100} + \cdots) = 100\times(1 + 0.1 + 0.01 + \cdots
 
 有了这个结论，当我们看到一个分数的分母含有2和5以外的其它因子时，比如3、7、11……则它一定不能化成有限小数。这个定理的证明还可以扩展到$b$进制小数。如果分母含有任何不能整除$b$的因子，则除不尽，不能转换成$b$进制有限小数。所以$\frac{5}{12} = 0.41666\cdots$尽管不能化成10进制有限小数，但可以化成古巴比伦60进制小数0, 25。而$\frac{5}{14}$却不能化成60进制有限小数。特别地，形如$\frac{b}{2^n}$以外的任何即约分数都不能化成二进制有限小数，这就造成了电子计算机内部的小数计算的误差。
 
-除此之外的分数就只能化成无限循环小数了（下一章我们将看到分数不可能产生无限\underdot{不}循环小数）。但我们发现有的有一位循环节，如$\frac{1}{3} = 0.\dot{3}$，有的有两位，如$\frac{5}{11} = 0.\dot{4}{5}$，有的更长，如$\frac{1}{7} = 0.\dot{1}\dot{4}\dot{2}\dot{8}\dot{5}\dot{7}$，有的一开始不循环，后面才开始循环，如$\frac{5}{12} = 0.41\dot{6}$，这里面有什么规律么？
+除此之外的分数就只能化成无限循环小数了（下一章我们将看到分数不可能产生无限\underdot{不}循环小数）。但我们发现有的有一位循环节，如$\frac{1}{3} = 0.\dot{3}$，有的有两位，如$\frac{5}{11} = 0.\dot{4}\dot{5}$，有的更长，如$\frac{1}{7} = 0.\dot{1}\dot{4}\dot{2}\dot{8}\dot{5}\dot{7}$，有的一开始不循环，后面才开始循环，如$\frac{5}{12} = 0.41\dot{6}$，这里面有什么规律么？
 
 \begin{proposition}
-$\frac{a}{9}$的小数形式是$0.\dot{a} = 0.aaa\cdots$
+$\dfrac{a}{9}$的小数形式是$0.\dot{a} = 0.aaa\cdots$
 \end{proposition}
 
 \begin{proof}
@@ -537,10 +537,23 @@ $\frac{a}{9}$的小数形式是$0.\dot{a} = 0.aaa\cdots$
 所以$\frac{1}{3} = \frac{3}{9} = 0.\dot{3} = 0.333\cdots$进一步：
 
 \begin{proposition}
-无限循环小数$0.\dot{a_1} \dot{a_2} \cdots \dot{a_n}$的分数形式是$\frac{a_1 a_2 \cdots a_n}{99 \cdots 9} = frac{a_1 a_2 \cdots a_n}{10^{n+1} - 1}$。
+无限循环小数$0.\dot{a_1} \dot{a_2} \cdots \dot{a_n}$的分数形式是$\dfrac{a_1 a_2 \cdots a_n}{99 \cdots 9} = \dfrac{a_1 a_2 \cdots a_n}{10^{n+1} - 1}$。
 \end{proposition}
 
-我们把此命题的证明留作练习。
+我们把此命题的证明留作\cref{qn:cyclic-demimal}。可以用$\frac{1}{7}$验证一下：
+
+\begin{center}
+\opmul[displayshiftintermediary=all,
+       voperator=bottom,
+       voperation=top]{142857}{7}
+\end{center}
+
+故：
+\[
+0.\dot{1}\dot{4}\dot{2}\dot{8}\dot{5}\dot{7} = \frac{142857}{999999} = \frac{142857}{142857 \times 7} = \frac{1}{7}
+\]
+
+这个命题使得我们可以轻松看出$\frac{2}{11}$、$\frac{4}{33}$等分数的循环小数表示，例如$\frac{2}{11} = \frac{2 \times 9}{11 \times 9} = \frac{18}{99} = 0.\dot{1}\dot{8}$。通过这个命题还可以发现循环节长度的规律。如果$\frac{a_1 a_2 \cdots a_n}{99 \cdots 9}$约分后是$\frac{b}{a}$，那么$ak = 999 \cdots 9$。也就是说$ak + 1 = 100 \cdots 0$。因此如果$100\cdots 0$（$n$个0）除以$a$的余数是1，那么$\frac{b}{a}$的循环节的长度\underdot{最长}为$n$。循环节的长度仅和分母有关\footnote{数论中的费马小定理断言，素数$p$除$10^{p-1}$的余数等于1。例如1000000除以7余1，$\frac{b}{7}$的循环节长6。尽管$10^{11-1} = 10000000000$除以11余1，但$\frac{2}{11} = 0.\dot{1}\dot{8}$的循环节长2。我们需要更多的数论知识，例如欧拉定理，才能唯一确定循环节的长度。这超出了本书的范围。}。
 
 \section{数系的扩展}
 
@@ -614,7 +627,7 @@ $\frac{a}{9}$的小数形式是$0.\dot{a} = 0.aaa\cdots$
 }
 \Question{$\bigstar$斐波那契的方法保证即约真分数$\frac{b}{a}$最多可以分解为$b$个埃及分数。我们可以机械化地找出“最优”分解，即用最少的埃及分数分解。若这样的分解不止一个，则分母的值越小越好。}
 \Question{$\bigstar$证明任何数值$x$的小数表示是唯一的，其中$0 < x < 1$。}
-\Question{无限循环小数$0.\dot{a_1} \dot{a_2} \cdots \dot{a_n}$的分数形式是$\frac{a_1 a_2 \cdots a_n}{99 \cdots 9} = frac{a_1 a_2 \cdots a_n}{10^{n+1} - 1}$。}
+\Question{无限循环小数$0.\dot{a_1} \dot{a_2} \cdots \dot{a_n}$的分数形式是$\frac{a_1 a_2 \cdots a_n}{99 \cdots 9} = frac{a_1 a_2 \cdots a_n}{10^{n+1} - 1}$。\label{qn:cyclic-demimal}}
 \end{Answer}
 
 \ifx\wholebook\relax \else
