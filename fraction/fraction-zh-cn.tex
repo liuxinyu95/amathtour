@@ -492,6 +492,56 @@ s(1 + \frac{1}{10} + \frac{1}{100} + \cdots) = 100\times(1 + 0.1 + 0.01 + \cdots
 
 为了把即约分数$\frac{b}{a}$转化为小数，我们用$b$除以$a$，有的除得尽，如$\frac{1}{2} = 0.5$、$\frac{1}{8} = 0.125$、$\frac{1}{25} = 0.4$，有的除不尽产生循环，如$\frac{1}{3} = 0.\dot{3} = 0.333\cdots$、$\frac{1}{7} = 0.\dot{1}\dot{4}\dot{2}\dot{8}\dot{5}\dot{7}$。什么时候除得尽？什么时候除不尽？这好像是一个运气问题。实际上我们的运气非常“差”，通常是除不尽的。下面的定理揭示了我们要有多幸运才能除尽。
 
+\begin{theorem}
+  当且仅当分数$\frac{b}{a} = \frac{b}{2^{\alpha}3^{\beta}}$时能化成有限小数，其中$\alpha$、$\beta$是非负整数。
+\end{theorem}
+
+\begin{proof}
+令$n = \max(\alpha, \beta)$，即$\alpha$、$\beta$中的较大者。故$n - \alpha \geq 0$，$n - \beta \geq 0$。
+
+\[
+10^n \frac{b}{a} = \frac{2^n 5^n b}{2^{\alpha} 5^{\beta}} = 2^{n - \alpha} 5 ^{n - \beta} b
+\]
+
+一定是正数。所以$\frac{b}{a}$的小数部分有$n$位，即$0.a_1 a_2 \cdots a_n$是有限小数。
+
+反过来，$n$位有限小数$0.a_1 a_2 \cdots a_n$展开成分数和为：
+
+\begin{align*}
+\frac{a_1}{10} + \frac{a_2}{10^2} + \cdots + \frac{a_n}{16^n} &= \frac{a_1 10^{n-1} + a_2 10^{n-2} + \cdots + a_n}{10^n} & \text{通分} \\
+  &= \frac{B}{10^n} & \text{记分子为}B \\
+  &= \frac{B}{2^n 5^n} = \frac{b}{a} & \text{约分}
+\end{align*}
+
+因为分母$10^n = 2^n 5^n$只有因子2和5的幂，所以约分后$a$也只有2和5的幂。
+\end{proof}
+
+有了这个结论，当我们看到一个分数的分母含有2和5以外的其它因子时，比如3、7、11……则它一定不能化成有限小数。这个定理的证明还可以扩展到$b$进制小数。如果分母含有任何不能整除$b$的因子，则除不尽，不能转换成$b$进制有限小数。所以$\frac{5}{12} = 0.41666\cdots$尽管不能化成10进制有限小数，但可以化成古巴比伦60进制小数0, 25。而$\frac{5}{14}$却不能化成60进制有限小数。特别地，形如$\frac{b}{2^n}$以外的任何即约分数都不能化成二进制有限小数，这就造成了电子计算机内部的小数计算的误差。
+
+除此之外的分数就只能化成无限循环小数了（下一章我们将看到分数不可能产生无限\underdot{不}循环小数）。但我们发现有的有一位循环节，如$\frac{1}{3} = 0.\dot{3}$，有的有两位，如$\frac{5}{11} = 0.\dot{4}{5}$，有的更长，如$\frac{1}{7} = 0.\dot{1}\dot{4}\dot{2}\dot{8}\dot{5}\dot{7}$，有的一开始不循环，后面才开始循环，如$\frac{5}{12} = 0.41\dot{6}$，这里面有什么规律么？
+
+\begin{proposition}
+$\frac{a}{9}$的小数形式是$0.\dot{a} = 0.aaa\cdots$
+\end{proposition}
+
+\begin{proof}
+  \begin{align*}
+    \text{令}x &= 0.\dot{a} = 0.aaa\cdots && \\
+           10x &= a.aaa\cdots && \\
+       10x - x &= a.aaa\cdots - 0.aaa = a && \\
+            9x &= a && \\
+             x &= \frac{a}{9} && \qedhere
+  \end{align*}
+\end{proof}
+
+所以$\frac{1}{3} = \frac{3}{9} = 0.\dot{3} = 0.333\cdots$进一步：
+
+\begin{proposition}
+无限循环小数$0.\dot{a_1} \dot{a_2} \cdots \dot{a_n}$的分数形式是$\frac{a_1 a_2 \cdots a_n}{99 \cdots 9} = frac{a_1 a_2 \cdots a_n}{10^{n+1} - 1}$。
+\end{proposition}
+
+我们把此命题的证明留作练习。
+
 \section{数系的扩展}
 
 数学家小传：埃尔德什。
@@ -512,6 +562,8 @@ s(1 + \frac{1}{10} + \frac{1}{100} + \cdots) = 100\times(1 + 0.1 + 0.01 + \cdots
   \end{enumerate}
   如果你会编程，请实现此解法。
 }
+\Question{$\bigstar$证明任何数值$x$的小数表示是唯一的，其中$0 < x < 1$。}
+\Question{无限循环小数$0.\dot{a_1} \dot{a_2} \cdots \dot{a_n}$的分数形式是$\frac{a_1 a_2 \cdots a_n}{99 \cdots 9} = frac{a_1 a_2 \cdots a_n}{10^{n+1} - 1}$。}
 \end{Exercise}
 
 \begin{Answer}[ref={ex:fractions}]
@@ -561,6 +613,8 @@ s(1 + \frac{1}{10} + \frac{1}{100} + \cdots) = 100\times(1 + 0.1 + 0.01 + \cdots
   \end{proof}
 }
 \Question{$\bigstar$斐波那契的方法保证即约真分数$\frac{b}{a}$最多可以分解为$b$个埃及分数。我们可以机械化地找出“最优”分解，即用最少的埃及分数分解。若这样的分解不止一个，则分母的值越小越好。}
+\Question{$\bigstar$证明任何数值$x$的小数表示是唯一的，其中$0 < x < 1$。}
+\Question{无限循环小数$0.\dot{a_1} \dot{a_2} \cdots \dot{a_n}$的分数形式是$\frac{a_1 a_2 \cdots a_n}{99 \cdots 9} = frac{a_1 a_2 \cdots a_n}{10^{n+1} - 1}$。}
 \end{Answer}
 
 \ifx\wholebook\relax \else
