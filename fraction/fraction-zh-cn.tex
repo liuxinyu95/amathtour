@@ -536,11 +536,11 @@ $\dfrac{a}{9}$的小数形式是$0.\dot{a} = 0.aaa\cdots$
 
 所以$\frac{1}{3} = \frac{3}{9} = 0.\dot{3} = 0.333\cdots$进一步：
 
-\begin{proposition}
+\begin{proposition} \label{th:cyclic-decimal}
 无限循环小数$0.\dot{a_1} \dot{a_2} \cdots \dot{a_n}$的分数形式是$\dfrac{a_1 a_2 \cdots a_n}{99 \cdots 9} = \dfrac{a_1 a_2 \cdots a_n}{10^{n+1} - 1}$。
 \end{proposition}
 
-我们把此命题的证明留作\cref{qn:cyclic-demimal}。可以用$\frac{1}{7}$验证一下：
+我们把此命题的证明留作\cref{qn:cyclic-decimal}。可以用$\frac{1}{7}$验证一下：
 
 \begin{center}
 \opmul[displayshiftintermediary=all,
@@ -553,9 +553,38 @@ $\dfrac{a}{9}$的小数形式是$0.\dot{a} = 0.aaa\cdots$
 0.\dot{1}\dot{4}\dot{2}\dot{8}\dot{5}\dot{7} = \frac{142857}{999999} = \frac{142857}{142857 \times 7} = \frac{1}{7}
 \]
 
-这个命题使得我们可以轻松看出$\frac{2}{11}$、$\frac{4}{33}$等分数的循环小数表示，例如$\frac{2}{11} = \frac{2 \times 9}{11 \times 9} = \frac{18}{99} = 0.\dot{1}\dot{8}$。通过这个命题还可以发现循环节长度的规律。如果$\frac{a_1 a_2 \cdots a_n}{99 \cdots 9}$约分后是$\frac{b}{a}$，那么$ak = 999 \cdots 9$。也就是说$ak + 1 = 100 \cdots 0$。因此如果$100\cdots 0$（$n$个0）除以$a$的余数是1，那么$\frac{b}{a}$的循环节的长度\underdot{最长}为$n$。循环节的长度仅和分母有关\footnote{数论中的费马小定理断言，素数$p$除$10^{p-1}$的余数等于1。例如1000000除以7余1，$\frac{b}{7}$的循环节长6。尽管$10^{11-1} = 10000000000$除以11余1，但$\frac{2}{11} = 0.\dot{1}\dot{8}$的循环节长2。我们需要更多的数论知识，例如欧拉定理，才能唯一确定循环节的长度。这超出了本书的范围。}。
+这个命题使得我们可以轻松看出$\frac{2}{11}$、$\frac{4}{33}$等分数的循环小数表示，例如$\frac{2}{11} = \frac{2 \times 9}{11 \times 9} = \frac{18}{99} = 0.\dot{1}\dot{8}$。通过这个命题还可以发现循环节长度的规律。如果$\frac{a_1 a_2 \cdots a_n}{99 \cdots 9}$约分后是$\frac{b}{a}$，那么$ak = 999 \cdots 9$。也就是说$ak + 1 = 100 \cdots 0$。因此如果$100\cdots 0$（$n$个0）除以$a$的余数是1，那么$\frac{b}{a}$的循环节的长度\underdot{最长}为$n$。循环节的长度仅和分母有关\footnote{数论中的费马小定理断言，素数$p$除$10^{p-1}$的余数等于1。例如1000000除以7余1，$\frac{b}{7}$的循环节长6。尽管$10^{11-1} = 10000000000$除以11余1，但$\frac{2}{11} = 0.\dot{1}\dot{8}$的循环节长2。我们需要更多的数论知识，例如欧拉定理，才能唯一确定循环节的长度。这超出了本书的范围。参见《哈代数论》IX}。我们还需要最后一个定理来回答什么时候开始循环的问题。
+
+\begin{theorem}
+即约真分数$\dfrac{b}{2^{\alpha} 5^{\beta} q}$，其中$q$不含任何2、5为因子。令$n = \max(\alpha, \beta)$，则其小数形式从$n$位后开始循环，循环节的长度是$m$，并且$10^{m+1}$除以$q$余1。
+\end{theorem}
+
+\begin{proof}
+我们组合之前的证明过程。首先证明前$n$位不循环：
+
+\[
+10^n \frac{b}{2^{\alpha} 5^{\beta} q} = \frac{2^n 5^n b}{2^{\alpha} 5^{\beta} q} = \frac{2^{n - \alpha} 5^{n - \beta} b}{q} = X + \frac{b'}{q}
+\]
+这相当于扩大$10^n$后化带分数，其中$X$是整数部分，$0 \leq X < 10^n$。接下来由于$10^{m+1}$除以$q$余1，所以它减1后能被$q$整除：
+
+\begin{align*}
+  (10^{m+1} - 1) \frac{b'}{q} &= k b' = a_1 a_2 \cdots a_m & \text{是整数}\\
+                \frac{b'}{q} &= \frac{a_1 a_2 \cdots a_m}{99\cdots9} & m\text{个}9
+\end{align*}
+由命题\ref{th:cyclic-decimal}知它是无限循环小数。
+\end{proof}
+
+例如$\frac{5}{12} = 0.41\dot{6}$，其中$12 = 2^2 \times 5^0 \times 3$，指数2和0的最大值是2，所以2位后开始循环；$q = 3$，循环节长1。
 
 \section{数系的扩展}
+在某种意义上，分数是人类在历史上第一次正式扩展我们的数系。分数看起来和0、1、2、3……大相径庭。它有两个部分：分子和分母；它抽象了多种不同的东西：小数、百分数、除法、比例$a:b$，它们本质上都是分数。尤其是后两种，它们展示出0、1、2、3……不具备的一个特性：$\frac{1}{2} = \frac{2}{4} = \frac{50}{100} = 3 \div 6 = 7:14 = \cdots$这说明一个值的分数表示是\underdot{不唯一}的。这反映了不同的除法式子可以得出相等的值（或比例）。如果要把分数加入“数”的大家庭，我们就必须解决一系列问题：
+
+\begin{enumerate}[1)]
+\item 那些分数（比例）是等价的？
+\item 怎样比较分数间的大小？怎样比较分数与其它数的大小？分数在数轴上的位置是什么？
+\item 分数间的四则运算是怎样的？分数与其它数的四则运算是怎样的？
+\item 五大运算定律对分数适用么？加法、乘法的单位元对分数的意义一样么？
+\end{enumerate}
 
 数学家小传：埃尔德什。
 
@@ -576,7 +605,7 @@ $\dfrac{a}{9}$的小数形式是$0.\dot{a} = 0.aaa\cdots$
   如果你会编程，请实现此解法。
 }
 \Question{$\bigstar$证明任何数值$x$的小数表示是唯一的，其中$0 < x < 1$。}
-\Question{无限循环小数$0.\dot{a_1} \dot{a_2} \cdots \dot{a_n}$的分数形式是$\frac{a_1 a_2 \cdots a_n}{99 \cdots 9} = frac{a_1 a_2 \cdots a_n}{10^{n+1} - 1}$。}
+\Question{无限循环小数$0.\dot{a_1} \dot{a_2} \cdots \dot{a_n}$的分数形式是$\frac{a_1 a_2 \cdots a_n}{99 \cdots 9} = \frac{a_1 a_2 \cdots a_n}{10^{n+1} - 1}$。}
 \end{Exercise}
 
 \begin{Answer}[ref={ex:fractions}]
@@ -627,7 +656,7 @@ $\dfrac{a}{9}$的小数形式是$0.\dot{a} = 0.aaa\cdots$
 }
 \Question{$\bigstar$斐波那契的方法保证即约真分数$\frac{b}{a}$最多可以分解为$b$个埃及分数。我们可以机械化地找出“最优”分解，即用最少的埃及分数分解。若这样的分解不止一个，则分母的值越小越好。}
 \Question{$\bigstar$证明任何数值$x$的小数表示是唯一的，其中$0 < x < 1$。}
-\Question{无限循环小数$0.\dot{a_1} \dot{a_2} \cdots \dot{a_n}$的分数形式是$\frac{a_1 a_2 \cdots a_n}{99 \cdots 9} = frac{a_1 a_2 \cdots a_n}{10^{n+1} - 1}$。\label{qn:cyclic-demimal}}
+\Question{无限循环小数$0.\dot{a_1} \dot{a_2} \cdots \dot{a_n}$的分数形式是$\frac{a_1 a_2 \cdots a_n}{99 \cdots 9} = \frac{a_1 a_2 \cdots a_n}{10^{n+1} - 1}$。\label{qn:cyclic-decimal}}
 \end{Answer}
 
 \ifx\wholebook\relax \else
