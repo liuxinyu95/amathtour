@@ -680,6 +680,32 @@ $\dfrac{a}{9}$的小数形式是$0.\dot{a} = 0.aaa\cdots$
 \frac{b}{a} \div \frac{d}{c} = \dfrac{\quad\dfrac{b}{a}\quad}{\dfrac{d}{c}} &= \frac{bc}{ad} & \text{上下同} \times ac
 \end{align*}
 
+同样，任何整数$n$可以转化为$\frac{n}{1}$，从而将整数与分数的四则运算转化为分数间的四则运算。
+
+\vspace{3mm}
+对于问题4，我们发现将分数引入数系后，任何数都可表示为分数：整数$n$包括0，表示为$\frac{n}{1}$；分数、有限小数、无限循环小数表示为$\frac{b}{a}, a \ne 0$。这个数系称做\underdot{有理数}，记作$\mathbb{Q}$。我们将在第4章解释这个名字的含义。在整数$\mathbb{Z}$中，每个数$x$都有相反数（加法的逆元）$-x$，但只有$\pm 1$有倒数（乘法的逆元）。在有理数$\mathbb{Q}$中，每个不等于0的数$x$都有倒数（乘法的逆元）$\frac{1}{x}$。自然数$\mathbb{N}$对加法减运算不是封闭的，例如$1 - 3 = -2 \notin \mathbb{N}$。但加减运算在整数$\mathbb{Z}$内是封闭的，任何两个整数$m, n$，总有$m \pm n \in \mathbb{Z}$。整数$\mathbb{Z}$对四则运算不是封闭的，因为$1 \div 2 = \frac{1}{2} = 0.5 \notin \mathbb{Z}$。但四则运算在有理数$\mathbb{Q}$内是封闭的，任何两个有理数$p, q$，总有$p \pm q, pq, \frac{p}{q} (q \ne 0)$都在$\mathbb{Q}$内。
+
+可以验证五大运算定律对于分数都成立，我们这里验证加法的结合率、乘法对加法的分配律，其余三个留作\cref{qn:arithmatic-law-fraction}。
+\begin{proof}
+分数加法的结合律：
+\begin{align*}
+(\frac{b}{a} + \frac{d}{c}) + \frac{f}{e} & = \frac{bc + ad}{ac} + \frac{f}{e} = \frac{bce + ade + acf}{ace} && \\
+  & = \frac{bce + (ade + acf)}{ace} & \text{对分子和用结合律} & \\
+  & = \frac{b\cancel{ce}}{a\cancel{ce}} + \frac{ade + acf}{ace} && \\
+  & = \frac{b}{a} + (\frac{\cancel{a}d\cancel{e}}{\cancel{a}c\cancel{e}} + \frac{\cancel{ac}f}{\cancel{ac}e}) && \\
+  & = \frac{b}{a} + (\frac{d}{c} + \frac{f}{e}) && \qedhere
+\end{align*}
+\end{proof}
+
+\begin{proof}
+我们只证明左侧的分数分配律，右侧的证明可以利用分数乘法交换律。
+\begin{align*}
+  \frac{b}{a}(\frac{d}{c} + \frac{f}{e}) &= \frac{b}{a}\frac{de + cf}{ce} && \\
+    &= \frac{b(de + cf)}{ace} = \frac{bde + bcf}{ace} & \text{分子用分配律} & \\
+    &= \frac{bd\cancel{e}}{ac\cancel{e}} + \frac{b\cancel{c}f}{a\cancel{c}e} && \\
+    &= \frac{b}{a}\frac{d}{c} + \frac{b}{a}\frac{f}{e} && \qedhere
+\end{align*}
+\end{proof}
 
 数学家小传：埃尔德什。
 
@@ -702,6 +728,7 @@ $\dfrac{a}{9}$的小数形式是$0.\dot{a} = 0.aaa\cdots$
 \Question{$\bigstar$证明任何数值$x$的小数表示是唯一的，其中$0 < x < 1$。}
 \Question{无限循环小数$0.\dot{a_1} \dot{a_2} \cdots \dot{a_n}$的分数形式是$\frac{a_1 a_2 \cdots a_n}{99 \cdots 9} = \frac{a_1 a_2 \cdots a_n}{10^{n+1} - 1}$。}
 \Question{利用分数和引理\ref{th:cycle-of-9}解决芝诺悖论中的二分悖论。提示：考虑二进制分数和。\label{qn:dichotomy-paradox}}
+\Question{验证分数的加法交换律、乘法交换律，乘法结合率。\label{qn:arithmatic-law-fraction}}
 \end{Exercise}
 
 \begin{Answer}[ref={ex:fractions}]
@@ -754,6 +781,7 @@ $\dfrac{a}{9}$的小数形式是$0.\dot{a} = 0.aaa\cdots$
 \Question{$\bigstar$证明任何数值$x$的小数表示是唯一的，其中$0 < x < 1$。}
 \Question{无限循环小数$0.\dot{a_1} \dot{a_2} \cdots \dot{a_n}$的分数形式是$\frac{a_1 a_2 \cdots a_n}{99 \cdots 9} = \frac{a_1 a_2 \cdots a_n}{10^{n+1} - 1}$。\label{qn:cyclic-decimal}}
 \Question{利用分数和解决芝诺悖论中的二分悖论。}
+\Question{验证分数的加法交换律、乘法交换律，乘法结合率。}
 \end{Answer}
 
 \ifx\wholebook\relax \else
