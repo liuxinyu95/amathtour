@@ -1,4 +1,4 @@
-<mxfile host="Electron" modified="2025-04-06T02:21:46.494Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.2 Chrome/114.0.5735.289 Electron/25.9.4 Safari/537.36" etag="sjakLWs6rnLfiMtdzKrr" version="22.1.2" type="device" pages="5">
+<mxfile host="Electron" modified="2025-04-15T03:22:58.600Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.2 Chrome/114.0.5735.289 Electron/25.9.4 Safari/537.36" etag="ZbUIx-HAX_9SCfzXr1c_" version="22.1.2" type="device" pages="6">
   <diagram name="cups" id="wT2eMNuc1yAczIeZKwd1">
     <mxGraphModel dx="986" dy="692" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="1" shadow="0">
       <root>
@@ -581,6 +581,29 @@
         </mxCell>
         <mxCell id="P8egY3gHK0b55qleJgKE-54" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="oOOpWYPAGhYSJhuf2tdr-19" target="P8egY3gHK0b55qleJgKE-29">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="IZvGXJTHGRD0AdNkr1HI" name="cross mul">
+    <mxGraphModel dx="986" dy="692" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="1" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="WPy1nK1aifE4aBrqPjgY-4" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;startArrow=classic;startFill=1;strokeWidth=3;" edge="1" parent="1" source="WPy1nK1aifE4aBrqPjgY-1" target="WPy1nK1aifE4aBrqPjgY-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WPy1nK1aifE4aBrqPjgY-1" value="&lt;font style=&quot;font-size: 60px;&quot;&gt;`\frac{b}{a}`&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="190" y="260" width="70" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="WPy1nK1aifE4aBrqPjgY-5" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;startArrow=classic;startFill=1;strokeWidth=3;" edge="1" parent="1" source="WPy1nK1aifE4aBrqPjgY-2" target="WPy1nK1aifE4aBrqPjgY-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WPy1nK1aifE4aBrqPjgY-2" value="&lt;font style=&quot;font-size: 60px;&quot;&gt;`\frac{d}{c}`&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="370" y="260" width="70" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="WPy1nK1aifE4aBrqPjgY-3" value="&lt;font style=&quot;font-size: 60px;&quot;&gt;=&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="280" y="260" width="70" height="120" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
