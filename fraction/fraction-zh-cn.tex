@@ -760,12 +760,16 @@ $\dfrac{a}{9}$的小数形式是$0.\dot{a} = 0.aaa\cdots$
 显然$\alpha = \sqrt[12]{2}$，但它不是一个分数！让我们沿着数的旅程继续追寻天籁之音吧。
 
 \begin{Exercise}[label={ex:fractions}]
-\Question{找出三个儿子按照$\frac{1}{a}$、$\frac{1}{b}$、$\frac{1}{c}$分配$n$个动物的所有可能数值和比例。要求大儿子分得的财产多于二儿子，二儿子分得的财产多于小儿子。恰好借来一只动物后可以分好并余下一只动物。\label{qn:three-sons}}
-\Question{如果你会编程，请用计算机枚举上面的所有解。}
 \Question{$\bigstar$若$p$为大于2的素数，证明$\frac{2}{p}$可\underdot{唯一}分解为两个埃及分数$\frac{2}{p} = \frac{1}{a} + \frac{1}{b} (a \ne b)$。提示：这个式子等价于$(2a - p)(2b - p) = p^2$。\label{qn:unique-decompose-r}}
+
 \Question{证明埃尔德什——斯特劳斯猜想对所有偶数$n$成立。}
+
 \Question{实际上我们只要证明埃尔德什——斯特劳斯猜想对于所有素数成立即可。这是为什么？}
+
 \Question{证明埃尔德什——斯特劳斯猜想对所有$4k+3$型的素数成立。提示：利用\cref{qn:unique-decompose-r}的结论。}
+
+\Question{$\bigstar$找出三个儿子按照$\frac{1}{a}$、$\frac{1}{b}$、$\frac{1}{c}$分配$n$个动物的所有可能数值和比例。要求大儿子分得的财产多于二儿子，二儿子分得的财产多于小儿子。恰好借来一只动物后可以分好并余下一只动物。如果你会编程，可以用计算机枚举出所有解。但此题要求手工找出所有可能的$n, a, b, c$。提示：本题本质是求方程$\frac{n}{n+1} = \frac{1}{a} + \frac{1}{b} + \frac{1}{c}, a < b < c$的所有正整数解。三儿子至少分得一只动物，那么$n$的最小值是多少？你能据此推出$a$不可能超过3，因而只能是2么？\label{qn:three-sons}}
+
 \Question{$\bigstar$斐波那契的方法保证即约真分数$\frac{b}{a}$最多可以分解为$b$个埃及分数。我们可以机械化地找出“最优”分解，即用最少的埃及分数分解。若这样的分解不止一个，则分母的值越小越好。
   \begin{enumerate}[1)]
   \item 对$\frac{b}{a}$寻找不超过$b$埃及分数的分解。首先尝试用$\frac{b}{a} = \frac{1}{a+1} + \frac{d}{c}$分解。若$d = 1$则找到了一个\underdot{候选解}；否则\underdot{递归地}寻找$\frac{d}{c}$的不超过$b' = b - 1$个埃及分数的分解。
@@ -775,15 +779,17 @@ $\dfrac{a}{9}$的小数形式是$0.\dot{a} = 0.aaa\cdots$
   \end{enumerate}
   如果你会编程，请实现此解法。
 }
+
 \Question{$\bigstar$证明任何数值$x$的小数表示是唯一的，其中$0 < x < 1$。}
+
 \Question{无限循环小数$0.\dot{a_1} \dot{a_2} \cdots \dot{a_n}$的分数形式是$\frac{a_1 a_2 \cdots a_n}{99 \cdots 9} = \frac{a_1 a_2 \cdots a_n}{10^{n+1} - 1}$。}
+
 \Question{利用分数和引理\ref{th:cycle-of-9}解决芝诺悖论中的二分悖论。提示：考虑二进制分数和。\label{qn:dichotomy-paradox}}
+
 \Question{验证分数的加法交换律、乘法交换律，乘法结合率。\label{qn:arithmatic-law-fraction}}
 \end{Exercise}
 
 \begin{Answer}[ref={ex:fractions}]
-\Question{找出三个儿子按照$\frac{1}{a}$、$\frac{1}{b}$、$\frac{1}{c}$分配$n$个动物的所有可能数值和比例。要求大儿子分得的财产多于二儿子，二儿子分得的财产多于小儿子。}
-\Question{如果你会编程，请用计算机枚举上面的所有解。}
 \Question{若$p$为大于2的素数，证明$\frac{2}{p}$可唯一分解为两个埃及分数$\frac{2}{p} = \frac{1}{a} + \frac{1}{b} (a \ne b)$。
 
   \begin{proof}
@@ -827,10 +833,46 @@ $\dfrac{a}{9}$的小数形式是$0.\dot{a} = 0.aaa\cdots$
     \end{align*}
   \end{proof}
 }
+
+\Question{%找出三个儿子按照$\frac{1}{a}$、$\frac{1}{b}$、$\frac{1}{c}$分配$n$个动物的所有可能数值和比例。要求大儿子分得的财产多于二儿子，二儿子分得的财产多于小儿子。恰好借来一只动物后可以分好并余下一只动物。
+
+我们先给出一个纯数学解法，然后再给出用计算机穷举的解法。读者朋友们可以加以对比。本题本质上是求方程
+\[
+\frac{n}{n+1} = \frac{1}{a} + \frac{1}{b} + \frac{1}{c}, a < b < c
+\]
+的所有正整数解。即借来一只后，把$n+1$只动物分成三份$\frac{n + 1}{a}$、$\frac{n + 1}{b}$、$\frac{n + 1}{c}$。它们的和恰好是$n$，因而可以把剩余的那一只归还。为了简洁，我们令$n' = n + 1$，表示借来一只动物后的数量，把上述方程改写为：
+
+\be
+\frac{n'-1}{n'} = \frac{1}{a} + \frac{1}{b} + \frac{1}{c}
+\label{eq:equation-of-inherit}
+\ee
+
+最后只要把$n'$减一就可以了。我们先证明一个重要的结论：大儿子只能分得$\frac{1}{2}$的财产，即$a$只能等于2。
+\begin{proof}
+若$a \geq 3$，由于$a < b < c$，所以：
+
+\[
+\frac{1}{a} + \frac{1}{b} + \frac{1}{c} \leq \frac{1}{3} + \frac{1}{4} + \frac{1}{5} = \frac{47}{60}
+\]
+
+小儿子至少分得1只；二儿子分得的比小儿子多，所以至少分得2只；同理，大儿子至少分得3只动物，再加上借来的一只。所以$n' > 3 + 2 + 1 = 6$。于是：
+
+\[
+\frac{n'-1}{n'} = 1 - \frac{1}{n'} > 1 - \frac{1}{6} = \frac{5}{6} = \frac{50}{60} > \frac{47}{60} \geq \frac{1}{a} + \frac{1}{b} + \frac{1}{c}
+\]
+
+也就是说$a \geq 3$是，方程\cref{eq:equation-of-inherit}不可能成立。所以$a$只能是2
+\end{proof}
+}
+
 \Question{$\bigstar$斐波那契的方法保证即约真分数$\frac{b}{a}$最多可以分解为$b$个埃及分数。我们可以机械化地找出“最优”分解，即用最少的埃及分数分解。若这样的分解不止一个，则分母的值越小越好。}
+
 \Question{$\bigstar$证明任何数值$x$的小数表示是唯一的，其中$0 < x < 1$。}
+
 \Question{无限循环小数$0.\dot{a_1} \dot{a_2} \cdots \dot{a_n}$的分数形式是$\frac{a_1 a_2 \cdots a_n}{99 \cdots 9} = \frac{a_1 a_2 \cdots a_n}{10^{n+1} - 1}$。\label{qn:cyclic-decimal}}
+
 \Question{利用分数和解决芝诺悖论中的二分悖论。}
+
 \Question{验证分数的加法交换律、乘法交换律，乘法结合率。}
 \end{Answer}
 
