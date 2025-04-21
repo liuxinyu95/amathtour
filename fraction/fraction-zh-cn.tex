@@ -603,11 +603,11 @@ $\dfrac{a}{9}$的小数形式是$0.\dot{a} = 0.aaa\cdots$
 
 \begin{mdframed}
 
-\begin{center}
- \includegraphics[scale=0.3]{img/zeno}
- \captionof{figure}{芝诺，约490BC - 425BC}
- \label{fig:Zeno-of-Elea}
-\end{center}
+%% \begin{center}
+%%  \includegraphics[scale=0.3]{img/zeno}
+%%  \captionof{figure}{芝诺，约490BC - 425BC}
+%%  \label{fig:Zeno-of-Elea}
+%% \end{center}
 
 芝诺（约公元前490年——公元前425年），古希腊哲学家，生于意大利半岛南部的埃利亚。所以我们常称其为埃利亚的芝诺。关于他的生平，缺少可靠的文字记载。据传，他早年是一个自学成才的乡村孩子，一生经历坎坷，最终遭到一位暴君的陷害而被拘捕、拷打、直至被处死\cite{HanXueTao16}。芝诺是著名的哲学学派——埃利亚学派的代表人物之一，这一学派的领袖是芝诺的老师巴门尼德。巴门尼德认为整个世界是个不变的整体，即“不变的一”，运动、变化与多样性都只是幻象。芝诺以其悖论闻名。他一生曾巧妙地构想出40多个悖论，在流传下来的悖论中以关于运动的四个“无限微妙、无限深邃”的悖论最为著名。他提出这些悖论很可能是为他老师的哲学观点辩护。
 
@@ -616,7 +616,7 @@ $\dfrac{a}{9}$的小数形式是$0.\dot{a} = 0.aaa\cdots$
  \label{fig:Zeno-paradox}
 \end{center}
 
-除了阿基里斯与乌龟悖论外，另外三个悖论分别叫做“二分悖论”、“飞矢不动悖论”、“运动场悖论”。二分悖论的主人公是希腊神话中善于疾走的女猎手阿塔兰塔。如果阿塔兰塔想从$A$到$B$，那么她必须先走到$1/2$的位置。同样在此之前，她必须要到达$1/4$的位置。而为了到达这一位置，她必须先到达$1/8$的位置……以此类推。由于这样的中点有无限多个，阿塔兰塔永远也也无法到达目的。芝诺利用这个悖论来说明了运动根本无法发生。\cref{qn:dichotomy-paradox}要求读者扩展引理\ref{th:cycle-of-9}来解决这个悖论。
+除了阿基里斯与乌龟悖论外，另外三个悖论分别叫做“二分悖论”、“飞矢不动悖论”、“运动场悖论”。二分悖论的主人公是希腊神话中善于疾走的女猎手阿塔兰塔。如果阿塔兰塔想从$A$到$B$，那么她必须先走到$1/2$的位置。同样在此之前，她必须要到达$1/4$的位置。而为了到达这一位置，她必须先到达$1/8$的位置……以此类推。由于这样的中点有无限多个，阿塔兰塔永远也也无法到达目的。芝诺利用这个悖论来说明了运动根本无法发生。\cref{qn:dichotomy-paradox}要求读者扩展引理\ref{th:cycle-of-9}来解决二分和的问题。
 
 \begin{center}
  \includegraphics[scale=0.4]{img/dichotomy-paradox}
@@ -782,9 +782,9 @@ $\dfrac{a}{9}$的小数形式是$0.\dot{a} = 0.aaa\cdots$
 
 \Question{$\bigstar$证明任何数值$x$的小数表示是唯一的，其中$0 < x < 1$。}
 
-\Question{无限循环小数$0.\dot{a_1} \dot{a_2} \cdots \dot{a_n}$的分数形式是$\frac{a_1 a_2 \cdots a_n}{99 \cdots 9} = \frac{a_1 a_2 \cdots a_n}{10^{n+1} - 1}$。}
+\Question{证明无限循环小数$0.\dot{a_1} \dot{a_2} \cdots \dot{a_n}$的分数形式是$\frac{a_1 a_2 \cdots a_n}{99 \cdots 9} = \frac{a_1 a_2 \cdots a_n}{10^{n+1} - 1}$。\label{qn:cyclic-decimal}}
 
-\Question{利用分数和引理\ref{th:cycle-of-9}解决芝诺悖论中的二分悖论。提示：考虑二进制分数和。\label{qn:dichotomy-paradox}}
+\Question{利用分数和引理\ref{th:cycle-of-9}解释：如果阿塔兰塔先跑完全程的$\frac{1}{2}$，接下来再跑完剩余的一半，即$\frac{1}{4}$，然后不断跑完剩余路程的一半，则她最终可以跑完全程。提示：考虑二进制分数和。\label{qn:dichotomy-paradox}}
 
 \Question{验证分数的加法交换律、乘法交换律，乘法结合率。\label{qn:arithmatic-law-fraction}}
 \end{Exercise}
@@ -933,7 +933,7 @@ $\dfrac{a}{9}$的小数形式是$0.\dot{a} = 0.aaa\cdots$
   \frac{1}{6} &\leq \frac{2}{c} \Rightarrow c \leq 12
 \end{align*}
 
-因此枚举的上限是12。\cref{fig:inherit-program}给出了例子程序。
+因此枚举的上限是12。其次从$1 - \frac{1}{n'} = \frac{1}{a} + \frac{1}{b} + \frac{1}{c}$还可以解出$n' = \frac{abc}{abc - ab - bc - ac}$，如果其分母不为0，且$a, b, c$都整除$n'$，则找到了一组解。\cref{fig:inherit-program}给出了例子程序。
 
 \begin{center}
  \includegraphics[scale=0.4]{img/inherit-program}
@@ -941,26 +941,82 @@ $\dfrac{a}{9}$的小数形式是$0.\dot{a} = 0.aaa\cdots$
  \label{fig:inherit-program}
 \end{center}
 
-程序对每个可能的$a, b, c$，计算出$n = \frac{abc}{abc - (ab + bc + ac)}$。如果$n$是正整数且能被$a, b, c$都整除。则找到了一个解。下面是一个对应的Haskell例子程序。
+下面是对应的Haskell例子程序。
 
 \begin{Haskell}[frame = single]
-[(a, b, c, n) | a <- [2..12], b <- [a+1..12], c <- [b+1..12],
-     let d = a*b*c - a*b - b*c - a*c,
-         d > 0,
-     let n = a*b*c `div` d,
-         n > 1, n `mod` a == 0, n `mod` b == 0, n `mod` c == 0]
+[(a, b, c, n) | a <- [2..10], b <- [a+1..11], c <- [b+1..12],
+     let d = a*b*c - a*b - b*c - a*c, d > 0,
+     let n = a*b*c `div` d, n > 1,
+         n `mod` a == 0, n `mod` b == 0, n `mod` c == 0]
 \end{Haskell}
 }
 
 \Question{$\bigstar$斐波那契的方法保证即约真分数$\frac{b}{a}$最多可以分解为$b$个埃及分数。我们可以机械化地找出“最优”分解，即用最少的埃及分数分解。若这样的分解不止一个，则分母的值越小越好。}
 
-\Question{$\bigstar$证明任何数值$x$的小数表示是唯一的，其中$0 < x < 1$。}
+\Question{$\bigstar$证明任何数值$x$的小数表示是唯一的，其中$0 < x < 1$。
 
-\Question{无限循环小数$0.\dot{a_1} \dot{a_2} \cdots \dot{a_n}$的分数形式是$\frac{a_1 a_2 \cdots a_n}{99 \cdots 9} = \frac{a_1 a_2 \cdots a_n}{10^{n+1} - 1}$。\label{qn:cyclic-decimal}}
+  \begin{proof}
+    用反证法，令：
+\be
+\frac{a_1}{10} + \frac{a_2}{100} + \cdots = \frac{b_1}{10} + \frac{b_2}{100} + \cdots
+\label{eq:decimal-a-eq-b}
+\ee
+设$a_n$和$b_n$是第一对不相等的。$|a_n - b_n| \geq 1$。于是：
+\begin{align*}
+\frac{a_1}{10} + \frac{a_2}{100} + \cdots - (\frac{b_1}{10} + \frac{b_2}{100} + \cdots) & \geq \frac{1}{10^n} - (\frac{|a_{n+1} - b_{n+1}|}{10^{n+1}} + \frac{|a_{n+2} - b_{n+2}|}{10^{n+2}} + \cdots) \\
+  & \geq \frac{1}{10^n} - (\frac{9}{10^{n+1}} + \frac{9}{10^{n+2}} + \cdots) \\
+  & = \frac{1}{10^n} - \frac{1}{10^n}(0.99\cdots) = 0
+\end{align*}
 
-\Question{利用分数和解决芝诺悖论中的二分悖论。}
+这与\cref{eq:decimal-a-eq-b}矛盾。
+  \end{proof}
+}
 
-\Question{验证分数的加法交换律、乘法交换律，乘法结合率。}
+\Question{%%证明无限循环小数$0.\dot{a_1} \dot{a_2} \cdots \dot{a_n}$的分数形式是$\frac{a_1 a_2 \cdots a_n}{99 \cdots 9} = \frac{a_1 a_2 \cdots a_n}{10^{n+1} - 1}$。
+
+  \begin{proof}
+    \begin{align*}
+    \text{设} x &= 0.\dot{a_1} \dot{a_2} \cdots \dot{a_n} \\
+    10^n x & = a_1a_2\cdots a_n . \dot{a_1} \dot{a_2} \cdots \dot{a_n} \\
+    10^n x - x &= a_1a_2\cdots a_n \\
+    x &= \frac{a_1a_2\cdots a_n}{10^n - 1} = \frac{a_1a_2\cdots a_n}{99 \cdots 9} && \qedhere
+    \end{align*}
+  \end{proof}
+}
+
+\Question{%%利用分数和解释：如果阿塔兰塔先跑完全程的$\frac{1}{2}$，接下来再跑完剩余的一半，即$\frac{1}{4}$，然后不断跑完剩余路程的一半，则她最终可以跑完全程。
+
+十进制无限循环小数$0.99\cdots = 1$，对应的二进制无限循环小数$0.11\cdots = 1$。证明与十进制类似：
+\begin{proof}
+  \begin{align*}
+    x &= 0.11\cdots & 2x &= 1.11\cdots \\
+    x & = 2x - x = 1 & & \qedhere
+  \end{align*}
+\end{proof}
+阿塔兰塔先跑到$\frac{1}{2}$处，即二进制0.1处；再跑到$\frac{1}{4}$处，即二进制0.01处……她跑过的路程和等于二进制小数和：
+\[
+0.1 + 0.01 + 0.001 + \cdots = 0.11\cdots = 1
+\]
+}
+
+\Question{%%验证分数的加法交换律、乘法交换律，乘法结合率。
+加法交换律：
+\begin{align*}
+  \frac{b}{a} + \frac{d}{c} &= \frac{bc + ad}{ac} &\text{通分} \\
+  &= \frac{ad + bc}{ac} & \text{分子用整数加法交换律} \\
+  &= \frac{ad}{ac} + \frac{bc}{ac} = \frac{d}{c} + \frac{b}{a}
+\end{align*}
+
+乘法交换律：
+\[
+\frac{b}{a}\frac{d}{c} = \frac{bd}{ac} = \frac{db}{ca} = \frac{d}{c}\frac{b}{a}
+\]
+
+乘法结合律：
+\[
+\frac{b}{a}\frac{d}{c}\frac{f}{e} = \frac{bdf}{ace} = \frac{b(df)}{a(ce)} = \frac{b}{a}\frac{df}{cd} = \frac{b}{a}(\frac{d}{c}\frac{f}{e})
+\]
+}
 \end{Answer}
 
 \ifx\wholebook\relax \else
