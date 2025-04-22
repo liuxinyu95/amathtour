@@ -3,9 +3,9 @@ A tour of numbers
 
 Edition: $\displaystyle \phi = \frac{\sqrt{5} - 1}{2} = 0.618$
 
-2025/02
+2025/04
 
-This project is to collaboratively draft the popular science book, _a tour of numbers_. The book targets to present the historic introduction to numbers. As a central notion in mathematics, it connects varies of theories. We are going to introduce interesting stories and great mathematicians along with the history of numbers. We plan to release the book in both English and Chinese by 2027. We'll draft in Chinese first (and release the [PDF file](https://github.com/user-attachments/files/19334816/amathtour-zh-cn.pdf) for preview), then follow with the English version.
+This project is to collaboratively draft the popular science book, _a tour of numbers_. The book targets to present the historic introduction to numbers. As a central notion in mathematics, it connects varies of theories. We are going to introduce interesting stories and great mathematicians along with the history of numbers. We plan to release the book in both English and Chinese by 2027. We'll draft in Chinese first (and release the [PDF file](https://github.com/user-attachments/files/19843680/amathtour-zh-cn.pdf) for preview), then follow with the English version.
 
 Contents
 --------
@@ -15,7 +15,7 @@ Contents
     Typical numeral systems of ancient Egypt, ancient Babylonia, ancient Rome, ancient China, and Maya. Show how language influenced numbers. Introduce the widely used Hindu-Arabic (positional decimal) numeral system; why it has advantage in calculation. The story of _al-Khwarizmi_ and _Fibonacci_. Method of counting rods as a calculation tool in ancient China. Binary numeral system and computer.
 - Chapter 2, **Zero** \
   Ancient Indian people developed the notion of zero. How did people reject, debate, and finally accept it. The confusion and debating about negative numbers; how did people accept negative numbers. Explain why 'Two negatives make a positive'. Model the negative number through a tuple (a, b) by van der Waerden.
-- Chapter 3, **Ratio and Fraction** \
+- Chapter 3, **Fractions** \
   Presents how people developed fraction. Egypt fraction. How to unify the arithmetic rules with fraction. Fraction as a typical example that extends numbers. Fraction, decimal, and repeating decimal.
 - Chapter 4, **All is number** \
   **(a). Pythagoras**, the mathematician and philosopher in ancient Greece; the school of Pythagorean. **(b). Number, shape, and music.** Figurate numbers and some sequences. How Pythagoras developed the theory of music through numbers, hence believed _all is number_. **(c). Number and geometry.** Straight edge and compass construction and Plato. Arithmetic in straight edge and compass construction. **(d). Axiomatic method.** Euclid and his _Elements_, its influence.
