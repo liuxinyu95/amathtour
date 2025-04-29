@@ -16,7 +16,7 @@ Contents
 - Chapter 2, **Zero** \
   Ancient Indian people developed the notion of zero. How did people reject, debate, and finally accept it. The confusion and debating about negative numbers; how did people accept negative numbers. Explain why 'Two negatives make a positive'. Model the negative number through a tuple (a, b) by van der Waerden.
 - Chapter 3, **Fractions** \
-  Presents how people developed fraction. Egypt fraction. How to unify the arithmetic rules with fraction. Fraction as a typical example that extends numbers. Fraction, decimal, and repeating decimal.
+  Fraction and Pythagoras music tuning. Egyptian fractions; Babylonia 60 based decimals; Arithmetic rules of fractions in ancient China. Indian fractions and fraction bar. Fractions and decimals, including infinitely cyclic decimals. Fraction as a typical example that extends numbers.
 - Chapter 4, **All is number** \
   **(a). Pythagoras**, the mathematician and philosopher in ancient Greece; the school of Pythagorean. **(b). Number, shape, and music.** Figurate numbers and some sequences. How Pythagoras developed the theory of music through numbers, hence believed _all is number_. **(c). Number and geometry.** Straight edge and compass construction and Plato. Arithmetic in straight edge and compass construction. **(d). Axiomatic method.** Euclid and his _Elements_, its influence.
 - Chapter 5, **Irrational numbers** \
