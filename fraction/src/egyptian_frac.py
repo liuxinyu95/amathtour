@@ -16,9 +16,9 @@ def frac_reduce(b, a):
 def compare(xs, ys):
     if not xs:
         return ys
-    if not ys:
+    elif not ys:
         return xs
-    if len(xs) < len(ys):
+    elif len(xs) < len(ys):
         return xs
     elif len(ys) < len(xs):
         return ys
@@ -27,7 +27,7 @@ def compare(xs, ys):
     else:
         return ys
 
-# Decompose b/a within n Egyptian (unit) fractions.
+# Decompose b/a within n Egyptian (unit) fractions (0 < b < a, irreducible).
 def decompose(b, a):
     if b == 1:
         return [a]
@@ -50,6 +50,7 @@ def decompose(b, a):
                 cs.put((b1, a1, [q] + qs))
     return best
 
+# Fibonacci decomposition (greedy method)
 def fibonacci_decompose(b, a):
     qs = []
     while b != 1:
