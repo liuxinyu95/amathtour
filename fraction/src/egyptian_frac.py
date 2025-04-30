@@ -39,7 +39,7 @@ def decompose(b, a):
         m = n - len(qs)
         low = max(a // b + 1, qs[0] + 1 if qs else 0)
         for q in range(low, a + 1):
-            if m <= 0 or a * b < 0 or (best != [] and len(qs) >= len(best) - 1):
+            if best != [] and len(qs) >= len(best) - 1:
                 return best
             if a*m < b*q: # m/q < b/a
                 break     # b/a can not be decomposed within n fractions <= 1/q

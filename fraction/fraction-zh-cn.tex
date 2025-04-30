@@ -252,7 +252,7 @@
 \]
 
 所谓最优的含义是：用\underdot{最少}的埃及分数分解，如果两个分解的埃及分数个数相同，则分母越小越好。
-%% \cref{qn:best-egyptian-decompose}提供了用贪心策略分解埃及分数的计算机程序。
+附录\ref{app:best-egyptian-decomposition}介绍了一个寻找最优分解的算法。
 斐波那契的方法每次至少将分子减1，所以$\frac{b}{a}$最多一定被分解为$b$个埃及分数，但$\frac{5}{121}$的例子说明可能存在着更好的分解方法。匈牙利数学家保罗·埃尔德什和德国数学家斯特劳斯在1950年猜想对于大于1的自然数$n$，\index{埃尔德什——斯特劳斯猜想}
 
 \[
@@ -806,17 +806,7 @@ $\dfrac{a}{9}$的小数形式是$0.\dot{a} = 0.aaa\cdots$
 
 \Question{$\bigstar$找出三个儿子按照$\frac{1}{a}$、$\frac{1}{b}$、$\frac{1}{c}$分配$n$个动物的所有可能数值和比例。要求大儿子分得的财产多于二儿子，二儿子分得的财产多于小儿子。恰好借来一只动物后可以分好并余下一只动物。如果你会编程，可以用计算机枚举出所有解。但此题要求手工找出所有可能的$n, a, b, c$。提示：本题本质是求方程$\frac{n}{n+1} = \frac{1}{a} + \frac{1}{b} + \frac{1}{c}, a < b < c$的所有正整数解。三儿子至少分得一只动物，那么$n$的最小值是多少？你能据此推出$a$不可能超过3，因而只能是2么？\label{qn:three-sons}}
 
-%% \Question{$\bigstar$斐波那契的方法保证即约真分数$\frac{b}{a}$最多可以分解为$b$个埃及分数。我们可以机械化地找出“最优”分解，即用最少的埃及分数分解。若这样的分解不止一个，则分母的值越小越好。\lebel{qn:best-egyptian-decompose}
-%%   \begin{enumerate}[1)]
-%%   \item 对$\frac{b}{a}$寻找不超过$b$埃及分数的分解。首先尝试用$\frac{b}{a} = \frac{1}{a+1} + \frac{d}{c}$分解。若$d = 1$则找到了一个\underdot{候选解}；否则\underdot{递归地}寻找$\frac{d}{c}$的不超过$b' = b - 1$个埃及分数的分解。
-%%   \item 在递归时，如果$b' = 0$，退回\footnote{在计算机编程中称为“回溯”。}步骤1）寻找$\frac{b}{a} = \frac{1}{a + 2} + \frac{d}{c}$的分解。
-%%   \item 如此依次尝试$a + 1, a + 2, a + 3, \cdots $，直到$a + i > q + 1$，其中$q$是带余数除法的商$a = bq + r， 0 < r < b$。
-%%   \item 在所有记录下来的候选解中，找到最优解。
-%%   \end{enumerate}
-%%   如果你会编程，请实现此解法。
-%% }
-
-\Question{$\bigstar$证明任何数值$x$的小数表示是唯一的，其中$0 < x < 1$。}
+\Question{$\bigstar$由于$0.999\cdots = 1$，所以任何有限小数有两种表示：$X.a_1a_2 \cdots a_m000\cdots$和$X.a_1a_2 \cdots b999\cdots$，其中$b = a_m - 1$，$X$是整数部分。证明除了这种情况外，任何数值$x$的小数表示是唯一的，其中$0 < x < 1$。}
 
 \Question{证明无限循环小数$0.\dot{a_1} \dot{a_2} \cdots \dot{a_n}$的分数形式是$\frac{a_1 a_2 \cdots a_n}{99 \cdots 9} = \frac{a_1 a_2 \cdots a_n}{10^{n+1} - 1}$。\label{qn:cyclic-decimal}}
 
@@ -987,8 +977,6 @@ $\dfrac{a}{9}$的小数形式是$0.\dot{a} = 0.aaa\cdots$
 \end{Haskell}
 }
 
-%% \Question{$\bigstar$斐波那契的方法保证即约真分数$\frac{b}{a}$最多可以分解为$b$个埃及分数。我们可以机械化地找出“最优”分解，即用最少的埃及分数分解。若这样的分解不止一个，则分母的值越小越好。}
-
 \Question{%$\bigstar$证明任何数值$x$的小数表示是唯一的，其中$0 < x < 1$。
 
   \begin{proof}
@@ -1058,6 +1046,9 @@ $\dfrac{a}{9}$的小数形式是$0.\dot{a} = 0.aaa\cdots$
 \ifx\wholebook\relax \else
 \section{参考答案}
 \shipoutAnswer
+
+\section{埃及分数分解算法}
+\subimport{inc/}{decomposition-zh-cn}
 
 \begin{thebibliography}{99}
 \subimport{inc/}{bib-zh-cn}

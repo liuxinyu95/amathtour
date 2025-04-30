@@ -1,0 +1,101 @@
+\label[appendix]{app:best-egyptian-decomposition}
+
+斐波那契的方法保证即约真分数$\frac{b}{a}$最多可以分解为$b$个埃及分数。可以在此基础上，机械化地找出“最优”分解，即用最少的埃及分数分解。若这样的分解不止一个，则分母的值越小越好。我们约定用$B = \{\frac{1}{q_1}, \frac{1}{q_2}, \cdots \frac{1}{q_m} \}$来记录找到的最优分解。在算法开始前，$B = \varnothing$。算法的步骤如下：
+
+\begin{enumerate}[1)]
+  \item 对$\frac{b}{a}$寻找不超过$n = b$个埃及分数的分解。首先尝试用$\frac{b}{a} = \frac{1}{q} + x$分解。其中$q = \lfloor \frac{a}{b} \rfloor + 1$，即$a$除以$b$的商加1。这一步和斐波那契的方法完全一样。
+  \item 接下来问题就转化为把$x$分解为不超过$n - 1$个埃及分数的和。我们把$\frac{1}{q}$记录到集合$Q = \{\frac{1}{q}\}$中。接下来计算$x = \frac{b}{a} - \frac{1}{q} = \frac{bq - a}{aq}$，记约分后的结果为$\frac{b'}{a'}$（用欧几里得算法求出分子、分母的最大公约数，然后分子、分母分别除以最大公约数）。
+  \item 若$b' = 1$并且$a' > q$，则找到了一个\underdot{候选解}。我们要求$a' > q$是因为：如果找到了解$\frac{b}{a} = \frac{1}{q_0} + \frac{1}{q_1} + \cdots + \frac{1}{q_m}$，其中$\frac{1}{q_i} \in Q$，则这些$\frac{1}{q_i}$的任何排列也是解。为了避免重复，我们要求$\frac{1}{q_0} > \frac{1}{q_1} > \cdots > \frac{1}{q_m}$。否则说明这个解是重复的，需要跳过。如果找到了候选解，我们就把$\frac{1}{a'}$加入到$Q$中，然后比较$Q$和$B$中的解哪个更好。如果$B = \varnothing$，或者$|Q|<|B|$（候选解中有更少的埃及分数），或者$Q$中最大的埃及分数的分母更小，就用$Q$替换$B$，然后继续查找可能的最优分解。
+  \item 若$b' \ne 1$，我们把$\frac{b'}{a'}$和$Q$一起记录到一个叫做$C$的列表\footnote{实际上是队列}的\underdot{末尾}，以便将来继续在$Q$的基础上对$\frac{b'}{a'}$进行分解。
+  \item 接下来，我们把$q$增加1，记为$q' = q + 1$，然后尝试用$\frac{b}{a} = \frac{1}{q'} + x$分解。显然这样的分解不如斐波那契使用的$q$“贪婪”，剩余的$x$会更大。但是我们要检查一下，如果$n\frac{1}{q'} < \frac{b}{a}$，说明$n$个$\leq \frac{1}{q'}$的分数加在一起不可能达到$\frac{b}{a}$。所以继续对$x$分解毫无意义。我们停止这次尝试，从列表$C$的\underdot{头部}取出一对$\frac{b'}{a'}$和$Q$，然后从它们开始继续寻找最优分解。否则，如果$n\frac{1}{q'} \geq \frac{b}{a}$，我们返回步骤2)，继续尝试用不超过$n-1$个埃及分数分解$x$。
+  \item 如此依次尝试$q, q' = q + 1, q'' = q + 2 \cdots $直到$q + i \leq a$。因为$Q$中的埃及分数是递减的（分母递增），$\frac{b}{a} = \frac{1}{a} + x$中的$x$已经不可能用$n' = b - 1$个小于$\frac{1}{a}$的埃及分数分解。
+  \item 每次从$C$的头部取出一对$\frac{b'}{a'}$和$Q$时，我们要比较一下$|Q|$和$|B|$。如果$B \ne \varnothing$并且$Q$中埃及分数更多，它一定不优于分解$B$。并且由于我们每次把包含更多埃及分数的分解放在$C$的末尾，所以$C$中后面的记录一定都比$B$差。此时$B$中记录的就是最优分解。算法结束。
+\end{enumerate}
+
+下面是这一算法的形式化描述：
+
+\begin{algorithmic}[1]
+\Function{Decompose}{$\frac{b}{a}$}
+  \If{$b = 1$}
+    \State \Return $\{\frac{1}{a}\}$
+  \EndIf
+  \State $n = b, B = \varnothing$
+  \State $C = \{(\frac{b}{a}, \varnothing)\}$
+  \While{$C \ne \varnothing$}
+    \State $(\frac{b}{a}, Q) \gets $ \Call{Pop}{$C$}  \Comment{从头部取出}
+    \State $n' = n - |Q|$                            \Comment{最多分解为$n'$个埃及分数}
+    \State $q = \lfloor \dfrac{a}{b} \rfloor + 1$
+    \If {$\varnothing \ne Q = \{\frac{1}{q_0}, \cdots \}$ 且 $q_0 \geq q$}  \Comment{$Q$中的第一个埃及分数更小}
+      \State $q = q_0 + 1$
+    \EndIf
+    \While{$q \leq a$}
+      \If{$B \ne \varnothing$ 且 $|Q| \geq |B| - 1$} \Comment{$Q$中已不可能有比$B$更好的分解}
+        \State \Return $B$
+      \EndIf
+      \If{$n'\frac{1}{q} < \frac{b}{a}$} \Comment{$\frac{b}{a}$已无法分解为$n'$个不大于$\frac{1}{q}$的埃及分数}
+        \State break
+      \EndIf
+      \State $\frac{b'}{a'} = $ \Call{Reduce}{$\frac{b}{a} - \frac{1}{q}$} \Comment{约分}
+      \If{$b' = 1$且$a' > q$}
+        \State 比较$\{\frac{1}{a'}, \frac{1}{q}\} \cup Q$和$B$，用$B$记录更好的分解
+      \Else
+        \State \Call{Push}{$(\frac{b'}{a'}, \{\frac{1}{q}\} \cup Q), C$} \Comment{记录到末尾}
+      \EndIf
+      \State $q \gets q + 1$
+    \EndWhile
+  \EndWhile
+  \State \Return $B$
+\EndFunction
+\end{algorithmic}
+
+下面的Python例子程序实现了这一算法：
+\begin{lstlisting}[language = Python, frame = single]
+import queue
+
+def gcd(a, b):
+    if a < b:
+        a, b = b, a
+    while b != 0:
+        a, b = b, a % b
+    return a
+
+def frac_reduce(b, a):
+    d = gcd(b, a)
+    return (b // d, a // d)
+
+def compare(xs, ys):
+    if not xs:
+        return ys
+    elif not ys:
+        return xs
+    elif len(xs) < len(ys):
+        return xs
+    elif len(ys) < len(xs):
+        return ys
+    elif xs[0] < ys[0]:
+        return xs
+    else:
+        return ys
+
+def decompose(b, a):
+    if b == 1:
+        return [a]
+    n, best = b, []
+    cs = queue.Queue()
+    cs.put((b, a, []))
+    while not cs.empty():
+        b, a, qs = cs.get()
+        m = n - len(qs)
+        low = max(a // b + 1, qs[0] + 1 if qs else 0)
+        for q in range(low, a + 1):
+            if best != [] and len(qs) >= len(best) - 1:
+                return best
+            if a*m < b*q:
+                break
+            b1, a1 = frac_reduce(b*q - a, a*q)
+            if b1 == 1 and a1 > q:
+                best = compare([a1, q] + qs, best)
+            else:
+                cs.put((b1, a1, [q] + qs))
+    return best
+\end{lstlisting}
