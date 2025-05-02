@@ -32,7 +32,7 @@ decompose (1, a) = [a]
 decompose (b, a) = bfs (b, a, 1 + a `div` b, [], b) [] empty where
   bfs (b, a, q, qs, n) best queue
     | best /= [] && 1 + length qs >= length best = best
-    | q > a || sumR [q..(q + n - 1)] `lt` (b, a) = case viewl queue of
+    | q > a || a * n < b * q = case viewl queue of
         EmptyL -> best
         c :< cs -> bfs (from c) best cs
     | otherwise = if b' == 1 && a' > q
