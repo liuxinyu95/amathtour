@@ -12,9 +12,6 @@ diff (b, a) (d, c) = (b, a) `add` (-d, c)
 -- sum of 1/a_1 + 1/a_2 + ... + 1/a_n
 sumR as = foldr add (0, 1) [(1, a) | a <- as]
 
--- less than
-lt (b, a) (d, c) = b*c - d*a < 0
-
 -- Choose the 'better' decomposition of Egyptian fractions
 cmp [] ys = ys
 cmp xs [] = xs
@@ -32,7 +29,7 @@ decompose (1, a) = [a]
 decompose (b, a) = bfs (b, a, 1 + a `div` b, [], b) [] empty where
   bfs (b, a, q, qs, n) best queue
     | best /= [] && 1 + length qs >= length best = best
-    | q > a || a * n < b * q = case viewl queue of
+    | a * n < b * q = case viewl queue of
         EmptyL -> best
         c :< cs -> bfs (from c) best cs
     | otherwise = if b' == 1 && a' > q
@@ -46,7 +43,7 @@ decompose (b, a) = bfs (b, a, 1 + a `div` b, [], b) [] empty where
 -- some hard cases:
 -- (5, 121) (27, 29), (65, 87)
 
--- bound nominator and denominator in range [1, 125]
+-- bound the nominator and denominator in range [1, 125]
 fracOf (x, y) = reduceF (min x' y') (max x' y') where
   x' = 1 + (abs x) `mod` 125
   y' = 1 + (abs y) `mod` 125
