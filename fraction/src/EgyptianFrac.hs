@@ -48,8 +48,8 @@ decompose (b, a) = bfs (b, a, 1 + a `div` b, [], b) [] empty where
 
 -- bound nominator and denominator in range [1, 125]
 fracOf (x, y) = reduceF (min x' y') (max x' y') where
-  x' = min 125 (max 1 (abs x))
-  y' = min 125 (max 1 (abs y))
+  x' = 1 + (abs x) `mod` 125
+  y' = 1 + (abs y) `mod` 125
 
 verifySum x f = x == sumR (f x)
 
