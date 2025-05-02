@@ -8,7 +8,7 @@
   \item 若$b' = 1$并且$a' > q$，则找到了一个\underdot{候选解}。我们要求$a' > q$是因为：如果找到了解$\frac{b}{a} = \frac{1}{q_0} + \frac{1}{q_1} + \cdots + \frac{1}{q_m}$，其中$\frac{1}{q_i} \in Q$，则这些$\frac{1}{q_i}$的任何排列也是解。为了避免重复，我们要求$\frac{1}{q_0} > \frac{1}{q_1} > \cdots > \frac{1}{q_m}$。否则说明这个解是重复的，需要跳过。如果找到了候选解，我们就把$\frac{1}{a'}$加入到$Q$中，然后比较$Q$和$B$中的解哪个更好。如果$B = \varnothing$，或者$|Q|<|B|$（候选解中有更少的埃及分数），或者$Q$中最大的埃及分数的分母更小，就用$Q$替换$B$，然后继续查找可能的最优分解。
   \item 若$b' \ne 1$，我们把$\frac{b'}{a'}$和$Q$一起记录到一个叫做$C$的列表\footnote{实际上是队列}的\underdot{末尾}，以便将来继续在$Q$的基础上对$\frac{b'}{a'}$进行分解。
   \item 接下来，我们把$q$增加1，记为$q' = q + 1$，然后尝试用$\frac{b}{a} = \frac{1}{q'} + x$分解。显然这样的分解不如斐波那契使用的$q$“贪婪”，剩余的$x$会更大。但是我们要检查一下，如果$n\frac{1}{q'} < \frac{b}{a}$，说明$n$个$\leq \frac{1}{q'}$的分数加在一起不可能达到$\frac{b}{a}$。所以继续对$x$分解毫无意义。我们停止这次尝试，从列表$C$的\underdot{头部}取出一对$\frac{b'}{a'}$和$Q$，然后从它们开始继续寻找最优分解。否则，如果$n\frac{1}{q'} \geq \frac{b}{a}$，我们返回步骤2)，继续尝试用不超过$n-1$个埃及分数分解$x$。
-  \item 如此依次尝试$q, q' = q + 1, q'' = q + 2 \cdots $直到$q + i \leq a$。因为$Q$中的埃及分数是递减的（分母递增），$\frac{b}{a} = \frac{1}{a} + x$中的$x$已经不可能用$n' = b - 1$个小于$\frac{1}{a}$的埃及分数分解。
+  \item 如此依次尝试$q, q' = q + 1, q'' = q + 2 \cdots $直到$q + i \geq \frac{an}{b}$。因为$Q$中的埃及分数是递减的（分母递增），$\frac{b}{a} = \frac{1}{q+i} + x$中的$x$已经不可能用$n-1$个小于$\frac{1}{q+i}$的埃及分数分解。
   \item 每次从$C$的头部取出一对$\frac{b'}{a'}$和$Q$时，如果$Q$不为空集，我们需要: (a) 比较一下$q = \lfloor \frac{a'}{b'} \rfloor + 1$和$Q = \{\frac{1}{q_0}, \cdots \}$中最小分数的分母$q_0$，从较大的值继续尝试分解。(b) 比较一下$Q$和$B$，如果$B$不为空并且包含更少的埃及分数，则$Q$一定不导致最优解。并且由于我们每次把包含更多埃及分数的分解放在$C$的末尾，所以$C$中后面的记录一定更差。此时$B$就是最优分解。算法结束。
 \end{enumerate}
 
@@ -28,12 +28,9 @@
     \If {$\varnothing \ne Q = \{\frac{1}{q_0}, \cdots \}$ 且 $q_0 \geq q$}  \Comment{$Q$中的第一个埃及分数更小}
       \State $q = q_0 + 1$
     \EndIf
-    \While{$q \leq a$}
+    \While{$q \leq \frac{an'}{b}$}
       \If{$B \ne \varnothing$ 且 $|Q| \geq |B| - 1$} \Comment{$C$后面的记录都比$B$差}
         \State \Return $B$
-      \EndIf
-      \If{$n'\frac{1}{q} < \frac{b}{a}$} \Comment{$\frac{b}{a}$已无法分解为$n'$个不大于$\frac{1}{q}$的埃及分数}
-        \State break
       \EndIf
       \State $\frac{b'}{a'} = $ \Call{Reduce}{$\frac{b}{a} - \frac{1}{q}$} \Comment{约分}
       \If{$b' = 1$且$a' > q$}

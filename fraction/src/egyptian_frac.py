@@ -38,11 +38,10 @@ def decompose(b, a):
         b, a, qs = cs.get()
         m = n - len(qs)
         low = max(a // b + 1, qs[0] + 1 if qs else 0)
-        for q in range(low, a + 1):
+        high = a * m // b + 1
+        for q in range(low, high):
             if best != [] and len(qs) >= len(best) - 1:
                 return best
-            if a*m < b*q: # m/q < b/a
-                break     # b/a can not be decomposed within n fractions <= 1/q
             b1, a1 = frac_reduce(b*q - a, a*q)        # b'/a' = b/a - 1/q
             if b1 == 1 and a1 > q:
                 best = compare([a1, q] + qs, best)

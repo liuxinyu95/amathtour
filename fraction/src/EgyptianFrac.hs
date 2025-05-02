@@ -23,7 +23,7 @@ cmp xs ys | length xs < length ys = xs
 -- Fibonacci (greedy) decomposition
 -- decompose b/a = 1/q + decompose (b/a - 1/q), where q = 1 + floor(a/b)
 decomposeF (1, a) = [a]
-decomposeF (b, a) = q : decomposeF ((b, a) `diff` (1, q)) where q = a `div` b + 1
+decomposeF (b, a) = q : decomposeF ((b, a) `diff` (1, q)) where q = 1 + a `div` b
 
 decompose (1, a) = [a]
 decompose (b, a) = bfs (b, a, 1 + a `div` b, [], b) [] empty where
