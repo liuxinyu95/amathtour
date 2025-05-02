@@ -73,8 +73,8 @@ def verify(b, a):
     assert(len(qs2) <= len(qs1))
 
 if __name__ == "__main__":
-    verify(1, 2)    # ==> [2]
-    verify(7, 8)    # ==> [8, 4, 2]
-    verify(5, 121)  # ==> [363, 121, 33]
-    verify(27, 29)
-    verify(65, 87)
+    verify(1, 2)    # [2]
+    verify(7, 8)    # [8, 4, 2]
+    verify(5, 121)  # [363, 121, 33]
+    verify(27, 29)  # [174, 116, 12, 3, 2]
+    verify(65, 87)  # [174, 145, 29, 5, 2]

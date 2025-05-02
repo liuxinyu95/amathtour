@@ -9,6 +9,12 @@ reduceF b a = (b `div` d, a `div` d) where d = gcd b a
 add (b, a) (d, c) = reduceF (c*b + a*d) (a*c)
 diff (b, a) (d, c) = (b, a) `add` (-d, c)
 
+-- sum of 1/a_1 + 1/a_2 + ... + 1/a_n
+sumR as = foldr add (0, 1) [(1, a) | a <- as]
+
+-- less than
+lt (b, a) (d, c) = b*c - d*a < 0
+
 -- Choose the 'better' decomposition of Egyptian fractions
 cmp [] ys = ys
 cmp xs [] = xs
@@ -26,7 +32,7 @@ decompose (1, a) = [a]
 decompose (b, a) = bfs (b, a, 1 + a `div` b, [], b) [] empty where
   bfs (b, a, q, qs, n) best queue
     | best /= [] && 1 + length qs >= length best = best
-    | q > a || a * n < b * q = case viewl queue of
+    | q > a || sumR [q..(q + n - 1)] `lt` (b, a) = case viewl queue of
         EmptyL -> best
         c :< cs -> bfs (from c) best cs
     | otherwise = if b' == 1 && a' > q
@@ -38,15 +44,14 @@ decompose (b, a) = bfs (b, a, 1 + a `div` b, [], b) [] empty where
   from (b, a, q:qs, n) = (b, a, 1 + max q (a `div` b), q:qs, n)
 
 -- some hard cases:
--- (27, 29), (65, 87)
+-- (5, 121) (27, 29), (65, 87)
 
 -- bound nominator and denominator in range [1, 125]
 fracOf (x, y) = reduceF (min x' y') (max x' y') where
   x' = min 125 (max 1 (abs x))
   y' = min 125 (max 1 (abs y))
 
-verifySum x f = x == sum where
-  sum = foldr (\q s -> (1, q) `add` s) (0, 1) (f x)
+verifySum x f = x == sumR (f x)
 
 prop_sumF :: (Int, Int) -> Bool
 prop_sumF x = verifySum (fracOf x) decomposeF
