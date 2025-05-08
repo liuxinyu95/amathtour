@@ -796,6 +796,13 @@ $\dfrac{a}{9}$的小数形式是$0.\dot{a} = 0.aaa\cdots$
 显然$\alpha = \sqrt[12]{2}$，但它不是一个分数！让我们沿着数的旅程继续追寻天籁之音吧。
 
 \begin{Exercise}[label={ex:fractions}]
+\Question{“调和”平均值\footnote{英文harmonic mean，意为“和谐的”平均值。}的名字来自毕达哥拉斯的音乐理论。毕达哥拉斯尝试在长度为$a$和$b$的琴弦之间插入一根琴弦$h$，使得它们发出和谐的声音。他发现弦长$h$的倒数恰好在$a$和$b$的倒数正中间，即：
+\[
+\frac{1}{h} - \frac{1}{a} = \frac{1}{b} - \frac{1}{h}
+\]
+调和平均值因此也称做倒数平均值。请根据调和平均值的定义验证：1) 在两地之间往返的平均速度是前往的速度和返回速度的调和平均值。例如从船只从南京顺流而下到达上海的平均速度是$v_1$，从上海逆流而上的平均速度是$v_2$，则往返的平均速度$v$是$v_1$与$v_2$的调和平均值。2) 在电路中并联的两个不同电阻$R_1$和$R_2$若等效于并联了\underdot{两个相同}的电阻$R$，则$R$的大小是$R_1$与$R_2$的调和平均值。（注意：$R$相当于并联电阻的2倍）
+}
+
 \Question{$\bigstar$若$p$为大于2的素数，证明$\frac{2}{p}$可\underdot{唯一}分解为两个埃及分数$\frac{2}{p} = \frac{1}{a} + \frac{1}{b} (a \ne b)$。提示：这个式子等价于$(2a - p)(2b - p) = p^2$。\label{qn:unique-decompose-r}}
 
 \Question{证明埃尔德什——斯特劳斯猜想对所有偶数$n$成立。}
@@ -816,6 +823,39 @@ $\dfrac{a}{9}$的小数形式是$0.\dot{a} = 0.aaa\cdots$
 \end{Exercise}
 
 \begin{Answer}[ref={ex:fractions}]
+\Question{根据调和平均值的原始定义：
+
+\begin{align*}
+\frac{1}{h} - \frac{1}{a} &= \frac{1}{b} - \frac{1}{h}    \\
+\frac{2}{h} &= \frac{1}{a} + \frac{1}{b} \\
+ h &= \frac{2}{\frac{1}{a} + \frac{1}{b}} = \frac{2ab}{a + b}
+\end{align*}
+
+令两地间距离为$s$，往返的时间分别为：往$t_1 = \frac{s}{v_1}$、返$t_2 = \frac{s}{v_2}$。平均速度为：
+\begin{align*}
+  v & = \frac{2s}{t_1 + t_2} = \frac{2\cancel{s}}{\frac{\cancel{s}}{v_1} + \frac{\cancel{s}}{v_2}}
+    = \frac{2}{\frac{1}{v_1} + \frac{1}{v_2}} = \frac{2v_1 v_2}{v_1 + v_2}
+\end{align*}
+
+恰好是$v_1$和$v_2$的调和平均值。另外，根据往返总时间等于去的时间加返回时间：$\frac{2s}{v} = \frac{s}{v_1} + \frac{s}{v_2}$，两边约去路程$s$就得到$\frac{2}{v} = \frac{1}{v_1} + \frac{1}{v_2}$。恰好也是上边调和平均值$\frac{2}{h} = \frac{1}{a} + \frac{1}{b}$的形式。
+
+\begin{center}
+ \includegraphics[scale=0.4]{img/harmonic-meanr}
+ \captionof{figure}{电阻并联}
+ \label{fig:harmonic-meanr}
+\end{center}
+
+如\cref{fig:harmonic-meanr}所示，左右电路等效时，加载同样的电压，流过的总电流相等，即：
+
+\begin{align*}
+\frac{I}{2} + \frac{I}{2} &= I_1 + I_2 \\
+2\frac{\cancel{V}}{R} &= \frac{\cancel{V}}{R_1} + \frac{\cancel{V}}{R_2} \\
+\frac{2}{R} &= \frac{1}{R_1} + \frac{1}{R_2} \\
+R &= \frac{2}{\frac{1}{R_1} + \frac{1}{R_2}} = \frac{2R_1 R_2}{R_1 + R_2}
+\end{align*}
+所以图中右侧每个电阻等于$R_1$和$R_2$的调和平均值。
+}
+
 \Question{若$p$为大于2的素数，证明$\frac{2}{p}$可唯一分解为两个埃及分数$\frac{2}{p} = \frac{1}{a} + \frac{1}{b} (a \ne b)$。
 
   \begin{proof}
