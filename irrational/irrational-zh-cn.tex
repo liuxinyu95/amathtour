@@ -1,0 +1,85 @@
+\ifx\wholebook\relax \else
+
+\documentclass[b5paper]{ctexart}
+\usepackage[nomarginpar
+  %, margin=.5in
+]{geometry}
+
+\addtolength{\oddsidemargin}{-0.05in}
+\addtolength{\evensidemargin}{-0.05in}
+\addtolength{\textwidth}{0.1in}
+
+\usepackage[cn]{../prelude}
+
+\setcounter{page}{1}
+
+\begin{document}
+
+\title{无理数}
+
+\author{刘新宇
+\thanks{{\bfseries 刘新宇} \newline
+  Email: liuxinyu99@hotmail.com \newline}
+  }
+
+\maketitle
+\fi
+
+\markboth{无理数}{数的旅程}
+
+\ifx\wholebook\relax
+\chapter{无理数}
+\fi
+
+\epigraph{数学是上帝用来书写宇宙的文字}{伽利略}
+
+几何的威力——埃拉托色特尼计算地球的直径
+
+\section{万物皆数}
+音乐与数似乎毫无关联，但毕达哥拉斯却发现了它们背后竟有奇妙的规律。他从中得到启发并大胆推测“万物皆数\footnote{英文All is number}”——世间万物都可以用数或数的比例来理解。
+
+All is number.
+
+\section{勾股定理}
+Pythagoras theorem and varies of proofs.
+
+\section{数论}
+Euclid's proof to the Pythagoras triples.
+Euclid and Elements
+Perfect numbers and Even perfect numbers theorem (Euclid), Fermat numbers and Mersenne primes.
+
+\section{无理数}
+Discovery of irrational number, square root of 2 and n.
+Compass and ruler construction I
+Golden ration and Fibonacci series.
+
+\section{欧几里得算法}
+Euclidean algorithm,
+It's extension and Bezout identity.
+Geometric meaning of Euclidean algorithm.
+Continue fraction and Euclidean algorithm.
+Uncommensurable and irrational numbers, (Elements)
+
+\section{更多的无理数}
+Compass and ruler construction II,
+
+polygon construction (pentagon, 17-gon)
+
+Solving polygon construction with number theory, Fermat numbers, Perfect numbers, and Wantzel theorem.
+
+\section{圆周率}
+pi as an irrational number
+
+\section{思想之剑}
+Dedekind cut
+
+\ifx\wholebook\relax \else
+\section{参考答案}
+\shipoutAnswer
+
+\begin{thebibliography}{99}
+\subimport{inc/}{bib-zh-cn}
+\end{thebibliography}
+
+\expandafter\enddocument
+\fi
