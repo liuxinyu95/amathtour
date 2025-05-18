@@ -214,7 +214,7 @@
  \caption{传说中的毕达哥拉斯证法\label{fig:pythagoras-pww}}
 \end{figure}
 
-达芬奇的方法把原直角三角形复制两份：一份上下颠倒拼到上方，一份平移拼到斜边组成的正方形下方。此时把\cref{fig:davinci}中的“T”形点划线上方的四边形左右镜像翻转，就拼出一个和下方全等的六边形。它们的面积相等，因此各自减去两个原直角三角形的面积后仍相等，即$a^2 + b^2 = c^2$。
+达芬奇的方法把原直角三角形复制两份：一份上下颠倒拼到上方，一份平移拼到斜边组成的正方形下方。此时把\cref{fig:davinci}中的“T”形点划线上方的四边形左右镜像翻转，就拼出一个和下方全等的六边形。它们的面积相等，因此各自减去两个原直角三角形的面积后仍相等，即$a^2 + b^2 = c^2$。\cref{qn:pythagoras-thm-garfield}要求解释美国总统加菲尔德的证明方法。
 
 \begin{figure}[htbp]
  \centering
@@ -222,7 +222,41 @@
  \caption{列昂纳多·达·芬奇证法\label{fig:davinci}}
 \end{figure}
 
+勾股定理具有非凡的意义，犹如发源的清泉，流淌出了三条壮阔的大河\cite{Stillwell-2010}：1）数论，通过寻找哪些数构成勾股数（也叫做毕达哥拉斯三元组），古希腊人开启了数学皇冠上的明珠——数论的研究。2）几何，勾股定理本身就是一条定量的几何定理。3）无穷，把勾股定理和欧几里得算法结合，古希腊人被无穷次的递归困扰，直接导致了无理数的发现。
+
 \section{数论}
+并非任意两个平方数的和一定是平方数，例如$3^2 + 5^2 = 34$它不是任何正整数的平方。我们把满足勾股定理的三个正整数$(a, b, c)$叫做勾股数或毕达哥拉斯三元组\footnote{Pythagoras triple}。各个文明都发现了常见的勾股数如$3^2 + 4^2 = 5^2$，$5^2 + 12^2 = 13^2$。古巴比伦的石板上刻有长长的勾股数表。那么究竟怎样找到勾股数？勾股数是有限多还是无限多？这个问题是欧几里得彻底解决的。欧几里得指出，如果$a^2 + b^2 = c^2$成立，那么这组勾股数的倍数也是勾股数，因为：
+
+\begin{align*}
+(ka)^2 + (kb)^2 &= k^2(a^2 + b^2) & \text{分配律} \\
+  &= k^2c^2 & \text{由}a^2 + b^2 = c^2 \\
+  &= (kc)^2
+\end{align*}
+
+所以本质上我们只需要寻找$a, b$互素（公因子只有1，或$(a, b) = 1$，见\ref{sec:gcd-minus}节）的勾股数，然后乘上倍数就得到更多的勾股数。如果$a, b, c$都是偶数，显然它们含有公因子2。我们把它们各自除以2就得到更“简单”的勾股数，例如(12, 16, 20)除以2变成(6, 8, 10)。我们不断除以2直到它们不都是偶数，得到(3, 4, 5)。此时3和4互素，已经不能再化简了。我们不妨称这样的勾股数为“最简勾股数”。由于$a$和$a^2$的奇偶相同：奇数的平方还是奇数，偶数的平方还是偶数。如果$a, b$一奇一偶，则$c$一定是奇数。欧几里得进一步排除了$a, b$都是奇数的情况，因为：
+
+\begin{align*}
+a^2 + b^2 &= (2m + 1)^2 + (2n + 1)^2 & \text{把}a, b\text{写成奇数形式} \\
+  &= 4m^2 + 4m + 1 + 4n^2 + 4n + 1 & \text{展开} \\
+  &= 4(m^2 + m + n^2 + n) + 2 = 4k + 2 & \text{令整数} k = m^2 + m + n^2 + n
+\end{align*}
+
+也就是说，这个值除以4余2。但是不管$c$是奇数还是偶数，$c^2$除以4都不可能余2。因为：偶数$(2k)^2 = 4k^2$被4整除，而奇数$(2k + 1)^2 = 4(k^2 + k) + 1$除以4余1。因此$a$和$b$不可能都是奇数，只能是一奇一偶。我们可以任选一个（比如第一个）为偶数，另一个是奇数。这样问题就化简为寻找第一个数为偶数，前两个数互素的勾股数。它的答案赫然出现在《几何原本》卷十中的引理1。
+
+\begin{lemma}[欧几里得《几何原本》卷十，引理1]
+方程$x^2 + y^2 = z^2$其中$x, y$互素，且$x$是偶数的\underdot{所有}正整数解，可表示为：
+\be
+\begin{cases}
+x = 2mn \\
+y = m^2 - n^2 \\
+z = m^2 + n^2
+\end{cases}
+\ee
+其中$m > n$，是奇偶不同的任意正整数。
+\end{lemma}
+
+注意“所有”二字，这意味着不存在其它勾股数能逃出欧几里得的解。换言之，欧几里得的解是勾股数的充分必要条件。我们接下来证明这一优美的结论。
+
 Euclid's proof to the Pythagoras triples.
 Euclid and Elements
 Perfect numbers and Even perfect numbers theorem (Euclid), Fermat numbers and Mersenne primes.
@@ -255,8 +289,8 @@ pi as an irrational number
 Dedekind cut
 
 \begin{Exercise}[label={ex:irrationals}]
-\Question{
-\cref{fig:garfield}是第20任美国加菲尔德的勾股定理证法，请解释这一证明。
+\Question{正五边形数}
+\Question{\cref{fig:garfield}是第20任美国加菲尔德的勾股定理证法，请解释这一证明。\label{qn:pythagoras-thm-garfield}
 \begin{center}
  \includegraphics[scale=0.3]{img/garfield}
  \captionof{figure}{美国总统詹姆斯·加菲尔德证法（1876）}
@@ -266,6 +300,7 @@ Dedekind cut
 \end{Exercise}
 
 \begin{Answer}[ref={ex:irrationals}]
+\Question{正五边形数}
 \Question{梯形面积等于两个原直角三角形和一个等腰直角三角形的面积和
 }
 \end{Answer}
