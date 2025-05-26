@@ -362,30 +362,45 @@ p_1 p_2 \dotsm p_n + 1
 
 \begin{proof}
 素数$p = 2^{n+1}-1$只有两个因子$1, p$；$2p$含有四个因子$1, 2, p, 2p$；$4p = 2^2p$含有6个因子$1, 2, 4, p, 2p, 4p$；以此类推$2^n p$含有$2(n+1)$个因子$1, 2, 4, \dotsc, 2^n, p, 2p, 4p, \dotsc, 2^n p$。最后一个不是真因子，剩余的真因子和为：
-\be
-s = 1 + 2 + 4 + \dotsb + 2^n + p + 2p + 4p + \dotsb + 2^{n-1}p
-\label{eq:sum-of-factors}
-\ee
-我们在高中学习过等比数列求和，这里不妨用方程从头推导一下。把\cref{eq:sum-of-factors}乘以2:
-
-\be
-2s = 2 + 4 + 8 + \dotsb + 2^n + 2^{n+1} + 2p + 4p + 8p + \dotsb + 2^n p
-\label{eq:2sum-of-factors}
-\ee
-
-\cref{eq:2sum-of-factors}减\cref{eq:sum-of-factors}得：
 
 \begin{align*}
-2s - s & = \quad \ \cancel{2} + \cancel{4} + \dotsb + \cancel{2^n} + 2^{n+1} + \cancel{2p} + \cancel{4p} + \dotsb + \cancel{2^{n-1}p} + 2^n p \\
-       & - 1 - \cancel{2} - \cancel{4} - \dotsb - \cancel{2^n} - p - \cancel{2p} - \cancel{4p} - \dotsb - \cancel{2^{n-1}p} \\
-  s &= 2^{n+1} - 1 + 2^n p - p \\
-    &= \cancel{p} + 2^n p - \cancel{p} = 2^n(2^{n+1}-1) && \text{代入}p = 2^{n+1} - 1
+s &= 1 + 2 + \dotsb + 2^n + p + 2p + \dotsb + 2^{n-1}p \\
+  &= (1 + 2 + \dotsb + 2^n) + p(1 + 2 + \dotsb + 2^{n-1})
 \end{align*}
-所以$2^n(2^{n+1}-1)$是完美数。
+
+我们在高中学习过等比数列求和，这里不妨用方程从头推导一下。令：
+
+\be
+x = 1 + 2 + 4 + \dotsb + 2^n
+\label{eq:sum-of-power2}
+\ee
+
+把\cref{eq:sum-of-power2}乘以2:
+
+\be
+2x = 2 + 4 + 8 + \dotsb + 2^n + 2^{n+1}
+\label{eq:2sum-of-power2}
+\ee
+
+\cref{eq:2sum-of-power2}减\cref{eq:sum-of-power2}得：
+
+\begin{align*}
+2x - x & = \quad \ \cancel{2} + \cancel{4} + \dotsb + \cancel{2^n} + 2^{n+1} \\
+       & - 1 - \cancel{2} - \cancel{4} - \dotsb - \cancel{2^n} \\
+  x &= 2^{n+1} - 1
+\end{align*}
+
+把这个结果代入真因子和求$s$：
+
+\begin{align*}
+s & = 2^{n + 1} - 1 + p(2^n - 1) &&\text{代入}p = 2^{n+1} - 1 \\
+  & = p + 2^n p - p = 2^n p = 2^n (2^{n+1} - 1) && \qedhere
+\end{align*}
 \end{proof}
 
-Perfect numbers and Even perfect numbers theorem (Euclid), Fermat numbers and Mersenne primes.
+所以$2^n(2^{n+1}-1)$是完美数。后人把这一形式的完美数称为欧几里得完美数。根据欧几里得的结果，不难看出：1）只要找到更多的形如$2^{n+1} - 1$的素数，就能找到更多的完美数。2）所有欧几里得完美数都是偶数。很容易验证毕达哥拉斯学派的找到的6和28都是欧几里得完美数：$2^1\times(2^2-1)=2 \times 3 = 6$，$2^2 \times (2^3 - 1) = 4 \times 7 = 28$，分别是$n = 1, n = 2$时的情况。但后面就没有这么幸运了。$2^4 - 1 = 15$不是素数。不过$2^5 - 1 = 31$是素数，所以$2^4 \times 31 = 16 \times 31 = 496$是下一个完美数。但$2^6 - 1 = 63$不是素数，$2^7 - 1 = 127$是素数，所以$2^6 \times 127 = 8128$是完美数。接下来$n = 8, 9, 10, 11, 12$都不是素数，下一个素数是$2^{13}-1 = 8191$。凭借手算验证这个数是素数已经很困难了，其对应的完美数更是巨大到了33550336。欧几里得完美数的增加极其快速，由于古希腊人没有强大的位值制十进制计数系统，寻找更多完美数的研究遇到了困境。而问题2）的难度远非常人想象。古希腊人没有找到任何奇完美数。不仅如此，直到今天也没有发现任何奇完美数。于是人们猜想不存在奇完全数，但迄今为止没有人能证明这个猜想。这成了当今数学中的悬案，吸引了从欧拉到陶哲轩一代又一代数学家对它进行研究。
 
+Fermat numbers and Mersenne primes.
 
 \section{无理数}
 Discovery of irrational number, square root of 2 and n.
