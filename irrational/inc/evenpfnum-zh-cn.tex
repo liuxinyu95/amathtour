@@ -30,10 +30,10 @@ d &= p_1^{c_1} p_2^{c_2} \dotsm p_n^{c_n} q_1^{d_1} q_2^{d_2} \dotsm q_m^{d_m}  
 \begin{align*}
 \sigma(ab)
   &= 1 + a_1 + a_2 + \dotsb + a + \\
-  &\ b_1 + b_1a_1 + b_1a_2 + \dotsb + b_1a + \\
-  &\ b_2 + b_2a_1 + b_2a_2 + \dotsb + b_2a + \\
-  &\ \dotso + \\
-  &\ b + ba_1 + ba_2 + \dotsb + ba \\
+  &\quad b_1 + b_1a_1 + b_1a_2 + \dotsb + b_1a + \\
+  &\quad b_2 + b_2a_1 + b_2a_2 + \dotsb + b_2a + \\
+  &\quad \dotso + \\
+  &\quad b + ba_1 + ba_2 + \dotsb + ba \\
   &= \sigma(a) + b_1\sigma(a) + b_2\sigma(a) + \dotsb + b\sigma(a) & \text{代入}\sigma(a) = 1 + a_1 + a_2 + \dotsb + a \\
   &= \sigma(a)(1 + b_1 + b_2 + \dotsb + b) \\
   &= \sigma(a)\sigma(b) && \qedhere
@@ -59,7 +59,7 @@ d &= p_1^{c_1} p_2^{c_2} \dotsm p_n^{c_n} q_1^{d_1} q_2^{d_2} \dotsm q_m^{d_m}  
 \sigma(N) = \sigma(2^n)\sigma(b) = (2^{n+1}-1)\sigma(b)
 \]
 
-由于$N$是完美数，所以$\sigma(N)$有等于
+由于$N$是完美数，所以：
 
 \begin{align*}
 \sigma(N) &= 2N  & \text{完美数的因子和} \\
