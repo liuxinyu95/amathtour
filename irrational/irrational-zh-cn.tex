@@ -530,7 +530,16 @@ a^2 &= 2b^2  && \text{两边乘以}b^2
 如果$n$不是某个整数的$m$次方，则$\sqrt[m]{n}$是无理数。
 \end{theorem}
 
-Discovery of irrational number, square root of 2 and n.
+\begin{proof}
+用反证法，假设$\sqrt[m]{n} = \frac{a}{b}$可以表示为即约分数，其中$a, b$互素，且$b \ne 1$。两边乘$m$次方得：
+\[
+a^m = n b^m
+\]
+这说明$b$整除$a^m$。因此$b$的任何素因子$p$一定也整除$a^m$。因为$p$是素数，所以$p$也整除$a$。这样$p$就既整除$a$也整除$b$，这与$a, b$互素矛盾。
+\end{proof}
+
+作为这个定理的特殊情况，如果$n$不是完全平方数，那么$\sqrt{n}$必然是无理数。
+
 Compass and ruler construction I
 Golden ration and Fibonacci series.
 
