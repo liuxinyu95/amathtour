@@ -577,7 +577,7 @@ a^m = n b^m
 \item 以任意点为心及任意的距离可以画圆。（圆规）
 \end{enumerate}
 
-从$\sqrt{2}$开始，古希腊人利用尺规作图和勾股定理（毕达哥拉斯定理）找出了一系列无理数。但在此之前，他们需要解决两个的作图问题：(1) 任给一条线段，规定其长度为1，如何作长度为$n$的线段？(2) 如何作两垂直线段，使之构成直角三角形的两个直角边？
+从$\sqrt{2}$开始，古希腊人利用尺规作图和勾股定理（毕达哥拉斯定理）找出了一系列无理数。但在此之前，他们需要解决两个的作图问题：(1) 任给一条线段，规定其长度为1，如何作长度为$n$的线段？(2) 如何作两垂直线段，使之构成直角三角形的两个直角边？其中问题(2)比较容易（见\cref{qn:perp-of-point}），我们给出问题(1)的方法。
 
 Compass and ruler construction I
 Golden ration and Fibonacci series.
@@ -614,6 +614,7 @@ Dedekind cut
 \Question{$a, b$是互素的奇数，证明$\frac{a \pm b}{2}$互素。\label{qn:coprime-of-half-a-pm-b}}
 \Question{数论中的\underdot{算术基本定理}说：任何整数可以表示成素数的积，不考虑顺序的情况下，这种表示是唯一的。使用算术基本定理证明：$a, b$互素，若$ab = c^2$，则$a, b$都是平方数。\label{qn:coprime-product-as-square}}
 \Question{利用埃拉托斯特尼筛法找出100以内的所有素数。\label{qn:seive-of-eratosthenes-100}}
+\Question{任给一条线段$AB$，作其通过$A$点的垂线。\label{qn:perp-of-point}}
 \end{Exercise}
 
 \begin{Answer}[ref={ex:irrationals}]
@@ -632,6 +633,16 @@ Dedekind cut
 }
 
 \Question{%%利用埃拉托斯特尼筛法找出100以内的所有素数。
+}
+
+\Question{%%任给一条线段$AB$，作其通过$A$点的垂线。
+
+如\cref{fig:perp-of-point}所示，反向延长$AB$，以$A$为圆心$AB$为半径交延长线于点$B'$。分别以点$B$和$B'$为圆心，$BB'$为半径画两圆。连接两圆交点得垂线$CD$。
+\begin{center}
+ \includegraphics[scale=0.3]{img/perp}
+ \captionof{figure}{作过定点的垂线}
+ \label{fig:perp-of-point}
+\end{center}
 }
 \end{Answer}
 
