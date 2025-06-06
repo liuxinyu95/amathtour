@@ -577,9 +577,41 @@ a^m = n b^m
 \item 以任意点为心及任意的距离可以画圆。（圆规）
 \end{enumerate}
 
-从$\sqrt{2}$开始，古希腊人利用尺规作图和勾股定理（毕达哥拉斯定理）找出了一系列无理数。但在此之前，他们需要解决两个的作图问题：(1) 任给一条线段，规定其长度为1，如何作长度为$n$的线段？(2) 如何作两垂直线段，使之构成直角三角形的两个直角边？其中问题(2)比较容易（见\cref{qn:perp-of-point}），我们给出问题(1)的方法。
+从$\sqrt{2}$开始，古希腊人利用尺规作图和勾股定理（毕达哥拉斯定理）找出了一系列无理数。任给一条线段$AB$，规定其长度为1，用圆规在直线上依次截取长为$AB$的线段$n$次就得到了长为$n$的线段。然后在其一端作垂线（见\cref{qn:perp-of-point}），并截取出长为$m$的线段。最后连接两条相互垂直的线段端点，就得到了直角三角形。根据勾股定理，斜边长度为$\sqrt{n^2 + m^2}$（见\cref{fig:rt-mn}）。当$m = n = 1$时，古希腊人就作出了$\sqrt{2}$，当$m=1, n=2$时，古希腊人就作出了$\sqrt{5}$。
 
-Compass and ruler construction I
+\begin{figure}[htbp]
+  \centering
+  \subcaptionbox{直角边为$n$和$m$的三角形\label{fig:rt-mn}}{
+    \begin{tikzpicture}[scale=0.8]
+      \draw (0,0) -- (7,0) -- (0,4) -- cycle;
+      \node[below] at (3.5,0) {$n$};
+      \node[left]  at (0,2) {$m$};
+      \node[above, sloped] at (3.5,2.5) {$\sqrt{m^2 + n^2}$};
+      \draw[thick] (0.1,0) -- (0.1,0.1) -- (0,0.1);
+    \end{tikzpicture}
+  }\subcaptionbox{直角边为1和2的三角形\label{fig:rt-12}}{
+    \begin{tikzpicture}[scale=2]
+      \draw (0,0) -- (2,0) -- (0,1) -- cycle;
+      \node[below] at (1,0) {$2$};
+      \node[left]  at (0,0.5) {$1$};
+      \node[above, sloped] at (1,0.5) {$\sqrt{5}$};
+      \draw[thick] (0.1,0) -- (0.1,0.1) -- (0,0.1);
+    \end{tikzpicture}
+  }
+  \caption{利用勾股定理获得无理数}
+  \label{fig:irrational-tagent}
+\end{figure}
+
+这个值可不一般。我们延长$\sqrt{5}$一个单位（用圆规在斜边延长线上截取1）得到$1 + \sqrt{5}$，然后再取其一半（见\cref{qn:perp-of-point}）得到$\phi = \frac{1 + \sqrt{5}}{2}$。这个值就是大名鼎鼎的黄金分割比。其十进制小数约为1.618\footnote{也叫做黄金分割数、黄金数或黄金比。中学数学课上给出的黄金比是0.618，可以通过在斜边$\sqrt{5}$上截掉1，然后折半得到。这一对值$\phi = \frac{\sqrt{5} \pm 1}{2}$分别是分割点左右的部分。}。\cref{fig:gold-ratio}是文艺复兴时期的大师达·芬奇的名作维特鲁威人。据说他正是通过研究完美的人体比例深刻认识到了黄金分割比，并且有意识地在艺术作品的构图和建筑设计中大量使用黄金比。令维特鲁威人的身高为1，腰部以下的部分为$x$，腰部以上为$1 - x$。达·芬奇认识到腰部将人体分割为两部分的比例（即$(1 - x) : x$）等于腰部以下部分与人体身高的比例（即：$x : 1$），写成等式就是$(1 - x) : x = x : 1$。欧几里得在《原本》中称其为“极端与平均比率”（extreme and mean ratio）。利用比例内项积等于外项积（见第\ref{sec:frac-equiv}节）将此化为$x^2 + x - 1 = 0$，解二次方程得$x_{1, 2} = \frac{\sqrt{5} \pm 1}{2}$。
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[scale=0.4]{img/gold-ratio}
+ \caption{达·芬奇的素描维特鲁威人，1490年}
+ \label{fig:gold-ratio}
+\end{figure}
+
+
 Golden ration and Fibonacci series.
 
 \section{欧几里得算法}
@@ -614,7 +646,8 @@ Dedekind cut
 \Question{$a, b$是互素的奇数，证明$\frac{a \pm b}{2}$互素。\label{qn:coprime-of-half-a-pm-b}}
 \Question{数论中的\underdot{算术基本定理}说：任何整数可以表示成素数的积，不考虑顺序的情况下，这种表示是唯一的。使用算术基本定理证明：$a, b$互素，若$ab = c^2$，则$a, b$都是平方数。\label{qn:coprime-product-as-square}}
 \Question{利用埃拉托斯特尼筛法找出100以内的所有素数。\label{qn:seive-of-eratosthenes-100}}
-\Question{任给一条线段$AB$，作其通过$A$点的垂线。\label{qn:perp-of-point}}
+\Question{古希腊的圆规抬起后两脚合拢，无法像今天的圆规那样直接截取线段。在古希腊，给定一条线段$AB$和一条直线$l$，如何在$l$上截取长度$AB$？}
+\Question{任给一条线段$AB$，(1) 作其通过$A$点的垂线。(2) 作通过不在$AB$上的一点$C$的垂线。\label{qn:perp-of-point}}
 \end{Exercise}
 
 \begin{Answer}[ref={ex:irrationals}]
@@ -635,7 +668,9 @@ Dedekind cut
 \Question{%%利用埃拉托斯特尼筛法找出100以内的所有素数。
 }
 
-\Question{%%任给一条线段$AB$，作其通过$A$点的垂线。
+\Question{古希腊的圆规抬起后两脚合拢，无法像今天的圆规那样直接截取线段。在古希腊，给定一条线段$AB$和一条直线$l$，如何在$l$上截取长度$AB$？}
+
+\Question{%%任给一条线段$AB$，(1) 作其通过$A$点的垂线。(2) 作通过不在$AB$上的一点$C$的垂线。
 
 如\cref{fig:perp-of-point}所示，反向延长$AB$，以$A$为圆心$AB$为半径交延长线于点$B'$。分别以点$B$和$B'$为圆心，$BB'$为半径画两圆。连接两圆交点得垂线$CD$。
 \begin{center}
