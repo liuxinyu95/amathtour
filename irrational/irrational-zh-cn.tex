@@ -602,7 +602,7 @@ a^m = n b^m
   \label{fig:irrational-tagent}
 \end{figure}
 
-这个值可不一般。我们延长$\sqrt{5}$一个单位（用圆规在斜边延长线上截取1）得到$1 + \sqrt{5}$，然后再取其一半（见\cref{qn:perp-of-point}）得到$\phi = \frac{1 + \sqrt{5}}{2}$。这个值就是大名鼎鼎的黄金分割比。其十进制小数约为1.618\footnote{也叫做黄金分割数、黄金数或黄金比。中学数学课上给出的黄金比是0.618，可以通过在斜边$\sqrt{5}$上截掉1，然后折半得到。这一对值$\phi = \frac{\sqrt{5} \pm 1}{2}$分别是分割点左右的部分。}。\cref{fig:gold-ratio}是文艺复兴时期的大师达·芬奇的名作维特鲁威人。据说他正是通过研究完美的人体比例深刻认识到了黄金分割比，并且有意识地在艺术作品的构图和建筑设计中大量使用黄金比。令维特鲁威人的身高为1，腰部以下的部分为$x$，腰部以上为$1 - x$。达·芬奇认识到腰部将人体分割为两部分的比例（即$(1 - x) : x$）等于腰部以下部分与人体身高的比例（即：$x : 1$），写成等式就是$(1 - x) : x = x : 1$。欧几里得在《原本》中称其为“极端与平均比率”（extreme and mean ratio）。利用比例内项积等于外项积（见第\ref{sec:frac-equiv}节）将此化为$x^2 + x - 1 = 0$，解二次方程得$x_{1, 2} = \frac{\sqrt{5} \pm 1}{2}$。
+这个值可不一般。我们延长$\sqrt{5}$一个单位（用圆规在斜边延长线上截取1）得到$1 + \sqrt{5}$，然后再取其一半（见\cref{qn:perp-of-point}）得到$\phi = \frac{1 + \sqrt{5}}{2}$。这个值就是大名鼎鼎的黄金分割比。其十进制小数约为1.618\footnote{也叫做黄金分割数、黄金数或黄金比。中学数学课上给出的黄金比近似值是0.618，可以通过在斜边$\sqrt{5}$上截掉1，然后折半得到。}。\cref{fig:gold-ratio}是文艺复兴时期的大师达·芬奇的名作维特鲁威人。据说他正是通过研究完美的人体比例深刻认识到了黄金分割比，并且有意识地在艺术作品的构图和建筑设计中大量使用黄金比。令维特鲁威人的身高为1，腰部以下的部分为$x$，腰部以上为$1 - x$。达·芬奇认识到腰部将人体分割为两部分的比例（即$(1 - x) : x$）等于腰部以下部分与人体身高的比例（即$x : 1$），写成等式就是$(1 - x) : x = x : 1$。欧几里得在《原本》中称其为“极端与平均比率”（extreme and mean ratio）。利用比例内项积等于外项积（见第\ref{sec:frac-equiv}节）将此化为$x^2 + x - 1 = 0$，解二次方程得$x_{1, 2} = \frac{-1 \pm \sqrt{5}}{2}$。
 
 \begin{figure}[htbp]
  \centering
@@ -611,6 +611,78 @@ a^m = n b^m
  \label{fig:gold-ratio}
 \end{figure}
 
+由于\cref{fig:gold-ratio}中的$x < 1$，故取$x = \frac{\sqrt{5} - 1}{2} \approx 0.618$。如果令腰部以上的部分为1，腰部以下部分为$x$。同样的黄金分割——使得腰部将人体分割为两部分的比例（即$1 : x$）等于腰部以下部分与人体身高的比例（即$x : (1 + x)$），写成等式就是$1 : x = x : (1 + x)$。这导致另一个方程$x^2 - x - 1 = 0$，解此二次方程得$x_{1, 2} = \frac{1 \pm \sqrt{5}}{2}$。这里由于$x > 0$，故取$x = \frac{1 + \sqrt{5}}{2} \approx 1.618$。注意到这两个值互为倒数：
+
+\[
+\frac{\sqrt{5} - 1}{2} \times \frac{\sqrt{5} + 1}{2} = \frac{(\sqrt{5})^2 - 1}{4} = \frac{5 - 1}{4} = 1
+\]
+
+所以我们在提到黄金比时，$\phi = \frac{\sqrt{5} \pm 1}{2}$都正确，要取决于上下文的具体含义（见\cref{fig:2-cases-phi}）。我们接下来证明黄金数是一个无理数。
+
+\begin{figure}
+  \centering
+  \subcaptionbox{$\phi = \frac{\sqrt{5} - 1}{2} \approx 0.618$}{
+    \begin{tikzpicture}[scale=4]
+        \pgfmathsetmacro{\a}{0.382}
+
+        \draw (0,0) -- (1,0);
+
+        \filldraw (0,0) circle (0.5pt) node[below] {$A$};
+        \filldraw (\a,0) circle (0.5pt) node[below] {$C$};
+        \filldraw (1,0) circle (0.5pt) node[below] {$B$};
+
+        \draw[<->] (0,-0.2) -- (\a,-0.2) node[midway,below] {$1-\phi$};
+        \draw[<->] (\a,-0.2) -- (1,-0.2) node[midway,below] {$\phi$};
+        \draw[<->] (0,-0.4) -- (1,-0.4) node[midway,below] {$1$};
+    \end{tikzpicture}
+  }\subcaptionbox{$\phi = \frac{\sqrt{5} + 1}{2} \approx 1.618$}{
+    \begin{tikzpicture}[scale=4]
+        \pgfmathsetmacro{\a}{0.382}
+
+        \draw (0,0) -- (1,0);
+
+        \filldraw (0,0) circle (0.5pt) node[below] {$A$};
+        \filldraw (\a,0) circle (0.5pt) node[below] {$C$};
+        \filldraw (1,0) circle (0.5pt) node[below] {$B$};
+
+        \draw[<->] (0,-0.2) -- (\a,-0.2) node[midway,below] {$1$};
+        \draw[<->] (\a,-0.2) -- (1,-0.2) node[midway,below] {$\phi$};
+        \draw[<->] (0,-0.4) -- (1,-0.4) node[midway,below] {$1 + \phi$};
+    \end{tikzpicture}
+  }
+  \caption{黄金分割的两种含义}
+  \label{fig:2-cases-phi}
+\end{figure}
+
+
+\begin{proof}
+用反证法，假设黄金数$\phi = \frac{a}{b}$可以写成即约分数，其中$b \ne 1$。它满足方程$\phi^2 \pm \phi - 1 = 0$，代入$\frac{a}{b}$：
+\begin{align*}
+(\frac{a}{b})^2 & = 1 \pm \frac{a}{b}  \\
+a^2 &= b^2 \pm ab && \text{两边乘以}b^2 \\
+a^2 &= b(b \pm a)
+\end{align*}
+因为$a, b$互素，它们不可能都是偶数。如果$a$是奇数$b$是偶数，则左边$a^2$是奇数，但右边是偶数导致矛盾；如果$a$是偶数$b$是奇数，则左边$a^2$是偶数，但右边的$b \pm a$是奇数，乘以奇数$b$还是奇数，也导致矛盾；如果$a, b$都是奇数，则左边$a^2$是奇数，但右边$b \pm a$是偶数，所以右边的值是偶数，仍然矛盾。故假设错误，黄金数是无理数。
+\end{proof}
+
+还记得希帕索斯传说的另一个版本么？毕达哥拉斯学派的五角星徽章标志包含着无理数。这个无理数恰好就是黄金分割数$\phi$。我们接下来揭示这个神秘的联系。这一方法来自洛克哈特的《度量》一书。
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[scale=0.35]{img/pentagon}
+ \caption{正五边形}
+ \label{fig:pentagon}
+\end{figure}
+
+观察\cref{fig:pentagon}中的正五边形，三角形1和2全等，2和3相似（我们略去了详细的证明，不难看出1、2都是等腰三角形，有一公共边，底角都是36度。2、3是有对顶角的等腰三角形）。令对角线$BE$的长度为1，正五边形的边长为$x$，由于三角形1和3相似，所以：
+
+\begin{align*}
+\frac{x}{1} &= \frac{AB}{BE} = \frac{FC}{CD} && \text{1, 3相似} \\
+            &= \frac{EC - EF}{CD} = \frac{BE - AB}{CD} && BEC\text{是等腰三角形且1, 2全等} \\
+            &= \frac{1-x}{x}
+\end{align*}
+
+这样就得到方程$x^2 + x - 1 = 0$，它的解恰恰就是黄金分割比$\phi = \frac{\sqrt{5} - 1}{2}$。在毕达哥拉斯学派的徽标中，若五角星的对角线长1，则五角星的邻角距离是$\phi$，五角星的每个角的边长是$1 - \phi$。
 
 Golden ration and Fibonacci series.
 
