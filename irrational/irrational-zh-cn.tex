@@ -791,6 +791,592 @@ r^2 &= 2
 \end{quotation}
 
 \section{欧几里得算法}
+
+古希腊人认识到新发现的这一类数与此前的数不同。首先，它们是客观存在的，通过尺规作图作图可以实实在在地构造出来。其次，它们不能表达为整数或者整数的比。为了把它们归入数的大家庭，人们需要解决一系列问题：(1) 如何区分和定义这一类数？(2) 如何认识、衡量它们的大小？(3) 它们在数轴上的位置是什么？(4) 尽管它们不能表示为即约分数，有没有办法用分数逼近它们？经过欧多克索斯和欧几里得之手，和这些问题引出了丰硕的成果。
+
+我们在前面的尺规作图中，通常先把一个给定的线段定义为1，然后动手延长截取出$n$。这个被定义为1的线段相当于一把尺子，用它可以度量出长度为$n$的线段。毕达哥拉斯学派为了将几何纳入“万物皆数”的理论，提出了一个概念来定义一条线段可以用另一条线段来度量。这个定义说，如果一条线段A可以通过有限个另一条线段V来表示时，称线段V可用作线段A的量度（measure）。这本质上是说，我们可以通过整数次拼接产生另一条线段。尽管度量两条不同的线段时，可以使用各自的量度，但是如果想用同一量度测量不同的线段，它必须是二者的公度（common measure）。即当且仅当线段V可以同时成为线段A和线段B的量度时，它才能成为二者的公度。
+
+\index{最大公度}
+由于公度可能有多个，为此需要引入\underdot{最大}公度\footnote{英文greatest common measure简称gcm，线段的长度是整数时，通常称最大公约数，英文为greatest common divisor，简称gcd}的概念。如果线段V是线段A和线段B的公度，并且比其它公度都大，则称V是A和B的最大公度。已知两条线段，怎样才能求得最大公度呢？这就引出了历史上著名的递归算法——欧几里得算法（又称辗转相除法）\footnote{印度和中国分别独立发现了欧几里得算法。五世纪末，印度数学家阿耶波多（Aryabhata）用这一算法解不定方程（丢番图方程）。在《孙子算经》中，欧几里得算法可以作为中国剩余定理的特例。在1247年，南宋数学家秦九韶在《数书九章》中详细给出了欧几里得算法。}。在欧几里得《原本》卷十命题3中\cite{Elements}，详细阐述了这一算法\footnote{在《原本》卷七的命题1中，有针对整数的欧几里得算法。但针对线段的情形实际上覆盖了整数。}。
+
+\index{欧几里得算法}
+\begin{proposition}[《原本》，卷十，命题3]
+已知两个可公度的量，求它们的最大公度量。
+\end{proposition}
+
+第\ref{sec:gcd-minus}节中，我们介绍了欧几里得算法的减法形式求两个自然数的最大公约数。《原本》将其从自然数扩展到几何量，从而更加通用。欧几里得给出的方法，只需要使用递归和减法。因此本质上可以用尺规作图的方式求出最大公度。我们再次把这一算法的形式化定义列出：
+
+\[
+(a, b) = \begin{cases}
+  a > b :& (a - b, b) \\
+  a = b :& a \\
+  a < b :& (a, b - a)
+  \end{cases}
+\]
+
+设两条线段$a$、$b$可公度，如果它们相等，则最大公度就是其中的任一条线段，此时算法返回$a$作为结果。如果线段$a$比$b$长，就用圆规\underdot{不断}从$a$中截去$b$（通过递归），然后求截短的线段$a'$和$b$的最大公度；否则如果线段$b$比$a$长，就反过来\underdot{不断}从$b$中截去$a$，然后求$a$和截短的线段$b'$的最大公度。\cref{fig:line-seg-gcm}描述了这一算法作用于两条线段的计算步骤。我们也可将这一算法应用于整数42和30并与处理线段的过程进行对比：
+
+\[
+(42, 30) = (12, 30) = (12, 18) = (12, 6) = (6, 6) = 6
+\]
+
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[scale=0.125]
+    \filldraw (0, 0) circle (0.5)   (30, 0) circle (0.5)   (42, 0) circle (0.5);
+    \draw (-8, 0) node{$a$} (0, 0) -- (42, 0);
+    \filldraw (0, -5) circle (0.5)   (30, -5) circle (0.5);
+    \draw (-8, -5) node{$b$} (0, -5) -- (30, -5);
+
+    \filldraw (0,  -15) circle (0.5)   (12, -15) circle (0.5);
+    \draw (-8, -15) node{$a'=a-b$} (0, -15) -- (12, -15);
+    \filldraw (0, -20) circle (0.5)   (12, -20) circle (0.5)   (24, -20) circle (0.5)   (30, -20) circle (0.5);
+    \draw (-8, -20) node{$b$} (0, -20) -- (30, -20);
+
+    \filldraw (0,  -30) circle (0.5)   (6, -30) circle (0.5)   (12, -30) circle (0.5);
+    \draw (-8, -30) node{$a'$} (0, -30) -- (12, -30);
+    \filldraw (0, -35) circle (0.5)   (6, -35) circle (0.5);
+    \draw (-8, -35) node{$b'=b-2a'$} (0, -35) -- (6, -35);
+
+    \filldraw (0,  -45) circle (0.5)   (6, -45) circle (0.5);
+    \draw (-8, -45) node{$a''=a'-b'$} (0, -45) -- (6, -45);
+    \filldraw (0, -50) circle (0.5)   (6, -50) circle (0.5);
+    \draw (-8, -50) node{$b'$} (0, -50) -- (6, -50);
+  \end{tikzpicture}
+  \caption{欧几里得算法的线段示意}
+  \label{fig:line-seg-gcm}
+\end{figure}
+
+
+将一个量$b$反复从另一个量$a$中减去，最后得到$a'$的过程恰好是带余数除法的定义。即$a' = a - \lfloor a / b \rfloor b$或记为$a'= a \bmod b$。因此我们可以用除法和求余运算代替原始欧几里得算法中的反复相减。此外，当一个量是另一个量的整倍数时，例如$b \leq a$且$b$可以整除$a$，我们立即知道最大公度为$b$。此时求余的结果$a \bmod b = 0$，为此可以定义$\gcm(0, b) = \gcm(b, 0) = b$。我们可以先比较$a$和$b$的大小，如果$a < b$就交换两个量。由于我们知道$a \bmod b$一定小于$b$, 所以下次递归时可以直接交换为：$\gcm(b, a \bmod b)$。这样就得到了改进的欧几里得算法。
+
+\be
+\gcm(a, b) = \left \{
+  \begin{array}
+  {r@{\quad:\quad}l}
+  b = 0 & a\\
+  \text{否则} & \gcm(b, a \bmod b) \\
+  \end{array}
+\right.
+\label{eq:gcm}
+\ee
+
+为什么这个算法可以求出最大公度呢？我们需要分两步来证明它的正确性。第一步我们要证明这一算法可以求出公度。设$b \leq a$，令整数$q_0$为商，$r_0$为余数，即$a = b q_0 + r_0$，如果$r_0$为零，算法就找到了公度，为此我们考虑$r_0$不为零的情况。此时可以进一步列出$b = r_0 q_1 + r_1$，类似地，只要余数不为零，我们可以一直列出这样的式子。
+
+\[
+\begin{array}{rcl}
+a &=& b q_0 + r_0 \\
+b &=& r_0 q_1 + r_1 \\
+r_0 &=& r_1 q_2 + r_2 \\
+r_1 &=& r_2 q_3 + r_3 \\
+& & ...
+\end{array}
+\]
+
+但只要$a$、$b$是可公度的，这些式子不会无限列下去。理由是每次都用圆规截取整数次，即商是整数。同时每次都保证余数小于除数。即$b > r_0 > r_1 > r_2 > ... > 0$，但是余数不可能小于零。由于起始值是有限的，故最终一定在有限步内得到$r_{n-2} = r_{n-1} q_n$。
+
+接下来我们证明最后一步得到的$r_{n-1}$可以同时度量$a$和$b$。根据度量的定义，显然$r_{n-1}$可以度量$r_{n-2}$。然后考虑倒数第二式$r_{n-3} = r_{n-2} q_{n-1} + r_{n-1}$，由于$r_{n-1}$可以度量$r_{n-2}$，所以$r_{n-1}$也可以度量$r_{n-2} q_{n-1}$，自然它也可以度量$r_{n-2} q_{n-1} + r_{n-1}$，这个量恰好等于$r_{n-3}$。用同样的方法，我们可以向上逐一证明$r_{n-1}$可以度量每个式子左边，一直到$b$、$a$。这样我们就证明了欧几里得算法得到的答案$r_{n-1}$是$a$、$b$的公度。若最大公度为$g$，一定有$r_{n-1} \leq g$。
+
+第二步我们要证明，任何$a$、$b$的公度$c$，一定也可以度量$r_{n-1}$。由于$c$是公度，因此$a$和$b$可以用它来表示，不妨记$a = mc$、$b = nc$，其中$m$、$n$都是整数。这样第一式$a = b q_0 + r_0$就可以写成$mc = ncq_0 + r_0$，我们得知$r_0 = (m - nq_0)c$，因此$c$也可以度量$r_0$。类似地，我们可以依次证明$c$可以度量$r_1$、$r_2$、……、$r_{n-1}$。这样我们就证明了任何公度都可以度量$r_{n-1}$，因此最大公度$g$也可以度量$r_{n-1}$，即$g \leq r_{n-1}$。
+
+综合第一、二步的结果，即$r_{n-1} \leq g$且$g \leq r_{n-1}$，我们得出最大公度$g = r_{n-1}$，也就是说欧几里得算法能够正确地给出最大公度。进一步，我们知道$g$是每一对量的最大公度，即：
+
+\be
+g = \gcm(a, b) = \gcm(b, r_0) = ... = \gcm(r_{n-2}, r_{n-1}) = r_{n-1}
+\label{eq:recursive-gcm}
+\ee
+
+\cref{fig:geometric-GCM}给出了欧几里得算法的一个几何解释。
+
+\begin{figure}[htbp]
+ \centering
+ \subcaptionbox{反复剪掉正方形}{\includegraphics[scale=0.4]{img/GCM}}
+ \subcaptionbox{用最终的小正方形铺满原图}{
+   \begin{adjustbox}{max width=\textwidth}
+   \begin{tikzpicture}
+     \draw[step=1, thin] (0, 0) grid (30, 13);
+   \end{tikzpicture}
+   \end{adjustbox}
+ }
+ %\captionsetup{labelformat=empty}
+ \caption{欧几里得算法的几何解释}
+ \label{fig:geometric-GCM}
+\end{figure}
+
+\subsection{扩展欧几里得算法}
+
+\index{扩展欧几里得算法} \index{贝祖等式}
+所谓扩展欧几里得算法，就是除了求得两个量$a$、$b$的最大公度$g$外，同时找到满足贝祖等式$ax + by = g$的两个整数$x$和$y$。为什么贝祖等式（Bézout's identity）\footnote{贝祖等式，或称贝祖定理（也译为裴蜀定理），最早是由法国数学家梅齐里亚克（Claude Gaspard Bachet de Méziriac，1581–1638）发现并证明了其对整数成立，法国数学家贝祖证明这一等式对多项式成立。贝祖等式可以推广到任意的整环和主理想整环（PID，Principle Ideal Domain）上。}一定成立呢？我们下面给出贝祖等式的一种证明。由$a$、$b$可以构造一个集合，包含它们所有正的线性组合：
+
+\[
+S = \{ ax + by | x, y \in \mathbb{Z} \text{且} ax + by > 0\}
+\]
+
+%\begin{wrapfigure}{R}{0.4\textwidth}
+\begin{figure}[htbp]
+ \centering
+ \subcaptionbox{贝祖（Étienne Bézout, 1730 - 1783）}[0.45\linewidth]{\includegraphics[scale=0.45]{img/Bezout}}
+ \subcaptionbox{梅齐里亚克（Claude Gaspard Bachet de Méziriac, 1581–1638），最早发现并证明了整数上的贝祖等式。}[0.45\linewidth]{\includegraphics[scale=0.95]{img/Meziriac}}
+ %\captionsetup{labelformat=empty}
+ \caption{贝祖和梅齐里亚克}
+ \label{fig:Bezout}
+ \label{fig:Meziriac}
+\end{figure}
+%\end{wrapfigure}
+
+对于线段来说，$S$一定不为空，因为它至少包含$a$（此时$x = 1, y = 0$）和$b$（此时$x = 0, y = 1$）。因为$S$的所有元素都为正，所以它一定存在一个最小的元素，我们将其记为$g = as + bt$。我们接下来要证明$g$就是$a$和$b$的最大公度。为此我们将$a$表示成$g$的商与余数的形式。
+
+\be
+a = qg + r
+\label{eq:Euclidean-division}
+\ee
+
+其中余数$0 \leq r < g$。余数要么为0，要么在集合$S$中。这是因为
+
+\[
+\begin{array}{rll}
+r & = a - qg & \text{由\cref{eq:Euclidean-division}} \\
+  & = a - q(as + bt) & g\text{的定义} \\
+  & = a(1 - qs) - bqt & \text{合并整理}
+\end{array}
+\]
+
+即$r$可以表示为$a$、$b$的线性组合，因此如果它不为0，则一定在集合$S$中。但这是不可能的，因为我们之前假设$g$是$S$中的最小正元素，而$r$却比$g$更小，这样就会产生矛盾。因此我们得知$r$一定等于0。根据\cref{eq:Euclidean-division}，$g$一定可以度量$a$。用同样的方法，可以证明$g$也一定可以度量$b$。因此$g$是它们的公度。接下来我们证明$g$是最大公度。令$c$为$a$和$b$的任意公度，根据定义，存在整数$m$、$n$使得$a = mc$、$b = nc$。这样$g$就可以表示为：
+
+\[
+\begin{array}{rll}
+g & = as + bt & \text{由定义} \\
+  & = mcs + nct & c\text{是$a$、$b$的公度} \\
+  & = c(ms + nt) & g\text{是$c$的倍数}
+\end{array}
+\]
+
+这说明$c$可以度量$g$，也就是说$c \leq g$。这就证明了$g$是最大公度。综上我们就证明了贝祖等式，即存在整数使得$ax + by = g$，并且进一步得知最大公度是所有线性组合的正值中最小的。
+
+使用贝祖等式，我们可以推导出扩展欧几里得算法。
+
+\[
+\begin{array}{rlr}
+ax + by & = \gcm(a, b) & \text{贝祖等式} \\
+        & = \gcm(b, r_0) & \text{欧几里得算法，\cref{eq:recursive-gcm}} \\
+        & = bx' + r_0 y' & \text{对$b$和$r_0$使用贝祖等式} \\
+        & = bx' + (a - bq_0)y' & \text{利用$a = b q_0 + r_0$} \\
+        & = ay' + b(x' - y'q_0) & \text{整理为$a$和$b$的线性组合} \\
+        & = ay' + b(x' - y' \lfloor a / b \rfloor) & \text{将$q_0$表示为$a$与$b$的商}
+\end{array}
+\]
+
+这样就得出了每次递归时的关系：
+
+\[
+\left \{
+  \begin{array}{l}
+  x = y' \\
+  y = x' - y' \lfloor a / b \rfloor
+  \end{array}
+\right.
+\]
+
+递归的边界条件出现在$b = 0$的时候，此时$\gcm(a, 0) = 1a + 0b$。把边界条件和递归关系归纳起来就得到了扩展欧几里得算法。
+
+\be
+\gcm_{ex}(a, b) = \left \{
+  \begin{array}
+  {r@{\quad:\quad}l}
+  b = 0 & (a, 1, 0) \\
+  \text{否则} & \begin{array}{l}
+                (g, y', x' - y' \lfloor a / b \rfloor) \\[2pt]
+                \text{其中}(g, x', y') = \gcm_{ex}(b, a \bmod b)
+                \end{array} \\
+  \end{array}
+\right.
+\label{eq:gcm-ext}
+\ee
+
+我们下面给出一个使用扩展欧几里得算法解决的趣题（\cite{LiuXinyu2017}，第450页）。有两个水瓶，一个的容量是9升，另一个的容量是4升。问如何才能从河中打出6升水？
+
+这道题目有很多变化形式，瓶子的容积和取水的容量可以是其它数值。有一个故事说解决这道题目的主人公是少年时代的法国数学家泊松（Sim\`{e}on Denis Poisson）。
+
+使用两个瓶子，共有6种操作。记大瓶子为$A$，容积为$a$；小瓶子为$B$，容积为$b$：
+
+\begin{itemize}
+\item 将大瓶子$A$装满水；
+\item 将小瓶子$B$装满水；
+\item 将大瓶子$A$中的水倒空；
+\item 将小瓶子$B$中的水倒空；
+\item 将大瓶子$A$中的水倒入小瓶子$B$；
+\item 将小瓶子$B$中的水倒入大瓶子$A$。
+\end{itemize}
+
+其中最后两种操作中，任意一个瓶子满或者另一个瓶子空时就停止。\cref{tab:jug-ops}给出了一系列倒水动作的例子，这里假设容积$b < a < 2b$。
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{l|l|l}
+$A$ & $B$ & 操作 \\
+\hline
+0 & 0 & 开始 \\
+0 & $b$ & 倒满$B$ \\
+$b$ & 0 & 将$B$倒入$A$ \\
+$b$ & $b$ & 倒满$B$ \\
+$a$ & $2b - a$ & 将$B$倒入$A$ \\
+0 & $2b - a$ & 倒光$A$ \\
+$2b - a$ & 0 & 将$B$倒入$A$ \\
+$2b - a$ & b & 倒满$B$ \\
+a & $3b - 2a$ & 将$B$倒入$A$ \\
+... & ... & ... \\
+\end{tabular}
+\caption{两个瓶子内的水量和倒水操作的对应关系} \label{tab:jug-ops}
+\end{table}
+
+无论进行何种操作，每个瓶子中的水的容量总可以表示为$ax + by$的形式，其中$x$、$y$是整数。也就是说，我们能获得的水的体积总是$a$与$b$的线性组合。根据贝祖等式的证明，我们知道线性组合的最小正值恰好是$a$和$b$的最大公度$g$。
+因此给定两个瓶子的容量，我们立即能够判断是否可以得到体积为$c$的水——只要$c$能够被$g$度量\footnote{如果容积为整数，当且仅当$c$能够被最大公约数$g$整除。}。这里我们假设$c$不超过两个瓶子中较大瓶子的容积。
+
+例如，使用容量为4升和6升的瓶子，我们永远无法得到5升水。这是因为4与6的最大公约数是2，但5不能被2整除。（换个思路想这个问题：用两个容积为偶数升的瓶子，永远无法从河里打到奇数升的水。）如果$a$和$b$是互素的整数，即$\gcd(a, b) = 1$，则可以得到任意自然数$c$升的水。
+
+虽然通过检查$g$是否能度量$c$可以判断是否有解，但是我们并不知道具体的倒水步骤。如果我们可以找到整数$x$和$y$，使得$ax + by = c$。就可以得到一组操作来解决此题。具体思路是这样的：若$x > 0$、$y < 0$，我们需要倒满瓶子$A$共$x$次，倒空瓶子$B$共$y$次；反之若$x < 0$、$y > 0$，则需要倒空瓶子$A$共$x$次，倒满瓶子$B$共$y$次。
+
+例如，若大瓶容积$a=5$、小瓶容积$b=3$，要取得$c=4$升水，因为$4 = 3 \times 3 - 5$，即$x = -1$、$y = 3$我们可以设计如\cref{tab:designed-jugs-ops}中的一系列操作。
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{l|l|l}
+$A$ & $B$ & 操作 \\
+\hline
+0 & 0 & 开始 \\
+0 & 3 & 倒满$B$ \\
+3 & 0 & 将$B$倒入$A$ \\
+3 & 3 & 倒满$B$ \\
+5 & 1 & 将$B$倒入$A$ \\
+0 & 1 & 将$A$倒空 \\
+1 & 0 & 将$B$倒入$A$ \\
+1 & 3 & 倒满$B$ \\
+4 & 0 & 将$B$倒入$A$ \\
+\end{tabular}
+\caption{取得4升水需要进行的操作} \label{tab:designed-jugs-ops}
+\end{table}
+
+在这一系列操作中，倒满$B$共3次，倒空$A$共1次。因此剩下的问题是如何寻找整数$x$和$y$，使得$ax + by = c$。根据扩展欧几里得算法，我们可以找到满足贝祖等式的一组解$ax_0 + by_0 = g$。因为$c$是最大公度$g$的$m$倍，我们只要把$x_0$和$y_0$相应加大$m$倍即可得到一组特解：
+
+\[
+\begin{dcases}
+  x_1 = x_0 \dfrac{c}{g} \\
+  y_1 = y_0 \dfrac{c}{g}
+\end{dcases}
+\]
+
+根据这组特解，我们可以找到满足不定方程\footnote{又叫做丢番图方程，是用古希腊亚历山大的数学家丢番图（Diophantus，约200-284）的名字命名的。丢番图在他的著作《算术》中，独创地引入了代数符号系统。被一些数学史家誉为“代数学之父”\cite{HanXueTao2009}。}的所有整数解：
+
+\be
+\begin{dcases}
+  x = x_1 - k \dfrac{b}{g} \\
+  y = y_1 + k \dfrac{a}{g}
+\end{dcases}
+\ee
+
+这里$k$为整数。这样我们就找到了倒水问题的所有解。进一步，我们可以找到一个特定的$k$，使得$|x| + |y|$的值最小，从而得到最快的倒水步骤\footnote{例如，可以将表示解的两条直线画出。取绝对值后，将横轴下方的部分对称翻转。进而找到使得$|x|+|y|$最小的$k$。}。下面是解决这一趣题的Haskell例子程序。
+
+\lstset{frame=single}
+\begin{Haskell}
+import Data.List
+import Data.Function (on)
+
+-- Extended Euclidean Algorithm
+gcmex a 0 = (a, 1, 0)
+gcmex a b = (g, y', x' - y' * (a `div` b)) where
+  (g, x', y') = gcmex b (a `mod` b)
+
+-- Solve the linear Diophantine equation ax + by = c
+solve a b c | c `mod` g /= 0 = (0, 0, 0, 0) -- no solution
+            | otherwise = (x1, u, y1, v)
+  where
+    (g, x0, y0) = gcmex a b
+    (x1, y1) = (x0 * c `div` g, y0 * c `div` g)
+    (u, v) = (b `div` g, a `div` g)
+
+-- Optimal by minimize |x| + |y|
+jars a b c = (x, y) where
+  (x1, u, y1, v) = solve a b c
+  x = x1 - k * u
+  y = y1 + k * v
+  k = minimumBy (compare `on` (\i -> abs (x1 - i * u) +
+                                     abs (y1 + i * v))) [-m..m]
+  m = max (abs x1 `div` u) (abs y1 `div` v)
+\end{Haskell}
+
+求得两个瓶子倒空和倒满的次数$x$、$y$后，就可以生成一系列倒水的步骤，本章附录提供了完整的例子程序。
+
+\subsection{欧几里得算法的意义}
+
+在“万物皆数”的哲学思想下，虽然欧几里得算法最初是为了寻找两个整数的最大公约数而产生的。但是经过欧几里得之手，算法却应用到了抽象的几何量上。从整数的最大公约数，到可公度量的最大公度，我们看到了几何量和数的分离\footnote{这也是我们使用gcm，而没有使用更常见的gcd作为算法简写的原因。}。几何不仅没有建立在整数之上，反而独立发展，解决了整数之外的问题。以至于后来古希腊数学形成了这样的传统，任何关于数的结论，都需要给出几何的证明。这一传统直到十六世纪仍然影响着人们。意大利数学家卡尔丹（Gerolamo Cardano）\footnote{也译作卡尔达诺}在关于解三次、四次方程的著作《大术》（Ars Magna，1545年出版）中，仍然使用类似立方体填补法的几何论证\cite{HanXueTao2009}。
+
+欧几里得算法是最著名的一个递归算法。德国数学家，解析数论创始人狄利克雷（Dirichlet）在他的著作《数论讲义》中评价到：“整个数论的结构都建立在同一个基础之上，这个基础就是最大公约数算法。”现代密码学的RSA加密算法\footnote{RSA算法是最早的一种公开密钥加密的非对称加密算法，RSA是1977年由罗纳德·李维斯特（Ron Rivest）、阿迪·萨莫尔（Adi Shamir）和伦纳德·阿德曼（Leonard Adleman）一起提出的。当时他们三人都在麻省理工学院工作。RSA就是他们三人姓氏开头字母拼在一起组成的。}直接使用了扩展欧几里得算法。我们在上一节通过一道趣题展示了如何使用扩展欧几里得算法给出二元线性不定方程$ax + by = c$的整数解。具体来说，就是先求出最大公度$g$，并判断$g$是否整除$c$，若不能，则无整数解。否则，将满足贝祖等式的$x_0$，$y_0$，扩大$c/g$倍得到一组特解$x_1$、$y_1$。然后得到一般二元线性不定的通解$x = x_1 - k b / g$和$y = y_1 + k a / g$。
+
+\index{希帕索思（Hippasus of Metapontum）}
+欧几里得算法是一把锋利的宝剑，但是它强大的递归原理被反过来指向了“万物皆数”的基石——万物可公度。一切事物和现象都可以归结为整数与整数的比。从而引发了毕达哥拉斯学派哲学思想的危机。约公元前470年左右，毕达哥拉斯学派的学生希帕索思试图寻找正方形的对角线和边的公度。经过仔细思考他发现不管度量单位取得多么小，这两条线段都无法公度。还有的说法是希帕索思从毕达哥拉斯学派的神秘五角星标志上得到了启发。毕达哥拉斯学派成员用五角星作为学派的徽章和联络标志。有一则故事说，学派的一个成员流落异乡，贫病交迫，无力酬谢房主的款待，临终前要房主在门上画一个五角星。若干年后，有同派的人看到这个标志，询问事情的经过，厚报房主而去\cite{HanXueTao16}。美国迪士尼在1959年的动画片《唐老鸭漫游数学奇境》中，描绘了唐老鸭遇到了毕达哥拉斯和他的朋友们，在了解音乐、艺术与数的关系后，唐老鸭的手掌上也画上了神秘的五角星。如\cref{fig:pentagram}所示，传说希帕索思发现线段AC和AG也是无法公度的。
+
+%《唐老鸭漫游数学奇境》（Donald In Mathmagic Land ）
+
+%\begin{wrapfigure}{L}{0.4\textwidth}
+\begin{figure}[htbp]
+ \centering
+ \subcaptionbox{递归的五角星}[0.45\linewidth]{\includegraphics[scale=0.5]{img/pentagram}}
+ \subcaptionbox{正方形的边长和对角线}[0.45\linewidth]{\includegraphics[scale=1.5]{img/irrational}}
+ %\captionsetup{labelformat=empty}
+ \caption{无理数的几何描述}
+ \label{fig:pentagram}
+ \label{fig:irrational}
+\end{figure}
+%\end{wrapfigure}
+
+十九世纪的苏格兰数学家乔治$\cdot$克里斯托重建了希帕索思的证明。使用反证法，假设存在一条单位线段$c$能够公度正方形的边和对角线。根据度量的定义，可以令边长为$nc$、对角线长为$mc$，其中$m$、$n$都是正整数。如\cref{fig:irrational}所示，我们以点A为圆心，以边长为半径做圆弧交对角线AC于点E。然后从E出发作垂直于对角线的直线，并交边BC于点F。
+
+根据圆的定义，线段AE的长度等于正方形的边长，所以线段EC的长度等于$(m - n)c$。因为EF垂直于AC，而角$\angle ECF$是$45\degree$，故三角形ECF是等腰直角三角形。由于等腰三角形两腰相等，故而有$|EC| = |EF|$。接下来我们注意两个直角三角形$\triangle AEF$和$\triangle ABF$，由于边AE等于AB，同时AF是公共边，因此两个直角三角形全等。这样就得到边$|EF| = |FB|$。综合下来，我们有$|EC| = |EF| = |FB|$。这样线段FB的长度也等于$(m - n)c$，所以线段CF的长度等于CB的长度减去FB的长度，等于$nc - (m - n)c = (2n - m)c$。我们把得到的结论列在下面。
+
+\[
+\begin{array}{c|c}
+\begin{cases}
+|AC| = mc \\
+|AB| = nc
+\end{cases} &
+\begin{cases}
+|CF| = (2n - m)c \\
+|CE| = (m - n)c
+\end{cases} \\[4ex]
+\text{大正方形} & \text{小正方形}
+\end{array}
+\]
+
+由于$m$、$n$都是正整数，显然$c$也可以公度小正方形的对角线$CF$和边$CE$。仿照上面的方法，我们可以继续作出更小的正方形，并且重复作出无穷无尽的更小的正方形。而$c$总可以公度每一个小正方形的斜边和对角线。由于$m$、$n$是有限的正整数，这一过程不可能无限做下去，这样就产生了矛盾。于是我们一开始的假设不成立，即正方形的边和对角线不可公度。
+
+这样毕达哥拉斯万物皆数的理论就出现了一个漏洞：存在线段的长度无法用整数比进行度量。据说希帕索思因为这个发现，而遭到谋杀，毕达哥拉斯学派担心这个秘密被泄露出去，而把希帕索思沉入大海。然而历史的车轮不会倒退，古希腊的哲学家和数学家们正视了这个问题，经过欧多克索斯、亚里士多德和欧几里得等人的工作，终于严格定义了不可公度和无理量，并通过几何将它们纳入了古希腊的数学体系。
+
+\index{不可公度}
+\begin{proposition}[《几何原本》，卷十，命题二]
+如果从两个不等量的大量中连续减去小量，直到余量小于小量，再从小量中连续减去余量直到小于余量，这样一直作下去，当所余的量总不能量尽它前面的量时，则称两个量不可公度。
+\end{proposition}
+
+这里出现了一个有趣的现象，不可公度是用欧几里得算法能否停止来定义的。由于欧几里得算法是递归的，也就是说递归能否中止成了判断条件。这再次将我们的注意力引入到递归的本质上。递归究竟是什么？它怎样用形式化的方法表示？
+
+\begin{Exercise}[label={ex:euclid-algorithm}]
+\Question{我们给出的欧几里得算法是递归的，请消除递归，只使用循环实现欧几里得算法和扩展欧几里得算法。}
+\Question{大多数编程环境中的取模运算，要求除数、被除数都是整数。但是线段的长度不一定是整数，请实现一个针对线段的取摸运算。它的效率如何？}
+\Question{我们在证明欧几里得算法正确性的过程中说：“每次都保证余数小于除数。即$b > r_0 > r_1 > r_2 > ... > 0$，但是余数不可能小于零。由于起始值是有限的，故最终算法一定中止。”为什么不会出现，$r_{n}$无限接近于零但不等于零的情况？算法一定会中止么？$a$和$b$是可公度的这一前提保证了什么？}
+\Question{对于二元线性不定方程$ax + by = c$，若$x_1$、$y_1$和$x_2$、$y_2$为两对整数解。试证明$|x_1 - x_2|$的最小值为$b/\gcm(a, b)$，且$|y_1 - y_2|$的最小值为$a/\gcm(a, b)$。}
+\Question{边长为1的正五边形，对角线的长度是多少？试证明\cref{fig:pentagram}的五角星中的线段AC和AG是不可公度的。使用实数表示，它们的比值是什么？}
+\end{Exercise}
+
+\begin{Answer}[ref={ex:euclid-algorithm}]
+\Question{我们给出的欧几里得算法是递归的，请消除递归，只使用循环实现欧几里得算法和扩展欧几里得算法。
+
+由于经典的欧几里得算法是尾递归的，所以可以很方便地转换成循环：
+
+\begin{algorithmic}
+\Function{GCM}{$a, b$}
+\While{$b \neq 0$}
+  \State $a, b \gets b, a \bmod b$
+\EndWhile
+\State \Return $a$
+\EndFunction
+\end{algorithmic}
+
+然而扩展欧几里得算法的转换就会比较困难。我们观察三个序列$r, s, t$：
+
+\[\begin{array}{l}
+r_0 = a, r_1 = b \\
+s_0 = 1, s_1 = 0 \\
+t_0 = 0, t_1 = 1 \\
+ ...  ... \\
+r_{i+1} = r_{i-1} - q_{i} r_{i}, \text{其中}: q_{i} = \lfloor r_{i} / r_{i-1} \rfloor \\
+s_{i+1} = s_{i-1} - q_{i} s_{i} \\
+t_{i+1} = t_{i-1} - q_{i} t_{i} \\
+... ...\\
+\end{array}\]
+
+显然，当$r_{k+1} = 0$时，序列终止。并且根据欧几里得算法，我们知道此时：
+\[
+gcm(a, b) = gcm(r_{k-1}, r_{k}) = gcm(r_k, 0) = r_{k}
+\]
+
+更重要的是，此时如下贝祖等式成立：
+
+\[
+gcm(a, b) = r_{k} = a s_{k} + b t_{k}
+\]
+
+\begin{proof}
+我们用数学归纳法来证明这一结论。首先是0和1的时候，我们有：
+
+\blre
+0: & r_0 = a & a s_0 + b t_0 = a \cdot 1 + b \cdot 0 = a \\
+1: & r_1 = b & a s_1 + b t_1 = a \cdot 0 + b \cdot 1 = b \\
+\elre
+
+接下来是递推假设，若$r_{i-1} = a s_{i-1} + b t_{i-1}$和$r_{i} = a s_{i} + b t_{i}$成立，我们看$i+1$时：
+
+\bre
+r_{i+1} & = & r_{i-1} - q_{i} r_{i} & \text{序列定义} \\
+       & = & (a s_{i-1} + b t_{i-1}) - q_{i} (a s_{i} + b t_{i}) & \text{递推假设} \\
+       & = & a (s_{i-1} - q_{i} s_{i}) + b (t_{i-1} - q_{i} t_{i}) & \text{整理} \\
+       & = & a s_{i+1} + b t_{i+1} & \text{序列定义} \\
+\ere
+因此任何时候，我们的序列都满足贝祖等式。
+\end{proof}
+
+这样，就可以得出扩展欧几里得算法的非递归实现了：
+
+\begin{algorithmic}
+\Function{Ext-GCM}{$a, b$}
+  \State $s', s \gets 0, 1$
+  \State $t', t \gets 1, 0$
+  \While{$b \neq 0$}
+    \State $q, r \gets \lfloor a / b \rfloor, a \bmod b$
+    \State $s', s \gets s - q s', s'$
+    \State $t', t \gets t - q t', t'$
+    \State $a, b \gets b, r$
+  \EndWhile
+  \State \Return $(a, s, t)$
+\EndFunction
+\end{algorithmic}
+}
+\Question{大多数编程环境中的取模运算，要求除数、被除数都是整数。但是线段的长度不一定是整数，请实现一个针对线段的取摸运算。它的效率如何？
+
+想象一下尺规作图，只要能够用圆规截取线段，就可以求模了
+
+\begin{algorithmic}
+\Function{mod}{$a, b$}
+  \While{$b < a$}
+    \State $a \gets a - b$
+  \EndWhile
+  \State \Return $a$
+\EndFunction
+\end{algorithmic}
+
+显然这是一个线性效率的运算。为了优化，我们引入一个定理：
+
+\begin{lemma}[递归求余定理] % recursive remainder lemma
+如果$r = a \bmod 2b$，那么：
+\[
+a \bmod b = \begin{cases}
+r \leq b: & r \\
+r > b: & r - b \\
+\end{cases}
+\]
+\end{lemma}
+
+使用这个定理，我们可以把取模运算加快到$log$级别：
+
+\[
+a \bmod b = \begin{cases}
+a \leq b: & a \\
+a - b \leq b: & a - b \\
+\text{否则}: & \begin{cases}
+  a' \leq b: & a', \text{其中} a' = a \bmod (b + b) \\
+  a' > b: & a' - b \\
+  \end{cases} \\
+\end{cases}
+\]
+
+利用斐波那契数列的增长方式，罗伯特$\cdot$弗洛伊德和高德纳将上面方法中的递归消除，用纯循环实现了快速取模运算：
+
+\begin{algorithmic}
+\Function{mod}{$a, b$}
+  \If{$a < b$}
+    \State \Return $a$
+  \EndIf
+  \State $c \gets b$
+  \While{$c \leq a$}
+    \State $c, b \gets (b + c, c)$ \Comment{用斐波那契的方式的增大$c$}
+  \EndWhile
+  \While{$b \neq c$}
+    \State $c, b \gets (b, c - b)$ \Comment{再将$c$减小回来}
+    \If{$c <= a$}
+      \State $a \gets a - c$
+    \EndIf
+  \EndWhile
+  \State \Return $a$
+\EndFunction
+\end{algorithmic}
+}
+\Question{我们在证明欧几里得算法正确性的过程中说：“每次都保证余数小于除数。即$b > r_0 > r_1 > r_2 > ... > 0$，但是余数不可能小于零。由于起始值是有限的，故最终算法一定中止。”为什么不会出现，$r_{n}$无限接近于零但不等于零的情况？算法一定会中止么？$a$和$b$是可公度的这一前提保证了什么？
+
+可以利用最小数原理（Well-ordering principle）说明可公度量的欧几里得算法一定终止。最小数原理是自然数所具有的一种基本性质，即任何非空的自然数集中都有最小的自然数。该原理可以推广到整数集、有理数集或实数集的有限非空子集。从可公度的定义出发，我们知道余数序列一定构成有限集。
+}
+\Question{对于二元线性不定方程$ax + by = c$，若$x_1$、$y_1$和$x_2$、$y_2$为两对整数解。试证明$|x_1 - x_2|$的最小值为$b/\gcm(a, b)$，且$|y_1 - y_2|$的最小值为$a/\gcm(a, b)$。
+
+令$a, b$的最大公约数$g = gcm(a, b)$。如果$x_0, y_0$是不定方程$ax + by = c$的一组解，则下面给出的也是一组解：
+
+\[
+\begin{dcases}
+  x = x_0 - k \dfrac{b}{g} \\
+  y = y_0 + k \dfrac{a}{g}
+\end{dcases}
+\]
+
+这一点不难证明：
+
+\blre
+ax + by & = & a (x_0 - k \dfrac{b}{g}) + b (y_0 - k \dfrac{a}{g}) \\
+        & = & a x_0 + b y_0 - a k \dfrac{b}{g} + b k \dfrac{a}{g} \\
+        & = & c - 0 = c
+\elre
+
+我们接下来证明，所有不定方程的解都可以表示为这一形式。令$x, y$为不定方程的任意一组解，我们有：$ax + by = c$和$a x_0 + b y_0 = c$。因此：
+
+\[
+a (x - x_0) + b (y - y_0) = c - c = 0
+\]
+
+两边同时除以$a, b$的最大公约数，得：
+
+\[
+\dfrac{a}{g} (x - x_0) + \dfrac{b}{g} (y - y_0) = 0
+\]
+
+\[
+\dfrac{b}{g} (y - y_0)  = - \dfrac{a}{g} (x - x_0)
+\]
+
+注意到，左侧能够被$\dfrac{b}{g}$整除，因此它必然也能整除右侧。但是由于$(\dfrac{a}{g}, \dfrac{b}{g}) = 1$，它们互素，所以必然有$\dfrac{b}{g}$整除$(x - x_0)$，不妨令：
+
+\[
+x - x_0 = k \dfrac{b}{g}, \text{对于某个} k \in \pmb{Z}
+\]
+
+因此
+
+\[
+x = x_0 + k \dfrac{b}{g}
+\]
+
+将其代入回上面的等式，得出：
+
+\[
+y = y_0 - k \dfrac{a}{g}
+\]
+
+这样就证明了所有解都必然是这样的形式。显然，任意两组这样的解，其差最小时$k = 1$，即：$|x_1 - x_2|$的最小值为$b/gcm(a, b)$，且$|y_1 - y_2|$的最小值为$a/gcm(a, b)$。
+}
+\Question{边长为1的正五边形，对角线的长度是多少？试证明\cref{fig:pentagram}的五角星中的线段AC和AG是不可公度的。使用实数表示，它们的比值是什么？
+
+保罗$\cdot$洛克哈特在《度量》一书中\cite{Lockhart2012}展示了一个漂亮的方法。如\cref{fig:pentagram-unit}所示，如果把正五边形切成如下的三个小三角形，很容易发现$A$和$B$是全等的，而$C$和它们相似（你能证明这一点么？）。这样，如果正五边形的边长为1，对角线长为$d$，则小三角形的底边为1，而两斜边为$d - 1$。这样根据三角形相似，我们有：
+
+\[
+  1 / d = (d - 1) / a
+\]
+
+解此一元二次方程得$d = \dfrac{\sqrt{5} + 1}{2}$。对于另一个解$d = \dfrac{\sqrt{5} - 1}{2}$，它比边长短，我们舍去了（这个实际上是小三角形的斜边长）。
+
+本章插图中的AC和AG两条线段，根据上述切分的三个三角形，实际上就是正五边形的对角线和边长。假设它们是可公度的，那么则小三角形的底和斜边就是可公度的。那么在递归的五角星图中，内部的小五边形的边和对角线必然也是可公度的。我们可以无限重复这个过程，不会终止。这样就说明我们的假设不成立，正五边形的边长和对角线是不可公度的。用实数表示这个值约等于0.6180339887498949...
+
+%% \begin{center}
+%%  \includegraphics[scale=0.33]{../appendix/answer/img/pentagram-unit}
+%%  \captionof{figure}{边长为1的正五边形}
+%%  \label{fig:pentagram-unit}
+%% \end{center}
+}
+\end{Answer}
+
 Euclidean algorithm,
 It's extension and Bezout identity.
 Geometric meaning of Euclidean algorithm.
