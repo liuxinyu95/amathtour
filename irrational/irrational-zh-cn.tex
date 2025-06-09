@@ -878,7 +878,7 @@ r_{n-1} &= r_n q_{n+1}
 \label{eq:termination-of-euclidean-algorithm}
 \end{salign}
 
-接下来我们证明最后得到的$r_n$可以同时度量$a$和$b$。根据度量的定义和\cref{eq:termination-of-euclidean-algorithm}，显然$r_n$可以度量$r_{n-1}$。然后考虑倒数第二式$r_{n-2} = r_{n-1} q_n + r_n$，由于$r_n$可以度量$r_{n-1}$，所以$r_n$也可以度量$r_{n-1} q_n$，自然它也可以度量$r_{n-1} q_n + r_n$，这个量恰好就是$r_{n-2}$。以此类推向上逐一证明$r_n$可以度量$r_{n-1}, r_{n-2}, \dotsc, b, a$。这样就证明了欧几里得算法得到的答案$r_n$是$a$和$b$的公度。
+接下来我们证明最后得到的$r_n$可以同时度量$a$和$b$。根据度量的定义和\cref{eq:termination-of-euclidean-algorithm}，显然$r_n$可以度量$r_{n-1}$。然后考虑倒数第二式$r_{n-2} = r_{n-1} q_n + r_n$。由于$r_n$可以度量$r_{n-1}$，所以$r_n$也可以度量$r_{n-1} q_n$，自然它也可以度量$r_{n-1} q_n + r_n$，这个量恰好就是$r_{n-2}$。以此类推向上逐一证明$r_n$可以度量$r_{n-1}, r_{n-2}, \dotsc, b, a$。这样就证明了欧几里得算法得到的答案$r_n$是$a$和$b$的公度。
 
 第二步我们要证明$r_n$是最大公度，即任何$a$和$b$的公度$c$也可以度量$r_n$。由于$c$是公度，因此$a$和$b$是它的整数倍。记$a = mc, b = nc$，其中$m, n$都是整数。代入$a = b q_0 + r_0$得$mc = ncq_0 + r_0$。移项得$r_0 = (m - nq_0)c$，因此$c$也可以度量$r_0$。以此类推逐一证明$c$可以度量$a, b, r_0, r_1, \dotsc, r_n$。这样就证明了任何公度$c$都可以度量$r_n$，因此$r_n$是最大公度。这样就证明了欧几里得算法的正确性。
 \end{proof}
@@ -894,7 +894,7 @@ d = (a, b) = (b, r_0) = \dotso = (r_{n-1}, r_n) = r_n
 
 \begin{figure}[htbp]
  \centering
- \subcaptionbox{反复剪掉正方形}{\includegraphics[scale=0.4]{img/GCM}}
+ \subcaptionbox{反复剪掉正方形。(1) 左上：长$b$宽$a$的矩形；(2) 左下：剪掉两个边为$a$的正方形；(3) 右上：剪掉3个边为$c$的矩形；(4) 右下：剪掉4个边为$d$的矩形。}{\includegraphics[scale=0.4]{img/GCM}}
  \subcaptionbox{用最终的小正方形铺满原图}{
    \begin{adjustbox}{max width=0.8\textwidth}
    \begin{tikzpicture}
@@ -907,100 +907,92 @@ d = (a, b) = (b, r_0) = \dotso = (r_{n-1}, r_n) = r_n
 \end{figure}
 
 \subsection{扩展欧几里得算法}
-
 \index{扩展欧几里得算法} \index{贝祖等式}
-所谓扩展欧几里得算法，就是除了求得两个量$a$、$b$的最大公度$g$外，同时找到满足贝祖等式$ax + by = g$的两个整数$x$和$y$。为什么贝祖等式（Bézout's identity）\footnote{贝祖等式，或称贝祖定理（也译为裴蜀定理），最早是由法国数学家梅齐里亚克（Claude Gaspard Bachet de Méziriac，1581–1638）发现并证明了其对整数成立，法国数学家贝祖证明这一等式对多项式成立。贝祖等式可以推广到任意的整环和主理想整环（PID，Principle Ideal Domain）上。}一定成立呢？我们下面给出贝祖等式的一种证明。由$a$、$b$可以构造一个集合，包含它们所有正的线性组合：
 
-\[
-S = \{ ax + by | x, y \in \mathbb{Z} \text{且} ax + by > 0\}
-\]
+贝祖等式\footnote{Bézout's identity，整数中的贝祖等式（或称贝祖定理，也译作裴蜀定理）最早由法国数学家梅齐里亚克证明。法国数学家贝祖证明了它对多项式也成立。在抽象代数中，贝祖等式可推广到任意主理想环上。}是欧几里得算法的一个重要结果。
 
-%\begin{wrapfigure}{R}{0.4\textwidth}
 \begin{figure}[htbp]
  \centering
- \subcaptionbox{贝祖（Étienne Bézout, 1730 - 1783）}[0.45\linewidth]{\includegraphics[scale=0.45]{img/Bezout}}
- \subcaptionbox{梅齐里亚克（Claude Gaspard Bachet de Méziriac, 1581–1638），最早发现并证明了整数上的贝祖等式。}[0.45\linewidth]{\includegraphics[scale=0.95]{img/Meziriac}}
- %\captionsetup{labelformat=empty}
+ \subcaptionbox{贝祖（Étienne Bézout, 1730～1783年）\label{fig:Bezout}}[0.45\linewidth]{\includegraphics[scale=0.45]{img/Bezout}}
+ \subcaptionbox{梅齐里亚克（Claude Gaspard Bachet de Méziriac, 1581～1638年）\label{fig:Meziriac}}[0.45\linewidth]{\includegraphics[scale=0.95]{img/Meziriac}}
  \caption{贝祖和梅齐里亚克}
- \label{fig:Bezout}
- \label{fig:Meziriac}
 \end{figure}
-%\end{wrapfigure}
 
-对于线段来说，$S$一定不为空，因为它至少包含$a$（此时$x = 1, y = 0$）和$b$（此时$x = 0, y = 1$）。因为$S$的所有元素都为正，所以它一定存在一个最小的元素，我们将其记为$g = as + bt$。我们接下来要证明$g$就是$a$和$b$的最大公度。为此我们将$a$表示成$g$的商与余数的形式。
+\begin{theorem}[贝祖等式]
+如果$d$是$a$和$b$的最大公度，则存在整数$x$和$y$使得：
 
 \be
-a = qg + r
+ax + by = d
+\label{eq:bezouts-identity}
+\ee
+\end{theorem}
+
+\begin{proof}
+考虑所有形如$ax + by$这样的正数（或正的线段长度）组成的集合：
+
+\[
+S = \{ ax + by \}, x, y \text{是整数，且} ax + by > 0
+\]
+
+$S$一定不为空，它至少包含$a$（此时$x = 1, y = 0$）和$b$（此时$x = 0, y = 1$）。因为$S$的所有元素都为正，所以它一定有一个最小的元素，我们将其记为$d = as + bt$。我们接下来要证明$d$就是$a$和$b$的最大公度。使用带余数的除法用$a$除以$d$：
+
+\be
+a = qd + r
 \label{eq:Euclidean-division}
 \ee
 
-其中余数$0 \leq r < g$。余数要么为0，要么在集合$S$中。这是因为
+其中$q$是商，余数$0 \leq r < d$。余数$r$要么为0，要么在集合$S$中，这是因为：
+
+\begin{align*}
+r & = a - qd          && \text{由\cref{eq:Euclidean-division}} \\
+  & = a - q(as + bt)  && \text{代入}d = as + bt \\
+  & = a(1 - qs) - bqt && \text{合并整理} \\
+  & = ax' + by'       && \text{令}x' = 1 - qs, y' = -bq
+\end{align*}
+
+符合集合$S$中元素的形式。但我们之前假设$d$是$S$中的最小正元素，而$r$却比$d$还小，这样就会产生矛盾。因此必定有$r = 0$。\cref{eq:Euclidean-division}就化为$a = qd$，因此$d$可以度量$a$。用同样的方法可以证明$d$也可以度量$b$。因此$d$是它们的公度。我们接下来证明$d$是最大公度。令$c$为$a$和$b$的任意公度，根据定义，存在整数$m$、$n$使得$a = mc$、$b = nc$。这样$d$就可以表示为：
+
+\begin{align*}
+d & = as + bt    \\
+  & = mcs + nct  && c\text{是$a$和$b$的公度} \\
+  & = c(ms + nt) && d\text{是$c$的倍数}
+\end{align*}
+
+这说明$c$可以度量$d$，也就是说$c \leq d$。这就证明了$d$是最大公度。综上我们就证明了贝祖等式，即存在整数使得$ax + by = d$，并且进一步得知最大公度是所有形如$ax + by$的正值中最小的。
+\end{proof}
+
+但如何找到具体的$x$和$y$使得$d = ax + by$呢？使用贝祖等式，我们可以推导出\underdot{扩展}欧几里得算法，同时找出最大公度和对应的$x$与$y$：
+
+\begin{align*}
+ax + by & = d = (a, b)   && \text{贝祖等式} \\
+        & = (b, r_0)     && \text{欧几里得算法，\cref{eq:recursive-gcm}} \\
+        & = bx' + r_0 y' && \text{对$b$和$r_0$使用贝祖等式} \\
+        & = bx' + (a - bq_0)y'  && \text{由$a = b q_0 + r_0$} \\
+        & = ay' + b(x' - y'q_0) && \text{整理为$a$和$b$的项} \\
+        & = ay' + b(x' - y' \lfloor a / b \rfloor) && \text{将$q_0$表示为$a$与$b$的商}\lfloor a / b \rfloor
+\end{align*}
+
+这样就得出了关系：
 
 \[
-\begin{array}{rll}
-r & = a - qg & \text{由\cref{eq:Euclidean-division}} \\
-  & = a - q(as + bt) & g\text{的定义} \\
-  & = a(1 - qs) - bqt & \text{合并整理}
-\end{array}
+x = y' \qquad y = x' - y' \lfloor a / b \rfloor
 \]
 
-即$r$可以表示为$a$、$b$的线性组合，因此如果它不为0，则一定在集合$S$中。但这是不可能的，因为我们之前假设$g$是$S$中的最小正元素，而$r$却比$g$更小，这样就会产生矛盾。因此我们得知$r$一定等于0。根据\cref{eq:Euclidean-division}，$g$一定可以度量$a$。用同样的方法，可以证明$g$也一定可以度量$b$。因此$g$是它们的公度。接下来我们证明$g$是最大公度。令$c$为$a$和$b$的任意公度，根据定义，存在整数$m$、$n$使得$a = mc$、$b = nc$。这样$g$就可以表示为：
-
-\[
-\begin{array}{rll}
-g & = as + bt & \text{由定义} \\
-  & = mcs + nct & c\text{是$a$、$b$的公度} \\
-  & = c(ms + nt) & g\text{是$c$的倍数}
-\end{array}
-\]
-
-这说明$c$可以度量$g$，也就是说$c \leq g$。这就证明了$g$是最大公度。综上我们就证明了贝祖等式，即存在整数使得$ax + by = g$，并且进一步得知最大公度是所有线性组合的正值中最小的。
-
-使用贝祖等式，我们可以推导出扩展欧几里得算法。
-
-\[
-\begin{array}{rlr}
-ax + by & = \gcm(a, b) & \text{贝祖等式} \\
-        & = \gcm(b, r_0) & \text{欧几里得算法，\cref{eq:recursive-gcm}} \\
-        & = bx' + r_0 y' & \text{对$b$和$r_0$使用贝祖等式} \\
-        & = bx' + (a - bq_0)y' & \text{利用$a = b q_0 + r_0$} \\
-        & = ay' + b(x' - y'q_0) & \text{整理为$a$和$b$的线性组合} \\
-        & = ay' + b(x' - y' \lfloor a / b \rfloor) & \text{将$q_0$表示为$a$与$b$的商}
-\end{array}
-\]
-
-这样就得出了每次递归时的关系：
-
-\[
-\left \{
-  \begin{array}{l}
-  x = y' \\
-  y = x' - y' \lfloor a / b \rfloor
-  \end{array}
-\right.
-\]
-
-递归的边界条件出现在$b = 0$的时候，此时$\gcm(a, 0) = 1a + 0b$。把边界条件和递归关系归纳起来就得到了扩展欧几里得算法。
+边界条件出现在$b = 0$的时候，此时最大公度$(a, 0) = 1a + 0b$。把边界条件和上述关系归纳起来就得到了扩展欧几里得算法：
 
 \be
-\gcm_{ex}(a, b) = \left \{
-  \begin{array}
-  {r@{\quad:\quad}l}
-  b = 0 & (a, 1, 0) \\
-  \text{否则} & \begin{array}{l}
-                (g, y', x' - y' \lfloor a / b \rfloor) \\[2pt]
-                \text{其中}(g, x', y') = \gcm_{ex}(b, a \bmod b)
-                \end{array} \\
-  \end{array}
-\right.
+(a, b)' =
+\begin{cases}
+  a < b: & (b, a)' \\
+  b = 0: & (a, 1, 0) \\
+  a < b: & (d, y', x' - y' \lfloor a / b \rfloor), \text{其中}(d, x', y') = (b, a \bmod b)'
+\end{cases}
 \label{eq:gcm-ext}
 \ee
 
-我们下面给出一个使用扩展欧几里得算法解决的趣题（\cite{LiuXinyu2017}，第450页）。有两个水瓶，一个的容量是9升，另一个的容量是4升。问如何才能从河中打出6升水？
+为了和标准欧几里得算法区别，扩展算法用记号$(a, b)'$，它的结果包含3部分：$(d, x, y)$，分别是最大公度和对应的$x$与$y$。如果$a$小于$b$，就交换它们再求最大公度；如果$b = 0$，则最大公度就是a，并且$x = 1, y = 0$。此时结果为$(a, 1, 0)$；否则，我们递归地用扩展算法求$(b, a \bmod b)'$的最大公度$d$和对应的$x'$与$y'$，然后利用关系$x = y', y = x' - y' \lfloor a / b \rfloor$进一步求出$x, y$。
 
-这道题目有很多变化形式，瓶子的容积和取水的容量可以是其它数值。有一个故事说解决这道题目的主人公是少年时代的法国数学家泊松（Sim\`{e}on Denis Poisson）。
-
-使用两个瓶子，共有6种操作。记大瓶子为$A$，容积为$a$；小瓶子为$B$，容积为$b$：
+作为扩展欧几里得算法的应用，我们给出一道有趣的题目\citepage[23页]{LiuXinyu-2022}。有两个水瓶，容量分别是9升和4升，问如何才能从河中打出6升水？这道题目有很多变化形式，瓶子的容积和取水的容量可以是其它数值。有一个故事说解决这道题目的主人公是少年时代的法国数学家泊松（Sim\`{e}on Denis Poisson）。两个瓶子共有6种操作。记大瓶子为$A$，容积为$a$；小瓶子为$B$，容积为$b$：
 
 \begin{itemize}
 \item 将大瓶子$A$装满水；
@@ -1011,11 +1003,12 @@ ax + by & = \gcm(a, b) & \text{贝祖等式} \\
 \item 将小瓶子$B$中的水倒入大瓶子$A$。
 \end{itemize}
 
-其中最后两种操作中，任意一个瓶子满或者另一个瓶子空时就停止。\cref{tab:jug-ops}给出了一系列倒水动作的例子，这里假设容积$b < a < 2b$。
+最后两种操作中，任意一个瓶子满或者空时就停止。\cref{tab:jug-ops}给出了一系列倒水动作的例子，这里假设容积$b < a < 2b$。
 
 \begin{table}[htbp]
 \centering
-\begin{tabular}{l|l|l}
+\begin{tabular}{|l|l|l|}
+\hline
 $A$ & $B$ & 操作 \\
 \hline
 0 & 0 & 开始 \\
@@ -1028,8 +1021,10 @@ $2b - a$ & 0 & 将$B$倒入$A$ \\
 $2b - a$ & b & 倒满$B$ \\
 a & $3b - 2a$ & 将$B$倒入$A$ \\
 ... & ... & ... \\
+\hline
 \end{tabular}
-\caption{两个瓶子内的水量和倒水操作的对应关系} \label{tab:jug-ops}
+\caption{两个瓶子的水量和倒水操作的对应关系}
+\label{tab:jug-ops}
 \end{table}
 
 无论进行何种操作，每个瓶子中的水的容量总可以表示为$ax + by$的形式，其中$x$、$y$是整数。也就是说，我们能获得的水的体积总是$a$与$b$的线性组合。根据贝祖等式的证明，我们知道线性组合的最小正值恰好是$a$和$b$的最大公度$g$。
