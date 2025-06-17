@@ -1119,7 +1119,7 @@ $A$ & $B$ & 操作 \\
 类似地，\cref{qn:pentagon-irrational}要求证明正五边形的边长和对角线不可公度。就这样，欧几里得找到了区分有理数和无理数的方法——欧几里得算法是否终止，并由此定义了有理量和无理量。
 
 \index{不可公度}
-\begin{proposition}[《原本》，卷十，命题2]
+\begin{proposition}[《原本》，卷十，命题2] \label{th:irrational-gcm}
 如果从两个不等量的大量中连续减去小量，直到余量小于小量，再从小量中连续减去余量直到小于余量，这样一直作下去，当所余的量总不能量尽它前面的量时，则称两个量不可公度。
 \end{proposition}
 
@@ -1182,9 +1182,43 @@ x = n_1 + \dfrac{1}{n_2 + \dfrac{1}{n_3 + \dfrac{1}{n_4 + \dfrac{1}{\dotso}}}}
 x = 1 + \dfrac{1}{1 + \dfrac{1}{1 + \dfrac{1}{1 + \dfrac{1}{\dotso}}}}
 \]
 
-它的值是什么？如果$n_1, n_2, \dotsc$像无限循环小数那样形成循环节时会怎样？如果它们不循环，但是一个无限的数列，如$1, 2, 3, \dotso$时，这个连分数的值会是什么？所有这些有趣问题都令人兴奋。
+它的值是什么？如果$n_1, n_2, \dotsc$像无限循环小数那样形成循环节时会怎样？如果它们不循环，但是一个无限的序列，如$1, 2, 3, \dotso$时，这个连分数的值会是什么？所有这些有趣问题都令人兴奋。而欧几里得算法给了我们一个对连分数的解读方法。考虑$x = \frac{42}{30}$。
 
-Continue fraction and Euclidean algorithm.
+\begin{enumerate}[第1步，]
+\item 使用带余数除法：$42 = 30 \times 1 + 12$，所以$x$的整数部分$n_1 = 1$，剩余部分为$\frac{12}{30}$, 放在一起就是$x = 1 + \frac{1}{\frac{30}{12}}$。
+\item 对$x' = \frac{30}{12}$使用带余数除法：$30 = 12 \times 2 + 6$，所以$x'$的整数部分$n_2 = 2$，剩余部分为$\frac{6}{12}$，放在一起就是：
+\[
+x = 1 + \dfrac{1}{2 + \dfrac{1}{\dfrac{12}{6}}}
+\]
+\item 对$x'' = \frac{12}{6}$使用带余数除法：$12 = 6 \times 2 + 0$，所以$x''$的整数部分$n_3 = 2$，没有剩余部分，所以最终的连分数为：
+\[
+\dfrac{42}{30} = 1 + \dfrac{1}{2 + \dfrac{1}{2}}
+\]
+\end{enumerate}
+
+这样看来，欧几里得算法就是构造连分数的过程。但我们根据命题\ref{th:irrational-gcm}知道无理数是不可公度的，欧几里得算法不会停止。一旦把欧几里得算法应用到无理数$x$上，就会构造出无限连分数。让我们用$x = \sqrt{2}$试试看：
+
+\begin{enumerate}[第1步，]
+\item 由于$1 < 2 < 4$，开方后有$1 < \sqrt{2} < 2$。所以$x = \sqrt{2}$的整数部分$n_1 = 1$，剩余部分为$x - n_1 = \sqrt{2} - 1$，放在一起就是
+\[
+ \sqrt{2} = 1 + (\sqrt{2} - 1) = 1 + \dfrac{1}{\dfrac{1}{\sqrt{2} - 1}}
+\]
+\item 考虑$x' = \dfrac{1}{\sqrt{2} - 1}$，利用平方差公式化简：
+  \begin{align*}
+    x' = \dfrac{1}{\sqrt{2} - 1} = \dfrac{\sqrt{2} + 1}{(\sqrt{2} - 1)(\sqrt{2} + 1)} = \dfrac{\sqrt{2} + 1}{2 - 1} = \sqrt{2} + 1
+  \end{align*}
+  由于$1 < \sqrt{2} < 2$，所以$2 < \sqrt{2} + 1 < 3$。因此$x' = \sqrt{2} + 1$的整数部分$n_2 = 2$，剩余部分为$x' - n_2 = \sqrt{2} + 1 - 2 = \sqrt{2} - 1$。这和第一步的剩余部分相同。放在一起就是
+\[
+ \sqrt{2} = 1 + \dfrac{1}{2 + \dfrac{1}{\sqrt{2} - 1}}
+\]
+\end{enumerate}
+到这里就重复循环了。我们获得了$\sqrt{2}$的无限连分数表示：
+
+\[
+ \sqrt{2} = 1 + \dfrac{1}{2 + \dfrac{1}{2 + \dfrac{1}{2 + \dfrac{1}{\dotso}}}}
+\]
+
+我们能想象在没有计算机排版前，印刷连分数是多么困难。为此数学家们引入了连分数记法$[n_1, n_2, n_3, \dotso]$。使用这个记法，无理数$\sqrt{2} = [1, 2, 2, \dotso]$。并且我们发现$\sqrt{2} + 1 = [2, 2, 2, \dotso]$构成了完美的循环。\cref{qn:phi-continue-frac}要求给出黄金分割数$\phi$的连分数表示。
 
 \section{更多的无理数}
 Compass and ruler construction II,
@@ -1223,6 +1257,7 @@ Dedekind cut
 
 \Question{证明正五边形的边长和对角线不可公度。\label{qn:pentagon-irrational}}
 
+\Question{黄金分割数$\phi = \frac{1 + \sqrt{5}}{2}$的连分数表示是什么？\label{qn:phi-continue-frac}}
 \end{Exercise}
 
 %% ========== 答案 ====================
@@ -1334,6 +1369,18 @@ y = y_0 - k \dfrac{a}{d}
   \captionof{figure}{正五边形的边与对角线}
   \label{fig:pentagon-irrational}
 \end{center}
+}
+
+\Question{%黄金分割数$\phi = \frac{1 + \sqrt{5}}{2}$的连分数表示是什么？
+
+由$\phi \approx 1.618$，故$\phi$的整数部分$n_1 = 1$，剩余部分$\frac{1 + \sqrt{5}}{2} - 1 = \frac{\sqrt{5} - 1}{2}$，即：
+\begin{align*}
+  \phi &= 1 + \dfrac{\sqrt{5} - 1}{2} = 1 + \dfrac{1}{\dfrac{1}{\dfrac{\sqrt{5} - 1}{2}}}  \\
+  &= 1 + \dfrac{1}{\dfrac{\sqrt{5} + 1}{2}} && \dfrac{\sqrt{5} \pm 1}{2} \text{互为倒数} \\
+  &= 1 + \dfrac{1}{\phi} = 1 + \dfrac{1}{1 + \dfrac{1}{\phi}} \\
+  &= 1 + \dfrac{1}{1 + \dfrac{1}{1 + \dfrac{1}{\dotso}}}
+\end{align*}
+故黄金分割数的连分数表示是$\phi = [1, 1, 1, \dotso]$也是一个完美的循环。
 }
 \end{Answer}
 
