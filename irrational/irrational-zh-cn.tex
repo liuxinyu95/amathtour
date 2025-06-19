@@ -1250,19 +1250,37 @@ x = 1 + \dfrac{1}{2 + \dfrac{1}{\dfrac{12}{6}}}
 \end{proposition}
 
 \begin{proof}
-如\cref{fig:product}所示，在长为1的单位线段$AD$的一端作垂线并截出长为$b$的线段$AC$（见\cref{qn:perp-of-point}），在单位线段的延长线上截取长为$a$的线段$BD$。连接$CD$构成小三角形$ACD$。过点$B$作$CD$的平行线（见\cref{qn:parallel-through-p}）交$AC$的延长线于点$E$，从而构成大三角形$AEB$。
-
-由于小三角形$ACD$和大三角形$AEB$相似（请读者朋友思考为什么？），所以：
+如\cref{fig:product}所示，在长为1的单位线段AD的一端作垂线并截出长为$b$的线段AC（见\cref{qn:perp-of-point}），在单位线段的延长线上截取长为$a$的线段BD。连接CD构成小三角形ACD。过点B作CD的平行线（见\cref{qn:parallel-through-p}）交AC的延长线于点E，从而构成大三角形AEB。由于小三角形ACD和大三角形AEB相似（请读者朋友思考为什么？），所以：
 
 \begin{align*}
-\dfrac{AD}{AC} &= \dfrac{AB}{AE} && \text{三角形相似} \\
-\dfrac{1}{b} & = \dfrac{1 + a}{b + x} \\
+\dfrac{1}{b} & = \dfrac{AD}{AC} = \dfrac{AB}{AE} = \dfrac{1 + a}{b + x} && \text{三角形相似} \\
 b + x & = b(1 + a) && \text{交叉相乘} \\
 x & = b(1 + a) - b = ab && \text{线段CE长为}ab \qedhere
 \end{align*}
 \end{proof}
 
-这样就建立了尺规作图和乘法运算的对应关系。接下来要解决的是用尺规作图实现除法运算。我们的策略是先用尺规作图实现$a \ne 0$的倒数$\frac{1}{a}$，然后再利用乘法运算实现$b \div a = b \times \frac{1}{a}$。再次利用相似三角形。
+这样就建立了尺规作图和乘法运算的对应关系。接下来要解决的是用尺规作图实现除法运算。我们的策略是先用尺规作图实现$a \ne 0$的倒数$\dfrac{1}{a}$，然后再利用乘法运算实现$\frac{b}{a} = b \times \dfrac{1}{a}$。再次利用相似三角形。
+
+\begin{proposition}
+给定长为1的单位线段，和不等于0的线段$a$，可以作出长度为$\dfrac{1}{a}$的线段。
+\end{proposition}
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[scale=0.35]{img/reciprocal}
+ \caption{尺规作图和倒数运算}
+ \label{fig:reciprocal}
+\end{figure}
+
+\begin{proof}
+如\cref{fig:reciprocal}所示，在长度为1的单位线段AD的一端作垂线并截取长为$a$的线段AC。延长AC并截取长度为1的线段CE。连接CD构成小三角形ACD。过E作平行于CD的直线交AD的延长线于点B。连接BD构成大三角形AEB。由于小三角形ACD和大三角形AEB相似（请读者朋友思考并确认）：
+
+\begin{align*}
+\frac{1}{a} &= \frac{AD}{AC} = \frac{AB}{AE} = \frac{1 + x}{1 + a}  && \text{三角形相似} \\
+a(1 + x) & = 1 + a && \text{交叉相乘} \\
+x &= \frac{1 + a}{a} - 1 = \frac{1}{a} && \text{线段BD长为}\frac{1}{a} \qedhere
+\end{align*}
+\end{proof}
 
 Compass and ruler construction II,
 
