@@ -1262,7 +1262,7 @@ x & = b(1 + a) - b = ab && \text{线段CE长为}ab \qedhere
 这样就建立了尺规作图和乘法运算的对应关系。接下来要解决的是用尺规作图实现除法运算。我们的策略是先用尺规作图实现$a \ne 0$的倒数$\dfrac{1}{a}$，然后再利用乘法运算实现$\frac{b}{a} = b \times \dfrac{1}{a}$。再次利用相似三角形。
 
 \begin{proposition}
-给定长为1的单位线段，和不等于0的线段$a$，可以作出长度为$\dfrac{1}{a}$的线段。
+给定长为1的单位线段和不等于0的线段$a$，可以作出长度为$\dfrac{1}{a}$的线段。
 \end{proposition}
 
 \begin{figure}[htbp]
@@ -1282,7 +1282,45 @@ x &= \frac{1 + a}{a} - 1 = \frac{1}{a} && \text{线段BD长为}\frac{1}{a} \qedh
 \end{align*}
 \end{proof}
 
-Compass and ruler construction II,
+这样就用尺规作图实现了倒数，进而可以实现除法。我们看到加减乘除四则运算都可以由尺规作图实现。由毕达哥拉斯定理，给定长度$a$和$b$的线段，可以作长为$\sqrt{a^2 + b^2}$的线段。接下来我们用尺规作图\underdot{直接}作长为$\sqrt{a}$的线段。
+
+\begin{proposition}
+给定长为1的单位线段和长为$a$的线段，可以作长为$\sqrt{a}$的线段。
+\end{proposition}
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[scale=0.35]{img/sqrt}
+ \caption{尺规作图和开方运算}
+ \label{fig:sqrt}
+\end{figure}
+
+\begin{proof}
+如\cref{fig:sqrt}所示，在长度为1的单位线段AC的延长线上截取长度为$a$的线段CB。以AB为直径作圆（作AB的中垂线，以垂足为圆心，垂足到点A的距离为半径）。过C作垂线交圆于点D。连接AD和BD构成小直角三角形ACD和大直角三角形DCB，这两个直角三角形相似（请读者朋友思考并确认）。
+
+\begin{align*}
+\frac{1}{x} &= \frac{AC}{CD} = \frac{CD}{CB} = \frac{x}{a} && \text{三角形相似} \\
+x^2 &= a && \text{交叉相乘} \\
+x &= \sqrt{a} && \text{线段CD长为}\sqrt{a} \qedhere
+\end{align*}
+\end{proof}
+
+这样我们在义务教育阶段学习过的四则运算和开二次方根运算就都有了各自对应的尺规作图实现。这意味着任何算术运算和开二次方根运算能产生的数都可以通过尺规作图作出。这个结果和毕达哥拉斯学派的想法相反：几何不但没有建立在算术之上，反而算术可以建立在几何之上。古希腊学者并没有停止于此，而是继续探索用尺规作图解决更多的问题。
+
+\subsection{正多边形}
+
+利用尺规古希腊人作出了一系列正多边形，这些正多边形的边长大多是无理数。最简单的正多边形是正三角形。如\cref{fig:polygon}所示，给定一条线段AB，以其为半径，分别以A和B为圆心作圆弧交于点C，连接ABC就获得了正三角形。正四边形就是正方形。作一个圆并作出互相垂直的两条直径。把它们和圆的4个交点连接起来就获得了正方形。如果圆的半径为1，根据勾股定理知正四边形的边长为$\sqrt{2}$。如果能作出正$n$边形，就可以作出正$2n$边形。方法是作每条边的中垂线，这些中垂线交于一点，就是外接圆的圆心。每条中垂线交外接圆周于一点，把这些点和原正$n$变形的定点依次连接起来就获得了正$2n$边形。例如\cref{fig:polygon}中的正六边形就是由正三角形获得的。
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[scale=0.35]{img/polygon}
+ \caption{正三角形、正方形、正六边形}
+ \label{fig:polygon}
+\end{figure}
+
+连接正六边形外接圆的圆心和每个顶点把它划分成6个小正三角形。由此知道如果外接圆半径为1，则正六边形的边长等于1。而其内接正三角形的每个边和两条长为1的半径构成了一个等腰三角形，顶角为120\degree。由此可以计算出正三角形的边长为$\sqrt{3}$。从正四边形可以获得正八边形，我们把边长计算留作练习。作正五边形有一定的难度，但也没有难住古希腊人。我们这里给出两种不同的作图方法。
+
+正7边形难倒了古希腊人，人们一直没有找到它的尺规作图方法。
 
 polygon construction (pentagon, 17-gon)
 
