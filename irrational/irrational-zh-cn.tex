@@ -673,6 +673,7 @@ a^2 &= b(b \pm a)
  \label{fig:pentagon}
 \end{figure}
 
+\label{sec:pentagon-edge}
 观察\cref{fig:pentagon}中的正五边形，三角形1和2全等，2和3相似（我们略去了详细的证明，不难看出1、2都是等腰三角形，有一公共边，底角都是36度。2、3是有对顶角的等腰三角形）。令对角线$BE$的长度为1，正五边形的边长为$x$，由于三角形1和3相似，所以：
 
 \begin{align*}
@@ -1319,6 +1320,26 @@ x &= \sqrt{a} && \text{线段CD长为}\sqrt{a} \qedhere
 \end{figure}
 
 连接正六边形外接圆的圆心和每个顶点把它划分成6个小正三角形。由此知道如果外接圆半径为1，则正六边形的边长等于1。而其内接正三角形的每个边和两条长为1的半径构成了一个等腰三角形，顶角为120\degree。由此可以计算出正三角形的边长为$\sqrt{3}$。从正四边形可以获得正八边形，我们把边长计算留作练习。作正五边形有一定的难度，但也没有难住古希腊人。我们这里给出两种不同的作图方法。
+
+由第\ref{sec:pentagon-edge}节知，正五边形的对角线为1时，其边长为黄金数$\phi = \dfrac{\sqrt{5}-1}{2}$。这样问题就转变为：如何用尺规做出长度为$\phi$ 的线段？在用毕达哥拉斯（勾股）定理探索无理数时，我们发现$5 = 2^2 + 1^2$。所以任给一条线段，只要做出其2倍长的垂线段，就可构成一直角三角形，根据毕达哥拉斯定理，此三角形的斜边长为$\sqrt{2^2 + 1^2} = \sqrt{5}$。如果将此三角形各边缩小一半，则斜边长为$\dfrac{\sqrt{5}}{2}$，然后在从斜边截去短直角边（长$\dfrac{1}{2}$）就获得了长为$\dfrac{\sqrt{5}-1}{2}$的线段。
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[scale=0.3]{img/phi}
+ \caption{作长为$\phi = \dfrac{\sqrt{5} - 1}{2}$的线段}
+ \label{fig:phi}
+\end{figure}
+
+如\cref{fig:phi}所示，先做单位圆和两条垂直的直径。然后做半径AB的中垂线，这样直角三角形ACD的斜边就是$\dfrac{\sqrt{5}}{2}$。以D为圆心，DC为半径划弧交BA方向的直径于E，则AE长就是$\dfrac{\sqrt{5} - 1}{2}$。
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[scale=0.35]{img/pentagon-phi}
+ \caption{由线段AE和长为1的半径，做出三个等腰三角形，拼成正五边形。}
+ \label{fig:pentagon-phi}
+\end{figure}
+
+接下来用长为1和$\phi$的线段可做出\cref{fig:pentagon-phi}中的等腰三角形AHG（边长为1、$\phi$、$\phi$）、等腰三角形BEA（边长为1、1、$\phi$）、等腰三角形AIF（边长为1、$\phi$、$\phi$），从而做出正五边形。
 
 正7边形难倒了古希腊人，人们一直没有找到它的尺规作图方法。
 
