@@ -1364,6 +1364,14 @@ Dedekind cut
 \end{center}
 }
 
+\Question{\cref{fig:mosaic}是一家老饭店地面上铺的瓷砖，你能从中看出勾股定理么？
+\begin{center}
+ \includegraphics[scale=0.4]{img/mosaic}
+ \captionof{figure}{勾股定理与马赛克瓷砖。}
+ \label{fig:mosaic}
+\end{center}
+}
+
 \Question{$a, b$是互素的奇数，证明$\frac{a \pm b}{2}$互素。\label{qn:coprime-of-half-a-pm-b}}
 
 \Question{数论中的\underdot{算术基本定理}说：任何整数可以表示成素数的积，不考虑顺序的情况下，这种表示是唯一的。使用算术基本定理证明：$a, b$互素，若$ab = c^2$，则$a, b$都是平方数。\label{qn:coprime-product-as-square}}
@@ -1391,8 +1399,19 @@ Dedekind cut
 
 \begin{Answer}[ref={ex:irrationals}]
 \Question{正五边形数}
+
 \Question{梯形面积等于两个原直角三角形和一个等腰直角三角形的面积和
 }
+
+\Question{%\cref{fig:mosaic}是一家老饭店地面上铺的瓷砖，你能从中看出勾股定理么？
+见\cref{fig:pythagoras-mosaic}中的辅助线。
+\begin{center}
+ \includegraphics[scale=0.4]{img/pythagoras-mosaic}
+ \captionof{figure}{勾股定理与马赛克瓷砖。}
+ \label{fig:pythagoras-mosaic}
+\end{center}
+}
+
 \Question{%%$a, b$是互素的奇数，证明$\frac{a \pm b}{2}$互素。
   \begin{proof}
     设$d$为$\frac{a \pm b}{2}$的公因子，令$dm = \frac{a + b}{2}, dn = \frac{a - b}{2}$，其中$m, n$为整数。两式相加求得$a = dm + dn = d(m + n)$，所以$d$整除$a$；两式相减得$b = dm - dn = d (m - n)$，所以$d$也整除$b$。这样$d$也是$a, b$的公因子。但$a, b$互素，所以$d$只能是1，即$\frac{a \pm b}{2}$互素。
