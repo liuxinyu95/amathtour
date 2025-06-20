@@ -1350,12 +1350,24 @@ x &= \sqrt{a} && \text{线段CD长为}\sqrt{a} \qedhere
  \label{fig:isosceles72}
 \end{figure}
 
-如果做两底角各自的平分线，则获得了5个$36\degree$。但做正五边形需要平分$360\degree$为5份，而不是平角$180\degree$为5份。这很容易解决，因为圆心角是圆周角的二倍。所以图7中的圆心角就是72度。而对应的5段弧都相等，因而五条弦（即五边形的边长）都相等，所得图形为正五边形。
+如果做两底角各自的平分线，则获得了5个$36\degree$。但做正五边形需要平分$360\degree$为5份，而不是平角$180\degree$为5份。这很容易解决，因为圆心角是圆周角的二倍。所以\cref{fig:triangle-pentagon}中的圆心角就是72度。而对应的5段弧都相等，因而五条弦（即五边形的边长）都相等，所得图形为正五边形。
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[scale=0.35]{img/triangle-pentagon}
+ \caption{作两底角各自的平分线获得5个$72\degree$的圆周角}
+ \label{fig:triangle-pentagon}
+\end{figure}
 
 \begin{proposition}[欧几里得《原本》，卷4，命题11]
 在圆内可作内接正五边形。
 \end{proposition}
 
+\begin{proof}
+根据此前的分析，我们只要证明可以作出顶角为$36\degree$的等腰三角形。由\cref{fig:triangle-pentagon}知，这个等腰三角形的底和腰之比（即BC:AB）恰好是正五边形的边长和对角线之比。而由第\ref{sec:pentagon-edge}节知，此比例为黄金比$\phi = \dfrac{\sqrt{5} - 1}{2}$。接下来就和方法1类似了：(1) 构造边长为$\dfrac{1}{2}$和1的直角三角形，由勾股定理，其斜边为$\dfrac{\sqrt{5}}{2}$；再从斜边截去$\dfrac{1}{2}$即得到黄金比$\phi$。(2) 利用$1, \phi, 1$作等腰三角形ABC，其顶角为$36\degree$。作此三角形的外接圆。(3) 分别作等腰三角形底角的平分线，交外接圆于D和E点。依次连接A, B, C, D, E得正五边形。
+\end{proof}
+
+第5章中我们会再给出一种利用复数和棣莫佛定理作正五边形的方法。
 
 正7边形难倒了古希腊人，人们一直没有找到它的尺规作图方法。
 
