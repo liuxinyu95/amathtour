@@ -213,3 +213,25 @@ x^n - 1 = \Phi_1(x)\Phi_a(x)\Phi_b(x) \dotsm \Phi_d(x)
 \phi(n) &= n(1-\dfrac{1}{p_1}) (1-\dfrac{1}{p_2}) \dotsm (1-\dfrac{1}{p_m}) \\[5pt]
     &= \phi(p_1^{k_1}) \phi(p_2^{k_2}) \dotsm \phi(p_m^{k_m})
 \end{align*}
+
+我们把这个性质叫做欧拉函数的乘法性质。
+
+\subsection{欧拉函数值与2次方幂}
+现在我们可以拼上最后一块拼图了。对任何\underdot{尺规可作出}的正$n$边形，利用算术基本定理把$n$中所有2的因子和其它奇素因子分解出来：
+
+\be
+n = 2^a p_1^{e_1} p_2^{e_2} \dotsm p_k^{e_k}
+\ee
+
+其中$a \ge 0$，$p_1, p_2, \dotsc, p_k$是不同的奇素数，每个指数$e_i \ge 1$。特殊情况是$n = 2^a$，即点，单位线段，正$4, 8, 16, \dotsc$边形都可以尺规作出。取$n$的欧拉函数值：
+
+\begin{align*}
+\phi(n) &= \phi(2^a p_1^{e_1} p_2^{e_2} \dotsm p_k^{e_k})  \\
+        &= \phi(2^a) \phi(p_1^{e_1}) \phi(p_2^{e_2}) \dotsm \phi(p_k^{e_k}) && \text{由欧拉函数的乘法性质} \\
+        &= 2^a(1 - \frac{1}{2}) p_1^{e_1}(1 - \frac{1}{p_1}) p_2^{e_2}(1 - \frac{1}{p_2})\dotsm p_k^{e_k}(1 - \frac{1}{p_k}) \\
+        &= 2^{a-1} p_1^{e_1 - 1}(p_1 - 1) p_2^{e_2 - 1}(p_2 - 1)\dotsm p_k^{e_k - 1}(p_k - 1) \\
+        &= 2^{a-1} p_1^{e_1 - 1} p_2^{e_2 - 1} \dotsm p_k^{e_k - 1} (p_1 - 1)(p_2 - 1) \dotsm (p_k - 1)
+        &= 2^m &&\text{尺规可作的条件是欧拉函数值等于2的方幂}
+\end{align*}
+
+由于$p_i$都是奇素数，而最终$\phi(n) = 2^m$又必须是偶数，所以每个$p_i^{e_i - 1}$必须都等于1，也就是每个$e_i = 1$。这样上式就进一步化为：
