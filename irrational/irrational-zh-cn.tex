@@ -1504,7 +1504,7 @@ y = kx + c
 
 \begin{figure}[htbp]
  \centering
- \includegraphics[scale=0.4]{img/Descartes.jpg}
+ \includegraphics[scale=0.4]{img/Descartes}
  \caption{哈尔斯创作的画布油画：勒内·笛卡尔（1596-1650）。现藏于卢浮宫}
  \label{fig:Decartes}
 \end{figure}
@@ -1521,7 +1521,25 @@ y = kx + c
 \end{mdframed}
 
 \section{圆周率}
-pi as an irrational number
+圆周率$\pi$是数学课上的老朋友。我们无从知道人类最早什么时候认识到圆周与直径的比值是固定的，也许这来自测量的经验。\cref{fig:ybc7302}是耶鲁大学皮博迪自然博物馆中的一件藏品，编号YBC7302。这是古巴比伦时代（约公元前1900年～前1600年）的泥板，上面刻有楔形数字（见第1章）。\cref{fig:proust-ybc7302}是法国历史学家普鲁斯特绘制的示意图\cite{Proust-2016}。在圆周上刻有数字3，园内刻有数字45，圆外右侧刻有数字9。我们知道古巴比伦采用60进制，普鲁斯特据此给出了这幅图的数学解释：3是周长，9是周长的平方。我们知道周长是$C = 2\pi r$，其中$r$是半径。周长的平方是$4\pi^2 r^2$，所以面积和周长的关系是：
+
+\begin{figure}[htbp]
+ \centering
+ \subcaptionbox{耶鲁大学收藏的古巴比伦圆形泥板，刻有圆形和楔形数字，涉及圆的周长和面积。\label{fig:ybc7302}}{\includegraphics[scale=0.4]{img/ybc7302}}
+ \subcaptionbox{楔形数字3、9、45\label{fig:proust-ybc7302}}{\includegraphics[scale=0.5]{img/proust-ybc7302}}
+\end{figure}
+
+\[
+S = \pi r^2 = \frac{4 \pi^2 r^2}{4\pi} = \frac{C^2}{4\pi}
+\]
+
+按照$\pi \approx 3.14$计算，$S = 9/4\pi \approx 0.72$，那么45怎么解释呢？虽然古巴比伦采用位值制计数系统，但没有零和小数点，这里就造成了麻烦。其实这里是60进制0.45，即十进制$\dfrac{45}{60} = 0.75$。这样我们可以反推出古巴比伦人使用的圆周率数值：
+
+\[
+\pi = \frac{C^2}{4S} = \frac{9}{4 \times 0.75} = 3
+\]
+
+
 
 \section{思想之剑}
 Eudoxus's theory of proportions
