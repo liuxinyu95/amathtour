@@ -1546,6 +1546,37 @@ S & = \pi r^2 = \pi (\frac{d}{2})^2 \\
 \pi & = 4\frac{S}{d^2} = 4(\frac{8}{9})^2 \approx 3.16
 \end{align*}
 
+在人们不断寻找更精确的圆周率时，古希腊伟大的数学家阿基米德首先给$\pi$限制了范围。通过古埃及人的计算，我们可以大致推测：
+
+\begin{proposition}
+圆周率$\pi$在3和4之间。
+\end{proposition}
+
+在小学数学课上，我们曾经在老师的指导下用线绳、直尺测量圆的周长和直径，感知圆周率的存在。$3.14$成为了每个人儿时的机械记忆，它自然是在3和4之间，为什么还要证明呢？这就是古希腊几何的精神所在——追求严密和完美，并在此过程中发展工具和方法。正式通过对圆周率范围的严格界定，阿基米德取得了更好的结果并给后人指出了方向。
+
+\begin{proof}
+我们先证明$\pi > 3$。如\cref{fig:inscribed-hexagon}所示，考虑半径为1的单位圆和内接正六边形。连接正六边形的顶点和圆心将其分割为6个正三角形（首先每个三角形是等腰三角形，其中腰是圆的半径；其次每个等腰三角形的顶角等于$\frac{360\degree}{6} = 60\degree$）。由于单位圆的半径是1，所以每个等腰三角形的边长是1，所以正六边形的周长是6。由两点间直线最近知圆的周长大于6，故：
+
+\begin{figure}[htbp]
+ \centering
+ \subcaptionbox{半径为1的单位圆与内接正六边形\label{fig:inscribed-hexagon}}{\includegraphics[scale=0.4]{img/hexagon}}
+ \subcaptionbox{半径为1的单位圆与外切正方形\label{fig:square-hexagon}}{\includegraphics[scale=0.4]{img/square-hexagon}}
+\end{figure}
+
+\[
+\pi = \frac{C}{d} = \frac{C}{2} > \frac{6}{2} = 3
+\]
+
+然后证明$\pi < 4$。如\cref{fig:square-hexagon}所示，进一步作外切正方形。其边长等于直径2，故正方形的周长是8。因为外切正方形的周长大于圆的周长，所以：
+
+\[
+\pi = \frac{C}{d} = \frac{C}{2} < \frac{8}{2} = 4
+\]
+
+这样就证明了圆周率$3 < \pi < 4$。
+\end{proof}
+
+
 \section{思想之剑}
 Eudoxus's theory of proportions
 Dedekind cut
