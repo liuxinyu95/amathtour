@@ -1232,11 +1232,194 @@ x = 1 + \dfrac{1}{2 + \dfrac{1}{\dfrac{12}{6}}}
 
 我们能想象在没有计算机排版前，印刷连分数是多么困难。为此数学家们引入了连分数记法$[n_1; n_2, n_3, \dotso]$。注意第一个分隔符是分号，后面是逗号。使用这个记法，无理数$\sqrt{2} = [1; 2, 2, \dotso]$。并且我们发现$\sqrt{2} + 1 = [2; 2, 2, \dotso]$构成了完美的循环。\cref{qn:phi-continue-frac}要求给出黄金分割数$\phi$的连分数表示。回顾分数和小数的关系：有理数可以表示成有限和无限循环的小数，但无理数只能表示成无限不循环的小数；有理数可以表示成有限的连分数，一些无限不循环的小数却可以表示成无限循环的连分数。那么有没有只能表示成无限不循环连分数的无理数呢？有的，我们熟悉的圆周率$\pi$就是这样的数。让我们继续这段无理数的旅程。
 
-\section{更多的无理数}
+\begin{Exercise}[label={ex:irrationals}]
+\Question{正五边形数}
+\Question{\cref{fig:garfield}是第20任美国加菲尔德的勾股定理证法，请解释这一证明。\label{qn:pythagoras-thm-garfield}
+\begin{center}
+ \includegraphics[scale=0.3]{img/garfield}
+ \captionof{figure}{美国总统詹姆斯·加菲尔德证法（1876）}
+ \label{fig:garfield}
+\end{center}
+}
+
+\Question{\cref{fig:mosaic}是一家老饭店地面上铺的瓷砖，你能从中看出勾股定理么？
+\begin{center}
+ \includegraphics[scale=0.4]{img/mosaic}
+ \captionof{figure}{勾股定理与马赛克瓷砖。}
+ \label{fig:mosaic}
+\end{center}
+}
+
+\Question{$a, b$是互素的奇数，证明$\frac{a \pm b}{2}$互素。\label{qn:coprime-of-half-a-pm-b}}
+
+\Question{数论中的\underdot{算术基本定理}说：任何整数可以表示成素数的积，不考虑顺序的情况下，这种表示是唯一的。使用算术基本定理证明：$a, b$互素，若$ab = c^2$，则$a, b$都是平方数。\label{qn:coprime-product-as-square}}
+
+\Question{利用埃拉托斯特尼筛法找出100以内的所有素数。\label{qn:seive-of-eratosthenes-100}}
+
+\Question{任给一条线段$AB$，(1) 作其通过$A$点的垂线。(2) 作通过不在$AB$上的一点$C$的垂线。\label{qn:perp-of-point}}
+
+\Question{给定直线$l$和不在直线上的一点$p$，作通过$p$平行$l$的直线。\label{qn:parallel-through-p}}
+
+\Question{古希腊的圆规抬起后两脚合拢，无法像今天的圆规那样直接截取线段。在古希腊，给定一条线段$AB$和一条直线$l$，如何在$l$上截取长度$AB$？\label{qn:mark-off-segment}}
+
+\Question{我们在证明欧几里得算法正确性的过程中说：“每次都保证余数小于除数。即$b > r_0 > r_1 > r_2 > ... > 0$，但是余数不可能小于零。由于起始值是有限的，故最终算法一定中止。”为什么不会出现，$r_{n}$无限接近于零但不等于零的情况？算法一定会中止么？$a$和$b$是可公度的这一前提保证了什么？}
+
+\Question{对于二元线性不定方程$ax + by = c$，若$x_1$、$y_1$和$x_2$、$y_2$为两对整数解。试证明$|x_1 - x_2|$的最小值为$b/(a, b)$，且$|y_1 - y_2|$的最小值为$a/(a, b)$。}
+
+\Question{找出用9升和4升的瓶子从河中打出6升水的最少步骤。\label{qn:best-steps-water}}
+
+\Question{证明正五边形的边长和对角线不可公度。\label{qn:pentagon-irrational}}
+
+\Question{黄金分割数$\phi = \frac{1 + \sqrt{5}}{2}$的连分数表示是什么？\label{qn:phi-continue-frac}}
+
+\end{Exercise}
+
+%% ========== 答案 ====================
+
+\begin{Answer}[ref={ex:irrationals}]
+\Question{正五边形数}
+
+\Question{梯形面积等于两个原直角三角形和一个等腰直角三角形的面积和
+}
+
+\Question{%\cref{fig:mosaic}是一家老饭店地面上铺的瓷砖，你能从中看出勾股定理么？
+见\cref{fig:pythagoras-mosaic}中的辅助线。
+\begin{center}
+ \includegraphics[scale=0.4]{img/pythagoras-mosaic}
+ \captionof{figure}{勾股定理与马赛克瓷砖。}
+ \label{fig:pythagoras-mosaic}
+\end{center}
+}
+
+\Question{%%$a, b$是互素的奇数，证明$\frac{a \pm b}{2}$互素。
+  \begin{proof}
+    设$d$为$\frac{a \pm b}{2}$的公因子，令$dm = \frac{a + b}{2}, dn = \frac{a - b}{2}$，其中$m, n$为整数。两式相加求得$a = dm + dn = d(m + n)$，所以$d$整除$a$；两式相减得$b = dm - dn = d (m - n)$，所以$d$也整除$b$。这样$d$也是$a, b$的公因子。但$a, b$互素，所以$d$只能是1，即$\frac{a \pm b}{2}$互素。
+  \end{proof}
+}
+\Question{%%$a, b$互素，若$ab = c^2$证明$a, b$都是平方数。
+  \begin{proof}
+    利用算术基本定理，把$a, b$各自表示为素数幂的积：$a = p_1^{a_1} p_2^{a_2} \dotsm p_n^{a_n}, b = q_1^{b_1} q_2^{b_2} \dotsm q_m^{b_m}$，其中$p_i, q_j$都是素数。由于$a, b$互素，它们的公因数只有1，故$p_i \ne q_j$。它们的积是个平方数$c^2 = p_1^{a_1} p_2^{a_2} \dotsm p_n^{a_n} q_1^{b_1} q_2^{b_2} \dotsm q_m^{b_m}$，所以必然有$a_i, b_j$全部是偶数，即$a, b$都是平方数。
+  \end{proof}
+}
+
+\Question{利用埃拉托斯特尼筛法找出100以内的所有素数。
+}
+
+
+\Question{任给一条线段$AB$，(1) 作其通过$A$点的垂线。(2) 作通过不在$AB$上的一点$C$的垂线。
+
+如\cref{fig:perp-of-point}所示，反向延长$AB$，以$A$为圆心$AB$为半径交延长线于点$B'$。分别以点$B$和$B'$为圆心，$BB'$为半径画两圆。连接两圆交点得垂线$CD$。
+\begin{center}
+ \includegraphics[scale=0.3]{img/perp}
+ \captionof{figure}{作过定点的垂线}
+ \label{fig:perp-of-point}
+\end{center}
+}
+
+\Question{给定直线$l$和不在直线上的一点$p$，作通过$p$平行$l$的直线。}
+
+\Question{古希腊的圆规抬起后两脚合拢，无法像今天的圆规那样直接截取线段。在古希腊，给定一条线段$AB$和一条直线$l$，如何在$l$上截取长度$AB$？}
+
+\Question{%%我们在证明欧几里得算法正确性的过程中说：“每次都保证余数小于除数。即$b > r_0 > r_1 > r_2 > ... > 0$，但是余数不可能小于零。由于起始值是有限的，故最终算法一定中止。”为什么不会出现，$r_{n}$无限接近于零但不等于零的情况？算法一定会中止么？$a$和$b$是可公度的这一前提保证了什么？
+
+\begin{proof}
+由$a, b$可公度，令$a = nc, b = mc$。由带余数除法$a = bq + r_0$，有$r_0 = a - bq = (n - mq)c$，也可被$c$度量。以此类推$b > r_0 > r_1 > \dotsb \geq 0$都可被$c$度量。用$c$除以每个值得到一系列递减的\underdot{整数}：$m > n - mq > \dotsb \geq 0$。而$m$是有限的整数，因此这个序列必然有限，而不会无限接近但不等于0。
+\end{proof}
+}
+
+\Question{%%对于二元线性不定方程$ax + by = c$，若$x_1$、$y_1$和$x_2$、$y_2$为两对整数解。试证明$|x_1 - x_2|$的最小值为$b/(a, b)$，且$|y_1 - y_2|$的最小值为$a/(a, b)$。
+
+令$a, b$的最大公约数$d = (a, b)$。如果$x_0, y_0$是不定方程$ax + by = c$的一组解，则下面给出的也是一组解：
+
+\[
+\begin{dcases}
+  x = x_0 - k \dfrac{b}{d} \\
+  y = y_0 + k \dfrac{a}{d}
+\end{dcases}
+\]
+
+这一点不难证明：
+
+\blre
+ax + by & = & a (x_0 - k \dfrac{b}{g}) + b (y_0 - k \dfrac{a}{d}) \\
+        & = & a x_0 + b y_0 - a k \dfrac{b}{g} + b k \dfrac{a}{d} \\
+        & = & c - 0 = c
+\elre
+
+我们接下来证明，所有不定方程的解都可以表示为这一形式。令$x, y$为不定方程的任意一组解，我们有：$ax + by = c$和$a x_0 + b y_0 = c$。因此：
+
+\[
+a (x - x_0) + b (y - y_0) = c - c = 0
+\]
+
+两边同时除以$a, b$的最大公约数，得：
+
+\[
+\dfrac{a}{d} (x - x_0) + \dfrac{b}{d} (y - y_0) = 0
+\]
+
+\[
+\dfrac{b}{d} (y - y_0)  = - \dfrac{a}{d} (x - x_0)
+\]
+
+注意到，左侧能够被$\dfrac{b}{d}$整除，因此它必然也能整除右侧。但是由于$(\dfrac{a}{d}, \dfrac{b}{d}) = 1$，它们互素，所以必然有$\dfrac{b}{d}$整除$(x - x_0)$，不妨令：
+
+\[
+x - x_0 = k \dfrac{b}{d}, \text{对于某个} k \in \pmb{Z}
+\]
+
+因此
+
+\[
+x = x_0 + k \dfrac{b}{d}
+\]
+
+将其代入回上面的等式，得出：
+
+\[
+y = y_0 - k \dfrac{a}{d}
+\]
+
+这样就证明了所有解都必然是这样的形式。显然，任意两组这样的解，其差最小时$k = 1$，即：$|x_1 - x_2|$的最小值为$b/(a, b)$，且$|y_1 - y_2|$的最小值为$a/(a, b)$。
+}
+
+\Question{找出用9升和4升的瓶子从河中打出6升水的最少步骤。
+}
+
+\Question{%%证明真五边形的边长和对角线不可公度。
+
+\begin{proof}
+用反证法，假设它们是可公度的。令边长为$mc$，对角线为$nc$，其中$m, n$是整数。如\cref{fig:pentagon-irrational}所示，由BEC是等腰三角形，所以$EC = BE = nc$；由ABE和FBE全等，$AB = FE = mc$。所以$FC = EC - FE = (n-m)c$。因此小五边形的对角线$CD = mc$和边长$FC = (n -m)c$也是可公度的。我们可以无限重复这个过程，获得越来越小的五边形而不终止。这与$m, n$是有限的正整数矛盾。因此假设不成立，正五边形的边长和对角线不可公度。
+\end{proof}
+
+\begin{center}
+  \includegraphics[scale=0.3]{img/pentagon-irr}
+  \captionof{figure}{正五边形的边与对角线}
+  \label{fig:pentagon-irrational}
+\end{center}
+}
+
+\Question{%黄金分割数$\phi = \frac{1 + \sqrt{5}}{2}$的连分数表示是什么？
+
+由$\phi \approx 1.618$，故$\phi$的整数部分$n_1 = 1$，剩余部分$\frac{1 + \sqrt{5}}{2} - 1 = \frac{\sqrt{5} - 1}{2}$，即：
+\begin{align*}
+  \phi &= 1 + \dfrac{\sqrt{5} - 1}{2} = 1 + \dfrac{1}{\dfrac{1}{\dfrac{\sqrt{5} - 1}{2}}}  \\
+  &= 1 + \dfrac{1}{\dfrac{\sqrt{5} + 1}{2}} && \dfrac{\sqrt{5} \pm 1}{2} \text{互为倒数} \\
+  &= 1 + \dfrac{1}{\phi} = 1 + \dfrac{1}{1 + \dfrac{1}{\phi}} \\
+  &= 1 + \dfrac{1}{1 + \dfrac{1}{1 + \dfrac{1}{\dotso}}}
+\end{align*}
+故黄金分割数的连分数表示是$\phi = [1; 1, 1, \dotso]$也是一个完美的循环。
+}
+
+\end{Answer}
+
+\chapter{实数}
+
+\epigraph{山巅一寺一壶酒}{圆周率的谐音口诀}
 
 古希腊人通过尺规作图构造出了用加减乘除四则运算无法产生的数——无理数。从运算的角度思考，尺规作图究竟代表了什么特殊的运算？反过来从作图的角度思考，四则运算能否都能用尺规作图实现？通过探索这两个互逆的问题能否发现更多的无理数？
 
-\subsection{尺规作图与运算}
+\section{尺规作图与运算}
 \label{sec:geometric-arthimetic}
 在求线段最大公度的欧几里得算法中，需要在线段$a$上截掉指定长度$b$，这对应着减法运算$a - b$。反过来，把线段$a$延长，然后在延长线上截取$b$对应着加法运算$a + b$（见\cref{qn:mark-off-segment}）。如何实现乘法$ab$呢？有读者说画一个长$a$宽$b$的矩形，面积就是$ab$了。但是古希腊人思考的是如何作出一条线段，其长度是$ab$。他们从欧几里得几何中找到了工具——相似三角形。
 
@@ -1553,7 +1736,7 @@ S & = \pi r^2 = \pi (\frac{d}{2})^2 \\
 圆周率$\pi$在3和4之间。
 \end{proposition}
 
-在小学数学课上，我们曾经在老师的指导下用线绳、直尺测量圆的周长和直径，感知圆周率的存在。$3.14$成为了每个人儿时的机械记忆，它自然是在3和4之间，为什么还要证明呢？这就是古希腊几何的精神所在——追求严密和完美，并在此过程中发展工具和方法。正式通过对圆周率范围的严格界定，阿基米德取得了更好的结果并给后人指出了方向。
+在小学数学课上，我们曾经在老师的指导下用线绳、直尺测量圆的周长和直径，感知圆周率的存在。$3.14$成为了每个人儿时的机械记忆，它自然是在3和4之间，为什么还要证明呢？这就是古希腊几何的精神所在——追求严密和完美，并在此过程中发展工具和方法。正是通过对圆周率范围的严格界定，阿基米德取得了更好的结果并给后人指出了方向。
 
 \begin{proof}
 我们先证明$\pi > 3$。如\cref{fig:inscribed-hexagon}所示，考虑半径为1的单位圆和内接正六边形。连接正六边形的顶点和圆心将其分割为6个正三角形（首先每个三角形是等腰三角形，其中腰是圆的半径；其次每个等腰三角形的顶角等于$\frac{360\degree}{6} = 60\degree$）。由于单位圆的半径是1，所以每个等腰三角形的边长是1，所以正六边形的周长是6。由外接圆周长大于正六边形周长6，故：
@@ -1633,7 +1816,7 @@ S & = \pi r^2 = \pi (\frac{d}{2})^2 \\
 %% 白化文《学习写对联》
 
 %% 割圆术和倍边公式
-接下来我们要揭开割圆术的面纱，了解古人到底是如何手工逼近圆周率的。你有没有注意到：割圆术中所有正多边形的边数都是6的倍数，并且是$2^n$次幂。例如：$96 = 2^4 \times 6$、$192 = 2^5 \times 6$，甚至传说中的$24576 = 2^{12} \times 6$。这是因为单位圆内接正六边形的周长最容易算出，6个边长为1的正三角形的底边和是6。接下来古人不断把边数加倍（用尺规作每边的中垂线即可）：$6, 12, 24, \dotsc$，每次加倍后利用勾股定理算出新的边长。如\cref{fig:double-edges}所示，过外接圆心作正多边形每一边AB的中垂线，交AB于D，交外接圆于C。连接AC、BC就实现了倍边。记原正多边形的边长为$c$，倍边后正多边形的边长为$c'$。直角三角形AOD中，斜边AO等于半径1，直角边AD是原边长的一半$\dfrac{c}{2}$，由勾股定理，另一直角边：
+接下来我们要揭开割圆术的面纱，了解古人到底是如何手工逼近圆周率的。你有没有注意到：割圆术中所有正多边形的边数都是6的倍数，并且是$2^n$次幂。例如：$96 = 2^4 \times 6$、$192 = 2^5 \times 6$，甚至传说中的$24576 = 2^{12} \times 6$。这是因为单位圆内接正六边形的周长最容易算出，6个边长为1的正三角形的底边和是6。接下来古人不断把边数加倍：$6, 12, 24, \dotsc$，每次加倍后利用勾股定理算出新的边长。如\cref{fig:double-edges}所示，过外接圆心作正多边形每一边AB的中垂线，交AB于D，交外接圆于C。连接AC、BC就实现了倍边。记原正多边形的边长为$c$，倍边后正多边形的边长为$c'$。直角三角形AOD中，斜边AO等于半径1，直角边AD是原边长的一半$\dfrac{c}{2}$，由勾股定理，另一直角边：
 
 \begin{figure}[htbp]
  \centering
@@ -1660,7 +1843,7 @@ c' &= \sqrt{(1 - \sqrt{1 - (\frac{c}{2})^2})^2 + (\frac{c}{2})^2}
 c' = \sqrt{(1 - \sqrt{1 - (\frac{1}{2})^2})^2 + (\frac{1}{2})^2} = \sqrt{2 - \sqrt{3}}
 \]
 
-这样正十二边形的周长就是$12\sqrt{2 - \sqrt{3}}$，估计出的圆周率为$\pi > 6\sqrt{2 - \sqrt{3}}$。接下来我们还要摆上最后一块拼图：解密古人是如何手算开平方的。为了计算$\sqrt{n} = a.bcd\dotsm$，我们首先估计它的整数部分$a$。例如$2^2 = 4 < 5 < 9 = 3^2$，我们估计$\sqrt{5}$的整数部分是$a = 2$，形如$2.bcd\dotsm$。接下来估计十分位小数$b$。考虑$(a + \dfrac{b}{10})^2 < n$。利用完全平方公式：
+这样正十二边形的周长就是$12\sqrt{2 - \sqrt{3}}$，估计出的圆周率为$\pi > 6\sqrt{2 - \sqrt{3}}$。接下来我们还要摆上最后一块拼图：解密古人是如何手算开平方的。为了计算$\sqrt{n} = a.bcd\dotsm$，我们首先估计它的整数部分$a$。以$\sqrt{5}$为例，由$2^2 = 4 < 5 < 9 = 3^2$，估计$\sqrt{5}$的整数部分是$a = 2$，形如$2.bcd\dotsm$。接下来估计十分位小数$b$。考虑$(a + \dfrac{b}{10})^2 < n$。利用完全平方公式：
 
 \[
 (a + \frac{b}{10})^2 = a^2 + \frac{ab}{5} + \frac{b^2}{100}  < n \\
@@ -1669,206 +1852,44 @@ c' = \sqrt{(1 - \sqrt{1 - (\frac{1}{2})^2})^2 + (\frac{1}{2})^2} = \sqrt{2 - \sq
 以$\sqrt{5}$为例，代入$a = 2$求$b$：
 
 \begin{align*}
-4 + \frac{2b}{5} + \frac{b^2}{100} &< 4 + \frac{2b}{5} < 5 \\
- \Rightarrow & b = \lfloor \frac{5}{2} \rfloor = 2
+4 + \frac{2b}{5} + \frac{b^2}{100} &< 5 \\
+ \Rightarrow & b = 2
 \end{align*}
 
-所以十分位$b = 2$。这样重复迭代求下一位小数$c$，由$(a + \dfrac{b}{10} + \dfrac{c}{100})^2 < n$估计出$c = 3$。不断重复直到达到所需要的精度，古人就是这样计算出$\sqrt{3} \approx 1.732$，练习X要求手工计算$\sqrt{2}$到小数点后3位。把1.732代入倍边公式得到正十二边形的边长$c' = 0.517$，周长为6.204，估计圆周率$\pi > 3.102$。就这样古人可以继续迭代把0.517代入倍边公式，求出正24边形、48边形、96边形……的边长，乘以$n$得到周长，再除以直径估计出越来越精确的圆周率。
+估计出十分位$b = 2$。这样重复迭代求下一位小数$c$，由$(a + \dfrac{b}{10} + \dfrac{c}{100})^2 < n$估计出$c = 3$。不断重复直到达到所需要的精度\footnote{《九章算术》少广一章中记有古人的方法：“开方术曰：置积为实。借一算步之，超一等。议所得，以一乘所借一算为法，而以除。除已，倍法为定法。其复除。折法而下。复置借算步之如初，以复议一乘之，所得副，以加定法，以除。以所得副从定法。复除折下如前。若开之不尽者为不可开，当以面命之。若实有分者，通分内子为定实。乃开之，讫，开其母报除。若母不可开者，又以母乘定实，乃开之，讫，令如母而一。”可见古人在估算$b$时舍弃了$\frac{b^2}{100}$的项。}，古人就是这样计算出$\sqrt{3} \approx 1.732$，\cref{qn:calc-sqrt3}要求手工计算$\sqrt{3}$到小数点后3位。把1.732代入倍边公式得到正十二边形的边长$c' = 0.517$，周长为6.204，估计圆周率$\pi > 3.102$。就这样古人可以继续迭代把0.517代入倍边公式，求出正24边形、48边形、96边形……的边长，乘以$n$得到周长，再除以直径估计出越来越精确的圆周率。
+
 
 \subsection{无穷级数}
+祖冲之的结果领先了七个世纪。直到1430年才由阿拉伯数学家阿尔·卡西(Al-Kashi)打破。出于天文学计算的需要，阿尔·卡西希望计算出宇宙的周长，并使得精度在一根头发的粗细。他认为宇宙的天球直径是地球直径的600000倍。为此他使用了$3 \times 2^{27} = 805306368$边形进行逼近。算出$\pi = 3.1415926535897932$。我们今天知道，使用39位精度的圆周率计算出可观测宇宙宇宙的直径，其误差只有氢原子半径的大小。
+
 无穷级数法，伟达，莱布尼茨，现代方法。
 
 pi是无理数的证明
+
+山巅一寺一壶酒。
 
 \section{思想之剑}
 Eudoxus's theory of proportions
 Dedekind cut
 
-\begin{Exercise}[label={ex:irrationals}]
-\Question{正五边形数}
-\Question{\cref{fig:garfield}是第20任美国加菲尔德的勾股定理证法，请解释这一证明。\label{qn:pythagoras-thm-garfield}
-\begin{center}
- \includegraphics[scale=0.3]{img/garfield}
- \captionof{figure}{美国总统詹姆斯·加菲尔德证法（1876）}
- \label{fig:garfield}
-\end{center}
-}
-
-\Question{\cref{fig:mosaic}是一家老饭店地面上铺的瓷砖，你能从中看出勾股定理么？
-\begin{center}
- \includegraphics[scale=0.4]{img/mosaic}
- \captionof{figure}{勾股定理与马赛克瓷砖。}
- \label{fig:mosaic}
-\end{center}
-}
-
-\Question{$a, b$是互素的奇数，证明$\frac{a \pm b}{2}$互素。\label{qn:coprime-of-half-a-pm-b}}
-
-\Question{数论中的\underdot{算术基本定理}说：任何整数可以表示成素数的积，不考虑顺序的情况下，这种表示是唯一的。使用算术基本定理证明：$a, b$互素，若$ab = c^2$，则$a, b$都是平方数。\label{qn:coprime-product-as-square}}
-
-\Question{利用埃拉托斯特尼筛法找出100以内的所有素数。\label{qn:seive-of-eratosthenes-100}}
-
-\Question{任给一条线段$AB$，(1) 作其通过$A$点的垂线。(2) 作通过不在$AB$上的一点$C$的垂线。\label{qn:perp-of-point}}
-
-\Question{给定直线$l$和不在直线上的一点$p$，作通过$p$平行$l$的直线。\label{qn:parallel-through-p}}
-
-\Question{古希腊的圆规抬起后两脚合拢，无法像今天的圆规那样直接截取线段。在古希腊，给定一条线段$AB$和一条直线$l$，如何在$l$上截取长度$AB$？\label{qn:mark-off-segment}}
-
-\Question{我们在证明欧几里得算法正确性的过程中说：“每次都保证余数小于除数。即$b > r_0 > r_1 > r_2 > ... > 0$，但是余数不可能小于零。由于起始值是有限的，故最终算法一定中止。”为什么不会出现，$r_{n}$无限接近于零但不等于零的情况？算法一定会中止么？$a$和$b$是可公度的这一前提保证了什么？}
-
-\Question{对于二元线性不定方程$ax + by = c$，若$x_1$、$y_1$和$x_2$、$y_2$为两对整数解。试证明$|x_1 - x_2|$的最小值为$b/(a, b)$，且$|y_1 - y_2|$的最小值为$a/(a, b)$。}
-
-\Question{找出用9升和4升的瓶子从河中打出6升水的最少步骤。\label{qn:best-steps-water}}
-
-\Question{证明正五边形的边长和对角线不可公度。\label{qn:pentagon-irrational}}
-
-\Question{黄金分割数$\phi = \frac{1 + \sqrt{5}}{2}$的连分数表示是什么？\label{qn:phi-continue-frac}}
+\begin{Exercise}[label={ex:reals}]
 
 \Question{证明祖冲之的密率是分母在一万以内的所有分数中最接近$\pi$的。提示：利用$\pi$的连分数表示。
 %% $\pi = [3;7,15,1,292,1,1,1,2,...]$
 }
+
+\Question{利用古人的方法手工计算$\sqrt{3}$到小数点后3位。\label{qn:calc-sqrt3}}
 \end{Exercise}
 
 %% ========== 答案 ====================
 
-\begin{Answer}[ref={ex:irrationals}]
-\Question{正五边形数}
-
-\Question{梯形面积等于两个原直角三角形和一个等腰直角三角形的面积和
-}
-
-\Question{%\cref{fig:mosaic}是一家老饭店地面上铺的瓷砖，你能从中看出勾股定理么？
-见\cref{fig:pythagoras-mosaic}中的辅助线。
-\begin{center}
- \includegraphics[scale=0.4]{img/pythagoras-mosaic}
- \captionof{figure}{勾股定理与马赛克瓷砖。}
- \label{fig:pythagoras-mosaic}
-\end{center}
-}
-
-\Question{%%$a, b$是互素的奇数，证明$\frac{a \pm b}{2}$互素。
-  \begin{proof}
-    设$d$为$\frac{a \pm b}{2}$的公因子，令$dm = \frac{a + b}{2}, dn = \frac{a - b}{2}$，其中$m, n$为整数。两式相加求得$a = dm + dn = d(m + n)$，所以$d$整除$a$；两式相减得$b = dm - dn = d (m - n)$，所以$d$也整除$b$。这样$d$也是$a, b$的公因子。但$a, b$互素，所以$d$只能是1，即$\frac{a \pm b}{2}$互素。
-  \end{proof}
-}
-\Question{%%$a, b$互素，若$ab = c^2$证明$a, b$都是平方数。
-  \begin{proof}
-    利用算术基本定理，把$a, b$各自表示为素数幂的积：$a = p_1^{a_1} p_2^{a_2} \dotsm p_n^{a_n}, b = q_1^{b_1} q_2^{b_2} \dotsm q_m^{b_m}$，其中$p_i, q_j$都是素数。由于$a, b$互素，它们的公因数只有1，故$p_i \ne q_j$。它们的积是个平方数$c^2 = p_1^{a_1} p_2^{a_2} \dotsm p_n^{a_n} q_1^{b_1} q_2^{b_2} \dotsm q_m^{b_m}$，所以必然有$a_i, b_j$全部是偶数，即$a, b$都是平方数。
-  \end{proof}
-}
-
-\Question{利用埃拉托斯特尼筛法找出100以内的所有素数。
-}
-
-
-\Question{任给一条线段$AB$，(1) 作其通过$A$点的垂线。(2) 作通过不在$AB$上的一点$C$的垂线。
-
-如\cref{fig:perp-of-point}所示，反向延长$AB$，以$A$为圆心$AB$为半径交延长线于点$B'$。分别以点$B$和$B'$为圆心，$BB'$为半径画两圆。连接两圆交点得垂线$CD$。
-\begin{center}
- \includegraphics[scale=0.3]{img/perp}
- \captionof{figure}{作过定点的垂线}
- \label{fig:perp-of-point}
-\end{center}
-}
-
-\Question{给定直线$l$和不在直线上的一点$p$，作通过$p$平行$l$的直线。}
-
-\Question{古希腊的圆规抬起后两脚合拢，无法像今天的圆规那样直接截取线段。在古希腊，给定一条线段$AB$和一条直线$l$，如何在$l$上截取长度$AB$？}
-
-\Question{%%我们在证明欧几里得算法正确性的过程中说：“每次都保证余数小于除数。即$b > r_0 > r_1 > r_2 > ... > 0$，但是余数不可能小于零。由于起始值是有限的，故最终算法一定中止。”为什么不会出现，$r_{n}$无限接近于零但不等于零的情况？算法一定会中止么？$a$和$b$是可公度的这一前提保证了什么？
-
-\begin{proof}
-由$a, b$可公度，令$a = nc, b = mc$。由带余数除法$a = bq + r_0$，有$r_0 = a - bq = (n - mq)c$，也可被$c$度量。以此类推$b > r_0 > r_1 > \dotsb \geq 0$都可被$c$度量。用$c$除以每个值得到一系列递减的\underdot{整数}：$m > n - mq > \dotsb \geq 0$。而$m$是有限的整数，因此这个序列必然有限，而不会无限接近但不等于0。
-\end{proof}
-}
-
-\Question{%%对于二元线性不定方程$ax + by = c$，若$x_1$、$y_1$和$x_2$、$y_2$为两对整数解。试证明$|x_1 - x_2|$的最小值为$b/(a, b)$，且$|y_1 - y_2|$的最小值为$a/(a, b)$。
-
-令$a, b$的最大公约数$d = (a, b)$。如果$x_0, y_0$是不定方程$ax + by = c$的一组解，则下面给出的也是一组解：
-
-\[
-\begin{dcases}
-  x = x_0 - k \dfrac{b}{d} \\
-  y = y_0 + k \dfrac{a}{d}
-\end{dcases}
-\]
-
-这一点不难证明：
-
-\blre
-ax + by & = & a (x_0 - k \dfrac{b}{g}) + b (y_0 - k \dfrac{a}{d}) \\
-        & = & a x_0 + b y_0 - a k \dfrac{b}{g} + b k \dfrac{a}{d} \\
-        & = & c - 0 = c
-\elre
-
-我们接下来证明，所有不定方程的解都可以表示为这一形式。令$x, y$为不定方程的任意一组解，我们有：$ax + by = c$和$a x_0 + b y_0 = c$。因此：
-
-\[
-a (x - x_0) + b (y - y_0) = c - c = 0
-\]
-
-两边同时除以$a, b$的最大公约数，得：
-
-\[
-\dfrac{a}{d} (x - x_0) + \dfrac{b}{d} (y - y_0) = 0
-\]
-
-\[
-\dfrac{b}{d} (y - y_0)  = - \dfrac{a}{d} (x - x_0)
-\]
-
-注意到，左侧能够被$\dfrac{b}{d}$整除，因此它必然也能整除右侧。但是由于$(\dfrac{a}{d}, \dfrac{b}{d}) = 1$，它们互素，所以必然有$\dfrac{b}{d}$整除$(x - x_0)$，不妨令：
-
-\[
-x - x_0 = k \dfrac{b}{d}, \text{对于某个} k \in \pmb{Z}
-\]
-
-因此
-
-\[
-x = x_0 + k \dfrac{b}{d}
-\]
-
-将其代入回上面的等式，得出：
-
-\[
-y = y_0 - k \dfrac{a}{d}
-\]
-
-这样就证明了所有解都必然是这样的形式。显然，任意两组这样的解，其差最小时$k = 1$，即：$|x_1 - x_2|$的最小值为$b/(a, b)$，且$|y_1 - y_2|$的最小值为$a/(a, b)$。
-}
-
-\Question{找出用9升和4升的瓶子从河中打出6升水的最少步骤。
-}
-
-\Question{%%证明真五边形的边长和对角线不可公度。
-
-\begin{proof}
-用反证法，假设它们是可公度的。令边长为$mc$，对角线为$nc$，其中$m, n$是整数。如\cref{fig:pentagon-irrational}所示，由BEC是等腰三角形，所以$EC = BE = nc$；由ABE和FBE全等，$AB = FE = mc$。所以$FC = EC - FE = (n-m)c$。因此小五边形的对角线$CD = mc$和边长$FC = (n -m)c$也是可公度的。我们可以无限重复这个过程，获得越来越小的五边形而不终止。这与$m, n$是有限的正整数矛盾。因此假设不成立，正五边形的边长和对角线不可公度。
-\end{proof}
-
-\begin{center}
-  \includegraphics[scale=0.3]{img/pentagon-irr}
-  \captionof{figure}{正五边形的边与对角线}
-  \label{fig:pentagon-irrational}
-\end{center}
-}
-
-\Question{%黄金分割数$\phi = \frac{1 + \sqrt{5}}{2}$的连分数表示是什么？
-
-由$\phi \approx 1.618$，故$\phi$的整数部分$n_1 = 1$，剩余部分$\frac{1 + \sqrt{5}}{2} - 1 = \frac{\sqrt{5} - 1}{2}$，即：
-\begin{align*}
-  \phi &= 1 + \dfrac{\sqrt{5} - 1}{2} = 1 + \dfrac{1}{\dfrac{1}{\dfrac{\sqrt{5} - 1}{2}}}  \\
-  &= 1 + \dfrac{1}{\dfrac{\sqrt{5} + 1}{2}} && \dfrac{\sqrt{5} \pm 1}{2} \text{互为倒数} \\
-  &= 1 + \dfrac{1}{\phi} = 1 + \dfrac{1}{1 + \dfrac{1}{\phi}} \\
-  &= 1 + \dfrac{1}{1 + \dfrac{1}{1 + \dfrac{1}{\dotso}}}
-\end{align*}
-故黄金分割数的连分数表示是$\phi = [1; 1, 1, \dotso]$也是一个完美的循环。
-}
+\begin{Answer}[ref={ex:reals}]
 
 \Question{证明祖冲之的密率是分母在一万以内的所有分数中最接近$\pi$的。提示：利用$\pi$的连分数表示。\label{qn:113355best}
 $\pi = [3;7,15,1,292,1,1,1,2,...]$
 }
+
+\Question{利用古人的方法手工计算$\sqrt{3}$到小数点后3位。}
 
 \end{Answer}
 
