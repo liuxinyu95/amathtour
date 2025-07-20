@@ -1877,11 +1877,19 @@ c' = \sqrt{(1 - \sqrt{1 - (\frac{1}{2})^2})^2 + (\frac{1}{2})^2} = \sqrt{2 - \sq
 \binom{n}{k} = C_n^k = \frac{n!}{k!(n-k)!}
 \ee
 
-这个符号在众多组合数学、数论、代数的书中经常见到。使用这个符号我们可以表述朱世杰在杨辉三角中标注的斜线，在西方称做帕斯卡法则：
+其中$n! = 1 \times 2 \times \dotsb \times n$表示阶乘。这个符号在众多组合数学、数论、代数的书中经常见到。使用这个符号我们可以表述朱世杰在杨辉三角中标注的斜线，在西方称做帕斯卡法则：
 
 \begin{proposition}
-$\dbinom{n-1}{k} + \dbinom{n-1}{k-1} = \dbinom{n}{k}$，杨辉三角形中的数等于斜上方的两个数字和。
+杨辉三角形中的数等于斜上方的两个数字和：$\dbinom{n-1}{k} + \dbinom{n-1}{k-1} = \dbinom{n}{k}$
 \end{proposition}
+
+\begin{proof}
+  \begin{align*}
+    \binom{n-1}{k} + \binom{n-1}{k-1} &= \frac{(n-1)!}{k!(n-1-k)!} + \frac{(n-1)!}{(k-1)!(n-\cancel{1}-(k-\cancel{1}))!} &&\text{组合数定义} \\
+  &= \frac{(n-1)!(n - \cancel{k} + \cancel{k})}{k!(n-k)!} &&\text{通分} \\
+  &= \frac{n!}{k!(n-k)!} = \binom{n}{k} &&\qedhere
+  \end{align*}
+\end{proof}
 
 无穷级数法，伟达，莱布尼茨，现代方法。
 
