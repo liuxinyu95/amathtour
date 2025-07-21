@@ -1874,10 +1874,16 @@ c' = \sqrt{(1 - \sqrt{1 - (\frac{1}{2})^2})^2 + (\frac{1}{2})^2} = \sqrt{2 - \sq
 高中数学课通常利用组合思想解释$n$为自然数时的二项式定理，我们这里给出一个数学归纳法证明。首先我们引入一个不同的组合数符号：
 
 \be
-\binom{n}{k} = C_n^k = \frac{n!}{k!(n-k)!}
+\binom{n}{k} = C_n^k = \frac{n!}{k!(n-k)!} = \frac{1\cdot2\dotsm n}{(1\cdot2\dotsm k)(1 \cdot 2 \dotsm (n-k))}
 \ee
 
-其中$n! = 1 \times 2 \times \dotsb \times n$表示阶乘。这个符号在组合数学、数论、代数的相关书籍和材料中经常见到。它的组合意义是在$n$个不同事物中取出$k$个的方法数。利用它我们可以表述朱世杰在杨辉三角中标注的斜线，在西方称做帕斯卡法则：
+其中$n! = 1 \times 2 \times \dotsb \times n$表示阶乘。这个符号在组合数学、数论、代数的相关书籍和材料中经常见到。它的组合意义是在$n$个不同事物中取出$k$个的方法数。这个符号具有对称性：若$k + k' = n$则$\dbinom{n}{k} = \dbinom{n}{k'}$，这是因为:
+
+\[
+\binom{n}{k} = \frac{n!}{k!(n-k)!} = \frac{n!}{(n-k')!k'!} = \binom{n}{k'}
+\]
+
+特别地，我们规定$0! = 1$，这样就有$\dbinom{n}{0} = \dbinom{n}{n} = 1$。利用$\dbinom{n}{k}$的这一定义，我们可以表述朱世杰在杨辉三角中标注的斜线，在西方称做帕斯卡法则：
 
 \begin{proposition}
 杨辉三角形中的数等于斜上方的两个数字和：$\dbinom{n-1}{k} + \dbinom{n-1}{k-1} = \dbinom{n}{k}$
@@ -1891,16 +1897,33 @@ c' = \sqrt{(1 - \sqrt{1 - (\frac{1}{2})^2})^2 + (\frac{1}{2})^2} = \sqrt{2 - \sq
   \end{align*}
 \end{proof}
 
-帕斯卡法则的组合意义可以这样理解：从$n$个不同事物中取出$k$个的方法包含两部分，指定某个事物$a$，(1) 包含$a$的取法是$\binom{n-1}{k-1}$，即从除$a$以外的$n-1$个事物中取出$k-1$个，然后把$a$放进去；(2) 不包含$a$的取法是$\binom{n-1}{k}$，即从除$a$以外的$n-1$个事物中取出$k$个。利用帕斯卡法则和数学归纳法就可以证明$n$是整数时的二项式定理了。
+帕斯卡法则的组合意义可以这样理解：从$n$个不同事物中取出$k$个的方法包含两部分，指定某个事物$a$，(1) 包含$a$的取法是$\dbinom{n-1}{k-1}$，即从除$a$以外的$n-1$个事物中取出$k-1$个，然后再把$a$放进去；(2) 不包含$a$的取法是$\dbinom{n-1}{k}$，即从除$a$以外的$n-1$个事物中取出$k$个。利用帕斯卡法则和数学归纳法就可以证明$n$是整数时的二项式定理了。
 
-\begin{theorem}[整数指数二项式定理]
+\begin{theorem}[二项式定理]
 指数$n$为整数时，二项式展开为：
-\[
-(a+b)^n = a^n + \binom{n}{1}a^{n-1}b + \binom{n}{2}a^{n-2}b^2 + \dotsb + \binom{n}{n-1}ab^{n-1} + b^n
-\]
+
+\begin{align*}
+(a+b)^n &= \binom{n}{0}a^n + \binom{n}{1}a^{n-1}b + \binom{n}{2}a^{n-2}b^2 + \dotsb + \binom{n}{n-1}ab^{n-1} + \binom{n}{n}b^n  \\
+ &= a^n + \binom{n}{1}a^{n-1}b + \binom{n}{2}a^{n-2}b^2 + \dotsb + \binom{n}{n-1}ab^{n-1} + b^n
+\end{align*}
 \end{theorem}
 
 这个定理包含$n=0$的情况：$(a+b)^0 = 1$，其对应帕斯卡三角的第一行“1”。
+
+\begin{proof}
+利用数学归纳法，当$n = 1$时，$(a + b)^1 = a + b$。假设$n$时成立，考虑$n + 1$时：
+
+\begin{align*}
+ &\quad (a + b)^{n+1} = (a+b)^n(a + b) = (a + b)^n a + (a + b)^n b \\
+= & (\binom{n}{0}a^n + \binom{n}{1}a^{n-1}b + \dotsb + \binom{n}{n-1}ab^{n-1} + \binom{n}{n}b^n)a + \\
+ &(\binom{n}{0}a^n + \binom{n}{1}a^{n-1}b + \dotsb + \binom{n}{n-1}ab^{n-1} + \binom{n}{n}b^n)b &&\text{归纳假设} \\
+= & \binom{n}{0}a^{n+1} + \binom{n}{1}a^nb + \dotsb + \binom{n}{n-1}a^2b^{n-1} + \binom{n}{n}ab^n + \\
+ & \binom{n}{0}a^nb + \binom{n}{1}a^{n-1}b^2 + \dotsb + \binom{n}{n-1}ab^n + \binom{n}{n}b^{n+1} &&\text{乘法分配律} \\
+= & a^{n+1} + (\binom{n}{1} + \binom{n}{0})a^nb + \dotsb + (\binom{n}{n} + \binom{n}{n-1})ab^n + b^{n+1} &&\text{合并同类项} \\
+= & a^{n+1} + \binom{n+1}{1}a^nb + \dotsb + \binom{n+1}{n}ab^n + b^{n+1} && \text{逐项用帕斯卡法则}
+\end{align*}
+这样就证明了二项式定理。
+\end{proof}
 
 无穷级数法，伟达，莱布尼茨，现代方法。
 
