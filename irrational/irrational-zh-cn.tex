@@ -1926,6 +1926,14 @@ c' = \sqrt{(1 - \sqrt{1 - (\frac{1}{2})^2})^2 + (\frac{1}{2})^2} = \sqrt{2 - \sq
 这样就证明了二项式定理。
 \end{proof}
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[scale=1.5]{img/Pascal}
+  \caption{亨利・迈耶（1782 - 1847 ）创作的帕斯卡肖像}
+  %% Henry Meyer
+ \label{fig:Pascal}
+\end{figure}
+
 \begin{mdframed}
 帕斯卡生平
 \end{mdframed}
@@ -2116,7 +2124,7 @@ a^{11} = a^{8 + 2 + 1} \equiv ((a^2)^2)^2a^2a \pmod{n}
 
 为此，我们可以多次选取不同的证人$k$次执行费马检验，这样就可以把$n$不是素数的概率降低到$\dfrac{1}{2^k}$。但实际上存在这样的合数$n$，使得任何小于$n$且和$n$互素的数$a$都有$a^{n-1} \equiv 1 \pmod n$。也就是说无论选什么样的$a$，这样的合数都能通过费马检测。卡迈克尔（Carmichael ）在1910年发现了第一个这样的数561 = 3 $\times$ 11 $\times$ 17，这样的数现在被称为卡迈克尔数，或者费马伪素数\footnote{捷克数学家西摩尔卡（Václav Šimerka）在1885年发现了前7个费马伪素数：561 = 3 $\times$7 $\times$11, 1105 = 5 $\times$13 $\times$7, 1729 = 7 $\times$13 $\times$19, 2465 = 5 $\times$17 $\times$29, 2821 = 7 $\times$13 $\times$31, 6601 = 7 $\times$23 $\times$41, 8911 = 7 $\times$19 $\times$67。但是他的工作不为人知。}。埃尔德什曾经猜测有无穷多个卡迈克尔数，1994年人们证明了对足够大的$n$，在1到$n$之间至少存在$n^{2/7}$个卡迈克尔数。从而说明存在无穷多的卡迈克尔数\cite{Wiki-Carmichael-number}。实际的RSA算法采用“米勒——拉宾”进行素数测试。它也是一种概率算法\footnote{米勒——拉宾素数检验存在一个确定性算法的版本，但是其正确性依赖于黎曼假设（黎曼猜想）\cite{Wiki-Miller-Rabin}。}。根据上述定理，如果选择超过100个证人，错误率会低于$\dfrac{1}{2^{100}}$。计算机科学家高德纳说：“该测试的错误率要比计算机因为宇宙辐射而丢失某个二进制位的概率还要低。”
 
-作为微积分的先驱，费马在寻找曲线的切线时使用了相当于微分的方法。如\cref{fig:tagent}所示，取曲线上邻近的两点$f(x)$和$f(x + \Delta x)$，连接两点的割线斜率为$\dfrac{\Delta y}{\Delta x}$。不断缩小$\Delta x$让两点越来越接近，则割线就不断逼近切线。用我们今天的语言，函数$f(x)$在$x$处的导数定义为：
+作为微积分的先驱，费马在寻找曲线的切线时使用了相当于微分的方法。如\cref{fig:tagent}所示，取曲线上邻近的两点$f(x)$和$f(x + \Delta x)$，连接两点的割线斜率为$\dfrac{\Delta y}{\Delta x}$。不断缩小$\Delta x$让两点越来越接近，则割线就不断逼近切线。用今天的语言，函数$f(x)$在$x$处的导数定义为：
 
 \begin{figure}[htbp]
  \centering
@@ -2129,7 +2137,28 @@ a^{11} = a^{8 + 2 + 1} \equiv ((a^2)^2)^2a^2a \pmod{n}
 f'(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
 \ee
 
-当$\Delta x$趋近于0时，割线斜率的极限就是导数。牛顿结合二项式定理，找出了一系列函数的导数。
+当$\Delta x$趋近于0时，割线斜率的极限就是导数。牛顿结合二项式定理，找出了一系列函数的导数，特别是$x^n$的导数：
+
+\begin{proposition}
+$x^n$的导数是$nx^{n-1}$。
+\end{proposition}
+
+\begin{proof}
+  \begin{align*}
+   (x^n)' &= \lim_{\Delta x \to 0} \frac{(x + \Delta x)^n - x^n}{\Delta x} \\
+  &= \lim_{\Delta x \to 0} \frac{\cancel{x^n} + \binom{n}{1}x^{n-1}\Delta x + \dotsb + (\Delta x)^n - \cancel{x^n}}{\Delta x} &&\text{二项式展开} \\
+  &= \lim_{\Delta x \to 0} nx^{n-1} + \binom{n}{2}x^{n-2}\Delta x + \dotsb + (\Delta x)^{n-1} &&\binom{n}{1} = n \\
+  &= nx^{n-1} &&\qedhere
+  \end{align*}
+\end{proof}
+
+反过来，牛顿、莱布尼茨利用微积分基本定理又得到了$x^n$的积分。使用莱布尼茨的符号，微积分基本定理指出了微分和积分互为逆运算：
+
+\begin{theorem}[微积分基本定理]
+\be
+\frac{\mathrm{d}}{\mathrm{d}x} \int f(x) \mathrm{d}x = f(x)
+\ee
+\end{theorem}
 
 无穷级数法，伟达，莱布尼茨，现代方法。
 
