@@ -1928,7 +1928,7 @@ c' = \sqrt{(1 - \sqrt{1 - (\frac{1}{2})^2})^2 + (\frac{1}{2})^2} = \sqrt{2 - \sq
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[scale=1.5]{img/Pascal}
+  \includegraphics[scale=0.5]{img/Pascal}
   \caption{亨利・迈耶（1782 - 1847 ）创作的帕斯卡肖像}
   %% Henry Meyer
  \label{fig:Pascal}
@@ -2152,13 +2152,28 @@ $x^n$的导数是$nx^{n-1}$。
   \end{align*}
 \end{proof}
 
-反过来，牛顿、莱布尼茨利用微积分基本定理又得到了$x^n$的积分。使用莱布尼茨的符号，微积分基本定理指出了微分和积分互为逆运算：
+反过来，牛顿利用微积分基本定理又得到了$x^n$的积分。使用莱布尼茨的符号，微积分基本定理指出了微分和积分互为逆运算：
 
 \begin{theorem}[微积分基本定理]
 \be
 \frac{\mathrm{d}}{\mathrm{d}x} \int f(x) \mathrm{d}x = f(x)
 \ee
 \end{theorem}
+
+莱布尼茨是符号大师，他精心设计的微积分符号使用至今。积分符号$\int$实际是被拉长的字母S，而S是sum（和）的首字母。这就强烈暗示了积分是一种特殊的和——用莱布尼茨的语言说就是无数长为$f(x)$宽为无穷小$\mathrm{d}x$的小矩形面积加载一起（见\cref{fig:integral-sum}）。使用极限的语言就是：
+
+\[
+F(x) = \int f(x) \mathrm{d}x = \lim_{\Delta x \to 0} \sum f(x) \Delta x
+\]
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[scale=0.33]{img/integral-sum}
+ \caption{用小矩形的和逼近曲线下方的面积}
+ \label{fig:integral-sum}
+\end{figure}
+
+在莱布尼茨看来对积分的结果再次求导，$F(x+ \Delta x) - F(x)$就只剩下最后一个小矩形$f(x)\Delta x$，因此除以$\Delta x$就又得到了$f(x)$，即：$\dfrac{\mathrm{d}F(x)}{\mathrm{d}x} = f(x)$。
 
 无穷级数法，伟达，莱布尼茨，现代方法。
 
