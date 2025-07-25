@@ -2175,7 +2175,21 @@ F(x) = \int f(x) \mathrm{d}x = \lim_{\Delta x \to 0} \sum f(x) \Delta x
 
 在莱布尼茨看来对积分的结果再次求导，$F(x+ \Delta x) - F(x)$就只剩下最后一个小矩形$f(x)\Delta x$，因此除以$\Delta x$就又得到了$f(x)$，即：$\dfrac{\mathrm{d}F(x)}{\mathrm{d}x} = f(x)$。这就是微积分基本定理的含义。
 
-莱布尼茨设计的符号$\mathrm{d} x$中的d是微分differentiation的首字母，意思是$x$的微分，而$\dfrac{\mathrm{d}y}{\mathrm{d}x}$的含义就是导数。但在莱布尼茨的时代，符号$\mathrm{d}$的含义却是似是而非的“无穷小量”。牛顿使用的“瞬”与此半斤八两。欧拉同样“奔放”地使用无穷小概念。这招致了严肃哲学家的激烈批评，包括霍布斯，贝克莱主教等人。
+为了求$x^n$的积分，把$(x^n)' = nx^{n-1}$代入微积分基本定理得：
+
+\begin{align*}
+\frac{\mathrm{d}}{\mathrm{d}x} \int nx^{n-1} \mathrm{d}x & = (x^n)' \\
+\frac{\mathrm{d}}{\mathrm{d}x} \int (m + 1)x^m \mathrm{d}x & = (x^{m+1})' && \text{令}m = n-1 \\
+\frac{\mathrm{d}}{\mathrm{d}x} \int x^m \mathrm{d}x & = (\frac{x^{m+1}}{m+1})' && \text{两边除以}m + 1
+\end{align*}
+
+这样就得到了不定积分：
+
+\be
+\int x^n \mathrm{d}x = \frac{x^{n+1}}{n+1} + C
+\ee
+
+其中$C$是某个常数。莱布尼茨设计的符号$\mathrm{d} x$中的d是微分differentiation的首字母，意思是$x$的微分，而$\dfrac{\mathrm{d}y}{\mathrm{d}x}$的含义就是导数。但在莱布尼茨的时代，符号$\mathrm{d}$的含义却是似是而非的“无穷小量”。牛顿使用的“瞬”与此半斤八两。欧拉同样“奔放”地使用无穷小概念。这招致了严肃哲学家们的激烈批评，包括霍布斯和贝克莱主教。彼时还没有极限的概念，牛顿等人一会儿说$\Delta x$不等于0，可以约去，最后又说$\Delta x$等于0，可以舍去的确含有矛盾的逻辑漏洞。
 
 无穷级数法，伟达，莱布尼茨，现代方法。
 
