@@ -2224,30 +2224,85 @@ S &= \frac{1 - x^{n+1}}{1 - x} && \text{若}x \ne 1 \\
 
 然后用待定系数法确定：
 
-\[
-\binom{\alpha}{k} = \frac{\alpha(\alpha - 1)\dotsm(\alpha - k)}{k!}
-\]
+\be
+\binom{\alpha}{k} = \frac{\alpha(\alpha - 1)\dotsm(\alpha - k + 1)}{k!}
+\ee
 
 注意到：$\dbinom{-1}{1} = \dfrac{-1}{1} = -1$, $\dbinom{-1}{2} = \dfrac{-1 (-1 - 1)}{1 \cdot 2} = 1$, $\dbinom{-1}{3} = \dfrac{-1 (-1 - 1)(-1 - 2)}{1 \cdot 2 \cdot 3} = -1$，等等。一般地，$\dbinom{-1}{k} = \dfrac{-1(-2)\dotsm(-k)}{1\cdot 2 \dotsm k} = (-1)^k$。于是牛顿给出了广义二项式定理：
 
 \begin{theorem}[广义二项式定理]
+对任何有理数$\alpha$，
 \be
 (1 + x)^\alpha = 1 + \binom{\alpha}{1} x + \binom{\alpha}{2}x^2 + \dotsb
 \ee
 \end{theorem}
 
-但这样大胆的推广也会产生啼笑皆非的结果。把$x = -1$代入无穷级数和$1 + x + x^2 + x^3 + ... = 1/(1-x)$，17世纪的数学家们得到了$1 - 1 + 1 - 1 + ... = 1/2$这样的结果。这时有人提出了不同的意见：$S = (1 - 1) + (1 - 1) + ... = 0$；还有人认为：$S = 1 + (-1 + 1) + (-1 + 1) + ... = 1$。有人赞同1/2的结果，因为$S = 1 - (1 - 1 + 1 - 1 + ...) = 1 - S$，解方程得$S = 1/2$。意大利数学教授格兰迪（1671 - 1742）还发现了更令人吃惊的结论。通过无穷级数：
+但这样大胆的推广也会产生啼笑皆非的结果。把$x = -1$代入无穷级数和$1 + x + x^2 + x^3 + ... = 1/(1-x)$，17世纪的数学家们得到了$1 - 1 + 1 - 1 + ... = 1/2$这样的结果。这时有人提出了不同的意见：$S = (1 - 1) + (1 - 1) + ... = 0$；还有人认为：$S = 1 + (-1 + 1) + (-1 + 1) + ... = 1$。有人赞同1/2的结果，因为$S = 1 - (1 - 1 + 1 - 1 + ...) = 1 - S$，解方程得$S = 1/2$。就连莱布尼茨也主张，它的和可能是0或者1，而且概率相等，所以其“真”值应该是它们的平均值1/2。意大利数学家格兰迪还做出了另一个“奇妙”的解释：父亲留给两个儿子一块宝石，由兄弟二人轮流保存，每人一年。于是，交给对方保存的时候，可以说所有权是0，自己保存的时候，可以说所有权是1，而平均而言，每人的所有权为1/2\cite{HanXueTao16}。这些奇怪的问题，都暴露了微积分基础中的漏洞。
 
-\[
-\def\arraystretch{2.2}
-\begin{array}{l}
-\dfrac{1}{1 + x + x^2} = 1 - x + x^3 - x^4 + x^6 - x^7 + ... \\[2ex]
-\dfrac{1}{1 + x + x^2 + x^3} = 1 - x + x^4 - x^5 + x^8 - x^9 + ... \\
-...
-\end{array}
-\]
+微积分的严格化要等到150年后。经由柯西、魏尔斯特拉斯等人之手，逐渐引入$\epsilon-\delta$语言、极限、收敛性、连续性、可微性等概念，才最终回归严密。其中的最后一砖——实数理论是由戴德金盖到大厦上去的。微积分的发展进程可以说是“先上车，再补票”。先取得了应用上的巨大成功，摘得了无数成果之后，再着手建立严密理论的。这和今天的人工智能（AI）类似，人们尚未弄明白构建于人工神经元网络之上的大语言模型为何能“涌现”出惊人的智能。尚未解释其背后的数学、逻辑学、哲学原理究竟为何，就全力拥抱AI，以眼花缭乱的速度创造一个又一个的应用。与此类似，当牛顿、莱布尼茨把微积分应用到三角函数上时，意外地发现了各种各样的“圆周率公式”。1673年，莱布尼茨通过逐项积分发现了莱布尼茨公式\citepage[179页]{Stillwell-2010}：
 
-令$x = 1$，格兰迪发现无穷级数$1 - 1 + 1 - 1 + 1 - 1 + ...$的和可以等于1/3, 1/4, ...就连莱布尼茨也主张，它的和可能是0或者1，而且概率相等，所以其“真”值应该是它们的平均值1/2。格兰迪还做出了另一个“奇妙”的解释：父亲留给两个儿子一块宝石，由兄弟二人轮流保存，每人一年。于是，交给对方保存的时候，可以说所有权是0，自己保存的时候，可以说所有权是1，而平均而言，每人的所有权为1/2\cite{HanXueTao16}。这些奇怪的问题，都暴露了微积分基础中的漏洞。
+\be
+\frac{\pi}{4} = 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \dotsb
+\ee
+
+为了证明这一结论，我们先求出常见三角函数的导数。首先是$\sin x$，通过观察单位圆上的正弦$\sin x$和\underdot{弧度}$x$（如\cref{fig:unit-circle-trigonometric}），弧长PQ等于$x$，它趋近于0时，正弦$\sin x$趋近于弧长，即：
+
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[>=stealth,scale=3] % 箭头样式和缩放比例
+
+    % 绘制单位圆
+    \draw[gray!50, dashed] (0,0) circle (1);
+    % 绘制坐标轴
+    \draw[->,thick] (-1.2,0) -- (1.2,0) node[right] {}; % x轴
+    \draw[->,thick] (0,-1.2) -- (0,1.2) node[above] {}; % y轴
+    % 标记原点
+    \node[below left] at (0,0) {$O$};
+
+    % 绘制角度θ
+    \def\theta{15} % 角度值（单位：度）
+    \draw[dashed] (0,0) -- (\theta:1); % 半径（终边）
+
+    % 标记角度θ
+    \draw[->] (1,0) arc (0:\theta:1) node[midway,right] {$x$};
+
+    % 单位圆上的点P（x=cosθ, y=sinθ）
+    \fill[black] (\theta:1) circle (0.02) node[right] {$P(\cos x, \sin x)$};
+
+    % 绘制余弦线（x坐标）
+    \draw[red, thick] (\theta:1 |- 0,0) -- (0,0) node[midway,below] {$\cos x$};
+    % 绘制正弦线（y坐标）0.5 = sin(\theta)
+    \draw[blue, thick] (\theta:1) -- (\theta:1 |- 0,0) node[midway,left] {$\sin x$};
+
+    % 标记x=1处的点
+    \fill[black] (1,0) circle (0.02) node[below right] {$Q(1,0)$};
+  \end{tikzpicture}
+  \caption{单位圆上的三角函数}
+  \label{fig:unit-circle-trigonometric}
+\end{figure}
+
+\be
+\lim_{x \to 0} \frac{\sin x}{x} = 1
+\ee
+
+\begin{proof}
+我们用著名的“夹逼定理”（也叫做三明治定理）来证明这一极限。过\cref{fig:unit-circle-trigonometric}中的Q点作圆的切线交OP的延长线，这样就构成了外切弧PQ的直角三角形。它的两个直角边分别为1和$\tan x$。现在考虑弧PQ内接直角三角形（它的两个直角边分别为$\cos x$和$\sin x$）的面积$S_i$，弧PQ所在的扇形面积$S$，弧PQ外切直角三角形的面积$S_o$：
+
+\begin{align*}
+  S_i &< S < S_o \\
+  \frac{1}{2}\cos x \sin x &< \frac{1}{2}x < \frac{1}{2}1\cdot \tan x \\
+  \cos x \sin x &< x < \tan x \\
+  \cos x &< \frac{x}{\sin x} < \frac{1}{\cos x} &&\text{两边除以}\sin x \\
+  \frac{1}{\cos x} &> \frac{\sin x}{x} > \cos x &&{取倒数} \\
+\end{align*}
+注意这里我们限制了$x > 0$，现在对不等式取$x \to 0^+$极限。$\cos x$和它的倒数的极限都是1。所以中间所夹的$\dfrac{\sin x}{x}$的极限也是1。读者可以证明$x < 0$，从左侧逼近时的情况。
+\end{proof}
+
+\begin{align*}
+\sin(x)' &= \lim_{\Delta x \to 0} \frac{\sin(x + \Delta x) - \sin(x)}{\Delta x} \\
+  &= \lim_{\Delta x \to 0} \frac{\sin(x)\cos(\Delta x) + \cos(x)\sin(\Delta x) - \sin(x)}{\Delta x} & \text{和角公式} \\
+  &= ...
+\end{align*}
 
 莱布尼茨，现代方法。
 
