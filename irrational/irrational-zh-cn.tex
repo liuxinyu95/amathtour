@@ -2186,14 +2186,14 @@ F(x) = \int f(x) \mathrm{d}x = \lim_{\Delta x \to 0} \sum f(x) \Delta x
 \frac{\mathrm{d}}{\mathrm{d}x} \int x^m \mathrm{d}x & = (\frac{x^{m+1}}{m+1})' && \text{两边除以}m + 1
 \end{align*}
 
-这样就得到了不定积分：
+这样就得到了\underdot{不定}积分：
 
 \be
 \int x^n \mathrm{d}x = \frac{x^{n+1}}{n+1} + C
 \label{eq:int-of-xn}
 \ee
 
-其中$C$是某个常数。莱布尼茨设计的符号$\mathrm{d} x$中的d是微分differentiation的首字母，意思是$x$的微分，而$\dfrac{\mathrm{d}y}{\mathrm{d}x}$的含义就是导数。但在莱布尼茨的时代，符号$\mathrm{d}$的含义却是似是而非的“无穷小量”。牛顿使用的“瞬”与此半斤八两。欧拉同样“奔放”地使用无穷小概念。这招致了严肃哲学家们的激烈批评，包括霍布斯和贝克莱主教。彼时还没有极限的概念，牛顿等人一会儿说$\Delta x$不等于0，可以约去，最后又说$\Delta x$等于0，可以舍去，的确含有矛盾的逻辑漏洞。
+其中$C$是某个常数\footnote{两边取导数时，常数$C$的导数为0，因此$(\dfrac{x^{n+1}}{n+1} + C)' = x^n$。由于$C$不确定，因此叫做不定积分。微积分基本定理也可用定积分描述为：若$F(x)' = f(x)$，则$\int_{a}^{b} f(x) \mathrm{d} x = F(b) - F(a)$。}。莱布尼茨设计的符号$\mathrm{d} x$中的d是微分differentiation的首字母，意思是$x$的微分，而$\dfrac{\mathrm{d}y}{\mathrm{d}x}$的含义就是导数。但在莱布尼茨的时代，符号$\mathrm{d}$的含义却是似是而非的“无穷小量”。牛顿使用的“瞬”与此半斤八两。欧拉同样“奔放”地使用无穷小概念。这招致了严肃哲学家们的激烈批评，包括霍布斯和贝克莱主教。彼时还没有极限的概念，牛顿等人一会儿说$\Delta x$不等于0，可以约去，最后又说$\Delta x$等于0，可以舍去，的确含有矛盾的逻辑漏洞。
 
 \subsection{无穷级数}
 另一个疑点是对无穷级数的处理。有限的等比数列和可以这样求出：
@@ -2221,6 +2221,7 @@ S &= \frac{1 - x^{n+1}}{1 - x} && \text{若}x \ne 1 \\
 
 \be
 \frac{1}{1 + x} = \frac{1}{1 - (-x)} = 1 - x + x^2 - x^3 + \dotsb
+\label{eq:series-reciprocal-of-binom}
 \ee
 
 牛顿于是把二项式定理推广到了无穷项：
@@ -2295,12 +2296,12 @@ S &= \frac{1 - x^{n+1}}{1 - x} && \text{若}x \ne 1 \\
 \mathrm{d} x &= \sec^2 \theta \mathrm{d} \theta
 \end{align*}
 
-将$x$与$\mathrm{d} x$代入左侧的积分：
+将$x = \tan \theta$与$\mathrm{d} x = \sec^2 \theta \mathrm{d} \theta$代入左侧的积分：
 
 \begin{align*}
 \int \frac{1}{1 + x^2} \mathrm{d} x &= \int \frac{1}{1 + \tan^2 \theta} \sec^2 \theta \mathrm{d} \theta \\
-  &= \int \frac{1}{\cancel{\sec^2 \theta}} \cancel{\sec^2 \theta} \mathrm{d} \theta &&\text{由} 1 + \tan^2 \theta = \sec^2 \theta \\
-  &= \int 1 \mathrm{d} \theta = \theta + C \\
+  &= \int \frac{1}{\sec^2 \theta} \sec^2 \theta \mathrm{d} \theta &&\text{由} 1 + \tan^2 \theta = \sec^2 \theta \\
+  &= \int \mathrm{d} \theta = \theta + C && \text{微积分基本定理} \\
   &= \tan^{-1} x + C &&\text{由} x = \tan \theta \qedhere
 \end{align*}
 \end{proof}
@@ -2308,25 +2309,25 @@ S &= \frac{1 - x^{n+1}}{1 - x} && \text{若}x \ne 1 \\
 最后，我们利用广义二项式定理证明莱布尼茨公式。
 
 \begin{proof}
-当$|x| < 1$时，利用广义二项式定理：
-
-\[
-\frac{1}{1 + x^2} = \frac{1}{1 - (-x^2)} = 1 - x^2 + x^4 - x^6 + \dotsb
-\]
+  \begin{align*}
+\frac{1}{1 + x^2} = \frac{1}{1 - (-x^2)} &= 1 - (x^2) + (x^2)^2 - (x^2)^3 + \dotsb & \text{由\cref{eq:series-reciprocal-of-binom}} \\
+  &= 1 - x^2 + x^4 - x^6 + \dotsb
+  \end{align*}
 
 两边积分，并利用上面的引理：
 
 \begin{align*}
 \int \frac{1}{1 + x^2} \mathrm{d} x &= \int (1 - x^2 + x^4 - \dotsb) \mathrm{d} x \\
-\tan^{-1} x + C &= x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \dotsb &&\text{逐项积分，并由\cref{eq:int-of-xn}} \\
+\tan^{-1} x + C &= x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \dotsb &&\text{由\cref{eq:int-of-xn}逐项积分}
 \end{align*}
-令$x = 0$确定$C$，有：$\tan^{-1} 0 = C = 0$。然后代入$x = 1$（等腰直角三角形45度时的正切为1）得到莱布尼茨公式：
+为了确定$C$，我们令$x = 0$，有：$\tan^{-1} 0 + C = 0$，因此$C = 0$。然后代入$x = 1$（等腰直角三角形45度时的正切为1，对应的弧度为$\frac{\pi}{4}$）得到莱布尼茨公式：
 
 \begin{align*}
 \frac{\pi}{4} = tan^{-1} 1 = 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \dotsb && \qedhere
 \end{align*}
 \end{proof}
 
+莱布尼茨公式开辟了全新的求圆周率的方法，只要把奇数的倒数乘以4，交错加在一起就可以了。
 现代方法。
 
 \subsection{证明圆周率是无理数}
@@ -2350,6 +2351,8 @@ Dedekind cut
 
 \Question{利用$(m + 1)^4 - m^4$的二项式展开导出自然数立方和求和公式。\label{qn:sum-of-cubics}}
 
+\Question{用广义二项式定理将$\dfrac{1}{\sqrt{1 - x^2}}$展开。}
+
 \Question{利用极限$\lim_{\Delta x \to 0} \dfrac{\sin x}{x} = 1$证明$\lim_{x \to 0} \frac{\cos x - 1}{x} = 0$。提示：由余弦函数的倍角公式可推出$\cos x = 1 - 2\sin \dfrac{x}{2}$。\label{qn:cos-1-to-x}}
 
 \Question{求$\cos x$的导数。\label{qn:derivative-cos}}
@@ -2366,6 +2369,8 @@ $\pi = [3;7,15,1,292,1,1,1,2,...]$
 \Question{利用古人的方法手工计算$\sqrt{3}$到小数点后3位。}
 
 \Question{利用$(m + 1)^4 - m^4$的二项式展开导出自然数立方和求和公式。}
+
+\Question{用广义二项式定理将$\dfrac{1}{\sqrt{1 - x^2}}$展开。}
 
 \Question{利用极限$\lim_{\Delta x \to 0} \dfrac{\sin x}{x} = 1$证明$\lim_{x \to 0} \frac{\cos x - 1}{x} = 0$。提示：由余弦函数的倍角公式可推出$\cos x = 1 - 2\sin \dfrac{x}{2}$。
 
