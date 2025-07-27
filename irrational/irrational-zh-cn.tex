@@ -2190,6 +2190,7 @@ F(x) = \int f(x) \mathrm{d}x = \lim_{\Delta x \to 0} \sum f(x) \Delta x
 
 \be
 \int x^n \mathrm{d}x = \frac{x^{n+1}}{n+1} + C
+\label{eq:int-of-xn}
 \ee
 
 其中$C$是某个常数。莱布尼茨设计的符号$\mathrm{d} x$中的d是微分differentiation的首字母，意思是$x$的微分，而$\dfrac{\mathrm{d}y}{\mathrm{d}x}$的含义就是导数。但在莱布尼茨的时代，符号$\mathrm{d}$的含义却是似是而非的“无穷小量”。牛顿使用的“瞬”与此半斤八两。欧拉同样“奔放”地使用无穷小概念。这招致了严肃哲学家们的激烈批评，包括霍布斯和贝克莱主教。彼时还没有极限的概念，牛顿等人一会儿说$\Delta x$不等于0，可以约去，最后又说$\Delta x$等于0，可以舍去，的确含有矛盾的逻辑漏洞。
@@ -2262,14 +2263,71 @@ S &= \frac{1 - x^{n+1}}{1 - x} && \text{若}x \ne 1 \\
 
 \begin{align*}
 (\sin x)' &= \lim_{\Delta x \to 0} \frac{\sin(x + \Delta x) - \sin x}{\Delta x} \\
-  &= \lim_{\Delta x \to 0} \frac{\sin x \cos(\Delta x) + \cos x\sin(\Delta x) - \sin x}{\Delta x} & \text{和角公式} \\
+  &= \lim_{\Delta x \to 0} \frac{\sin x \cos \Delta x + \cos x\sin \Delta x - \sin x}{\Delta x} & \text{和角公式} \\
   &= \sin x \cdot \lim_{\Delta x \to 0} \frac{\cos \Delta x - 1}{\Delta x} + \cos x \cdot \lim_{\Delta x \to 0} \frac{\sin \Delta x}{\Delta x} \\
   &= \sin x \cdot 0 + \cos x \cdot 1 = \cos x
 \end{align*}
 
-类似地可以推出$(\cos x)' = - \sin x$（见\cref{qn:derivative-cos}）。
+类似地可以推出$(\cos x)' = - \sin x$（见\cref{qn:derivative-cos}）。接下来我们利用导数的除法规则求$\tan x$的导数。除法规则说，函数$f(x)/g(x)$的导数可以通过各自的导数求出：
 
-莱布尼茨，现代方法。
+\be
+(\frac{f(x)}{g(x)})'= \frac{f'(x)g(x) - f(x)g'(x)}{g(x)^2}\qquad \text{其中}g(x) \ne 0
+\ee
+
+练习X要求利用导数的定义证明除法规则。利用$\tan x = \dfrac{\sin x}{\cos x}$，并将正弦、余弦函数极其导数代入：
+
+\begin{align*}
+(\tan x)' & = (\frac{\sin x}{\cos x})' = \frac{(\sin x)'\cos x - \sin x (\cos x)'}{\cos^2 x} \\
+ &= \frac{\cos^2 x + \sin^2 x}{\cos^2 x} = \frac{1}{\cos^2 x} = \sec^2 x
+\end{align*}
+
+其中$\sec x$叫做正割函数，它是余弦函数的倒数。并且由$\cos^2 x + \sin^2 x = 1$，两边除以$\cos^2 x$可以得到$1 + \tan^2 x = \sec^2 x$。接下来我们利用这一等式、正切函数的导数与微积分基本定理得到一个结论：
+
+\be
+\int \frac{1}{1 + x^2} \mathrm{d} x = \tan^{-1} x + C
+\ee
+
+\begin{proof}
+其中$\tan^{-1} x = \arctan x$是反正切函数的另一种记号。令$x = \tan \theta$，对其求导：
+
+\begin{align*}
+\frac{\mathrm{d} x}{\mathrm{d} \theta} &= (\tan \theta)' = \sec^2 \theta \\
+\mathrm{d} x &= \sec^2 \theta \mathrm{d} \theta
+\end{align*}
+
+将$x$与$\mathrm{d} x$代入左侧的积分：
+
+\begin{align*}
+\int \frac{1}{1 + x^2} \mathrm{d} x &= \int \frac{1}{1 + \tan^2 \theta} \sec^2 \theta \mathrm{d} \theta \\
+  &= \int \frac{1}{\cancel{\sec^2 \theta}} \cancel{\sec^2 \theta} \mathrm{d} \theta &&\text{由} 1 + \tan^2 \theta = \sec^2 \theta \\
+  &= \int 1 \mathrm{d} \theta = \theta + C \\
+  &= \tan^{-1} x + C &&\text{由} x = \tan \theta \qedhere
+\end{align*}
+\end{proof}
+
+最后，我们利用广义二项式定理证明莱布尼茨公式。
+
+\begin{proof}
+当$|x| < 1$时，利用广义二项式定理：
+
+\[
+\frac{1}{1 + x^2} = \frac{1}{1 - (-x^2)} = 1 - x^2 + x^4 - x^6 + \dotsb
+\]
+
+两边积分，并利用上面的引理：
+
+\begin{align*}
+\int \frac{1}{1 + x^2} \mathrm{d} x &= \int (1 - x^2 + x^4 - \dotsb) \mathrm{d} x \\
+\tan^{-1} x + C &= x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \dotsb &&\text{逐项积分，并由\cref{eq:int-of-xn}} \\
+\end{align*}
+令$x = 0$确定$C$，有：$\tan^{-1} 0 = C = 0$。然后代入$x = 1$（等腰直角三角形45度时的正切为1）得到莱布尼茨公式：
+
+\begin{align*}
+\frac{\pi}{4} = tan^{-1} 1 = 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \dotsb && \qedhere
+\end{align*}
+\end{proof}
+
+现代方法。
 
 \subsection{证明圆周率是无理数}
 pi是无理数的证明

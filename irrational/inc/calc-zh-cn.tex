@@ -4,32 +4,26 @@
 
 \begin{figure}[htbp]
   \centering
-  \begin{tikzpicture}[>=stealth,scale=3] % 箭头样式和缩放比例
+  \begin{tikzpicture}[>=stealth,scale=3]
 
-    % 绘制单位圆
+    % unit circle
     \draw[gray!50, dashed] (0,0) circle (1);
-    % 绘制坐标轴
-    \draw[->,thick] (-1.2,0) -- (1.2,0) node[right] {}; % x轴
-    \draw[->,thick] (0,-1.2) -- (0,1.2) node[above] {}; % y轴
-    % 标记原点
+
+    \draw[->,thick] (-1.2,0) -- (1.2,0) node[right] {}; % x-axis
+    \draw[->,thick] (0,-1.2) -- (0,1.2) node[above] {}; % y-axis
     \node[below left] at (0,0) {$O$};
 
-    % 绘制角度θ
-    \def\theta{15} % 角度值（单位：度）
-    \draw[dashed] (0,0) -- (\theta:1); % 半径（终边）
+    \def\theta{15} % degree
+    \draw[dashed] (0,0) -- (\theta:1); % radius at \theta
 
-    % 标记角度θ
     \draw[->] (1,0) arc (0:\theta:1) node[midway,right] {$x$};
 
-    % 单位圆上的点P（x=cosθ, y=sinθ）
+    % P(x = cos x, y = sin x）
     \fill[black] (\theta:1) circle (0.02) node[right] {$P(\cos x, \sin x)$};
 
-    % 绘制余弦线（x坐标）
     \draw[red, thick] (\theta:1 |- 0,0) -- (0,0) node[midway,below] {$\cos x$};
-    % 绘制正弦线（y坐标）0.5 = sin(\theta)
     \draw[blue, thick] (\theta:1) -- (\theta:1 |- 0,0) node[midway,left] {$\sin x$};
 
-    % 标记x=1处的点
     \fill[black] (1,0) circle (0.02) node[below right] {$Q(1,0)$};
   \end{tikzpicture}
   \caption{单位圆上的三角函数}
@@ -46,7 +40,7 @@
 \begin{align*}
   S_i &< S < S_o \\
   \frac{1}{2}\cos x \sin x &< \frac{1}{2}x < \frac{1}{2}1\cdot \tan x \\
-  \cos x \sin x &< x < \tan x \\
+  \cos x \sin x &< x < \tan x = \frac{\sin x}{\cos x} \\
   \cos x &< \frac{x}{\sin x} < \frac{1}{\cos x} &&\text{两边除以}\sin x \\
   \frac{1}{\cos x} &> \frac{\sin x}{x} > \cos x &&{取倒数} \\
 \end{align*}
