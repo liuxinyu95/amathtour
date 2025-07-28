@@ -2309,6 +2309,7 @@ S &= \frac{1 - x^{n+1}}{1 - x} && \text{若}x \ne 1 \\
 最后，我们利用广义二项式定理证明莱布尼茨公式。
 
 \begin{proof}
+当$|x| < 1$时，
   \begin{align*}
 \frac{1}{1 + x^2} = \frac{1}{1 - (-x^2)} &= 1 - (x^2) + (x^2)^2 - (x^2)^3 + \dotsb & \text{由\cref{eq:series-reciprocal-of-binom}} \\
   &= 1 - x^2 + x^4 - x^6 + \dotsb
@@ -2320,15 +2321,27 @@ S &= \frac{1 - x^{n+1}}{1 - x} && \text{若}x \ne 1 \\
 \int \frac{1}{1 + x^2} \mathrm{d} x &= \int (1 - x^2 + x^4 - \dotsb) \mathrm{d} x \\
 \tan^{-1} x + C &= x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \dotsb &&\text{由\cref{eq:int-of-xn}逐项积分}
 \end{align*}
-为了确定$C$，我们令$x = 0$，有：$\tan^{-1} 0 + C = 0$，因此$C = 0$。然后代入$x = 1$（等腰直角三角形45度时的正切为1，对应的弧度为$\frac{\pi}{4}$）得到莱布尼茨公式：
+为了确定$C$，我们令$x = 0$，有：$\tan^{-1} 0 + C = 0$，因此$C = 0$。然后代入$x = 1$（等腰直角三角形45度时的正切为1，对应的弧度为$\frac{\pi}{4}$）得到莱布尼茨公式\footnote{此处略去了收敛性证明。}：
 
 \begin{align*}
 \frac{\pi}{4} = tan^{-1} 1 = 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \dotsb && \qedhere
 \end{align*}
 \end{proof}
 
-莱布尼茨公式开辟了全新的求圆周率的方法，只要把奇数的倒数乘以4，交错加在一起就可以了。
-现代方法。
+莱布尼茨公式开辟了全新的求圆周率的方法，只要把奇数的倒数乘以4，交错加在一起就能得到越来越精确的$\pi$。对比割圆术，这极大地简化了计算。但是莱布尼茨公式的收敛速度很慢，例如，如果要达到0.00005的精度，由于$0.00005 = \frac{1}{20000}$，我们需要计算10000个奇数的倒数。习题X要求用莱布尼茨公式尝试计算圆周率。为了改进，我们可以利用反正切函数的展开式\footnote{此处增加了级数收敛的条件$-1 \leq x \leq 1$。级数收敛的判定超出了本书范围，读者可参考常见的微积分课本。}：
+
+\be
+\tan^{-1} x = x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \dotsb \quad \text{其中} -1 \leq x \leq 1
+\ee
+
+30度（对应的弧度为$\frac{\pi}{6}$）的正切值是$\frac{1}{\sqrt{3}}$，代入上式得：
+
+\begin{align*}
+\frac{\pi}{6} = \tan^{-1} \frac{1}{\sqrt{3}} &= \frac{1}{\sqrt{3}} - \frac{1}{3}(\frac{1}{\sqrt{3}})^3 + \frac{1}{5}(\frac{1}{\sqrt{3}})^5 - \frac{1}{7}(\frac{1}{\sqrt{3}})^7 + \dotsb \\
+  &= \frac{1}{\sqrt{3}}(1 - \frac{1}{3 \cdot 3} + \frac{1}{5 \cdot 3^2} - \frac{1}{7 \cdot 3^3} + \dotsb && \text{乘法分配律}
+\end{align*}
+
+这个序列的收敛速度就快多了。第10项为$\dfrac{1}{\sqrt{3}}\dfrac{1}{19 \cdot 3^9} < 0.00005$，比莱布尼茨公式快了100倍！
 
 \subsection{证明圆周率是无理数}
 pi是无理数的证明
