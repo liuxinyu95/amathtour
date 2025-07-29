@@ -2385,7 +2385,32 @@ f^{(n)}(x) = n!a_n + 2 \cdot 3 \cdot n (n+1) a_{n+1} x + \dotsb
 f(x) = f(0) + \frac{f'(0)}{1!}x + \frac{f''(0)}{2!}x^2 + \dotsb + \frac{f^{(n)}(0)}{n!}x^n + \dotsb
 \ee
 
-但是需要注意，麦克劳林公式需要两个前提条件：(1) $f(x)$要在展开的区间内有各阶导数。(2) 展开式收敛。幸运地是三角函数$\sin x, \cos x$这两个条件都满足。
+但是需要注意，麦克劳林公式需要两个前提条件：(1) $f(x)$要有各阶导数。(2) 展开式收敛。幸运地是三角函数$\sin x, \cos x$不仅满足这两个条件，而且还是很有规律：每4次求导就循环，如\cref{tab:sin-cos-derivatives}所示。
+
+\begin{table}
+  \centering
+  \begin{tabular}{|c|c|c||c|c|}
+    \hline
+    $n$阶导数 & $\sin x$ & $x = 0$的值 & $\cos x$ & $x = 0$的值 \\
+    \hline
+    1 & $\cos x$  & 1  & $-\sin x$ & 0 \\
+    \hline
+    2 & $-\sin x$ & 0  & $-\cos x$ & -1 \\
+    \hline
+    3 & $-\cos x$ & -1 & $\sin x$  & 0 \\
+    \hline
+    4 & $\sin x$  & 0  & $\cos x$  & 1 \\
+    \hline
+  \end{tabular}
+  \caption{正弦、余弦函数的导数与$x = 0$时的值每4次循环\label{tab:sin-cos-derivatives}}
+\end{table}
+
+将\cref{tab:sin-cos-derivatives}代入麦克劳林公式就得到了正弦、余弦函数的无穷级数展开：
+
+\begin{align}
+\sin x &= x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \dotsb \\
+\cos x &= 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \dotsb
+\end{align}
 
 \section{思想之剑}
 \subsection{欧多克索斯的比例论}
