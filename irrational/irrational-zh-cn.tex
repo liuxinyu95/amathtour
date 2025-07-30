@@ -2424,6 +2424,51 @@ f(x) = f(0) + \frac{f'(0)}{1!}x + \frac{f''(0)}{2!}x^2 + \dotsb + \frac{f^{(n)}(
 当$x$是有理数时，$\tan x$是无理数。
 \end{lemma}
 
+\begin{proof}
+简单起见，我们只考虑正数的情况。令正有理数$x = \dfrac{b}{a}$为即约分数，代入$\tan x$的连分数表示。然后\underdot{每层}分数线都乘以$a$化简：
+
+\[
+\tan(\frac{b}{a}) = \cfrac{\frac{b}{a}}{1 - \cfrac{(\frac{b}{a})^2}{3 - \cfrac{(\frac{b}{a})^2}{5 - \cfrac{(\frac{b}{a})^2}{7 - \cfrac{(\frac{b}{a})^2}{\dotso}}}}} =
+\cfrac{b}{a - \cfrac{b^2}{3a - \cfrac{b^2}{5a - \cfrac{b^2}{7a - \cfrac{b^2}{\dotso}}}}}
+\]
+
+这个连分数的第一个分子是$b$，此后都是$b^2$，而分母却越来越大（不断增加$2a$）。根据阿基米德公理分母一定在某个时候超过$b^2$。假设在$(2n - 1)a$处超过$b^2$，接下来我们证明从$(2n - 1)a$开始的部分连分数是无理数，从而整个连分数也是无理数。用反证法，假设它是有理数，等于某个即约分数$\dfrac{\lambda_1}{\lambda_0}$，即：
+
+\[
+1 > \frac{\lambda_1}{\lambda_0} = \cfrac{b^2}{(2n - 1)a - \cfrac{b^2}{(2n + 1)a - \cfrac{b^2}{(2n + 3)a - \cfrac{b^2}{\dotso}}}}
+\]
+
+其中$0 < \lambda_1 < \lambda_0$都是正整数。令：
+
+\[
+\rho_1 = \cfrac{b^2}{(2n + 1)a - \cfrac{b^2}{(2n + 3)a - \cfrac{b^2}{\dotso}}}
+\]
+
+为后面部分的连分数，于是：
+
+\[
+\frac{\lambda_1}{\lambda_0} = \frac{b^2}{(2n - 1)a - \rho_1}
+\]
+
+所以：
+
+\[
+\rho_1 = \frac{(2n - 1)a\lambda_1 - b^2\lambda_0}{\lambda_1} < 1
+\]
+
+注意到分子、分母都是正整数。如果$\rho_1 = \dfrac{\lambda_2}{\lambda_1}$是有理数，则$\lambda_2 < \lambda_1$。继续此过程，可以获得不断减小的正整数序列：$\lambda_0 > \lambda_1 > \lambda_2 > \dotsb$，但这是不可能的。从任何有限的正整数开始，都不能得到无限的递减正整数序列。所以假设错误，连分数必然为无理数。
+\end{proof}
+
+有了这个引理，兰伯特就可以证明$\pi$是无理数了。
+
+\begin{theorem}[兰伯特]
+圆周率$\pi$是无理数。
+\end{theorem}
+
+\begin{proof}
+$\tan(\dfrac{\pi}{4}) = 1$，但1是有理数。据上述引理知$\dfrac{\pi}{4}$必然不是有理数，因此$\pi$不是有理数。
+\end{proof}
+
 \section{思想之剑}
 \subsection{欧多克索斯的比例论}
 Eudoxus's theory of proportions
