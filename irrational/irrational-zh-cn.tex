@@ -2646,8 +2646,7 @@ A_1 &= \{r | r^2 < 2\}  & A_2 &= \{r | r^2 > 2\}
 
 \begin{Exercise}[label={ex:reals}]
 
-\Question{证明祖冲之的密率是分母在一万以内的所有分数中最接近$\pi$的。提示：利用$\pi$的连分数表示。
-%% $\pi = [3;7,15,1,292,1,1,1,2,...]$
+\Question{证明祖冲之的密率是分母在一万以内的所有分数中最接近$\pi$的。提示：利用祖率 $3.1415926 < \pi < 3.1415927$。\label{qn:113355best}
 }
 
 \Question{利用古人的方法手工计算$\sqrt{3}$到小数点后3位。\label{qn:calc-sqrt3}}
@@ -2669,11 +2668,57 @@ A_1 &= \{r | r^2 < 2\}  & A_2 &= \{r | r^2 > 2\}
 
 \begin{Answer}[ref={ex:reals}]
 
-\Question{证明祖冲之的密率是分母在一万以内的所有分数中最接近$\pi$的。提示：利用$\pi$的连分数表示。\label{qn:113355best}
-$\pi = [3;7,15,1,292,1,1,1,2,...]$
+\Question{证明祖冲之的密率是分母在一万以内的所有分数中最接近$\pi$的。
+
+  \begin{proof}
+$\pi$和$\dfrac{355}{113}$的误差为
+\[
+\delta \approx |\frac{355}{133} - 3.1415926| = 2.67 \times 10^{-7}
+\]
+假设存在即约分数$\dfrac{b}{a}$更接近$\pi$，则：
+
+\[
+|\frac{b}{a} - \frac{355}{113}| \leq |\frac{b}{a} - \pi| + |\pi - \frac{355}{133}| \leq \delta + \delta = 2\delta
+\]
+通分
+\[
+\frac{|113b - 355a|}{113a} = \frac{k}{113a} \leq 2\delta
+\]
+其中$k = |113b - 355a| \geq 1$是正整数。因此：
+
+\begin{align*}
+1 &\leq k \leq 113a \cdot 2\delta  \\
+a &\geq \frac{1}{226\delta} \approx \frac{1}{226 \times 2.67 \times 10^{-7}} > 16586 > 10000
+\end{align*}
+这个更接近$\pi$的分数的分母至少是16586，不可能小于一万。所以密率是所有分母在一万以内的分数中最接近$\pi$的。
+  \end{proof}
 }
 
-\Question{利用古人的方法手工计算$\sqrt{3}$到小数点后3位。}
+\Question{利用古人的方法手工计算$\sqrt{3}$到小数点后3位。
+
+\vspace{2mm}
+先估计整数部分：$1^2 < 3 < 2^2 = 4$，所以整数部分为1。接下来估计十分位：
+\begin{align*}
+& (1 + \frac{a}{10})^2 < 3  \\
+& 1 + \frac{a}{5} + \frac{a^2}{100} < 3 \\
+& \Rightarrow a = 7
+\end{align*}
+接下来估计百分位：
+\begin{align*}
+& (1.7 + \frac{b}{100})^2 < 3 \\
+&2.89 + \frac{3.4}{100}b + \frac{b^2}{10000} < 3 \\
+&3.4b + \frac{b^2}{100} < 300 - 289 = 11 \\
+& \Rightarrow b = 3
+\end{align*}
+接下来估计千分位：
+\begin{align*}
+& (1.73 + \frac{c}{1000})^2 < 3 \\
+& 2.9929 + \frac{3.46}{1000}c + \frac{c^2}{1000000} < 3 \\
+& 3.46c + \frac{c^2}{1000} < 7.01 \\
+& \Rightarrow c = 2
+\end{align*}
+故$\sqrt{3} \approx 1.732$
+}
 
 \Question{利用$(m + 1)^4 - m^4$的二项式展开导出自然数立方和求和公式。}
 
