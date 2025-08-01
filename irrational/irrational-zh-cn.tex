@@ -1234,7 +1234,13 @@ x = 1 + \dfrac{1}{2 + \dfrac{1}{\dfrac{12}{6}}}
 我们能想象在没有计算机排版前，印刷连分数是多么困难。为此数学家们引入了连分数记法$[n_1; n_2, n_3, \dotso]$。注意第一个分隔符是分号，后面是逗号。使用这个记法，无理数$\sqrt{2} = [1; 2, 2, \dotso]$。并且我们发现$\sqrt{2} + 1 = [2; 2, 2, \dotso]$构成了完美的循环。\cref{qn:phi-continue-frac}要求给出黄金分割数$\phi$的连分数表示。回顾分数和小数的关系：有理数可以表示成有限和无限循环的小数，但无理数只能表示成无限不循环的小数；有理数可以表示成有限的连分数，一些无限不循环的小数却可以表示成无限循环的连分数。那么有没有只能表示成无限不循环连分数的无理数呢？有的，我们熟悉的圆周率$\pi$就是这样的数。让我们继续这段无理数的旅程。
 
 \begin{Exercise}[label={ex:irrationals}]
-\Question{正五边形数}
+\Question{给出正五边形数的通项公式。
+\begin{center}
+ \includegraphics[scale=0.4]{img/pentagon-numbers}
+ \captionof{figure}{正五边形数}
+ \label{fig:pentagon-numbers}
+\end{center}
+}
 \Question{\cref{fig:garfield}是第20任美国加菲尔德的勾股定理证法，请解释这一证明。\label{qn:pythagoras-thm-garfield}
 \begin{center}
  \includegraphics[scale=0.3]{img/garfield}
@@ -1278,12 +1284,32 @@ x = 1 + \dfrac{1}{2 + \dfrac{1}{\dfrac{12}{6}}}
 %% ========== 答案 ====================
 
 \begin{Answer}[ref={ex:irrationals}]
-\Question{正五边形数}
+\Question{正五边形数的通项公式。
 
-\Question{梯形面积等于两个原直角三角形和一个等腰直角三角形的面积和
+如\cref{fig:pentagon-numbers}，从1开始，边长每增大1时，五边形数增加$4, 7, 10, \dotsc$，即3倍的原边长加上1。所以增加的序列是$4 = 3\times 1 + 1, 7 = 3\times 2 + 1, 10 = 3\times 3 + 1, \dotsc, 3(n-1) + 1$。因此正五边形数$S_n$等于：
+
+\begin{align*}
+  S_n & = 1 + (3\times 1 + 1) + (3\times 2 + 1) + \dotsb + (3(n-1) + 1) \\
+  &= n + 3(1 + 2 + \dotsb + (n-1)) \\
+  &= n + 3\frac{n(n-1)}{2} = \frac{3n^2 - n}{2}
+\end{align*}
 }
 
-\Question{%\cref{fig:mosaic}是一家老饭店地面上铺的瓷砖，你能从中看出勾股定理么？
+\Question{勾股定理的总统证法。
+
+  \begin{proof}
+梯形面积等于两个原直角三角形和一个等腰直角三角形的面积和。
+  \begin{align*}
+    S &= S_1 + S_2 + S_3 \\
+    \frac{(a + b)h}{2} &= \frac{ab}{2} + \frac{c^2}{2} + \frac{ab}{2} \\
+    (a + b)(a + b) &= 2ab + c^2 && \text{高}h = a + b\\
+    a^2 + \cancel{2ab} + b^2 & = \cancel{2ab} + c^2 \\
+    a^2 + b^2 = c^2 && \qedhere
+  \end{align*}
+  \end{proof}
+}
+
+\Question{瓷砖中蕴含的勾股定理，
 见\cref{fig:pythagoras-mosaic}中的辅助线。
 \begin{center}
  \includegraphics[scale=0.4]{img/pythagoras-mosaic}
@@ -1292,18 +1318,28 @@ x = 1 + \dfrac{1}{2 + \dfrac{1}{\dfrac{12}{6}}}
 \end{center}
 }
 
-\Question{%%$a, b$是互素的奇数，证明$\frac{a \pm b}{2}$互素。
+\Question{若$a, b$是互素的奇数，证明$\frac{a \pm b}{2}$互素。
   \begin{proof}
     设$d$为$\frac{a \pm b}{2}$的公因子，令$dm = \frac{a + b}{2}, dn = \frac{a - b}{2}$，其中$m, n$为整数。两式相加求得$a = dm + dn = d(m + n)$，所以$d$整除$a$；两式相减得$b = dm - dn = d (m - n)$，所以$d$也整除$b$。这样$d$也是$a, b$的公因子。但$a, b$互素，所以$d$只能是1，即$\frac{a \pm b}{2}$互素。
   \end{proof}
 }
-\Question{%%$a, b$互素，若$ab = c^2$证明$a, b$都是平方数。
+\Question{$a, b$互素，若$ab = c^2$，证明$a, b$都是平方数。
   \begin{proof}
     利用算术基本定理，把$a, b$各自表示为素数幂的积：$a = p_1^{a_1} p_2^{a_2} \dotsm p_n^{a_n}, b = q_1^{b_1} q_2^{b_2} \dotsm q_m^{b_m}$，其中$p_i, q_j$都是素数。由于$a, b$互素，它们的公因数只有1，故$p_i \ne q_j$。它们的积是个平方数$c^2 = p_1^{a_1} p_2^{a_2} \dotsm p_n^{a_n} q_1^{b_1} q_2^{b_2} \dotsm q_m^{b_m}$，所以必然有$a_i, b_j$全部是偶数，即$a, b$都是平方数。
   \end{proof}
 }
 
 \Question{利用埃拉托斯特尼筛法找出100以内的所有素数。
+
+  \begin{align*}
+2) &2, 3, \cancel{4}, 5, \cancel{6}, \dotsc, 99, \cancel{100} && \text{筛除2的倍数} \\
+3) &2, 3, 5, 7, \cancel{9}, 11, 13, \dotsc, 97, \cancel{99} && \text{筛除3的倍数} \\
+5) &2, 3, 5, 7, 11, 13, 17, 19, 23, \cancel{25}, 29, \dotsc, \cancel{95}, 97 && \text{筛除5的倍数} \\
+7) &2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, \\
+   &47, \cancel{49}, 53, 59, 61, 67, 71, 73, \cancel{77}, 79, 83, 89, \cancel{91}, 97 && \text{筛除7的倍数} \\
+\to &2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, \\
+&47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97 && 11^2 > 100 \text{结束}
+  \end{align*}
 }
 
 
@@ -2595,9 +2631,11 @@ A_1 &= \{r | r^2 < 2\}  & A_2 &= \{r | r^2 > 2\}
 
 \Question{用广义二项式定理将$\dfrac{1}{\sqrt{1 - x^2}}$展开。}
 
-\Question{利用极限$\lim_{\Delta x \to 0} \dfrac{\sin x}{x} = 1$证明$\lim_{x \to 0} \frac{\cos x - 1}{x} = 0$。提示：由余弦函数的倍角公式可推出$\cos x = 1 - 2\sin \dfrac{x}{2}$。\label{qn:cos-1-to-x}}
+\Question{利用极限$\lim_{\Delta x \to 0} \dfrac{\sin x}{x} = 1$证明$\lim_{x \to 0} \dfrac{\cos x - 1}{x} = 0$。提示：由余弦函数的倍角公式可推出$\cos x = 1 - 2\sin \dfrac{x}{2}$。\label{qn:cos-1-to-x}}
 
 \Question{求$\cos x$的导数。\label{qn:derivative-cos}}
+
+\Question{分别使用莱布尼茨公式、麦钦公式的前5项计算圆周率的近似值，比较收敛速度。如果你会编程，尝试用前100项计算圆周率的近似值。}
 \end{Exercise}
 
 %% ========== 答案 ====================
@@ -2615,7 +2653,7 @@ $\pi = [3;7,15,1,292,1,1,1,2,...]$
 \Question{证明常数的导数为0。}
 \Question{用广义二项式定理将$\dfrac{1}{\sqrt{1 - x^2}}$展开。}
 
-\Question{利用极限$\lim_{\Delta x \to 0} \dfrac{\sin x}{x} = 1$证明$\lim_{x \to 0} \frac{\cos x - 1}{x} = 0$。提示：由余弦函数的倍角公式可推出$\cos x = 1 - 2\sin \dfrac{x}{2}$。
+\Question{利用极限$\lim_{\Delta x \to 0} \dfrac{\sin x}{x} = 1$证明$\lim_{x \to 0} \dfrac{\cos x - 1}{x} = 0$。提示：由余弦函数的倍角公式可推出$\cos x = 1 - 2\sin \dfrac{x}{2}$。
 
   \begin{proof}
     由余弦函数的和角公式$\cos(\alpha + \beta) = \cos \alpha \cos \beta - \sin \alpha \sin \beta$，代入$\alpha = \beta$可得倍角公式：
@@ -2635,6 +2673,9 @@ $\pi = [3;7,15,1,292,1,1,1,2,...]$
 }
 
 \Question{求$\cos x$的导数。}
+
+\Question{分别使用莱布尼茨公式、麦钦公式的前5项计算圆周率的近似值，比较收敛速度。如果你会编程，尝试用前100项计算圆周率的近似值。}
+
 \end{Answer}
 
 \ifx\wholebook\relax \else
