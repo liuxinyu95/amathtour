@@ -1984,7 +1984,7 @@ c' = \sqrt{(1 - \sqrt{1 - (\frac{1}{2})^2})^2 + (\frac{1}{2})^2} = \sqrt{2 - \sq
 \]
 
 \index{帕斯卡法则}
-特别地，我们规定$0! = 1$，这样就有$\dbinom{n}{0} = \dbinom{n}{n} = 1$。利用$\dbinom{n}{k}$的这一定义，我们可以表述朱世杰在杨辉三角中标注的斜线，在西方称做帕斯卡法则：
+特别地，我们规定$0! = 1$（见\cref{qn:frac-of-zero}），这样就有$\dbinom{n}{0} = \dbinom{n}{n} = 1$。利用$\dbinom{n}{k}$的这一定义，我们可以表述朱世杰在杨辉三角中标注的斜线，在西方称做帕斯卡法则：
 
 \begin{proposition}
 杨辉三角形中的数等于斜上方的两个数字和：$\dbinom{n-1}{k} + \dbinom{n-1}{k-1} = \dbinom{n}{k}$
@@ -2695,6 +2695,8 @@ A_1 &= \{r | r^2 < 2\}  & A_2 &= \{r | r^2 > 2\}
 
 \Question{利用古人的方法手工计算$\sqrt{3}$到小数点后3位。\label{qn:calc-sqrt3}}
 
+\Question{阶乘$n! = 1 \times 2 \times 3 \dotsm n$，也可以递归地定义为$n! = n \times (n - 1)!$，利用这一点说明$0! = 1$。\label{qn:frac-of-zero}}
+
 \Question{利用$(m + 1)^4 - m^4$的二项式展开导出自然数立方和求和公式。\label{qn:sum-of-cubics}}
 
 \Question{证明常数的导数为0。\label{qn:zero-derivative}}
@@ -2764,6 +2766,22 @@ a &\geq \frac{1}{226\delta} \approx \frac{1}{226 \times 2.67 \times 10^{-7}} > 1
 & \Rightarrow c = 2
 \end{align*}
 故$\sqrt{3} \approx 1.732$
+}
+
+\Question{阶乘$n! = 1 \times 2 \times 3 \dotsm n$，也可以递归地定义为$n! = n \times (n - 1)!$，利用这一点说明$0! = 1$。
+
+  \begin{proof}
+方法一：考虑1的阶乘的递归定义：$1! = 1 \times 0!$。另一方面$1! = 1$。因此$0! = 1$。
+
+方法二：两种定义须一致，将递归展开：
+\begin{align*}
+n! & = 1 \times 2 \times 3 \dotsm n = n \times (n-1)!  \\
+   & = n \times (n-1) \times (n-2)! \\
+   & = n \times (n-1) \times (n-2) \dotsm 1 \times 0!
+\end{align*}
+约去两边相同的因子得$1 = 0!$
+  \end{proof}
+回顾第\ref{sec:unit}节单位元的定义，我们看到“空乘积”（empty product）的结果是乘法单位圆1；而“空和”（empty sum）的结果是加法单位圆0。
 }
 
 \Question{利用$(m + 1)^4 - m^4$的二项式展开导出自然数立方和求和公式。
