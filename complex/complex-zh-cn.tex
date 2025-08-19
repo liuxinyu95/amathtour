@@ -1,0 +1,46 @@
+\ifx\wholebook\relax \else
+
+\documentclass[b5paper]{ctexart}
+\usepackage[nomarginpar
+  %, margin=.5in
+]{geometry}
+
+\addtolength{\oddsidemargin}{-0.05in}
+\addtolength{\evensidemargin}{-0.05in}
+\addtolength{\textwidth}{0.1in}
+
+\usepackage[cn]{../prelude}
+
+\setcounter{page}{1}
+
+\begin{document}
+
+\title{复数}
+
+\author{刘新宇
+\thanks{{\bfseries 刘新宇} \newline
+  Email: liuxinyu99@hotmail.com \newline}
+  }
+
+\maketitle
+\fi
+
+\markboth{复数}{数的旅程}
+
+\ifx\wholebook\relax
+\chapter{复数}
+\fi
+
+%% On earth there is nothing great but man; and in man there is nothing great but mind.
+\epigraph{地球上最伟大的是人，人之中最伟大的是心灵}{威廉·汉密尔顿}
+
+\ifx\wholebook\relax \else
+\section{参考答案}
+\shipoutAnswer
+
+\begin{thebibliography}{99}
+\subimport{inc/}{bib-zh-cn}
+\end{thebibliography}
+
+\expandafter\enddocument
+\fi
