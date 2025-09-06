@@ -222,7 +222,45 @@ v^3 = \dfrac{q}{2} - \sqrt{(\dfrac{q}{2})^2 - (\dfrac{p}{3})^3}
 y = u + v = \sqrt[3]{\frac{q}{2} + \sqrt{(\frac{q}{2})^2 - (\frac{p}{3})^3}} + \sqrt[3]{\frac{q}{2} - \sqrt{(\frac{q}{2})^2 - (\frac{p}{3})^3}}
 \]
 
-这就是高中数学课上介绍的卡尔达诺公式。进一步我们可以用$x = y - \dfrac{a}{3}$求出未知数$x$。
+这就是高中数学课上介绍的卡尔达诺公式。我们进一步可以用$x = y - \dfrac{a}{3}$求出未知数$x$。与此对照，我们接下来用几何法解三次方程$y^3 + py = q$。如\cref{fig:cube-decompose}所示，把一个边长为$r$的大正方体切分为5部分：左前下角的边长为$r-s$的小正方体；右后上角的边长为$s$的小正方体；三个长$r$宽$r-s$高$s$的长方体，分别位于左上、右前、后下。大正方体的体积等于这5部分的体积之和，即：
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[scale=0.4]{img/cube-decompose}
+  \caption{把边长为$r$的正方体切分成5部分}
+ \label{fig:cube-decompose}
+\end{figure}
+
+\begin{align*}
+r^3 = (r-s)^3 + s^3 + 3rs(r-s)  &&\text{两个正方体加三个长方体} \\
+(r-s)^3 + 3rs(r-s) = r^3 - s^3
+\end{align*}
+
+令$p = 3rs, q = r^3 - s^3$，则上述等式就是$(r-s)^3 + p(r-s) = q$。显然$y = r - s$就是方程$y^3 + py = q$的一个解。所以只要根据$p, q$找到合适$r, s$就能解出三次方程了。由$p = 3rs$得$s = \dfrac{p}{3r}$，代入$q = r^3 - s^3$得到方程：
+
+\[
+r^3 - (\frac{p}{3r})^3 = q
+\]
+
+这本质上是一个关于$r^3$的二次方程$(r^3)^2 - qr^3 - (\dfrac{p}{3})^3 = 0$，利用二次方程求根公式得到：
+
+\[
+r^3 = \frac{q}{2} + \sqrt{(\frac{q}{2})^2 + (\frac{p}{3})^3}
+\]
+
+对称地可以求出$s^3$：
+
+\[
+s = -\frac{q}{2} + \sqrt{(\dfrac{q}{2})^2 + (\dfrac{p}{3})^3}
+\]
+
+最终求得未知数$y = r - s$：
+
+\[
+y = r - s = \sqrt[3]{\frac{q}{2} + \sqrt{(\frac{q}{2})^2 + (\frac{p}{3})^3}} - \sqrt[3]{\frac{q}{2} + \sqrt{(\frac{q}{2})^2 + (\frac{p}{3})^3}}
+\]
+
+和代数法推出的卡尔达诺公式对比，只有$p$的正负号不同，这是由于方程$y^3 + py = q$和$y^3 = py + q$中$p$的符号相反。
 
 \section{佚名数学家}
 \subsection{复数的几何意义和运算法则}
