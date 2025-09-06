@@ -108,6 +108,8 @@
 
 \section{三次方程}
 
+与通常的观点不同，复数\underdot{不是}在解二次方程的过程中，而是在解三次方程的过程中被意外发现的。高中数学课上会介绍卡尔达诺公式。
+
 \begin{figure}[htbp]
   \centering
   \includegraphics[scale=0.33]{img/plimpton322}
@@ -132,7 +134,7 @@
 \end{cases}
 \]
 
-其中$s$是面积，$d$是对角线。将$b = \dfrac{s}{a}$代入第二式，就得到关于$a^2$二次方程$(a^2)^2 - d^2 a^2 + s^2 = 0$。当时还没有代数符号系统，古巴比伦人解二次方程的过程是通过文字描述的。初中课堂上通常会在介绍求根公式前，学习用“配方法”（complete square）解二次方程。这本质上也是一种代数解法。阿拉伯数学家花拉子密在他的代数著作中还遵循古希腊传统给出了二次方程的几何解释。如果$a \ne 0$，我们可以把一般二次方程$ax^2 + bx + c = 0$的二次项系数化成1，然后把常数项移到右侧，得到$x^2 + \dfrac{b}{a}x = -\dfrac{c}{a}$。令$p = \dfrac{b}{a}, q= -\dfrac{c}{a}$，我们要通过几何方法解方程$x^2 + px = q$。如果$p > 0$，\cref{fig:quadratic1}给出了方程左侧的几何意义。
+其中$s$是面积，$d$是对角线。将$b = \dfrac{s}{a}$代入第二式，就得到关于$a^2$二次方程$(a^2)^2 - d^2 a^2 + s^2 = 0$。当时还没有代数符号系统，古巴比伦人解二次方程的过程是通过文字描述的。初中课堂上通常会在介绍求根公式前，学习用“配方法”（complete square）解二次方程。这本质上也是一种代数解法。阿拉伯数学家花拉子密在他的《代数学》中还遵循古希腊传统给出了二次方程的几何解释\footnote{即Hisab al-jabr w'al-muqabala，见第\ref{sec:Khwarizmi}节}。如果$a \ne 0$，我们可以把一般二次方程$ax^2 + bx + c = 0$的二次项系数化成1，然后把常数项移到右侧，得到$x^2 + \dfrac{b}{a}x = -\dfrac{c}{a}$。令$p = \dfrac{b}{a}, q= -\dfrac{c}{a}$，我们要通过几何方法解方程$x^2 + px = q$。如果$p > 0$，\cref{fig:quadratic1}给出了方程左侧的几何意义。$q$相当于一个正方形的面积$x^2$加上一个长$p$宽$x$的矩形面积。
 
 \begin{figure}[htbp]
   \centering
@@ -141,12 +143,25 @@
  \label{fig:quadratic1}
 \end{figure}
 
+配方法的几何意义是把矩形切分成两个同样的长$\dfrac{p}{2}$宽$x$的小矩形（见\cref{fig:quadratic2}左侧），然后把其中一个移动到正方形的下方，再补上一个边长为$\dfrac{p}{2}$的小正方形（见\cref{fig:quadratic2}右侧的黑色正方形）拼成一个边长为$x + \dfrac{p}{2}$的大正方形。左右两边图形中的白色面积相等，即：
+
+\begin{align*}
+ (x + \frac{p}{2})^2 &= q + (\frac{p}{2})^2 &&\text{大正方形面积等于白色部分加黑色部分} \\
+ x + \frac{p}{2} &= \pm \sqrt{q + (\frac{p}{2})^2} &&\text{两边开方} \\
+ x &= -\frac{p}{2} \pm \sqrt{q + \frac{p^2}{4}} \\
+ x &= -\frac{b}{2a} \pm \sqrt{-\frac{c}{a} + \frac{b^2}{4a^2}} &&\text{代入}p = \frac{b}{a}, q= -\frac{c}{a} \\
+ x &= \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+\end{align*}
+
 \begin{figure}[htbp]
   \centering
   \includegraphics[scale=0.5]{img/quadratic2}
   \caption{$x^2 + px$的几何意义：正方形与长方形的面积和}
  \label{fig:quadratic2}
 \end{figure}
+
+这就是常见的一元二次方程求根公式。但在花拉子密时代负数还没有被接受，因此当一次项为负时就需要给出$x^2 - px = q$的几何解释；当常数项为负时需要给出$x^2 - q = px$的几何解释（见\cref{qn:geometric-quadratic}）。卡尔达诺在《大术》中遵循了这样的传统，同时给出了三次方程的代数解法和几何解释。我们先介绍代数解法。
+
 
 \section{佚名数学家}
 \subsection{复数的几何意义和运算法则}
@@ -164,6 +179,17 @@
 \subsection{抽象的数}
 理想数
 \subsection{新数的构造-代数数}
+
+\begin{Exercise}[label={ex:complex}]
+\Question{给出解二次方程$x^2 - px = q$的几何解释。\label{qn:geometric-quadratic}}
+\end{Exercise}
+
+\begin{Answer}[ref={ex:complex}]
+\Question{给出解二次方程$x^2 - px = q$的几何解释。
+
+有两种情况：$q \geq 0$和$q < 0$
+}
+\end{Answer}
 
 \ifx\wholebook\relax \else
 \section{参考答案}
