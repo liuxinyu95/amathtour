@@ -108,7 +108,7 @@
 
 \section{三次方程}
 
-与通常的观点不同，复数\underdot{不是}在解二次方程的过程中，而是在解三次方程的过程中被意外发现的。高中数学课上会介绍卡尔达诺公式。
+与通常的观点不同，复数\underdot{不是}在解二次方程的过程中，而是在解三次方程的过程中被意外发现的。高中数学课上会给出卡尔达诺公式。本节将利用代数与几何两种方法推导这个公式。
 
 \begin{figure}[htbp]
   \centering
@@ -160,8 +160,69 @@
  \label{fig:quadratic2}
 \end{figure}
 
-这就是常见的一元二次方程求根公式。但在花拉子密时代负数还没有被接受，因此当一次项为负时就需要给出$x^2 - px = q$的几何解释；当常数项为负时需要给出$x^2 - q = px$的几何解释（见\cref{qn:geometric-quadratic}）。卡尔达诺在《大术》中遵循了这样的传统，同时给出了三次方程的代数解法和几何解释。我们先介绍代数解法。
+这就是常见的一元二次方程求根公式。但在花拉子密时代负数还没有被接受，因此当一次项为负时就需要给出$x^2 - px = q$的几何解释；当常数项为负时需要给出$x^2 - q = px$的几何解释（见\cref{qn:geometric-quadratic}）。卡尔达诺在《大术》中遵循了这样的传统，同时给出了三次方程的代数解法和几何解释。我们先介绍代数解法。对于一般三次方程$a_3x^3 + a_2x^2 + a_1x + a_0 = 0, a_3 \ne 0$，首先两边同时除以$a_3$把三次项系数化为1，即$x^3 + \dfrac{a_2}{a_3} x^2 + \dfrac{a_1}{a_3} x + \dfrac{a_0}{a_3}$。重新命名系数为$x^3 + ax^2 + bx + c = 0$。大约在十四世纪末，意大利佛罗伦萨的数学家就发现可以通过变量替换$x = y - \dfrac{a}{3}$把二次项消去：
 
+\begin{align*}
+(y - \frac{a}{3})^3 + a(y - \frac{a}{3})^2 + b(y - \frac{a}{3}) + c &= 0  \\
+y^3 -\cancel{ay^2} + \frac{a^2}{3}y - \frac{a^3}{27} + \cancel{ay^2} - \frac{2a^2}{3}y + \frac{a^3}{9} + by - \frac{ab}{3} + c &= 0 && \text{二项式展开} \\
+y^3 + (b - \frac{a^2}{3})y + \frac{2a^3}{27} - \frac{ab}{3} + c &= 0 \\
+y^3 + py + q = 0
+\end{align*}
+
+其中$p = b - \dfrac{a^2}{3}, q = c + \dfrac{2a^2}{27} - \dfrac{ab}{3}$。由于当时人们不接受负数，根据$p, q$的正负，这种“缺二次项”的三次方程共有三种形式：
+
+\begin{align}
+y^3 + py &= q \label{eq:cubic-linear} \\
+     y^3 &= py + q \label{eq:cubic-complex} \\
+y^3 + q &= py
+\end{align}
+
+其中费罗独立发现的是\cref{eq:cubic-linear}形式的解，而\cref{eq:cubic-complex}形式的解直接导致了复数的发现。我们不妨以$y^3 = py + q$为例继续推导求根公式。令$y = u + v$，则方程左侧化为：
+
+\begin{align*}
+y^3 = (u + v)^3 &= u^3 + 3u^2v + 3uv^2 + v^3 && \text{二项式展开} \\
+  &= u^3 + v^3 + 3uv(u + v) \\
+  &= u^3 + v^3 + 3uvy && \text{代入} y = u + v \\
+  &= (3uv)y + (u^3 + v^3) = py + q && \text{左边等于右边}
+\end{align*}
+
+由待定系数法知：
+
+\[
+\begin{cases}
+  3uv = p \\
+  u^3 + v^3 = q
+\end{cases}
+\]
+
+这相当于关于$u, v$的二元方程组。从第一个方程中得到：$v = \dfrac{p}{3u}$，代入第二个方程得：
+
+\[
+u^3 + (\frac{p}{3u})^3 = q
+\]
+
+这实际上是一个关于$u^3$的二次方程：$(u^3)^2 - qu^3 + (\dfrac{p}{3})^3 = 0$，利用二次方程求根公式得到：
+
+\[
+u^3 = \frac{q}{2} \pm \sqrt{(\frac{q}{2})^2 - (\frac{p}{3})^3}
+\]
+
+注意到$u, v$在上面的二元方程组中是完全对称的，$v^3$必然具有同样的形式。我们不妨让它们分别取这两个根：
+
+\[
+\begin{cases}
+u^3 = \dfrac{q}{2} + \sqrt{(\dfrac{q}{2})^2 - (\dfrac{p}{3})^3} \\
+v^3 = \dfrac{q}{2} - \sqrt{(\dfrac{q}{2})^2 - (\dfrac{p}{3})^3}
+\end{cases}
+\]
+
+这样它们满足$u^3 + v^3 = q$。最后由$y = u + v$，我们得到方程的根：
+
+\[
+y = u + v = \sqrt[3]{\frac{q}{2} + \sqrt{(\frac{q}{2})^2 - (\frac{p}{3})^3}} + \sqrt[3]{\frac{q}{2} - \sqrt{(\frac{q}{2})^2 - (\frac{p}{3})^3}}
+\]
+
+这就是高中数学课上介绍的卡尔达诺公式。进一步我们可以用$x = y - \dfrac{a}{3}$求出未知数$x$。
 
 \section{佚名数学家}
 \subsection{复数的几何意义和运算法则}
