@@ -397,6 +397,7 @@ z_1z_2 &= r_1(\cos\theta_1 + i\sin\theta_1) \cdot r_2(\cos\theta_2 + i\sin\theta
   &= r_1r_2(\cos(\theta_1 + \theta_2) + i\sin(\theta_1 + \theta_2)) && \text{和角公式}
 \end{align*}
 
+\label{sec:proof-to-machin}
 因此两个复数相乘，它们的模相乘，幅角相加。阿尔冈图可以说是数、几何、向量、三角函数完美融合的典范。为了展示复数具备的数形结合威力，我们给出麦钦公式的优美证明（见第\ref{sec:machin-formula}节）。用莱布尼茨公式计算圆周率的效率很低，为此人们提出了改进：
 
 \[
@@ -409,11 +410,18 @@ z_1z_2 &= r_1(\cos\theta_1 + i\sin\theta_1) \cdot r_2(\cos\theta_2 + i\sin\theta
 \begin{align*}
 z_1 z_2 &= (2+i)(3+i) = (6 - 1) + (2 + 3)i = 5 + 5i \\
 arg(5 + 5i) &= arg(2+i) + arg(3+i) && \text{复数相乘幅角相加} \\
-\frac{\pi}{4} &= \tan^{-1}\frac{5}{5} = \tan^{-1}\frac{1}{2} + \tan^{-1}\frac{1}{3} && \qedhere
+\frac{\pi}{4} &= \tan^{-1}\frac{5}{5} = \tan^{-1}\frac{1}{2} + \tan^{-1}\frac{1}{3} && \text{见\cref{fig:machin1}} \qedhere
 \end{align*}
 \end{proof}
 
-我们接下来证明麦钦公式：
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[scale=0.33]{img/machin1}
+  \caption{$(2 + i)(3 + i) = 5 + 5i$}
+ \label{fig:machin1}
+\end{figure}
+
+接下来证明麦钦公式：
 \[
 \frac{\pi}{4} = 4\tan^{-1} \frac{1}{5} - \tan^{-1} \frac{1}{239}
 \]
@@ -448,7 +456,10 @@ $z$的幅角恰好是$\dfrac{\pi}{4}$
 
 \subsection{代数基本定理}
 
-小结复数的几何意义与代数意义。
+一旦引入复数并赋予它几何意义，人们再回过头来看二次方程就发现原来无解的情况变得有解了。例如卡尔达诺在《大术》中的题目：两个数相加等于10，相乘等于40，即$(5 + x)(5 - x) = 40$，利用平方差公式展开整理得：$x^2 + 15 = 0$。它没有实数解，但是却有两个复数根：$x_{1,2} = \pm i\sqrt{15}$；多项式$x^2 + 15$用实数无法因式分解，但是却可以用复数分解为因式$(x + i\sqrt{15})(x - i\sqrt{15})$。而且让人惊喜的是，原来复杂的三种情况：(1) 有两个不同的实根，(2) 有两个相同的实根，(3) 无实数解，在复数中一下子变得简单一致了：任何二次方程有两个复数根，重根算作两个。数学家都是极简完美主义者，谁也无法抗拒这样优美的结论。那么三次方程呢？四次方程呢？以及更高次方程呢？
+
+
+小结复数的几何意义与代数意义（哈密尔顿）。要求证明五大计算定律对复数也成立
 
 \section{e的传奇}
 \subsection{e的诞生}
@@ -472,6 +483,7 @@ $z$的幅角恰好是$\dfrac{\pi}{4}$
 \Question{计算规则$\sqrt{ab} = \sqrt{a}\sqrt{b}$在复数下是否成立？如果成立请证明之，如果不成立应怎样挽救？\label{qn:sqrt-of-product}}
 
 \Question{证明任何复数代表的向量乘以$i$相当于向左转$90\degree$。\label{qn:mul-i}}
+
 \end{Exercise}
 
 \begin{Answer}[ref={ex:complex}]
