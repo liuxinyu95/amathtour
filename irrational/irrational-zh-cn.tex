@@ -2509,7 +2509,7 @@ f^{(n)}(x) = n!a_n + 2 \cdot 3 \cdot n (n+1) a_{n+1} x + \dotsb
 
 令$x = 0$得到$f^{(n)}(0) = n!a_n$，右边其余项都是0。因此$a_n = \dfrac{f^{(n)}(0)}{n!}$。这样就确定了$a_0 = f(0), a_1 = f'(0), a_2 = \dfrac{f''(0)}{2!}, \dotsc, a_n = \dfrac{f^{(n)}(0)}{n!}, \dotsc$，从而得到麦克劳林展开公式：
 
-\be
+\be \label{eq:maclaurin}
 f(x) = f(0) + \frac{f'(0)}{1!}x + \frac{f''(0)}{2!}x^2 + \dotsb + \frac{f^{(n)}(0)}{n!}x^n + \dotsb
 \ee
 
