@@ -793,7 +793,7 @@ e^{i\pi} = \cos \pi + i\sin \pi = -1
 r = ka^\theta
 \]
 
-其中$k$和$a$是常数。这样$\theta$增加2倍，$r$就增加到$r^2$；$\theta$增加3倍，$r$就增加到$r^3$……雅各布·伯努利对这种螺线进行了深入的研究，他发现了很多极为有趣的性质。最令人震惊的是，不管怎么变化，旋转，缩放，求渐屈线、渐伸线、垂足线，结果总是不变——又得到了同一形状的螺线。1692年，他把这种迷人的螺线命名为“神奇螺线”（spiral mirabilis），并决定死后在墓碑上刻下这个螺线，如\cref{fig:bernoulli-tomb}所示\cite{MacTour-Equiangular}。他留下了著名的拉丁文墓志铭：Eadem mutata resurgo，中文译作“虽经沧海，我依故我”\cite{Maor-2010}。
+其中$k$和$a$是常数。这样$\theta$增加2倍，$r$就增加到$r^2$；$\theta$增加3倍，$r$就增加到$r^3$……雅各布·伯努利对这种螺线进行了深入的研究，他发现了很多极为有趣的性质。最令人震惊的是，不管怎么变化，缩放、求渐屈线、渐伸线、垂足线，结果总是不变——又得到了同一形状的螺线。1692年，他把这种迷人的螺线命名为“神奇螺线”（spiral mirabilis），并决定死后在墓碑上刻下这个螺线，如\cref{fig:bernoulli-tomb}所示\cite{MacTour-Equiangular}。他留下了著名的拉丁文墓志铭：Eadem mutata resurgo，中文译作“虽经沧海，我依故我”\cite{Maor-2010}。
 
 \begin{figure}[htbp]
  \centering
@@ -802,7 +802,7 @@ r = ka^\theta
  \caption{雅各布·伯努利的墓志铭：Eadem mutata resurgo}
 \end{figure}
 
-但遗憾的是，石匠错误地把等角螺线刻成了“阿基米德螺线”，如\cref{fig:bernoulli-epitaph}所示。这两个螺线有什么区别呢？
+但遗憾的是，石匠错误地把等角螺线刻成了“阿基米德螺线”，如\cref{fig:bernoulli-epitaph}所示。这两个螺线有什么区别呢？阿基米德螺线每圈间的间距是相等的，而等角螺线的间距是等比数列（见\cref{fig:equiangular-spiral}）。如果用极坐标表示，阿基米德螺线的方程是$r = a\theta$。匀速转动阿基米德螺线，则它与坐标轴的交点将匀速平移。那么为什么这种螺线又叫做“对数螺线”呢？从反函数的角度看：
 
 \begin{figure}[htbp]
  \centering
@@ -831,7 +831,38 @@ r = ka^\theta
   \label{fig:equiangular-spiral}
 \end{figure}
 
-（见\cref{fig:equiangular-spiral}）
+\begin{align*}
+r = ka^\theta && \theta = \log_{a} \frac{r}{k}
+\end{align*}
+
+螺线上一点的极角与极径成对数关系。因此法国数学家瓦里尼翁\footnote{Pierre Varignon，1654～1722年。曾系统整理和传播牛顿、莱布尼茨的微积分思想，并在力学中引入 “力矩”等重要概念。}把这种螺线叫做对数螺线。我们在高中学习过换底公式：$\log_a x = \dfrac{\ln x}{\ln a}$，于是：
+
+\begin{align*}
+\theta &= \log_a \frac{r}{k} = \frac{\ln \frac{r}{k}}{\ln a} && \text{换底公式}\\
+\ln \frac{r}{k} &= \theta(\ln a) && \text{两边同乘以}\ln a \\
+\frac{r}{k} &= e^{\theta \ln a} = e^{b\theta} && \text{两边取}e\text{的指数，令}b = \ln a \\
+r &= k e^{b\theta}
+\end{align*}
+
+这样就得到了以$e$为底的等角螺线极坐标方程。这个公式是雅各布·伯努利不曾想象到的，但它可以轻松揭示为何“我依故我”。
+
+\begin{proposition}[雅各布·伯努利]
+等角螺线缩放后形状不变。
+\end{proposition}
+
+\begin{proof}
+利用等角螺线极坐标方程$r = ke^{b\theta}$，把极径缩放$a$倍得：
+
+\begin{align*}
+r' &= (ar)e^{b\theta} = e^{\ln a} k e^{b\theta} \\
+   &= ke^{b\theta}e^{\ln a} = k e^{b\theta + \ln a} \\
+   &= ke^{b(\theta + \theta_0)} && \text{令} \theta_0 = \frac{\ln a}{b}
+\end{align*}
+
+这相当于把极角旋转了$\theta_0$，而螺线旋转后的形状是不变的。
+\end{proof}
+
+练习X要求利用“我依故我”的本质找出$e^x$的展开式。复数的等比数列构成等角螺线。
 
 \section{新世界的大门}
 \subsection{小试牛刀}
