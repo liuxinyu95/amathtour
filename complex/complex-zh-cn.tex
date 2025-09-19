@@ -771,7 +771,7 @@ e^{i\pi} = \cos \pi + i\sin \pi = -1
 \footnotetext{需要区分两种称号：腓特烈二世（大帝）、神圣罗马帝国腓特烈二世（大帝）。后者为十二世纪皇帝（1194～1250年），而前者是普鲁士国王（1740～1786年），腓特烈二世是其正式名号，而“腓特烈大帝”是后世对其历史地位的尊称。}
 
 \subsection{我依故我}
-尽管没能看到欧拉的成果，但雅各布·伯努利在生前预见了$y = e^x$的诞生。1638年笛卡尔发现了一种神奇的螺线，名叫“等角螺线”，也叫做“对数螺线”（见\cref{fig:decartes-equiangular-spiral}）。
+尽管没能看到欧拉的成果，但雅各布·伯努利在生前预见了$e^x$的诞生。1638年笛卡尔发现了一种神奇的螺线，名叫“等角螺线”，也叫做“对数螺线”（见\cref{fig:decartes-equiangular-spiral}）。
 
 \begin{figure}[htbp]
  \centering
@@ -793,7 +793,7 @@ e^{i\pi} = \cos \pi + i\sin \pi = -1
 r = ka^\theta
 \]
 
-其中$k$和$a$是常数。这样$\theta$增加2倍，$r$就增加到$r^2$；$\theta$增加3倍，$r$就增加到$r^3$……雅各布·伯努利对这种螺线进行了深入的研究，他发现了很多极为有趣的性质。最令人震惊的是，不管怎么变化，缩放、求渐屈线、渐伸线、垂足线，结果总是不变——又得到了同一形状的螺线。1692年，他把这种迷人的螺线命名为“神奇螺线”（spiral mirabilis），并决定死后在墓碑上刻下这个螺线，如\cref{fig:bernoulli-tomb}所示\cite{MacTour-Equiangular}。他留下了著名的拉丁文墓志铭：Eadem mutata resurgo，中文译作“虽经沧海，我依故我”\cite{Maor-2010}。碑铭内容为：
+其中$k$和$a$是常数。这样$\theta$增加2倍，$r$就增加到$r^2$；$\theta$增加3倍，$r$就增加到$r^3$……\cref{qn:equiangular}要求证明托里拆利的定义和笛卡尔的定义是等价的。雅各布·伯努利对这种螺线进行了深入的研究，他发现了很多极有趣的性质。最令人震惊的是，不管怎么变化，缩放、求渐屈线、渐伸线、垂足线，结果总是不变——又得到了同一形状的螺线。1692年，他把这种迷人的螺线命名为“神奇螺线”（spiral mirabilis），并决定死后在墓碑上刻下这个螺线，如\cref{fig:bernoulli-tomb}所示\cite{MacTour-Equiangular}。他留下了著名的拉丁文墓志铭：Eadem mutata resurgo，中文译作“虽经沧海，我依故我”\cite{Maor-2010}。碑铭内容为：
 
 \begin{figure}[htbp]
  \centering
@@ -878,10 +878,36 @@ r' &= (ar)e^{b\theta} = e^{\ln a} k e^{b\theta} \\
 这相当于把极角旋转了$\theta_0$，而螺线旋转后的形状是不变的。
 \end{proof}
 
-\cref{qn:equiangular}要求用$r = ke^{b\theta}$证明笛卡尔指出的等角性质：螺线的切线和极径夹角$\Psi$不变（见\cref{fig:equiangular}）。练习Y要求利用“我依故我”的本质找出$e^x$的展开式。
+\cref{qn:exp-from-fixed-point}要求利用“我依故我”的性质找出$e^x$的展开式。等角螺线还经由欧拉常数$e$和复数产生了联系。
 
+\begin{proposition}
+任何复数$z = a + bi, b \ne 0$构成的等比数列$z, z^2, z^3, \dotsc$都分布在等角螺线上。
+\end{proposition}
 
-复数的等比数列构成等角螺线。
+\begin{proof}
+用欧拉公式把$z$化成$z = c(\cos\theta_0 + i\sin\theta_0)$的形式，其中$c = \sqrt{a^2 + b^2}, \theta_0 = \tan^{-1} \dfrac{b}{a}$。因为$b \ne 0$，所以$\theta_0 \ne 0$。利用棣莫弗公式，等比数列的第$n$项为：
+
+\[
+z^n = c^n(\cos\theta_0 + i\sin\theta_0)^n = c^n(\cos n\theta + i\sin n\theta)
+\]
+
+我们接下来把$z^n$用极坐标表示，它的极角是$\theta = n\theta_0$，极径是：
+
+\begin{align*}
+r &= c^n = e^{\ln(c^n)} && \text{换底} \\
+  &= e^{n\ln c} && \text{对数计算规则} \\
+  &= e^{\frac{\theta}{\theta_0}\ln c} = ke^{b\theta} && \text{其中}k=1, b = \frac{\ln c}{\theta_0} \text{，满足等角螺线极坐标方程} \qedhere
+\end{align*}
+\end{proof}
+
+等角螺线出现在自然界的各个角落，这并非偶然。棣莫弗利用待定系数法找出了斐波那契数列的通项公式，它在$n$很大时满足等角螺线方程（见附录\ref{app:fibonacci-formula}）。而我们知道自然界很多生长现象满足斐波那契公式，例如鹦鹉螺的螺壳生长（见\cref{fig:nautilus}），西兰花、向日葵花絮的生长，因此呈现出等角螺线的形状。
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[scale=0.4]{img/nautilus}
+ \caption{鹦鹉螺壳呈等角螺线}
+ \label{fig:nautilus}
+\end{figure}
 
 \section{新世界的大门}
 \subsection{小试牛刀}
@@ -919,12 +945,10 @@ r' &= (ar)e^{b\theta} = e^{\ln a} k e^{b\theta} \\
     \captionof{figure}{极径旋转小角度$\Delta \theta$}
     \label{fig:tagent-to-r}
   \end{center}
-
 }
 
-\Question{
-利用$f'(x) = f(x)$证明$e^x$展开式。
-}
+\Question{*雅各布·伯努利赞美的“虽经沧海，我依故我”也形象地描绘了求导不变$(e^x)' = e^x$的性质，现代数学家这样定义函数$f(x) = e^x$：(1) 导数不变$f'(x) = f(x)$，(2) 函数值$f(0) = 1$。试利用这个定义导出$e^x$的展开式。提示：待定系数法及$(x^n)' = nx^{n-1}$（见命题\ref{thm:derivation-of-power-of-x}）。\label{qn:exp-from-fixed-point}}
+
 \end{Exercise}
 
 \begin{Answer}[ref={ex:complex}]
@@ -985,14 +1009,37 @@ r' &= (ar)e^{b\theta} = e^{\ln a} k e^{b\theta} \\
   \end{proof}
 }
 
-\Question{
-利用$f'(x) = f(x)$证明$e^x$展开式。
+\Question{雅各布·伯努利赞美的“虽经沧海，我依故我”也形象地描绘了求导不变$(e^x)' = e^x$的性质，现代数学家这样定义函数$f(x) = e^x$：(1) 导数不变$f'(x) = f(x)$，(2) 函数值$f(0) = 1$。试利用这个定义导出$e^x$的展开式。
+
+  \begin{proof}
+设展开式为$f(x) = a_0 + a_1 x + a_2 x^2 + \dotsb$。由$f(0) = 1$推出：$f(0) = a_0 = 1$。求导并利用$f'(x) = f(x)$有：
+\begin{align*}
+f'(x) &= a_1 + 2a_2x + 3a_3x^2 + \dotsb + na_nx^{n-1} + \dotsb = f(x) \\
+      &= 1 + a_1x + a_2x^2 + \dotsb + a_{n-1}x^{n-1} + \dotsb
+\end{align*}
+由待定系数法得：
+\begin{align*}
+a_1 &= 1\\
+a_2 &= \frac{a_1}{2} = \frac{1}{2}\\
+a_3 &= \frac{a_2}{3} = \frac{a_1}{3 \cdot 2} = \frac{1}{3!}\\
+\dotso\\
+a_n &= \frac{a_{n-1}}{n} = \frac{a_{n-2}}{n(n-1)} = \dotsb = \frac{1}{n!} \\
+\dotso
+\end{align*}
+
+故展开式为：
+\begin{align*}
+e^x &= f(x) = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \dotsb + \frac{x^n}{n!} + \dotsb  && \qedhere
+\end{align*}
+  \end{proof}
 }
 \end{Answer}
 
 \ifx\wholebook\relax \else
 \section{参考答案}
 \shipoutAnswer
+
+\subimport{inc/}{fibonacci-zh-cn}
 
 \begin{thebibliography}{99}
 \subimport{inc/}{bib-zh-cn}
