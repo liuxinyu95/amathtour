@@ -949,6 +949,8 @@ r &= c^n = e^{\ln(c^n)} && \text{换底} \\
 
 \Question{*雅各布·伯努利赞美的“虽经沧海，我依故我”也形象地描绘了求导不变$(e^x)' = e^x$的性质，现代数学家这样定义函数$f(x) = e^x$：(1) 导数不变$f'(x) = f(x)$，(2) 函数值$f(0) = 1$。试利用这个定义导出$e^x$的展开式。提示：待定系数法及$(x^n)' = nx^{n-1}$（见命题\ref{thm:derivation-of-power-of-x}）。\label{qn:exp-from-fixed-point}}
 
+\Question{*雅各布·伯努利距离发现$e^x$几乎只差一步。在计算复利时，如果年利率不是100\%，而是$x$，当$n \to \infty$时的实际年化收益率是什么？它的级数展开是什么？}
+
 \end{Exercise}
 
 \begin{Answer}[ref={ex:complex}]
@@ -1011,7 +1013,7 @@ r &= c^n = e^{\ln(c^n)} && \text{换底} \\
 
 \Question{雅各布·伯努利赞美的“虽经沧海，我依故我”也形象地描绘了求导不变$(e^x)' = e^x$的性质，现代数学家这样定义函数$f(x) = e^x$：(1) 导数不变$f'(x) = f(x)$，(2) 函数值$f(0) = 1$。试利用这个定义导出$e^x$的展开式。
 
-  \begin{proof}
+\vspace{2mm}
 设展开式为$f(x) = a_0 + a_1 x + a_2 x^2 + \dotsb$。由$f(0) = 1$推出：$f(0) = a_0 = 1$。求导并利用$f'(x) = f(x)$有：
 \begin{align*}
 f'(x) &= a_1 + 2a_2x + 3a_3x^2 + \dotsb + na_nx^{n-1} + \dotsb = f(x) \\
@@ -1029,10 +1031,29 @@ a_n &= \frac{a_{n-1}}{n} = \frac{a_{n-2}}{n(n-1)} = \dotsb = \frac{1}{n!} \\
 
 故展开式为：
 \begin{align*}
-e^x &= f(x) = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \dotsb + \frac{x^n}{n!} + \dotsb  && \qedhere
+e^x &= f(x) = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \dotsb + \frac{x^n}{n!} + \dotsb
 \end{align*}
-  \end{proof}
 }
+
+\Question{*雅各布·伯努利距离发现$e^x$几乎只差一步。在计算复利时，如果年利率不是100\%，而是$x$，当$n \to \infty$时的实际年化收益率是什么？它的级数展开是什么？
+
+\vspace{2mm}
+\begin{align*}
+\lim_{n \to \infty} (1 + \frac{x}{n})^n &= \lim_{n \to \infty} (1 + \frac{x}{n})^{\frac{n}{x}x} && \text{其中} x \ne 0 \\
+  &= [\lim_{n' \to \infty} (1 + \frac{1}{n'})^{n'}]^x && \text{令} n' = \frac{n}{x} \\
+  &= e^x
+\end{align*}
+
+利用广义二项式展开：
+\begin{align*}
+e^x &= \lim_{n \to \infty} (1 + \frac{x}{n})^n \\
+  &= \lim_{n \to \infty} (1 + \binom{n}{1}\frac{x}{n} + \binom{n}{2}\frac{x^2}{n^2} + \dotsb \\
+  &= \lim_{n \to \infty} (1 + x + \frac{n(n-1)}{2!}\frac{x^2}{n^2} + \dotsb \\
+  &= \lim_{n \to \infty} (1 + x + \frac{x^2}{2!}(1-\frac{1}{n}) + \frac{x^3}{3!}(1 - \frac{1}{n})(1 - \frac{2}{n}) + \dotsb \\
+  &= 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \dotsb
+\end{align*}
+}
+
 \end{Answer}
 
 \ifx\wholebook\relax \else
