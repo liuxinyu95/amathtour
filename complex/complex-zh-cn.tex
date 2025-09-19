@@ -770,7 +770,7 @@ e^{i\pi} = \cos \pi + i\sin \pi = -1
 \end{mdframed}
 \footnotetext{需要区分两种称号：腓特烈二世（大帝）、神圣罗马帝国腓特烈二世（大帝）。后者为十二世纪皇帝（1194～1250年），而前者是普鲁士国王（1740～1786年），腓特烈二世是其正式名号，而“腓特烈大帝”是后世对其历史地位的尊称。}
 
-\subsection{虽经沧海，我依故我}
+\subsection{我依故我}
 尽管没能看到欧拉的成果，但雅各布·伯努利在生前预见了$y = e^x$的诞生。1638年笛卡尔发现了一种神奇的螺线，名叫“等角螺线”，也叫做“对数螺线”（见\cref{fig:decartes-equiangular-spiral}）。
 
 \begin{figure}[htbp]
@@ -793,14 +793,30 @@ e^{i\pi} = \cos \pi + i\sin \pi = -1
 r = ka^\theta
 \]
 
-其中$k$和$a$是常数。这样$\theta$增加2倍，$r$就增加到$r^2$；$\theta$增加3倍，$r$就增加到$r^3$……雅各布·伯努利对这种螺线进行了深入的研究，他发现了很多极为有趣的性质。最令人震惊的是，不管怎么变化，缩放、求渐屈线、渐伸线、垂足线，结果总是不变——又得到了同一形状的螺线。1692年，他把这种迷人的螺线命名为“神奇螺线”（spiral mirabilis），并决定死后在墓碑上刻下这个螺线，如\cref{fig:bernoulli-tomb}所示\cite{MacTour-Equiangular}。他留下了著名的拉丁文墓志铭：Eadem mutata resurgo，中文译作“虽经沧海，我依故我”\cite{Maor-2010}。
+其中$k$和$a$是常数。这样$\theta$增加2倍，$r$就增加到$r^2$；$\theta$增加3倍，$r$就增加到$r^3$……雅各布·伯努利对这种螺线进行了深入的研究，他发现了很多极为有趣的性质。最令人震惊的是，不管怎么变化，缩放、求渐屈线、渐伸线、垂足线，结果总是不变——又得到了同一形状的螺线。1692年，他把这种迷人的螺线命名为“神奇螺线”（spiral mirabilis），并决定死后在墓碑上刻下这个螺线，如\cref{fig:bernoulli-tomb}所示\cite{MacTour-Equiangular}。他留下了著名的拉丁文墓志铭：Eadem mutata resurgo，中文译作“虽经沧海，我依故我”\cite{Maor-2010}。碑铭内容为：
 
 \begin{figure}[htbp]
  \centering
  \subcaptionbox{雅各布·伯努利的墓碑\label{fig:bernoulli-tomb}}{\includegraphics[scale=0.4]{img/bernoulli-tomb}}
  \subcaptionbox{墓碑下方的螺线\label{fig:bernoulli-epitaph}}{\includegraphics[scale=0.4]{img/bernoulli-epitaph}}
- \caption{雅各布·伯努利的墓志铭：Eadem mutata resurgo}
+ \caption{雅各布·伯努利的墓志铭：Eadem mutata resurgo\cite{MacTour-Bernoulli-tomb}}
 \end{figure}
+
+\begin{mdframed}
+\begin{verse}
+雅各布·伯努利（1654-1705）\\
+‌无与伦比的数学家‌\\
+巴塞尔大学教授（18年）\\
+巴黎科学院与柏林科学院院士\\
+以学术著作闻名于世\\
+虽罹患慢性疾病，却始终神志清明\\
+于主历1705年8月16日安息，享年50岁又7个月\\
+静候复活之日‌纪念者‌\\
+朱迪丝·斯图潘努斯（20年结发之妻）\\
+及其二子\\
+为深切怀念的丈夫与父亲，立此碑铭
+\end{verse}
+\end{mdframed}
 
 但遗憾的是，石匠错误地把等角螺线刻成了“阿基米德螺线”，如\cref{fig:bernoulli-epitaph}所示。这两个螺线有什么区别呢？阿基米德螺线每圈间的间距是相等的，而等角螺线的间距是等比数列（见\cref{fig:equiangular-spiral}）。如果用极坐标表示，阿基米德螺线的方程是$r = a\theta$。匀速转动阿基米德螺线，则它与坐标轴的交点将匀速平移。那么为什么这种螺线又叫做“对数螺线”呢？从反函数的角度看：
 
@@ -835,7 +851,7 @@ r = ka^\theta
 r = ka^\theta && \theta = \log_{a} \frac{r}{k}
 \end{align*}
 
-螺线上一点的极角与极径成对数关系。因此法国数学家瓦里尼翁\footnote{Pierre Varignon，1654～1722年。曾系统整理和传播牛顿、莱布尼茨的微积分思想，并在力学中引入 “力矩”等重要概念。}把这种螺线叫做对数螺线。我们在高中学习过换底公式：$\log_a x = \dfrac{\ln x}{\ln a}$，于是：
+螺线上一点的极角与极径成对数关系。因此法国数学家瓦里尼翁\footnote{Pierre Varignon，1654～1722年。曾系统整理和传播牛顿、莱布尼茨的微积分思想，并在力学中引入 “力矩”等重要概念。}把这种螺线叫做对数螺线。我们在高中学习过换底公式：$\log_a x = \dfrac{\ln x}{\ln a}$（\cref{qn:change-base}要求证明此公式），于是：
 
 \begin{align*}
 \theta &= \log_a \frac{r}{k} = \frac{\ln \frac{r}{k}}{\ln a} && \text{换底公式}\\
@@ -844,7 +860,7 @@ r = ka^\theta && \theta = \log_{a} \frac{r}{k}
 r &= k e^{b\theta}
 \end{align*}
 
-这样就得到了以$e$为底的等角螺线极坐标方程。这个公式是雅各布·伯努利不曾想象到的，但它可以轻松揭示为何“我依故我”。
+这样就得到了以欧拉常数$e$为底的等角螺线极坐标方程。这个公式是雅各布·伯努利不曾想象到的，但它可以轻松揭示为何“我依故我”。
 
 \begin{proposition}[雅各布·伯努利]
 等角螺线缩放后形状不变。
@@ -862,7 +878,10 @@ r' &= (ar)e^{b\theta} = e^{\ln a} k e^{b\theta} \\
 这相当于把极角旋转了$\theta_0$，而螺线旋转后的形状是不变的。
 \end{proof}
 
-练习X要求利用“我依故我”的本质找出$e^x$的展开式。复数的等比数列构成等角螺线。
+\cref{qn:equiangular}要求用$r = ke^{b\theta}$证明笛卡尔指出的等角性质：螺线的切线和极径夹角$\Psi$不变（见\cref{fig:equiangular}）。练习Y要求利用“我依故我”的本质找出$e^x$的展开式。
+
+
+复数的等比数列构成等角螺线。
 
 \section{新世界的大门}
 \subsection{小试牛刀}
@@ -890,6 +909,18 @@ r' &= (ar)e^{b\theta} = e^{\ln a} k e^{b\theta} \\
 \Question{验证复数的共轭满足这样的运算规则：$\overline{a + b} = \overline{a} + \overline{b}$，$\overline{ab} = \overline{a} \cdot \overline{b}$, $\overline{z^n} = (\overline{z})^n$，并据此证明达朗贝尔的发现：若$z$是方程$p(z) = 0$的根，其共轭$\overline{z}$也是方程的根。\label{qn:conjugated-root}}
 
 \Question{验证哈密尔顿的复数数偶表示满足五大运算定律。\label{qn:pair-arithmetic-rules}}
+
+\Question{利用对数函数与指数函数的反函数关系证明换底公式$\log_a x = \dfrac{\log_b x}{\log_b a}$。\label{qn:change-base}}
+
+\Question{*利用等角螺线的极坐标方程$r = ke^{b\theta}$证明笛卡尔指出的等角性质：螺线的切线和极径夹角$\Psi$不变（见\cref{fig:equiangular}）提示：如\cref{fig:tagent-to-r}所示，极径$r$旋转过一个小角度$\Delta \theta$，极径增加了$\Delta r$。小圆弧$AC$长$r\Delta \theta$，它与割线$AB$，极径的增量近似组成一个直角三角形$ACB$。当$\Delta \theta \to 0$时，点$A, B$趋向重合，割线$AB$趋近于切线。\label{qn:equiangular}
+
+  \begin{center}
+    \includegraphics[scale=0.33]{img/tagent-to-r}
+    \captionof{figure}{极径旋转小角度$\Delta \theta$}
+    \label{fig:tagent-to-r}
+  \end{center}
+
+}
 
 \Question{
 利用$f'(x) = f(x)$证明$e^x$展开式。
@@ -921,6 +952,42 @@ r' &= (ar)e^{b\theta} = e^{\ln a} k e^{b\theta} \\
 
 \Question{验证哈密尔顿的复数数偶表示满足五大运算定律。}
 
+\Question{利用对数函数与指数函数的反函数关系证明换底公式。
+
+  \begin{proof}
+    \begin{align*}
+      y &= \log_a x \\
+      a^y &= x && \text{指数与对数的反函数关系} \\
+      log_b (a^y) &= log_b x && \text{两边取以}b\text{为底的对数} \\
+      y log_b a &= log_b x && \text{对数运算法则} \\
+      y &= \frac{log_b x}{log_b a} && \qedhere
+    \end{align*}
+  \end{proof}
+}
+
+\Question{利用等角螺线的极坐标方程$r = ke^{b\theta}$证明笛卡尔指出的等角性质：螺线的切线和极径夹角$\Psi$不变（见\cref{fig:equiangular}）
+
+  \begin{center}
+    \includegraphics[scale=0.33]{img/tagent-to-r}
+    \captionof{figure}{极径旋转小角度$\Delta \theta$}
+  \end{center}
+
+  \begin{proof}
+如\cref{fig:tagent-to-r}所示，极径$r$旋转过一个小角度$\Delta \theta$，极径增加了$\Delta r$。小圆弧$AC$长$r\Delta \theta$，它与割线$AB$，极径的增量近似组成一个直角三角形$ACB$。当$\Delta \theta \to 0$时，点$A, B$趋向重合，割线$AB$趋近于切线。角$ABC = \Psi - \Delta \theta$
+
+\begin{align*}
+  \tan \Psi &= \lim_{\Delta \theta \to 0} \tan (\Psi - \Delta \theta) = \lim_{\Delta \theta \to 0} \tan \angle ABC \\
+  &= \lim_{\Delta \theta \to 0} \frac{r\Delta \theta}{\Delta r} = \lim_{\Delta \theta \to 0} \frac{r}{\frac{\Delta r}{\Delta \theta}} \\
+  &= \frac{r}{\lim_{\Delta \theta \to 0} \dfrac{\Delta r}{\Delta \theta}} = \frac{r}{r'} = \frac{ke^{b\theta}}{(ke^{b\theta})'} && \text{代入}r = ke^{\b\theta} \\
+  &= \frac{ke^{b\theta}}{kbe^{b\theta}} = \frac{1}{b} && (e^{bx})' = be^{bx}
+\end{align*}
+是一个不依赖于$\theta$的常量，这就证明了螺线的等角性质。
+  \end{proof}
+}
+
+\Question{
+利用$f'(x) = f(x)$证明$e^x$展开式。
+}
 \end{Answer}
 
 \ifx\wholebook\relax \else
