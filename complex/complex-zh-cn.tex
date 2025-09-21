@@ -483,9 +483,9 @@ $z$的幅角恰好是$\dfrac{\pi}{4}$
 即使不会多项式长除法也没有关系，注意到等比数列求和公式$1 + x + x^2 + \dotsb + x^{n-1} = \dfrac{x^n - 1}{x - 1}$，就可以因式分解$(x^3 - 1) = (x - 1)(x^2 + x + 1)$了。
 
 \begin{proof}
-我们把带余数的除法推广到多项式$a(x) = b(x)q(x) + r(x)$，其中$q(x)$相当于商，$r(x)$相当于余数，它的次数小于$b(x)$。如果$x - b$是$p(x)$的一个因式，则$p(x) = (x - b)q(x)$。代入$x = b$有$p(b) = (b - b)q(b) = 0$，因此$b$是一个根。
+如果$x - b$是$p(x)$的一个因式，则$p(x) = (x - b)q(x)$。代入$x = b$有$p(b) = (b - b)q(b) = 0$，因此$b$是一个根。
 
-反之，若$x = b$是$p(x)$的一个根，即$p(b) = 0$。用带余数的除法求$p(x)$除以$x - b$，有$p(x) = (x - b)q(x) + r(x)$，其中$r(x)$的次数比$x - b$低。它只能是常数项$c$。代入$x = b$有$0 = p(b) = (b - b)q(b) + c$。因此余数$c = 0$，说明$p(x)$能被$x - b$整除，即$x - b$是$p(x)$的因式。
+反之，我们把带余数的除法推广到多项式$a(x) = b(x)q(x) + r(x)$，其中$q(x)$相当于商，$r(x)$相当于余数，它的次数小于$b(x)$。若$x = b$是$p(x)$的一个根，即$p(b) = 0$。用带余数的除法求$p(x)$除以$x - b$，有$p(x) = (x - b)q(x) + r(x)$，其中$r(x)$的次数比$x - b$低。它只能是常数项$c$。代入$x = b$有$0 = p(b) = (b - b)q(b) + c$。因此余数$c = 0$，说明$p(x)$能被$x - b$整除，即$x - b$是$p(x)$的因式。
 \end{proof}
 
 笛卡尔定理给出了解决$n$次方程$p(x) = 0$的方法：\underdot{如果能}找到一个解$a$，然后提取出因式$p(x) = (x - a)q(x)$，接下来只需要解降低次数的方程$q(x) = 0$。\underdot{如果能}不断找到解，重复这个步骤，就可以彻底解决高次方程。1746年，法国数学家达朗贝尔（d'Alembert）注意到如果复数$z = a + bi$是方程$p(z) = 0$的解，则共轭复数$\overline{z} = a - bi$也是一个解（\cref{qn:conjugated-root}要求证明这一结论）。这就意味着如果方程有一个复数根，可以一下子把次数降低2次。你也许注意到了我们在“如果能”三个字下面加了点，遗憾的是，在实数范围内并不总能找到解，例如$p(x) = x^2 + 15 = 0$。但是在复数范围内呢？十八世纪的数学家们强烈意识到答案应该是“一定能”！
@@ -916,7 +916,52 @@ r &= c^n = e^{\ln(c^n)} && \text{换底} \\
 \subsection{小试牛刀}
 \label{sec:pentagon-equation}
 
-复数是解方程的利器。我们这里展示如何用复数解决正五边形尺规作图的问题。
+复数是解方程的利器。我们这里展示如何用复数解决正五边形尺规作图的问题。欧拉公式与棣莫弗公式结合赋予了方程$x^n = 1$以新的几何意义。若复数$z = re^{i\theta}$是方程的一个根，即：
+
+\[
+1 = z^n = (re^{i\theta})^n = r^ne^{in\theta} = r^n(\cos n\theta + i\sin n\theta)
+\]
+
+我们由此得出模$r = 1$，幅角$n\theta = 2k\pi$，其中$k$是整数（这是由于$\sin 2k\pi = 0, \cos 2k\pi = 1$），这样$z$的幅角$\theta = \dfrac{2k\pi}{n}$。于是根可以表示为：$z = 1e^{\frac{2k\pi}{n}i} = e^{\frac{2k\pi}{n}i}$。这在几何上表示复平面单位圆上的$n$个点，如\cref{fig:heptagon-z}所示。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[scale=0.33]{img/heptagon-z}
+  \caption{$x^n = 1$的解在复平面上是正$n$边形的$n$个定点。}
+ \label{fig:heptagon-z}
+\end{figure}
+
+圆是周期性的，$e^{\frac{2k\pi}{2}}$转动整数圈后与自己重合。$k = 0, 1, 2, \dotsc, n-1$时，$e^{\frac{2kp}{n}i}$是$n$个不同的根。它们的幅角依此是$0, \theta, 2\theta, \dotsc, (n-1)\theta$，把单位圆平均分成了$n$等份。因此方程$x^n = 1$叫做“分圆方程”（cyclotomic equation）。把复平面上这个$n$个根连接起来就构成了正$n$边形。
+
+例如最简单的正多边形是正三角形$n = 3$。$x^3 = 1$有三个复根$1, e^{\frac{2\pi}{3}i}, e^{\frac{4\pi}{3}i} = e^{-\frac{2\pi}{3}i}$。其中：
+
+\[
+e^{\pm \frac{2\pi}{3}i} = \cos (\pm \frac{2\pi}{3}) + i \sin (\pm \frac{2\pi}{3}) = -\frac{1}{2} \pm \frac{\sqrt{3}}{2}i
+\]
+
+我们可以验证$x^3 - 1 = (x - 1)(x^2 + x + 1)$，二次方程$x^2 + x + 1$的两个根的确是$\dfrac{-1 \pm i\sqrt{3}}{2}$。我们也可以用二项式展开直接验证：
+
+\[
+(-\frac{1}{2} \pm \frac{\sqrt{3}}{2}i)^3 = -\frac{1}{8} \pm \frac{3\sqrt{3}}{8}i + \frac{9}{8} \mp \frac{3\sqrt{3}}{8}i = \frac{9-1}{8} = 1
+\]
+
+这三个根构成了单位圆内接正三角形，如\cref{fig:3rd-root-of-1}所示。
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=3]
+ \draw[step=.5cm, gray, very thin] (-1.2,-1.2) grid (1.2,1.2);
+ \draw[->] (-1.25,0) -- (1.25,0) coordinate (x axis);
+ \draw[->] (0,-1.25) -- (0,1.25) coordinate (y axis);
+ \draw (0,0) circle (1cm);
+ \draw[->, very thick] (0, 0) edge node[below=2pt,fill=white] {$e^{0\theta i} = e^{3\theta i} = 1$} (1, 0)
+     (0, 0) edge node[above] {$e^{\theta i} = \dfrac{-1 + i\sqrt{3}}{2}$} (120:1cm)
+     (0, 0) edge node[below] {$e^{2\theta i} = \dfrac{-1 - i\sqrt{3}}{2}$} (-120:1cm);
+\end{tikzpicture}
+\caption{$x^3 = 1$的三个复数根}
+\label{fig:3rd-root-of-1}
+\end{figure}
+
 
 \subsection{费马大定理与高斯整数}
 \subsection{抽象的数}
