@@ -1013,7 +1013,7 @@ x^2 + x^3 &= \dfrac{-1 - \sqrt{5}}{2}
 \[x_{1, 2} = \dfrac{\frac{\sqrt{5} - 1}{2} \pm i\sqrt{\frac{5 + \sqrt{5}}{2}}}{2}
 \]
 
-它们是一对共轭复数，分别对应\cref{fig:pentagon-z}中的$x, x^4 = x^{-1}$。接下来计算图\cref{fig:pentagon-z}中的模$|x - 1|$就知道正五边形的边长了。
+它们是一对共轭复数，分别对应\cref{fig:pentagon-z}中的$x, x^4 = x^{-1}$。接下来计算\cref{fig:pentagon-z}中的模$|x - 1|$就知道正五边形的边长了。
 
 \[
 x - 1 = \frac{\frac{\sqrt{5} - 1}{2} + i\sqrt{\frac{5 + \sqrt{5}}{2}}}{2} - 1 = \frac{\sqrt{5} - 5}{4} + i\frac{\sqrt{\frac{5 + \sqrt{5}}{2}}}{2}
@@ -1025,18 +1025,17 @@ x - 1 = \frac{\frac{\sqrt{5} - 1}{2} + i\sqrt{\frac{5 + \sqrt{5}}{2}}}{2} - 1 = 
 |x - 1| = \sqrt{(\frac{\sqrt{5} - 5}{4})^2 + (\frac{\sqrt{\frac{5 + \sqrt{5}}{2}}}{2})^2} = \frac{\sqrt{10 - 2\sqrt{5}}}{2}
 \]
 
-于是作正五边形的问题就转化为：任给长度为1的线段，如何做出长度为$s = \dfrac{\sqrt{10 - 2\sqrt{5}}}{2}$的线段。为了简化问题，我们先求线段$2s$。我们的思路是作一个直角三角形，使其斜边为$2s$。这个三角形的两个直角边不可能都是有理数$a, b$，否则根据勾股定理，斜边为$\sqrt{a^2 + b^2}$，不可能是$\sqrt{10 - 2\sqrt{5}}$这种根号下还有根号的形式。设两个直角边分别是$\sqrt{5} - a$和$b$，然后用勾股定理：
+于是作正五边形的问题就转化为：任给长度为1的线段，如何做出长度为$s = \dfrac{\sqrt{10 - 2\sqrt{5}}}{2}$的线段。为了简化问题，我们先求线段$2s$。我们的思路是作一个直角三角形，使其斜边为$2s$。这个三角形的两个直角边不可能都是有理数，否则根据勾股定理，斜边不可能是$\sqrt{10 - 2\sqrt{5}}$这种根号下还有根号的形式。设两个直角边分别是$\sqrt{5} - a$和$b$，然后用勾股定理：
 
 \[
 (\sqrt{5} - a)^2 + b^2 = 5 + a^2 + b^2 - 2a\sqrt{5} = 10 - 2\sqrt{5}
 \]
 
-利用待定系数法，$2a = 2$，所以$a = 1$；代入$5 + a^2 + b^2 = 6 + b^2 = 10$，所以$b = 2$。这样直角边为$\sqrt{5} - 1, 2$的直角三角形的斜边是$2s$。将三角形缩小一半，直角边为$\dfrac{\sqrt{5} - 1}{2}, 1$的直角三角形的斜边就是$s$。另一方面，由于$5 = 4 + 1 = 2^2 + 1^2$，这样就可以用1，2为直角边，作出斜边长$\sqrt{5}$的直角三角形。然后从斜边截去1，再减半就得到了$\dfrac{\sqrt{5} - 1}{2}$。\cref{fig:pentagon-cons}展示了尺规作正五边形的步骤。最后用求得的边长依次截单位圆五次就得到了正五边形。
+利用待定系数法，$2a = 2$，所以$a = 1$；代入$5 + a^2 + b^2 = 6 + b^2 = 10$，所以$b = 2$。这样直角边为$\sqrt{5} - 1, 2$的直角三角形的斜边是$2s$。将三角形缩小一半，直角边为$\dfrac{\sqrt{5} - 1}{2}, 1$的直角三角形的斜边就是$s$。另一方面，由于$5 = 4 + 1 = 2^2 + 1^2$，这样就可以用1，2为直角边，作出斜边长$\sqrt{5}$的直角三角形。缩小一半的直角三角形其斜边就是$\dfrac{\sqrt{5}}{2}$，然后再截去$\dfrac{1}{2}$就得到了$\dfrac{\sqrt{5} - 1}{2}$。\cref{fig:pentagon-cons}展示了尺规作正五边形的步骤。最后用求得的边长依次截单位圆五次就得到了正五边形。
 
 \begin{figure}[htbp]
  \centering
- \subcaptionbox{作长为$\phi = \dfrac{\sqrt{5} - 1}{2}$的线段}{\includegraphics[scale=0.3]{../irrational/img/phi}}
- \subcaptionbox{作长为$\dfrac{\sqrt{10 - 2\sqrt{5}}}{2}$的线段}{\includegraphics[scale=0.3]{img/pentagon-cons}}
+ \includegraphics[scale=0.3]{img/pentagon-cons}
  \caption{作正五边形}
  \label{fig:pentagon-cons}
 \end{figure}
