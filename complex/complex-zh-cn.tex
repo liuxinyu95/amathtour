@@ -464,7 +464,7 @@ $z$的幅角恰好是$\dfrac{\pi}{4}$
 \frac{1}{\cos\theta + i\sin\theta} = \cos\theta - i\sin\theta
 \]
 
-单位圆上的复数全都满足这个条件。
+单位圆上的复数全都满足这个条件。\ref{qn:trigonometry-of-add}要求用复数运算推导三角函数的和角公式。
 
 \subsection{代数基本定理}
 
@@ -911,9 +911,23 @@ r &= c^n = e^{\ln(c^n)} && \text{换底} \\
 
 \section{新世界的大门}
 
-复数和此前人们认识的数大相径庭。不管是自然数、有理数、无理数，它们都在数轴上有确定的位置。复数却跳出了数轴，来到了复平面。此前的数都是一元的，大小确定，在数轴上的位置确定。复数却是二元的，无论使用实部、虚部表示，模、幅角表示，都需要两个量来确定一个复数。两个复数通常没法比较大小，我们只能比较它们的模的大小。尽管这样奇特，复数彼此之间，复数与实数之间仍然可以计算，并且满足此前的运算定律，包括加法、乘法的交换律，结合率。乘法对加法的分配律。复数打开了一个新世界的大门。它威力无穷，不仅解决了以前的难题，也提出了人们意想不到的问题。
+复数和此前人们认识的数大相径庭。不管是自然数、有理数、无理数，它们都在数轴上有确定的位置。复数却跳出了数轴，来到了复平面。此前的数都是一元的，大小确定，在数轴上的位置确定。复数却是二元的，无论使用实部、虚部表示，模、幅角表示，都需要两个量来确定一个复数。两个复数通常没法比较大小，我们只能比较它们的模的大小。尽管这样奇特，复数彼此之间，复数与实数之间仍然可以计算，并且满足此前的运算定律，包括加法、乘法的交换律，结合率，乘法对加法的分配律。数轴上两个实数$a, b$间的距离是$|a - b|$，复平面上两个复数$z_1 = x_1 + y_1i, z_2 = x_2 + y_2i$间的距离是$|z_1 - z_2|$。这是因为：
 
-\subsection{小试牛刀}
+\[
+|z_1 - z_2| = |(x_1 - x_2) + (y_1 - y_2)i| = \sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}
+\]
+
+这的确是对应的笛卡尔平面上两点$(x_1, y_1)$与$(x_2, y_2)$间的距离。实数的绝对值满足可乘性，即：$|ab| = |a||b|$；复数的模也满足可乘性$|z_1z_2| = |z_1||z_2|$，这是因为：
+
+\begin{align*}
+|z_1z_2| &= |(x_1 + y_1i)(x_2 + y_2i)|^2 = |(x_1x_2 - y_1y_2) + (x_1y_2 + y_1x_2)i|^2 \\
+  &= (x_1x_2 - y_1y_2)^2 + (x_1y_2 + y_1x_2)^2 = (x_1^2 + y_1^2)(x_2^2 + y_2^2) \\
+  &= |z_1|^2|z_2|^2
+\end{align*}
+
+复数打开了一个新世界的大门。它威力无穷，不仅解决了以前的难题，也提出了人们意想不到的问题。
+
+\subsection{正五边形}
 \label{sec:pentagon-equation}
 
 复数是解方程的利器。我们这里展示如何用复数解决正五边形尺规作图的问题。欧拉公式与棣莫弗公式结合赋予了方程$x^n = 1$以新的几何意义。若复数$z = re^{i\theta}$是方程的一个根，即：
@@ -927,7 +941,7 @@ r &= c^n = e^{\ln(c^n)} && \text{换底} \\
 \begin{figure}[htbp]
   \centering
   \includegraphics[scale=0.33]{img/heptagon-z}
-  \caption{$x^n = 1$的解在复平面上是正$n$边形的$n$个定点。}
+  \caption{$x^n = 1$的解在复平面上是正$n$边形的$n$个顶点。}
  \label{fig:heptagon-z}
 \end{figure}
 
@@ -949,19 +963,83 @@ e^{\pm \frac{2\pi}{3}i} = \cos (\pm \frac{2\pi}{3}) + i \sin (\pm \frac{2\pi}{3}
 
 \begin{figure}[htbp]
 \centering
-\begin{tikzpicture}[scale=3]
+\begin{tikzpicture}[scale=2.5]
  \draw[step=.5cm, gray, very thin] (-1.2,-1.2) grid (1.2,1.2);
- \draw[->] (-1.25,0) -- (1.25,0) coordinate (x axis);
- \draw[->] (0,-1.25) -- (0,1.25) coordinate (y axis);
+ \draw[->] (-1.25,0) -- (1.25,0) coordinate (x axis)
+   (0,-1.25) -- (0,1.25) coordinate (y axis);
  \draw (0,0) circle (1cm);
- \draw[->, very thick] (0, 0) edge node[below=2pt,fill=white] {$e^{0\theta i} = e^{3\theta i} = 1$} (1, 0)
-     (0, 0) edge node[above] {$e^{\theta i} = \dfrac{-1 + i\sqrt{3}}{2}$} (120:1cm)
-     (0, 0) edge node[below] {$e^{2\theta i} = \dfrac{-1 - i\sqrt{3}}{2}$} (-120:1cm);
+ \draw[->, very thick] (0, 0) edge node[below=2pt] {$e^0 = 1$} (1, 0)
+   (0, 0) edge node[above] {$e^{\frac{2\pi}{3}i} = \dfrac{-1 + i\sqrt{3}}{2}$} (120:1cm)
+   (0, 0) edge node[below] {$e^{\frac{4\pi}{3}i} = \dfrac{-1 - i\sqrt{3}}{2}$} (-120:1cm);
 \end{tikzpicture}
 \caption{$x^3 = 1$的三个复数根}
 \label{fig:3rd-root-of-1}
 \end{figure}
 
+类似地，五次分圆方程$x^5 = 1$的五个根均匀分布在复平面的单位圆上，从而构成一个正五边形，如\cref{fig:pentagon-z}所示。只要求出图中的根$x$，则复平面上$x$到1的距离$|x-1|$就是正五边形的边长。五次方程$x^5 - 1 = 0$显然有一个根是$x = 1$。根据笛卡尔定理，$x-1$是多项式$x^5 - 1$的一个因式。利用多项式长除法（或逆向用等比数列求和）可以进行因式分解：
+
+\[
+x^5 - 1 = (x - 1)(x^4 + x^3 + x^2 + x + 1)
+\]
+
+接下来解四次方程$x^4 + x^3 + x^2 + x + 1 = 0$就可以找出\cref{fig:pentagon-z}中的剩余4个顶点。这个四次方程很有特点，只要除以$x^2$就变成一个对称的形式（0不是方程的解，因此$x \ne 0$）：
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[scale=0.3]{img/pentagon-z}
+  \caption{$x^5 = 1$的根在复平面上是正五边形的顶点。}
+ \label{fig:pentagon-z}
+\end{figure}
+
+\[
+x^2 + x + 1 + \frac{1}{x} + \frac{1}{x^2} = 0
+\]
+
+把$x + \dfrac{1}{x}$看成一个整体，并注意到：$(x + \dfrac{1}{x})^2 = x^2 + \dfrac{1}{x^2} + 2$。上面的方程可以化为：
+
+\[
+(x + \frac{1}{x})^2 + (x + \frac{1}{x}) - 1 = 0
+\]
+
+令$y = x + \dfrac{1}{x}$，上述方程就是$y^2 + y - 1 = 0$。解此二次方程得到$y_{1,2} = \dfrac{-1 \pm \sqrt{5}}{2}$。利用欧拉公式，若$x = e^{i\theta}$，则$\dfrac{1}{x} = x^{-1} = e^{-i\theta}$，所以$x, \dfrac{1}{x}$是共轭复数（见\cref{fig:pentagon-z}中的$x$与$x^4 = x^{-1}$）。若$x = a + bi$，则$\dfrac{1}{x} = a - bi$，所以$x + \dfrac{1}{x} = 2a$。同理\cref{fig:pentagon-z}中的$x^2, x^3$也是一对共轭复数，分别对应$e^{\frac{4\pi}{5}i}, e^{\frac{6\pi}{5}i} = e^{-\frac{4\pi}{5}i}$。这样我们就判断出：
+
+\begin{align*}
+x + \dfrac{1}{x} &= \dfrac{-1 + \sqrt{5}}{2} \\
+x^2 + x^3 &= \dfrac{-1 - \sqrt{5}}{2}
+\end{align*}
+
+其中第一个方程本质上是二次方程$x^2 - \dfrac{\sqrt{5} - 1}{2}x + 1 = 0$，利用求根公式得：
+
+\[x_{1, 2} = \dfrac{\frac{\sqrt{5} - 1}{2} \pm i\sqrt{\frac{5 + \sqrt{5}}{2}}}{2}
+\]
+
+它们是一对共轭复数，分别对应\cref{fig:pentagon-z}中的$x, x^4 = x^{-1}$。接下来计算图\cref{fig:pentagon-z}中的模$|x - 1|$就知道正五边形的边长了。
+
+\[
+x - 1 = \frac{\frac{\sqrt{5} - 1}{2} + i\sqrt{\frac{5 + \sqrt{5}}{2}}}{2} - 1 = \frac{\sqrt{5} - 5}{4} + i\frac{\sqrt{\frac{5 + \sqrt{5}}{2}}}{2}
+\]
+
+因此：
+
+\[
+|x - 1| = \sqrt{(\frac{\sqrt{5} - 5}{4})^2 + (\frac{\sqrt{\frac{5 + \sqrt{5}}{2}}}{2})^2} = \frac{\sqrt{10 - 2\sqrt{5}}}{2}
+\]
+
+于是作正五边形的问题就转化为：任给长度为1的线段，如何做出长度为$s = \dfrac{\sqrt{10 - 2\sqrt{5}}}{2}$的线段。为了简化问题，我们先求线段$2s$。我们的思路是作一个直角三角形，使其斜边为$2s$。这个三角形的两个直角边不可能都是有理数$a, b$，否则根据勾股定理，斜边为$\sqrt{a^2 + b^2}$，不可能是$\sqrt{10 - 2\sqrt{5}}$这种根号下还有根号的形式。设两个直角边分别是$\sqrt{5} - a$和$b$，然后用勾股定理：
+
+\[
+(\sqrt{5} - a)^2 + b^2 = 5 + a^2 + b^2 - 2a\sqrt{5} = 10 - 2\sqrt{5}
+\]
+
+利用待定系数法，$2a = 2$，所以$a = 1$；代入$5 + a^2 + b^2 = 6 + b^2 = 10$，所以$b = 2$。这样直角边为$\sqrt{5} - 1, 2$的直角三角形的斜边是$2s$。将三角形缩小一半，直角边为$\dfrac{\sqrt{5} - 1}{2}, 1$的直角三角形的斜边就是$s$。另一方面，由于$5 = 4 + 1 = 2^2 + 1^2$，这样就可以用1，2为直角边，作出斜边长$\sqrt{5}$的直角三角形。然后从斜边截去1，再减半就得到了$\dfrac{\sqrt{5} - 1}{2}$。\cref{fig:pentagon-cons}展示了尺规作正五边形的步骤。最后用求得的边长依次截单位圆五次就得到了正五边形。
+
+\begin{figure}[htbp]
+ \centering
+ \subcaptionbox{作长为$\phi = \dfrac{\sqrt{5} - 1}{2}$的线段}{\includegraphics[scale=0.3]{../irrational/img/phi}}
+ \subcaptionbox{作长为$\dfrac{\sqrt{10 - 2\sqrt{5}}}{2}$的线段}{\includegraphics[scale=0.3]{img/pentagon-cons}}
+ \caption{作正五边形}
+ \label{fig:pentagon-cons}
+\end{figure}
 
 \subsection{费马大定理与高斯整数}
 \subsection{抽象的数}
@@ -999,6 +1077,8 @@ e^{\pm \frac{2\pi}{3}i} = \cos (\pm \frac{2\pi}{3}) + i \sin (\pm \frac{2\pi}{3}
 \Question{*雅各布·伯努利赞美的“虽经沧海，我依故我”也形象地描绘了求导不变$(e^x)' = e^x$的性质，现代数学家这样定义函数$f(x) = e^x$：(1) 导数不变$f'(x) = f(x)$，(2) 函数值$f(0) = 1$。试利用这个定义导出$e^x$的展开式。提示：待定系数法及$(x^n)' = nx^{n-1}$（见命题\ref{thm:derivation-of-power-of-x}）。\label{qn:exp-from-fixed-point}}
 
 \Question{*雅各布·伯努利距离发现$e^x$几乎只差一步。在计算复利时，如果年利率不是100\%，而是$x$，当$n \to \infty$时的实际年化收益率是什么？它的级数展开是什么？}
+
+\Question{利用复数推导三角函数的和角公式：$\tan(\theta_1 + \theta_2), \sin(\theta_1 + \theta_2), \cos(\theta_1 + \theta_2)$，提示：复数乘法。\label{qn:trigonometry-of-add}}
 
 \end{Exercise}
 
@@ -1101,6 +1181,27 @@ e^x &= \lim_{n \to \infty} (1 + \frac{x}{n})^n \\
   &= \lim_{n \to \infty} (1 + x + \frac{x^2}{2!}(1-\frac{1}{n}) + \frac{x^3}{3!}(1 - \frac{1}{n})(1 - \frac{2}{n}) + \dotsb \\
   &= 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \dotsb
 \end{align*}
+}
+
+\Question{利用复数推导三角函数的和角公式：$\tan(\theta_1 + \theta_2), \sin(\theta_1 + \theta_2), \cos(\theta_1 + \theta_2)$。
+
+\vspace{2mm}
+
+考虑两个复数$z_1 = a_1 + b_1i, z_1 = a_1 + b_1i$，它们的幅角分别为：$\theta_1 = \tan^{-1} \dfrac{b_1}{a_1}, \theta_2 = \tan^{-1} \dfrac{b_2}{a_2}$（忽略实部为0的情况），模为$r_1 = \sqrt{a_1^2 + b_1^2}, r_2 = \sqrt{a_2^2 + b_2^2}$。这两个复数的乘积是：
+
+\[
+z_1z_2 = (a_1 + b_1i)(a_2 + b_2i) = a_1a_2 - b_1b_2 + (a_1b_2 + b_1a_2)i
+\]
+
+根据复数的几何意义，幅角$arg(z_1z_2) = \theta_1 + \theta_2$, 模$|z_1z_2|= r_1r_2$。
+
+\begin{align*}
+\tan(\theta_1 + \theta_2) &= \tan(arg(z_1z_2)) = \frac{a_1b_2 + b_1a_2}{a_1a_2 - b_1b_2} && \text{忽略分母为0的情况} \\
+  &= \frac{\frac{b_2}{a_2} + \frac{b_1}{a_1}}{1 - \frac{b_1}{a_1}\frac{b_2}{a_2}} && \text{上下同除以}a_1a_2 \\
+  &= \frac{\tan\theta_2 + \tan\theta_1}{1 - \tan\theta_1 \tan\theta_2}
+\end{align*}
+
+类似地，通过$\sin(\theta_1 + \theta_2) = \dfrac{a_1b_2 + b_1a_2}{r_1r_2}$可以推出正弦、余弦的和角公式。（TODO，可展开）
 }
 
 \end{Answer}
