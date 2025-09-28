@@ -1475,7 +1475,22 @@ N(\alpha\beta) = N(\alpha)N(\beta)
 一个高斯整数是素数如果它不等于0或任何单位元，并且只能被和它相伴的数和1整除。
 \end{definition}
 
-我们通常用字母$p$表示普通有理整数中的素数，用希腊字母$\pi$来表示代数整数中的素数。注意不要和圆周率混淆。在高斯整数中，一个素数$\pi$有8个因子：$\pm 1, \pm i, \pm \pi, \pm i\pi$。我们后面会解释为什么这个定义需要改进。但接下来迫切的问题是如何找到这些素数？
+我们通常用字母$p$表示普通有理整数中的素数，用希腊字母$\pi$来表示代数整数中的素数。注意不要和圆周率混淆。在高斯整数中，一个素数$\pi$有8个因子：$\pm 1, \pm i, \pm \pi, \pm i\pi$。我们后面会解释为什么这个定义需要改进。但接下来迫切的问题是如何找到这些素数？高斯证明了如下结论：
+
+\begin{proposition}
+如果一个高斯整数$\xi$的范数是有理素数，则$\xi$是高斯素数。
+\end{proposition}
+
+\begin{proof}
+假设$\xi = \alpha\beta$是两个高斯整数的积，两边取范数：
+
+\begin{align*}
+N(\alpha\beta) &= N(\xi) = p  && p\text{是有理素数} \\
+N(\alpha)N(\beta) &= p && \text{范数可乘} \\
+\end{align*}
+
+有理素数的因子只能是$1, p$。所以$N(\alpha)$和$N(\beta)$中必然有一个是1，因而必然有一个是单位元。所以另外一个数必然和$\xi$相伴，由定义知$\xi$是高斯素数。
+\end{proof}
 
 \begin{Exercise}[label={ex:algebraic}]
 \Question{假设$x^n + y^n = z^n$，证明若$x, y, z$任何两个含有公约数$d$，则第三个也有这个因子。\label{qn:xyz-coprime}}
