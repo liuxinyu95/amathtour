@@ -909,7 +909,171 @@ r &= c^n = e^{\ln(c^n)} && \text{换底} \\
  \label{fig:nautilus}
 \end{figure}
 
-\section{新世界的大门}
+\begin{Exercise}[label={ex:complex}]
+\Question{给出解二次方程$x^2 - px = q$的几何解释。\label{qn:geometric-quadratic}}
+
+\Question{根据代数基本定理，三次方程有三个复数根，卡尔达诺公式给出了方程$x^3 = 6x + 9$的一个根$x_1 = 3$，试求出方程的另外两个根。}
+
+\Question{利用邦贝利的方法和卡尔达诺公式，可求出三次方程$x^3 = 15x + 4$的一个根$x_1 = 4$，试求出方程的另外两个根。}
+
+\Question{计算规则$\sqrt{ab} = \sqrt{a}\sqrt{b}$在复数下是否成立？如果成立请证明之，如果不成立应怎样挽救？\label{qn:sqrt-of-product}}
+
+\Question{证明任何复数代表的向量乘以$i$相当于向左转$90\degree$。\label{qn:mul-i}}
+
+\Question{验证复数的共轭满足这样的运算规则：$\overline{a + b} = \overline{a} + \overline{b}$，$\overline{ab} = \overline{a} \cdot \overline{b}$, $\overline{z^n} = (\overline{z})^n$，并据此证明达朗贝尔的发现：若$z$是方程$p(z) = 0$的根，其共轭$\overline{z}$也是方程的根。\label{qn:conjugated-root}}
+
+\Question{验证哈密尔顿的复数数偶表示满足五大运算定律。\label{qn:pair-arithmetic-rules}}
+
+\Question{利用对数函数与指数函数的反函数关系证明换底公式$\log_a x = \dfrac{\log_b x}{\log_b a}$。\label{qn:change-base}}
+
+\Question{*利用等角螺线的极坐标方程$r = ke^{b\theta}$证明笛卡尔指出的等角性质：螺线的切线和极径夹角$\Psi$不变（见\cref{fig:equiangular}）提示：如\cref{fig:tagent-to-r}所示，极径$r$旋转过一个小角度$\Delta \theta$，极径增加了$\Delta r$。小圆弧$AC$长$r\Delta \theta$，它与割线$AB$，极径的增量近似组成一个直角三角形$ACB$。当$\Delta \theta \to 0$时，点$A, B$趋向重合，割线$AB$趋近于切线。\label{qn:equiangular}
+
+  \begin{center}
+    \includegraphics[scale=0.33]{img/tagent-to-r}
+    \captionof{figure}{极径旋转小角度$\Delta \theta$}
+    \label{fig:tagent-to-r}
+  \end{center}
+}
+
+\Question{*雅各布·伯努利赞美的“虽经沧海，我依故我”也形象地描绘了求导不变$(e^x)' = e^x$的性质，现代数学家这样定义函数$f(x) = e^x$：(1) 导数不变$f'(x) = f(x)$，(2) 函数值$f(0) = 1$。试利用这个定义导出$e^x$的展开式。提示：待定系数法及$(x^n)' = nx^{n-1}$（见命题\ref{thm:derivation-of-power-of-x}）。\label{qn:exp-from-fixed-point}}
+
+\Question{*雅各布·伯努利距离发现$e^x$几乎只差一步。在计算复利时，如果年利率不是100\%，而是$x$，当$n \to \infty$时的实际年化收益率是什么？它的级数展开是什么？}
+
+\Question{利用复数推导三角函数的和角公式：$\tan(\theta_1 + \theta_2), \sin(\theta_1 + \theta_2), \cos(\theta_1 + \theta_2)$，提示：复数乘法。\label{qn:trigonometry-of-add}}
+
+\end{Exercise}
+
+\begin{Answer}[ref={ex:complex}]
+\Question{给出解二次方程$x^2 - px = q$的几何解释。
+
+有两种情况：$q \geq 0$和$q < 0$
+}
+
+\Question{根据代数基本定理，三次方程有三个复数根，卡尔达诺公式给出了方程$x^3 = 6x + 9$的一个根$x_1 = 3$，试求出方程的另外两个根。
+
+长除法或待定系数法
+}
+
+\Question{利用邦贝利的方法和卡尔达诺公式，可求出三次方程$x^3 = 15x + 4$的一个根$x_1 = 4$，试求出方程的另外两个根。}
+
+\Question{计算规则$\sqrt{ab} = \sqrt{a}\sqrt{b}$在复数下是否成立？如果成立请证明之，如果不成立应怎样挽救？}
+
+\Question{证明任何复数代表的向量乘以$i$相当于向左转$90\degree$。
+
+\[(a + bi)i = ai - b
+\]
+}
+
+\Question{验证复数的共轭满足这样的运算规则：$\overline{a + b} = \overline{a} + \overline{b}$，$\overline{ab} = \overline{a} \cdot \overline{b}$, $\overline{z^n} = (\overline{z})^n$，并据此证明达朗贝尔的发现：若$z$是方程$p(z) = 0$的根，其共轭$\overline{z}$也是方程的根。}
+
+\Question{验证哈密尔顿的复数数偶表示满足五大运算定律。}
+
+\Question{利用对数函数与指数函数的反函数关系证明换底公式。
+
+  \begin{proof}
+    \begin{align*}
+      y &= \log_a x \\
+      a^y &= x && \text{指数与对数的反函数关系} \\
+      log_b (a^y) &= log_b x && \text{两边取以}b\text{为底的对数} \\
+      y log_b a &= log_b x && \text{对数运算法则} \\
+      y &= \frac{log_b x}{log_b a} && \qedhere
+    \end{align*}
+  \end{proof}
+}
+
+\Question{利用等角螺线的极坐标方程$r = ke^{b\theta}$证明笛卡尔指出的等角性质：螺线的切线和极径夹角$\Psi$不变（见\cref{fig:equiangular}）
+
+  \begin{center}
+    \includegraphics[scale=0.33]{img/tagent-to-r}
+    \captionof{figure}{极径旋转小角度$\Delta \theta$}
+  \end{center}
+
+  \begin{proof}
+如\cref{fig:tagent-to-r}所示，极径$r$旋转过一个小角度$\Delta \theta$，极径增加了$\Delta r$。小圆弧$AC$长$r\Delta \theta$，它与割线$AB$，极径的增量近似组成一个直角三角形$ACB$。当$\Delta \theta \to 0$时，点$A, B$趋向重合，割线$AB$趋近于切线。角$ABC = \Psi - \Delta \theta$
+
+\begin{align*}
+  \tan \Psi &= \lim_{\Delta \theta \to 0} \tan (\Psi - \Delta \theta) = \lim_{\Delta \theta \to 0} \tan \angle ABC \\
+  &= \lim_{\Delta \theta \to 0} \frac{r\Delta \theta}{\Delta r} = \lim_{\Delta \theta \to 0} \frac{r}{\frac{\Delta r}{\Delta \theta}} \\
+  &= \frac{r}{\lim_{\Delta \theta \to 0} \dfrac{\Delta r}{\Delta \theta}} = \frac{r}{r'} = \frac{ke^{b\theta}}{(ke^{b\theta})'} && \text{代入}r = ke^{\b\theta} \\
+  &= \frac{ke^{b\theta}}{kbe^{b\theta}} = \frac{1}{b} && (e^{bx})' = be^{bx}
+\end{align*}
+是一个不依赖于$\theta$的常量，这就证明了螺线的等角性质。
+  \end{proof}
+}
+
+\Question{雅各布·伯努利赞美的“虽经沧海，我依故我”也形象地描绘了求导不变$(e^x)' = e^x$的性质，现代数学家这样定义函数$f(x) = e^x$：(1) 导数不变$f'(x) = f(x)$，(2) 函数值$f(0) = 1$。试利用这个定义导出$e^x$的展开式。
+
+\vspace{2mm}
+设展开式为$f(x) = a_0 + a_1 x + a_2 x^2 + \dotsb$。由$f(0) = 1$推出：$f(0) = a_0 = 1$。求导并利用$f'(x) = f(x)$有：
+\begin{align*}
+f'(x) &= a_1 + 2a_2x + 3a_3x^2 + \dotsb + na_nx^{n-1} + \dotsb = f(x) \\
+      &= 1 + a_1x + a_2x^2 + \dotsb + a_{n-1}x^{n-1} + \dotsb
+\end{align*}
+由待定系数法得：
+\begin{align*}
+a_1 &= 1\\
+a_2 &= \frac{a_1}{2} = \frac{1}{2}\\
+a_3 &= \frac{a_2}{3} = \frac{a_1}{3 \cdot 2} = \frac{1}{3!}\\
+\dotso\\
+a_n &= \frac{a_{n-1}}{n} = \frac{a_{n-2}}{n(n-1)} = \dotsb = \frac{1}{n!} \\
+\dotso
+\end{align*}
+
+故展开式为：
+\begin{align*}
+e^x &= f(x) = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \dotsb + \frac{x^n}{n!} + \dotsb
+\end{align*}
+}
+
+\Question{*雅各布·伯努利距离发现$e^x$几乎只差一步。在计算复利时，如果年利率不是100\%，而是$x$，当$n \to \infty$时的实际年化收益率是什么？它的级数展开是什么？
+
+\vspace{2mm}
+\begin{align*}
+\lim_{n \to \infty} (1 + \frac{x}{n})^n &= \lim_{n \to \infty} (1 + \frac{x}{n})^{\frac{n}{x}x} && \text{其中} x \ne 0 \\
+  &= [\lim_{n' \to \infty} (1 + \frac{1}{n'})^{n'}]^x && \text{令} n' = \frac{n}{x} \\
+  &= e^x
+\end{align*}
+
+利用广义二项式展开：
+\begin{align*}
+e^x &= \lim_{n \to \infty} (1 + \frac{x}{n})^n \\
+  &= \lim_{n \to \infty} (1 + \binom{n}{1}\frac{x}{n} + \binom{n}{2}\frac{x^2}{n^2} + \dotsb \\
+  &= \lim_{n \to \infty} (1 + x + \frac{n(n-1)}{2!}\frac{x^2}{n^2} + \dotsb \\
+  &= \lim_{n \to \infty} (1 + x + \frac{x^2}{2!}(1-\frac{1}{n}) + \frac{x^3}{3!}(1 - \frac{1}{n})(1 - \frac{2}{n}) + \dotsb \\
+  &= 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \dotsb
+\end{align*}
+}
+
+\Question{利用复数推导三角函数的和角公式：$\tan(\theta_1 + \theta_2), \sin(\theta_1 + \theta_2), \cos(\theta_1 + \theta_2)$。
+
+\vspace{2mm}
+
+考虑两个复数$z_1 = a_1 + b_1i, z_1 = a_1 + b_1i$，它们的幅角分别为：$\theta_1 = \tan^{-1} \dfrac{b_1}{a_1}, \theta_2 = \tan^{-1} \dfrac{b_2}{a_2}$（忽略实部为0的情况），模为$r_1 = \sqrt{a_1^2 + b_1^2}, r_2 = \sqrt{a_2^2 + b_2^2}$。这两个复数的乘积是：
+
+\[
+z_1z_2 = (a_1 + b_1i)(a_2 + b_2i) = a_1a_2 - b_1b_2 + (a_1b_2 + b_1a_2)i
+\]
+
+根据复数的几何意义，幅角$arg(z_1z_2) = \theta_1 + \theta_2$, 模$|z_1z_2|= r_1r_2$。
+
+\begin{align*}
+\tan(\theta_1 + \theta_2) &= \tan(arg(z_1z_2)) = \frac{a_1b_2 + b_1a_2}{a_1a_2 - b_1b_2} && \text{忽略分母为0的情况} \\
+  &= \frac{\frac{b_2}{a_2} + \frac{b_1}{a_1}}{1 - \frac{b_1}{a_1}\frac{b_2}{a_2}} && \text{上下同除以}a_1a_2 \\
+  &= \frac{\tan\theta_2 + \tan\theta_1}{1 - \tan\theta_1 \tan\theta_2}
+\end{align*}
+
+类似地，通过$\sin(\theta_1 + \theta_2) = \dfrac{a_1b_2 + b_1a_2}{r_1r_2}$可以推出正弦、余弦的和角公式。（TODO，可展开）
+}
+
+\end{Answer}
+
+\ifx\wholebook\relax
+\chapter{代数数}
+\else
+\section{代数数}
+\fi
+
+\epigraph{美即真，真即美}{约翰・济慈}
 
 复数和此前人们认识的数大相径庭。不管是自然数、有理数、无理数，它们都在数轴上有确定的位置。复数却跳出了数轴，来到了复平面。此前的数都是一元的，大小确定，在数轴上的位置确定。复数却是二元的，无论使用实部、虚部表示，模、幅角表示，都需要两个量来确定一个复数。两个复数通常没法比较大小，我们只能比较它们的模的大小。尽管这样奇特，复数彼此之间，复数与实数之间仍然可以计算，并且满足此前的运算定律，包括加法、乘法的交换律，结合率，乘法对加法的分配律。数轴上两个实数$a, b$间的距离是$|a - b|$，复平面上两个复数$z_1 = x_1 + y_1i, z_2 = x_2 + y_2i$间的距离是$|z_1 - z_2|$。这是因为：
 
@@ -1306,161 +1470,12 @@ N(\alpha\beta) = N(\alpha)N(\beta)
 由整除的定义，$\gamma_n$整除$\gamma_{n-1}$，进而整除$\gamma_{n-2}, \dotsc$，整除$\beta$，整除$\alpha$。所以$\gamma_n$是$\alpha, \beta$的公约数。反之，任何$\alpha, beta$的公约数$\psi$必然整除$\alpha$，整除$\beta$，进而整除$\gamma_1$，整除$\gamma_2, \dotsc$，整除$\gamma_n$。因此$\gamma_n = (\alpha, \beta)$是\underdot{最大}公约数\footnote{这里对应的英文是highest common divisor而不是greatest common divisor，因为复数不能直接比较大小。}。我们给最大两个字加了点是因为：(1) 复数不能直接比较大小，这里“最大”的涵义是，任何公约数$\psi$都整除$\gamma_n$。(2) 高斯整数的最大公约数不唯一。如果一个数乘以单位元$\mu\phi = \gamma_n$，则$\phi$也是最大公约数。
 
 
-\begin{Exercise}[label={ex:complex}]
-\Question{给出解二次方程$x^2 - px = q$的几何解释。\label{qn:geometric-quadratic}}
-
-\Question{根据代数基本定理，三次方程有三个复数根，卡尔达诺公式给出了方程$x^3 = 6x + 9$的一个根$x_1 = 3$，试求出方程的另外两个根。}
-
-\Question{利用邦贝利的方法和卡尔达诺公式，可求出三次方程$x^3 = 15x + 4$的一个根$x_1 = 4$，试求出方程的另外两个根。}
-
-\Question{计算规则$\sqrt{ab} = \sqrt{a}\sqrt{b}$在复数下是否成立？如果成立请证明之，如果不成立应怎样挽救？\label{qn:sqrt-of-product}}
-
-\Question{证明任何复数代表的向量乘以$i$相当于向左转$90\degree$。\label{qn:mul-i}}
-
-\Question{验证复数的共轭满足这样的运算规则：$\overline{a + b} = \overline{a} + \overline{b}$，$\overline{ab} = \overline{a} \cdot \overline{b}$, $\overline{z^n} = (\overline{z})^n$，并据此证明达朗贝尔的发现：若$z$是方程$p(z) = 0$的根，其共轭$\overline{z}$也是方程的根。\label{qn:conjugated-root}}
-
-\Question{验证哈密尔顿的复数数偶表示满足五大运算定律。\label{qn:pair-arithmetic-rules}}
-
-\Question{利用对数函数与指数函数的反函数关系证明换底公式$\log_a x = \dfrac{\log_b x}{\log_b a}$。\label{qn:change-base}}
-
-\Question{*利用等角螺线的极坐标方程$r = ke^{b\theta}$证明笛卡尔指出的等角性质：螺线的切线和极径夹角$\Psi$不变（见\cref{fig:equiangular}）提示：如\cref{fig:tagent-to-r}所示，极径$r$旋转过一个小角度$\Delta \theta$，极径增加了$\Delta r$。小圆弧$AC$长$r\Delta \theta$，它与割线$AB$，极径的增量近似组成一个直角三角形$ACB$。当$\Delta \theta \to 0$时，点$A, B$趋向重合，割线$AB$趋近于切线。\label{qn:equiangular}
-
-  \begin{center}
-    \includegraphics[scale=0.33]{img/tagent-to-r}
-    \captionof{figure}{极径旋转小角度$\Delta \theta$}
-    \label{fig:tagent-to-r}
-  \end{center}
-}
-
-\Question{*雅各布·伯努利赞美的“虽经沧海，我依故我”也形象地描绘了求导不变$(e^x)' = e^x$的性质，现代数学家这样定义函数$f(x) = e^x$：(1) 导数不变$f'(x) = f(x)$，(2) 函数值$f(0) = 1$。试利用这个定义导出$e^x$的展开式。提示：待定系数法及$(x^n)' = nx^{n-1}$（见命题\ref{thm:derivation-of-power-of-x}）。\label{qn:exp-from-fixed-point}}
-
-\Question{*雅各布·伯努利距离发现$e^x$几乎只差一步。在计算复利时，如果年利率不是100\%，而是$x$，当$n \to \infty$时的实际年化收益率是什么？它的级数展开是什么？}
-
-\Question{利用复数推导三角函数的和角公式：$\tan(\theta_1 + \theta_2), \sin(\theta_1 + \theta_2), \cos(\theta_1 + \theta_2)$，提示：复数乘法。\label{qn:trigonometry-of-add}}
+\begin{Exercise}[label={ex:algebraic}]
+\Question{证明$x^n + y^n = z^n$}
 
 \end{Exercise}
 
-\begin{Answer}[ref={ex:complex}]
-\Question{给出解二次方程$x^2 - px = q$的几何解释。
-
-有两种情况：$q \geq 0$和$q < 0$
-}
-
-\Question{根据代数基本定理，三次方程有三个复数根，卡尔达诺公式给出了方程$x^3 = 6x + 9$的一个根$x_1 = 3$，试求出方程的另外两个根。
-
-长除法或待定系数法
-}
-
-\Question{利用邦贝利的方法和卡尔达诺公式，可求出三次方程$x^3 = 15x + 4$的一个根$x_1 = 4$，试求出方程的另外两个根。}
-
-\Question{计算规则$\sqrt{ab} = \sqrt{a}\sqrt{b}$在复数下是否成立？如果成立请证明之，如果不成立应怎样挽救？}
-
-\Question{证明任何复数代表的向量乘以$i$相当于向左转$90\degree$。
-
-\[(a + bi)i = ai - b
-\]
-}
-
-\Question{验证复数的共轭满足这样的运算规则：$\overline{a + b} = \overline{a} + \overline{b}$，$\overline{ab} = \overline{a} \cdot \overline{b}$, $\overline{z^n} = (\overline{z})^n$，并据此证明达朗贝尔的发现：若$z$是方程$p(z) = 0$的根，其共轭$\overline{z}$也是方程的根。}
-
-\Question{验证哈密尔顿的复数数偶表示满足五大运算定律。}
-
-\Question{利用对数函数与指数函数的反函数关系证明换底公式。
-
-  \begin{proof}
-    \begin{align*}
-      y &= \log_a x \\
-      a^y &= x && \text{指数与对数的反函数关系} \\
-      log_b (a^y) &= log_b x && \text{两边取以}b\text{为底的对数} \\
-      y log_b a &= log_b x && \text{对数运算法则} \\
-      y &= \frac{log_b x}{log_b a} && \qedhere
-    \end{align*}
-  \end{proof}
-}
-
-\Question{利用等角螺线的极坐标方程$r = ke^{b\theta}$证明笛卡尔指出的等角性质：螺线的切线和极径夹角$\Psi$不变（见\cref{fig:equiangular}）
-
-  \begin{center}
-    \includegraphics[scale=0.33]{img/tagent-to-r}
-    \captionof{figure}{极径旋转小角度$\Delta \theta$}
-  \end{center}
-
-  \begin{proof}
-如\cref{fig:tagent-to-r}所示，极径$r$旋转过一个小角度$\Delta \theta$，极径增加了$\Delta r$。小圆弧$AC$长$r\Delta \theta$，它与割线$AB$，极径的增量近似组成一个直角三角形$ACB$。当$\Delta \theta \to 0$时，点$A, B$趋向重合，割线$AB$趋近于切线。角$ABC = \Psi - \Delta \theta$
-
-\begin{align*}
-  \tan \Psi &= \lim_{\Delta \theta \to 0} \tan (\Psi - \Delta \theta) = \lim_{\Delta \theta \to 0} \tan \angle ABC \\
-  &= \lim_{\Delta \theta \to 0} \frac{r\Delta \theta}{\Delta r} = \lim_{\Delta \theta \to 0} \frac{r}{\frac{\Delta r}{\Delta \theta}} \\
-  &= \frac{r}{\lim_{\Delta \theta \to 0} \dfrac{\Delta r}{\Delta \theta}} = \frac{r}{r'} = \frac{ke^{b\theta}}{(ke^{b\theta})'} && \text{代入}r = ke^{\b\theta} \\
-  &= \frac{ke^{b\theta}}{kbe^{b\theta}} = \frac{1}{b} && (e^{bx})' = be^{bx}
-\end{align*}
-是一个不依赖于$\theta$的常量，这就证明了螺线的等角性质。
-  \end{proof}
-}
-
-\Question{雅各布·伯努利赞美的“虽经沧海，我依故我”也形象地描绘了求导不变$(e^x)' = e^x$的性质，现代数学家这样定义函数$f(x) = e^x$：(1) 导数不变$f'(x) = f(x)$，(2) 函数值$f(0) = 1$。试利用这个定义导出$e^x$的展开式。
-
-\vspace{2mm}
-设展开式为$f(x) = a_0 + a_1 x + a_2 x^2 + \dotsb$。由$f(0) = 1$推出：$f(0) = a_0 = 1$。求导并利用$f'(x) = f(x)$有：
-\begin{align*}
-f'(x) &= a_1 + 2a_2x + 3a_3x^2 + \dotsb + na_nx^{n-1} + \dotsb = f(x) \\
-      &= 1 + a_1x + a_2x^2 + \dotsb + a_{n-1}x^{n-1} + \dotsb
-\end{align*}
-由待定系数法得：
-\begin{align*}
-a_1 &= 1\\
-a_2 &= \frac{a_1}{2} = \frac{1}{2}\\
-a_3 &= \frac{a_2}{3} = \frac{a_1}{3 \cdot 2} = \frac{1}{3!}\\
-\dotso\\
-a_n &= \frac{a_{n-1}}{n} = \frac{a_{n-2}}{n(n-1)} = \dotsb = \frac{1}{n!} \\
-\dotso
-\end{align*}
-
-故展开式为：
-\begin{align*}
-e^x &= f(x) = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \dotsb + \frac{x^n}{n!} + \dotsb
-\end{align*}
-}
-
-\Question{*雅各布·伯努利距离发现$e^x$几乎只差一步。在计算复利时，如果年利率不是100\%，而是$x$，当$n \to \infty$时的实际年化收益率是什么？它的级数展开是什么？
-
-\vspace{2mm}
-\begin{align*}
-\lim_{n \to \infty} (1 + \frac{x}{n})^n &= \lim_{n \to \infty} (1 + \frac{x}{n})^{\frac{n}{x}x} && \text{其中} x \ne 0 \\
-  &= [\lim_{n' \to \infty} (1 + \frac{1}{n'})^{n'}]^x && \text{令} n' = \frac{n}{x} \\
-  &= e^x
-\end{align*}
-
-利用广义二项式展开：
-\begin{align*}
-e^x &= \lim_{n \to \infty} (1 + \frac{x}{n})^n \\
-  &= \lim_{n \to \infty} (1 + \binom{n}{1}\frac{x}{n} + \binom{n}{2}\frac{x^2}{n^2} + \dotsb \\
-  &= \lim_{n \to \infty} (1 + x + \frac{n(n-1)}{2!}\frac{x^2}{n^2} + \dotsb \\
-  &= \lim_{n \to \infty} (1 + x + \frac{x^2}{2!}(1-\frac{1}{n}) + \frac{x^3}{3!}(1 - \frac{1}{n})(1 - \frac{2}{n}) + \dotsb \\
-  &= 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \dotsb
-\end{align*}
-}
-
-\Question{利用复数推导三角函数的和角公式：$\tan(\theta_1 + \theta_2), \sin(\theta_1 + \theta_2), \cos(\theta_1 + \theta_2)$。
-
-\vspace{2mm}
-
-考虑两个复数$z_1 = a_1 + b_1i, z_1 = a_1 + b_1i$，它们的幅角分别为：$\theta_1 = \tan^{-1} \dfrac{b_1}{a_1}, \theta_2 = \tan^{-1} \dfrac{b_2}{a_2}$（忽略实部为0的情况），模为$r_1 = \sqrt{a_1^2 + b_1^2}, r_2 = \sqrt{a_2^2 + b_2^2}$。这两个复数的乘积是：
-
-\[
-z_1z_2 = (a_1 + b_1i)(a_2 + b_2i) = a_1a_2 - b_1b_2 + (a_1b_2 + b_1a_2)i
-\]
-
-根据复数的几何意义，幅角$arg(z_1z_2) = \theta_1 + \theta_2$, 模$|z_1z_2|= r_1r_2$。
-
-\begin{align*}
-\tan(\theta_1 + \theta_2) &= \tan(arg(z_1z_2)) = \frac{a_1b_2 + b_1a_2}{a_1a_2 - b_1b_2} && \text{忽略分母为0的情况} \\
-  &= \frac{\frac{b_2}{a_2} + \frac{b_1}{a_1}}{1 - \frac{b_1}{a_1}\frac{b_2}{a_2}} && \text{上下同除以}a_1a_2 \\
-  &= \frac{\tan\theta_2 + \tan\theta_1}{1 - \tan\theta_1 \tan\theta_2}
-\end{align*}
-
-类似地，通过$\sin(\theta_1 + \theta_2) = \dfrac{a_1b_2 + b_1a_2}{r_1r_2}$可以推出正弦、余弦的和角公式。（TODO，可展开）
-}
+\begin{Answer}[ref={ex:algebraic}]
 
 \end{Answer}
 
