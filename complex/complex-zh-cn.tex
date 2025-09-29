@@ -1339,7 +1339,7 @@ X^3 + Y^3 = 2b + a - b = a + b = Z^3
 如果$a^2 + 3b^2$是一个立方数，其中$a, b$互素，则存在整数$p, q$使得$a + b\sqrt{-3} = (p + q\sqrt{-3})^3$。
 \end{lemma}
 
-\section{理想数}
+\section{代数数}
 
 1847年，在费马大定理的历史上出现了戏剧性的一幕。3月1日，数学家拉梅（Lamé，他在1839年证明了费马大定理$n = 7$时成立，见\cref{fig:Lame}）在法国科学院兴奋地宣布，他找到了证明费马大定理的方法！他雄心勃勃准备近期发表完整的证明，从而终结这个困扰了数学家200多年的难题。拉梅在科学院透露了他的证明概要。像欧拉一样，他大胆地使用复数作为武器来对$x^n + y^n$进行因式分解。对于分圆方程$z^n = 1$，如果$r$是一个复数根，则：
 
@@ -1375,7 +1375,7 @@ x^n + y^n = (x + y)(x + ry)(x + r^2y)\dotsm(x + r^{n-1}y)
 库默尔简介
 \end{mdframed}
 
-\subsection{代数数}
+\subsection{高斯整数}
 
 要想把整除、素数等概念扩展到复数，首先必须定义什么是“复整数”。最直观的一个想法是扩展成$a + bi$，其中$a, b$是整数。但这还不够，我们看到欧拉似乎把$a + i\sqrt{3}b$看成整数。从历史经验看，方程是发现探索“未知数”的有力武器。通过解一次方程$ax = b$，我们认识到有理数$x = \frac{b}{a}$；通过解二次方程，我们认识到无理数；通过解三次方程，我们认识到复数；通过解高次方程，我们认识到有无法用根式表示的数。通过代数基本定理，我们认识到那些无法用根式表示的数也都是复数，它们可以用代数方程定义：
 
@@ -1519,8 +1519,47 @@ a^2 + b^2 = (2k + 1)^2 + (2m)^2 = 4k^2 + 4k + 1 + 4m^2 = 4(k^2 + k + m^2) + 1
 是$4n + 1$的形式而不是$4n + 3$的形式，矛盾。
 \end{proof}
 
-这样，所有$3, 7, 11, \dotsc$都是高斯素数了。为了处理$4n + 1$形的素数，我们需要一个重要的武器：高斯整数上的算术基本定理。
+这样，所有$3, 7, 11, \dotsc$都是高斯素数了。为了处理$4n + 1$形的素数，我们需要一个重要的武器：高斯整数上的算术基本定理。我们的思路和第\ref{sec:fundamental-theorem-of-arithmetic}节一样：通过高斯整数上的欧几里得算法推出算术基本定理。
 
+\begin{proposition}
+如果高斯整数$\alpha, \beta$互素，即$(\alpha, \beta) = 1$，并且$\alpha$整除乘积$\beta \psi$，则$\alpha$整除$\psi$。
+\end{proposition}
+
+\begin{proof}
+把欧几里得算法中的数都放大$\psi$倍，最后得：
+
+\begin{align*}
+(\alpha \psi, \beta \psi) &= \gamma_n \psi = \psi  && \text{由} (\alpha, \beta) = 1
+\end{align*}
+
+即最大公约数是$\psi$。如果$\alpha$整除$\beta \psi$，由于$\alpha$也整除$\alpha \psi$，因此$\alpha$是公约数，它必然整除最大公约数$\psi$。
+\end{proof}
+
+\begin{corollary}
+如果高斯素数$\pi$整除乘积$\alpha \beta$，则$\pi$整除$\alpha$或$\pi$整除$\beta$。
+\end{corollary}
+
+\begin{proof}
+如果素数$\pi$不整除$\alpha$，则$(\pi, \alpha) = 1$。若$\pi$整除$\alpha \beta$，据上面的命题，$\pi$整除$\beta$。
+\end{proof}
+
+利用这个推论就可以证明高斯整数上的算术基本定理了。
+
+\begin{theorem}[高斯整数上的算术基本定理]
+高斯整数可以唯一分解为高斯素数的乘积，如果不考虑这些素数的顺序、相伴元、有否单位元的话。
+\end{theorem}
+
+\begin{proof}
+用反证法，假设某一高斯整数有两种高斯素数分解：
+\[
+\pi_1 \pi_2 \dotsm \pi_j = \psi_1 \psi_2 \dotsm \psi_k
+\]
+其中某个素因子$\pi_i$既不是单位元，也不与右侧任何素因子相伴。根据上述推论，因为素数$\pi_i$整除彼此互素数的积$\psi_1 \psi_2 \dotsm \psi_k$，所以$\pi_i$要么整除$\psi_1$，要么整除$\psi_2, dotsc, $要么整除$\psi_k$。但这是不可能的，因为每个素数$\psi_1, \psi_2, \dotsc, \psi_k$都不可能被任何不相伴的数整除。因此假设不成立，任何高斯整数只有一种高斯素数分解。
+\end{proof}
+
+\subsection{二次整数}
+
+\subsection{理想}
 
 \begin{Exercise}[label={ex:algebraic}]
 \Question{假设$x^n + y^n = z^n$，证明若$x, y, z$任何两个含有公约数$d$，则第三个也有这个因子。\label{qn:xyz-coprime}}
