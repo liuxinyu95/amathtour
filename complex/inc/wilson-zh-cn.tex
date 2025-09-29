@@ -1,0 +1,44 @@
+\section{威尔逊定理}
+\phantomsection
+\label[appendix]{app:wilsons-theorem}
+
+\begin{theorem}[威尔逊定理]
+$p$是素数，当且仅当阶乘$(p - 1)! \equiv -1 \pmod p$。
+\end{theorem}
+
+其中阶乘$(p - 1)! = 1 \times 2 \times 3 \dotsm (p - 1)$。这个阶乘的值加1可以被$p$整除。我们首先证明一个引理。
+
+\begin{lemma}
+对小于素数$p$的正整数$a$，存在唯一小于$p$的正整数$b$，使得$ab \equiv 1 \pmod p$。我们称$b$为$a$的模$p$乘法逆元。
+\end{lemma}
+
+\begin{proof}
+$a$与$p$互素，$(a, p) = 1$。根据贝祖等式，存在$x, y$使得$ax + py = 1$。所以$p$整除$ax - 1$，即$ax \equiv 1 \pmod p$。令$b = x + pk$，调整整数$k$使得$0 < b < p$即可。接下来证明唯一。假设存在正整数$b' < p$也满足$ab' \equiv 1 \pmod p$，两式相减：
+
+\[
+ab - ab' \equiv a(b - b') \equiv 1 - 1 \equiv 0 \pmod p
+\]
+即$p$整除$a(b - b')$。由于$p$不整除$a$，所以$p$整除$b - b'$，但正整数$b, b'$都小于$p$，所以$b = b'$。
+\end{proof}
+
+接下来我们利用这一引理证明威尔逊定理，我们的思路是把阶乘$(p - 1)!$中的因子重新排列，把模$p$的乘法逆元两两放在一起。
+
+\begin{proof}
+由模$p$逆元引理，对每个小于$p$的正整数$a$，存在唯一逆元$b$，使得$ab \equiv 1 \pmod p$。重新排列阶乘顺序：
+
+\begin{align*}
+(p - 1)! &= 1 \times 2 \times 3 \dotsm (p - 1)  \\
+  &= 1 (a_1 b_1) (a_2 b_2) \dotsm (a_k b_k) (p - 1) && p - 1\text{是偶数} \\
+  &\equiv 1 \cdot 1 \cdot 1 \dotsm 1 \cdot (p - 1) \pmod p && \text{每个} a_ib_i \equiv 1 \pmod p \\
+  &\equiv -1 \pmod p
+\end{align*}
+
+反之，如果$p$是合数，我们分三种情况证明。情况(1) $p = 4, (p - 1)! = 3! = 6$，除以4余2。情况(2) 如果$p = q^2$是素数的平方，当$q \geq 3$时：
+
+\begin{align*}
+(q - 1)^2 &\geq (3 - 1)^2 = 2 \\
+q^2 - 2q + 1 &\geq 2 \\
+2q &\leq q^2 - 1 = p - 1
+\end{align*}
+所以$q, 2q$都是阶乘$(p - 1)!$的因子，即$2q^2 = 2p$是因子，所以$p$能整除这个阶乘而不余-1。情况(3) $p = ab$，$a, b$都大于1且小于p，因此是阶乘$(p - 1)!$的因子。所以$p = ab$整除阶乘，而不余-1。综合三种情况，$p$不可能是合数，只能是素数。
+\end{proof}

@@ -1557,6 +1557,23 @@ a^2 + b^2 = (2k + 1)^2 + (2m)^2 = 4k^2 + 4k + 1 + 4m^2 = 4(k^2 + k + m^2) + 1
 其中某个素因子$\pi_i$既不是单位元，也不与右侧任何素因子相伴。根据上述推论，因为素数$\pi_i$整除彼此互素数的积$\psi_1 \psi_2 \dotsm \psi_k$，所以$\pi_i$要么整除$\psi_1$，要么整除$\psi_2, dotsc, $要么整除$\psi_k$。但这是不可能的，因为每个素数$\psi_1, \psi_2, \dotsc, \psi_k$都不可能被任何不相伴的数整除。因此假设不成立，任何高斯整数只有一种高斯素数分解。
 \end{proof}
 
+现在我们可以调转枪头，分拆$4n + 1$形的有理素数，从而彻底解决高斯素数的问题。我们需要用到初等数论中的威尔逊定理：如果$p$是素数，则阶乘$(p - 1)! \equiv -1 \pmod p$（证明见附录\ref{app:wilsons-theorem}）。
+
+\begin{lemma}
+存在某个平方和$x^2 + 1$能被形如$p = 4n + 1$的有理素数整除。
+\end{lemma}
+
+\begin{proof}
+$p = 4n + 1$，阶乘$(p - 1)!$包含$4n = 2n + 2n$项：
+\begin{align*}
+(p - 1)! &= 1 \times 2 \times \dotsm \times 2n \times (2n + 1) \times \dotsm \times 4n \\
+  &= [1 \times 2 \times \dotsm \times 2n][(p - 1) \times (p - 2) \times \dotsm \times (p - 2n)] \\
+  &\equiv [1 \times 2 \times \dotsm \times 2n][-1 \times -2 \times \dotsm \times -2n] \pmod p \\
+  &\equiv [(2n)!][(-1)^{2n}(2n)!] = [(2n)!]^2 = x^2 \pmod p && \text{令} x = (2n)!
+\end{align*}
+另一方面，由威尔逊定理有$(p - 1)! \equiv -1 \pmod p$。所以$x^2 \equiv -1 \pmod p$，即$p$整除某个$x^2 + 1$。
+\end{proof}
+
 \subsection{二次整数}
 
 \subsection{理想}
@@ -1578,6 +1595,7 @@ a^2 + b^2 = (2k + 1)^2 + (2m)^2 = 4k^2 + 4k + 1 + 4m^2 = 4(k^2 + k + m^2) + 1
 \shipoutAnswer
 
 \subimport{inc/}{fibonacci-zh-cn}
+\subimport{inc/}{wilson-zh-cn}
 
 \begin{thebibliography}{99}
 \subimport{inc/}{bib-zh-cn}
