@@ -1391,7 +1391,7 @@ x^n + a_{n-1} x^{n-1} + \dotsb + a_1 x + a_0 = 0
 
 的解叫做代数整数（algebraic integer），这样的方程叫做“首一方程”（monic equation）。代数整数既包括普通的整数（又叫有理整数rational integer，见\cref{qn:rational-solution-is-integral}），也包括了更复杂的整数。为了避免胡子眉毛一把抓，我们从最简单的二次首一方程开始探索代数整数。当一次项是偶数时，方程$x^2 - 2ax + c = 0$的解是$a \pm \sqrt{a^2 - c}$。特别地，当$a^2 < c$并且$c - a^2 = b^2$是完全平方数时，解的形式是$a \pm bi$。高斯最早对这种形式的数进行研究，今天我们把这种数叫做“高斯整数”，用记号$\mathbb{Z}[i]$表示，这个记号暗示了我们把虚数单位$i$加入到整数$\mathbb{Z}$中\footnote{符号$\mathbb{Z}[x]$叫做整数环$\mathbb{Z}$上的一元多项式，它由形如$a_n x^n + a_{n-1} x^{n-1} + \dotsb + a_1 x + a_0$的元素组成，其中$a_0, a_1, \dotsc, a_n \in \mathbb{Z}$是整数。}。
 
-为了区分代数整数和普通有理整数，我们用希腊字母$\alpha, \beta, \gamma, \dotsc$表示代数整数，用英文字母$a, b, c, \dotsc$表示有理整数。和普通整数类似，我们很容易验证，高斯整数之间的$+, -, \times$运算结果仍然是高斯整数，但除法不一定（正如同普通有理整数之间的除法结果不一定是有理整数）。利用这一点就能定义整除了。如果高斯整数$\alpha = \beta\gamma$是另外两个高斯整数的积，我们称$\beta$整除$\alpha$。接下来的问题有些棘手：(1) 怎样定义带余数的除法？(2) 怎样定义高斯整数中的素数？
+为了区分代数整数和普通有理整数，我们用希腊字母$\alpha, \beta, \gamma, \dotsc$表示代数整数，用英文字母$a, b, c, \dotsc$表示有理整数（附录\ref{ch:greek-letters}有希腊字母的读音）。和普通整数类似，我们很容易验证高斯整数之间的$+, -, \times$运算结果仍然是高斯整数，但除法不一定（正如同普通有理整数之间的除法结果不一定是有理整数）。利用这一点就能定义整除了。如果高斯整数$\alpha = \beta\gamma$是另外两个高斯整数的积，我们称$\beta$整除$\alpha$。接下来的问题有些棘手：(1) 怎样定义带余数的除法？(2) 怎样定义高斯整数中的素数？
 
 带余数的除法需要“更小”这一概念，普通有理整数带余数的除法是$a = bq + r$，其中$r < b$，即余数比除数“更小”。但是复数本质上是向量，不能直接比较大小。例如我们不能说$1 + i$“小于”2。只有复数的模是可以比较大小的，例如$|1 + i| = \sqrt{1^2 + 1^2} = \sqrt{2} < 2 = |2|$。为了解决什么是“更小”的问题，高斯于1832年定义了一个重要的概念：范数（Norm），复数$z = a + bi$的范数为：
 
@@ -1405,13 +1405,13 @@ N(z) = a^2 + b^2
 N(z) = a^2 + b^2 = z\overline{z} = N(\overline{z})
 \]
 
-范数和模一样，是可乘的：
+范数和模一样，是可乘的（见\cref{qn:norm-is-multiplicative}）：
 
 \[
 N(\alpha\beta) = N(\alpha)N(\beta)
 \]
 
-利用范数，高斯扩展了1的概念。在普通有理整数中，$3 = 3 \times 1$。一旦考虑负整数，情况就丰富起来：$-3 = 3 \times (-1) = -3 \times 1$。但取绝对值的话，情况就统一到：$|3| = |(\pm 3) \times (\pm 1)| = 3 \times 1$。高斯定义任何范数$N(\mu) = 1$的数是单位元（unit），若$\alpha = \mu \alpha'$，称$\alpha'$是$\alpha$的“相伴元”（associate，英文关联的意思）。这样在上述有理整数的例子中，$-1, 1$都是单位元，而-3和3是相伴的。扩展到高斯整数，单位元有4个。由$N(\mu) = a^2 + b^2 = 1$，其中$a, b \in \mathbb{Z}$是整数，要么$a^2 = 1, b^2 = 0$，要么$a^2 = 0, b^2 = 1$。分别对应$a = \pm 1, b = 0$和$a = 0, b = \pm 1$，即$\pm 1, \pm i$。例如$1 + i = (1 - i)i$，因为$|i| = 1$是单位元，所以$1 + i$和$1 - i$是相伴的，如同普通有理整数中相伴的$\pm 3$。
+利用范数，高斯扩展了1的概念。在普通有理整数中，$3 = 3 \times 1$。一旦考虑负整数，情况就丰富起来：$-3 = 3 \times (-1) = -3 \times 1$。但取绝对值的话，情况就统一到：$|3| = |(\pm 3) \times (\pm 1)| = 3 \times 1$。高斯定义范数$N(\mu) = 1$的数是单位元（unit），若$\alpha = \mu \alpha'$，称$\alpha'$是$\alpha$的“相伴元”（associate，英文关联的意思）。这样在上述有理整数的例子中，$-1, 1$都是单位元，而-3和3是相伴的。扩展到高斯整数，单位元有4个。由$N(\mu) = a^2 + b^2 = 1$，其中$a, b \in \mathbb{Z}$是整数，要么$a^2 = 1, b^2 = 0$，要么$a^2 = 0, b^2 = 1$。分别对应$a = \pm 1, b = 0$和$a = 0, b = \pm 1$，即$\pm 1, \pm i$。例如$1 + i = (1 - i)i$，因为$|i| = 1$是单位元，所以$1 + i$和$1 - i$是相伴的，如同普通有理整数中相伴的$\pm 3$。
 
 单位元还有一个等价的定义：凡是整除1的数叫做单位元。这样$\mu^n = 1$，有趣的是，有理整数的两个单位元分别是$(-1)^0, (-1)^1$；而高斯整数的4个单位元分别是$i^{0, 1, 2, 3}$次幂。读者朋友们，你是否想到了分圆方程？分圆方程的根是单位元吗？
 
@@ -1457,7 +1457,7 @@ N(\alpha\beta) = N(\alpha)N(\beta)
 \alpha   &= \rho_1 \beta + \gamma_1    & N(\gamma_1) &< N(\beta) \\
 \beta    &= \rho_2 \gamma_1 + \gamma_2 & N(\gamma_2) &< N(\gamma_1) \\
 \gamma_1 &= \rho_3 \gamma_2 + \gamma_3 & N(\gamma_3) &< N(\gamma_2) \\
-         & \dotso \\
+         & \dotso
 \end{align*}
 
 但这个过程不会永远进行下去，因为范数是普通的非负整数，所以必然存在某个$n$使得$N(\beta) > N(\gamma_1) > N(\gamma_2) > \dotsb > N(\gamma_n) > N(\gamma_{n+1})= 0$。即：
@@ -1477,18 +1477,18 @@ N(\alpha\beta) = N(\alpha)N(\beta)
 
 我们通常用字母$p$表示普通有理整数中的素数，用希腊字母$\pi$来表示代数整数中的素数。注意不要和圆周率混淆。在高斯整数中，一个素数$\pi$有8个因子：$\pm 1, \pm i, \pm \pi, \pm i\pi$。接下来的问题是如何找到这些素数？
 
-\begin{proposition}
-如果一个高斯整数$\xi$的范数是有理素数$p$，则$\xi$是高斯素数。
+\begin{proposition}\label{thm:prime-norm}
+如果一个高斯整数$\psi$的范数是有理素数$p$，则$\psi$是高斯素数。
 \end{proposition}
 
 \begin{proof}
-假设$\xi = \alpha\beta$是两个高斯整数的积，两边取范数：
+假设$\psi = \alpha\beta$是两个高斯整数的积，两边取范数：
 
 \begin{align*}
-p &= N(\xi) = N(\alpha\beta) = N(\alpha)N(\beta)  && \text{范数可乘}
+p &= N(\psi) = N(\alpha\beta) = N(\alpha)N(\beta)  && \text{范数可乘}
 \end{align*}
 
-有理素数的因子只有$1, p$。所以$N(\alpha)$和$N(\beta)$中必然有一个是1，因而是单位元。另外一个必然和$\xi$相伴，由定义知$\xi$是高斯素数。
+有理素数的因子只有$1, p$。所以$N(\alpha)$和$N(\beta)$中必然有一个是1，因而是单位元。另外一个必然和$\psi$相伴，由定义知$\psi$是高斯素数。
 \end{proof}
 
 根据这个结论，我们马上可以判断$1 \pm i, 2 \pm i, 1 \pm 2i$都是素数（它们的范数$N(1 \pm i) = 1^2 + 1^2 = 2, N(2 \pm i) = N(1 \pm 2i) = 1^2 + 2^2 = 5$都是有理素数）。但这个命题的逆命题不成立，高斯素数的范数并不一定是有理素数。例如$N(3) = 9$，不是有理素数，假设3可以分成两个高斯整数的积$3 = (a + bi)(c + di)$。两边取范数：
@@ -1529,13 +1529,13 @@ a^2 + b^2 = (2k + 1)^2 + (2m)^2 = 4k^2 + 4k + 1 + 4m^2 = 4(k^2 + k + m^2) + 1
 把欧几里得算法中的数都放大$\psi$倍，最后得：
 
 \begin{align*}
-(\alpha \psi, \beta \psi) &= \gamma_n \psi = \psi  && \text{由} (\alpha, \beta) = 1
+(\alpha \psi, \beta \psi) &= \gamma_n \psi = \psi  && \text{由} 1 = (\alpha, \beta) = \gamma_n
 \end{align*}
 
 即最大公约数是$\psi$。如果$\alpha$整除$\beta \psi$，由于$\alpha$也整除$\alpha \psi$，因此$\alpha$是公约数，它必然整除最大公约数$\psi$。
 \end{proof}
 
-\begin{corollary}
+\begin{corollary}\label{thm:Gaussian-primary}
 如果高斯素数$\pi$整除乘积$\alpha \beta$，则$\pi$整除$\alpha$或$\pi$整除$\beta$。
 \end{corollary}
 
@@ -1554,10 +1554,10 @@ a^2 + b^2 = (2k + 1)^2 + (2m)^2 = 4k^2 + 4k + 1 + 4m^2 = 4(k^2 + k + m^2) + 1
 \[
 \pi_1 \pi_2 \dotsm \pi_j = \psi_1 \psi_2 \dotsm \psi_k
 \]
-其中某个素因子$\pi_i$既不是单位元，也不与右侧任何素因子相伴。根据上述推论，因为素数$\pi_i$整除彼此互素数的积$\psi_1 \psi_2 \dotsm \psi_k$，所以$\pi_i$要么整除$\psi_1$，要么整除$\psi_2, dotsc, $要么整除$\psi_k$。但这是不可能的，因为每个素数$\psi_1, \psi_2, \dotsc, \psi_k$都不可能被任何不相伴的数整除。因此假设不成立，任何高斯整数只有一种高斯素数分解。
+其中某个素因子$\pi_i$既不是单位元，也不与右侧任何素因子相伴。根据上述推论，因为素数$\pi_i$整除彼此互素数的积$\psi_1 \psi_2 \dotsm \psi_k$，所以$\pi_i$要么整除$\psi_1$，要么整除$\psi_2, \dotsc, $要么整除$\psi_k$。但这是不可能的，因为每个素数$\psi_1, \psi_2, \dotsc, \psi_k$都不可能被不相伴的数整除。因此假设不成立，任何高斯整数只有一种高斯素数分解。
 \end{proof}
 
-现在我们可以调转枪头，分拆$4n + 1$形的有理素数，从而彻底解决高斯素数的问题。我们需要用到初等数论中的威尔逊定理：如果$p$是素数，则阶乘$(p - 1)! \equiv -1 \pmod p$（证明见附录\ref{app:wilsons-theorem}）。
+现在我们可以调转枪头，分拆$4n + 1$形的有理素数，从而彻底解决高斯素数问题。我们需要用到初等数论中的威尔逊定理（见附录\ref{app:wilsons-theorem}）：如果$p$是素数，则阶乘$(p - 1)! \equiv -1 \pmod p$。
 
 \begin{lemma}
 存在某个平方和$x^2 + 1$能被形如$p = 4n + 1$的有理素数整除。
@@ -1566,13 +1566,35 @@ a^2 + b^2 = (2k + 1)^2 + (2m)^2 = 4k^2 + 4k + 1 + 4m^2 = 4(k^2 + k + m^2) + 1
 \begin{proof}
 $p = 4n + 1$，阶乘$(p - 1)!$包含$4n = 2n + 2n$项：
 \begin{align*}
-(p - 1)! &= 1 \times 2 \times \dotsm \times 2n \times (2n + 1) \times \dotsm \times 4n \\
-  &= [1 \times 2 \times \dotsm \times 2n][(p - 1) \times (p - 2) \times \dotsm \times (p - 2n)] \\
-  &\equiv [1 \times 2 \times \dotsm \times 2n][-1 \times -2 \times \dotsm \times -2n] \pmod p \\
-  &\equiv [(2n)!][(-1)^{2n}(2n)!] = [(2n)!]^2 = x^2 \pmod p && \text{令} x = (2n)!
+(p - 1)! &= 1 \cdot 2  \dotsm  2n \cdot (2n + 1)  \dotsm  4n \\
+  &= (1 \cdot 2  \dotsm  2n)[(p - 1) \cdot (p - 2)  \dotsm  (p - 2n)] && \text{反转后半段} \\
+  &\equiv (1 \cdot 2  \dotsm 2n)(-1 \cdot -2 \dotsm -2n) \pmod p && \text{由} p - k \equiv k \pmod p \\
+  &\equiv (2n)!(-1)^{2n}(2n)! = [(2n)!]^2 = x^2 \pmod p && \text{令} x = (2n)!
 \end{align*}
 另一方面，由威尔逊定理有$(p - 1)! \equiv -1 \pmod p$。所以$x^2 \equiv -1 \pmod p$，即$p$整除某个$x^2 + 1$。
 \end{proof}
+
+现在$p = 4n + 1$整除某个$x^2 + 1 = (x + i)(x - i)$。如果$p$也是高斯素数，则$p$整除$x + i$或$x - i$（据推论\ref{thm:Gaussian-primary}）。但是$\dfrac{x}{p} \pm \dfrac{1}{p}i$不可能是高斯整数。这个矛盾说明$p$不是高斯素数，因而必然能分解为乘积：$p = (a + bi)(c + di)$，其中$a + bi$和$c + di$都不是单位元（$a^2 + b^2 \ne 1 \ne c^2 + d^2$）。两边取范数：
+
+\[
+p^2 = N(p) = N(a+bi)N(c+di) = (a^2 + b^2)(c^2 + d^2)
+\]
+
+因此只能是$a^2 + b^2 = c^2 + d^2 = p$。另一方面如果$p = a^2 + b^2 = (a + bi)(a - bi)$。由于$N(a \pm bi) = p$，根据命题\ref{thm:prime-norm}，它们都是高斯素数。接着根据高斯整数的算术基本定理，这种分解是\underdot{唯一}的。所以必然有$a^2 = c^2, b^2 = d^2$。这样我们就解决了$4n + 1$形的素数，并且利用高斯整数证明了如下结论\footnote{1640年12月25日，费马在给梅森的信中提出了这一命题。费马曾多次告诉友人，他用无穷递降法证明了这个猜想，但一直未发现相关的文献资料。一个多世纪后，欧拉在1754年首次给出了该命题的证明。}：
+
+\begin{theorem}[费马平方和定理]
+有理素数$p = 4n + 1$一定可以分解为两个平方和$a^2 + b^2$。
+\end{theorem}
+
+我们用下面的定理总结上述三种情况：(1) 唯一的偶素数$p = 2$；(2) 形如$4n + 3$的奇素数；(3) 形如$4n + 1$的即素数。
+
+\begin{theorem}
+高斯素数包括三种：(1) $1 + i$及其相伴元；(2) 有理素数$4n + 3$及其相伴元；(3) 有理素数$4n + 1$的因子$a + bi$。
+\end{theorem}
+
+\begin{mdframed}
+高斯简介
+\end{mdframed}
 
 \subsection{二次整数}
 
@@ -1582,12 +1604,16 @@ $p = 4n + 1$，阶乘$(p - 1)!$包含$4n = 2n + 2n$项：
 \Question{假设$x^n + y^n = z^n$，证明若$x, y, z$任何两个含有公约数$d$，则第三个也有这个因子。\label{qn:xyz-coprime}}
 
 \Question{证明若首一代数方程$x^n + a_{n-1} x^{n-1} + \dotsb + a_1 x + a_0 = 0$存在有理解，则这个解必定是整数。 \label{qn:rational-solution-is-integral}}
+
+\Question{证明范数是可乘的。\label{qn:norm-is-multiplicative}}
 \end{Exercise}
 
 \begin{Answer}[ref={ex:algebraic}]
 \Question{假设$x^n + y^n = z^n$，证明若$x, y, z$任何两个含有公约数$d$，则第三个也有这个因子。}
 
 \Question{证明若首一代数方程$x^n + a_{n-1} x^{n-1} + \dotsb + a_1 x + a_0 = 0$存在有理解，则这个解必定是整数。}
+
+\Question{证明范数是可乘的。}
 \end{Answer}
 
 \ifx\wholebook\relax \else
