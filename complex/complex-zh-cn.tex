@@ -1375,7 +1375,7 @@ x^n + y^n = (x + y)(x + ry)(x + r^2y)\dotsm(x + r^{n-1}y)
 库默尔简介
 \end{mdframed}
 
-\subsection{高斯整数}
+\section{高斯整数}
 
 要想把整除、素数等概念扩展到复数，首先必须定义什么是“复整数”。最直观的一个想法是扩展成$a + bi$，其中$a, b$是整数。但这还不够，我们看到欧拉似乎把$a + i\sqrt{3}b$看成整数。从历史经验看，方程是发现探索“未知数”的有力武器。通过解一次方程$ax = b$，我们认识到有理数$x = \frac{b}{a}$；通过解二次方程，我们认识到无理数；通过解三次方程，我们认识到复数；通过解高次方程，我们认识到有无法用根式表示的数。通过代数基本定理，我们认识到那些无法用根式表示的数也都是复数，它们可以用代数方程定义：
 
@@ -1596,7 +1596,7 @@ p^2 = N(p) = N(a+bi)N(c+di) = (a^2 + b^2)(c^2 + d^2)
 高斯简介
 \end{mdframed}
 
-\subsection{二次整数}
+\section{二次整数}
 
 高斯整数是二次首一代数方程中最简单的情况。稍微改变一下方程，$x^2 - 2ax + (a^2 + mb^2) = 0$的解是$a \pm b\sqrt{-m}$，其中$m$不含任何平方因子。这种形式的代数整数，是二次方程的解，叫做“二次整数”，用$\mathbb{Z}[\sqrt{-m}]$表示。例如$\mathbb{Z}[\sqrt{-2}], \mathbb{Z}[\sqrt{-3}]$等。我们由此看出欧拉在证明费马大定理$n=3$时的分解：
 
@@ -1604,20 +1604,38 @@ p^2 = N(p) = N(a+bi)N(c+di) = (a^2 + b^2)(c^2 + d^2)
 p^2 + 3q^2 = (p + q\sqrt{-3})(q - q\sqrt{-3})
 \]
 
-是关于二次整数$\mathbb{Z}[\sqrt{-3}]$的。高斯对$\mathbb{Z}[i]$的处理为我们树立了样板：(a) 先定义范数，(b) 然后扩展欧几里得算法，(c) 找出素数, (d) 最后判断算术基本定理是否成立。我们先从$\mathbb{Z}[\sqrt{-2}]$开始热身一下。
-
-受共轭复数的启发，我们可以把高斯整数的范数定义扩展过来：
+是关于二次整数$\mathbb{Z}[\sqrt{-3}]$的。高斯对$\mathbb{Z}[i]$的处理为我们树立了样板：(a) 先定义范数，(b) 然后扩展欧几里得算法，(c) 找出素数, (d) 最后判断算术基本定理是否成立。我们先从$\mathbb{Z}[\sqrt{-2}]$开始热身一下。受共轭复数的启发，我们扩展范数的定义如下：
 
 \begin{definition}
 二次整数$\xi = a + b\sqrt{-m}$的范数定义为$N(\xi) = \xi\overline{\xi} = (a + b\sqrt{-m})(a - b\sqrt{-m}) = a^2 + mb^2$
 \end{definition}
 
-注意到这恰好是二次方程的常数项，这并非巧合（见\cref{qn:quadratic-norm}）。对于$\mathbb{Z}[\sqrt{-2}]$，范数为$a^2 + 2b^2$。单位元的范数为1，只可能是$a^2 = 1, b = 0$，即$\mu = \pm 1$。
+注意到这恰好是二次方程的常数项，这并非巧合（见\cref{qn:quadratic-norm}）。对于$\mathbb{Z}[\sqrt{-2}]$，范数为$a^2 + 2b^2$。单位元的范数为1，只可能是$a^2 = 1, b = 0$，即$\mu = \pm 1$。接下来我们判断$\mathbb{Z}[\sqrt{-2}]$上是否有欧几里得算法。也就是说，任给整数$\alpha, \beta \ne 0$，是否存在整数$\rho, \gamma$使得$\alpha = \rho \beta + \gamma$，并且$N(\gamma) < N(\beta)$。令$\rho = m + n\sqrt{-2}$，则$\rho \beta = m\beta + n\sqrt{-2}\beta$，它是由向量$\beta$和$i\sqrt{2}\beta$张成的矩形网格，如\cref{fig:Z-sqrt-2}所示。因为$i\sqrt{2}\beta$把$\beta$旋转90度后放大$\sqrt{2}$倍，所以矩形的宽是$|\beta|$长是$\sqrt{2}|\beta|$。
 
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[scale=0.3]{img/z-sqrt-2}
+ \caption{$\mathbb{Z}[\sqrt{-2}]$中的整数构成浅灰色网格，积$\rho \beta$构成黑色网格，$\alpha$落在某个格子中。}
+ \label{fig:Z-sqrt-2}
+\end{figure}
 
-我们把这套方法应用到$\mathbb{Z}[\sqrt{-3}]$上，如果算术基本定理成立，唯一分解就能保证欧拉处理的正确性，从而为费马大定理$n = 3$画上句号。
+任何整数$\alpha$都落在某个矩形中，它距离最近的顶点距离的平方可由勾股定理得到：
 
-\subsection{理想}
+\begin{align*}
+N(\alpha - \rho\beta) & = c^2 = a^2 + b^2  && \text{勾股定理} \\
+  &\leq (\frac{\sqrt{2}}{2}|\beta|)^2 + (\frac{1}{2}|\beta|)^2 && a, b\text{都不大于矩形边长的一半} \\
+  &= \frac{3}{4}|\beta|^2 < |\beta|^2 = N(\beta)
+\end{align*}
+
+令$\gamma = \alpha - \rho \beta$即可。这样欧几里得算法在$\mathbb{Z}[\sqrt{-2}]$上也成立，从而算术基本定理也成立。但接下来的$\mathbb{Z}[\sqrt{-3}]$却让人失望了。因为存在这样的反例：
+
+\[
+4 = 2 \times 2 = (1 + i\sqrt{3})(1 - i\sqrt{3})
+\]
+
+这是为什么呢？
+
+\section{理想}
 
 \begin{Exercise}[label={ex:algebraic}]
 \Question{假设$x^n + y^n = z^n$，证明若$x, y, z$任何两个含有公约数$d$，则第三个也有这个因子。\label{qn:xyz-coprime}}
