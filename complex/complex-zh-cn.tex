@@ -1610,7 +1610,7 @@ p^2 + 3q^2 = (p + q\sqrt{-3})(q - q\sqrt{-3})
 二次整数$\xi = a + b\sqrt{-m}$的范数定义为$N(\xi) = \xi\overline{\xi} = (a + b\sqrt{-m})(a - b\sqrt{-m}) = a^2 + mb^2$
 \end{definition}
 
-注意到这恰好是二次方程的常数项，这并非巧合（见\cref{qn:quadratic-norm}）。对于$\mathbb{Z}[\sqrt{-2}]$，范数为$a^2 + 2b^2$。单位元的范数为1，只可能是$a^2 = 1, b = 0$，即$\mu = \pm 1$。接下来我们判断$\mathbb{Z}[\sqrt{-2}]$上是否有欧几里得算法。也就是说，任给整数$\alpha, \beta \ne 0$，是否存在整数$\rho, \gamma$使得$\alpha = \rho \beta + \gamma$，并且$N(\gamma) < N(\beta)$。令$\rho = m + n\sqrt{-2}$，则$\rho \beta = m\beta + n\sqrt{-2}\beta$，它是由向量$\beta$和$i\sqrt{2}\beta$张成的矩形网格，如\cref{fig:Z-sqrt-2}所示。因为$i\sqrt{2}\beta$把$\beta$旋转90度后放大$\sqrt{2}$倍，所以矩形的宽是$|\beta|$长是$\sqrt{2}|\beta|$。
+注意到这恰好是二次方程的常数项，这并非巧合（见\cref{qn:quadratic-norm}）。对于$\mathbb{Z}[\sqrt{-2}]$，范数为$a^2 + 2b^2$。单位元的范数为1，只可能是$a^2 = 1, b = 0$，即$\mu = \pm 1$。接下来我们判断$\mathbb{Z}[\sqrt{-2}]$上是否有欧几里得算法。也就是说，任给整数$\alpha, \beta \ne 0$，是否存在整数$\rho, \gamma$使得$\alpha = \rho \beta + \gamma$，并且$N(\gamma) < N(\beta)$。令$\rho = m + n\sqrt{-2}$，则$\rho \beta = m\beta + n\sqrt{-2}\beta$，它是由向量$\beta$和$i\sqrt{2}\beta$张成的矩形网格，如\cref{fig:Z-sqrt-2}所示。因为$i\sqrt{2}\beta$把$\beta$旋转90度后放大$\sqrt{2}$倍，所以矩形的宽是$|\beta|$长是$\sqrt{2}|\beta|$。任何整数$\alpha$都落在某个矩形中，它距离最近的顶点距离的平方可由勾股定理得到：
 
 \begin{figure}[htbp]
  \centering
@@ -1618,8 +1618,6 @@ p^2 + 3q^2 = (p + q\sqrt{-3})(q - q\sqrt{-3})
  \caption{$\mathbb{Z}[\sqrt{-2}]$中的整数构成浅灰色网格，积$\rho \beta$构成黑色网格，$\alpha$落在某个格子中。}
  \label{fig:Z-sqrt-2}
 \end{figure}
-
-任何整数$\alpha$都落在某个矩形中，它距离最近的顶点距离的平方可由勾股定理得到：
 
 \begin{align*}
 N(\alpha - \rho\beta) & = c^2 = a^2 + b^2  && \text{勾股定理} \\
@@ -1633,7 +1631,35 @@ N(\alpha - \rho\beta) & = c^2 = a^2 + b^2  && \text{勾股定理} \\
 4 = 2 \times 2 = (1 + i\sqrt{3})(1 - i\sqrt{3})
 \]
 
-这是为什么呢？
+其中2不能被进一步分解，否则假设$2 = (a + b\sqrt{-3})(c + d\sqrt{-3})$，两边取范数：
+
+\[
+4 = N(2) = N(a+b\sqrt{-3})N(c + d\sqrt{-3}) = (a^2 + 3b^2)(c^2 + 3d^2)
+\]
+
+不可能$a^2 + 3b^2 = c^2 + 3d^2 = 2$，这个方程没有整数解。所以$a^2 + 3b^2$或$c^2 + 3d^2$是1，其对应的是单位元，另一个是2的相伴元。这就证明了2不能被分解。$1 \pm i\sqrt{3}$的范数都是4，通过同样的分析，我们知道它们也不能被分解。这样4就有两种分解方式。这是为什么呢？如\ref{fig:Z-sqrt-3}所示，所有$\rho \beta$是由$\beta$和$i\sqrt{3}\beta$张成的矩形网格。任何$\alpha$落在某个矩形中，它距离最近的顶点距离的平方是：
+
+\begin{align*}
+N(\alpha - \rho \beta) &= c^2 = a^2 + b^2  && \text{勾股定理} \\
+  &\leq (\frac{\sqrt{3}}{2}|\beta|)^2 + (\frac{1}{2}|\beta|)^2 = |\beta|^2
+\end{align*}
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[scale=0.3]{img/z-sqrt-3}
+ \caption{$\mathbb{Z}[\sqrt{-3}]$中的整数构成浅灰色网格，积$\rho \beta$构成黑色网格，$\alpha$落在某个格子中。}
+ \label{fig:Z-sqrt-3}
+\end{figure}
+
+并不一定是$<$。如图中所示，当$\alpha$落在矩中心时，不存在$\gamma$使得$N(\gamma) < N(\beta)e$。因此欧几里得算法在$\mathbb{Z}[\sqrt{-3}]$上不成立，算术基本定理了不成立，分解不一定唯一。这就解释了$4 = 2 \times 2 = (1 + i\sqrt{3})(1 - i\sqrt{3})$。但欧拉在证明费马大定理$n = 3$时的结论与这个反例有所不同：当$a, b$互素，且$a^2 + 3b^2$是立方数时，互素的$(a + bi\sqrt{3})(a - bi\sqrt{3})$每个都是立方数。在这个反例中，4不是立方数。即使把这个反例扩大16倍构造立方数$4^3 = 8 \times 8 = (4 + 4i\sqrt{3})(4 - 4i\sqrt{3})$也不符合，此时$p = q = 4$，它们不互素。这不符合欧拉的条件，也许我们还有办法挽回。
+
+\section{爱森斯坦整数}
+
+高斯整数是分布在正方形格子上的复数，爱森斯坦在1844年研究了分布在正三角形格子上的复数。今天我们把这样的复数叫做爱森斯坦整数。
+
+\begin{mdframed}
+爱森斯坦简介
+\end{mdframed}
 
 \section{理想}
 
