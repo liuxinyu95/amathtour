@@ -909,6 +909,135 @@ r &= c^n = e^{\ln(c^n)} && \text{换底} \\
  \label{fig:nautilus}
 \end{figure}
 
+复数和此前人们认识的数大相径庭。不管是自然数、有理数、无理数，它们都在数轴上有确定的位置。复数却跳出了数轴，来到了复平面。此前的数都是一元的，大小确定，在数轴上的位置确定。复数却是二元的，无论使用实部、虚部表示，模、幅角表示，都需要两个量来确定一个复数。两个复数通常没法比较大小，我们只能比较它们的模的大小。尽管这样奇特，复数彼此之间，复数与实数之间仍然可以计算，并且满足此前的运算定律，包括加法、乘法的交换律，结合率，乘法对加法的分配律。数轴上两个实数$a, b$间的距离是$|a - b|$，复平面上两个复数$z_1 = x_1 + y_1i, z_2 = x_2 + y_2i$间的距离是$|z_1 - z_2|$。这是因为：
+
+\[
+|z_1 - z_2| = |(x_1 - x_2) + (y_1 - y_2)i| = \sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}
+\]
+
+这的确是对应的笛卡尔平面上两点$(x_1, y_1)$与$(x_2, y_2)$间的距离。实数的绝对值满足可乘性，即：$|ab| = |a||b|$；复数的模也满足可乘性$|z_1z_2| = |z_1||z_2|$，这是因为（也可用欧拉公式证明）：
+
+\begin{align*}
+|z_1z_2|^2 &= |(x_1 + y_1i)(x_2 + y_2i)|^2 = |(x_1x_2 - y_1y_2) + (x_1y_2 + y_1x_2)i|^2 \\
+  &= (x_1x_2 - y_1y_2)^2 + (x_1y_2 + y_1x_2)^2 = (x_1^2 + y_1^2)(x_2^2 + y_2^2) && (*) \\
+  &= |z_1|^2|z_2|^2
+\end{align*}
+
+其中(*)是古希腊数学家丢番图最早在研究数论中的平方和时发现的\footnote{丢番图《算术》，卷三，问题19写道：65可以用两种方法分解为平方和$7^2 + 4^2$与$8^2 + 1^2$，这是因为65是13与5的乘积，而它们也都是平方和（$13 = 3^2 + 2^2, 5 = 2^2 + 1^2$）。}。复数打开了一个新世界的大门。它威力无穷，不仅解决了以前的难题，也提出了人们意想不到的问题。
+
+\section{正五边形}
+\label{sec:pentagon-equation}
+
+复数是解方程的利器。我们这里展示如何用复数解决正五边形尺规作图的问题。欧拉公式与棣莫弗公式结合赋予了方程$x^n = 1$以新的几何意义。若复数$z = re^{i\theta}$是方程的一个根，即：
+
+\[
+1 = z^n = (re^{i\theta})^n = r^ne^{in\theta} = r^n(\cos n\theta + i\sin n\theta)
+\]
+
+我们由此得出模$r = 1$，幅角$n\theta = 2k\pi$，其中$k$是整数（这是由于$\sin 2k\pi = 0, \cos 2k\pi = 1$），这样$z$的幅角$\theta = \dfrac{2k\pi}{n}$。于是根可以表示为：$z = 1e^{\frac{2k\pi}{n}i} = e^{\frac{2k\pi}{n}i}$。这在几何上表示复平面单位圆上的$n$个点，如\cref{fig:heptagon-z}所示。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[scale=0.33]{img/heptagon-z}
+  \caption{$x^n = 1$的解在复平面上是正$n$边形的$n$个顶点。}
+ \label{fig:heptagon-z}
+\end{figure}
+
+圆是周期性的，$e^{\frac{2k\pi}{2}}$转动整数圈后与自己重合。$k = 0, 1, 2, \dotsc, n-1$时，$e^{\frac{2kp}{n}i}$是$n$个不同的根。它们的幅角依此是$0, \theta, 2\theta, \dotsc, (n-1)\theta$，把单位圆平均分成了$n$等份。因此方程$x^n = 1$叫做“分圆方程”（cyclotomic equation）。把复平面上这个$n$个根连接起来就构成了正$n$边形。
+
+例如最简单的正多边形是正三角形$n = 3$。$x^3 = 1$有三个复根$1, e^{\frac{2\pi}{3}i}, e^{\frac{4\pi}{3}i} = e^{-\frac{2\pi}{3}i}$。其中：
+
+\[
+e^{\pm \frac{2\pi}{3}i} = \cos (\pm \frac{2\pi}{3}) + i \sin (\pm \frac{2\pi}{3}) = -\frac{1}{2} \pm \frac{\sqrt{3}}{2}i
+\]
+
+我们可以验证$x^3 - 1 = (x - 1)(x^2 + x + 1)$，二次方程$x^2 + x + 1$的两个根的确是$\dfrac{-1 \pm i\sqrt{3}}{2}$。我们也可以用二项式展开直接验证：
+
+\[
+(-\frac{1}{2} \pm \frac{\sqrt{3}}{2}i)^3 = -\frac{1}{8} \pm \frac{3\sqrt{3}}{8}i + \frac{9}{8} \mp \frac{3\sqrt{3}}{8}i = \frac{9-1}{8} = 1
+\]
+
+这三个根构成了单位圆内接正三角形，如\cref{fig:3rd-root-of-1}所示。
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=2.5]
+ \draw[step=.5cm, gray, very thin] (-1.2,-1.2) grid (1.2,1.2);
+ \draw[->] (-1.25,0) -- (1.25,0) coordinate (x axis)
+   (0,-1.25) -- (0,1.25) coordinate (y axis);
+ \draw (0,0) circle (1cm);
+ \draw[->, very thick] (0, 0) edge node[below=2pt] {$e^0 = 1$} (1, 0)
+   (0, 0) edge node[above] {$e^{\frac{2\pi}{3}i} = \dfrac{-1 + i\sqrt{3}}{2}$} (120:1cm)
+   (0, 0) edge node[below] {$e^{\frac{4\pi}{3}i} = \dfrac{-1 - i\sqrt{3}}{2}$} (-120:1cm);
+\end{tikzpicture}
+\caption{$x^3 = 1$的三个复数根}
+\label{fig:3rd-root-of-1}
+\end{figure}
+
+类似地，五次分圆方程$x^5 = 1$的五个根均匀分布在复平面的单位圆上，从而构成一个正五边形，如\cref{fig:pentagon-z}所示。只要求出图中的根$x$，则复平面上$x$到1的距离$|x-1|$就是正五边形的边长。五次方程$x^5 - 1 = 0$显然有一个根是$x = 1$。根据笛卡尔定理，$x-1$是多项式$x^5 - 1$的一个因式。利用多项式长除法（或逆向用等比数列求和）可以进行因式分解：
+
+\[
+x^5 - 1 = (x - 1)(x^4 + x^3 + x^2 + x + 1)
+\]
+
+接下来解四次方程$x^4 + x^3 + x^2 + x + 1 = 0$就可以找出\cref{fig:pentagon-z}中的剩余4个顶点。这个四次方程很有特点，只要除以$x^2$就变成一个对称的形式（0不是方程的解，因此$x \ne 0$）：
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[scale=0.3]{img/pentagon-z}
+  \caption{$x^5 = 1$的根在复平面上是正五边形的顶点。}
+ \label{fig:pentagon-z}
+\end{figure}
+
+\[
+x^2 + x + 1 + \frac{1}{x} + \frac{1}{x^2} = 0
+\]
+
+把$x + \dfrac{1}{x}$看成一个整体，并注意到：$(x + \dfrac{1}{x})^2 = x^2 + \dfrac{1}{x^2} + 2$。上面的方程可以化为：
+
+\[
+(x + \frac{1}{x})^2 + (x + \frac{1}{x}) - 1 = 0
+\]
+
+令$y = x + \dfrac{1}{x}$，上述方程就是$y^2 + y - 1 = 0$。解此二次方程得到$y_{1,2} = \dfrac{-1 \pm \sqrt{5}}{2}$。利用欧拉公式，若$x = e^{i\theta}$，则$\dfrac{1}{x} = x^{-1} = e^{-i\theta}$，所以$x, \dfrac{1}{x}$是共轭复数（见\cref{fig:pentagon-z}中的$x$与$x^4 = x^{-1}$）。若$x = a + bi$，则$\dfrac{1}{x} = a - bi$，所以$x + \dfrac{1}{x} = 2a$。同理\cref{fig:pentagon-z}中的$x^2, x^3$也是一对共轭复数，分别对应$e^{\frac{4\pi}{5}i}, e^{\frac{6\pi}{5}i} = e^{-\frac{4\pi}{5}i}$。这样我们就判断出：
+
+\begin{align*}
+x + \dfrac{1}{x} &= \dfrac{-1 + \sqrt{5}}{2} \\
+x^2 + x^3 &= \dfrac{-1 - \sqrt{5}}{2}
+\end{align*}
+
+其中第一个方程本质上是二次方程$x^2 - \dfrac{\sqrt{5} - 1}{2}x + 1 = 0$，利用求根公式得：
+
+\[x_{1, 2} = \dfrac{\frac{\sqrt{5} - 1}{2} \pm i\sqrt{\frac{5 + \sqrt{5}}{2}}}{2}
+\]
+
+它们是一对共轭复数，分别对应\cref{fig:pentagon-z}中的$x, x^4 = x^{-1}$。接下来计算\cref{fig:pentagon-z}中的模$|x - 1|$就知道正五边形的边长了。
+
+\[
+x - 1 = \frac{\frac{\sqrt{5} - 1}{2} + i\sqrt{\frac{5 + \sqrt{5}}{2}}}{2} - 1 = \frac{\sqrt{5} - 5}{4} + i\frac{\sqrt{\frac{5 + \sqrt{5}}{2}}}{2}
+\]
+
+因此：
+
+\[
+|x - 1| = \sqrt{(\frac{\sqrt{5} - 5}{4})^2 + (\frac{\sqrt{\frac{5 + \sqrt{5}}{2}}}{2})^2} = \frac{\sqrt{10 - 2\sqrt{5}}}{2}
+\]
+
+于是作正五边形的问题就转化为：任给长度为1的线段，如何做出长度为$s = \dfrac{\sqrt{10 - 2\sqrt{5}}}{2}$的线段。为了简化问题，我们先求线段$2s$。我们的思路是作一个直角三角形，使其斜边为$2s$。这个三角形的两个直角边不可能都是有理数，否则根据勾股定理，斜边不可能是$\sqrt{10 - 2\sqrt{5}}$这种根号下还有根号的形式。设两个直角边分别是$\sqrt{5} - a$和$b$，然后用勾股定理：
+
+\[
+(\sqrt{5} - a)^2 + b^2 = 5 + a^2 + b^2 - 2a\sqrt{5} = 10 - 2\sqrt{5}
+\]
+
+利用待定系数法，$2a = 2$，所以$a = 1$；代入$5 + a^2 + b^2 = 6 + b^2 = 10$，所以$b = 2$。这样直角边为$\sqrt{5} - 1, 2$的直角三角形的斜边是$2s$。将三角形缩小一半，直角边为$\dfrac{\sqrt{5} - 1}{2}, 1$的直角三角形的斜边就是$s$。另一方面，由于$5 = 4 + 1 = 2^2 + 1^2$，这样就可以用1，2为直角边，作出斜边长$\sqrt{5}$的直角三角形。缩小一半的直角三角形其斜边就是$\dfrac{\sqrt{5}}{2}$，然后再截去$\dfrac{1}{2}$就得到了$\dfrac{\sqrt{5} - 1}{2}$。\cref{fig:pentagon-cons}展示了尺规作正五边形的步骤。最后用求得的边长依次截单位圆五次就得到了正五边形。
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[scale=0.3]{img/pentagon-cons}
+ \caption{作正五边形}
+ \label{fig:pentagon-cons}
+\end{figure}
+
 \begin{Exercise}[label={ex:complex}]
 \Question{给出解二次方程$x^2 - px = q$的几何解释。\label{qn:geometric-quadratic}}
 
@@ -1075,137 +1204,6 @@ z_1z_2 = (a_1 + b_1i)(a_2 + b_2i) = a_1a_2 - b_1b_2 + (a_1b_2 + b_1a_2)i
 
 \epigraph{只在此山中，云深不知处。}{贾岛《寻隐者不遇》}
 
-复数和此前人们认识的数大相径庭。不管是自然数、有理数、无理数，它们都在数轴上有确定的位置。复数却跳出了数轴，来到了复平面。此前的数都是一元的，大小确定，在数轴上的位置确定。复数却是二元的，无论使用实部、虚部表示，模、幅角表示，都需要两个量来确定一个复数。两个复数通常没法比较大小，我们只能比较它们的模的大小。尽管这样奇特，复数彼此之间，复数与实数之间仍然可以计算，并且满足此前的运算定律，包括加法、乘法的交换律，结合率，乘法对加法的分配律。数轴上两个实数$a, b$间的距离是$|a - b|$，复平面上两个复数$z_1 = x_1 + y_1i, z_2 = x_2 + y_2i$间的距离是$|z_1 - z_2|$。这是因为：
-
-\[
-|z_1 - z_2| = |(x_1 - x_2) + (y_1 - y_2)i| = \sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}
-\]
-
-这的确是对应的笛卡尔平面上两点$(x_1, y_1)$与$(x_2, y_2)$间的距离。实数的绝对值满足可乘性，即：$|ab| = |a||b|$；复数的模也满足可乘性$|z_1z_2| = |z_1||z_2|$，这是因为（也可用欧拉公式证明）：
-
-\begin{align*}
-|z_1z_2|^2 &= |(x_1 + y_1i)(x_2 + y_2i)|^2 = |(x_1x_2 - y_1y_2) + (x_1y_2 + y_1x_2)i|^2 \\
-  &= (x_1x_2 - y_1y_2)^2 + (x_1y_2 + y_1x_2)^2 = (x_1^2 + y_1^2)(x_2^2 + y_2^2) && (*) \\
-  &= |z_1|^2|z_2|^2
-\end{align*}
-
-其中(*)是古希腊数学家丢番图最早在研究数论中的平方和时发现的\footnote{丢番图《算术》，卷三，问题19写道：65可以用两种方法分解为平方和$7^2 + 4^2$与$8^2 + 1^2$，这是因为65是13与5的乘积，而它们也都是平方和（$13 = 3^2 + 2^2, 5 = 2^2 + 1^2$）。}。复数打开了一个新世界的大门。它威力无穷，不仅解决了以前的难题，也提出了人们意想不到的问题。
-
-\section{正五边形}
-\label{sec:pentagon-equation}
-
-复数是解方程的利器。我们这里展示如何用复数解决正五边形尺规作图的问题。欧拉公式与棣莫弗公式结合赋予了方程$x^n = 1$以新的几何意义。若复数$z = re^{i\theta}$是方程的一个根，即：
-
-\[
-1 = z^n = (re^{i\theta})^n = r^ne^{in\theta} = r^n(\cos n\theta + i\sin n\theta)
-\]
-
-我们由此得出模$r = 1$，幅角$n\theta = 2k\pi$，其中$k$是整数（这是由于$\sin 2k\pi = 0, \cos 2k\pi = 1$），这样$z$的幅角$\theta = \dfrac{2k\pi}{n}$。于是根可以表示为：$z = 1e^{\frac{2k\pi}{n}i} = e^{\frac{2k\pi}{n}i}$。这在几何上表示复平面单位圆上的$n$个点，如\cref{fig:heptagon-z}所示。
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[scale=0.33]{img/heptagon-z}
-  \caption{$x^n = 1$的解在复平面上是正$n$边形的$n$个顶点。}
- \label{fig:heptagon-z}
-\end{figure}
-
-圆是周期性的，$e^{\frac{2k\pi}{2}}$转动整数圈后与自己重合。$k = 0, 1, 2, \dotsc, n-1$时，$e^{\frac{2kp}{n}i}$是$n$个不同的根。它们的幅角依此是$0, \theta, 2\theta, \dotsc, (n-1)\theta$，把单位圆平均分成了$n$等份。因此方程$x^n = 1$叫做“分圆方程”（cyclotomic equation）。把复平面上这个$n$个根连接起来就构成了正$n$边形。
-
-例如最简单的正多边形是正三角形$n = 3$。$x^3 = 1$有三个复根$1, e^{\frac{2\pi}{3}i}, e^{\frac{4\pi}{3}i} = e^{-\frac{2\pi}{3}i}$。其中：
-
-\[
-e^{\pm \frac{2\pi}{3}i} = \cos (\pm \frac{2\pi}{3}) + i \sin (\pm \frac{2\pi}{3}) = -\frac{1}{2} \pm \frac{\sqrt{3}}{2}i
-\]
-
-我们可以验证$x^3 - 1 = (x - 1)(x^2 + x + 1)$，二次方程$x^2 + x + 1$的两个根的确是$\dfrac{-1 \pm i\sqrt{3}}{2}$。我们也可以用二项式展开直接验证：
-
-\[
-(-\frac{1}{2} \pm \frac{\sqrt{3}}{2}i)^3 = -\frac{1}{8} \pm \frac{3\sqrt{3}}{8}i + \frac{9}{8} \mp \frac{3\sqrt{3}}{8}i = \frac{9-1}{8} = 1
-\]
-
-这三个根构成了单位圆内接正三角形，如\cref{fig:3rd-root-of-1}所示。
-
-\begin{figure}[htbp]
-\centering
-\begin{tikzpicture}[scale=2.5]
- \draw[step=.5cm, gray, very thin] (-1.2,-1.2) grid (1.2,1.2);
- \draw[->] (-1.25,0) -- (1.25,0) coordinate (x axis)
-   (0,-1.25) -- (0,1.25) coordinate (y axis);
- \draw (0,0) circle (1cm);
- \draw[->, very thick] (0, 0) edge node[below=2pt] {$e^0 = 1$} (1, 0)
-   (0, 0) edge node[above] {$e^{\frac{2\pi}{3}i} = \dfrac{-1 + i\sqrt{3}}{2}$} (120:1cm)
-   (0, 0) edge node[below] {$e^{\frac{4\pi}{3}i} = \dfrac{-1 - i\sqrt{3}}{2}$} (-120:1cm);
-\end{tikzpicture}
-\caption{$x^3 = 1$的三个复数根}
-\label{fig:3rd-root-of-1}
-\end{figure}
-
-类似地，五次分圆方程$x^5 = 1$的五个根均匀分布在复平面的单位圆上，从而构成一个正五边形，如\cref{fig:pentagon-z}所示。只要求出图中的根$x$，则复平面上$x$到1的距离$|x-1|$就是正五边形的边长。五次方程$x^5 - 1 = 0$显然有一个根是$x = 1$。根据笛卡尔定理，$x-1$是多项式$x^5 - 1$的一个因式。利用多项式长除法（或逆向用等比数列求和）可以进行因式分解：
-
-\[
-x^5 - 1 = (x - 1)(x^4 + x^3 + x^2 + x + 1)
-\]
-
-接下来解四次方程$x^4 + x^3 + x^2 + x + 1 = 0$就可以找出\cref{fig:pentagon-z}中的剩余4个顶点。这个四次方程很有特点，只要除以$x^2$就变成一个对称的形式（0不是方程的解，因此$x \ne 0$）：
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[scale=0.3]{img/pentagon-z}
-  \caption{$x^5 = 1$的根在复平面上是正五边形的顶点。}
- \label{fig:pentagon-z}
-\end{figure}
-
-\[
-x^2 + x + 1 + \frac{1}{x} + \frac{1}{x^2} = 0
-\]
-
-把$x + \dfrac{1}{x}$看成一个整体，并注意到：$(x + \dfrac{1}{x})^2 = x^2 + \dfrac{1}{x^2} + 2$。上面的方程可以化为：
-
-\[
-(x + \frac{1}{x})^2 + (x + \frac{1}{x}) - 1 = 0
-\]
-
-令$y = x + \dfrac{1}{x}$，上述方程就是$y^2 + y - 1 = 0$。解此二次方程得到$y_{1,2} = \dfrac{-1 \pm \sqrt{5}}{2}$。利用欧拉公式，若$x = e^{i\theta}$，则$\dfrac{1}{x} = x^{-1} = e^{-i\theta}$，所以$x, \dfrac{1}{x}$是共轭复数（见\cref{fig:pentagon-z}中的$x$与$x^4 = x^{-1}$）。若$x = a + bi$，则$\dfrac{1}{x} = a - bi$，所以$x + \dfrac{1}{x} = 2a$。同理\cref{fig:pentagon-z}中的$x^2, x^3$也是一对共轭复数，分别对应$e^{\frac{4\pi}{5}i}, e^{\frac{6\pi}{5}i} = e^{-\frac{4\pi}{5}i}$。这样我们就判断出：
-
-\begin{align*}
-x + \dfrac{1}{x} &= \dfrac{-1 + \sqrt{5}}{2} \\
-x^2 + x^3 &= \dfrac{-1 - \sqrt{5}}{2}
-\end{align*}
-
-其中第一个方程本质上是二次方程$x^2 - \dfrac{\sqrt{5} - 1}{2}x + 1 = 0$，利用求根公式得：
-
-\[x_{1, 2} = \dfrac{\frac{\sqrt{5} - 1}{2} \pm i\sqrt{\frac{5 + \sqrt{5}}{2}}}{2}
-\]
-
-它们是一对共轭复数，分别对应\cref{fig:pentagon-z}中的$x, x^4 = x^{-1}$。接下来计算\cref{fig:pentagon-z}中的模$|x - 1|$就知道正五边形的边长了。
-
-\[
-x - 1 = \frac{\frac{\sqrt{5} - 1}{2} + i\sqrt{\frac{5 + \sqrt{5}}{2}}}{2} - 1 = \frac{\sqrt{5} - 5}{4} + i\frac{\sqrt{\frac{5 + \sqrt{5}}{2}}}{2}
-\]
-
-因此：
-
-\[
-|x - 1| = \sqrt{(\frac{\sqrt{5} - 5}{4})^2 + (\frac{\sqrt{\frac{5 + \sqrt{5}}{2}}}{2})^2} = \frac{\sqrt{10 - 2\sqrt{5}}}{2}
-\]
-
-于是作正五边形的问题就转化为：任给长度为1的线段，如何做出长度为$s = \dfrac{\sqrt{10 - 2\sqrt{5}}}{2}$的线段。为了简化问题，我们先求线段$2s$。我们的思路是作一个直角三角形，使其斜边为$2s$。这个三角形的两个直角边不可能都是有理数，否则根据勾股定理，斜边不可能是$\sqrt{10 - 2\sqrt{5}}$这种根号下还有根号的形式。设两个直角边分别是$\sqrt{5} - a$和$b$，然后用勾股定理：
-
-\[
-(\sqrt{5} - a)^2 + b^2 = 5 + a^2 + b^2 - 2a\sqrt{5} = 10 - 2\sqrt{5}
-\]
-
-利用待定系数法，$2a = 2$，所以$a = 1$；代入$5 + a^2 + b^2 = 6 + b^2 = 10$，所以$b = 2$。这样直角边为$\sqrt{5} - 1, 2$的直角三角形的斜边是$2s$。将三角形缩小一半，直角边为$\dfrac{\sqrt{5} - 1}{2}, 1$的直角三角形的斜边就是$s$。另一方面，由于$5 = 4 + 1 = 2^2 + 1^2$，这样就可以用1，2为直角边，作出斜边长$\sqrt{5}$的直角三角形。缩小一半的直角三角形其斜边就是$\dfrac{\sqrt{5}}{2}$，然后再截去$\dfrac{1}{2}$就得到了$\dfrac{\sqrt{5} - 1}{2}$。\cref{fig:pentagon-cons}展示了尺规作正五边形的步骤。最后用求得的边长依次截单位圆五次就得到了正五边形。
-
-\begin{figure}[htbp]
- \centering
- \includegraphics[scale=0.3]{img/pentagon-cons}
- \caption{作正五边形}
- \label{fig:pentagon-cons}
-\end{figure}
-
-\section{费马大定理与复数}
-
 著名的费马大定理断言当$n \geq 3$时，$x^n + y^n = z^n$没有正整数解。尽管费马“抱怨”页边太窄，写不下他的证明，但他的确后来给出了$n=4$时$x^4 + y^4 = z^4$无解的证明。并且他还在这个过程中发展出了自己非常自豪的“无穷递降法”（Infinite descent）。在此后的200年间，数学家们一直沿着这条路摸索费马大定理的证明\citepage[40-42页]{Edward-1977}。费马发现他只需要证明如下结论就足够了\citepage[247页]{Hardy2009}。
 
 \begin{lemma}
@@ -1250,7 +1248,9 @@ Z < Z^2 = a^2 + b^2 = m < m^2 + n^2 = z
  \label{fig:infinite-descent}
 \end{figure}
 
-费马之后大约一个世纪，欧拉在1755年写给哥德巴赫的信中，给出了$n = 3$时$x^3 + y^3 = z^3$没有正整数解的证明\citepage[239页]{Weil-1983}。尽管这个证明有漏洞，但欧拉本质上使用了复数攻克问题。欧拉的证明有2页，读者朋友们只要集中精神就能跟上思路，看懂并欣赏这个证明。
+\section{费马大定理与复数}
+
+费马之后大约一个世纪，欧拉在1755年写给哥德巴赫的信中，给出了$n = 3$时$x^3 + y^3 = z^3$没有正整数解的证明\citepage[239页]{Weil-1983}。尽管这个证明有缺陷，但欧拉本质上使用了复数攻克问题。欧拉的证明有2页，读者朋友们只要集中精神就能跟上思路，看懂并欣赏这个证明。
 
 \begin{proof}
 欧拉也使用了无穷递降法，假设$x^3 + y^3 = z^3$有解。和费马一样，他假设$x, y, z$彼此互素，并且其中有且仅有一个是偶数。首先是$x, y$是奇数，$z$是偶数的情况。此时$x \pm y$都是偶数，设$x + y = 2p, x - y = 2q$，解此二元一次方程组得：$x = p + q, y = p - q$。因为$x, y$都是奇数，所以$p, q$奇偶不同。并且因为$x, y$互素，所以$p, q$也互素（因为$p, q$的公约数$d$也整除$p \pm q$，所以也是$x, y$的公约数）。进一步，可以认为$p, q > 0$（否则交换$x, y$），这样：
@@ -1327,7 +1327,7 @@ X^3 + Y^3 = 2b + a - b = a + b = Z^3
 后面的证明就和(a)一样了：通过正整数$Z < z$得到无穷递降，导出矛盾。
 \end{proof}
 
-但欧拉的证明有一处漏洞，问题出现在\cref{eq:Euler-gap}这一步。我们屡次说因为$p, q$互素，它们的乘积$pq$是一个平方数，所以它们每个都是平方数；它们的乘积$pq$是立方数，所以每个都是立方数；它们的乘积$pq$是$n$次方数，所以每个都是$n$次方数。这个结论对于整数没有问题，因为算术基本定理保证了这一点（见\cref{qn:coprime-product-as-square}）。但是欧拉一旦把它推广到复数：$(p + i\sqrt{3}q)(p - i\sqrt{3}q)$是立方数，则$p \pm i\sqrt{3}q$一定是立方数么？这个立方数会不会有别的分解方式？这个问题本质上是问：算术基本定理对复数成立么？有一个坏消息和一个好消息。好消息是，算术基本定理对于欧拉证明$n = 3$的情形成立；坏消息是，算术基本定理在复数上可能不成立，例如：
+但欧拉的证明有一处缺陷，问题出现在\cref{eq:Euler-gap}这一步。我们屡次说因为$p, q$互素，它们的乘积$pq$是一个平方数，所以它们每个都是平方数；它们的乘积$pq$是立方数，所以每个都是立方数；它们的乘积$pq$是$n$次方数，所以每个都是$n$次方数。这个结论对于整数没有问题，因为算术基本定理保证了这一点（见\cref{qn:coprime-product-as-square}）。但是欧拉一旦把它推广到复数：$(p + i\sqrt{3}q)(p - i\sqrt{3}q)$是立方数，则$p \pm i\sqrt{3}q$一定是立方数么？这个立方数会不会有别的分解方式？这个问题本质上是问：算术基本定理对复数成立么？有一个坏消息和一个好消息。好消息是，算术基本定理对于欧拉证明$n = 3$的情形成立；坏消息是，算术基本定理在复数上可能不成立，例如：
 
 \[
 6 = 2 \times 3 = (1 + i\sqrt{5})(1 - i\sqrt{5})
@@ -1389,7 +1389,7 @@ a_n x^n + a_{n-1} x^{n-1} + \dotsb + a_1 x + a_0 = 0
 x^n + a_{n-1} x^{n-1} + \dotsb + a_1 x + a_0 = 0
 \]
 
-的解叫做代数整数（algebraic integer），这样的方程叫做“首一方程”（monic equation）。代数整数既包括普通的整数（又叫有理整数rational integer，见\cref{qn:rational-solution-is-integral}），也包括了更复杂的整数。为了避免胡子眉毛一把抓，我们从最简单的二次首一方程开始探索代数整数。当一次项是偶数时，方程$x^2 - 2ax + c = 0$的解是$a \pm \sqrt{a^2 - c}$。特别地，当$a^2 < c$并且$c - a^2 = b^2$是完全平方数时，解的形式是$a \pm bi$。高斯最早对这种形式的数进行研究，今天我们把这种数叫做“高斯整数”，用记号$\mathbb{Z}[i]$表示，这个记号暗示了我们把虚数单位$i$加入到整数$\mathbb{Z}$中\footnote{符号$\mathbb{Z}[x]$叫做整数环$\mathbb{Z}$上的一元多项式，它由形如$a_n x^n + a_{n-1} x^{n-1} + \dotsb + a_1 x + a_0$的元素组成，其中$a_0, a_1, \dotsc, a_n \in \mathbb{Z}$是整数。}。
+的解叫做代数整数（algebraic integer），这样的方程叫做“首一方程”（monic equation）。代数整数既包括普通的整数（又叫有理整数rational integer，见\cref{qn:rational-solution-is-integral}），也包括了更复杂的整数。为了避免胡子眉毛一把抓，我们从最简单的二次首一方程开始探索代数整数。当一次项是偶数时，方程$x^2 - 2ax + a^2 + b^2 = 0$的解是$a \pm bi$。高斯最早对这种形式的数进行研究，今天我们把这种数叫做“高斯整数”，用记号$\mathbb{Z}[i]$表示，这个记号暗示了我们把虚数单位$i$加入到整数$\mathbb{Z}$中\footnote{符号$\mathbb{Z}[x]$叫做整数环$\mathbb{Z}$上的一元多项式，它由形如$a_n x^n + a_{n-1} x^{n-1} + \dotsb + a_1 x + a_0$的元素组成，其中$a_0, a_1, \dotsc, a_n \in \mathbb{Z}$是整数。}。
 
 为了区分代数整数和普通有理整数，我们用希腊字母$\alpha, \beta, \gamma, \dotsc$表示代数整数，用英文字母$a, b, c, \dotsc$表示有理整数（附录\ref{ch:greek-letters}有希腊字母的读音）。和普通整数类似，我们很容易验证高斯整数之间的$+, -, \times$运算结果仍然是高斯整数，但除法不一定（正如同普通有理整数之间的除法结果不一定是有理整数）。利用这一点就能定义整除了。如果高斯整数$\alpha = \beta\gamma$是另外两个高斯整数的积，我们称$\beta$整除$\alpha$。接下来的问题有些棘手：(1) 怎样定义带余数的除法？(2) 怎样定义高斯整数中的素数？
 
@@ -1598,6 +1598,25 @@ p^2 = N(p) = N(a+bi)N(c+di) = (a^2 + b^2)(c^2 + d^2)
 
 \subsection{二次整数}
 
+高斯整数是二次首一代数方程中最简单的情况。稍微改变一下方程，$x^2 - 2ax + (a^2 + mb^2) = 0$的解是$a \pm b\sqrt{-m}$，其中$m$不含任何平方因子。这种形式的代数整数，是二次方程的解，叫做“二次整数”，用$\mathbb{Z}[\sqrt{-m}]$表示。例如$\mathbb{Z}[\sqrt{-2}], \mathbb{Z}[\sqrt{-3}]$等。我们由此看出欧拉在证明费马大定理$n=3$时的分解：
+
+\[
+p^2 + 3q^2 = (p + q\sqrt{-3})(q - q\sqrt{-3})
+\]
+
+是关于二次整数$\mathbb{Z}[\sqrt{-3}]$的。高斯对$\mathbb{Z}[i]$的处理为我们树立了样板：(a) 先定义范数，(b) 然后扩展欧几里得算法，(c) 找出素数, (d) 最后判断算术基本定理是否成立。我们先从$\mathbb{Z}[\sqrt{-2}]$开始热身一下。
+
+受共轭复数的启发，我们可以把高斯整数的范数定义扩展过来：
+
+\begin{definition}
+二次整数$\xi = a + b\sqrt{-m}$的范数定义为$N(\xi) = \xi\overline{\xi} = (a + b\sqrt{-m})(a - b\sqrt{-m}) = a^2 + mb^2$
+\end{definition}
+
+注意到这恰好是二次方程的常数项，这并非巧合（见\cref{qn:quadratic-norm}）。对于$\mathbb{Z}[\sqrt{-2}]$，范数为$a^2 + 2b^2$。单位元的范数为1，只可能是$a^2 = 1, b = 0$，即$\mu = \pm 1$。
+
+
+我们把这套方法应用到$\mathbb{Z}[\sqrt{-3}]$上，如果算术基本定理成立，唯一分解就能保证欧拉处理的正确性，从而为费马大定理$n = 3$画上句号。
+
 \subsection{理想}
 
 \begin{Exercise}[label={ex:algebraic}]
@@ -1606,6 +1625,8 @@ p^2 = N(p) = N(a+bi)N(c+di) = (a^2 + b^2)(c^2 + d^2)
 \Question{证明若首一代数方程$x^n + a_{n-1} x^{n-1} + \dotsb + a_1 x + a_0 = 0$存在有理解，则这个解必定是整数。 \label{qn:rational-solution-is-integral}}
 
 \Question{证明范数是可乘的。\label{qn:norm-is-multiplicative}}
+
+\Question{说明二次整数范数是对应二次方程的常数项。\label{qn:quadratic-norm}}
 \end{Exercise}
 
 \begin{Answer}[ref={ex:algebraic}]
@@ -1613,7 +1634,15 @@ p^2 = N(p) = N(a+bi)N(c+di) = (a^2 + b^2)(c^2 + d^2)
 
 \Question{证明若首一代数方程$x^n + a_{n-1} x^{n-1} + \dotsb + a_1 x + a_0 = 0$存在有理解，则这个解必定是整数。}
 
-\Question{证明范数是可乘的。}
+\Question{证明范数是可乘的。
+
+利用共轭复数的可乘性。
+}
+
+\Question{说明二次整数范数是对应二次方程的常数项。
+
+韦达定理
+}
 \end{Answer}
 
 \ifx\wholebook\relax \else
