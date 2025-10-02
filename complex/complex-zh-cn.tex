@@ -1327,13 +1327,16 @@ X^3 + Y^3 = 2b + a - b = a + b = Z^3
 后面的证明就和(a)一样了：通过正整数$Z < z$得到无穷递降，导出矛盾。
 \end{proof}
 
-但欧拉的证明有一处缺陷，问题出现在\cref{eq:Euler-gap}这一步。我们屡次说因为$p, q$互素，它们的乘积$pq$是一个平方数，所以它们每个都是平方数；它们的乘积$pq$是立方数，所以每个都是立方数；它们的乘积$pq$是$n$次方数，所以每个都是$n$次方数。这个结论对于整数没有问题，因为算术基本定理保证了这一点（见\cref{qn:coprime-product-as-square}）。但是欧拉一旦把它推广到复数：$(p + i\sqrt{3}q)(p - i\sqrt{3}q)$是立方数，则$p \pm i\sqrt{3}q$一定是立方数么？这个立方数会不会有别的分解方式？这个问题本质上是问：算术基本定理对复数成立么？有一个坏消息和一个好消息。好消息是，算术基本定理对于欧拉证明$n = 3$的情形成立；坏消息是，算术基本定理在复数上可能不成立，例如：
+但欧拉的证明有一处缺陷，问题出现在\cref{eq:Euler-gap}这一步。我们屡次说因为$p, q$互素，它们的乘积$pq$是一个平方数，所以它们每个都是平方数；它们的乘积$pq$是立方数，所以每个都是立方数；它们的乘积$pq$是$n$次方数，所以每个都是$n$次方数。这个结论对于整数没有问题，因为算术基本定理保证了这一点（见\cref{qn:coprime-product-as-square}）。但是欧拉一旦把它推广到复数：$(p + i\sqrt{3}q)(p - i\sqrt{3}q)$是立方数，则$p \pm i\sqrt{3}q$一定是立方数么？这个立方数会不会有别的分解方式？这个问题本质上是问：算术基本定理对复数成立么？有一个坏消息和一个好消息。好消息是，算术基本定理对于欧拉证明的特殊情形成立；坏消息是，算术基本定理在复数上可能不成立，例如：
 
-\[
-6 = 2 \times 3 = (1 + i\sqrt{5})(1 - i\sqrt{5})
-\]
+\begin{align*}
+4 &= 2 \times 2 = (1 + i\sqrt{3})(1 - i\sqrt{3}) & 6 &= 2 \times 3 = (1 + i\sqrt{5})(1 - i\sqrt{5})
+\end{align*}
 
-其中2, 3是素数，我们后面会证明$1 \pm i\sqrt{5}$也是“素数”!以事后诸葛亮的角度看，欧拉在1755年写信给哥德巴赫的时候并没有意识到这个问题，但使用他在1747年给出的一个方法可以证明如下结论：
+
+
+
+其中2, 3是素数，我们后面会证明$1 \pm i\sqrt{3}, 1 \pm i\sqrt{5}$也是“素数”!以事后诸葛亮的角度看，欧拉在1755年写信给哥德巴赫的时候并没有意识到这个问题，但使用他在1747年给出的一个方法可以证明如下结论：
 
 \begin{lemma}[欧拉]
 如果$a^2 + 3b^2$是一个立方数，其中$a, b$互素，则存在整数$p, q$使得$a + b\sqrt{-3} = (p + q\sqrt{-3})^3$。
@@ -1641,7 +1644,7 @@ N(\alpha - \rho\beta) & = c^2 = a^2 + b^2  && \text{勾股定理} \\
 
 \begin{align*}
 N(\alpha - \rho \beta) &= c^2 = a^2 + b^2  && \text{勾股定理} \\
-  &\leq (\frac{\sqrt{3}}{2}|\beta|)^2 + (\frac{1}{2}|\beta|)^2 = |\beta|^2
+  &\leq (\frac{\sqrt{3}}{2}|\beta|)^2 + (\frac{1}{2}|\beta|)^2 = |\beta|^2 && a, b \leq \text{长宽的一半}
 \end{align*}
 
 \begin{figure}[htbp]
@@ -1651,7 +1654,32 @@ N(\alpha - \rho \beta) &= c^2 = a^2 + b^2  && \text{勾股定理} \\
  \label{fig:Z-sqrt-3}
 \end{figure}
 
-并不一定是$<$。如图中所示，当$\alpha$落在矩中心时，不存在$\gamma$使得$N(\gamma) < N(\beta)$。因此欧几里得算法在$\mathbb{Z}[\sqrt{-3}]$上不成立，算术基本定理了不成立，分解不一定唯一。这就解释了$4 = 2 \times 2 = (1 + i\sqrt{3})(1 - i\sqrt{3})$。但欧拉在证明费马大定理$n = 3$时的结论与这个反例有所不同：当$a, b$互素，且$a^2 + 3b^2$是立方数时，互素的$(a + bi\sqrt{3})(a - bi\sqrt{3})$每个都是立方数。在这个反例中，4不是立方数。即使把这个反例扩大16倍构造立方数$4^3 = 8 \times 8 = (4 + 4i\sqrt{3})(4 - 4i\sqrt{3})$也不符合，此时$p = q = 4$，它们不互素。这不符合欧拉的条件，也许我们还有办法挽回。
+并不一定是$<$。如图中所示，当$\alpha$落在矩形中心时，不存在$\gamma$使得$N(\gamma) < N(\beta)$。因此欧几里得算法在$\mathbb{Z}[\sqrt{-3}]$上不成立，算术基本定理了不成立，分解不一定唯一。这就解释了$4 = 2 \times 2 = (1 + i\sqrt{3})(1 - i\sqrt{3})$。这真是太遗憾了！如果$\alpha$落在矩形中心以外的任何地方都能保证它到最近顶点的距离严格$< |\beta|$，只有中心是个例外。有没有办法补救呢？如\cref{fig:Z-omega}所示，这种情况下矩形的中心$\notin \mathbb{Z}[\sqrt{-3}]$。因而对所有的$\alpha$，都存在$\gamma$使得$N(\gamma) < N(\alpha)$。这两种情况有什么区别呢?似乎不同的$\beta$导致不同的结果。
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[scale=0.3]{img/z-omega}
+ \caption{当$\beta = 2 + \sqrt{3}i$时，任何$\alpha$都不会落在$\rho \beta$网格的中心。此时可以找到$\gamma$使得$N(\gamma) < N(\beta)$。}
+ \label{fig:Z-omega}
+\end{figure}
+
+让我们来分析一下，什么情况下矩形的中心不是二次整数。如\cref{fig:Z-sqrt-3c}所示，考虑任意$\rho \beta$构成的矩形，左下角$A$对应向量$\rho \beta$，根据复数加法的几何意义，右下角$C$对应向量$\rho \beta + \beta$，左上角$C'$对应$\rho \beta + i\sqrt{3}\beta$，即把向量$\beta$旋转90度后放大$\sqrt{3}$倍，再加到$C$上。矩形的中心就是对角线$CC'$的中心，对应向量：
+
+\[
+\frac{C + C'}{2} = \frac{\rho \beta + \beta + \rho \beta + i\sqrt{3}\beta}{2} = \rho \beta + \frac{1}{2}\beta + \frac{\sqrt{3}}{2}i\beta
+\]
+
+由于$\rho \beta \in \mathbb{Z}[\sqrt{-3}]$，所以当$\dfrac{1}{2}\beta + \dfrac{\sqrt{3}}{2}i\beta \notin \mathbb{Z}[\sqrt{-3}]$时，矩形的中心不是二次整数。
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[scale=0.3]{img/z-sqrt-3c}
+ \caption{$\rho \beta$组成的某个矩形及其中心。}
+ \label{fig:Z-sqrt-3c}
+\end{figure}
+
+
+但欧拉在证明费马大定理$n = 3$时的结论与这个反例有所不同：当$a, b$互素，且$a^2 + 3b^2$是立方数时，互素的$(a + bi\sqrt{3})(a - bi\sqrt{3})$每个都是立方数。在这个反例中，4不是立方数。即使把这个反例扩大16倍构造立方数$4^3 = 8 \times 8 = (4 + 4i\sqrt{3})(4 - 4i\sqrt{3})$也不符合，此时$p = q = 4$，它们不互素。这不符合欧拉的条件，也许我们还有办法挽回。
 
 \section{爱森斯坦整数}
 
