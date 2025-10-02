@@ -1669,8 +1669,6 @@ N(\alpha - \rho \beta) &= c^2 = a^2 + b^2  && \text{勾股定理} \\
 \frac{C + C'}{2} = \frac{\rho \beta + \beta + \rho \beta + i\sqrt{3}\beta}{2} = \rho \beta + \frac{1}{2}\beta + \frac{\sqrt{3}}{2}i\beta
 \]
 
-由于$\rho \beta \in \mathbb{Z}[\sqrt{-3}]$，所以当$\dfrac{1}{2}\beta + \dfrac{\sqrt{3}}{2}i\beta \notin \mathbb{Z}[\sqrt{-3}]$时，矩形的中心不是二次整数。
-
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.3]{img/z-sqrt-3c}
@@ -1678,16 +1676,22 @@ N(\alpha - \rho \beta) &= c^2 = a^2 + b^2  && \text{勾股定理} \\
  \label{fig:Z-sqrt-3c}
 \end{figure}
 
+由于$\rho \beta \in \mathbb{Z}[\sqrt{-3}]$，所以当$\dfrac{1}{2}\beta + \dfrac{\sqrt{3}}{2}i\beta \notin \mathbb{Z}[\sqrt{-3}]$时，矩形的中心不是二次整数。令$\beta = a + bi\sqrt{3}$带入：
 
-但欧拉在证明费马大定理$n = 3$时的结论与这个反例有所不同：当$a, b$互素，且$a^2 + 3b^2$是立方数时，互素的$(a + bi\sqrt{3})(a - bi\sqrt{3})$每个都是立方数。在这个反例中，4不是立方数。即使把这个反例扩大16倍构造立方数$4^3 = 8 \times 8 = (4 + 4i\sqrt{3})(4 - 4i\sqrt{3})$也不符合，此时$p = q = 4$，它们不互素。这不符合欧拉的条件，也许我们还有办法挽回。
+\[
+\frac{a + bi\sqrt{3}}{2} + \frac{(a + bi\sqrt{3})i\sqrt{3}}{2} = \frac{a - 3b}{2} + \frac{a + b}{2}i\sqrt{3}
+\]
 
-\section{爱森斯坦整数}
+如果$a-3b$或$a + b$是奇数，则矩形中心不是二次整数，此时必有$a, b$的奇偶不同。反之，如果$a, b$奇偶相同，矩形中心就是二次整数，欧几里得算法就会失效。在反例$4 = 2 \times 2 = (1 + i\sqrt{3})(1 - i\sqrt{3})$中，$a = b = 1$都是奇数。而在\cref{fig:Z-omega}中，$\beta = 2 + i\sqrt{3}$，其中$a = 2, b=1$奇偶不同，$\alpha$不可能是矩形中心，因此存在欧几里得算法，存在唯一分解。欧拉在证明费马大定理$n=3$时，的的确确要求$a, b$奇偶不同，这样就保证了唯一分解。所以当$a^2 + 3b^2$是立方数时，互素的$(a + bi\sqrt{3})(a - bi\sqrt{3})$每个都是立方数（\cref{qn:coprime-of-conjugates}要求证明$a \pm bi\sqrt{3}$互素）。
 
-高斯整数是分布在正方形格子上的复数，爱森斯坦在1844年研究了分布在正三角形格子上的复数。今天我们把这样的复数叫做爱森斯坦整数。
+\index{爱森斯坦整数}
+这样我们就给费马大定理$n=3$划上了句号。关于$mathbb{Z}[\sqrt{-3}]$还有后继的故事。高斯整数是分布在正方形格子上的复数，爱森斯坦在1844年研究了分布在正三角形格子上的复数。今天我们把这样的复数叫做爱森斯坦整数。爱森斯坦发现很简单的首一二次方程$x^2 + x + 1 = 0$有两个解$\omega = \dfrac{-1}{2} \pm \dfrac{i\sqrt{3}}{2}$。根据代数整数的定义，尽管带有$\dfrac{1}{2}$，它们都是代数整数！更一般地，首一二次代数方程$x^2 - (2a - b)x + (a^2 - ab + b^2)$的解为$a + b \omega$。他们构成了爱森斯坦整数$\mathbb{Z}[\omega]$。爱森斯坦进一步定义范数为$N(a + b\omega) = a^2 -ab + b^2$（见\cref{qn:norm-of-z-omega}），并证明了欧几里得算法在$\mathbb{Z}[\omega]$上存在，从而唯一分解定理成立。而$mathbb{Z}[\sqrt{-3}]$只不过是$\mathbb{Z}[\omega]$的一个子集。
 
 \begin{mdframed}
 爱森斯坦简介
 \end{mdframed}
+
+算术基本定理在高斯整数和$\mathbb{Z}[\sqrt{-3}]$上成立是幸运的。从$\mathbb{Z}[\sqrt{-3}]$之后，不再有唯一分解，我们已经看到了$\mathbb{Z}[\sqrt{-5}]$上的反例$6 = 2 \times 3 = (1 + i\sqrt{5})(1 - i\sqrt{5})$。库默尔为此引入了理想数来挽救唯一分解，这在戴德金手中发展成了抽象武器——理想。
 
 \section{理想}
 
@@ -1699,6 +1703,10 @@ N(\alpha - \rho \beta) &= c^2 = a^2 + b^2  && \text{勾股定理} \\
 \Question{证明范数是可乘的。\label{qn:norm-is-multiplicative}}
 
 \Question{说明二次整数范数是对应二次方程的常数项。\label{qn:quadratic-norm}}
+
+\Question{如果$a, b$互素，证明共轭的二次整数$a \pm bi\sqrt{m}$互素。\label{qn:coprime-of-conjugates}}
+
+\Question{从范数的共轭定义说明爱森斯坦整数的范数为$a^2 - ab + b^2$。\label{qn:norm-of-z-omega}}
 \end{Exercise}
 
 \begin{Answer}[ref={ex:algebraic}]
@@ -1715,6 +1723,13 @@ N(\alpha - \rho \beta) &= c^2 = a^2 + b^2  && \text{勾股定理} \\
 
 韦达定理
 }
+
+\Question{如果$a, b$互素，证明共轭的二次整数$a \pm bi\sqrt{m}$互素。
+
+let $d = (a, b), z = a + bi\sqrt{m}, d | z \pm \overline{z}$ this gives $d | 2a, d | 2bi\sqrt{m}$, hence $d$ divides both $a, b$, which must be 1.
+}
+
+\Question{从范数的共轭定义说明爱森斯坦整数的范数为$a^2 - ab + b^2$。}
 \end{Answer}
 
 \ifx\wholebook\relax \else
