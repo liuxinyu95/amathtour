@@ -1685,7 +1685,7 @@ N(\alpha - \rho \beta) &= c^2 = a^2 + b^2  && \text{勾股定理} \\
 如果$a-3b$或$a + b$是奇数，则矩形中心不是二次整数，此时必有$a, b$的奇偶不同。反之，如果$a, b$奇偶相同，矩形中心就是二次整数，欧几里得算法就会失效。在反例$4 = 2 \times 2 = (1 + i\sqrt{3})(1 - i\sqrt{3})$中，$a = b = 1$都是奇数。而在\cref{fig:Z-omega}中，$\beta = 2 + i\sqrt{3}$，其中$a = 2, b=1$奇偶不同，$\alpha$不可能是矩形中心，因此存在欧几里得算法，存在唯一分解。欧拉在证明费马大定理$n=3$时，的的确确要求$a, b$奇偶不同，这样就保证了唯一分解。所以当$a^2 + 3b^2$是立方数时，互素的$(a + bi\sqrt{3})(a - bi\sqrt{3})$每个都是立方数（\cref{qn:coprime-of-conjugates}要求证明$a \pm bi\sqrt{3}$互素）。
 
 \index{爱森斯坦整数}
-这样我们就给费马大定理$n=3$划上了句号。关于$mathbb{Z}[\sqrt{-3}]$还有后继的故事。高斯整数是分布在正方形格子上的复数，爱森斯坦在1844年研究了分布在正三角形格子上的复数。今天我们把这样的复数叫做爱森斯坦整数。爱森斯坦发现很简单的首一二次方程$x^2 + x + 1 = 0$有两个解$\omega = \dfrac{-1}{2} \pm \dfrac{i\sqrt{3}}{2}$。根据代数整数的定义，尽管带有$\dfrac{1}{2}$，它们都是代数整数！更一般地，首一二次代数方程$x^2 - (2a - b)x + (a^2 - ab + b^2)$的解为$a + b \omega$。他们构成了爱森斯坦整数$\mathbb{Z}[\omega]$。爱森斯坦进一步定义范数为$N(a + b\omega) = a^2 -ab + b^2$（见\cref{qn:norm-of-z-omega}），并证明了欧几里得算法在$\mathbb{Z}[\omega]$上存在，从而唯一分解定理成立。而$mathbb{Z}[\sqrt{-3}]$只不过是$\mathbb{Z}[\omega]$的一个子集。
+这样我们就给费马大定理$n=3$划上了句号。关于$\mathbb{Z}[\sqrt{-3}]$还有后继的故事。高斯整数是分布在正方形格子上的复数，爱森斯坦在1844年研究了分布在正三角形格子上的复数。今天我们把这样的复数叫做爱森斯坦整数。爱森斯坦发现很简单的首一二次方程$x^2 + x + 1 = 0$有两个解$\omega = \dfrac{-1}{2} \pm \dfrac{i\sqrt{3}}{2}$。根据代数整数的定义，尽管带有$\dfrac{1}{2}$，它们都是代数整数！更一般地，首一二次代数方程$x^2 - (2a - b)x + (a^2 - ab + b^2)$的解为$a + b \omega$。他们构成了爱森斯坦整数$\mathbb{Z}[\omega]$。爱森斯坦进一步定义范数为$N(a + b\omega) = a^2 -ab + b^2$（见\cref{qn:norm-of-z-omega}），并证明了欧几里得算法在$\mathbb{Z}[\omega]$上存在，从而唯一分解定理成立。而$\mathbb{Z}[\sqrt{-3}]$只不过是$\mathbb{Z}[\omega]$的一个子集。
 
 \begin{mdframed}
 爱森斯坦简介
@@ -1707,6 +1707,13 @@ N(\alpha - \rho \beta) &= c^2 = a^2 + b^2  && \text{勾股定理} \\
 \Question{如果$a, b$互素，证明共轭的二次整数$a \pm bi\sqrt{m}$互素。\label{qn:coprime-of-conjugates}}
 
 \Question{从范数的共轭定义说明爱森斯坦整数的范数为$a^2 - ab + b^2$。\label{qn:norm-of-z-omega}}
+
+\Question{证明爱森斯坦整数的范数非负。}
+
+\Question{试画出爱森斯坦整数$\rho \beta$的格点。}
+
+\Question{根据爱森斯坦整数的格点，证明欧几里得算法存在。}
+
 \end{Exercise}
 
 \begin{Answer}[ref={ex:algebraic}]
@@ -1730,6 +1737,13 @@ let $d = (a, b), z = a + bi\sqrt{m}, d | z \pm \overline{z}$ this gives $d | 2a,
 }
 
 \Question{从范数的共轭定义说明爱森斯坦整数的范数为$a^2 - ab + b^2$。}
+
+\Question{证明爱森斯坦整数的范数非负。}
+
+\Question{试画出爱森斯坦整数$\rho \beta$的格点。}
+
+\Question{根据爱森斯坦整数的格点，证明欧几里得算法存在。}
+
 \end{Answer}
 
 \ifx\wholebook\relax \else
