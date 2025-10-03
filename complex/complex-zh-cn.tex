@@ -1695,6 +1695,39 @@ N(\alpha - \rho \beta) &= c^2 = a^2 + b^2  && \text{勾股定理} \\
 
 \section{理想}
 
+这是北京市某区高中一年级数学第一课《集合》的一道习题。
+
+\begin{mdframed}
+若非空数集$I, P$满足：
+
+\begin{enumerate}[(i)]
+\item 对任意的$x \in I$，有$x \in P$；
+\item 对任意的$x, y \in I$，有$x + y \in I$；
+\item 对任意的$x \in I$且对任意的$I \in P$，有$xy \in I$；
+\end{enumerate}
+
+则称$I$是$P$的“理想子集”。给出下列四个结论：
+
+\begin{enumerate}[(a)]
+%%   \renewcommand{\labelenumi}{\textcircled{\theenumi}}
+\item 若$I = \{2k | k \in \mathbb{Z} \}$，则$I$是$\mathbb{Z}$的“理想子集”；
+\item 若$I$是$\mathbb{R}$的“理想子集”，且存在非零实数$a \in I$，则$I = \mathbb{R}$；
+\item 若$I_1, I_2$是$P$的“理想子集”，则$I_1 \cup I_2$也是$P$的“理想子集”；
+\item 若$I_1, I_2$是$P$的“理想子集”，则$I_1 \cap I_2$也是$P$的“理想子集”。
+\end{enumerate}
+
+其中正确结论的序号是$\underline{\qquad \qquad}$
+
+\end{mdframed}
+
+这道题目只用最基本的集合论知识就能解答。其中第(i)条性质说$I$是$P$的子集；第(ii)条性质说$I$中的加法是封闭的，即$I$中的任何两个数的和还在$I$中；第(iii)条最抽象，它说用$P$中的任何$y$去缩放$I$中的任何$x$，结果$xy$还在$I$中。形象地说就是$I$对于缩放$P$封闭。我们接下来看4个选项。选项(a)中的$I$是全体偶数，任何偶数都是整数，所以(i)成立；偶数加偶数还是偶数，所以(ii)成立；偶数乘以任何整数还是偶数，所以(iii)成立。这样偶数的确是整数的“理想子集”，(a)正确。选项(b)抽象不好理解。这里的关键问题是1是否在$I$中？因为$a \ne 0$，所以倒数$\dfrac{1}{a} \in \mathbb{R}$存在。现在$a \in I, \dfrac{1}{a} \in \mathbb{R}$，根据性质(iii)，$a\dfrac{1}{a} = 1 \in I$。一旦1在$I$中，任何实数$x \in \mathbb{R}$根据性质(iii)都有$1 \cdot x = x \in I$。因此$\mathbb{R}$就是$I$的子集，但性质(i)又说$I$是$\mathbb{R}$的子集，所以只能是$I = \mathbb{R}$，(b)正确。我们不妨用具体的例子来判断选项(c)，仿照(a)中偶数的例子，令$I_1 = \{2k | k \in \mathbb{Z} \}, I_2 = \{5k | k \in \mathbb{Z} \}$，不难验证$I_2$，也就是5的倍数也是“理想子集”。它们的并集包含偶数或5的倍数，即$\{ \dotsc, 0, 2, 4, 5, 6, \dotsc\}$。我们立即发现$2 + 5 = 7$不在这个集合中。加法不封闭了，这违反了性质(ii)，(c)错误。选项(d)把并集换成了交集。用同样的例子，$I_1$是偶数$I_2$是5的倍数，交集包含所有偶的5的倍数，即$\{\dotsc, -10, 0, 10, 20, \dotsc\}$。不难验证它是理想子集。但光验证还不够，我们需要严格证明它是对的。
+
+\begin{proof}
+任何$x \in I_1 \cap I_2$有$x \in I_1 \subseteq P$，所以(i)满足。任何$x, y \in I_1 \cap I_2$有$x, y \in I_1$，因$I_1$是“理想子集”，所以$x + y \in I_1$。另一方面也有$x, y \in I_2$，因$I_2$也是“理想子集”，所以$x + y \in I_2$。这样$x + y$既在$I_1$中也在$I_2$中，所以$x + y \in I_1 \cap I_2$。这样就证明了$I_1 \cap I_2$对加法封闭，满足(ii)。最后，任何$x \in I_1 \cap I_2, y \in P$有$x \in I_1$，因$I_1$是“理想子集”，所以$xy \in I_1$。另一方面也有$x \in I_2$，因$I_2$也是“理想子集”，所以$xy \in I_2$。这样$xy$既在$I_1$中也在$I_2$中，所以$xy \in I_1 \cap I_2$。这样就证明了性质(iii)。综上$I_1 \cap I_2$是“理想子集”。
+\end{proof}
+
+最后正确结论的序号是：(a), (b), (d)。
+
 \begin{Exercise}[label={ex:algebraic}]
 \Question{假设$x^n + y^n = z^n$，证明若$x, y, z$任何两个含有公约数$d$，则第三个也有这个因子。\label{qn:xyz-coprime}}
 
@@ -1709,6 +1742,8 @@ N(\alpha - \rho \beta) &= c^2 = a^2 + b^2  && \text{勾股定理} \\
 \Question{从范数的共轭定义说明爱森斯坦整数的范数为$a^2 - ab + b^2$。\label{qn:norm-of-z-omega}}
 
 \Question{证明爱森斯坦整数的范数非负。}
+
+\Question{爱森斯坦整数中的单位元是什么？}
 
 \Question{试画出爱森斯坦整数$\rho \beta$的格点。}
 
@@ -1733,12 +1768,14 @@ N(\alpha - \rho \beta) &= c^2 = a^2 + b^2  && \text{勾股定理} \\
 
 \Question{如果$a, b$互素，证明共轭的二次整数$a \pm bi\sqrt{m}$互素。
 
-let $d = (a, b), z = a + bi\sqrt{m}, d | z \pm \overline{z}$ this gives $d | 2a, d | 2bi\sqrt{m}$, hence $d$ divides both $a, b$, which must be 1.
+let $d = (a, b), z = a + bi\sqrt{m}, d | z \pm \overline{z}$ this gives $d | 2a, d | 2bi\sqrt{m}$. But $d$ can't be 2, or $a, b$ both are even; hence $d$ divides both $a, b$, which must be 1.
 }
 
 \Question{从范数的共轭定义说明爱森斯坦整数的范数为$a^2 - ab + b^2$。}
 
 \Question{证明爱森斯坦整数的范数非负。}
+
+\Question{爱森斯坦整数中的单位元是什么？}
 
 \Question{试画出爱森斯坦整数$\rho \beta$的格点。}
 
