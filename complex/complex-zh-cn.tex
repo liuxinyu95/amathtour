@@ -1691,7 +1691,15 @@ N(\alpha - \rho \beta) &= c^2 = a^2 + b^2  && \text{勾股定理} \\
 爱森斯坦简介
 \end{mdframed}
 
-算术基本定理在高斯整数和$\mathbb{Z}[\sqrt{-3}]$上成立是幸运的。从$\mathbb{Z}[\sqrt{-3}]$之后，不再有唯一分解，我们已经看到了$\mathbb{Z}[\sqrt{-5}]$上的反例$6 = 2 \times 3 = (1 + i\sqrt{5})(1 - i\sqrt{5})$。库默尔为此引入了理想数来挽救唯一分解，这在戴德金手中发展成了抽象武器——理想。
+算术基本定理在高斯整数和$\mathbb{Z}[\sqrt{-3}]$上成立是幸运的。从$\mathbb{Z}[\sqrt{-3}]$之后，不再有唯一分解，例如$\mathbb{Z}[\sqrt{-5}]$上的反例$6 = 2 \times 3 = (1 + i\sqrt{5})(1 - i\sqrt{5})$。我们可以证明$2, 3, 1 \pm i\sqrt{5}$都是不可分的。负责假设2可以分解为$(a + bi\sqrt{5})(c + di\sqrt{5})$，两边取范数：
+
+\[
+4 = N(2) = N(a + bi\sqrt{5})N(c + di\sqrt{5}) = (a^2 + 5b^2)(c^2 + 5d^2）
+\]
+
+首先可以排除$a^2 + 5b^2 = c^2 + 5d^2 = 2$的情况，因为此时$a, b, c, d$没有整数解。
+
+库默尔为此引入了理想数来挽救唯一分解，这在戴德金手中发展成了抽象武器——理想。
 
 \section{理想}
 
@@ -1806,7 +1814,9 @@ x &= bk  &&\text{其中}k \in P \\
 对高斯整数中的任何理想$I$，找出其中范数最小的非零元素$\beta$。高斯整数范数的性质保证了若$I \ne (0)$则$\beta$存在。我们声称$I = (\beta)$。否则若存在某个元素$\alpha \in I$，但$a \notin (\beta)$，由欧几里得算法$\gamma = \alpha - \beta \rho$，并且范数$N(\gamma) < N(\beta)$。根据理想的定义$\alpha \in I, \beta \rho \in I$，所以$\gamma = \alpha - \beta \rho \in I$。但$\gamma$的范数小于$\beta$的范数，由于我们选择的$\beta$是范数\underdot{最小}的非零元，因此只能有$\gamma = 0$，即$\beta$整除$\alpha$。
 \end{proof}
 
-但$\mathbb{Z}[\sqrt{-5}]$就不同了。
+这个结论还有对应的几何意义。任何高斯整数$\beta$的倍数$\rho \beta$是边长为$|\beta|$正方形网格。而$\beta$的倍数恰恰是理想$(\beta)$。特别地，理想$(1)$是边长为1的正方形网格。高斯整数中所有理想对应的网格都是正方形，都和(1)相似，如\cref{fig:zi}所示。同样的结论对$\mathbb{\sqrt{-2}}$也成立。任何$\beta$的倍数都是长$\sqrt{2}|\beta|$宽$|\beta|$的矩形。$\mathbb{\sqrt{-2}}$中所有理想都是主理想，都对应着相似的矩形网格（长宽比为$\sqrt{2}$，如\cref{fig:Z-sqrt-2}所示）。
+
+但$\mathbb{Z}[\sqrt{-5}]$就不同了，它包含着不相似的矩形网格。唯一分解在$\mathbb{Z}[\sqrt{-5}]$上失效，存在反例$6 = 2 \times 3 = (1 + i\sqrt{5})(1 - i\sqrt{5})$。我们考虑
 
 \section{谁更多？}
 
