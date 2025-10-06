@@ -1202,7 +1202,7 @@ z_1z_2 = (a_1 + b_1i)(a_2 + b_2i) = a_1a_2 - b_1b_2 + (a_1b_2 + b_1a_2)i
 \section{代数数}
 \fi
 
-\epigraph{只在此山中，云深不知处。}{贾岛《寻隐者不遇》}
+\epigraph{这个世界的意义就在于理想与现实的分离。}{哥德尔}
 
 著名的费马大定理断言当$n \geq 3$时，$x^n + y^n = z^n$没有正整数解。尽管费马“抱怨”页边太窄，写不下他的证明，但他的确后来给出了$n=4$时$x^4 + y^4 = z^4$无解的证明。并且他还在这个过程中发展出了自己非常自豪的“无穷递降法”（Infinite descent）。在此后的200年间，数学家们一直沿着这条路摸索费马大定理的证明\citepage[40-42页]{Edward-1977}。费马发现他只需要证明如下结论就足够了\citepage[247页]{Hardy2009}。
 
@@ -1865,25 +1865,25 @@ B &= (3, 1 - i\sqrt{5})  & \overline{B} &= (3, 1 - i\sqrt{5})
 AB = \{a_1b_1 + a_2b_2 + \dotsb + a_kb_k\}
 \]
 
-其中$a_1, a_2, \dotsc, a_k \in A, b_1, b_2, \dotsc, b_k \in B$是各自理想中的元素。这样如果理想$C = AB$，则理想$A$整除理想$C$。根据戴德金的这个定义，主理想的乘积也是主理想，即$(a)(b) = (ab)$。因此$(a)$整除$(ab)$。如果理想$A$由$(a, b)$产生，理想$B$由$(c, d)$产生，则$AB = (ac, ad, bc, bd)$。我们接下来计算一下$A\overline{A}$的结果：
+其中$a_1, a_2, \dotsc, a_k \in A, b_1, b_2, \dotsc, b_k \in B$是各自理想中的元素。这样如果理想$C = AB$，则理想$A$整除理想$C$。根据戴德金的这个定义，主理想的乘积也是主理想，即$(a)(b) = (ab)$。因此$(a)$整除$(ab)$。例如$(2)(3) = (6)$，理想$(2)$整除$(6)$与整数的整除对应。如果理想$A$由$(a, b)$产生，理想$B$由$(c, d)$产生，则$AB = (ac, ad, bc, bd)$（见\ref{qn:ideal-product}）。我们接下来计算一下$A\overline{A}$的结果：
 
 \[
 A\overline{A} = (2, 1 + i\sqrt{5})(2, 1 - i\sqrt{5}) = (4, 2 + 2i\sqrt{5}, 2 - 2i\sqrt{5}, 6)
 \]
 
-其中$4, 6, 2 \pm 2i\sqrt{5}$都能被2整除。根据“整除即包含”，主理想$(2)$包含$A\overline{A}$。另一方面，$4 \in A\overline{A}, 6 \in A\overline{A}$，所以$6 - 4 = 2 \in A\overline{A}$。这样$(2)$又被$A\overline{A}$包含。因此只能是$A\overline{A} = (2)$。用同样的方法我们可以证明$B\overline{B} = (3)$。
-
-我们再计算乘积$AB$的结果：
+其中$4, 6, 2 \pm 2i\sqrt{5}$都能被2整除。根据“整除即包含”，主理想$(2)$包含$A\overline{A}$。另一方面，$4 \in A\overline{A}, 6 \in A\overline{A}$，所以$6 - 4 = 2 \in A\overline{A}$。这样$(2)$又被$A\overline{A}$包含。因此只能是$A\overline{A} = (2)$。用同样的方法我们可以证明$B\overline{B} = (3)$。我们再计算乘积$AB$的结果：
 
 \[
 AB = (2, 1 + i\sqrt{5})(3, 1 + i\sqrt{5}) = (6, 2 + 2i\sqrt{5}, 3 + 3i\sqrt{5}, (1 + i\sqrt{5})^2)
 \]
 
-其中$6, 2 + 2i\sqrt{5}, 3 + 3i\sqrt{5}, (1 + i\sqrt{5})^2$每个都能被$(1 + i\sqrt{5})$整除。根据“整除即包含”，主理想$(1 + i\sqrt{5})$包含$AB$。另一方面，$2 + 2i\sqrt{5} \in AB, 3 + 3i\sqrt{5} \in AB$，所以差$2 + 2i\sqrt{5} \in AB$。这样$(1 + i\sqrt{5})$又被$AB$包含。因此只能是$AB = (1 + i\sqrt{5})$。用同样的方法我们可以证明$\overline{AB} = (1 - i\sqrt{5})$。这样我们就用理想挽救了唯一分解：
+其中$6, 2 + 2i\sqrt{5}, 3 + 3i\sqrt{5}, (1 + i\sqrt{5})^2$每个都能被$(1 + i\sqrt{5})$整除。根据“整除即包含”，主理想$(1 + i\sqrt{5})$包含$AB$。另一方面，$2 + 2i\sqrt{5} \in AB, 3 + 3i\sqrt{5} \in AB$，所以差$2 + 2i\sqrt{5} \in AB$。这样$(1 + i\sqrt{5})$又被$AB$包含。因此只能是$AB = (1 + i\sqrt{5})$。用同样的方法我们可以证明$\overline{AB} = (1 - i\sqrt{5})$。把这些结果放到一起就得到：
 
 \[
 (6) = (2)(3) = (A\overline{A})(B\overline{B}) = (AB)(\overline{AB}) = (1 + i\sqrt{5})(1 - i\sqrt{5})
 \]
+
+这样戴德金就用理想挽救了唯一分解。$(6)$被唯一分解为$A\overline{A}B\overline{B}$。
 
 \section{谁更多？}
 
@@ -1913,6 +1913,10 @@ AB = (2, 1 + i\sqrt{5})(3, 1 + i\sqrt{5}) = (6, 2 + 2i\sqrt{5}, 3 + 3i\sqrt{5}, 
 \Question{证明理想的和仍是理想。\label{qn:sum-of-ideals}}
 
 \Question{(0)叫做零理想，(1)叫做单位理想。它们各自包含了什么元素？\label{qn:trivial-ideals}}
+
+\Question{验证如果理想$A = (a, b) = \{ax + by | x, y \in R\}$，理想$B = (c, d)$，则$AB = (ac, ad, bc, bd)$。\label{qn:ideal-product}}
+
+\Question{*试用理想解决$4 = 2 \times 2 = (1 + i\sqrt{3})(1 - i\sqrt{3})$的唯一分解。}
 
 \end{Exercise}
 
@@ -1962,6 +1966,12 @@ let $d = (a, b), z = a + bi\sqrt{m}, d | z \pm \overline{z}$ this gives $d | 2a,
 \Question{证明理想的和仍是理想。\label{qn:sum-of-ideals}}
 
 \Question{(0)叫做零理想，(1)叫做单位理想。它们各自包含了什么元素？\label{qn:trivial-ideals}}
+
+\Question{验证如果理想$A$由$(a, b)$产生，理想$B$由$(c, d)$产生，则$AB = (ac, ad, bc, bd)$。
+
+}
+
+\Question{*试用理想解决$4 = 2 \times 2 = (1 + i\sqrt{3})(1 - i\sqrt{3})$的唯一分解。}
 \end{Answer}
 
 \ifx\wholebook\relax \else
