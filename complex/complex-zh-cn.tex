@@ -1088,7 +1088,7 @@ x - 1 = \frac{\frac{\sqrt{5} - 1}{2} + i\sqrt{\frac{5 + \sqrt{5}}{2}}}{2} - 1 = 
 对多项式$x^3 - 6x - 9$因式分解。由笛卡尔定理，$x - 3$是一个因子。方法一，用多项式长除法求
 
 \[
-\polylongdiv{x^3-6x - 9}{x-3}
+\polylongdiv{x^3-6x-9}{x-3}
 \]
 
 得$x^2 + 3x + 3$。
@@ -1104,14 +1104,55 @@ x^3 - 6x - 9 &= (x - 3)(x^2 + ax + b) \\
 得$a = 3, b = 3$。接下来解二次方程$x^2 + 3x + 3$得另外两个根$x_{2, 3} = \dfrac{-3 \pm i\sqrt{3}}{2}$
 }
 
-\Question{利用邦贝利的方法和卡尔达诺公式，可求出三次方程$x^3 = 15x + 4$的一个根$x_1 = 4$，试求出方程的另外两个根。}
+\Question{利用邦贝利的方法和卡尔达诺公式，可求出三次方程$x^3 = 15x + 4$的一个根$x_1 = 4$，试求出方程的另外两个根。
 
-\Question{计算规则$\sqrt{ab} = \sqrt{a}\sqrt{b}$在复数下是否成立？如果成立请证明之，如果不成立应怎样挽救？}
+\vspace{2mm}
+如上题，对多项式$x^3 - 15x - 4$因式分解。由笛卡尔定理，$x - 4$是一个因子。用多项式长除法求
+
+\[
+\polylongdiv{x^3-15x-4}{x-4}
+\]
+
+或用待定系数法
+
+\begin{align*}
+x^3 - 15x - 4 &= (x - 4)(x^2 + ax + b) \\
+  &= x^3 + ax^2 + bx - 4x^2 - 4ax - 4b \\
+  &= x^3 + (a - 4)x^2 + (b - 4a)x - 4b
+\end{align*}
+
+得$a = 4, b = 1$。解二次方程$x^2 + 4x + 1$得另外两个根$x_{2, 3} = -2 \pm \sqrt{3}$
+}
+
+\Question{计算规则$\sqrt{ab} = \sqrt{a}\sqrt{b}$在复数下是否成立？如果成立请证明之，如果不成立应怎样挽救？
+
+\vspace{2mm}
+不成立，否则就会出现
+\[
+ab = \sqrt{a^2b^2} = \sqrt{(-a^2)(-b^2)} = \sqrt{-a^2}\sqrt{-b^2} = (ai)(bi)=-ab
+\]
+当$ab \ne 0$时就会出现矛盾。在复数下，我们要么像欧拉那样，认为$\sqrt{a}$表示$b^2 = a$，即$\pm\sqrt{a}$。要么令$z^2 = ab, x^2 = a, y^2=b$，使得$z^2 = x^2y^2 = (xy)^2$。例如:
+
+\[
+36 = 4 \times 9 = (-4)\times(-9) = (2i)^2(3i)^2 = (2i \times 3i)^2 = (-6)^2 = 36
+\]
+}
 
 \Question{证明任何复数代表的向量乘以$i$相当于向左转$90\degree$。
 
-\[(a + bi)i = ai - b
+\begin{proof}
+考虑复数$z = a + bi$。若$a = 0, b \ne 0$，则$z = bi$, $zi = -b$。若$b > 0$则向量从虚轴正方向转向实轴负方向，即左转90度；若$b < 0$，则向量从虚轴负方向转向实轴正方向，也是左转90度。
+
+若$a \ne 0, b = 0$，则$z = a, zi = ai$。若$a > 0$则向量从实轴正方向转向虚轴正方向，左转90度；若$a < 0$，则向量从实轴负方向转向虚轴负方向，也是左转90度。
+
+若$ab \ne 0$，$zi = (a + bi)i = ai - b$，令$\theta = arg(z)，\psi = arg(zi)$，有：
+
+\[
+\tan \theta \tan \psi = (b/a)(-a/b) = -1
 \]
+
+故$\psi = \theta + \dfrac{\pi}{2}$，左转了90度。
+\end{proof}
 }
 
 \Question{验证复数的共轭满足这样的运算规则：$\overline{a + b} = \overline{a} + \overline{b}$，$\overline{ab} = \overline{a} \cdot \overline{b}$, $\overline{z^n} = (\overline{z})^n$，并据此证明达朗贝尔的发现：若$z$是方程$p(z) = 0$的根，其共轭$\overline{z}$也是方程的根。}
