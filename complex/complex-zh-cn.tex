@@ -2473,9 +2473,32 @@ a^2 - ab + b^2 &= a^2 -ab + \frac{b^2}{4} + \frac{3b^2}{4} = (a - \frac{b}{2})^2
 \end{proof}
 }
 
-\Question{证明理想的和仍是理想。\label{qn:sum-of-ideals}}
+\Question{证明理想的和仍是理想。
 
-\Question{(0)叫做零理想，(1)叫做单位理想。它们各自包含了什么元素？\label{qn:trivial-ideals}}
+\begin{proof}
+令$I = I_1 + I_2 = \{a + b | a \in I_1, b \in I_2\}$，我们要证明$I$满足加法封闭性和缩放封闭性。任意$I$中的$c_1 = a_1 + b_1, c_2 = a_2 + b_2$，其中$a_1, a_2 \in I_1, b_1, b_2 \in I_2$。因$I_1$是理想，故$a_1 + a_2$在$I_1$中，令$a_3 = a_1 + a_2 \in I_1$。同理$b_1 + b_2$在$I_2$中，令$b_3 = b_1 + b_2 \in I_2$。
+
+\begin{align*}
+c_1 + c_2 &= a_1 + b_1 + a_2 + b_2 = (a_1 + a_2) + (b_1 + b_2) \\
+  &= a_3 + b_3 && \text{其中} a_3 \in I_1, b_3 \in I_2 \\
+  &\in I
+\end{align*}
+
+满足加法封闭性。对任意父集合$R$中的$r$，任意$I$中的$c = a + b$，其中$a \in I_1, b \in I_2$，由理想性质$ar \in I_1, br \in I_2$，因此:
+
+\begin{align*}
+cr &= (a + b)r = ar + br  && \text{其中} ar \in I_1, br \in I_2 \\
+   &\in I
+\end{align*}
+满足缩放封闭性。
+\end{proof}
+}
+
+\Question{(0)叫做零理想，(1)叫做单位理想。它们各自包含了什么元素？
+
+\vspace{2mm}
+(0)只包含一个元素0，因为0的任何倍都是0。(1)等于父集合$R$，任何$y \in R$，$1y = y \in (1)$。
+}
 
 \Question{验证如果理想$A$由$(a, b)$产生，理想$B$由$(c, d)$产生，则$AB = (ac, ad, bc, bd)$。
 
