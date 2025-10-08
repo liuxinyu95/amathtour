@@ -1332,11 +1332,23 @@ z_1z_2 = (a_1 + b_1i)(a_2 + b_2i) = a_1a_2 - b_1b_2 + (a_1b_2 + b_1a_2)i
 
 \begin{align*}
 \tan(\theta_1 + \theta_2) &= \tan(arg(z_1z_2)) = \frac{a_1b_2 + b_1a_2}{a_1a_2 - b_1b_2} && \text{忽略分母为0的情况} \\
-  &= \frac{\frac{b_2}{a_2} + \frac{b_1}{a_1}}{1 - \frac{b_1}{a_1}\frac{b_2}{a_2}} && \text{上下同除以}a_1a_2 \\
+  &= \dfrac{\dfrac{b_2}{a_2} + \dfrac{b_1}{a_1}}{1 - \dfrac{b_1}{a_1}\dfrac{b_2}{a_2}} && \text{上下同除以}a_1a_2 \\
   &= \frac{\tan\theta_2 + \tan\theta_1}{1 - \tan\theta_1 \tan\theta_2}
 \end{align*}
 
-类似地，通过$\sin(\theta_1 + \theta_2) = \dfrac{a_1b_2 + b_1a_2}{r_1r_2}$可以推出正弦、余弦的和角公式。（TODO，可展开）
+类似地，通过$\sin(\theta_1 + \theta_2) = \dfrac{a_1b_2 + b_1a_2}{r_1r_2}$可以推出正弦、余弦的和角公式。
+
+\begin{align*}
+\sin(\theta_1 + \theta_2) &= \sin(arg(z_1z_2)) = \frac{a_1b_2 + b_1a_2}{r_1r_2} && \text{忽略分母为0的情况} \\
+  &= \frac{a_1}{r_1}\frac{b_2}{r_2} + \frac{b_1}{r_1}\frac{a_2}{r_2} \\
+  &= \cos\theta_1 \sin\theta_2 + \sin\theta_1 \cos\theta_2
+\end{align*}
+
+\begin{align*}
+\cos(\theta_1 + \theta_2) &= \cos(arg(z_1z_2)) = \frac{a_1a_2 - b_1b_2}{r_1r_2} && \text{忽略分母为0的情况} \\
+  &= \frac{a_1}{r_1}\frac{a_2}{r_2} - \frac{b_1}{r_1}\frac{b_2}{r_2} \\
+  &= \cos\theta_1 \cos\theta_2 - \sin\theta_1 \sin\theta_2
+\end{align*}
 }
 
 \end{Answer}
