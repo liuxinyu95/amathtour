@@ -1155,19 +1155,102 @@ ab = \sqrt{a^2b^2} = \sqrt{(-a^2)(-b^2)} = \sqrt{-a^2}\sqrt{-b^2} = (ai)(bi)=-ab
 \end{proof}
 }
 
-\Question{验证复数的共轭满足这样的运算规则：$\overline{a + b} = \overline{a} + \overline{b}$，$\overline{ab} = \overline{a} \cdot \overline{b}$, $\overline{z^n} = (\overline{z})^n$，并据此证明达朗贝尔的发现：若$z$是方程$p(z) = 0$的根，其共轭$\overline{z}$也是方程的根。}
+\Question{验证复数的共轭满足这样的运算规则：$\overline{a + b} = \overline{a} + \overline{b}$，$\overline{ab} = \overline{a} \cdot \overline{b}$, $\overline{z^n} = (\overline{z})^n$，并据此证明达朗贝尔的发现：若$z$是方程$p(z) = 0$的根，其共轭$\overline{z}$也是方程的根。
 
-\Question{验证哈密尔顿的复数数偶表示满足五大运算定律。}
+\begin{proof}
+和的共轭：
+    \begin{align*}
+    \overline{a + b} &= \overline{p + qi + r + si} && \text{令}a = p + qi, b = r + si \\
+      &= \overline{p + r + (q + s)i} = p + r - (q + s)i &&\text{共轭的定义} \\
+      &= p - qi + r - si = \overline{a} + \overline{b}
+    \end{align*}
+积的共轭：
+    \begin{align*}
+    \overline{ab} &= \overline{(p + qi)(r + si)} \\
+      &= \overline{pr - qs + (ps + qr)i} = pr - qs - (ps + qr)i
+    \end{align*}
+共轭的积：
+    \begin{align*}
+    \overline{a} \cdot \overline{b} &= (p - qi)(r - si) = pr - qs - (ps + qr)i \\
+      &= \overline{ab}
+    \end{align*}
+令$b = a$带入积的共轭，并重复$n$次即得到$\overline{a^n} = (\overline{a})^n$。
+
+若$z$是方程$p(x) = a_nx^n + \dotsb + a_1 x + a_0 = 0$的根，带入$z$有：
+
+\begin{align*}
+0 &= a_nz^n + \dotsb + a_1 z + a_0 \\
+\overline{0}  &= \overline{a_nz^n + \dotsb + a_1 z + a_0} && \text{取共轭}\\
+0 &= \overline{a_nz^n} + \dotsb + \overline{a_1 z} + \overline{a_0} && \text{和的共轭}\\
+  &= \overline{a_n}\overline{z^n} + \dotsb + \overline{a_1}\overline{z} + \overline{a_0} && \text{积的共轭}\\
+  &= \overline{a_n}(\overline{z})^n + \dotsb + \overline{a_1}\overline{z} + \overline{a_0} && \text{幂的共轭}\\
+  &= a_n(\overline{z})^n + \dotsb + a_1\overline{z} + a_0 && \text{实数的共轭是本身} \\
+  &= p(\overline{z}) && \qedhere
+\end{align*}
+\end{proof}
+}
+
+\Question{验证哈密尔顿的复数数偶表示满足五大运算定律。
+
+\begin{proof}
+加法交换律：
+\begin{align*}
+(a, b) + (c, d) &= (a + c, b + d) && \text{数偶加法} \\
+  &= (c + a, d + b) && \text{通常的加法交换律} \\
+  &= (c, d) + (a, b) && \text{反向用数偶加法}
+\end{align*}
+
+乘法交换律：
+\begin{align*}
+(a, b)(c, d) &= (ac - bd, bc + ad) && \text{数偶乘法} \\
+  &= (ca + db, cb + da) && \text{通常的乘法交换律} \\
+  &= (c, d)(a, b) && \text{反向用数偶乘法}
+\end{align*}
+
+加法结合律：
+\begin{align*}
+(a, b) + (c, d) + (e, f) &= (a + c, b + d) + (e, f) \\
+  &= (a + c + e, b + d + f) \\
+  &= (a + (c + e), b + (d + f)) && \text{通常的加法结合律} \\
+  &= (a, b), (c + e, d + f) \\
+  &= (a, b) + [(c, d) + (e, f)] && \text{反向用数偶加法}
+\end{align*}
+
+乘法结合律：
+\begin{align*}
+(a, b)(c, d)(e, f) &= (ac - bd, ad + bc)(e, f) \\
+  &= ((ac - bd)e - (ad + bc)f, (ac - bd)f + (ad + bc)e) \\
+  &= (ace - bde - adf - bcf, acf - bdf + ade + bce) \\
+\text{另一方面} \\
+(a, b)[(c, d)(e, f)] &= (a, b)(ce - df, cf + de)) \\
+  &= (a(ce - df) - b(cf + de), a(cf + de) + b(ce - df)) \\
+  &= (ace - adf - bcf - bde, acf + ade + bce - bdf) \\
+  &= (ace - bde - adf - bcf, acf - bdf + ade + bce) \\
+  &= (a, b)(c, d)(e, f)
+\end{align*}
+
+（左侧）分配律：
+\begin{align*}
+(a, b)[(c, d) + (e, f)] &= (a, b)(c + e, d + f) \\
+  &= (a(c + e) - b(d + f), a(d + f) + b(c + e)) \\
+  &= (ac + ae - bd - bf, ad + af + bc + be) \\
+  &= (ac - bd + (ae - bf), ad + bc + (af + be)) \\
+  &= (ac - bd, ad + bc) + (ae - bf, af + be) \\
+  &= (a, b)(c, d) + (a, b)(e, f)
+\end{align*}
+再由乘法交换律可证明右侧分配律。
+\end{proof}
+}
 
 \Question{利用对数函数与指数函数的反函数关系证明换底公式。
 
   \begin{proof}
     \begin{align*}
-      y &= \log_a x \\
+      y &= \log_a x && a \ne 1 \\
       a^y &= x && \text{指数与对数的反函数关系} \\
       log_b (a^y) &= log_b x && \text{两边取以}b\text{为底的对数} \\
       y log_b a &= log_b x && \text{对数运算法则} \\
-      y &= \frac{log_b x}{log_b a} && \qedhere
+      y &= \frac{log_b x}{log_b a} && a \ne 1\text{故分母非0} \qedhere
     \end{align*}
   \end{proof}
 }
