@@ -2241,7 +2241,7 @@ a_n &= 0.a_{n0}a_{n1}a_{n2}a_{n3} \dotsm \pmb{a_{nn}}\dotsm \\
 
 \Question{证明范数是可乘的。\label{qn:norm-is-multiplicative}}
 
-\Question{说明二次整数范数是对应二次方程的常数项。\label{qn:quadratic-norm}}
+\Question{说明二次整数的范数是对应二次方程的常数项。\label{qn:quadratic-norm}}
 
 \Question{如果$a, b$互素，证明共轭的二次整数$a \pm bi\sqrt{m}$互素。\label{qn:coprime-of-conjugates}}
 
@@ -2300,28 +2300,144 @@ a^n &= p_1^{a_1n}p_2^{a_2n}\dotsm p_k^{a_kn} & b^n &= p_1^{b_1n}p_2^{b_2n}\dotsm
 \end{proof}
 }
 
-\Question{证明若首一代数方程$x^n + a_{n-1} x^{n-1} + \dotsb + a_1 x + a_0 = 0$存在有理解，则这个解必定是整数。}
+\Question{证明若首一代数方程$x^n + a_{n-1} x^{n-1} + \dotsb + a_1 x + a_0 = 0$存在有理解，则这个解必定是整数。
+
+\begin{proof}
+用反证法，若$x = \dfrac{p}{q}$是有理解，其中$p, q \ne 0$互素，即：
+\begin{align*}
+0 &= (\frac{p}{q})^n + a_{n-1} (\frac{p}{q})^{n-1} + \dotsb + a_1 (\frac{p}{q}) + a_0 \\
+0 &= p^n + a_{n-1}qp^{n-1} + \dotsb + a_1q^{n-1}p + a_0q^n && \text{两边乘以}q^n \\
+-p^n &= a_{n-1}qp^{n-1} + \dotsb + a_1q^{n-1}p + a_0q^n && \text{移项}
+\end{align*}
+
+$q$整除右侧，因此$q$整除$p^n$。但$p, q$互素，所以$q$不整除$p$，矛盾。
+\end{proof}
+}
 
 \Question{证明范数是可乘的。
 
-利用共轭复数的可乘性。
+\begin{proof}
+利用共轭复数
+\begin{align*}
+N(\alpha\beta) &= (\alpha\beta)\overline{\alpha\beta} = (\alpha\overline{\alpha})(\beta\overline{\beta}) = N(\alpha)N(\beta) && \qedhere
+\end{align*}
+\end{proof}
 }
 
-\Question{说明二次整数范数是对应二次方程的常数项。
+\Question{说明二次整数的范数是对应二次方程的常数项。
 
-韦达定理
+\begin{proof}
+本题可以直接用达朗贝尔定理（见\cref{qn:conjugated-root}）和韦达定理证明复数二次整数的情形。这里给出的证明可以覆盖实二次整数。先证明若$x_1 = a + b\sqrt{m}$是首一二次方程$x^2 + px + q = 0$的解，则$x_2 = a - b\sqrt{m}$也是解，其中$m$可以大于也可以小于0，不含有任何完全平方因子。
+
+\begin{align*}
+0 &= (a + b\sqrt{m})^2 + p(a + b\sqrt{m}) + q \\
+  &= a^2 + mb^2 + 2ab\sqrt{m} + pa + pb\sqrt{m} + q \\
+  &= a^2 + mb^2 + pa + q + b(2a + p)\sqrt{m}  && (*)
+\end{align*}
+
+因$m \ne 0$且不含完全平方因子，所以有$b(2a + p) = 0$，取相反数得$-b(2a + p) = 0$。将$-b$带入(*)有：
+
+\begin{align*}
+a^2 + m(-b)^2 + pa + q - b(2a + p)\sqrt{m} &= 0  \\
+(a - b\sqrt{m})^2 + p(a - b\sqrt{m}) + q &= 0
+\end{align*}
+
+因此$x_{1, 2} = a \pm b\sqrt{m}$是方程的两个解。根据韦达定理有：
+
+\begin{align*}
+q = x_1x_2 = (a + b\sqrt{m})(a - b\sqrt{m}) = a^2 - mb^2
+\end{align*}
+
+当$m < 0$时，$a^2 + |m|b^2$就是复数二次整数的范数；当$m > 0$时，$a^2 - mb^2$是实二次整数的范数。
+\end{proof}
 }
 
 \Question{如果$a, b$互素，证明共轭的二次整数$a \pm bi\sqrt{m}$互素。
 
-let $d = (a, b), z = a + bi\sqrt{m}, d | z \pm \overline{z}$ this gives $d | 2a, d | 2bi\sqrt{m}$. But $d$ can't be 2, or $a, b$ both are even; hence $d$ divides both $a, b$, which must be 1.
+\begin{proof}
+令$d$整除复数$z = a + bi\sqrt{m}$和其共轭，则$d$整除$z \pm \overline{z}$，即$d$整除$2a$并且$d$整除$2bi\sqrt{m}$。但$d$不可能是2，否则$a, b$都是偶数。因此$d$整除$a$和$b$，但$a, b$互素，所以$d$只能是1。这就证明了$z$和其共轭互素。
+\end{proof}
 }
 
-\Question{从范数的共轭定义说明爱森斯坦整数的范数为$a^2 - ab + b^2$。}
+\Question{从范数的共轭定义说明爱森斯坦整数的范数为$a^2 - ab + b^2$。
 
-\Question{证明爱森斯坦整数的范数非负。}
+\vspace{2mm}
+令$z = a + b\omega$，由范数定义：
 
-\Question{爱森斯坦整数中的单位元是什么？}
+\begin{align*}
+N(z) &= z\overline{z} = (a + b\omega)\overline{a + b\omega} \\
+  &= (a + b(-\frac{1}{2} + i\frac{\sqrt{3}}{2}))(a + b(-\frac{1}{2} - i\frac{\sqrt{3}}{2})) \\
+  &= (a - \frac{b}{2})^2 + (b\frac{\sqrt{3}}{2})^2 \\
+  &= a^2 + \frac{b^2}{4} - ab + \frac{3b^2}{4} = a^2 -ab + b^2
+\end{align*}
+}
+
+\Question{证明爱森斯坦整数的范数非负。
+
+\begin{proof}
+\begin{align*}
+a^2 - ab + b^2 &= a^2 -ab + \frac{b^2}{4} + \frac{3b^2}{4} = (a - \frac{b}{2})^2 + \frac{3b^2}{4} \geq 0 && \qedhere
+\end{align*}
+\end{proof}
+}
+
+\Question{爱森斯坦整数中的单位元是什么？
+
+\vspace{2mm}
+注意到$\omega$的范数$N(omega) = (\dfrac{-1}{2})^2 + (\dfrac{sqrt{3}}{2})^2 = 1$，所以其共轭$\overline{\omega}$的范数也是1。此外$\pm 1$是单位元，因此$\pm \omega, \pm \overline{\omega}$也是单位元。这样爱森斯坦整数共有6个单位元：
+\begin{align*}
+  \pm 1 && \pm \frac{1}{2} \pm i\frac{\sqrt{3}}{2}
+\end{align*}
+它们是分圆方程$x^6 = 1$的6个根$1 = e^0, e^{i\frac{\pi}{3}}, \dotsc, e^{i\frac{5\pi}{3}}$。
+
+\begin{center}
+  \begin{tikzpicture}[
+      scale=2.0,
+      axis_style/.style={draw, gray!60, thick},       % 坐标轴样式：灰色细线条
+      unit_circle_style/.style={draw, black, thick},  % 单位圆样式：黑色粗线条
+      root_style/.style={fill, red, circle, inner sep=1.5pt}, % 单位根样式：红色实心圆点
+      hexagon_style/.style={draw, blue, thick, dashed}, % 正六边形样式：蓝色粗虚线
+      label_style/.style={font=\small, fill=white, inner sep=1pt} % 标签样式：白色背景避免遮挡
+  ]
+
+  \def\omega{1.732/2} % sqrt(3)/2, workaround the issue with sqrt() function
+  \draw[axis_style, ->] (-1.5, 0) -- (1.5, 0) node[below right, font=\small] {$\text{Re}(z)$};
+  \draw[axis_style, ->] (0, -1.5) -- (0, 1.5) node[above left, font=\small] {$\text{Im}(z)$};
+  \foreach \x in {-1, 1} {
+      \draw[axis_style] (\x, -0.05) -- (\x, 0.05) node[below, font=\small] {$\x$};
+  }
+  \foreach \y in {-1, 1} {
+      \draw[axis_style] (-0.05, \y) -- (0.05, \y) node[left, font=\small] {$\y$};
+  }
+
+  \draw[unit_circle_style] (0,0) circle (1);
+
+  \foreach \angle/\label/\x/\y in {
+      0/$1$/1/0,
+      60/$e^{\frac{\pi i}{3}}$/0.5/{\omega},
+      120/$e^{\frac{2\pi i}{3}}$/{-0.5}/{\omega},
+      180/$-1$/{-1}/0,
+      240/$e^{\frac{4\pi i}{3}}$/{-0.5}/{-\omega},
+      300/$e^{\frac{5\pi i}{3}}$/0.5/{-\omega}
+  }{
+      \fill[root_style] (\x, \y) circle;
+      \ifcase\angle
+          0:\node[label_style, right] at (\x, \y) {\label};
+          \or 60:\node[label_style, above right] at (\x, \y) {\label};
+          \or 120:\node[label_style, above left] at (\x, \y) {\label};
+          \or 180:\node[label_style, left] at (\x, \y) {\label};
+          \or 240:\node[label_style, below left] at (\x, \y) {\label};
+          \or 300:\node[label_style, below right] at (\x, \y) {\label};
+      \fi
+  }
+
+  \draw[hexagon_style]
+      (1, 0) -- (0.5, \omega) -- (-0.5, \omega) --
+      (-1, 0) -- (-0.5, -\omega) -- (0.5, -\omega) -- cycle;
+  \end{tikzpicture}
+  \captionof{figure}{爱森斯坦整数的单位元}
+\end{center}
+}
 
 \Question{试画出爱森斯坦整数$\rho \beta$的格点。}
 
