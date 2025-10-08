@@ -2384,11 +2384,7 @@ a^2 - ab + b^2 &= a^2 -ab + \frac{b^2}{4} + \frac{3b^2}{4} = (a - \frac{b}{2})^2
 \Question{爱森斯坦整数中的单位元是什么？
 
 \vspace{2mm}
-注意到$\omega$的范数$N(omega) = (\dfrac{-1}{2})^2 + (\dfrac{sqrt{3}}{2})^2 = 1$，所以其共轭$\overline{\omega}$的范数也是1。此外$\pm 1$是单位元，因此$\pm \omega, \pm \overline{\omega}$也是单位元。这样爱森斯坦整数共有6个单位元：
-\begin{align*}
-  \pm 1 && \pm \frac{1}{2} \pm i\frac{\sqrt{3}}{2}
-\end{align*}
-它们是分圆方程$x^6 = 1$的6个根$1 = e^0, e^{i\frac{\pi}{3}}, \dotsc, e^{i\frac{5\pi}{3}}$，如\cref{fig:units-of-z-omega}所示。
+注意到$\omega$的范数$N(\omega) = (-\dfrac{1}{2})^2 + (\dfrac{\sqrt{3}}{2})^2 = 1$，所以其共轭$\overline{\omega}$的范数也是1。此外$\pm 1$是单位元，因此$\pm \omega, \pm \overline{\omega}$也是单位元。这样爱森斯坦整数共有6个单位元：$\pm 1, \pm \frac{1}{2} \pm i\frac{\sqrt{3}}{2}$。它们是分圆方程$x^6 = 1$的6个根$1 = e^0, e^{i\frac{\pi}{3}}, \dotsc, e^{i\frac{5\pi}{3}}$，如\cref{fig:units-of-z-omega}所示。
 
 \begin{center}
   \begin{tikzpicture}[
@@ -2422,7 +2418,7 @@ a^2 - ab + b^2 &= a^2 -ab + \frac{b^2}{4} + \frac{3b^2}{4} = (a - \frac{b}{2})^2
 \Question{试画出爱森斯坦整数$\rho \beta$的格点。
 
 \vspace{2mm}
-上题中的单位元可以张成爱森斯坦整数的网格。如\cref{fig:integers-of-z-omega}所示，爱森斯坦整数分布在灰色的正三角形网格上。令$\rho = m + n\omega$，其中$m, n$为整数。$\rho \beta = m\beta + n\omega\beta$。由欧拉定理$omega = e^{i\frac{2\pi}{3}}$，乘以$\omega$相当于向左旋转120度。因此$\rho \beta$是由$\beta$和其旋转120度后的向量张成的正三角形网格。
+上题中的单位元可以张成爱森斯坦整数的网格。如\cref{fig:integers-of-z-omega}所示，爱森斯坦整数分布在灰色的正三角形网格上。令$\rho = m + n\omega$，其中$m, n$为整数。$\rho \beta = m\beta + n\omega\beta$。由欧拉定理$\omega = e^{i\frac{2\pi}{3}}$，乘以$\omega$相当于向左旋转120度。因此$\rho \beta$是由$\beta$和其旋转120度后的向量张成的正三角形网格。
 
 \begin{center}
   \includegraphics[scale=0.2]{img/z-omega1}
@@ -2447,9 +2443,9 @@ a^2 - ab + b^2 &= a^2 -ab + \frac{b^2}{4} + \frac{3b^2}{4} = (a - \frac{b}{2})^2
       \def\C{(-0.5,{-1.732/2})}
 
       \draw[triangle_style] \A -- \B -- \C -- cycle;
-%%       \draw[reuleaux_style] (\A) arc[start angle=120, end angle=240, radius=1.732];
-%%       \draw[reuleaux_style] (\B) arc[start angle=-90, end angle=-30, radius=1.732];
-%%       \draw[reuleaux_style] (\C) arc[start angle=30, end angle=90, radius=1.732];
+      \draw[reuleaux_style] \A arc[start angle=30, end angle=90, radius=1.732];
+      \draw[reuleaux_style] \B arc[start angle=150, end angle=210, radius=1.732];
+      \draw[reuleaux_style] \C arc[start angle=-90, end angle=-30, radius=1.732];
       \fill[vertex_style] \A node[label_style, right] {A};
       \fill[vertex_style] \B node[label_style, above] {B};
       \fill[vertex_style] \C node[label_style, below] {C};
