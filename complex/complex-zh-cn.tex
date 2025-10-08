@@ -2403,37 +2403,19 @@ a^2 - ab + b^2 &= a^2 -ab + \frac{b^2}{4} + \frac{3b^2}{4} = (a - \frac{b}{2})^2
   \def\omega{1.732/2} % sqrt(3)/2, workaround the issue with sqrt() function
   \draw[axis_style, ->] (-1.5, 0) -- (1.5, 0) node[below right, font=\small] {$\text{Re}(z)$};
   \draw[axis_style, ->] (0, -1.5) -- (0, 1.5) node[above left, font=\small] {$\text{Im}(z)$};
-  \foreach \x in {-1, 1} {
-      \draw[axis_style] (\x, -0.05) -- (\x, 0.05) node[below, font=\small] {$\x$};
-  }
   \foreach \y in {-1, 1} {
       \draw[axis_style] (-0.05, \y) -- (0.05, \y) node[left, font=\small] {$\y$};
   }
 
   \draw[unit_circle_style] (0,0) circle (1);
 
-  \foreach \angle/\label/\x/\y in {
-      0/$1$/1/0,
-      60/$e^{\frac{\pi i}{3}}$/0.5/{\omega},
-      120/$e^{\frac{2\pi i}{3}}$/{-0.5}/{\omega},
-      180/$-1$/{-1}/0,
-      240/$e^{\frac{4\pi i}{3}}$/{-0.5}/{-\omega},
-      300/$e^{\frac{5\pi i}{3}}$/0.5/{-\omega}
-  }{
-      \fill[root_style] (\x, \y) circle;
-      \ifcase\angle
-          0:\node[label_style, right] at (\x, \y) {\label};
-          \or 60:\node[label_style, above right] at (\x, \y) {\label};
-          \or 120:\node[label_style, above left] at (\x, \y) {\label};
-          \or 180:\node[label_style, left] at (\x, \y) {\label};
-          \or 240:\node[label_style, below left] at (\x, \y) {\label};
-          \or 300:\node[label_style, below right] at (\x, \y) {\label};
-      \fi
-  }
-
   \draw[hexagon_style]
-      (1, 0) -- (0.5, \omega) -- (-0.5, \omega) --
-      (-1, 0) -- (-0.5, -\omega) -- (0.5, -\omega) -- cycle;
+      (1, 0) node[right] {$1$} --
+      (0.5, \omega) node[above right] {$\frac{1}{2} + i\frac{\sqrt{3}}{2}$} --
+      (-0.5, \omega) node[above left] {$-\frac{1}{2} + i\frac{\sqrt{3}}{2}$} --
+      (-1, 0) node[left] {$-1$} --
+      (-0.5, -\omega) node[below left] {$-\frac{1}{2} - i\frac{\sqrt{3}}{2}$} --
+      (0.5, -\omega) node[below right] {$\frac{1}{2} - i\frac{\sqrt{3}}{2}$} -- cycle;
   \end{tikzpicture}
   \captionof{figure}{爱森斯坦整数的单位元}
 \end{center}
