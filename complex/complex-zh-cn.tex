@@ -2388,25 +2388,19 @@ a^2 - ab + b^2 &= a^2 -ab + \frac{b^2}{4} + \frac{3b^2}{4} = (a - \frac{b}{2})^2
 \begin{align*}
   \pm 1 && \pm \frac{1}{2} \pm i\frac{\sqrt{3}}{2}
 \end{align*}
-它们是分圆方程$x^6 = 1$的6个根$1 = e^0, e^{i\frac{\pi}{3}}, \dotsc, e^{i\frac{5\pi}{3}}$。
+它们是分圆方程$x^6 = 1$的6个根$1 = e^0, e^{i\frac{\pi}{3}}, \dotsc, e^{i\frac{5\pi}{3}}$，如\cref{fig:units-of-z-omega}所示。
 
 \begin{center}
   \begin{tikzpicture}[
       scale=2.0,
-      axis_style/.style={draw, gray!60, thick},       % 坐标轴样式：灰色细线条
-      unit_circle_style/.style={draw, black, thick},  % 单位圆样式：黑色粗线条
-      root_style/.style={fill, red, circle, inner sep=1.5pt}, % 单位根样式：红色实心圆点
-      hexagon_style/.style={draw, blue, thick, dashed}, % 正六边形样式：蓝色粗虚线
-      label_style/.style={font=\small, fill=white, inner sep=1pt} % 标签样式：白色背景避免遮挡
+      axis_style/.style={draw, gray!60, thick},
+      unit_circle_style/.style={draw, black, thick, dashed},
+      hexagon_style/.style={draw, black, thick}
   ]
 
   \def\omega{1.732/2} % sqrt(3)/2, workaround the issue with sqrt() function
   \draw[axis_style, ->] (-1.5, 0) -- (1.5, 0) node[below right, font=\small] {$\text{Re}(z)$};
   \draw[axis_style, ->] (0, -1.5) -- (0, 1.5) node[above left, font=\small] {$\text{Im}(z)$};
-  \foreach \y in {-1, 1} {
-      \draw[axis_style] (-0.05, \y) -- (0.05, \y) node[left, font=\small] {$\y$};
-  }
-
   \draw[unit_circle_style] (0,0) circle (1);
 
   \draw[hexagon_style]
@@ -2416,14 +2410,59 @@ a^2 - ab + b^2 &= a^2 -ab + \frac{b^2}{4} + \frac{3b^2}{4} = (a - \frac{b}{2})^2
       (-1, 0) node[left] {$-1$} --
       (-0.5, -\omega) node[below left] {$-\frac{1}{2} - i\frac{\sqrt{3}}{2}$} --
       (0.5, -\omega) node[below right] {$\frac{1}{2} - i\frac{\sqrt{3}}{2}$} -- cycle;
+
+  \draw[unit_circle_style] (-0.5, -\omega) -- (0.5, \omega);
+  \draw[unit_circle_style] (0.5, -\omega) -- (-0.5, \omega);
   \end{tikzpicture}
   \captionof{figure}{爱森斯坦整数的单位元}
+  \label{fig:units-of-z-omega}
 \end{center}
 }
 
-\Question{试画出爱森斯坦整数$\rho \beta$的格点。}
+\Question{试画出爱森斯坦整数$\rho \beta$的格点。
 
-\Question{根据爱森斯坦整数的格点，证明欧几里得算法存在。}
+\vspace{2mm}
+上题中的单位元可以张成爱森斯坦整数的网格。如\cref{fig:integers-of-z-omega}所示，爱森斯坦整数分布在灰色的正三角形网格上。令$\rho = m + n\omega$，其中$m, n$为整数。$\rho \beta = m\beta + n\omega\beta$。由欧拉定理$omega = e^{i\frac{2\pi}{3}}$，乘以$\omega$相当于向左旋转120度。因此$\rho \beta$是由$\beta$和其旋转120度后的向量张成的正三角形网格。
+
+\begin{center}
+  \includegraphics[scale=0.2]{img/z-omega1}
+  \captionof{figure}{爱森斯坦整数为灰色正三角形网格，$\rho \beta$为相似的黑色正三角形网格。}
+  \label{fig:integers-of-z-omega}
+\end{center}
+}
+
+\Question{根据爱森斯坦整数的格点，证明欧几里得算法存在。
+
+\begin{center}
+  \begin{tikzpicture}[
+      scale=2.0,
+      triangle_style/.style={draw, black, thick},       % 内接正三角形样式
+      reuleaux_style/.style={draw, blue, thick},        % 莱洛三角形样式
+      vertex_style/.style={fill, red, circle, inner sep=2pt}, % 顶点样式
+      label_style/.style={font=\small, fill=white, inner sep=1pt} % 标签样式
+  ]
+
+      \def\A{(1,0)}
+      \def\B{(-0.5,{1.732/2})}
+      \def\C{(-0.5,{-1.732/2})}
+
+      \draw[triangle_style] \A -- \B -- \C -- cycle;
+%%       \draw[reuleaux_style] (\A) arc[start angle=120, end angle=240, radius=1.732];
+%%       \draw[reuleaux_style] (\B) arc[start angle=-90, end angle=-30, radius=1.732];
+%%       \draw[reuleaux_style] (\C) arc[start angle=30, end angle=90, radius=1.732];
+      \fill[vertex_style] \A node[label_style, right] {A};
+      \fill[vertex_style] \B node[label_style, above] {B};
+      \fill[vertex_style] \C node[label_style, below] {C};
+  \end{tikzpicture}
+
+  \captionof{figure}{莱洛三角形及其内接正三角形}
+  \label{fig:reuleaux}
+\end{center}
+
+\begin{proof}
+存在一个简单直观的几何证法。如\cref{fig:reuleaux}所示，以正三角形每个顶点为圆心，边为半径作弧。三条弧围成的图形叫做莱洛三角形。莱洛三角形内任一点到最近顶点的距离都小于边长。任意爱森斯坦整数$\alpha$落在边长为$|\beta|$的正三角形网格内。距离最近的顶点的距离小于边长$|\beta|$。令$\gamma = \alpha - \rho \beta$，有$N(\gamma) < N(\beta)$。故欧几里得算法存在。
+\end{proof}
+}
 
 \Question{证明$1 \pm i\sqrt{5}$是不可分解的。
 
