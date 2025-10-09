@@ -2280,8 +2280,6 @@ a_n &= 0.a_{n0}a_{n1}a_{n2}a_{n3} \dotsm \pmb{a_{nn}}\dotsm \\
 
 \Question{验证如果理想$A = (a, b) = \{ax + by | x, y \in R\}$，理想$B = (c, d)$，则$AB = (ac, ad, bc, bd)$。\label{qn:ideal-product}}
 
-%% \Question{*试用理想解决$4 = 2 \times 2 = (1 + i\sqrt{3})(1 - i\sqrt{3})$的唯一分解。}
-
 \Question{我们用\cref{fig:NNtoN}建立了房间和任意旅游团的客人间的一一映射。第$i$号旅游团的第$j$号客人应该入住几号房间？第$k$个房间里住了哪号旅游团的哪位客人？}
 
 \Question{希尔伯特旅馆第三天的故事的解法并不唯一，\cref{fig:PWW-NNtoN}是《无需语言的证明》一书的封面。试根据此图给出另一种编号方案？
@@ -2536,17 +2534,21 @@ AB &= \{ \sum \alpha\beta \} = \{ \sum (ar_1 + br_2)(cs_1 + ds_2) \} \\
 \end{align*}
 }
 
-%% \Question{*试用理想解决$4 = 2 \times 2 = (1 + i\sqrt{3})(1 - i\sqrt{3})$的唯一分解。
+%% 下面的问题本质是因为Z[\sqrt{-3}]不是Dedekind domain。所以不存在理想的唯一分解。参考：
+%% https://math.stackexchange.com/questions/958030/ideals-dedekind-domain-and-mathbbz-sqrt-3
+%%
+%% \Question{*无法用理想解决$4 = 2 \times 2 = (1 + i\sqrt{3})(1 - i\sqrt{3})$的唯一分解。
 
 %% \vspace{2mm}
-%% 用4的因子构造理想$A = (2, 1 + i\sqrt{3}), \overline{A} = (2, 1 - i\sqrt{3})$。接下来计算理想的积：
+%% 构造理想$I = (2, 1 + i\sqrt{3})$。首先$I \ne (2)$, 因为$I$中的$1 + i\sqrt{-3} \notin (2)$。但是：
 
 %% \begin{align*}
-%% AA &= (4, 2 + 2i\sqrt{3}, (1 + i\sqrt{3})^2) \\
-%%    &= (4, 2 + 2i\sqrt{3}, -2 + 2i\sqrt{3}) && \text{其中} (1 + i\sqrt{3})^2 = -2 + 2i\sqrt{3}
+%% A = I^2 &= (4, 2 + 2i\sqrt{3}, (1 + i\sqrt{3})^2) \\
+%%         &= (4, 2 + 2i\sqrt{3}, -2 + 2i\sqrt{3}) && \text{其中} (1 + i\sqrt{3})^2 = -2 + 2i\sqrt{3}
+%%         &= (2)(2, 1 + i\sqrt{-3}) = (a)I
 %% \end{align*}
 
-%% $4, 2 + 2i\sqrt{3}, -2 + 2i\sqrt{3}$每个都能被2整除。根据整除即包含，$AA \subset (2)$。另一方面有$\frac{1}{2}(2 + 2i\sqrt{3}) - \frac{1}{2}(-2 + 2i\sqrt{3}) = 2$。这里的问题是$\pm \frac{1}{2}$不是整数？它们在$\mathbb{Z}[-sqrt{-3}]$中。尽管我们想证明$(2) = (2, 1 + i\sqrt{3})^2$。
+%% 这说明$A = I^2 = (2)I$有两种分解：(1) 素理想I^2；(2) 非素理想(2)和素理想I的积。
 %% }
 
 \Question{我们用\cref{fig:NNtoN}建立了房间和任意旅游团的客人间的一一映射。第$i$号旅游团的第$j$号客人应该入住几号房间？第$k$个房间里住了哪号旅游团的哪位客人？
