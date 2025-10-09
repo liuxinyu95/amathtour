@@ -2009,9 +2009,9 @@ A &= (2) + (1 + i\sqrt{5}) = \{2\alpha + (1 + i\sqrt{5})\beta | \alpha, \beta \i
 
 得$m = \pm\dfrac{1}{2}$，与$m$是整数矛盾。因此$A = (2, 1 + i\sqrt{5})$不是主理想。它的网格形状不是矩形而是三角形，如\cref{fig:ideal-sum}所示。尽管不是主理想，但是$A$表现得像“最大公约数”。根据“整除即包含”，$A$包含(2)，它表现得像2的因子，同时$A$包含$(1 + i\sqrt{5})$，它也表现得像$1 + i\sqrt{5}$的因子，因此$A$表现得像2与$1 + i\sqrt{5}$的最大公因子（类比整数和高斯整数，若$a, b$的最大公约数为$d = (a, b)$，则$(a) + (b) = (d)$）。
 
-不仅如此，$A$还表现得像素数。为此我们先观察一下普通素数$p$在整数中的主理想$(p)$有什么特点。首先$p \ne 1$。而(1)实际上是全体整数（见\cref{qn:trivial-ideals}），理想$(p)$的确不是全体整数，因为1不在其中。其次$p$只能被1和它自己整除，根据“整除即包含”，只有代表全体整数的(1)包含$(p)$，再没有其它理想包含$(p)$了。$A$也是如此，首先它不是(1)，我们此前证明了$1 \notin A$。其次除了(1)外没有任何理想包含$A$，否则假设存在一个理想$I$包含$A$且$I$中还有不在$A$中的元素，形如$\alpha = 2m + 1 + n(1 + i\sqrt{5})$。但是$\alpha - 1 = 2m + n(1 + i\sqrt{5})$就属于$A$了。并且$1 - \alpha$也属于$A$。现在$\alpha \in I, 1 - \alpha \in A \subset I$，根据理想的定义$\alpha + (1 - alpha) = 1 \in I$。于是$I = (1)$。
+不仅如此，$A$还表现得像素数。为此我们先观察一下普通素数$p$在整数中的主理想$(p)$有什么特点。首先$p \ne 1$。而(1)实际上是全体整数（见\cref{qn:trivial-ideals}），理想$(p)$的确不是全体整数，因为1不在其中。其次$p$只能被1和它自己整除，根据“整除即包含”，只有代表全体整数的(1)包含$(p)$，再没有其它理想包含$(p)$了。$A$也是如此，首先它不是(1)，我们此前证明了$1 \notin A$。其次除了(1)外没有任何理想包含$A$，否则假设存在一个理想$I$包含$A$且$I$中还有不在$A$中的元素，形如$\alpha = 2m + 1 + n(1 + i\sqrt{5})$。但是$\alpha - 1 = 2m + n(1 + i\sqrt{5})$就属于$A$了。并且$1 - \alpha$也属于$A$。现在$\alpha \in I, 1 - \alpha \in A \subset I$，根据理想的定义$\alpha + (1 - \alpha) = 1 \in I$。于是$I = (1)$。
 
-用同样的方法，我们也可以证明$\overline{A} = (2, 1 - i\sqrt{5}$表现的像素数。我们特意选用了共轭复数的符号，因为$\overline{A}$中的数恰好是$A$中的共轭复数。我们还可以利用$6 = 2 \times 3 = (1 + i\sqrt{5})(1 - i\sqrt{5})$的这四个因子构造出四个类似的理想：
+用同样的方法，我们也可以证明$\overline{A} = (2, 1 - i\sqrt{5})$表现的像素数。我们特意选用了共轭复数的符号，因为$\overline{A}$中的数恰好是$A$中的共轭复数。我们还可以利用$6 = 2 \times 3 = (1 + i\sqrt{5})(1 - i\sqrt{5})$的这四个因子构造出四个类似的理想：
 
 \begin{align*}
 A &= (2, 1 - i\sqrt{5})  & \overline{A} &= (2, 1 - i\sqrt{5}) &
@@ -2024,7 +2024,7 @@ B &= (3, 1 - i\sqrt{5})  & \overline{B} &= (3, 1 - i\sqrt{5})
 AB = \{a_1b_1 + a_2b_2 + \dotsb + a_kb_k\}
 \]
 
-其中$a_1, a_2, \dotsc, a_k \in A, b_1, b_2, \dotsc, b_k \in B$是各自理想中的元素。这样如果理想$C = AB$，则理想$A$整除理想$C$。根据戴德金的这个定义，主理想的乘积也是主理想，即$(a)(b) = (ab)$。因此$(a)$整除$(ab)$。例如$(2)(3) = (6)$，理想$(2)$整除$(6)$与整数的整除对应。如果理想$A$由$(a, b)$产生，理想$B$由$(c, d)$产生，则$AB = (ac, ad, bc, bd)$（见\ref{qn:ideal-product}）。我们接下来计算一下$A\overline{A}$的结果：
+其中$a_1, a_2, \dotsc, a_k \in A, b_1, b_2, \dotsc, b_k \in B$是各自理想中的元素。这样如果理想$C = AB$，则理想$A$整除理想$C$。根据戴德金的这个定义，主理想的乘积也是主理想，即$(a)(b) = (ab)$。因此$(a)$整除$(ab)$。例如$(2)(3) = (6)$，理想$(2)$整除$(6)$与整数的整除对应。如果理想$A$由$(a, b)$产生，理想$B$由$(c, d)$产生，则$AB = (ac, ad, bc, bd)$（见\cref{qn:ideal-product}）。我们接下来计算一下$A\overline{A}$的结果：
 
 \[
 A\overline{A} = (2, 1 + i\sqrt{5})(2, 1 - i\sqrt{5}) = (4, 2 + 2i\sqrt{5}, 2 - 2i\sqrt{5}, 6)
@@ -2263,7 +2263,7 @@ a_n &= 0.a_{n0}a_{n1}a_{n2}a_{n3} \dotsm \pmb{a_{nn}}\dotsm \\
 
 \Question{验证如果理想$A = (a, b) = \{ax + by | x, y \in R\}$，理想$B = (c, d)$，则$AB = (ac, ad, bc, bd)$。\label{qn:ideal-product}}
 
-\Question{*试用理想解决$4 = 2 \times 2 = (1 + i\sqrt{3})(1 - i\sqrt{3})$的唯一分解。}
+%% \Question{*试用理想解决$4 = 2 \times 2 = (1 + i\sqrt{3})(1 - i\sqrt{3})$的唯一分解。}
 
 \Question{我们用\cref{fig:NNtoN}建立了房间和任意旅游团的客人间的一一映射。第$i$号旅游团的第$j$号客人应该入住几号房间？第$k$个房间里住了哪号旅游团的哪位客人？}
 
@@ -2480,15 +2480,13 @@ a^2 - ab + b^2 &= a^2 -ab + \frac{b^2}{4} + \frac{3b^2}{4} = (a - \frac{b}{2})^2
 
 \begin{align*}
 c_1 + c_2 &= a_1 + b_1 + a_2 + b_2 = (a_1 + a_2) + (b_1 + b_2) \\
-  &= a_3 + b_3 && \text{其中} a_3 \in I_1, b_3 \in I_2 \\
-  &\in I
+  &= a_3 + b_3 \in I && \text{其中} a_3 \in I_1, b_3 \in I_2
 \end{align*}
 
 满足加法封闭性。对任意父集合$R$中的$r$，任意$I$中的$c = a + b$，其中$a \in I_1, b \in I_2$，由理想性质$ar \in I_1, br \in I_2$，因此:
 
 \begin{align*}
-cr &= (a + b)r = ar + br  && \text{其中} ar \in I_1, br \in I_2 \\
-   &\in I
+cr &= (a + b)r = ar + br \in I  && \text{其中} ar \in I_1, br \in I_2
 \end{align*}
 满足缩放封闭性。
 \end{proof}
@@ -2502,13 +2500,35 @@ cr &= (a + b)r = ar + br  && \text{其中} ar \in I_1, br \in I_2 \\
 
 \Question{验证如果理想$A$由$(a, b)$产生，理想$B$由$(c, d)$产生，则$AB = (ac, ad, bc, bd)$。
 
+\vspace{2mm}
+$A = \{\alpha = ar_1 + br_2\}, B = \{\beta = cs_1 + ds_2\}$，其中$r_1, r_2, s_1, s_2$是父集合$R$中的元素。戴德金对理想积的定义可以概括为有限的$\alpha\beta$的和。
+
+\begin{align*}
+AB &= \{ \sum \alpha\beta \} = \{ \sum (ar_1 + br_2)(cs_1 + ds_2) \} \\
+  &= \{ \sum (acr_1s_1 + adr_1s_2 + bcr_2s_1 + bdr_2s_2) \} \\
+  &= \{ ac\sum (r_1s_1) + ad\sum (r_1s_2) + bc\sum (r_2s_1) + bd\sum (r_2s_2) \} \\
+  &= \{ ac S_1 + ad S_2 + bc S_3 + bd S_4 \} && \text{其中}S_i = \sum (r_js_k) \\
+  &= (ac, ad, bc, bd)
+\end{align*}
 }
 
-\Question{*试用理想解决$4 = 2 \times 2 = (1 + i\sqrt{3})(1 - i\sqrt{3})$的唯一分解。}
+%% \Question{*试用理想解决$4 = 2 \times 2 = (1 + i\sqrt{3})(1 - i\sqrt{3})$的唯一分解。
+
+%% \vspace{2mm}
+%% 用4的因子构造理想$A = (2, 1 + i\sqrt{3}), \overline{A} = (2, 1 - i\sqrt{3})$。接下来计算理想的积：
+
+%% \begin{align*}
+%% AA &= (4, 2 + 2i\sqrt{3}, (1 + i\sqrt{3})^2) \\
+%%    &= (4, 2 + 2i\sqrt{3}, -2 + 2i\sqrt{3}) && \text{其中} (1 + i\sqrt{3})^2 = -2 + 2i\sqrt{3}
+%% \end{align*}
+
+%% $4, 2 + 2i\sqrt{3}, -2 + 2i\sqrt{3}$每个都能被2整除。根据整除即包含，$AA \subset (2)$。另一方面有$\frac{1}{2}(2 + 2i\sqrt{3}) - \frac{1}{2}(-2 + 2i\sqrt{3}) = 2$。这里的问题是$\pm \frac{1}{2}$不是整数？它们在$\mathbb{Z}[-sqrt{-3}]$中。尽管我们想证明$(2) = (2, 1 + i\sqrt{3})^2$。
+%% }
 
 \Question{我们用\cref{fig:NNtoN}建立了房间和任意旅游团的客人间的一一映射。第$i$号旅游团的第$j$号客人应该入住几号房间？第$k$个房间里住了哪号旅游团的哪位客人？
 
-按照本章约定，从0开始计数。用数偶$(i, j)$表示第$i$号旅游图的第$j$号客人。我们列出前面的几个客人和房间的对应关系
+\vspace{2mm}
+我们约定从0开始计数。用数偶$(i, j)$表示第$i$号旅游图的第$j$号客人。我们列出前面的几个客人和房间的对应关系
 
 \vspace{3mm}
 \begin{adjustbox}{max width=\linewidth}
@@ -2538,6 +2558,7 @@ j: \text{$m$是偶数} \\
 k = \dfrac{m(m + 2) + (-1)^m (2j - m)}{2}
 \]
 }
+
 \Question{希尔伯特旅馆第三天的故事的解法并不唯一，\cref{fig:PWW-NNtoN}是《无需语言的证明》一书的封面。试根据此图给出另一种编号方案？
 \begin{center}
  \includegraphics[scale=0.18]{img/PWW}
