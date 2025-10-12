@@ -943,7 +943,7 @@ r &= c^n = e^{\ln(c^n)} && \text{换底} \\
  \label{fig:heptagon-z}
 \end{figure}
 
-圆是周期性的，$e^{\frac{2k\pi}{2}}$转动整数圈后与自己重合。$k = 0, 1, 2, \dotsc, n-1$时，$e^{\frac{2kp}{n}i}$是$n$个不同的根。它们的幅角依此是$0, \theta, 2\theta, \dotsc, (n-1)\theta$，把单位圆平均分成了$n$等份。因此方程$x^n = 1$叫做“分圆方程”（cyclotomic equation）。把复平面上这个$n$个根连接起来就构成了正$n$边形。
+圆是周期性的，$e^{\frac{2k\pi}{n}}$转动整数圈后与自己重合。$k = 0, 1, 2, \dotsc, n-1$时，$e^{\frac{2kp}{n}i}$是$n$个不同的根。它们的幅角依此是$0, \theta, 2\theta, \dotsc, (n-1)\theta$，把单位圆平均分成了$n$等份。因此方程$x^n = 1$叫做“分圆方程”（cyclotomic equation）。把复平面上这个$n$个根连接起来就构成了正$n$边形。
 
 例如最简单的正多边形是正三角形$n = 3$。$x^3 = 1$有三个复根$1, e^{\frac{2\pi}{3}i}, e^{\frac{4\pi}{3}i} = e^{-\frac{2\pi}{3}i}$。其中：
 
@@ -1364,7 +1364,7 @@ z_1z_2 = (a_1 + b_1i)(a_2 + b_2i) = a_1a_2 - b_1b_2 + (a_1b_2 + b_1a_2)i
 %%  Hao Wang’s supplemental biography of Gödel, A Logical Journey, MIT Press, 1996.
 
 \label{sec:FLT-4}
-著名的费马大定理断言当$n \geq 3$时，$x^n + y^n = z^n$没有正整数解。尽管费马“抱怨”页边太窄，写不下他的证明，但他的确后来给出了$n=4$时$x^4 + y^4 = z^4$无解的证明。并且他还在这个过程中发展出了自己非常自豪的“无穷递降法”（Infinite descent）。在此后的200年间，数学家们一直沿着这条路摸索费马大定理的证明\citepage[40-42页]{Edward-1977}。当$n = 4$时，费马发现他只需要证明如下结论就足够了\citepage[247页]{Hardy2009}。
+著名的费马大定理断言当$n \geq 3$时，$x^n + y^n = z^n$没有正整数解。尽管费马“抱怨”页边太窄，写不下他的证明，但他的确后来给出了$n=4$时$x^4 + y^4 = z^4$无解的证明。并且他还在这个过程中发展出了自己非常自豪的“无穷递降法”（infinite descent）。在此后的200年间，数学家们一直沿着这条路摸索费马大定理的证明\citepage[40-42页]{Edward-1977}。当$n = 4$时，费马发现他只需要证明如下结论就足够了\citepage[247页]{Hardy2009}。
 
 \begin{lemma}
 方程$x^4 + y^4 = z^2$没有正整数解。
