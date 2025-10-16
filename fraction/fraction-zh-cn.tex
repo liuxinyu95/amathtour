@@ -701,8 +701,8 @@ $\dfrac{a}{9}$的小数形式是$0.\dot{a} = 0.aaa\cdots$
  \label{fig:cross-mul}
 \end{figure}
 
-\index{既约分数}
-有了这个等价关系，就可以判断任何两个分数（或比例）是否等价。我们可以在众多的分数表示中选取$\dfrac{b}{a}$，且$a, b$没有除1以外的公因子（也称为互素，记作$(a, b) = 1$）的作为\underdot{代表}，称为“既约分数”。唯一的例外是0，我们选取0作为$\dfrac{0}{a}$的代表。这样的代表只有一个，因为若$\dfrac{b}{a} = \dfrac{d}{c}$，且各自的分子分母互素，由等价关系$bc = ad$，所以$a$整除$bc$。又因为$a$和$b$互素，所以$a$必然整除$c$；反过来由等价关系$bc = ad$还可以推出$c$整除$ad$。又因为$c$和$d$互素，所以$c$必然整除$a$。这样$a$和$c$互相能够整除对方，所以它们必然相等，即$a = c$。同理可证$b = d$，这就证明了既约分数的代表是唯一的。
+\index{既约分数} \index{最简分数}
+有了这个等价关系，就可以判断任何两个分数（或比例）是否等价。我们可以在众多的分数表示中选取$\dfrac{b}{a}$，且$a, b$没有除1以外的公因子（也称为互素，记作$(a, b) = 1$）的作为\underdot{代表}，称为“既约分数”（也叫最简分数）。唯一的例外是0，我们选取0作为$\dfrac{0}{a}$的代表。这样的代表只有一个，因为若$\dfrac{b}{a} = \dfrac{d}{c}$，且各自的分子分母互素，由等价关系$bc = ad$，所以$a$整除$bc$。又因为$a$和$b$互素，所以$a$必然整除$c$；反过来由等价关系$bc = ad$还可以推出$c$整除$ad$。又因为$c$和$d$互素，所以$c$必然整除$a$。这样$a$和$c$互相能够整除对方，所以它们必然相等，即$a = c$。同理可证$b = d$，这就证明了既约分数的代表是唯一的。
 
 也许有读者问，为什么要引入这么复杂的等价关系？为什么不直接约分看结果是否一样？古人一开始的确是自然地采用约分来判断相等的，如同上节《九章算术》中介绍的那样。并且在小学数学课上我们也是这样做的。但随着我们用分数这个武器挑战更大的数和更复杂的问题，就发现新的情况了。乘法远远比除法更容易。面对$\dfrac{8723}{22814}$和$\dfrac{143}{374}$这样的分数时，恐怕很少有人能一眼看出如何约分，即使借助计算器或使用欧几里得算法。但做乘法就快多了，用计算器很快就算出$8723 \times 374 = 3262402$并且$22814 \times 143 = 3262402$，所以它们相等。中学数学把分数拓展到了分式，我们发现这个等价关系依然好用。例如$\dfrac{x^5 - 1}{x^3 - 1}$和$\dfrac{1 + x + x^2 + x^3 + x^4}{1 + x + x^2}$，同学们对它们进行因式分解再约分通常会遇到困难\footnote{其中一个方法是：看出$1^n - 1 = 0$，所以$x-1$是$x^n-1$的一个因子。接下来用多项式长除法得出另一个因子。}。但多项式乘法却容易得多：
 
@@ -802,7 +802,7 @@ $\dfrac{a}{9}$的小数形式是$0.\dot{a} = 0.aaa\cdots$
 调和平均值因此也称做倒数平均值。请根据调和平均值的定义验证：1) 在两地之间往返的平均速度是前往的速度和返回速度的调和平均值。例如从船只从南京顺流而下到达上海的平均速度是$v_1$，从上海逆流而上的平均速度是$v_2$，则往返的平均速度$v$是$v_1$与$v_2$的调和平均值。2) 在电路中并联的两个不同电阻$R_1$和$R_2$若等效于并联了\underdot{两个相同}的电阻$R$，则$R$的大小是$R_1$与$R_2$的调和平均值。（注意：$R$相当于并联电阻的2倍）
 }
 
-\Question{$\bigstar$若$p$为大于2的素数，证明$\dfrac{2}{p}$可\underdot{唯一}分解为两个埃及分数$\dfrac{2}{p} = \dfrac{1}{a} + \dfrac{1}{b} (a \ne b)$。提示：这个式子等价于$(2a - p)(2b - p) = p^2$。\label{qn:unique-decompose-r}}
+\Question{$\bigstar$验证$\dfrac{2}{p} = \dfrac{1}{a} + \dfrac{1}{b}$等价于$(2a - p)(2b - p) = p^2$，并由此证明：若$p$为大于2的素数，则$\dfrac{2}{p}$可\underdot{唯一}分解为两个埃及分数$\dfrac{2}{p} = \dfrac{1}{a} + \dfrac{1}{b} (a \ne b)$。\label{qn:unique-decompose-r}}
 
 \Question{证明埃尔德什——斯特劳斯猜想对所有偶数$n$成立。}
 
@@ -855,10 +855,9 @@ R &= \frac{2}{\frac{1}{R_1} + \frac{1}{R_2}} = \frac{2R_1 R_2}{R_1 + R_2}
 所以图中右侧每个电阻等于$R_1$和$R_2$的调和平均值。
 }
 
-\Question{若$p$为大于2的素数，证明$\dfrac{2}{p}$可唯一分解为两个埃及分数$\dfrac{2}{p} = \dfrac{1}{a} + \dfrac{1}{b} (a \ne b)$。
+\Question{验证$\dfrac{2}{p} = \dfrac{1}{a} + \dfrac{1}{b}$等价于$(2a - p)(2b - p) = p^2$，并由此证明：若$p$为大于2的素数，则$\dfrac{2}{p}$可唯一分解为两个埃及分数$\dfrac{2}{p} = \dfrac{1}{a} + \dfrac{1}{b} (a \ne b)$。
 
   \begin{proof}
-  上式等价于$(2a - p)(2b - p) = p^2$，我们可验证如下：
   \begin{align*}
   \frac{2}{p} & = \frac{1}{a} + \frac{1}{b} = \frac{a+b}{ab} & \text{通分} \\
   2ab & = pa + pb & p, a, b\text{是分母，不为}0 \\
@@ -877,16 +876,22 @@ R &= \frac{2}{\frac{1}{R_1} + \frac{1}{R_2}} = \frac{2R_1 R_2}{R_1 + R_2}
   \end{proof}
 }
 
-\Question{%证明埃尔德什——斯特劳斯猜想对所有偶数$n$成立。
+\Question{证明埃尔德什——斯特劳斯猜想对所有偶数$n$成立。
+
+\vspace{2mm}
 令$n = 2m$，则$\dfrac{4}{2m} = \dfrac{2}{m}$，这就是\cref{th:decompose-of-2-n}。
 }
 
-\Question{ %实际上我们只要证明埃尔德什——斯特劳斯猜想对于所有素数成立即可。这是为什么？
+\Question{实际上我们只要证明埃尔德什——斯特劳斯猜想对于所有素数成立即可。这是为什么？
+
+\vspace{2mm}
+
 注意到：\[
 \frac{4}{mp} = \frac{1}{ma} + \frac{1}{mb} + \frac{1}{mc}
 \]
 }
-\Question{%证明埃尔德什——斯特劳斯猜想对所有$4k+3$型的素数成立。
+
+\Question{证明埃尔德什——斯特劳斯猜想对所有$4k+3$型的素数成立。
   \begin{proof}
     利用\cref{qn:unique-decompose-r}的结论
     \begin{align*}
@@ -899,8 +904,9 @@ R &= \frac{2}{\frac{1}{R_1} + \frac{1}{R_2}} = \frac{2R_1 R_2}{R_1 + R_2}
   \end{proof}
 }
 
-\Question{%找出三个儿子按照$\dfrac{1}{a}$、$\dfrac{1}{b}$、$\dfrac{1}{c}$分配$n$个动物的所有可能数值和比例。要求大儿子分得的财产多于二儿子，二儿子分得的财产多于小儿子。恰好借来一只动物后可以分好并余下一只动物。
+\Question{找出三个儿子按照$\dfrac{1}{a}$、$\dfrac{1}{b}$、$\dfrac{1}{c}$分配$n$个动物的所有可能数值和比例。要求大儿子分得的财产多于二儿子，二儿子分得的财产多于小儿子。恰好借来一只动物后可以分好并余下一只动物。
 
+\vspace{2mm}
 我们先给出一个纯数学解法，然后再给出用计算机穷举的解法。读者朋友们可以加以对比。本题本质上是求方程
 \[
 \frac{n}{n+1} = \frac{1}{a} + \frac{1}{b} + \frac{1}{c}, a < b < c
@@ -1006,7 +1012,20 @@ R &= \frac{2}{\frac{1}{R_1} + \frac{1}{R_2}} = \frac{2R_1 R_2}{R_1 + R_2}
  \label{fig:inherit-program}
 \end{center}
 
-下面是对应的Haskell例子程序。
+下面是对应的Python和Haskell例子程序。
+
+\begin{lstlisting}[language = Python, frame = single]
+s = []
+for a in range(2, 11):
+    for b in range(a + 1, 12):
+        for c in range(b + 1, 13):
+            d = a*b*c - a*b - b*c - a*c
+            if d > 0:
+                n = a*b*c // d
+                if n % a == 0 and n % d == 0 and n % c == 0:
+                    s.append((a, b, c))
+print(s)
+\end{lstlisting}
 
 \begin{Haskell}[frame = single]
 [(a, b, c, n) | a <- [2..10], b <- [a+1..11], c <- [b+1..12],
@@ -1016,7 +1035,7 @@ R &= \frac{2}{\frac{1}{R_1} + \frac{1}{R_2}} = \frac{2R_1 R_2}{R_1 + R_2}
 \end{Haskell}
 }
 
-\Question{%$\bigstar$证明任何数值$x$的小数表示是唯一的，其中$0 < x < 1$。
+\Question{$\bigstar$证明任何数值$x$的小数表示是唯一的，其中$0 < x < 1$。
 
   \begin{proof}
     用反证法，令：
@@ -1035,7 +1054,7 @@ R &= \frac{2}{\frac{1}{R_1} + \frac{1}{R_2}} = \frac{2R_1 R_2}{R_1 + R_2}
   \end{proof}
 }
 
-\Question{%%证明无限循环小数$0.\dot{a_1} \dot{a_2} \cdots \dot{a_n}$的分数形式是$\dfrac{a_1 a_2 \cdots a_n}{99 \cdots 9} = \dfrac{a_1 a_2 \cdots a_n}{10^{n+1} - 1}$。
+\Question{证明无限循环小数$0.\dot{a_1} \dot{a_2} \cdots \dot{a_n}$的分数形式是$\dfrac{a_1 a_2 \cdots a_n}{99 \cdots 9} = \dfrac{a_1 a_2 \cdots a_n}{10^{n+1} - 1}$。
 
   \begin{proof}
     \begin{align*}
@@ -1047,8 +1066,9 @@ R &= \frac{2}{\frac{1}{R_1} + \frac{1}{R_2}} = \frac{2R_1 R_2}{R_1 + R_2}
   \end{proof}
 }
 
-\Question{%%利用分数和解释：如果阿塔兰塔先跑完全程的$\dfrac{1}{2}$，接下来再跑完剩余的一半，即$\dfrac{1}{4}$，然后不断跑完剩余路程的一半，则她最终可以跑完全程。
+\Question{利用分数和解释：如果阿塔兰塔先跑完全程的$\dfrac{1}{2}$，接下来再跑完剩余的一半，即$\dfrac{1}{4}$，然后不断跑完剩余路程的一半，则她最终可以跑完全程。
 
+\vspace{2mm}
 十进制无限循环小数$0.99\cdots = 1$，对应的二进制无限循环小数$0.11\cdots = 1$。证明与十进制类似：
 \begin{proof}
   \begin{align*}
@@ -1062,7 +1082,10 @@ R &= \frac{2}{\frac{1}{R_1} + \frac{1}{R_2}} = \frac{2R_1 R_2}{R_1 + R_2}
 \]
 }
 
-\Question{%%验证分数的加法交换律、乘法交换律，乘法结合率。
+\Question{验证分数的加法交换律、乘法交换律，乘法结合率。
+
+\vspace{2mm}
+
 加法交换律：
 \begin{align*}
   \frac{b}{a} + \frac{d}{c} &= \frac{bc + ad}{ac} &\text{通分} \\
