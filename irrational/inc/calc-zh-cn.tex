@@ -1,4 +1,4 @@
-\section{常用极限和导数}
+\section{关于正弦函数的极限}
 \phantomsection
 \label[appendix]{app:calculus}
 
@@ -16,15 +16,17 @@
     \node[below left] at (0,0) {$O$};
 
     \def\theta{15} % degree
-    \draw[dashed] (0,0) -- (\theta:1); % radius at \theta
+    \draw[dashed] (0,0) -- (\theta:1.2); % radius at \theta
 
-    \draw[->] (1,0) arc (0:\theta:1) node[midway,right] {$x$};
+    \draw[->] (1,0) arc (0:\theta:1) node[midway,right] {$x \quad \tan x$};
 
     % P(x = cos x, y = sin x）
-    \fill[black] (\theta:1) circle (0.02) node[right] {$P(\cos x, \sin x)$};
+    \fill[black] (\theta:1) circle (0.02) node[above] {$P$};
 
     \draw[red, thick] (\theta:1 |- 0,0) -- (0,0) node[midway,below] {$\cos x$};
     \draw[blue, thick] (\theta:1) -- (\theta:1 |- 0,0) node[midway,left] {$\sin x$};
+
+    \draw[dashed] (1, -0.5) -- (1, 1);  % tangent at (1, 0)
 
     \fill[black] (1,0) circle (0.02) node[below right] {$Q(1,0)$};
   \end{tikzpicture}
