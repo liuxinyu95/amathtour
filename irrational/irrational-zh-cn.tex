@@ -1335,9 +1335,9 @@ x = 1 + \dfrac{1}{2 + \dfrac{1}{\dfrac{12}{6}}}
 \end{center}
 }
 
-\Question{若$a, b$是互素的奇数，证明$\frac{a \pm b}{2}$互素。
+\Question{若$a, b$是互素的奇数，证明$\dfrac{a \pm b}{2}$互素。
   \begin{proof}
-    设$d$为$\frac{a \pm b}{2}$的公因子，令$dm = \frac{a + b}{2}, dn = \frac{a - b}{2}$，其中$m, n$为整数。两式相加求得$a = dm + dn = d(m + n)$，所以$d$整除$a$；两式相减得$b = dm - dn = d (m - n)$，所以$d$也整除$b$。这样$d$也是$a, b$的公因子。但$a, b$互素，所以$d$只能是1，即$\frac{a \pm b}{2}$互素。
+    设$d$为$\dfrac{a \pm b}{2}$的公因子，令$dm = \dfrac{a + b}{2}, dn = \dfrac{a - b}{2}$，其中$m, n$为整数。两式相加求得$a = dm + dn = d(m + n)$，所以$d$整除$a$；两式相减得$b = dm - dn = d (m - n)$，所以$d$也整除$b$。这样$d$也是$a, b$的公因子。但$a, b$互素，所以$d$只能是1，即$\dfrac{a \pm b}{2}$互素。
   \end{proof}
 }
 \Question{$a, b$互素，若$ab = c^2$，证明$a, b$都是平方数。
@@ -1364,7 +1364,7 @@ x = 1 + \dfrac{1}{2 + \dfrac{1}{\dfrac{12}{6}}}
 
 (1) 如\cref{fig:perp-of-point}所示，反向延长$AB$，以$A$为圆心$AB$为半径交延长线于点$B'$。分别以点$B$和$B'$为圆心，$BB'$为半径画两圆。连接两圆交点得垂线$CD$。
 \begin{center}
- \includegraphics[scale=0.3]{img/perp}
+ \includegraphics[scale=0.25]{img/perp}
  \captionof{figure}{过直线上定点的垂线}
  \label{fig:perp-of-point}
 \end{center}
@@ -1414,49 +1414,30 @@ x = 1 + \dfrac{1}{2 + \dfrac{1}{\dfrac{12}{6}}}
 \end{dcases}
 \]
 
-这一点不难证明：
+这是因为：
 
-\blre
-ax + by & = & a (x_0 - k \dfrac{b}{g}) + b (y_0 - k \dfrac{a}{d}) \\
-        & = & a x_0 + b y_0 - a k \dfrac{b}{g} + b k \dfrac{a}{d} \\
-        & = & c - 0 = c
-\elre
+\begin{align*}
+ax + by &= a (x_0 - k \dfrac{b}{d}) + b (y_0 + k \dfrac{a}{d}) \\
+        &= a x_0 - \cancel{ak\dfrac{b}{d}} + b y_0  + \cancel{bk\dfrac{a}{d}} = c
+\end{align*}
 
-我们接下来证明，所有不定方程的解都可以表示为这一形式。令$x, y$为不定方程的任意一组解，我们有：$ax + by = c$和$a x_0 + b y_0 = c$。因此：
+接下来证明，所有不定方程的解都可以表示为这一形式。令$x, y$为不定方程的任意一组解，有：$ax + by = c$和$a x_0 + b y_0 = c$。因此：
 
-\[
-a (x - x_0) + b (y - y_0) = c - c = 0
-\]
+\begin{align*}
+a (x - x_0) + b (y - y_0)  &= 0 && \text{两式相减} \\
+\dfrac{a}{d} (x - x_0) + \dfrac{b}{d} (y - y_0) &= 0 && \text{两边同时除以最大公约数$d$} \\
+\dfrac{a}{d} (x - x_0) &= -\dfrac{b}{d} (y - y_0)  && \text{移项}
+\end{align*}
 
-两边同时除以$a, b$的最大公约数，得：
+$\dfrac{a}{d}$整除左侧，因此它必然也整除右侧。但是由于$(\dfrac{a}{d}, \dfrac{b}{d}) = 1$互素，所以有$\dfrac{a}{d}$整除$(y - y_0)$，令：
 
-\[
-\dfrac{a}{d} (x - x_0) + \dfrac{b}{d} (y - y_0) = 0
-\]
+\begin{align*}
+y - y_0 &= k \dfrac{a}{d},  &&\text{对于某个整数}k \\
+y &= y_0 + k \dfrac{a}{d} \\
+x &= x_0 - k \dfrac{b}{d} && \text{代回上面}
+\end{align*}
 
-\[
-\dfrac{b}{d} (y - y_0)  = - \dfrac{a}{d} (x - x_0)
-\]
-
-注意到，左侧能够被$\dfrac{b}{d}$整除，因此它必然也能整除右侧。但是由于$(\dfrac{a}{d}, \dfrac{b}{d}) = 1$，它们互素，所以必然有$\dfrac{b}{d}$整除$(x - x_0)$，不妨令：
-
-\[
-x - x_0 = k \dfrac{b}{d}, \text{对于某个} k \in \pmb{Z}
-\]
-
-因此
-
-\[
-x = x_0 + k \dfrac{b}{d}
-\]
-
-将其代入回上面的等式，得出：
-
-\[
-y = y_0 - k \dfrac{a}{d}
-\]
-
-这样就证明了所有解都必然是这样的形式。显然，任意两组这样的解，其差最小时$k = 1$，即：$|x_1 - x_2|$的最小值为$b/(a, b)$，且$|y_1 - y_2|$的最小值为$a/(a, b)$。
+这就证明了所有解都是这样的形式。任意两组这样的解，当$k = 1$时差最小，即$|x_1 - x_2|$的最小值为$b/(a, b)$，$|y_1 - y_2|$的最小值为$a/(a, b)$。
 }
 
 \Question{找出用9升和4升的瓶子从河中打出6升水的最少步骤。
