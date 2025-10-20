@@ -250,25 +250,25 @@ r^3 - (\frac{p}{3r})^3 = q
 这本质上是一个关于$r^3$的二次方程$(r^3)^2 - qr^3 - (\dfrac{p}{3})^3 = 0$，利用二次方程求根公式得到：
 
 \[
-r^3 = \frac{q}{2} + \sqrt{(\frac{q}{2})^2 + (\frac{p}{3})^3}
+r^3 = \frac{q}{2} + \sqrt{\left(\frac{q}{2}\right)^2 + \left(\frac{p}{3}\right)^3}
 \]
 
 对称地可以求出$s^3$：
 
 \[
-s = -\frac{q}{2} + \sqrt{(\dfrac{q}{2})^2 + (\dfrac{p}{3})^3}
+s = -\frac{q}{2} + \sqrt{\left(\dfrac{q}{2}\right)^2 + \left(\dfrac{p}{3}\right)^3}
 \]
 
 最终求得未知数$y = r - s$：
 
 \[
-y = r - s = \sqrt[3]{\frac{q}{2} + \sqrt{(\frac{q}{2})^2 + (\frac{p}{3})^3}} - \sqrt[3]{\frac{q}{2} + \sqrt{(\frac{q}{2})^2 + (\frac{p}{3})^3}}
+y = r - s = \sqrt[3]{\frac{q}{2} + \sqrt{\left(\frac{q}{2}\right)^2 + \left(\frac{p}{3}\right)^3}} - \sqrt[3]{\frac{q}{2} + \sqrt{\left(\frac{q}{2}\right)^2 + \left(\frac{p}{3}\right)^3}}
 \]
 
 和代数法推出的卡尔达诺公\cref{eq:cardano}对比，只有$p$的正负号不同，这是由于方程$y^3 + py = q$和$y^3 = py + q$中$p$的符号相反。我们可以尝试用卡尔达诺公式解方程$x^3 = 6x + 9$。
 
 \begin{align*}
-x &= \sqrt[3]{\frac{9}{2} + \sqrt{(\frac{9}{2})^2 - (\frac{6}{3})^3}} + \sqrt[3]{\frac{9}{2} - \sqrt{(\frac{9}{2})^2 - (\frac{6}{3})^3}} \\
+x &= \sqrt[3]{\frac{9}{2} + \sqrt{\left(\frac{9}{2}\right)^2 - \left(\frac{6}{3}\right)^3}} + \sqrt[3]{\frac{9}{2} - \sqrt{\left(\frac{9}{2}\right)^2 - \left(\frac{6}{3}\right)^3}} \\
   &= \sqrt[3]{\frac{9}{2} + \sqrt{\frac{81 - 32}{4}}} + \sqrt[3]{\frac{9}{2} - \sqrt{\frac{81 - 32}{4}}} \\
   &= \sqrt[3]{\frac{9}{2} + \frac{7}{2}} + \sqrt[3]{\frac{9}{2} - \frac{7}{2}} \\
   &= \sqrt[3]{8} + \sqrt[3]{1} = 2 + 1 = 3
@@ -985,7 +985,7 @@ e^{\pm \frac{2\pi}{3}i} = \cos (\pm \frac{2\pi}{3}) + i \sin (\pm \frac{2\pi}{3}
 我们可以验证$x^3 - 1 = (x - 1)(x^2 + x + 1)$，二次方程$x^2 + x + 1$的两个根的确是$\dfrac{-1 \pm i\sqrt{3}}{2}$。我们也可以用二项式展开直接验证：
 
 \[
-(-\frac{1}{2} \pm \frac{\sqrt{3}}{2}i)^3 = -\frac{1}{8} \pm \frac{3\sqrt{3}}{8}i + \frac{9}{8} \mp \frac{3\sqrt{3}}{8}i = \frac{9-1}{8} = 1
+\left(-\frac{1}{2} \pm \frac{\sqrt{3}}{2}i\right)^3 = -\frac{1}{8} \pm \frac{3\sqrt{3}}{8}i + \frac{9}{8} \mp \frac{3\sqrt{3}}{8}i = \frac{9-1}{8} = 1
 \]
 
 这三个根构成了单位圆内接正三角形，如\cref{fig:3rd-root-of-1}所示。
@@ -1051,7 +1051,7 @@ x - 1 = \frac{\frac{\sqrt{5} - 1}{2} + i\sqrt{\frac{5 + \sqrt{5}}{2}}}{2} - 1 = 
 因此：
 
 \[
-|x - 1| = \sqrt{(\frac{\sqrt{5} - 5}{4})^2 + (\frac{\sqrt{\frac{5 + \sqrt{5}}{2}}}{2})^2} = \frac{\sqrt{10 - 2\sqrt{5}}}{2}
+|x - 1| = \sqrt{\left(\frac{\sqrt{5} - 5}{4}\right)^2 + \left(\frac{\sqrt{\frac{5 + \sqrt{5}}{2}}}{2}\right)^2} = \frac{\sqrt{10 - 2\sqrt{5}}}{2}
 \]
 
 于是作正五边形的问题就转化为：任给长度为1的线段，如何做出长度为$s = \dfrac{\sqrt{10 - 2\sqrt{5}}}{2}$的线段。为了简化问题，我们先求线段$2s$。我们的思路是作一个直角三角形，使其斜边为$2s$。这个三角形的两个直角边不可能都是有理数，否则根据勾股定理，斜边不可能是$\sqrt{10 - 2\sqrt{5}}$这种根号下还有根号的形式。设两个直角边分别是$\sqrt{5} - a$和$b$，然后用勾股定理：
