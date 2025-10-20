@@ -31,3 +31,6 @@ clean:
 	git clean -fdx
 
 .PHONY: all cn en #chapters chapters-cn chapters-en
+
+# export:
+# git archive --format=zip --output=path/repo-name.zip HEAD
