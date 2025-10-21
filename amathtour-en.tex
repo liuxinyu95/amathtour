@@ -45,7 +45,7 @@
 \maketitle
 
 \frontmatter
-%% \subimport{path/}{preface-en.tex}
+%% \subimport{appendix/}{preface-zh-cn}
 \newpage
 
 \tableofcontents
@@ -54,23 +54,18 @@
 
 \subimport{numeral/}{numeral-en.tex}
 \subimport{zero/}{zero-en.tex}
+%% \subimport{fraction/}{fraction-zh-cn}
+%% \subimport{irrational/}{irrational-zh-cn}
+%% \subimport{complex/}{complex-zh-cn}
 
 \appendix
 
-%% \subimport{path/}{appendix-en.tex}
-
-\chapter{Answers}
-\label[appendix]{ch:answers}
-\phantomsection
-\shipoutAnswer
-
-%% \subimport{path-to-appendix/}{bib-en.tex}
-
-\input{fdl-1.3.tex}
+\subimport{appendix/}{appendix-en.tex}
 
 \backmatter
 \phantomsection
 \addcontentsline{toc}{chapter}{Index}
 \printindex
 
+%% \input{fdl-1.3.tex}
 \end{document}

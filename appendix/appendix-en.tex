@@ -22,39 +22,41 @@
 
 \markboth{Appendix}{A tour of numbers}
 
-\ifx\wholebook\relax
-\chapter{Greek Alphabet} \label[appendix]{ch:greek-letters}
+\chapter{参考答案}
+\label{ch:answers}
+\phantomsection
+\shipoutAnswer
+
+\chapter{证明和算法}
 \phantomsection  % so hyperref creates bookmarks
-\numberwithin{Exercise}{chapter}
-\fi
 
-\begin{table}[h!]
-  \centering
-  \begin{tabular}{|c|c|c||c|c|c|}
-      \hline
-      \textbf{Upper Case} & \textbf{Lower Case} & \textbf{Pronunciation} & \textbf{Upper Case} & \textbf{Lower Case} & \textbf{Pronunciation} \\
-      \hline
-         A         & $\alpha$    & Alpha &      N         & $\nu$         & Nu \\
-         B         & $\beta$     & Beta &       $\Xi$         & $\xi$         & Xi \\
-         $\Gamma$  & $\gamma$    & Gamma &      O    & o    & Omicron \\
-         $\Delta$  & $\delta$    & Delta &      $\Pi$         & $\pi$         & Pi \\
-         E         & $\epsilon$  & Epsilon &    P        & $\rho$        & Rho \\
-         Z         & $\zeta$     & Zeta &       $\Sigma$      & $\sigma$      & Sigma \\
-         H         & $\eta$      & Eta &        T        & $\tau$        & Tau \\
-         $\Theta$  & $\theta$    & Theta &      Y    & $\upsilon$    & Upsilon \\
-         I         & $\iota$     & Iota &       $\Phi$        & $\phi$        & Phi \\
-         K         & $\kappa$    & Kappa &      X        & $\chi$        & Chi \\
-         $\Lambda$ & $\lambda$   & Lambda &     $\Psi$        & $\psi$        & Psi \\
-         M         & $\mu$       & Mu &         $\Omega$      & $\omega$      & Omega \\
-      \hline
-  \end{tabular}
-  \caption{Greek alphabet}
-  \label{tab:greek_alphabet}
-\end{table}
+%% \subimport{../zero/inc/}{addcom-zh-cn}
+%% \subimport{../fraction/inc/}{decomposition-zh-cn}
+%% \subimport{../irrational/inc/}{evenpfnum-zh-cn}
+%% \subimport{../irrational/inc/}{wantzel-zh-cn}
+%% \subimport{../irrational/inc/}{fltc-zh-cn}
+%% \subimport{../irrational/inc/}{calc-zh-cn}
+%% \subimport{../complex/inc/}{fibonacci-zh-cn}
+%% \subimport{../complex/inc/}{wilson-zh-cn}
 
+\chapter{希腊字母表} \label{ch:greek-letters}
+\phantomsection
+\subimport{../numeral/inc/}{greek-en}
+
+%% Reference
+%% =============================================
+\markboth{\bibname}{}
+\phantomsection  % so hyperref creates bookmarks
+\addcontentsline{toc}{chapter}{\bibname}
+
+\begin{thebibliography}{99}
+  \subimport{../numeral/inc/}{bib-en}
+  %% \subimport{../zero/inc/}{bib-zh-cn}
+  %% \subimport{../fraction/inc/}{bib-zh-cn}
+  %% \subimport{../irrational/inc/}{bib-zh-cn}
+  %% \subimport{../complex/inc/}{bib-zh-cn}
+\end{thebibliography}
 
 \ifx\wholebook\relax \else
-
 \expandafter\enddocument
-
 \fi
