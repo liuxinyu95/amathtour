@@ -15,7 +15,7 @@
 
 \usepackage{fontspec}
 \usepackage[nil,english]{babel}
-\usepackage{luatexja-ruby}  % for Kaiming and \underdot
+\usepackage{luatexja-ruby}  % for Kaiming and \underdo
 \usepackage{graphicx, color}
 \usepackage{adjustbox}
 \usepackage{wrapfig}
@@ -337,17 +337,57 @@
 }
 
 \DeclareOption{en}{
-  \babelfont[chinese]{rm}{Noto Serif CJK SC}
+  \IfFontExistsTF{Noto Serif CJK SC}{
+      \message{Apply Noto Serif CJK SC for bible}
+      \babelfont[chinese]{rm}{Noto Serif CJK SC}
+  }{ % else
+      \IfFontExistsTF{Noto Serif SC}{
+          \message{Apply Noto Serif SC for bible}
+          \babelfont[chinese]{rm}{Noto Serif SC}
+      }{ % else
+          \ifwindows{
+              \message{Apply SimSun for bible}
+              \babelfont[chinese]{rm}{SimSun}
+          }\else{
+              \IfFontExistsTF{STSong}{
+                  \message{Apply STSong for bible}
+                  \babelfont[chinese]{rm}{STSong}
+              }{ % else
+                  \message{No CN default font}
+              } % end if exits STSong
+          }\fi % end if windows
+      } % end if exits Noto Serif SC
+  } % end if exits Noto Serif CJK SC
+
   \theoremstyle{plain}
+  \ifdefined\theorem\else
   \newtheorem{theorem}{Theorem}[section]
+  \fi
+
+  \ifdefined\lemma\else
   \newtheorem{lemma}[theorem]{Lemma}
+  \fi
+
+  \ifdefined\proposition\else
   \newtheorem{proposition}[theorem]{Proposition}
+  \fi
+
+  \ifdefined\corollary\else
   \newtheorem{corollary}[theorem]{Corollary}
+  \fi
 
   \theoremstyle{definition}
+  \ifdefined\axiom\else
   \newtheorem{axiom}{Axiom}[section]
+  \fi
+
+  \ifdefined\definition\else
   \newtheorem{definition}{Definition}[section]
+  \fi
+
+  \ifdefined\example\else
   \newtheorem{example}{Example}[section]
+  \fi
 
   \AtEndEnvironment{Exercise}{
     \par \rightline{\AnswerListName: \cpageref{\ExerciseLabel-Answer}}}
