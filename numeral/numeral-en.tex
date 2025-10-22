@@ -78,26 +78,26 @@ To build the great pyramid, ancient Egyptian created many symbols for big number
 \begin{figure}[htbp]
  \centering
  \subcaptionbox{212427 is $2(100,000)+1(10,000)+2(1,000)+4(100)+2(10)+7(1)$}{\includegraphics[scale=0.5]{img/egypt-num-eg2}}
- \subcaptionbox{The number, 1,333,330, in Edfu temple in Egypt.}{\includegraphics[scale=0.2]{img/Hieroglyphic-num-eg}}
+ \subcaptionbox{The number, 1,333,330, is inscribed in Edfu temple in Egypt.}{\includegraphics[scale=0.2]{img/Hieroglyphic-num-eg}}
  \caption{Egyptian numbers}
  \label{fig:egypt-number-examples}
 \end{figure}
 
-\index{古巴比伦计数系统} \index{60进制} \index{楔形文字}
-尽管方法（3）能够处理很大的数，但方法（2）对付小数字也很方便。古巴比伦人生活在两河流域的美索不达米亚平原（位于底格里斯河、幼发拉底河之间的平原，现今的伊拉克境内）。他们在湿泥板上刻划文字，然后在阳光下晒干或用火烘干变硬。这些文字呈楔形。古巴比伦人使用60进制（分组单位是60）。这种进制也出现在我们的日常生活中。60秒是1分，60分是1小时。所以1小时12分30秒，或写成1:12:30，包括$1(60\times 60) + 12(60) + 30 = 4350$秒。60足够大，所以古巴比伦人在60以内使用自由分组法，超过60用$60^2$、$60^3$、$60^4$……分组。\cref{fig:babylonian-numerals}是楔形文字60以内的符号。可以明显看出其中的规律：一是一个纵向的楔形，从一到九每数一就增加一个楔形。十变成了一个横向的楔形，从十一到十九是一个横向的楔形（10）加上相应纵向的楔形。二十是两个横向的楔形，然后重复这个规律。60以内的数字是横向的楔形个数乘以10加上纵向的楔形个数。
+\index{ancient Babylonian numerals} \index{sexagesimal} \index{cuneiform}
+Although method (3) can handle big numbers, method (2) is convenient for small numbers. Ancient Babylonians lived in Mesopotamia. The name of the region comes from a Greek word, meaning `between rivers'. It refers to the center of the land between Tigris and Euphrates rivers (in Iraq nowadays). The people impressed their symbols in damp clay tablets. After drying in the sun or in a kiln, the tablets became as permanent as stone. Because the symbol given by the stylus is wedge-shaped, the inscriptions are known as cuneiform\footnote{Combined from `wedge' (cuneus in Latin) and `shape' (forma in Latin).}. Ancient Babylonians used sexagesimal (base 60) system, which is partly left today. For example, a minute has 60 seconds; an hour has 60 minutes. An hour 12 minutes and 30 seconds is written as 1:12:30, which equals $1(60\times 60) + 12(60) + 30 = 4350$ seconds. 60 is not a small number, it appears ancient Babylonians used a mixed system in practical: grouped with 10 for numbers less than 60, otherwise, grouped with $60^2$、$60^3$、$60^4, \dotsc$. \Cref{fig:babylonian-numerals} shows the cuneiform symbols from 1 to 59. We can easily see the pattern: a vertical wedge (Y) for number 1, add such a wedge for each number from 2 to 9; a horizontal wedge (<) for 10, from 11 to 19, the number is a horizontal wedge (10) plus the corresponding vertical wedges. Two horizontal wedges for 20, then repeated the rule within 60, i.e., 10 times the number of horizontal wedges plus the number of vertical wedges.
 
 \begin{figure}[htbp]
  \centering
- \subcaptionbox{古巴比伦楔形文字中的数字符号\label{fig:babylonian-numerals}}{\includegraphics[scale=0.8]{img/Babylonian-numerals}} \\
- \subcaptionbox{古巴比伦楔形数字$1(60^3) + 19(60^2) + 21(60) + 54$\label{fig:babylonian-num-eg}}{\includegraphics[scale=0.2]{img/Babylonian-num-eg}}
- \caption{古巴比伦数字}
+ \subcaptionbox{Numbers from 1 to 59 in ancient Babylonia.\label{fig:babylonian-numerals}}{\includegraphics[scale=0.8]{img/Babylonian-numerals}} \\
+ \subcaptionbox{Example: $1(60^3) + 19(60^2) + 21(60) + 54$\label{fig:babylonian-num-eg}}{\includegraphics[scale=0.2]{img/Babylonian-num-eg}}
+ \caption{Ancient Babylonian numerals.}
 \end{figure}
 
-\index{位值制}
-但60以上的数字展现出不一样的规律，如\cref{fig:babylonian-num-eg}所示。285714的60进制表示是1:19:21:54，但19写成了$20-1$。其中较小的纵向楔形表示减法，减数的上方有一个向右的楔形。可以看出，这并非是我们现代意义上严格的60进制，而是一种混合进制——60以内用十进制或减法表示。和古埃及相比，古巴比伦没有为$60$、$60^2$、$60^3$……创建单独的符号，而是依赖数字所在的位置决定单位的大小。最左边的数字表示有多少个1，向右的第二个位置上的数字表示有多少个60，第三个位置上的数字表示有多少个$60^2$，以此类推。这种方法叫做“位值制系统”。但由于缺乏0，古巴比伦的数字有歧义。直到约公元前300年后才偶尔出现了0，但只用于数字的中间而非结尾，无法区分出11和1100.古文字学者至今仍面临这个问题，只能通过上下文推测数值。
+\index{Positional numeral system}
+However, numbers greater than 60 have different pattern, as shown in \cref{fig:babylonian-num-eg}. 285714 is 1:19:21:54 in sexagesimal format, but 19 was written as $20 - 1$, where the small vertical wedge means minus. The number being subtracted is annotated with a wedge pointed to right. Evidently, this is not strictly our 60-based number today, but a mixed one with subtraction within 60. Different from Egyptian, ancient Babylonian didn't create dedicated symbols for $60, 60^2, 60^3, \dotsc$; the value of a digit is determined by its position. The left most is the number of 1s, the second is the number of units of 60, the third is the numbe of units of $60^2$, and so on. This is called the positional system. However, ancient Babylonian numbers might have ambiguity because lack of zero. Actually, they invented a symbol for empty place about 300 BCE, but it was used only in the middle of a number but not at the end. As a result, we can't distinguish between 11 and 1100; The later translators suffer from this problem and have to guess from the context.
 
-\section{古罗马和中国计数系统}
-\index{乘法分组计数系统} \index{古罗马计数系统} \index{罗马数字}
+\section{Roman numerals and Chinese numerals}
+\index{Multiplicative grouping system} \index{Roman numerals}
 
 随着古罗马文明的崛起并建立起横跨欧亚非的帝国，罗马计数系统产生了巨大的影响，直到今天我们仍然可以在钟表盘上、建筑上、著作的章节编号上看到罗马数字（见\cref{fig:clock-plate}）。罗马数字的优点是符号简单，只包含I、V、X、C、M几个符号，对于较小的数字很直观。例如III表示3，VII表示5 + 2 = 7，2025可表示为MMXXV（2个1000，2个10加5）。但是罗马数字的缺点是用法混乱。早期的罗马数字只包含加法，后来出现了“左减右加”的用法，如IV表示5 - 1 = 4，而VI表示5 + 1 = 6。这样IXX = (10 - 1) + 10 = 19，但19 = 10 + (10 - 1) = XIX就有歧义了：XIX还可以理解为(XI)X = 11 + 10 = 21。同样XVIII = 16，但16 = 8 + 8 = IIXIIX和16 = (10 - 4) + 10 = IIIIXX都有歧义。其中IIIIXX出现在1388年巴黎的一份协定中表示88\cite{LeVeque-Smith-25}。
 
