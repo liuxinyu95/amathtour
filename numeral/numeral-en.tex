@@ -99,7 +99,7 @@ However, numbers greater than 60 have different pattern, as shown in \cref{fig:b
 \section{Roman numerals and Chinese numerals}
 \index{Multiplicative grouping system} \index{Roman numerals}
 
-Roman numerals have strong influence still today as the arising of the Roman emperor across Europe, Africa, and Asia. We still see Roman numbers in clocks (see \cref{fig:clock-plate}), buildings, table of content of books. It's easy for memorize as there are only few letters: I, V, X, C, and M. It's convenient to represent small numbers, such as III for 3, VII for 5 (= 2 + 7). 2025 which is MMXXV contains two 1000, two 10, and 5. However, there are so many ways to represent a number, that brings big confusion to decipher. At the beginning, people only needed to sum up the numbers of each letter, but then came the rule of `subtracting on the left and adding on the right'. For example, IV means $5 - 1 = 4$, but VI means $5 + 1 = 6$. Hence IXX $= (10 - 1) + 10 = 19$, while $19 = 10 + (10 - 1) =$ XIX causes ambiguity, because XIX can also be interpreted as (XI)X = 11 + 10 = 21. Similarly, XVIII = 16, but then both $16 = 8 + 8 =$ IIXIIX and $16 = (10 - 4) + 10 =$ IIIIXX have ambiguity. Where IIIIXX for 88 appeared in a Pairs treaty of 1388\cite{LeVeque-Smith-25}.
+Roman numerals have strong influence still today as the arising of the Roman civilization across Europe, Africa, and Asia. We still see Roman numbers in clocks (see \cref{fig:clock-plate}), buildings, table of content of books. It's easy for memorize as there are only few letters: I, V, X, C, and M. It's convenient to represent small numbers, such as III for 3, VII for 5 (= 2 + 7). 2025 which is MMXXV contains two 1000, two 10, and 5. However, there are so many ways to represent a number, that brings big confusion to decipher. At the beginning, people only needed to sum up the numbers of each letter, but then came the rule of `subtracting on the left and adding on the right'. For example, IV means $5 - 1 = 4$, but VI means $5 + 1 = 6$. Hence IXX $= (10 - 1) + 10 = 19$, while $19 = 10 + (10 - 1) =$ XIX causes ambiguity, because XIX can also be interpreted as (XI)X = 11 + 10 = 21. Similarly, XVIII = 16, but then both $16 = 8 + 8 =$ IIXIIX and $16 = (10 - 4) + 10 =$ IIIIXX have ambiguity. Where IIIIXX for 88 appeared in a Pairs treaty of 1388\cite{LeVeque-Smith-25}.
 
 \btab{|c|c|c|c|c|}
 \hline
@@ -217,44 +217,36 @@ n = a_m b^m + a_{m-1} b^{m-1} + \cdots + a_a b + a_0
 \label{eq:pos-rep}
 \ee
 
-where $a_i$ is the named digit for $0, 1, 2, \cdots, b-1$. $n$ is written as $a_ma_{m-1} \cdots a_0$. For example, $2024 = 2 \times 10^3 + 0 \times 10^2 + 2 \times 10 + 4$, where $b = 10, m = 3, a_3 = 2, a_2 = 0, a_1 = 2, a_0 = 4$, written exactly as 2024. Note that 0 acts the key role to `occupy' a position: There are 2 thousand, 2 ten, 4 one, but no hundred. because 0 occupies the place of hundred, every digit has the right magnitude. Otherwise, the number would be 224 incorrectly. Let see an example and a counter example.
+where $a_i$ is the named digit for $0, 1, 2, \cdots, b-1$. $n$ is written as $a_ma_{m-1} \cdots a_0$. For example, $2024 = 2 \times 10^3 + 0 \times 10^2 + 2 \times 10 + 4$, where $b = 10, m = 3, a_3 = 2, a_2 = 0, a_1 = 2, a_0 = 4$, written exactly as 2024. Note that 0 acts the key role to `occupy' a position: There are 2 thousand, 2 ten, 4 one, but no hundred. because 0 occupies the place of hundred, every digit has the right magnitude. Otherwise, the number would be 224 incorrectly.
 
 \begin{example}
-猫咪王国中，每只猫爪只有4个可动的指（见\cref{fig:cat-paw}），左右共8个可动的指。如果采用8进制，并规定0的符号为“喵”，1到7为：（1）苗、（2）秒、（3）妙、（4）咪、（5）谜、（6）米、（7）蜜。王国一年的天数$365 = 5 \times 64 + 5 \times 8 + 5$，写成“谜谜谜”。$2024 = 5 \times 8^3 + 3 \times 8^2 + 7 \times 8 + 0$，写成“谜妙蜜喵”。
+In the kingdom of cat, octal numerals are used because a cat has four `fingers' each paw (see \cref{fig:cat-paw}, total 8 fingers with two paws. They use `mew' as zero; the numbers from 1 to 7 in this kingdom are: (1) miao, (2) mieo, (3) meio, (4) meow, (5) miuo, (6) meao, and (7) meeo. There are $365 = 5 \times 64 + 5 \times 8 + 5$ days in a year, which is `miuo miuo miuo'. Year $2024 = 5 \times 8^3 + 3 \times 8^2 + 7 \times 8 + 0$ is `miuo meio meeo mew'.
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.6]{img/cat-paw}
- \caption{猫爪}
+ \caption{Cat paw}
  \label{fig:cat-paw}
 \end{figure}
 
 \end{example}
 
 \begin{example}
-\index{干支纪年}
-\textbf{反例：}我国古代用天干地支纪年。天干有10个符号：甲、乙、丙、丁、戊、己、庚、辛、壬、癸；地支有12个符号：子、丑、寅、卯、辰、巳、午、未、申、酉、戌、亥。组合起来可以记录60以内的数字，从甲子开始，接下来天干地支各向前进一到已丑，然后是丙寅……到癸亥结束（见\cref{fig:sexagenary}）。比如2025年是农历乙巳年。乙的上一个天干符号是甲，巳的上一个地支符号是辰，所以前一年2024年是甲辰年，后一年2026年是丙午年。尽管我们不说“丙天午地”，看似用位置表示（第一个符号是天干、第二个符号是地支），但干支纪年{\em 不是位值制计数法}。例如丙午并非一个甲子中的第$3 \times 10 + 7 = 37$年，而是第43年\footnote{除了查看\cref{fig:sexagenary}外，也可以这样计算：天干每10年循环，地支每12年循环。丙是天干中的第3个符号，午是地支中的第7个符号，所以丙午年除以10余3且除以12余7。60中除以10余3的数字有3、13……43、53，其中只有43除以12余7。}。
-
-\begin{figure}[htbp]
- \centering
- \includegraphics[scale=0.3]{img/sexagenary-chinese}
- \caption{干支纪年}
- \label{fig:sexagenary}
-\end{figure}
-
+\index{hexadecimal}
+Programmers often use hexadecimal (16-based) system. Numbers 0, 1, ..., 9 are reused, followed with A, B, C, D, E, F to represent 10 to 15. A year of 365 days is decomposed to $365 = 1 \times 16^2 + 6 \times 16 + 13$, which is 16D in hexadecimal. $2024 = 7 \times 16^2 + 14 \times 16 + 8$, which is 7E8 in hexadecimal.
 \end{example}
 
-罗马数字的一个问题就是歧义——一个数字有多种写法或一个写法可以代表不同的数字。位值制能解决这个问题么？明显8 = 08 = 008。我们在电梯、数字钟，汽车里程表上都见过类似的情况。可以在一个数字前放任意多个零而不改变值。如果对最高位的数字加以限制，规定\cref{eq:pos-rep}中的$a_m \neq 0$，那么一个数的位值制表示是唯一的（见\cref{qn:unique-pos-rep}）。
+One big issue with Roman numbers is ambiguity; there are multiple ways to write a number and different numbers may share the same written form. Can it be solved by positional system? Of course we see 8 = 08 = 008 in elevator, digital clock, and odometer. The value keeps unchanged when adding zeros to the left. Let's rule out this case, assume $a_m \ne 0$ in \cref{eq:pos-rep}, then the positional representation is unique for any number (see \cref{qn:unique-pos-rep}).
 
-% (1) Brahmi, 1st Century CE, (2) Indian (Gwalior), 9th Century, (3) Sanskrit Davanagari, Indian, 11th Cenntury, (4) West Arabic (Gubar? Gobar?), 11th Century, (5) East Arabic, 11th Centry, (still used in Turkey), (6) 15th Century, (7) 16th Century (Dürer)
+%
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.3]{img/Hindu-arabic-num}
- \caption{印度——阿拉伯数字的演进：1、婆罗门数字，公元一世纪；2、印度瓜廖尔数字包括0，公元九世纪；3、4、5、梵文天成体、东、西阿拉伯数字，公元十一世纪，其中西阿拉伯数字至今仍在土耳其使用；6、7、十五和十六世纪。}
+ \caption{Hindu-Arabic numerals: (1) Brahmi, 1st Century CE, (2) Indian (Gwalior), 9th Century, (3) Sanskrit Davanagari, Indian, 11th Cenntury, (4) West Arabic (Gubar or Gobar), 11th Century, (5) East Arabic, 11th Centry, (still used in Turkey), (6) 15th Century, (7) 16th Century (Dürer)}
  \label{fig:hindu-arabic-numerals}
 \end{figure}
 
-\index{印度——阿拉伯计数系统} \index{零} \index{数学家!婆罗摩笈多} \label{sec:hindu-arabic-numerals}
+\index{Hindu-Arabic numeral system} \index{zero} \index{Brahmagupta} \label{sec:hindu-arabic-numerals}
 在历史的长河中，玛雅人和古巴比伦人的计数系统都湮没了。20和60以内的数字并非单一符号，混合进制难于计算。现代位值制系统是印度文明发展出并经由阿拉伯人传入西方的，被称作“印度——阿拉伯系统”（Hindu-Arabic system）。在公元前三世纪，印度的碑铭中出现了1、4、6这样的符号；在公元一、二世纪的岩洞中，形如2、3、4、5、6、7、9的符号也出现了。可以看出2从二、3从三中演化的迹象，在公元七世纪，印度数学家婆罗摩笈多定义了零\cite{MacTutor-Brahmagupta-2000}。但直到公元九世纪以前，符号0仍未出现（见\cref{fig:hindu-arabic-numerals}）。印度人首先用一个点或小圆圈表示零，命名为sunya，梵文的意思是“空位”。传入阿拉伯后译为sifr，意思是“保持完整”。1140年，它伴随着阿拉伯学者花拉子密的著作被音译为拉丁文，最后变为今天英语中的zero。
 
 \begin{mdframed}
