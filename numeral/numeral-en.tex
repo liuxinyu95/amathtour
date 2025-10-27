@@ -350,7 +350,7 @@ More and more intellectuals and merchants spread Hindu-Arabic numeral system wor
 Our ancestors recognized numbers from counting in daily life and work. People spent more than 4000 years to develop and adopt the modern decimal positional numerals. This is really a long journey. The numeral system wasn't invented by any exact man, nor arose from any civilization in silo. It is a great achievement of all people in the world.
 
 \begin{Exercise}[label={ex:numerals}]
-\Question{2025年深圳市南山区小学4年级期末数学考试中出现了这样一道题：“计算$114 \times 21$，同学们用了不同的方法。在思路上这些方法有什么相同的地方？”
+\Question{This is a true problem from a test of K4 in a primary school. The students applies different methods to calculate $114 \times 21$. What's the same idea they share?
 
 \begin{multicols}{2}
 \begin{enumerate}
@@ -393,44 +393,44 @@ Our ancestors recognized numbers from counting in daily life and work. People sp
     \oplput(1,-3){$\cdots$ \opmul[style=text]{114}{20}}
 \end{enumerate}
 \end{multicols}
-这四个方法中，哪些利用了十进制位值制计数系统的优势？
+Which of these four way do use the advantage of decimal positional numeral system?
 }
 
-\Question{可以利用$n = a_m b^m + a_{m-1} b^{m-1} + \cdots + a_a b + a_0$进行进制转换：
+\Question{We can transform number to different base through $n = a_m b^m + a_{m-1} b^{m-1} + \cdots + a_a b + a_0$. Here are the steps:
   \begin{enumerate}[1)]
-    \item 用$n$除以$b$得到余数$a_0$、商$q_0$。
-    \item 把$n$替换为$q_0$，再次用$n$除以$b$得到余数$a_1$、商$q_1$。
-    \item 把$n$替换为$q_1$，重复上述步骤直到商$q_m = 0$。
+    \item Divide $n$ by $b$ to obtain the remainder $a_0$ and quotient $q_0$.
+    \item Replace $n$ with $q_0$, then divide $n$ by $b$ to obtain the remainder $a_1$ and quotient $q_1$.
+    \item Replace $n$ with $q_1$, the repeat above steps until the quotient $q_m = 0$.
   \end{enumerate}
-  则$n$的$b$进制表示为$a_m \cdots a_1a_0$。请将十进制数123转换为（a）玛雅文；（b）古巴比伦文；（c）计算机二进制表示。
+  The base-$b$ representation of $n$ is then $a_m \cdots a_1a_0$. Convert decimal number 123 to (a) Mayan number; (b) Babylonian number; and (c) binary number.
 }
 
-\Question{$\bigstar$\footnote{标星号的题目较难。}如果你会编程，请用自己熟悉的语言实现二进制到十进制的相互转换。}
+\Question{$\bigstar$\footnote{Problems with start is a bit difficult.} If you know programming, write a program to convert a number between binary and decimal.}
 
-\Question{$\bigstar$证明一个数的位值制表示是唯一的。提示：考虑如果一个数有两种表示会怎样？ \label{qn:unique-pos-rep}}
+\Question{$\bigstar$Show that the binary representation of a number is unique. Hint: what if a number has two representations? \label{qn:unique-pos-rep}}
 \end{Exercise}
 
 \begin{Answer}[ref={ex:numerals}]
 \Question{ \textcircled{1}、\textcircled{3}、\textcircled{4} }
 
-\Question{将十进制数123转换为（a）玛雅文；（b）古巴比伦文；（c）计算机二进制表示。
+\Question{Convert decimal number 123 to (a) Mayan number; (b) Babylonian number; and (c) binary number.
 
-玛雅文：
+Manyan number:
 
 \begin{align*}
 123 \div 20 &= 6 \cdots 3 & \underline{\ \circ \ } \\
 6 \div 20 &= 0 \cdots 6   & \circ \circ \circ \\
-120 &= 6 (20) + 3  &  \text{从上到下6、3}
+120 &= 6 (20) + 3  &  \text{6, 3 in vertical}
 \end{align*}
 
-古巴比伦文：YY YYY
+Babylonian number: YY YYY
 \begin{align*}
 123 \div 60 &= 2 \cdots 3 \\
 2 \div 20 &= 0 \cdots 2   \\
 120 &= 2 (60) + 3
 \end{align*}
 
-计算机二进制表示：1111011
+Binary number: 1111011
 \begin{align*}
 123 \div 2 &= 61 \cdots 1 &
 61 \div 2 &= 30 \cdots 1   &
@@ -442,17 +442,17 @@ Our ancestors recognized numbers from counting in daily life and work. People sp
 \end{align*}
 }
 
-\Question{编程实现二进制到十进制的相互转换。
+\Question{write a program to convert a number between binary and decimal.
 
 \begin{center}
  \includegraphics[scale=0.3]{img/scratch-bin}
  \qquad
  \includegraphics[scale=0.3]{img/scratch-dec}
- \captionof{figure}{Scratch例子程序：十进制$n$与二进制$bs$相互转换，左：$10 \to 2$；右：$2 \to 10$}
+ \captionof{figure}{Scratch example program. Convert between $n$ in decimal and $bs$ in binary, left: $10 \to 2$; right: $2 \to 10$}
  \label{fig:bin-dec-scratch}
 \end{center}
 
-说明：\lstinline|round|是四舍五入。对$n/2$ - 0.5四舍五入相当于对$n/2$取整，求得$n$除以2的除数。$bs$中的二进制数字低位在前，高位在后。下面是对应的Python例子程序：
+Explain: For \lstinline|round|, if the decimal is 0.5 or more, round up; otherwise, round down. By rounding the difference of $n/2$ - 0.5, it equivalent to take the integral part of $n/2$. The lowest digit goes first in $bs$, the highest is in the last. Below are corresponding Python examples.
 
 \begin{lstlisting}[language=Python, frame=single]
 def bin(n):
@@ -469,7 +469,7 @@ def dec(bs):
     return n
 \end{lstlisting}
 
-与Scratch和Python的循环不同，下面的Haskell例子给出了递归实现。其中的二进制数字高位在前、低位在后。
+Different from the loop method in Scratch or Python, below Haskell examples use recursion. The highest binary digit goes first and the lowest is in the last.
 
 \begin{Haskell}[frame=single]
 bin x = if x < 2 then [x] else (bin (x `div` 2)) ++ [x `mod` 2]
@@ -477,29 +477,30 @@ dec = foldl (\n x -> n*2 + x) 0
 \end{Haskell}
 }
 
-\Question{证明一个数的位值制表示是唯一的。
+\Question{Show that the binary representation of a number is unique.
 
 \begin{proof}
-假设一个数还有另一个表示。如果它们的位数不同，我们在较短的前面添加0，使它们一样长。令补0后的表示分别为$a_{m} a_{m-1} \cdots a_1 a_0$和$c_m c_{m-1} \cdots c_1 c_0$。按照\cref{eq:pos-rep}计算的值相等，即：
+Suppose there is another representation. If the length are different, we add 0 in front of the shorter one to make them same long. Denote the two numbers after padding with zeros as $a_{m} a_{m-1} \cdots a_1 a_0$ and $c_m c_{m-1} \cdots c_1 c_0$. As they have the same level by \cref{eq:pos-rep}:
+
 \[
   a_m b^m + a_{m-1} b^{m-1} + \cdots + a_1 b + a_0 = c_m b^m + c_{m-1} b^{m-1} + \cdots + c_1 b + c_0
 \]
 
-将$a_0$和$c_0$移到右边，剩下的移到左边：
+Move $a_0$ and $c_0$ to the right, and the remaining to the left:
 
 \[
   (a_m - c_m) b^m + (a_{m-1} - c_{m-1}) b^{m-1} + \cdots + (a_1 - c_1) b = c_0 - a_0
 \]
 
-左边可以被$b$整除，所以$c_0 - a_0$也可以被$b$整除。由于$c_0$、$a_0$都只能是0到$b - 1$的整数，所以它们的差只能是$1 - b, \dots , -1, 0, 1, \dots b - 1$中的一个。但其中只有0能被$b$整除。所以$c_0 - a_0 = 0$，即$c_0 = a_0$。
+Since $b$ divides the left side, it also divides $c_0 - a_0$ on the right. Because both $c_0$ and $a_0$ are numbers between 0 and $b - 1$, their difference must be one of $1 - b, \dots , -1, 0, 1, \dots b - 1$. But $b$ only divides 0, hence $c_0 - a_0 = 0$, which is $c_0 = a_0$.
 
-接下来$(a_m - c_m) b^m + (a_{m-1} - c_{m-1}) b^{m-1} + \cdots + (a_1 - c_1) b = 0$。由于$b \neq 0$，两边除以$b$，然后将$a_1$和$c_1$移动到左边：
+Next $(a_m - c_m) b^m + (a_{m-1} - c_{m-1}) b^{m-1} + \cdots + (a_1 - c_1) b = 0$. As $b \neq 0$, we can divide both sides by $b$, then move $a_1$ and $c_1$to the left:
 
 \[
   (a_m - c_m) b^m + (a_{m-1} - c_{m-1}) b^{m-1} + \cdots + (a_2 - c_2) b = c_1 - a_1
 \]
 
-同样可以推出$c_1 = a_1$。重复这个步骤$m$次，最后得到$a_m = c_m$。这就证明了两种表示是一样的，即位值制表示是唯一的。
+We can show $c_1 = a_1$ in the same way. Repeat $m$ times to show $a_m = c_m$. This shows the two representations are same, which means the positional format is unique.
 \end{proof}
 }
 \end{Answer}
@@ -510,31 +511,6 @@ dec = foldl (\n x -> n*2 + x) 0
 
 \section{Greek alphabet} \label{ch:greek-letters}
 \subimport{inc/}{greek-zh-cn}
-
-
- \begin{table}[htbp]
-     \centering
-     \begin{tabular}{|c|c|c||c|c|c|}
-         \hline
-               \textbf{Upper} & \textbf{Lower} & \textbf{Pronunciation} & \textbf{Upper} & \textbf{Lower} & \textbf{Pronunciation} \\
-         \hline
-         A         & $\alpha$    & Alpha &      N         & $\nu$         & Nu \\
-         B         & $\beta$     & Beta &       $\Xi$         & $\xi$         & Xi \\
-         $\Gamma$  & $\gamma$    & Gamma &      O    & o    & Omicron \\
-         $\Delta$  & $\delta$    & Delta &      $\Pi$         & $\pi$         & Pi \\
-         E         & $\epsilon$  & Epsilon &    P        & $\rho$        & Rho \\
-         Z         & $\zeta$     & Zeta &       $\Sigma$      & $\sigma$      & Sigma \\
-         H         & $\eta$      & Eta &        T        & $\tau$        & Tau \\
-         $\Theta$  & $\theta$    & Theta &      Y    & $\upsilon$    & Upsilon \\
-         I         & $\iota$     & Iota &       $\Phi$        & $\phi$        & Phi \\
-         K         & $\kappa$    & Kappa &      X        & $\chi$        & Chi \\
-         $\Lambda$ & $\lambda$   & Lambda &     $\Psi$        & $\psi$        & Psi \\
-         M         & $\mu$       & Mu &         $\Omega$      & $\omega$      & Omega \\
-         \hline
-     \end{tabular}
-     \caption{Greek alphabet}
-     \label{tab:greek-alphabet}
- \end{table}
 
 \begin{thebibliography}{99}
 \subimport{inc/}{bib-zh-cn}
