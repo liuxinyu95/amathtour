@@ -289,21 +289,19 @@ This is about subtraction, not to say about multiplication and division. Ancient
 \end{figure}
 
 \index{Fibonacci}
-Few people knew al-Khwarizmi's work except for some scholars in the 12th century. In 1202, Fibonacci further introduced Hindu-Arabic numerals system to the west through his famous book {\em Liber Abaci} (Book of the Abacus). Interestingly, Fibonacci is also a nickname; the name of this medieval Italian mathematician was Leonardo. The name Fibonacci came from filius Bonacci in Latin, meaning son of Bonacci. His father held a diplomatic post, whose job was to represent the merchants of the Republic of Pisa who were trading in North Africa and Mediterranean area. Fibonacci learned mathematics from Egyptians, Greeks, Sicilians, and Arabians when travelled widely with his father. He recognized the enormous advantages of Hindu-Arabic numeral system used in the countries he visited.
-
-斐波那契逐渐从埃及人、希腊人、西西里人、阿拉伯人那里学到了各种数字系统。他逐渐认识到了印度——阿拉伯数字的先进性。《算盘书》不仅包括位值制的记法，还讲解了如何计算利润率、利息、汇率、度量衡换算等实际问题。一经面试大受欢迎，被广泛传抄。神圣罗马帝国皇帝腓特烈二世听说了斐波那契，在1225年邀请他到比萨。斐波那契接受了宫廷数学家的挑战，成功解决了所有题目，包括一道一元三次方程。他采用的数值解法给出了9位小数精度\cite{Gies-Carney-24}。今天，以他命名的“斐波那契数列”，即1、1、2、3、5、8……已经家喻户晓。我们将在第\ref{sec:Fibonacci-numbers}节详细介绍这个有趣的数列。
+Only a few intellectuals knew Hindu-Arabic numerals through al-Khwarizmi's work in the 12th century. In 1202, Fibonacci further introduced Hindu-Arabic numerals system to the west through his famous book {\em Liber Abaci} (Book of the Abacus). Interestingly, Fibonacci is also a nickname; the name of this medieval Italian mathematician was Leonardo of Pisa. the nickname came from filius Bonacci in Latin, meaning son of Bonacci. His father held a diplomatic post, whose job was to represent the merchants of the Republic of Pisa who were trading in North Africa and Mediterranean area. Fibonacci learned mathematics from Egyptians, Greeks, Sicilians, and Arabians when travelled widely with his father. He recognized the enormous advantages of Hindu-Arabic numeral system used in the countries he visited. Fibonacci well explained this numeral system in {\em Liber Abaci}, followed with the demonstration of applying the arithmetical operations to many practical problems, such as profit margin, barter, money changing, conversion of weights and measures, partnerships, and interest. It's so popular that was widely copied. It drew the attention of the Holy Roman emperor, Fredrick II, who invited Fibonacci a visit to Pisa in 1225. Fibonacci accepted a challenge from John of Palermo, a scholar of Fredrick's scientific entourage. He successfully solved all problems in the challenge including a cubic equation. By approximation, Fibonacci gave the correct answer up to nine decimal places\cite{Gies-Carney-24}.  The popular number series $1, 1, 2, 3, 5, 8, \dotsc$ is named after Fibonacci, which we'll explain in details in section \ref{sec:Fibonacci-numbers}.
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.35]{img/Fibonacci}
- \caption{比萨的列奥纳多（斐波那契）1175-1250}
+ \caption{Fibonacci (Leonardo of Pisa), 1175-1250 CE}
  \label{fig:Fibonacci}
 \end{figure}
 
-\label{sec:binary-numerals} \index{二进制}
-越来越多的学者和在各国往来贸易的商人把印度——阿拉伯计数系统传播到了全球。它成了全人类的通用语言。十七世纪时，德国数学家莱布尼茨提出了二进制，它导致了计数系统在二十世纪产生了革命性的应用。电子计算机内部使用二进制对数字和信息编码。尽管二进制只有0、1两种数字，表示很长，例如2025写成二进制是1111 1101 001，但0、1两种状态可以通过电路的通、断或电平（电压）的高、低方便地实现。还有一个好处：0、1可以对应逻辑的真、假；事物的有、无；答案的对、错，从而方便用机器统一处理数和逻辑，如\cref{tab:binary-arithmatic-logic}。
+\label{sec:binary-numerals} \index{binary numeral}
+More and more intellectuals and merchants spread Hindu-Arabic numeral system worldwide. It becomes a universal human language. German mathematician Leibniz developed another positional numeral system in the 17th century. This 2-based (binary) system led to a revolutionary application in the 20th century; the computer system adopted binary numbers to encode information. With only 0 and 1, binary numbers are much longer than their decimal counterpart. For example, 2025 is 1111 1101 001 in binary format. Despite this, 0/1 can be perfectly modeled as the off/on state of electric device, or low/high level of voltage. Further, 0/1 can map to logical value of false/true, negative/positive result of a test, incorrect/correct answer to a question...all these logical things can be easily handled by machine uniformly as numbers as shown in \cref{tab:binary-arithmatic-logic}.
 
-\begin{table}
+\begin{table}[htbp]
 \[\begin{array}{cccc}
   \begin{tabular}{c|c}
   $x$ & $1-x$ \\
@@ -314,11 +312,11 @@ Few people knew al-Khwarizmi's work except for some scholars in the 12th century
   \end{tabular}
   &
   \begin{tabular}{c|c}
-  $x$ & 非 $x$ \\
+  $x$ & not $x$ \\
   \hline
-  假 & 真  \\
+  false & true  \\
   \hline
-  真 & 假   \\
+  true & false   \\
   \end{tabular}
    \quad & \quad
   \begin{tabular}{c|c|c}
@@ -334,22 +332,22 @@ Few people knew al-Khwarizmi's work except for some scholars in the 12th century
   \end{tabular}
   &
   \begin{tabular}{c|c|c}
-  $x$ & $y$ & $x$ \text{与} $y$ \\
+  $x$ & $y$ & $x$ \text{and} $y$ \\
   \hline
-  假 & 假 & 假 \\
+  false & false & false \\
   \hline
-  假 & 真 & 假 \\
+  false & true & false \\
   \hline
-  真 & 假 & 假 \\
+  true & false & false \\
   \hline
-  真 & 真 & 真 \\
+  true & true & true \\
   \end{tabular}
 \end{array}\]
-\captionof{figure}{二进制$1-x$与逻辑非的对应、乘法和逻辑与的对应}
+\captionof{figure}{$1-x$ in binary corresponds to logical not; binary multiplication corresponds to logical and}
 \label[figure]{tab:binary-arithmatic-logic}
 \end{table}
 
-我们的祖先从狩猎、采集、计数开始，经过了四千余年才发展出了现代十进制位值制计数系统。数的诞生实在是一个漫长曲折的过程。它没有一个确定的发明者，而是在各个文明中独立产生于生产劳动，互相影响，逐渐发展，是人类群体性的进步。
+Our ancestors recognized numbers from counting in daily life and work. People spent more than 4000 years to develop and adopt the modern decimal positional numerals. This is really a long journey. The numeral system wasn't invented by any exact man, nor arose from any civilization in silo. It is a great achievement of all people in the world.
 
 \begin{Exercise}[label={ex:numerals}]
 \Question{2025年深圳市南山区小学4年级期末数学考试中出现了这样一道题：“计算$114 \times 21$，同学们用了不同的方法。在思路上这些方法有什么相同的地方？”
