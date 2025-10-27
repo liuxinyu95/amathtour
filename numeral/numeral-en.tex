@@ -272,25 +272,26 @@ His second work (written in 825 CE) introduced Hindu-Arabic numerals and their a
  \label{fig:HoW}
 \end{figure}
 
-
-十进制位值制系统带来了巨大优势，便于计算并可以处理任意大的数字。我们可以想象用罗马数字计算MMXXV - CXXXVII有多么困难，而小学生也可以用竖式快速算出结果：
+The decimal positional system has big advantage in computing, particularly when handle big numbers. One can imagine how hard to calculate in Roman numbers, for example, value of MMXXV $-$ CXXXVII, while a primary school kid can find the result like below:
 
 \begin{center}
 \opsub[voperator=bottom]{2025}{137}
 \end{center}
 
-\label{sec:counting-rods} \index{算筹}
-这仅仅是减法，更不用说乘除法了。尽管古汉语中的计数系统并非位值制（见上一节），古代中国却发展出了一套严格意义上的位值制计算方法——筹算。筹算使用若干小棍进行计算。这些小棍用竹子制成叫做算筹\footnote{形声字“筹”的形旁是竹。也有用木头、兽骨、象牙、金属等材料的。}。它的发明是一个漫长的过程，但春秋战国时期已经普遍使用了。成语“运筹帷幄”、“一筹莫展”、“技高一筹”都反映了算筹的使用情况。算筹有横竖两种摆法，如\cref{fig:suanchou-digit}所示。如果个位竖着摆，则十位横着摆。这样交错摆放避免混淆。如果某一位是零，则空出不摆放\footnote{在计算过程中空位可能不明显造成混淆。后来人们在书写记录算筹运算结果时，就在应该是零的数位上写 “$\square$” 或 “〇”。}。算筹进行竖式计算非常方便，尤其是处理进位和借位。例如进位时只要把一个小棍摆到下一位就可以了。如\cref{fig:suanchou-eg}所示。
+\label{sec:counting-rods} \index{counting-rods}
+This is about subtraction, not to say about multiplication and division. Ancient Chinese mathematicians invented counting rod, a powerful tool, to execute the decimal positional computations despite they lacked of zero in early time (see the previous section). It is a collection of small rods made in bamboo or wood. We don't know the exact time of the invention, but it appeared no later than 1st century CE\footnote{From the document contains the Chinese character 筹 (the term of counting rod) and the related phrases.}. There are two ways to represent a digit: horizontally and vertically as shown in \cref{fig:suanchou-digit}. People use the two arrangements alternatively for each digit to avoid mistakes. If a digit is represented horizontally, then the next digit is vertically. If a digit is zero, then the place is empty without any rods. To make the empty place notable, a special mark of $\square$ or 〇 was invented later. It's easy to compute with counting rods particularly when handling carries: one just needs to put a rod in the place of the next digit as shown in \cref{fig:suanchou-eg}.
 
 \begin{figure}[htbp]
  \centering
- \subcaptionbox{算筹数字的横竖摆法 \label{fig:suanchou-digit}}{\includegraphics[scale=0.25]{img/suanchou-digit}}
- \subcaptionbox{算筹计算2025 - 137 \label{fig:suanchou-eg}}{\qquad\includegraphics[scale=0.15]{img/suanchou-eg}\qquad}
- \caption{算筹}
+ \subcaptionbox{Two ways to represent a number \label{fig:suanchou-digit}}{\includegraphics[scale=0.25]{img/suanchou-digit}}
+ \subcaptionbox{Example of compute $2025 - 137$ with counting rods \label{fig:suanchou-eg}}{\qquad\includegraphics[scale=0.15]{img/suanchou-eg}\qquad}
+ \caption{The counting rods}
 \end{figure}
 
-\index{数学家!斐波那契}
-花拉子密的著作一开始只有少数学者了解。1202年斐波那契通过他的著作《算盘书》（Liber Abaci）进一步把印度——阿拉伯系统和计算方法介绍到欧洲。无独有偶，“斐波那契”其实也是个绰号。这位中世纪的数学家叫列奥纳多，来自比萨，所以称作比萨的列奥纳多。斐波那契来自拉丁文filius Bonacci，意思是波那契之子。斐波那契的父亲当时是商人，在北非以及地中海一带经商。斐波那契逐渐从埃及人、希腊人、西西里人、阿拉伯人那里学到了各种数字系统。他逐渐认识到了印度——阿拉伯数字的先进性。《算盘书》不仅包括位值制的记法，还讲解了如何计算利润率、利息、汇率、度量衡换算等实际问题。一经面试大受欢迎，被广泛传抄。神圣罗马帝国皇帝腓特烈二世听说了斐波那契，在1225年邀请他到比萨。斐波那契接受了宫廷数学家的挑战，成功解决了所有题目，包括一道一元三次方程。他采用的数值解法给出了9位小数精度\cite{Gies-Carney-24}。今天，以他命名的“斐波那契数列”，即1、1、2、3、5、8……已经家喻户晓。我们将在第\ref{sec:Fibonacci-numbers}节详细介绍这个有趣的数列。
+\index{Fibonacci}
+Few people knew al-Khwarizmi's work except for some scholars in the 12th century. In 1202, Fibonacci further introduced Hindu-Arabic numerals system to the west through his famous book {\em Liber Abaci} (Book of the Abacus). Interestingly, Fibonacci is also a nickname; the name of this medieval Italian mathematician was Leonardo. The name Fibonacci came from filius Bonacci in Latin, meaning son of Bonacci. His father held a diplomatic post, whose job was to represent the merchants of the Republic of Pisa who were trading in North Africa and Mediterranean area. Fibonacci learned mathematics from Egyptians, Greeks, Sicilians, and Arabians when travelled widely with his father. He recognized the enormous advantages of Hindu-Arabic numeral system used in the countries he visited.
+
+斐波那契逐渐从埃及人、希腊人、西西里人、阿拉伯人那里学到了各种数字系统。他逐渐认识到了印度——阿拉伯数字的先进性。《算盘书》不仅包括位值制的记法，还讲解了如何计算利润率、利息、汇率、度量衡换算等实际问题。一经面试大受欢迎，被广泛传抄。神圣罗马帝国皇帝腓特烈二世听说了斐波那契，在1225年邀请他到比萨。斐波那契接受了宫廷数学家的挑战，成功解决了所有题目，包括一道一元三次方程。他采用的数值解法给出了9位小数精度\cite{Gies-Carney-24}。今天，以他命名的“斐波那契数列”，即1、1、2、3、5、8……已经家喻户晓。我们将在第\ref{sec:Fibonacci-numbers}节详细介绍这个有趣的数列。
 
 \begin{figure}[htbp]
  \centering
