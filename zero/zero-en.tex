@@ -109,52 +109,53 @@ But $0 + 0 = 0$ does not increase, $0 + 0 + 0 + \cdots$ will never exceeds any n
 \end{figure}
 
 \label{sec:mul-as-zoom}
-Multiplication means scaling. When scale a ruler 2 times, not only the length of the ruler, but also the length between marks double; when scale 3 times, both the length of the ruler and between marks triple, as shown in \cref{fig:ruler-vanish}. If scale down to $\frac{1}{3}$, then we get a small ruler. But what if scale with 0 (times 0)? The ruler together with the marks collapses to a dot; it vanishes.
+Multiplication means scaling. When scale a ruler 2 times, not only the length of the ruler, but also the length between marks double; when scale 3 times, both the length of the ruler and between marks triple, as shown in \cref{fig:ruler-vanish}. If scale down to $\frac{1}{3}$, then we get a small ruler. But what if scale 0 (times 0)? The ruler together with the marks collapses to a dot; it vanishes.
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.35]{img/zoom-rulers}
- \caption{缩放0倍把尺子连同刻度都“压缩”成了一个没有大小的点。}
+ \caption{The ruler with marks collapses to a dot without size when scaling 0.}
  \label{fig:ruler-vanish}
 \end{figure}
 
-尺子代表了线段，乘以0破坏了矩形和线段。在古希腊发展几何学的时候还没有零的概念。古希腊的计数系统中也没有零。欧几里得定义“\textbf{点}是没有部分的”，“\textbf{线}只有长度而没有宽度”\footnote{欧几里得《几何原本》定义1、2。}。0对应几何学中的一个点么？
+The product represents rectangle; the ruler represents line segment. Multiplication by 0 destroys them. There was no zero in Greek geometry or numeral system. Euclid defined `a point is that which has no parts; a line is length without breadth.' (Definition 1 and 2 in Book I of {\em Elements}.) Is 0 a point?
 
-\item 乘除法的可逆性。除法被定义为乘法的逆运算。既然$2 \times 3 = 6$则$6 \div 2 = 3$；既然$3 \times 4 = 12$则$12 \div 3 = 4$……据此$2 \times 0 = 0$则$0 \div 2 = 0$，并且$a \times 0 = 0$故$0 \div a = 0$。但是0可以作除数么？根据逆运算，除法$a \div b$相当于求$c$使得$bc = a$，则$a \div 0$相当于求一个数$x$使得$0x = a$。但$0x = 0$，若$a \ne 0$，则不存在任何数$x$满足这个要求，因为：$0x = 0 \ne a$；若$a = 0$，虽然$0 \times 0 = 0$，看似$0 \div 0 = 0$；但$1 \times 0 = 0$，这样$0 \div 0 = 1$看似也可以；同样$2 \times 0 = 0$，故似乎$0 \div 0 = 2$……既然任何$a \times 0 = 0$则$0 \div 0 = a$，即$0 \div 0$等于任何值。但这意味着$(0 \div 0) = 0 = 1 = 2 = 3 = \cdots$，代表“无”的0，等于代表“有”的1、2、3……无即是有，空即是色。逻辑学家罗素指出从一个假命题可以推出任何命题。如果$0 = 1$，我们可以推出$1 + 1 = 3$：\index{0!除数}
+\item Division is the reverse of multiplication. For example, the reverse of $2 \times 3 = 6$ is $6 \div 2 = 3$; the reverse of $3 \times 4 = 12$ is $12 \div 3 = 4, \dotsc$ the reverse of $2 \times 0 = 0$ is $0 \div 2 = 0$, generally the reverse of $a \times 0 = 0$ is $0 \div a = 0$. However, what would be division by 0？From the reverse of multiplication, $a \div b$ is to find some $c$ satisfying $bc = a$; it means $a \div 0$ is to find some $x$ satisfying $0x = a$. But $0x = 0$, unless $a \ne 0$, there isn't such a $x$, because $0x = 0 \ne a$. Even if $a = 0$ such that the reverse of $0 \times 0 = 0$ looks like $0 \div 0 = 0$, but then the reverse of $1 \times 0 = 0$ will be $0 \div 0 = 1$; the reverse of $2 \times 0 = 0$ will be $0 \div 0 = 2, \dotsc$ any reverse of $a \times 0 = 0$ will be $0 \div 0 = a$, hence $0 \div 0$ can be any number, that is$(0 \div 0) = 0 = 1 = 2 = 3 = \cdots$ Nothing, which is 0, would become being like $1, 2, 3, \dotsc$ Bertrand Russell, in a lecture on logic, mentioned that in the sense of material implication, a false proposition implies any proposition. A student raised his hand and said ``In that case, given that 1 = 0, prove that you are the Pope.'' Russell immediately replied, ``Add 1 to both sides of the equation: then we have 2 = 1. The set containing just me and the Pope has 2 members. But 2 = 1, so it has only 1 member; therefore, I am the Pope.'' \index{0!division by zero}
 
 \begin{align*}
-0 = 1 & \Rightarrow 1 = 2     & \text{两边} + 1 \\
-      & \Rightarrow 1 + 1 = 3 & \text{把} 1 = 1 \text{加到两边}
+0 = 1 & \Rightarrow 1 = 2     & \text{add 1 to both sides} \\
+      & \Rightarrow 1 + 1 = 3 & \text{add 1 to both sides} \\
+      & \dotso
 \end{align*}
 
-伊恩·斯图尔特给出了这样一个荒唐的例子\cite{Stewart-2019}：
+Ian Stewart gives another ridiculous example\cite{Stewart-2019}:
 
-一只猫有一只尾巴；
+One cat has one tail;
 
-没有猫有八只尾巴。
+Zero cat has eight tails.
 
-把这两句话加起来：一只猫有九只尾巴。
+Therefore, adding: One cat has nine tails.
 \end{enumerate}
 
-鉴于0的这些奇特的“破坏”性质，人们把0归为1、2、3……之外的异类，如\cref{fig:keyboard}所示，0被放到了1到9的后面。
+As 0 breaks rules exceptionally, people treat 0 different from $1, 2, 3, \dotsc$. As shown in \cref{fig:keyboard}, 0 comes after numbers 1 to 9.
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.35]{img/keyboard}
- \caption{0在键盘上的位置}
+ \caption{0 in keyboard}
  \label{fig:keyboard}
 \end{figure}
 
-\subsection{序数}
-除了表示大小外，数还表示顺序。1、2、3……中，1在2的前面，3在2的右边。随着人们数数自然而然地感知到了顺序。迈克尔·阿廷在记下了他和女儿的对话\cite{MArtin-2011}：
+\subsection{Ordinal number}
+Besides value, number has order. 1 goes first, 2 follows 1, 3 follows 2, and so on. People recognize order from counting. Michael Artin had a conversation with his daughter\cite{MArtin-2011}:
 
-“一、二、三、五、四……”
+``One, two, three, five, four...''
 
-“不对，爸爸，应该是一、二、三、四、五”
+``No Daddy, it's one, two, three, four, five.''
 
-“是的，但为什么我不能说一、二、三、五、四呢？”
+``Well if I want to say one, two, three, five, four, why can't I?''
 
-“事情不是这样的。”
+``That's not how it goes.''
 
 \begin{center}
 \begin{tikzpicture}
@@ -168,7 +169,10 @@ Multiplication means scaling. When scale a ruler 2 times, not only the length of
 \end{center}
 
 \index{数轴} \index{序数} \index{公元纪年}
-把数字\underdot{按照顺序}排成一列叫做数轴。数的这种含义叫“序数”（ordinal）。在0引入西方前，制定历法的人不知道0的概念。于是规定：耶稣基督诞生后的年份为公元1年\footnote{耶稣生于12月25日，即西方的圣诞节。要到接下来的1月1日才算公元1年。}，以后顺序为公元2年、公元3年……而之前的一年叫做公元前1年，再前一年叫公元前2年……注意这里没有零。这带来了一个有趣的问题，例如公元前202年5月，刘邦称帝建立西汉。到了公元9年正月王莽篡位西汉灭亡。那么西汉王朝有多长？如果用202 + 9 = 211年计算则多了1年。为了看出问题，我们只要考虑公元前1年12月25日出生的婴儿到了公元1年11月25日时几岁？当然不满1周岁，只有11个月大。那到了公元1年12月31日呢？有1岁了，但绝不可能是1 + 1 = 2岁。如果一个公元1年生的婴儿到了公元2年生日时几岁呢？2 - 1 = 1岁。一般公元$x$年到公元$y$年过了$y - x$年。那么1999年12月31日晚上11:59分50秒时，全世界都在倒数进入新千年。可严格说来公元2000年距公元1年过了2000 - 1 = 1999年。全世界提前庆祝了1年。为什么会有这个错误？因为跳过了公元0年（没有公元0年）。如果你没想明白，请考虑这个例子：午夜11点59分59秒后的1秒，标志着新的一天的开始。此时是\underdot{0}时0分0秒，新一天的第一秒是0时0分1秒。新的一天始于0时而不是1时。请仔细看看钟表盘。
+
+Arrange numbers in a line, namely the number line. Each number has an order (its ordinality). Our dating system came from an idea of a Christian Monk Dionysius Exiguus in 525 CE. He defined the year that Jesus Christ's birth as {\em Anno Domini}, a Latin term which means Year of our Lord. It was abbreviated as AD. It changes to CE, stands for {\em Common Era} to include all religions nowadays. Because the Christmas day was December 25th, which is close to the year end, 1 CE actually started from the next January 1st. Then followed 2 CE, 3 CE... The years before that is called {\em Before Christ}, abbreviated as BC. For the same reason, we use BCE, stands for {\em Before Common Era}. More people adopt BCE/CE to replace BC/AD. The previous year of 1 CE is 1 BCE, the previous of 1 BCE and 2 BCE... Note there isn't 0 between 1 BCE and 1 CE. It causes a exceptional problem.
+
+而之前的一年叫做公元前1年，再前一年叫公元前2年……注意这里没有零。这带来了一个有趣的问题，例如公元前202年5月，刘邦称帝建立西汉。到了公元9年正月王莽篡位西汉灭亡。那么西汉王朝有多长？如果用202 + 9 = 211年计算则多了1年。为了看出问题，我们只要考虑公元前1年12月25日出生的婴儿到了公元1年11月25日时几岁？当然不满1周岁，只有11个月大。那到了公元1年12月31日呢？有1岁了，但绝不可能是1 + 1 = 2岁。如果一个公元1年生的婴儿到了公元2年生日时几岁呢？2 - 1 = 1岁。一般公元$x$年到公元$y$年过了$y - x$年。那么1999年12月31日晚上11:59分50秒时，全世界都在倒数进入新千年。可严格说来公元2000年距公元1年过了2000 - 1 = 1999年。全世界提前庆祝了1年。为什么会有这个错误？因为跳过了公元0年（没有公元0年）。如果你没想明白，请考虑这个例子：午夜11点59分59秒后的1秒，标志着新的一天的开始。此时是\underdot{0}时0分0秒，新一天的第一秒是0时0分1秒。新的一天始于0时而不是1时。请仔细看看钟表盘。
 
 \begin{figure}[htbp]
  \centering
