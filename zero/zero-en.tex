@@ -193,43 +193,40 @@ A thermometer, as shown in \cref{fig:thermometer}, measures temperature. 0$\degr
 \end{tikzpicture}
 \end{center}
 
-\label{sec:zero-as-ordinal} \index{0!序数}
-一个数$a$在$b$的左边，表明$a$在$b$之\underdot{前}，即$a < b$，它们距离$b - a$。反之，$a$在$b$的右边，表明$a$在$b$之\underdot{后}，即$a > b$，它们距离$a - b$\footnote{从节约一致的观点出发，我们可只用$a<b$定义“前”，用它的否定定义另一种情况。}。从运动的观点看$a + d$表示向前（右）移动$d$，$a - d$表示向后（左）移动$d$。如果$d = 0$，则$a + 0 = a - 0 = a$，表示固定$a$\underdot{不动}。在序数的意义下，0被赋予了合法的地位，不再是“二等公民”，而与1、2、3……一样是一个序数。
+\label{sec:zero-as-ordinal} \index{0!ordinal}
+If number $a$ is on the left of number $b$, it means the order of $a$ is {\em before} $b$, or $a < b$, with distance of $b - a$; if $a$ is on the right of $b$, it means $a$ is {\em after} $b$, or $a > b$, with distance of $a - b$. We can combine this two cases by only defining $a < b$ as {\em before}, and negate it for the other. Alternatively, we may consider $a + d$ as to move $a$ forward (to the right) by $d$; $a - d$ to move backward (to the left) by $d$; if $d = 0$, then $a + 0 = a - 0 = a$, which {\em fixes} $a$. 0 has a valid order as those of 1, 2, 3, ..., but not a second class citizen.
 
-\index{数组}
-在计算机系统中，有一种叫做数组（array）的数据结构。它使用一段连续的空间存储一组值，比如：
+\index{array}
+Array is a data structure in computer system. It stores a collection of values in a consecutive cells in memory. For example,
 
 \begin{lstlisting}[language=C, frame=single]
 int a[10];
 \end{lstlisting}
 
-声明一个数组$a$，它连续存储10个整数。在计算机内部，一个整数占16个二进制位，即用16个bit表示一个整数。对于正整数，最大可以表示到$2^{16}-1 = 65535$，即16个二进制位都是1。例如314写成二进制100111010(=256 + 32 + 16 + 8 + 2)，即第9、6、5、4、2位是1，其它11位是0（见第\ref{sec:binary-numerals}节）。每8个二进制位称为一个字节（Byte），所以一个16位整数占用2个字节，记为：\lstinline|sizeof(int) = 2B = 16|。一个容纳10个整数的数组占用$2 \times 10 = 20$字节的存储空间。
+This line of code defines $a$ as an array, which stores 10 integers. Suppose an integer has 16 bits in the computer, the maximum integer is $2^{16}-1 = 65535$, which is $1111...1$ of sixteen 1s in binary; 314 is $100111010(=256 + 32 + 16 + 8 + 2)$ in binary, i.e., the bits at position 9, 6, 5, 4, 2 are 1, the other 11 positions are 0 (see \cref{sec:binary-numerals}). A byte has 8 bits, hence an integer of 16 bits occupies 2 bytes, or denoted as \lstinline|sizeof(int) = 2B = 16|. An array of 10 integers occupies $2 \times 10 = 20$ bytes in memory.
 
-计算机执行到\lstinline|int a[10]|时，就会在系统存储器\footnote{有两种情况：栈和堆。这个例子使用栈。}中找到一个位置，称为地址，让\lstinline|a|指向它。从这之后预留出连续20个字节来，供程序使用。接下来程序用这个地址索引数组的各个元素。比如从\lstinline|a|开始两个字节保存首个元素，\lstinline|a|后面第3、4字节保存次一个元素，如\cref{fig:array}所示把1、2……9、10存入了数组。
+When executes the code \lstinline|int a[10]|, the computer will allocate 20 bytes in the memory\footnote{The are two types of memory: stack and heap; It is stack in this example.}, and point \lstinline|a| to the beginning position, called address. The program next uses this address to index an element of the array. The next two bytes from \lstinline|a| stores the first element; the 3rd and 4th bytes from \lstinline|a| stores the second element. The array stores 1, 2, ..., 9 as shown in \cref{fig:array}.
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.35]{img/array}
- \caption{数组}
+ \caption{Array}
  \label{fig:array}
 \end{figure}
 
-注意首个元素的地址从\lstinline|a|开始，它与地址\lstinline|a|的距离为0，记作\lstinline|a[0]|，次一个元素的地址从\lstinline|a + sizeof(int) = a + 16|开始，记作\lstinline|a[1]|，下一个地址从\lstinline|a + 2 * sizeof(int)|开始\footnote{计算机系统用“*”表示乘法}，记作\lstinline|a[2]|……计算机从\lstinline|a + i * sizeof(int)|找到\lstinline|a[i]|，所以数组中的10个元素从0开始索引，依次是\lstinline|a[0], a[1], ..., a[9]|。很多人初学编程不知为何数组从0开始到$n-1$结束。其原因即在于此：数组的下标$i$表示了元素\lstinline|a[i]|到数组起始位置的\underdot{距离}。距离从0开始，0才是真正的起点。以下例子程序将1到10装入数组：
+Note the first element starts from \lstinline|a|. The distance between its address and \lstinline|a| is 0, denoted as \lstinline|a[0]|; The address of the next element starts from \lstinline|a + sizeof(int) = a + 16|, denoted as \lstinline|a[1]|; the next elements starts from \lstinline|a + 2 * sizeof(int)|, denoted as \footnote{`*' means multiplication}\lstinline|a[2]|... The computer indexes \lstinline|a[i]| at the position of \lstinline|a + i * sizeof(int)|. The 10 elements of the array are indexed as \lstinline|a[0], a[1], ..., a[9]|. This is the reason why array starts from 0 to $n - 1$ in programming: the index $i$ is the {\em distance} between element \lstinline|a[i]| and the starting address. Distance is from 0, the true starting point. Below example puts 1 to 10 into the array:
 
 \begin{lstlisting}[language=C, frame=single]
 int a[10];
 for (int i = 0; i < 10; ++i) { a[i] = i + 1; }
 \end{lstlisting}
 
-有一个程序员自嘲的笑话。某程序员经过痛苦的熬夜加班，终得休息，决心全家吃顿饺子庆贺。他问孩子：“妈妈包了多少个饺子？”小孩子耳濡目染，指着盘中的饺子数道：“0、1、2、3……”妈妈无奈地感叹：“天生加班的程序员命。”
+There is a joke. A programmer treated his family to the restaurant after hard work of days and nights. He asked his kid how many meat balls in the dish. The kid pointed and counted 0, 1, 2, 3, ... Mom sighed he was born a programmer.
 
-\index{植树问题}
-类似的困扰也出现在小学数学中的“植树问题”中。一条100米长的路，每隔10米种一棵树，共需要几棵树？围绕400米长的操场跑道，每20米种一棵树，需要多少棵树？对于前者，我们只要把路想成数轴，意识到0是起点，从0数起：第0棵、第1棵、第2棵……第10棵。第$i$棵到起点的距离就是$10i$米。$100 \div 10 = 10$故第10棵树距起点100米。而0、1、2……10共11个数，故共种11棵树。对于后者，也从0开始数。400米是一圈，所以$400 \div 20 = 20$，第20棵树距离起点恰好是一圈400米，它和第0棵树位置重合，不需要种了，故0、1、2……19、$\cancel{20}$，共20棵树。
+Many kids suffer from the `planting problems' in school. For example, (1) there are trees every 10 meters along a street of 100 meters long, how many trees in total? (2) There are trees every 20 meters around the playground of 400 meters long, how many trees in total? For problem (1), treat the street as the number line; start from 0, the 0th tree, the 1st tree, the 2nd tree, ..., the 10th tree. The distance between the $i$th tree and the starting point is $10i$ meters. As $100 \div 10 = 10$, the distance between the 10th tree and the starting point is 100 meters. 0, 1, 2, ..., 10, there are total 11 numbers, hence 11 trees. For problem (2), count from 0. As the circle (the shape of the playground) is 400 meters long, $400 \div 20 = 20$, the distance between the 20th tree and the starting point is 400 meters. The position of 20th tree overlaps with the 0th, hence is skipped. 0, 1, 2, ..., 19, $\cancel{20}$, there are total 20 trees. When shall we count from 1 and when count from 0? (see\cref{qn:count-from})
 
-生活中我们一般从1开始数数1、2、3……，除了程序员和他可爱的孩子，似乎没有人从0开始数数。读者朋友们，你觉得什么情况下应该从1开始数，什么情况下应该从0开始数呢？（见\cref{qn:count-from}）
-
-\subsection{基数}
-\index{基数}
+\subsection{Cardinal numbers}
+\index{cardinal numbers}
 
 从“无”到“起始”的变化是认识的转变，世界上各个文明对“无”有着不同的理解。基督教的创世纪神话描述世界开始之前是混沌与无，天地、光明、万物是世界的开始。佛教认为我们感知到的物质世界只是幻象，“无”才是世界的本质。古代中国在万物的变化中寻找规律，认为阴阳是推动变化的力量，从混沌的太极中演生大千世界。这些不同的认识和文化传统，导致了对于零的不同态度。随着东西文明的交融，人们对于无的认识也发生了变化。例如在西方哲学中，黑格尔系统地应用辩证法考虑绝对的有与绝对的无，并以纯粹的有无作为逻辑学的开始。今天的宇宙大爆炸理论认为我们的宇宙在诞生自138亿年前的一次大爆炸，根据相对论的观点，在此之前没有时间，没有空间。
 
