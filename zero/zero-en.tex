@@ -292,20 +292,19 @@ As Greeks viewed numbers as the magnitudes of geometric objects, like length, ar
 \index{Diophantus}
 Diophatus of Alexandria (200 - 284 CE) was the mathematician who studied the arithmetic independently of geometry. He was the first person known to use algebraic notation and symbolism that used an abridged notation for frequently occurring operations, and an abbreviation for the unknown and for the powers of the unknown. In his influential work {\em Arithmetica}, there was a problem to solve the equation $4 = 4x + 20$. As it led to negative solution, Diophantus thought it absurd. In the 9th century, Arabic mathematicians met negative numbers from the Indian works about mathematics and astronomy. However, they treated the negative inconsistently. For example, al-Khwarizmi allowed negative numbers when applying arithmetic rules to solve equations as they arose during moving or canceling terms; while he had to reject them in the final geometric argument. Al-Khwarizmi didn't generalize linear equations to $ax + b = 0$ or quadratic equations to $ax^2 + bx + c = 0$ as we see nowadays; to avoid negative coefficient, he categorized them into 6 types, such as $ax = b$, $b - ax = 0$, $ax^2 + bx = c$, $bx + c = ax^2$, $ax^2 + c = bx$. It was not until 15th century, did European mathematicians encounter negative numbers. Most people reject them. For example, when Girolamo Cardano (1501 - 1576) gave the methods of solution to the cubic and quartic equations in his {\em Ars Magma} (1545), he followed the tradition of Greeks, demonstrated with geometric argument. He interpreted the solution to linear equation as length, the solution to quadratic equation as area, and the solution to cubic equation as volume. Because of the rejection to the negative coefficient, Cardano had to list 60 types of equation.
 
-\subsection{Ordinal number}
+\subsection{Ordinal numbers}
 \index{John Wallis} \index{number line}
 English mathematician John Wallis (1616 - 1703) introduced number line in the 17th century. It gave the ordinal meaning of negative numbers: they were numbers before zero, i.e., to the left of zero in the number line.
 
 \begin{example}
-In the dating system, 1 CE was the year after Jesus Christ's birth, then followed 2 CE, 3 CE, ... For the historic events happened before Jesus Christ's birth, we denote the year with BCE, for example, 1 BCE, 2 BCE, ... The years of BCE illustrate the notion of negative numbers (although lack of year of 0).
+In the dating system, 1 CE was the year after Jesus Christ's birth, then followed 2 CE, 3 CE, ... For the historic events happened before Jesus Christ's birth, we denote the year with BCE, for example, 1 BCE, 2 BCE, ... The years of BCE can be viewed as negative years (although lack of year 0).
 \end{example}
 
 \begin{example}
-The temperature keeps decreasing in winter, finally to 3$\degree C$, 2$\degree C$, 1$\degree C$, 0$\degree C$, the freezing point. However, it's not the end; the temperature goes on decreasing below the freezing point. We see the red mark of thermometer (typically dyed alcohol with much lower freezing point than water) passes 0$\degree C$,
-温度。进入冬天，气温逐渐下降，终于3度、2度、1度、0度，降到了冰点。但0度不是终结，尽管水凝固成冰，但随着温度继续下降，温度计上的红色煤油液面跨过了0度，降到了零下1度、零下2度……零下的温度比0度低，它们是负温度。
+The temperature keeps decreasing in winter, finally to 3$\degree C$, 2$\degree C$, 1$\degree C$, 0$\degree C$, the freezing point. However, it's not the end; the temperature goes on decreasing below the freezing point. We see the red mark of thermometer (typically dyed alcohol with much lower freezing point than water) passes 0 degree, 1 degree below zero, 2 degrees below zero, ... the degrees below zero are negative.
 \end{example}
 
-把温度计横过来，并向两边无限延伸，我们就得到了数轴：
+Turn the thermometer horizontally and extend both sides infinitely, it becomes a number line:
 
 \begin{center}
 \begin{tikzpicture}
@@ -317,10 +316,10 @@ The temperature keeps decreasing in winter, finally to 3$\degree C$, 2$\degree C
 \end{tikzpicture}
 \end{center}
 
-负数作为序数在0和任何正数的左侧。0分开了正数、负数，位于中间。我们在第\ref{sec:zero-as-ordinal}介绍的规则依然成立：若$a < b$，$a$在$b$的左边，如果$b = 0$，$a$为负数，如果$a = 0$则$b$为正数。在序数意义下，小于“$<$”和大于“$>$”关系还可以用差的正负来表示。$a - b < 0$则$a < b$，$a$在$b$的左边\footnote{$a < b$，两边减$b$：$a - b < b - b = 0$}。$a - b > 0$则$a > b$，$a$在$b$的右边。若$d > 0$则$a + d$向前（右）移动$d$，$a - d$向后（左）移动$d$，若$a < d$，则移动到负数的区域。如果$d < 0$则移动的方向相反：$a + d$向后（左），$a - d$向前（右）。
+Negative numbers and zero are to the left of positive numbers. Zero sits in the middle between the negative and positive numbers. The rules in \ref{sec:zero-as-ordinal} still hold: if $a < b$, then $a$ is to the left of $b$; if $b = 0$, then $a$ is negative; if $a = 0$, then $b$ is positive. From the perspective of ordering, the relation of `$<$' and `$>$' between two numbers correspond to the sign of their difference: if $a - b < 0$, then $a < b$, $a$ is to the left of $b$\footnote{Subtract $b$ from both sides of $a < b$ gives: $a - b < b - b = 0$}. If $a - b > 0$, then $a > b$, $a$ is to the right of $b$. For $d > 0$, $a + d$ advances (to the right) from $a$ by $d$; $a - d$ moves backward (to the left) by $d$; if $a < d$, then it moves to the range of negative numbers. For $d < 0$, it moves in opposite direction: $a + d$ moves backward (to the left), $a - d$ moves forward (to the right).
 
-\subsection{基数}
-\index{负号}
+\subsection{Cardinal numbers}
+\index{minus sign}
 尽管沃利斯用数轴给出了负数的意义，但他却奇怪地认为负数比无穷大，但不小于零。在《无穷大的算术》\footnote{拉丁文名为Arithmetica Infinitorum，1655年出版}中，沃利斯写到：由于比例$a/0$在$a$为正数时是无穷大\footnote{沃利斯是微积分的早期先驱之一，当时尚未形成严密的极限概念。若$a$、$b$都是正数，当观察到随着$b$减小到接近0时，$a/b$变得很大，于是随意地认为$a/0$是无穷大。}，故当分母变为负数时，例如当$a/b$中的$b$是负数时，这个比必定大于无穷大\cite{MKlein-1972}。这都说明人们对于负数作为基数的意义感到困惑。总体来说，16世纪和17世纪，并没有很多数学家对于使用负数心安理得或者承认它是数，更谈不上承认它们可以作为方程的真实的根\cite{MKlein-1972}。笛卡尔的坐标系只有第一象限，帕斯卡则认为从0减去4纯粹是胡说。天文学家第谷·布拉赫使用了符号“-”来标识负数，但他认为负数只能私下使用。
 %% https://web.ma.utexas.edu/users/mks/326K/Negnos.html
 
