@@ -353,7 +353,7 @@ For example, $(3, 1)$ corresponds to 2; $(5, 5)$ corresponds to 0; $(100, 101)$ 
 \item If $a < b$, the pair defines the negative number $-(b - a)$。
 \end{itemize}
 
-接下来为数偶定义加法和乘法：
+Define addition and multiplication for ordered pairs:
 
 \begin{align}
 (a, b) + (c, d) &= (a + c, b + d) \\
@@ -361,12 +361,12 @@ For example, $(3, 1)$ corresponds to 2; $(5, 5)$ corresponds to 0; $(100, 101)$ 
 \label{eq:pair-add-mul}
 \end{align}
 
-例如加法$2 + (-1) = (5, 3) + (2, 3) = (7, 6) = 1$，乘法$-2 \times 3 = (1, 3) \cdot (5, 2) = (1 \times 5 + 3 \times 2, 1 \times 2 + 3 \times 5) = (11, 17) = -6$。\cref{qn:pair-arithmetic}要求读者验证加法、乘法的交换律、结合律、分配律（合称五大定律）对数偶都适用。
+For example of addition: $2 + (-1) = (5, 3) + (2, 3) = (7, 6) = 1$, multiplication: $-2 \times 3 = (1, 3) \cdot (5, 2) = (1 \times 5 + 3 \times 2, 1 \times 2 + 3 \times 5) = (11, 17) = -6$. \Cref{qn:pair-arithmetic} requires to verify the five arithmetic rules, i.e., associativity and commutativity of addition and multiplication, and the distribution of multiplication over addition, for ordered pairs.
 
-这个方法完全不使用零和负数，只用1、2、3……形式化地定义出了正数、零、负数，绕开了历史上引起争议的问题。不禁令人想起克罗内克的话：“上帝创造了自然数，其余都是人的工作。”
+This formal method defines positive numbers, zero, and negative numbers only with 1, 2, 3, ... bypasses all the questions to meanings of negative numbers and zero. As Leopold Kronecker said, \emph{God made the integers, all the rest is the work of man.}
 
-\section{数轴}
-引入零和负数后，数轴上就标记出了向两侧无限延伸的整数。
+\section{Number line}
+With negative numbers and zero, the number line is marked with integers extend infinitely to both ends.
 
 \begin{center}
 \begin{tikzpicture}
@@ -377,6 +377,7 @@ For example, $(3, 1)$ corresponds to 2; $(5, 5)$ corresponds to 0; $(100, 101)$ 
 \end{tikzpicture}
 \end{center}
 
+Here are common notations: Denote $\mathbb{N}$ for natural numbers of 0, 1, 2, 3, ...
 我们介绍一下标准符号的由来。0、1、2、3……叫做自然数，记作$\mathbb{N}$。是英文natural numbers的首字母。在没有认识到0以前，自然数不包括0，只有1、2、3……但随着0的引入，我们认识到0才是真正“自然”的起点、原点（见第\ref{sec:peano-axioms}节皮亚诺公理）。今天大多数定义（包括我国的部编义务教育数学教材）都把0算作自然数。通常用小写字母$n$表示某个自然数。引入负数后，负整数、零、正整数，即……$-3$、$-2$、$-1$、0、1、2、3……合称整数，记作$\mathbb{Z}$。它来自德语“数”Zahlen的首字母。正整数有时记作$\mathbb{Z}^+$，负整数记作$\mathbb{Z}^-$。整数的英文是integral number或integer，我们有时也用其首字母$i$表示某个整数。在枚举一些列的事物时，通常用$i$作下标，例如：$a_1, a_2, ..., a_i, ..., a_n$，其中$a_i$表示第$i$个。但这里的$i$不是integer，而是索引的英文index的首字母。$a_n$通常指最后一个，即第$n$个。数学家们非常重视符号的使用。好的符号形象、生动、易于理解，表达能力强，甚至具有意想不到的力量（如莱布尼茨的微积分符号）。韦达、笛卡尔开创了代数符号的传统，他们用$a, b, c$表示已知量，用$x, y, z$表示未知量。这些习惯影响至今。
 
 \index{数轴!四则运算}
