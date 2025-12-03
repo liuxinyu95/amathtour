@@ -168,7 +168,7 @@ Besides value, number has order. 1 goes first, 2 follows 1, 3 follows 2, and so 
 \end{tikzpicture}
 \end{center}
 
-\index{数轴} \index{序数} \index{公元纪年}
+\index{number line} \index{ordinal number} \index{dating system}
 
 Arrange numbers in a line, namely the number line. Each number has an order (its ordinality). Our dating system came from an idea of a Christian Monk Dionysius Exiguus in 525 CE. He defined the year that Jesus Christ's birth as {\em Anno Domini}, a Latin term which means Year of our Lord. It was abbreviated as AD. It changes to CE, stands for {\em Common Era} to include all religions nowadays. Because the Christmas day was December 25th, which is close to the year end, 1 CE actually started from the next January 1st. Then followed 2 CE, 3 CE... The years before that is called {\em Before Christ}, abbreviated as BC. For the same reason, we use BCE, stands for {\em Before Common Era}. More people adopt BCE/CE to replace BC/AD. The previous year of 1 CE is 1 BCE, the previous of 1 BCE and 2 BCE... Note there isn't 0 between 1 BCE and 1 CE. It causes an exceptional problem. For example, Octavian defeated rivals of Mark Antony and Cleoptra, consolidated power, and became Augustus in the year of 27 BCE, which started Roman empire; The unified empire ended with the death of Emperor Theodosius I in 359 CE. How long is Rome empire? The calculation of $27 + 359 = 386$ years actually is 1 year more than the correct answer. To make it clear, consider a baby born on December 25th, 1 BCE, how old would be on November 25th, 1 CE? Definitely not a full year of age 1, but only 11 months. The baby would be 1 year old on December 31st, 1 CE, but not $1 + 1 = 2$ years old. On the contrary, For a baby born on 1 CE, how old would be it in 2 CE? It would be $2 - 1 = 1$ year old. In general, from $x$ CE to $y$ CE, there are $y - x$ years. At 11:59:50 on December 31st, 1999, all people were counting down for the new millennium, however, from the beginning of CE, which is 1 CE to 2000 CE, there are only $2000 - 1 = 1999$ years. We celebrated 1 year earlier than a true millennium. Why does such error occur? Because we skipped 0 CE, which was missed unfortunately. If you didn't follow, consider this example: It is the second after 11:59:59 at night starts a new day. In other word, a day start at 0:00:00; the first second of a day is 0:00:01. Look at the clock plate to confirm a day starts at zero o'clock but not one o'clock.
 
@@ -320,11 +320,13 @@ Negative numbers and zero are to the left of positive numbers. Zero sits in the 
 
 \subsection{Cardinal numbers}
 \index{minus sign}
-尽管沃利斯用数轴给出了负数的意义，但他却奇怪地认为负数比无穷大，但不小于零。在《无穷大的算术》\footnote{拉丁文名为Arithmetica Infinitorum，1655年出版}中，沃利斯写到：由于比例$a/0$在$a$为正数时是无穷大\footnote{沃利斯是微积分的早期先驱之一，当时尚未形成严密的极限概念。若$a$、$b$都是正数，当观察到随着$b$减小到接近0时，$a/b$变得很大，于是随意地认为$a/0$是无穷大。}，故当分母变为负数时，例如当$a/b$中的$b$是负数时，这个比必定大于无穷大\cite{MKlein-1972}。这都说明人们对于负数作为基数的意义感到困惑。总体来说，16世纪和17世纪，并没有很多数学家对于使用负数心安理得或者承认它是数，更谈不上承认它们可以作为方程的真实的根\cite{MKlein-1972}。笛卡尔的坐标系只有第一象限，帕斯卡则认为从0减去4纯粹是胡说。天文学家第谷·布拉赫使用了符号“-”来标识负数，但他认为负数只能私下使用。
+It looks strange to us that Wallis, the inventor of number line, thought negative numbers are greater than infinity, but not less than zero. In his \emph{Arithmetica Infinitorm} (1655) , Wallis explained: as the ratio $a/0$ is infinity\footnote{There was no rigors understanding to limit by the time of Wallis. As one of the pilots of Calculus, Wallis observed the ratio of $a/b$ increased very large for positive $a$ and $b$ when $b$ was close to 0. He, therefor, intuitively thought $a/0$ is infinity.} for positive $a$, therefore, when the denominator $b$ of $a/b$ further decreases to negative, the quotient will be greater than infinity\cite{MKlein-1972}.
+
+People were generally confused about the cardinal meaning of negative numbers. Most mathematicians in the 16th, 17th century did not accept negative numbers as legitimate numbers and rejected them as `real roots' of equations\cite{MKlein-1972}. There was only a quadrant in Decartes's coordinate system; Pascal regarded the subtraction of 4 from 0 as utter nonsense. Tycho Brahe, the astronomer who used `-' as the minus sign, referred to negative numbers as "privative.
 %% https://web.ma.utexas.edu/users/mks/326K/Negnos.html
 
-\index{绝对值}
-负数引起的困惑是可以理解的。以温度为例，零下三十几度的南极洲显然比零下二十几度的东北地区更寒冷。从寒冷的程度看，如果基数表现大小，似乎南极洲温度的基数更大，但从数轴上的序数看$-30 < -20$。从年代上看，孔子（公元前551～公元前479年）生活的时代比孟子（公元前372～公元前289年）生活的时代更久远。如果基数表现大小，似乎孔子时代年份的基数更大，但从纪年的序数看$-479 < -372$。这些问题逐渐使我们认识到\underdot{绝对值}的概念。在数轴上，一个数$a$的绝对值是$a$到0的距离（长度），例如正数5的绝对值是$5 - 0 = 5$，即5本身；负数$-5$的绝对值是$0 - (-5) = 5$。在数轴上-5和5关于0对称，彼此称为对方的相反数。$a$的相反数是$-a$。而0到自己的距离是0 - 0 = 0。这样归纳下来，数轴上一个数$a$的绝对值记作$|a|$，有3种情况：
+\index{absolute value}
+We can imagine how negative numbers confuses people. For example, Antarctica, with the temperature about 45 Celsius degrees below zero, is much colder than Helsinki, with the temperature about 10 degrees below zero in winter. If the magnitude shows how harsh the climate, then Antarctica should have a `larger' magnitude than Helsinki. However, $-45 < -10$ in the number line. Socrates (470 - 399 BCE) lived before Aristotle (384 - 322 BCE). In terms of the cardinal number, the years that Socrates lived should be `larger' than the years that Aristotle lived. However, $-470 < - 384$ in the number line. Such observation leads to the notion of {\em absolute value}. The absolute value of a number $a$ is the distance (length) between $a$ and 0 in the number line. It means the absolute value of a positive number is its value, for example the absolute value of 5 is $5 - 0 = 5$; the absolute value of a negative number is its opposite, for example, the absolute value of $-5$ is $0 - (-5) = 5$. 5 and $-5$ are bilateral symmetric to 0 in the number line, they are inverse of each other. The inverse of $a$ is $-a$. Because the distance between 0 to itself is $0 - 0 = 0$, the absolute value of 0 is 0. Denote the absolute value of $a$ by $|a|$, there are three cases:
 
 \[
 |a| = \begin{cases}
@@ -334,20 +336,21 @@ Negative numbers and zero are to the left of positive numbers. Zero sits in the 
 \end{cases}
 \]
 
-\index{数学家!范·德·瓦尔登} \index{数偶} \label{sec:z-as-pair}
-用语言描述就是，正数和零的绝对值是它本身，负数的绝对值是它的相反数。二十世纪初，范·德·瓦尔登在《代数学》\footnote{原名《近世代数》。数学家范·德·瓦尔登当时从荷兰来到德国哥廷根求学，他根据埃米尔·阿廷和艾米·诺特的演讲和讨论班内容整理出了这本抽象代数讲义，影响了一代数学家。}一书中给出了一个“构造”负数的方法\citepage[8页]{van-der-Waerden-2009}。用一对数偶$(a, b)$来表示整数如下：
+\index{van der Waerden} \index{pair} \label{sec:z-as-pair}
+We may summarize them as: the absolute value of a positive number or zero is itself; the absolute value of a negative number is its inverse. In the influential text-book \emph{Modern Algebra} by Bartel Leendert van der Waerden\footnote{The textbook on abstract algebra is originally based on lectures given by Emil Artin in 1926 and by Emmy Noether from 1924 to 1928. The English translation of 1949 had the title \emph{Modern algebra}, though a later, extensively revised edition in 1970 had the title \emph{Algebra}.} there is a way to `constructed' integers, including negative numbers and zero, with a ordered pair of natural numbers $(a, b)$\citepage[p8]{van-der-Waerden-2009}.
+
 \begin{itemize}
-\item 用$(a + b, b)$表示自然数$a$。
-\item 用$(b, b)$表示0。
-\item 用$(b, a + b)$表示负数$-a$。
+\item The pair $(a + b, b)$ corresponds to the positive number $a$.
+\item The pair $(b, b)$ corresponds to 0.
+\item The pair $(b, a + b)$ corresponds to the negative number $-a$.
 \end{itemize}
 
-例如(3, 1)表示2, (5, 5)表示0，(100, 101)表示-1。我们可以把$(a, b)$想象成天平两边的质量，天平平衡时$(b, b)$两边质量相等，左右的的质量差为0；天平左侧质量更大的时候，左右质量差为正数；天平右侧质量更大的时候，左右质量差为负数。每个数都有许多表示，例如$(3, 1) = (9, 7) = (360, 358) = \cdots$都表示2；$(5, 5) = (100, 100) = (128, 128) = \cdots$都表示0；$(100, 101) = (1, 2) = (8, 9) = \cdots$都表示$-1$。但每个符号$(a, b)$定义一个，且只定义一个整数，即：
+For example, $(3, 1)$ corresponds to 2; $(5, 5)$ corresponds to 0; $(100, 101)$ corresponds to $-1$. For the ordered pair $(a, b)$, we may think about a balance with weights $a$ and $b$ on the two sides. When it balances, the weights of the pair $(b, b)$ are equal, their difference is 0; when the left weights more, the difference between the left and right is positive; when the right weights more, the difference is negative. There are multiple pairs corresponding to a number, for example: $(3, 1) = (9, 7) = (360, 358) = \cdots$ all correspond to 2; $(5, 5) = (100, 100) = (128, 128) = \cdots$ all correspond to 0; $(100, 101) = (1, 2) = (8, 9) = \cdots$ all correspond to $-1$. If treat them as equivalent classes, then each class of pair $(a, b)$ defines a distinct integer:
 
 \begin{itemize}
-\item 用$a > b$表示自然数$a - b$。
-\item 用$a = b$表示0。
-\item 用$a < b$表示负数$-(b - a)$。
+\item If $a > b$, the pair defines the positive number $a - b$.
+\item If $a = b$, the pair defines 0.
+\item If $a < b$, the pair defines the negative number $-(b - a)$。
 \end{itemize}
 
 接下来为数偶定义加法和乘法：

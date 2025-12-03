@@ -1,27 +1,5 @@
-\ifx\wholebook\relax \else
-
-\documentclass[UTF8]{article}
-
-\usepackage[en]{../../prelude}
-
-\setcounter{page}{1}
-
-\begin{document}
-
-\title{Natural numbers}
-
-\author{LIU Xinyu
-\thanks{{\bfseries LIU Xinyu} \newline
-  Email: liuxinyu99@hotmail.com \newline}
-  }
-
-\maketitle
-\fi
-
-\markboth{Natural numbers}{Mathematics of Programming}
-
-\chapter{Proof of commutativity of addition}
-\phantomsection  % so hyperref creates bookmarks
+\section{Proof of commutativity of addition}
+\phantomsection
 \label[appendix]{app:add-commutativity}
 
 To prove the commutativity of addition $a + b = b + a$, we prepare three things. The first states that, for any natural number $a$, we have:
@@ -96,17 +74,4 @@ a + b' & = (a + b)' && \text{second rule of addition} \\
        & = b' + a  && \text{third result we proved. \cref{eq:one-commu}}
 \end{align*}
 
-Therefore we proved commutative law of addition with Peano's axioms(\cite{StepanovRose15}, p147 - 148).
-
-\ifx\wholebook\relax \else
-\begin{thebibliography}{99}
-
-\bibitem{StepanovRose15}
-Alexander A. Stepanov, Daniel E. Rose ``From Mathematics to Generic Programming''. Addison-Wesley Professional; 1 edition (November 17, 2014) ISBN-13: 978-0321942043
-
-\end{thebibliography}
-
-\expandafter\enddocument
-%\end{document}
-
-\fi
+It proves the commutativity of addition with Peano's axioms\cite[p147-148]{StepanovRose15}.
