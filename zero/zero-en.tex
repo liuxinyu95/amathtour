@@ -294,7 +294,7 @@ Diophatus of Alexandria (200 - 284 CE) was the mathematician who studied the ari
 
 \subsection{Ordinal numbers}
 \index{John Wallis} \index{number line}
-English mathematician John Wallis (1616 - 1703) introduced number line in the 17th century. It gave the ordinal meaning of negative numbers: they were numbers before zero, i.e., to the left of zero in the number line.
+English mathematician John Wallis (1616 - 1703) introduced number line in the 17th century. It gave the ordinal meaning of negative numbers: they were numbers before zero, i.e., to the left of zero on the number line.
 
 \begin{example}
 In the dating system, 1 CE was the year after Jesus Christ's birth, then followed 2 CE, 3 CE, ... For the historic events happened before Jesus Christ's birth, we denote the year with BCE, for example, 1 BCE, 2 BCE, ... The years of BCE can be viewed as negative years (although lack of year 0).
@@ -326,7 +326,7 @@ People were generally confused about the cardinal meaning of negative numbers. M
 %% https://web.ma.utexas.edu/users/mks/326K/Negnos.html
 
 \index{absolute value}
-We can imagine how negative numbers confuses people. For example, Antarctica, with the temperature about 45 Celsius degrees below zero, is much colder than Helsinki, with the temperature about 10 degrees below zero in winter. If the magnitude shows how harsh the climate, then Antarctica should have a `larger' magnitude than Helsinki. However, $-45 < -10$ in the number line. Socrates (470 - 399 BCE) lived before Aristotle (384 - 322 BCE). In terms of the cardinal number, the years that Socrates lived should be `larger' than the years that Aristotle lived. However, $-470 < - 384$ in the number line. Such observation leads to the notion of {\em absolute value}. The absolute value of a number $a$ is the distance (length) between $a$ and 0 in the number line. It means the absolute value of a positive number is its value, for example the absolute value of 5 is $5 - 0 = 5$; the absolute value of a negative number is its opposite, for example, the absolute value of $-5$ is $0 - (-5) = 5$. 5 and $-5$ are bilateral symmetric to 0 in the number line, they are inverse of each other. The inverse of $a$ is $-a$. Because the distance between 0 to itself is $0 - 0 = 0$, the absolute value of 0 is 0. Denote the absolute value of $a$ by $|a|$, there are three cases:
+We can imagine how negative numbers confuses people. For example, Antarctica, with the temperature about 45 Celsius degrees below zero, is much colder than Helsinki, with the temperature about 10 degrees below zero in winter. If the magnitude shows how harsh the climate, then Antarctica should have a `larger' magnitude than Helsinki. However, $-45 < -10$ on the number line. Socrates (470 - 399 BCE) lived before Aristotle (384 - 322 BCE). In terms of the cardinal number, the years that Socrates lived should be `larger' than the years that Aristotle lived. However, $-470 < - 384$ on the number line. Such observation leads to the notion of {\em absolute value}. The absolute value of a number $a$ is the distance (length) between $a$ and 0 on the number line. It means the absolute value of a positive number is its value, for example the absolute value of 5 is $5 - 0 = 5$; the absolute value of a negative number is its opposite, for example, the absolute value of $-5$ is $0 - (-5) = 5$. 5 and $-5$ are bilateral symmetric to 0 on the number line, they are inverse of each other. The inverse of $a$ is $-a$. Because the distance between 0 to itself is $0 - 0 = 0$, the absolute value of 0 is 0. Denote the absolute value of $a$ by $|a|$, there are three cases:
 
 \[
 |a| = \begin{cases}
@@ -380,25 +380,25 @@ With negative numbers and zero, the number line is marked with integers extend i
 Here are some common notations: Denote natural numbers of 0, 1, 2, 3, ... by $\mathbb{N}$. Before 0 was accepted, natural numbers started from 1, 2, 3, ... people finally recognize 0 is the natural starting point, or origin (see \cref{sec:peano-axioms}); most authors define natural numbers starting from 0 nowadays. We often use $n$ to denote some natural number. The positive numbers, together with zero and negative numbers (e.g., $\dotsc, -3, -2, -1, 0, 1, 2, 3, \dotsc$) are integers, denoted by $\mathbb{Z}$. It comes from the initial letter of the German word `Zahlen' (meaning ``numbers''). We denote positive numbers by $\mathbb{Z}^+$ and negative numbers by $\mathbb{Z}^-$. We sometimes also use $i$ to denote some integer for it is the initial letter of the word `integer'. $i$ is more often used as the index to enumerate things, such as: $a_1, a_2, ..., a_i, ..., a_n$, where $a_i$ is the $i$-th element; $a_n$ is the $n$-th, which is commonly the last. Symbol matters in mathematics. The intuitive and vivid symbols are easy to understand with exceptional power, such as Leibniz's symbols for calculus. Vieta and Decartes were pioneers who used symbols systematically: they used $a, b, c$ to represent known quantities and $x, y, z$ to represent unknown quantities. These conventions have endured to the present.
 
 \index{number line!arithmetic operations}
-利用数轴，我们可以给出四则运算（$+, -, \times, \div$）的直观解释（第3章会给出几何解释）。在\ref{sec:zero-as-ordinal}节，我们说加减$a \pm b$将数轴上的数$a$移动$b$个单位，共有五种移动情况：
+We can use number line to give intuitive meanings to the arithmetic operations ($+, -, \times, \div$), we'll give their geometric meanings in chapter 3. As mentioned in \cref{sec:zero-as-ordinal}, $a \pm b$ moves $a$ by $b$ units. There are five cases:
 
 \begin{center}
   \begin{tabular}{c|c|c|c}
           & $b > 0$ & $b < 0$ & $b = 0$ \\
   \hline
-  $a + b$ & 向右     & 向左    & \multirow{2}{*}{不动} \\
+  $a + b$ & move right     & move left    & \multirow{2}{*}{fix} \\
   \cline{1-3}
-  $a - b$ & 向左     & 向右
+  $a - b$ & move left     & move right
   \end{tabular}
 \end{center}
 
-我们看到$b < 0$时$a + b$相当于减法，而$a - b$相当于$a$加上$-b$。$b$和$-b$互为相反数，这样减法无非是加法的一种情况。我们可以用加法概括减法：
+When $b < 0$, $a + b$ amounts to subtraction; $a - b$ amounts to add $a$ to $-b$. $b$ and $-b$ are additive inverse of each other, one may view subtraction as a special case of addition, thus to generalize above cases into three:
 
 \begin{center}
 \begin{tabular}{c|c|c|c}
         & $b > 0$ & $b < 0$ & $b = 0$ \\
 \hline
-$a + b$ & 向右     & 向左    & 不动
+$a + b$ & move right     & move left    & fix
 \end{tabular}
 \end{center}
 
@@ -407,13 +407,13 @@ $a + b$ & 向右     & 向左    & 不动
  \includegraphics[scale=0.45]{img/translate}
 \end{figure}
 
-任给数轴上两个数$a, b$，它们的距离是：
+Give two numbers $a, b$ on the number line, their distance is:
 
 \begin{center}
   \begin{tabular}{c|c|c|c}
       & $a < b$ & $a > b$ & $a = b$ \\
   \hline
-  距离 & $b - a$ & $a - b$ & $0$
+  distance & $b - a$ & $a - b$ & $0$
   \end{tabular}
 \end{center}
 
@@ -422,16 +422,14 @@ $a + b$ & 向右     & 向左    & 不动
  \includegraphics[scale=0.4]{img/distance}
 \end{figure}
 
-这恰是绝对值的概念，距离等于$|a - b|$。特殊情况下，若$b = 0$，一个数$a$到原点0的距离是$|a|$。
+This is the definition of absolute value, the distance is $|a - b|$. When $b = 0$, the distance of $a$ to the origin 0 is $|a|$.
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.4]{img/abs}
 \end{figure}
 
-如果我们把“差”理解为“差距”，可正可负。在数轴上给定一个数$a$，它与另一个数$b$的差（距）就是$a - b$。若$a - b > 0$则$a > b$，$a$在$b$的右侧；若$a - b < 0$则$a < b$，$a$在$b$的左侧；若$a - b = 0$则$a = b$，$a$和$b$重合。特别地，$a$到原点0的差（距）$a - 0 = a$，就是它本身。
-
-在数轴上，一个数$a$的相反数就是它关于原点0的对称点$-a$；0的相反数是它自己。
+Distance as absolute value is non-negative, while difference between two numbers $a$ and $b$ on the number line, which is $a - b$ can be negative. If $a - b > 0$, then $a > b$, $a$ is to the right of $b$; if $a - b < 0$, then $a < b$, $a$ is to the left of $b$; if $a - b = 0$, then $a = b$, $a$ and $b$ coincide on the number line. Particularly, the difference between $a$ and the origin 0 is $a - 0 = a$, which equals to $a$ itself. The additive inverse of $a$ is the bilateral symmetric point $-a$ on the number line; the inverse of 0 is 0 itself.
 
 \begin{center}
 \begin{tikzpicture}
@@ -442,10 +440,11 @@ $a + b$ & 向右     & 向左    & 不动
 \end{tikzpicture}
 \end{center}
 
-0能“无中生有”：$0 \begin{cases} n \\ -n \end{cases}$，“分裂”成任何数$n$和它的相反数$-n$。反之，$n$和$-n$遇到一起“湮灭”为0，如同一对正负电荷。以上我们固定数轴，移动数轴上的数（点）。运动是相对的，我们也可以移动变换整条数轴：
+Here is how to make something out of nothing with 0: $0 \begin{cases} n \\ -n \end{cases}$. 0 breaks into some $n$ and its inverse $-n$. Conversely, analogue to a pair of positron and electron, $n$ and $-n$ `annihilate' each other and produce 0. So far, we fix the number line and apply arithmetic operations to `move' points (numbers); as movement is relative, we may apply the operations to move the number line:
 
-\subsection{平移}
-\index{数轴!平移}
+\subsection{translation}
+\index{number line!translation}
+What
 把数轴上的\underdot{所有}数$+1$相当于把整条数轴怎样移动呢？向右？请看\cref{fig:plus-1-numline}：
 
 \begin{figure}[htbp]
