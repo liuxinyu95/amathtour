@@ -442,7 +442,7 @@ Distance as absolute value is non-negative, while difference between two numbers
 
 Here is how to make something out of nothing (0): $0 \begin{cases} n \\ -n \end{cases}$. 0 breaks into some $n$ and its inverse $-n$. Conversely, analogue to a pair of positron and electron, $n$ and $-n$ `annihilate' each other and produce 0. So far, we fix the number line and apply arithmetic operations to `move' points (numbers); as movement is relative, we may apply the operations to move the number line:
 
-\subsection{translation}
+\subsection{Translation}
 \index{number line!translation}
 Which direction will the number line move if add $+1$ to {\em every} number on the number line? right or left? \cref{fig:plus-1-numline} shows the result:
 
@@ -532,9 +532,9 @@ Why does the number line move inversely with $a$? Denote the number line before 
   \label{fig:translate-number-line}
 \end{figure}
 
-\subsection{Additive inverse}
+\subsection{Inverse}
 \index{additive inverse} \index{number line!inverse}
-When negate every number, the number line is inversed (rotate $180\degree$ against the origin).
+When negate every number, the number line is inverse (rotate $180\degree$ against the origin).
 
 \begin{figure}[htpb]
   \centering
@@ -559,45 +559,45 @@ When negate every number, the number line is inversed (rotate $180\degree$ again
   \label{fig:negate-number-line}
 \end{figure}
 
-取两次反自然会复原，即旋转$180\degree$再旋转$180\degree$等效于旋转$360\degree$，等效于不动。
+The number line restores when negating twice; rotate $180\degree$, then rotate $180\degree$ again, it is equivalent to rotate $360\degree$, and is equivalent to fix.
 
 \btab{ccccc}
-  $\rightarrow$ & 反向 & $\leftarrow$ & 反向 & $\rightarrow$ \\
+  $\rightarrow$ & invert & $\leftarrow$ & invert & $\rightarrow$ \\
 \hline
-  $a$           & 相反数 & $-a$       & 相反数 & $-(-a) = a$
+  $a$           & negate & $-a$       & negate & $-(-a) = a$
 \etab
 
-取相反数$a \rightsquigarrow -a$等效于乘以$-1$，即$-a = a (-1) = (-1) a$，两次取反复原就解释了“负负为正”：$-(-a) = (-1)(-a) = a$。
+The effect of negating a number $a \rightsquigarrow -a$ amounts to multiplying it by $-1$, as $-a = a (-1) = (-1) a$. Negating twice restores a number explains why negative times negative is positive: $-(-a) = (-1)(-a) = a$.
 
-\subsection{缩放}
-\index{数轴!缩放}
-第\ref{sec:mul-as-zoom}节说乘除相当于缩放。$\times 2$把数轴放大2倍，$\times 3$把数轴放大3倍，$\div 2$把数轴缩小到$\frac{1}{2}$，$\div 3$缩小到$\frac{1}{3}$。除法是乘法的逆运算，所以$\div 2$也可以认为是$\times \frac{1}{2}$，即缩放到$\frac{1}{2}$倍，$\div 3$即缩放到$\frac{1}{3}$。这样乘除法就统一成乘法一种情况：
+\subsection{Scale}
+\index{number line!scale}
+Multiplication means scaling (\cref{sec:mul-as-zoom}). $\times 2$ scale up the number line two times; $\times 3$ scale up three times; $\div 2$ scale down the number line to $\frac{1}{2}$; $\div 3$ scale down to $\frac{1}{3}$. Division is multiplicative inverse; thus $\div 2$ amounts to $\times \frac{1}{2}$, which scales down to $\frac{1}{2}$; $\div 3$ scale down to $\frac{1}{3}$. In this way, we may generalize division as multiplication:
 
 \begin{center}
   \begin{tabular}{c|c|c|c}
              & $a > 1$ & $0 < a < 1$ & $a = 1$ \\
   \hline
-  $\times a$ & 放大     & 缩小    & 不变 \\
+  $\times a$ & scale up     & scale down    & fix \\
   \end{tabular}
 \end{center}
 
-引入负数后，如上节所说，$\times (-1)$相当于取相反数，数轴反向。$\times (-2)$相当于放大2倍后反转数轴，即$(-1) \times 2$，当然也等效于先反转数轴再放大2倍，即$2 \times (-1) = (-1) \times 2$。同样$\times (-3)$相当于放大3倍后反向，或反向后放大3倍。这样乘除法可以归纳如下：
+The scaling factor can be negative. As mentioned above, $\times (-1)$ amounts to negating, which inverses the number line; $\times (-2)$ amounts to scaling up 2 times followed by inverting: $(-1) \times 2$; it also amounts to inverting followed by scaling up 2 times: $2 \times (-1) = (-1) \times 2$. $\times (-3)$ amounts to scaling up 3 times followed by inverting, or inverting followed by scaling up 3 times. Below table generalizes multiplication and division:
 
 \begin{center}
   \begin{tabular}{c|c|c|c|c|c|c}
              & $a > 1$ & $a = 1$ & $0 < a < 1$  & $-1 < a < 0$ & $a = -1$ & $a < -1$ \\
   \hline
-  $\times a$ & 放大     & 不变    & 缩小          & 缩小 + 反向 & 反向 & 放大 + 反向
+  $\times a$ & scale up     & fix    & scale down          & scale down + invert & invert & scale up + invert
   \end{tabular}
 \end{center}
 
-有一种特殊情况：$\times 0$数轴“坍缩”成一点。上述“动作”可以组合：先平移$a$再平移$b$，当然这等效于先平移$b$再平移$a$，即$a + b = b + a$，这说明了加法的交换律。同样，先缩放$a$倍，再缩放$b$倍和先缩放$b$倍，再缩放$a$倍等效，即$ab = ba$，这说明了乘法交换率。我们把结合率的数轴意义作为\cref{qn:assiciative-numline}。
+There is a special case: when $\times 0$, the number line collapses into a point. The operations can be composed: translation of $a$ followed by translation of $b$ amounts to translation of $b$ followed by translation of $a$; that $a + b = b + a$ is the commutative law of addition. Scaling with $a$ followed by scaling with $b$ amounts to scaling with $b$ followed by scaling with $a$; that $ab = ba$ is the commutative law of multiplication. We leave the explanation of the association law with number line as \cref{qn:assiciative-numline}.
 
-更复杂的组合，如先平移再缩放或反向，如$x \rightsquigarrow ax + b$，即先缩放$a$倍，再平移$-b$。\cref{qn:transform-numline}要求读者考虑如何先平移再缩放。
+There are complex composition such as translation followed by scaling or inverting, for example, $x \rightsquigarrow ax + b$ which scaling with $a$ followed by translation of $-b$. \Cref{qn:transform-numline} applies translation followed by scaling.
 
-\section{单位元}
-\index{单位元} \label{sec:unit}
-0和负数成了1、2、3……一样的一等公民。它们有序数（再数轴上合法、确定的位置），有基数（确定的值）。0和其它数比起来仍是如此特殊。它是起点，它是原点，它是产生万物的“无”，还有谁像它这样独特么？1站了出来要和0比一比。
+\section{Unit}
+\index{unit} \label{sec:unit}
+0 and negative numbers are the first class citizen as those of 1, 2, 3, ... they have ordinal meaning (the valid and definitive position on the number line) and  cardinal meaning (the valid and definitive value). 0 is special; it is the origin, the staring point, the symbol of nothing. Is there any other number as special as 0? Below table compares 1 with 0:
 
 \begin{align*}
   0     &             &  1 & \\
@@ -608,13 +608,14 @@ When negate every number, the number line is inversed (rotate $180\degree$ again
   a + 0 &= 0 + a = a  &  1 \times a  &= a \times 1 =  a
 \end{align*}
 
-0加上任何数都不变，而1乘以任何数（包括0）也都不变。我们看看0和1对数轴的作用：
+Adding 0 to any number keeps that number unchanged; multiplying any number (including 0) by 1 keeps that number unchanged. Let us see the effective of 0 and 1 to the number line:
+
 \begin{enumerate}[1)]
-\item 加法把数轴左右平移，$+a$后数轴移动$-a$个单位（$a > 0$向左，$a < 0$向右），0的作用是固定数轴不动。
-\item 乘法把数轴放大缩小，$\times a$则缩放$a$倍（$|a| > 1$放大，$0 < |a| < 1$缩小），1的作用是固定数轴不变。
+\item Addition moves the number line to the left or right. $+a$ moves the number line by $-a$ (moves left when $a > 0$; moves right when $a < 0$), 0 fixes the number line under addition.
+\item Multiplication scales up or down the number line. $\times a$ scales the number line $a$ times (scale up when $|a| > 1$; scale down when $0 < |a| < 1$), 1 fixes the number line under multiplication.
 \end{enumerate}
 
-对于0，任何一个数$a$都能找到它的“加法双胞胎”兄弟，相反数$-a$，使得$a + (-a) = 0$。对于1，任何一个数$a$也能找到它的“乘法双胞胎”兄弟，倒数$\frac{1}{a}$，使得$a \times \frac{1}{a} = 1$，不过0没有“乘法双胞胎”兄弟。读者朋友们，你们觉得0和1谁更特殊呢？
+For any number $a$, there is one and only one additive symmetric number to 0, which is its inverse, $-a$, satisfying $a + (-a) = 0$. For any number $a \ne 0$, there is one and only one multiplicative symmetric number to 1, which is its reciprocal, $\frac{1}{a}$, satisfying $a \times \frac{1}{a} = 1$. But 0 does not have reciprocal. Which one is more special, 0 or 1?
 
 像0和1这样“鹤立鸡群”的例子比比皆是。英语中有单词、短语、句子、段落……我们把一列英语字符叫做“字符串”，如``apple''、``hello''、``to be or not to be''、`` ''（空格）。我们可以把字符串连接在一起，如：``hello'' $\doubleplus$ `` '' = ``hello ''，``hello '' $\doubleplus$ ``apple'' = ``hello apple''。不包含任何字符的串叫空串``''，把空串连接到任何字符上都不变：
 
