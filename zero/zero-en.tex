@@ -440,12 +440,11 @@ Distance as absolute value is non-negative, while difference between two numbers
 \end{tikzpicture}
 \end{center}
 
-Here is how to make something out of nothing with 0: $0 \begin{cases} n \\ -n \end{cases}$. 0 breaks into some $n$ and its inverse $-n$. Conversely, analogue to a pair of positron and electron, $n$ and $-n$ `annihilate' each other and produce 0. So far, we fix the number line and apply arithmetic operations to `move' points (numbers); as movement is relative, we may apply the operations to move the number line:
+Here is how to make something out of nothing (0): $0 \begin{cases} n \\ -n \end{cases}$. 0 breaks into some $n$ and its inverse $-n$. Conversely, analogue to a pair of positron and electron, $n$ and $-n$ `annihilate' each other and produce 0. So far, we fix the number line and apply arithmetic operations to `move' points (numbers); as movement is relative, we may apply the operations to move the number line:
 
 \subsection{translation}
 \index{number line!translation}
-What
-把数轴上的\underdot{所有}数$+1$相当于把整条数轴怎样移动呢？向右？请看\cref{fig:plus-1-numline}：
+Which direction will the number line move if add $+1$ to {\em every} number on the number line? right or left? \cref{fig:plus-1-numline} shows the result:
 
 \begin{figure}[htbp]
   \centering
@@ -467,11 +466,11 @@ What
         (0,0-0.8) -- (0,0+\k+0.3) node[above right] {$+1$};
   }
   \end{tikzpicture}
-  \caption{将数轴上每个数$+1$}
+  \caption{Add $+1$ to every number on the number line.}
   \label{fig:plus-1-numline}
 \end{figure}
 
-奇怪，竟然向左移动了1格。$\{\cdots -2, -1, 0, 1, 2 \cdots \}$各自加1后变成了$\{\cdots -1, 0, 1, 2, 3 \cdots \}$，的确向左移动了1个单位。那么$-1$一定是反向，也就是向右移动了，如\cref{fig:minus-1-numline}所示。
+Interestingly, it moves to the left by 1 unit. Adding 1 to each of $\{\cdots -2, -1, 0, 1, 2 \cdots \}$ gives $\{\cdots -1, 0, 1, 2, 3 \cdots \}$, indeed, it moves to the left by 1 unit. $-1$ is opposite to 1, thereby adding $-1$ moves the number line to the right, as shown in \cref{fig:minus-1-numline}.
 
 \begin{figure}[htbp]
   \centering
@@ -493,23 +492,23 @@ What
         (0,0-0.8) -- (0,0+\k+0.3) node[above right] {$-1$};
   }
   \end{tikzpicture}
-  \caption{将数轴上每个数$-1$}
+  \caption{Add$-1$ to every number on the number line.}
   \label{fig:minus-1-numline}
 \end{figure}
 
-一般地，$+a$将数轴移动$-a$，$-a$将数轴移动$a$。
+In general, adding $+a$ moves the number line by $-a$; adding $-a$ moves the number line by $a$.
 
 \begin{center}
   \begin{tabular}{c|c|c|c}
                    & $a > 0$ & $a < 0$ & $a = 0$ \\
   \hline
-  $\mathbb{Z} + a$ & 向左     & 向右    & \multirow{2}{*}{不动} \\
+  $\mathbb{Z} + a$ & move left     & move right    & \multirow{2}{*}{fix} \\
   \cline{1-3}
-  $\mathbb{Z} - a$ & 向右     & 向左
+  $\mathbb{Z} - a$ & move right     & move left
   \end{tabular}
 \end{center}
 
-这是为什么呢？记原数轴为$A$，移动后的数轴为$A'$。$A$上的每个数$x \rightsquigarrow x + a$，变成了$x' = x + a$，$A$上的$-a \rightsquigarrow -a + a = 0$，变成了$A'$上的原点。所以$A'$上的原点\underdot{对应}着原数轴上的$-a$。若$a > 0$，自然新原点（对应$-a$）在老原点（对应0）的左边，如\cref{fig:translate-number-line}所示。
+Why does the number line move inversely with $a$? Denote the number line before moving by $A$, after moving by $A'$. Every number $x$ on $A$ is sent to $x \rightsquigarrow x + a$, which is $x' = x + a$ on $A'$. In particular, $-a$ on $A$ is sent to $-a \rightsquigarrow -a + a = 0$, which is the origin point on $A'$. The origin on number line $A'$ {\em corresponds} to the point of $-a$ on the number line $A$. If $a > 0$, then the new origin (corresponding to $-a$) is to the left of the old origin, as shown in \cref{fig:translate-number-line}.
 
 \begin{figure}[htpb]
   \centering
@@ -529,13 +528,13 @@ What
           (0,0-0.8) -- (0,0+\k+0.3) node[above right] {$+a$};
 }
   \end{tikzpicture}
-  \caption{数轴平移}
+  \caption{Translation of number line}
   \label{fig:translate-number-line}
 \end{figure}
 
-\subsection{相反数}
-\index{相反数} \index{数轴!反向}
-把数轴上的所有数取相反数（简称取反，英文negate）相当于把数轴反向（绕原点旋转$180\degree$）。
+\subsection{Additive inverse}
+\index{additive inverse} \index{number line!inverse}
+When negate every number, the number line is inversed (rotate $180\degree$ against the origin).
 
 \begin{figure}[htpb]
   \centering
@@ -556,7 +555,7 @@ What
       \draw[->] (-0.5, -1) .. controls (0, -0.5) and (1, -1.0) .. (-0.5, -1.5);
   }
   \end{tikzpicture}
-  \caption{数轴反转}
+  \caption{Inverse of number line.}
   \label{fig:negate-number-line}
 \end{figure}
 
