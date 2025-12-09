@@ -608,7 +608,7 @@ There are complex composition such as translation followed by scaling or inverti
   a + 0 &= 0 + a = a  &  1 \times a  &= a \times 1 =  a
 \end{align*}
 
-Adding 0 to any number keeps that number unchanged; multiplying any number (including 0) by 1 keeps that number unchanged. Let us see the effective of 0 and 1 to the number line:
+Adding 0 to any number leaves that number unchanged; multiplying any number (including 0) by 1 leaves that number unchanged. Let us see the effective of 0 and 1 to the number line:
 
 \begin{enumerate}[1)]
 \item Addition moves the number line to the left or right. $+a$ moves the number line by $-a$ (moves left when $a > 0$; moves right when $a < 0$), 0 fixes the number line under addition.
@@ -617,13 +617,13 @@ Adding 0 to any number keeps that number unchanged; multiplying any number (incl
 
 For any number $a$, there is one and only one additive symmetric number to 0, which is its inverse, $-a$, satisfying $a + (-a) = 0$. For any number $a \ne 0$, there is one and only one multiplicative symmetric number to 1, which is its reciprocal, $\frac{1}{a}$, satisfying $a \times \frac{1}{a} = 1$. But 0 does not have reciprocal. Which one is more special, 0 or 1?
 
-There are plenty of things behaving like 0 and 1. For example, we call a sequence of characters a string. Word, phrases, sentences are strings, hence ``apple'', ``hello'', ``to be or not to be'', `` '' (a space) are all strings. One can concatenate strings, like ``hello'' $\doubleplus$ `` '' = ``hello '', ``hello '' $\doubleplus$ ``apple'' = ``hello apple''. A string that doesn't contain any character is empty, namely the empty string ``''. Concatenating any string with the empty string keeps that string unchanged:
+There are plenty of things behaving like 0 and 1. For example, we call a sequence of characters a string. Word, phrases, sentences are strings, hence ``apple'', ``hello'', ``to be or not to be'', `` '' (a space) are all strings. One can concatenate strings, like ``hello'' $\doubleplus$ `` '' = ``hello '', ``hello '' $\doubleplus$ ``apple'' = ``hello apple''. A string that doesn't contain any character is empty, namely the empty string ``''. Concatenating any string with the empty string leaves that string unchanged:
 
 \[
 \text{``''} \doubleplus S = S \doubleplus \text{``''} = S
 \]
 
-For example, ``'' $\doubleplus$ ``hello'' = ``hello'' $\doubleplus$ ``'' = ``hello''. Define the union of two sets is a set that contains all distinct elements from the two, for example $\{a, b, c\} \cup \{1, 2, 3\} = \{a, b, c, 1, 2, 3\}$, $\{a, b, c\} \cup \{c, d, e\} = \{a, b, c, d, e\}$. Taking the union of any set with the empty set $\varnothing$ keeps that set unchanged:
+For example, ``'' $\doubleplus$ ``hello'' = ``hello'' $\doubleplus$ ``'' = ``hello''. Define the union of two sets is a set that contains all distinct elements from the two, for example $\{a, b, c\} \cup \{1, 2, 3\} = \{a, b, c, 1, 2, 3\}$, $\{a, b, c\} \cup \{c, d, e\} = \{a, b, c, d, e\}$. Taking the union of any set with the empty set $\varnothing$ leaves that set unchanged:
 
 \[
 \varnothing \cup S = S \cup \varnothing = S
@@ -679,7 +679,7 @@ Why does the fifth axiom exclude the counter example of \{0, 0.5, 1, 1.5, 2, 2.5
   \item For any proposition regarding to natural numbers, if it is true for 0, and whenever being true for some number $n$, it is also true for $n'$ (the successor), then the proposition is true for all natural numbers. (This axiom ensures the correctness of mathematical induction.)
 \end{enumerate}
 
-例如，我们想证明能爬上任意层的大厦。用数学归纳法证明需要两个步骤：1) 证明我们能进入大楼一层大厅。2) 证明在任一层楼我们有能力“更上一层楼”。以上就是完整的五条皮亚诺公理，也称为皮亚诺算术系统。我们接下来展示皮亚诺公理系统，包括数学归纳法的威力。利用皮亚诺公理，我们可以定义出自然数的加法和乘法。加法定义包含两部分：任何自然数和0相加不变；$a$和$b$的后继相加，等于$a + b$的后继，即：\index{自然数的加法}
+To show we can reach the top floor of a skyscraper by mathematical induction, we take two steps: 1) show we can enter the lobby of the building; 2) show at any floor we can always step upstairs to the next floor. These are Peano's five axioms, which form the axiomatic system known as Peano's arithmetic. We next show how arithmetic operations are defined in this system. The definition of addition consists of two parts: adding 0 to any natural number leaves  the number unchanged; and $a$ plus the successor of $b$ equals to the successor of the sum of $a$ and $b$. \index{自然数的加法}
 
 \be
 \begin{laligned}
@@ -689,11 +689,13 @@ a + b' &= (a + b)'
 \label{eq:peano-add}
 \ee
 
-我们来验证一下2+3。2是0的二重后继$0''$，3是0的三重后继$0'''$，根据加法定义2+3为：
+Let us verify $2+3$ with this definition. 2 is the successor of the successor of 0, denoted by $0''$; 3 is the successor of the successor of the successor of 0, denoted by $0''$. The sum of $2 + 3$ by this definition is:
 
 \[
 0'' + 0''' = (0'' + 0'')' = (0'' + 0')'' = (0'' + 0)''' = (0'')''' = 0'''''
 \]
+
+Indeed, it is the five times successor of 0, which is 5.
 
 结果的确是0的五重后继，也就是5。加法定义可以直观地解释为从数轴上的$a$移动到$b'$相当于先移动到$b$再前进1。
 这种在定义中包含了自身的定义称为\underdot{递归}的。它把一个问题转换为规模较小的问题。在本例中，原问题$a + b'$被\underdot{递归}地转换为问题$a + b$，规模降低了1。此时如果$b \ne 0$就继续减小规模；如果$b = 0$则$a + 0 = a$，递归结束。0在这里被称为递归出口。我们接下来定义自然数的乘法：\index{自然数的乘法}
