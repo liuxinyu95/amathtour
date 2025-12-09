@@ -617,29 +617,30 @@ Adding 0 to any number keeps that number unchanged; multiplying any number (incl
 
 For any number $a$, there is one and only one additive symmetric number to 0, which is its inverse, $-a$, satisfying $a + (-a) = 0$. For any number $a \ne 0$, there is one and only one multiplicative symmetric number to 1, which is its reciprocal, $\frac{1}{a}$, satisfying $a \times \frac{1}{a} = 1$. But 0 does not have reciprocal. Which one is more special, 0 or 1?
 
-像0和1这样“鹤立鸡群”的例子比比皆是。英语中有单词、短语、句子、段落……我们把一列英语字符叫做“字符串”，如``apple''、``hello''、``to be or not to be''、`` ''（空格）。我们可以把字符串连接在一起，如：``hello'' $\doubleplus$ `` '' = ``hello ''，``hello '' $\doubleplus$ ``apple'' = ``hello apple''。不包含任何字符的串叫空串``''，把空串连接到任何字符上都不变：
+There are plenty of things behaving like 0 and 1. For example, we call a sequence of characters a string. Word, phrases, sentences are strings, hence ``apple'', ``hello'', ``to be or not to be'', `` '' (a space) are all strings. One can concatenate strings, like ``hello'' $\doubleplus$ `` '' = ``hello '', ``hello '' $\doubleplus$ ``apple'' = ``hello apple''. A string that doesn't contain any character is empty, namely the empty string ``''. Concatenating any string with the empty string keeps that string unchanged:
 
 \[
 \text{``''} \doubleplus S = S \doubleplus \text{``''} = S
 \]
 
-如``'' $\doubleplus$ ``hello'' = ``hello'' $\doubleplus$ ``'' = ``hello''。再比如集合的并。把两个集合中包含的元素不重复地放在一起组成新的集合，如$\{a, b, c\} \cup \{1, 2, 3\} = \{a, b, c, 1, 2, 3\}$，$\{a, b, c\} \cup \{c, d, e\} = \{a, b, c, d, e\}$。空集与任何集合的并都不变：
+For example, ``'' $\doubleplus$ ``hello'' = ``hello'' $\doubleplus$ ``'' = ``hello''. Define the union of two sets is a set that contains all distinct elements from the two, for example $\{a, b, c\} \cup \{1, 2, 3\} = \{a, b, c, 1, 2, 3\}$, $\{a, b, c\} \cup \{c, d, e\} = \{a, b, c, d, e\}$. Taking the union of any set with the empty set $\varnothing$ keeps that set unchanged:
 
 \[
 \varnothing \cup S = S \cup \varnothing = S
 \]
 
-如$\varnothing \cup \{a, b, c\} = \{a, b, c\} \cup \varnothing = \{a, b, c\}$。数学上我们把0叫做加法的单位元，1叫做乘法的单位元，空串叫做字符串连接的单位元，空集叫集合并的单位元。一般地在集合（可以有限也可以无限）$M$中，如果存在一个元素$e$，在某种二元运算$\odot$下使得：
+For example, $\varnothing \cup \{a, b, c\} = \{a, b, c\} \cup \varnothing = \{a, b, c\}$. In mathematics, 0 is the unit under addition; 1 is the unit under multiplication; the empty string ``'' is the unit under string concatenation; the empty set $\varnothing$ is the unit under set union. In general, if there is some element $e$ in set $M$ (can be finite or infinite), under the binary operation $\odot$ satisfying:
 
 \[
   e \odot a = a \odot e = a
 \]
-对$M$中的所有$a$都成立，我们把$e$叫做运算$\odot$在$M$中的单位元。例如0是加法在数的集合中的单位元，1是乘法在除去0之外的数的集合中的单位元，空串是连接操作在字符串集合中的单位元，空集是并在所有\underdot{集合的集合}中的单位元。单位元和集合中的其它元素一样是一等公民，但它是特殊的、唯一的（见\cref{qn:unique-e}）。
 
-\index{逆} \index{逆元}
-对集合中的元素$a$，如果存在某个元素$b$使得$a \odot b = e$，则称$b$是$a$的逆。例如$a$在加法运算下的逆就是相反数$-a$，因为$a + (-a) = 0$。非0数$a$在乘法运算下的逆是$\frac{1}{a}$，因为$a \times \frac{1}{a} = 1$。并非所有元素都有逆，例如除了空串外，所有字符串都没有连接操作的逆；除了空集外，所有集合都没有并操作的逆。有了逆，我们就可以把加减乘除四则运算简化为“二则运算”，$a - b$只不过是$a$加上$b$的逆（相反数），$a \div b$只不过是$a$乘以$b$的逆（倒数）。
+for any element $a$ of $M$, then $e$ is a unit of $M$ under $\odot$. We may check with this definition that, 0 is a unit under addition in the set of numbers; 1 is a unit under multiplication in the set of numbers excluding 0; empty string is a unit under concatenation in the set of strings; empty set is a unit under union in the \emph{set of sets}. A unit is a first class citizen as other elements in the set, and it is special and unique (see \cref{qn:unique-e}). For this reason, we call it {\em the} unit.
 
-\section{皮亚诺公理}
+\index{inverse}
+For element $a$ in a set, if there is some element $b$ in that set satisfying $a \odot b = e$, then we call $b$ the inverse of $a$. For example, the additive inverse of any number $a$ is $-a$ because $a + (-a) = 0$; the multiplicative inverse of any non-zero number $a$ is $\frac{1}{a}$ because $a \times \frac{1}{a} = 1$. Inverse does not always exist necessarily, for example, strings don't have inverse under concatenation except for the empty string; sets don't have inverse under union except for the empty set. Inverse enables us to simplify four arithmetic operations ($+, -, \times, \div$) to two: $a - b$ is $a$ plus the additive inverse of $b$, $a \div b$ is $a$ times the multiplicative inverse of $b$ (the reciprocal).
+
+\section{Peano's axioms}
 \label{sec:peano-axioms}
 1889年，意大利数学家皮亚诺为自然数建立起严格的公理化系统。它使用零作为起点，在加上“数数”这个动作，定义出了自然数。这组公理一共有五条，合称皮亚诺公理。
 
