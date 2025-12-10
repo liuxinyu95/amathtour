@@ -679,7 +679,7 @@ Why does the fifth axiom exclude the counter example of \{0, 0.5, 1, 1.5, 2, 2.5
   \item For any proposition regarding to natural numbers, if it is true for 0, and whenever being true for some number $n$, it is also true for $n'$ (the successor), then the proposition is true for all natural numbers. (This axiom ensures the correctness of mathematical induction.)
 \end{enumerate}
 
-To show we can reach the top floor of a skyscraper by mathematical induction, we take two steps: 1) show we can enter the lobby of the building; 2) show at any floor we can always step upstairs to the next floor. These are Peano's five axioms, which form the axiomatic system known as Peano's arithmetic. We next show how arithmetic operations are defined in this system. The definition of addition consists of two parts: adding 0 to any natural number leaves  the number unchanged; and $a$ plus the successor of $b$ equals to the successor of the sum of $a$ and $b$. \index{自然数的加法}
+To show we can reach the top floor of a skyscraper by mathematical induction, we take two steps: 1) show we can enter the lobby of the building; 2) show at any floor we can always step upstairs to the next floor. These are Peano's five axioms, which form the axiomatic system known as Peano's arithmetic. We next show how arithmetic operations are defined in this system. The definition of addition consists of two parts: adding 0 to any natural number leaves  the number unchanged; and $a$ plus the successor of $b$ equals to the successor of the sum of $a$ and $b$. \index{natural numbers!addition}
 
 \be
 \begin{laligned}
@@ -695,10 +695,7 @@ Let us verify $2+3$ with this definition. 2 is the successor of the successor of
 0'' + 0''' = (0'' + 0'')' = (0'' + 0')'' = (0'' + 0)''' = (0'')''' = 0'''''
 \]
 
-Indeed, it is the five times successor of 0, which is 5.
-
-结果的确是0的五重后继，也就是5。加法定义可以直观地解释为从数轴上的$a$移动到$b'$相当于先移动到$b$再前进1。
-这种在定义中包含了自身的定义称为\underdot{递归}的。它把一个问题转换为规模较小的问题。在本例中，原问题$a + b'$被\underdot{递归}地转换为问题$a + b$，规模降低了1。此时如果$b \ne 0$就继续减小规模；如果$b = 0$则$a + 0 = a$，递归结束。0在这里被称为递归出口。我们接下来定义自然数的乘法：\index{自然数的乘法}
+Indeed, it is the five times successor of 0, which is 5. We may understand this definition with number line: to move from $a$ on the number line to the right by $b'$, one first move by $b$ and then move by 1. Such kind of definition that includes a definition of itself is called {\em recursive}. It breaks down a problem into some same smaller problems. In the definition of addition, the original problem of $a + b'$ is {\em recursively} converted to the problem of $a + b$, which reduces the `level' of the complexity by 1. If $b \ne 0$, then continuously reducing the complexity; if $b = 0$, then the recursion terminates at $a + 0 = a$. Here 0 is called the exit of the recursion. We next define multiplication for natural numbers:\index{natural numbers!multiplication}
 
 \be
 \begin{laligned}
@@ -708,7 +705,7 @@ a \cdot b' &= a \cdot b + a
 \label{eq:peano-multiply}
 \ee
 
-乘法定义也包括两部分：任何数乘以0为0；$a$和$b$的后继相乘等于$a$乘以$b$再加上$a$。其中第二部分可以解释为：$a \cdot (b+1) = a \cdot b + a \cdot 1$。我们可以验证一下$2 \times 3$：
+The definition of multiplication consists of two parts: the product of any natural number and 0 is 0, and the product of $a$ and the successor of $b$ equals to adding $a$ to the product of $a$ and $b$. The latter can be expressed as $a \cdot (b+1) = a \cdot b + a \cdot 1$. Let's verify it with $2 \times 3$:
 
 \begin{align*}
 0'' \times 0''' & = 0'' \times 0'' + 0'' = 0'' \times 0' + 0'' + 0'' = 0'' \times 0 + 0'' + 0'' + 0'' \\
@@ -717,40 +714,38 @@ a \cdot b' &= a \cdot b + a
                 & = (0'''' + 0')' = (0'''' + 0)'' = (0'''')'' = 0''''''
 \end{align*}
 
-结果的确是0的6重后继。乘法定义也是递归的。它将问题$a \cdot b'$转化为两个子问题：(1)递归地求$a \cdot b$（规模降低了1）；(2)在此基础上$+a$，直到$b$的规模降低到0，递归到达出口结束。递归是一种常见的方法，将复杂问题分解，各个击破。这种策略叫做“分而治之”，特别适合于利用机器解决问题，在现代计算机系统中得到大量应用。
+Indeed, it's the six times successor of 0, which is 6. The definition of multiplication is recursive too; it breaks down the problem of calculating $a \cdot b'$ into two sub-problems: (1) recursively calculate $a \cdot b$ (reduce the level of complexity by 1); (2) add $a$ to the result of the first problem. The recursion terminates when $b$ decreases to 0. The idea of the recursive method is `divide and conquer'; it is powerful and widely used, particularly in the modern computer system.
 
-\index{加法结合律} \label{sec:add-assoc}
-与通常的观念不同，加法和乘法的交换律、结合律既不是公理也不是公设。它们都是定理，可以用皮亚诺公理和定义证明。以加法结合律为例：$(a + b) + c= a + (b + c)$。我们利用数学归纳法，先证明当$c=0$时它是对的。根据加法定义的第一条规则：
+\index{associativity of addition} \label{sec:add-assoc}
+It turns out that neither the associativity nor the commutativity of addition or multiplication is axiom. One can prove them all with Peano's axioms. For example, to prove $(a + b) + c= a + (b + c)$, the associativity of addition by induction, first, we show it holds when $c=0$. According to the first rule of addition:
 
 \[
 (a + b) + 0 = a + b = a + (b + 0)
 \]
 
-然后是递推步骤，假设$(a + b) + c = a + (b + c)$成立，我们要推出$(a + b) + c' = a + (b + c')$。
+Second, assume $(a + b) + c = a + (b + c)$ holds, we are going to show $(a + b) + c' = a + (b + c')$.
 
 \begin{align*}
-(a + b) + c' &= (a + b + c)' && \text{加法定义的规则二，反向} \\
-             &= (a + (b + c))' && \text{递推假设} \\
-             &= a + (b + c)' && \text{加法定义的规则二} \\
-             &= a + (b + c') && \text{加法定义的规则二，反向} & \mbox{\qed}
+(a + b) + c' &= (a + b + c)' && \text{2nd rule of +, (converse)} \\
+             &= (a + (b + c))' && \text{induction assumption} \\
+             &= a + (b + c)' && \text{2nd rule of +} \\
+             &= a + (b + c') && \text{2nd rule of +, (converse)} & \mbox{\qed}
 \end{align*}
 
-这样就证明了加法的结合律。但加法交换律的证明却并不简单，参见附录\ref{app:add-commutativity}的证明。
+It proves the associativity of addition. However, it is a bit complex to prove the commutativity of addition; \cref{app:add-commutativity} gives a proof.
 
 \begin{mdframed}
-\index{数学家!皮亚诺}
+\index{Peano}
 
 \begin{center}
  \includegraphics[scale=0.2]{img/Peano}
- \captionof{figure}{朱塞佩·皮亚诺（Giuseppe Peano）1858 - 1932。}
+ \captionof{figure}{Giuseppe Peano, 1858-1932}
  \label{fig:Peano}
 \end{center}
 
-朱塞佩·皮亚诺1858年8月27日生于意大利库内奥（Cuneo）附近的斯宾尼塔（Spinetta）村。这是位于意大利北部都灵附近的农村。他出生的时候，正值意大利统一。1876年皮亚诺考入都灵大学学习，1880年毕业后就留校任教。皮亚诺最开始讲授微积分课程，1887年他和克罗西奥（Carola Crosio）结婚。1886年起，皮亚诺还同时担任都灵军事学院的教授。从19世纪80年代起，皮亚诺开始研究数理逻辑，并致力于数学基础的构建工作。他撰写了《数学公式汇编》这本巨著，力图把所有的数学成果都用形式化的方法汇集起来。这本书可以说为数学的严密化奠定了基础。1900年在第二届国际数学家大会上，罗素遇到了皮亚诺，他在自传（1951）中说\cite{M-Kline-2007}：
+Giuseppe Peano was an mathematician, logician, and linguist. He was born and raised on a farm at Spinetta, a hamlet now belonging to Cuneo, Italy. He entered the University of Turin in 1876, graduating in 1880 with high honors, after which the University employed him to teach calculus course. In 1887, Peano married Carola Crosio. In 1886, he began teaching concurrently at the Royal Military Academy. From 1880s, Peano started to study mathematical logic. He published Peano's axioms, a formal foundation for the natural numbers in 1889. Peano started the \emph{Formulario} Project. It was to be an `Encyclopedia of Mathematics', containing all known formulae and theorems. In 1900, the Second International Congress of Mathematicians was held in Paris. At the conference Peano met Bertrand Russell and gave him a copy of \emph{Formulario}. Russell was so struck by Peano's innovative logical symbols that he left the conference and returned home to study Peano's text\cite{M-Kline-2007}.
 
-“这次大会是我的精神生活的一个转折点，因为在那里我遇到了皮亚诺。在此之前，我已经听说过他的名字，也知道他的一些工作。我突然明白了，他的符号提供了我多年来一直试图寻找的分析的工具，而且从他那里我获得了一直以来想要从事的工作的一种新的有效的技术。”
-
-皮亚诺强烈地影响了罗素和怀特海合著的《数学原理》一书，对早期的计算理论起了重要的作用。皮亚诺最初用法语发表研究著作，但他对自然语言固有的歧义感到不满。为了解决这个问题，他于1900年左右发明了一套没有歧义的统一语言，称为“无屈折拉丁语”。这门语言后来被称为“国际语”（拉丁文Interlingua和世界语（Esperanto）是两种不同的人造语言）。皮亚诺努力推广他的新语言，但是事实并不如他所愿，几乎没有人愿意读他用国际语重写的《数学公式汇编》。相反倒是他早期的法语著作使数学家的观点发生了深刻的变化，尤其对法国的布尔巴基学派的纲领，产生了很大影响。1932年4月20日，皮亚诺因心脏病逝世于都灵。
+When Russell and Whitehead wrote {\em Principia Mathematica}, they were deeply influenced by Peano. Peano played a key role in the axiomatization of mathematics and was a leading pioneer in the development of mathematical logic and set theory. As part of this effort, he made key contributions to the modern rigorous and systematic treatment of the method of mathematical induction. He spent most of his career teaching mathematics at the University of Turin. He also developed an international auxiliary language, Latino sine flexione (`Latin without inflections', later called Interlingua), which is a simplified version of classical Latin. Although Peano put a lot of effort to rewrite his works in the new language, few people read it. On the other hand, his early works in French influnced many mathematicians, especially to Bourbaki school. Peano died on April 20th, 1932.
 \end{mdframed}
 
 \begin{Exercise}[label={ex:zero}]
