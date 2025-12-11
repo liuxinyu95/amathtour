@@ -778,15 +778,17 @@ When Russell and Whitehead wrote {\em Principia Mathematica}, they were deeply i
 On one hand, consider the width keeps decreasing; the rectangle is narrowing and is closing to a line segment with length of 5. By Euclid's definition: line has no width. The dimension of width disappears, leaving only one dimension of height. On the other hand, point has no size by Euclid; no length or width, which corresponds to $0 \times 0$.
 }
 
-\Question{什么情况下应从1开始数数，什么情况下应从0开始数数？
+\Question{When shall we count from 1? when shall we count from 0?
 
-考虑计数的情形是序数还是基数，是否包含到起点（原点）距离的含义，是否可能有负数的意义等因素。
+\vspace{2mm}
+We need consider if it regards ordinal meaning or cardinal meaning; whether regards the notion of distance (from the origin), whether accepts negative value, and so on.
 }
-\Question{定义数偶的减法和除法
+
+\Question{Define subtraction and division for pairs.
 
   \begin{enumerate}[(a)]
-  \item 减法相当于加上相反数，而数偶$(a, b)$的相反数是$(b, a)$。定义减法：$(a, b) - (c, d) = (a, b) + (d, c) = (a + d, b + c)$。
-  \item 为了定义除法，注意到两个性质：（1）$(ka, kb)$相当于把$(a, b)$扩大$k$倍，$(\frac{1}{k}a, \frac{1}{k}b)$缩小到$\frac{1}{k}$。（2）$(-a, -b) = (b, a)$。利用它们得到：
+  \item Subtraction amounts to adding the inverse. The inverse of $(a, b)$ is $(b, a)$. Define: $(a, b) - (c, d) = (a, b) + (d, c) = (a + d, b + c)$.
+  \item To define division, note two things: (1) $(ka, kb)$ amounts to scaling up $(a, b)$ by $k$ times; $(\frac{1}{k}a, \frac{1}{k}b)$ amounts to scaling down to $\frac{1}{k}$. (2) $(-a, -b) = (b, a)$; from where gives below definition:
 
     \[
     (a, b) / (c, d) = \begin{dcases}
@@ -794,65 +796,72 @@ On one hand, consider the width keeps decreasing; the rectangle is narrowing and
         c < d: & (\dfrac{b}{d-c}, \dfrac{a}{d-c})
         \end{dcases}
     \]
-    其中$c \ne d$。
+    where $c \ne d$。
   \end{enumerate}
 }
-\Question{验证数偶的加法乘法满足交换律、结合律、分配律
+
+\Question{Verify the addition and multiplication of pairs are commutative, associative, and the multiplication is distributive over addition.
+
   \begin{enumerate}[(a)]
-  \item 交换率：
+  \item Commutative:
     \begin{align*}
-      (a, b) + (c, d) & = (a + c, b + d)  & \text{数偶加法定义} \\
-                      & = (c + a, d + b)  & \text{自然数的加法交换律} \\
-                      & = (c, d) + (a, b) & \text{反向用数偶加法定义}
+      (a, b) + (c, d) & = (a + c, b + d)  & \text{definition of +} \\
+                      & = (c + a, d + b)  & \text{commutative of + for } \mathbb{N}\\
+                      & = (c, d) + (a, b) & \text{definition of + (converse)}
     \end{align*}
     \begin{align*}
-      (a, b) \cdot (c, d) & = (ac + bd, ad + bc) & \text{数偶乘法定义} \\
-                          & = (ca + db, da + cb) & \text{自然数乘法交换律} \\
-                          & = (c, d) \cdot (a, b) & \text{反向用数偶乘法定义}
+      (a, b) \cdot (c, d) & = (ac + bd, ad + bc) & \text{definition of } $\cdot$ \\
+                          & = (ca + db, da + cb) & \text{commutative of $\cdot$ for } \mathbb{N} \\
+                          & = (c, d) \cdot (a, b) & \text{definition of $\cdot$ (converse)}
     \end{align*}
-  \item 结合律：略
-  \item 分配律：我们只给出左侧分配律，略去右侧。
+  \item We skip for associativity
+  \item There are two distributive law: from left and from right. We only verify the left one.
     \begin{align*}
          &(a, b) \cdot ((c, d) + (e, f)) & \\
         =& (a, b) \cdot (c + e, d + f) & \\
         =& (a(c + e) + b (d + f), a(d + f) + b(c + e)) & \\
         =& (ac + bd + ae + bf, ad + bc + af + be) & \\
-        =& (ac + bd, ad + bc) + (ae + bf, af + be) & \text{反向用数偶加法定义} \\
-        =& (a, b) \cdot (c, d) + (a, b) \cdot (e, f) & \text{反向用数偶乘法定义}
+        =& (ac + bd, ad + bc) + (ae + bf, af + be) & \text{definition of + (converse)} \\
+        =& (a, b) \cdot (c, d) + (a, b) \cdot (e, f) & \text{definition of $\cdot$ (converse)}
     \end{align*}
   \end{enumerate}
 }
-\Question{用乘法对加法的分配律证明$(-1) \cdot (-1) = 1$
+
+\Question{Show that $(-1) \times (-1) = 1$ by the distributive law.
   \begin{proof}
     \begin{align*}
-      (-1) \times (-1) & = (-1) \times (-1) + 0 & \text{0加上任何数不变} \\
-                      & = (-1) \times (-1) + (-1 + 1) & -1\text{和1互为相反数} \\
-                      & = (-1) \times (-1) + (-1) \times 1 + 1 & \text{1乘以任何数不变} \\
-                      & = (-1) \times (-1 + 1) + 1 & \text{反向用乘法分配律} \\
+      (-1) \times (-1) & = (-1) \times (-1) + 0 & \text{fixed when added to 0} \\
+                      & = (-1) \times (-1) + (-1 + 1) & \text{additive inverse} \\
+                      & = (-1) \times (-1) + (-1) \times 1 + 1 & \text{fixed when multiply 1} \\
+                      & = (-1) \times (-1 + 1) + 1 & \text{distributive law (converse)} \\
                       & = (-1) \times 0 + 1 = 0 + 1 = 1 & \qedhere
     \end{align*}
   \end{proof}
 }
 
-\Question{证明一个数的相反数是唯一的。
+\Question{Show that the additive inverse is unique.
   \begin{proof}
-    假设$b$是$a$的一个相反数，我们要证明$b = -a$：
+    Suppose $b$ is another inverse of $a$, we are going to show $b = -a$:
     \begin{align*}
-      0     & = b + a     & \text{相反数} \\
-      0 - a & = b + a - a & \text{两边}-a \\
+      0     & = b + a     & \text{inverse} \\
+      0 - a & = b + a - a & -a \text{ on both sides} \\
       -a & = b + (a - a)  = b + 0 = b & \qedhere
     \end{align*}
   \end{proof}
 }
 
-\Question{说明加法、乘法结合律的数轴意义。
+\Question{Use the number line to explain the meaning of the associative law of addition and multiplication.
 
-加法：数轴先平移$a + b$再平移$c$等效于先平移$a$再平移$b+c$。乘法：数轴先缩放$ab$再缩放$c$等效于先缩放$a$再缩放$bc$。
+\vspace{2mm}
+Addition: The move of the number line, that first moves $a + b$ followed by another move of $c$, which amounts to first moves $a$ followed by another move of $b + c$. Multiplication: first scale up the number line $ab$ times followed by another scaling of $c$; it amounts to first scale up $a$ followed by another scaling of $bc$.
 }
-\Question{考虑$x \rightsquigarrow 2x + 1$, 如果先平移再缩放，应先向哪个方向平移多少？再缩放几倍？一般地，$x \rightsquigarrow ax + b$应如何变换？
 
-注意到$2x + 1 = 2(x + \frac{1}{2})$，所以先向\underdot{左}平移$\frac{1}{2}$再放大2倍。一般地，由于$ax + b = a(x + \frac{b}{a})$，故先平移$-\frac{b}{a}$（若$\frac{b}{a}>0$则向左，否则向右）再放大$a$倍。
+\Question{To implement the transformation of $x \rightsquigarrow 2x + 1$ by translation followed by scaling, which direction need move? and how far? after that, how big need scale? In general, how to implement the transformation of $x \rightsquigarrow ax + b$?
+
+\vsapce{2mm}
+Since $2x + 1 = 2(x + \frac{1}{2})$, the transformation is to first move {\em left} by $\frac{1}{2}$ followed by scaling up 2 times. In general, as $ax + b = a(x + \frac{b}{a})$, the transformation is to move by $-\frac{b}{a}$ (move left if $\frac{b}{a}>0$, otherwise move right), followed by scaling $a$ times.
 }
+
 \Question{证明单位元是唯一的。
 \begin{proof}
 假设存在另一单位元$e'$，使得对任意元素$a$满足$e' \odot a = a \odot e' = a$。我们要证明$e = e'$：
