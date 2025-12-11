@@ -745,37 +745,37 @@ It proves the associativity of addition. However, it is a bit complex to prove t
 
 Giuseppe Peano was an mathematician, logician, and linguist. He was born and raised on a farm at Spinetta, a hamlet now belonging to Cuneo, Italy. He entered the University of Turin in 1876, graduating in 1880 with high honors, after which the University employed him to teach calculus course. In 1887, Peano married Carola Crosio. In 1886, he began teaching concurrently at the Royal Military Academy. From 1880s, Peano started to study mathematical logic. He published Peano's axioms, a formal foundation for the natural numbers in 1889. Peano started the \emph{Formulario} Project. It was to be an `Encyclopedia of Mathematics', containing all known formulae and theorems. In 1900, the Second International Congress of Mathematicians was held in Paris. At the conference Peano met Bertrand Russell and gave him a copy of \emph{Formulario}. Russell was so struck by Peano's innovative logical symbols that he left the conference and returned home to study Peano's text\cite{M-Kline-2007}.
 
-When Russell and Whitehead wrote {\em Principia Mathematica}, they were deeply influenced by Peano. Peano played a key role in the axiomatization of mathematics and was a leading pioneer in the development of mathematical logic and set theory. As part of this effort, he made key contributions to the modern rigorous and systematic treatment of the method of mathematical induction. He spent most of his career teaching mathematics at the University of Turin. He also developed an international auxiliary language, Latino sine flexione (`Latin without inflections', later called Interlingua), which is a simplified version of classical Latin. Although Peano put a lot of effort to rewrite his works in the new language, few people read it. On the other hand, his early works in French influnced many mathematicians, especially to Bourbaki school. Peano died on April 20th, 1932.
+When Russell and Whitehead wrote {\em Principia Mathematica}, they were deeply influenced by Peano. Peano played a key role in the axiomatization of mathematics and was a leading pioneer in the development of mathematical logic and set theory. As part of this effort, he made key contributions to the modern rigorous and systematic treatment of the method of mathematical induction. He spent most of his career teaching mathematics at the University of Turin. He also developed an international auxiliary language, Latino sine flexione (`Latin without inflections', later called Interlingua), which is a simplified version of classical Latin. Although Peano put a lot of effort to rewrite his works in the new language, few people read it. On the other hand, his early works in French influenced many mathematicians, especially to Bourbaki school. Peano died on April 20th, 1932.
 \end{mdframed}
 
 \begin{Exercise}[label={ex:zero}]
-\Question{各个文明在丈量土地时都独立发展出了面积的概念，并将面积和乘法联系了起来，如\cref{fig:rectangle-vanish}所示。当矩形的宽是0，即$0 \times 5$时，面积消失。矩形“坍缩”成了什么形状？
+\Question{Peoples of different civilizations independently developed the notion of area when measuring lands, and connected it with multiplication as shown in \cref{fig:rectangle-vanish}. When the width is 0, the area of $0 \times 5$ disappears. What shape does the rectangle become?
 
   \begin{center}
   \includegraphics[scale=0.3]{img/rectangles}
-  \captionof{figure}{$0 \times 5$时矩形消失。}
+  \captionof{figure}{The rectangle of $0 \times 5$ disappears.}
   \label{fig:rectangle-vanish}
   \end{center}
 }
-\Question{什么情况下应从1开始数数，什么情况下应从0开始数数？\label{qn:count-from}}
-\Question{$\bigstar$定义数偶的减法和除法}
-\Question{验证数偶的加法乘法满足交换律、结合律、分配律\label{qn:pair-arithmetic}}
-\Question{用乘法对加法的分配律证明$(-1) \times (-1) = 1$}
-\Question{证明一个数的相反数是唯一的。}
-\Question{说明加法、乘法结合律的数轴意义。\label{qn:assiciative-numline}}
-\Question{考虑$x \rightsquigarrow 2x + 1$, 如果先平移再缩放，应先向哪个方向平移多少？再缩放几倍？一般地，$x \rightsquigarrow ax + b$应如何变换？\label{qn:transform-numline}}
-\Question{证明单位元是唯一的。\label{qn:unique-e}}
-\Question{$\bigstar$定义0的后继为1，证明对于任何自然数都有$a \cdot 1 = a$，提示：利用附录\ref{app:add-commutativity}的结论。}
-\Question{$\bigstar$证明乘法分配律。}
-\Question{$\bigstar$证明乘法结合律和交换律。}
-\Question{$\bigstar$如何利用皮亚诺公理验证3 + 147 = 150？}
+\Question{When shall we count from 1? when shall we count from 0? \label{qn:count-from}}
+\Question{*Define subtraction and division for pairs.}
+\Question{Verify the addition and multiplication of pairs are commutative, associative, and the multiplication is distributive over addition.\label{qn:pair-arithmetic}}
+\Question{Show that $(-1) \times (-1) = 1$ by the distributive law.}
+\Question{Show that the additive inverse is unique.}
+\Question{Use the number line to explain the meaning of the associative law of addition and multiplication.\label{qn:assiciative-numline}}
+\Question{To implement the transformation of $x \rightsquigarrow 2x + 1$ by translation followed by scaling, which direction need move? and how far? after that, how big need scale? In general, how to implement the transformation of $x \rightsquigarrow ax + b$? \label{qn:transform-numline}}
+\Question{Show that a unit is unique. \label{qn:unique-e}}
+\Question{*Define 1 as the successor of 0, show that $a \cdot 1 = a$ for any natural number $a$. Hint: use the result of \cref{app:add-commutativity}.}
+\Question{*Prove the distributive property of multiplication by Peano's axioms.}
+\Question{*Prove the associativity and commutativity of multiplication by Peano's axioms.}
+\Question{*How to verify $3 + 147 = 150$ by Peano's axiom?}
 \end{Exercise}
 
 \begin{Answer}[ref={ex:zero}]
-\Question{各个文明在丈量土地时都独立发展出了面积的概念，并将面积和乘法联系了起来。当矩形的宽是0，即$0 \times 5$时，面积消失。矩形“坍缩”成了什么形状？
+\Question{View the area of rectangle as multiplication. When the width is 0, the area of $0 \times 5$ disappears. What shape does the rectangle become?
 
 \vspace{2mm}
-一方面，考虑矩形的宽连续减小，矩形越来越窄，逐渐趋向一条长为5的线段。按欧几里得的定义：线段是没有宽度的。此时矩形的一个维度（宽）消失了，只剩下一个维度（长）。另一方面，欧几里得定义点是没有大小的，即没有长度，也没有宽度，其对应$0 \times 0$。
+On one hand, consider the width keeps decreasing; the rectangle is narrowing and is closing to a line segment with length of 5. By Euclid's definition: line has no width. The dimension of width disappears, leaving only one dimension of height. On the other hand, point has no size by Euclid; no length or width, which corresponds to $0 \times 0$.
 }
 
 \Question{什么情况下应从1开始数数，什么情况下应从0开始数数？
