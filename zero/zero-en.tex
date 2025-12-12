@@ -805,14 +805,14 @@ We need consider if it regards ordinal meaning or cardinal meaning; whether rega
   \begin{enumerate}[(a)]
   \item Commutative:
     \begin{align*}
-      (a, b) + (c, d) & = (a + c, b + d)  & \text{definition of +} \\
+      (a, b) + (c, d) & = (a + c, b + d)  & \text{sum of pairs} \\
                       & = (c + a, d + b)  & \text{commutative of + for } \mathbb{N}\\
-                      & = (c, d) + (a, b) & \text{definition of + (converse)}
+                      & = (c, d) + (a, b) & \text{sum of pairs (converse)}
     \end{align*}
     \begin{align*}
-      (a, b) \cdot (c, d) & = (ac + bd, ad + bc) & \text{definition of } \cdot \\
+      (a, b) \cdot (c, d) & = (ac + bd, ad + bc) & \text{product of pairs} \\
                           & = (ca + db, da + cb) & \text{commutative of . for } \mathbb{N} \\
-                          & = (c, d) \cdot (a, b) & \text{definition of . (converse)}
+                          & = (c, d) \cdot (a, b) & \text{product of pairs (converse)}
     \end{align*}
   \item We skip for associativity
   \item There are two distributive law: from left and from right. We only verify the left one.
@@ -821,8 +821,8 @@ We need consider if it regards ordinal meaning or cardinal meaning; whether rega
         =& (a, b) \cdot (c + e, d + f) & \\
         =& (a(c + e) + b (d + f), a(d + f) + b(c + e)) & \\
         =& (ac + bd + ae + bf, ad + bc + af + be) & \\
-        =& (ac + bd, ad + bc) + (ae + bf, af + be) & \text{definition of + (converse)} \\
-        =& (a, b) \cdot (c, d) + (a, b) \cdot (e, f) & \text{definition of $\cdot$ (converse)}
+        =& (ac + bd, ad + bc) + (ae + bf, af + be) & \text{sum of pairs (converse)} \\
+        =& (a, b) \cdot (c, d) + (a, b) \cdot (e, f) & \text{product of pairs (converse)}
     \end{align*}
   \end{enumerate}
 }
@@ -830,9 +830,9 @@ We need consider if it regards ordinal meaning or cardinal meaning; whether rega
 \Question{Show that $(-1) \times (-1) = 1$ by the distributive law.
   \begin{proof}
     \begin{align*}
-      (-1) \times (-1) & = (-1) \times (-1) + 0 & \text{fixed when added to 0} \\
+      (-1) \times (-1) & = (-1) \times (-1) + 0 & \text{fixed when } + 0 \\
                       & = (-1) \times (-1) + (-1 + 1) & \text{additive inverse} \\
-                      & = (-1) \times (-1) + (-1) \times 1 + 1 & \text{fixed when multiply 1} \\
+                      & = (-1) \times (-1) + (-1) \times 1 + 1 & \text{fixed when } \times 1\\
                       & = (-1) \times (-1 + 1) + 1 & \text{distributive law (converse)} \\
                       & = (-1) \times 0 + 1 = 0 + 1 = 1 & \qedhere
     \end{align*}
@@ -841,9 +841,9 @@ We need consider if it regards ordinal meaning or cardinal meaning; whether rega
 
 \Question{Show that the additive inverse is unique.
   \begin{proof}
-    Suppose $b$ is another inverse of $a$, we are going to show $b = -a$:
+    Suppose $b$ is another additive inverse of $a$, we are going to show $b = -a$:
     \begin{align*}
-      0     & = b + a     & \text{inverse} \\
+      0     & = b + a     & \text{additive inverse} \\
       0 - a & = b + a - a & -a \text{ on both sides} \\
       -a & = b + (a - a)  = b + 0 = b & \qedhere
     \end{align*}
@@ -862,92 +862,90 @@ Addition: The move of the number line, that first moves $a + b$ followed by anot
 Since $2x + 1 = 2(x + \frac{1}{2})$, the transformation is to first move {\em left} by $\frac{1}{2}$ followed by scaling up 2 times. In general, as $ax + b = a(x + \frac{b}{a})$, the transformation is to move by $-\frac{b}{a}$ (move left if $\frac{b}{a}>0$, otherwise move right), followed by scaling $a$ times.
 }
 
-\Question{证明单位元是唯一的。
+\Question{Show that a unit is unique.
 \begin{proof}
-假设存在另一单位元$e'$，使得对任意元素$a$满足$e' \odot a = a \odot e' = a$。我们要证明$e = e'$：
+Suppose there is another unit $e'$, which satisfies $e' \odot a = a \odot e' = a$ for any element $a$. We are going to show $e = e'$:
 \begin{align*}
-e &= e \odot e' & e'\text{是单位元} & \\
-  &= e'         & e\text{是单位元}  &\qedhere
+e &= e \odot e' & e'\text{ is a unit} & \\
+  &= e'         & e\text{ is a unit}  &\qedhere
 \end{align*}
 \end{proof}
 }
 
-\Question{定义0的后继为1，证明对于任何自然数都有$a \cdot 1 = a$
+\Question{Define 1 as the successor of 0, show that $a \cdot 1 = a$ for any natural number $a$.
 
 \begin{proof}
-利用附录\ref{app:add-commutativity}证明的结论：$0 + a = a$：
+Using the result in \cref{app:add-commutativity}: $0 + a = a$,
 
 \begin{align*}
-a' \cdot 1 & = a' \cdot 0' && \text{定义0的后继为1} \\
-           & = a' \cdot 0 + a' && \text{乘法定义规则二} \\
-           & = 0 + a' && \text{乘法定义规则一} \\
+a' \cdot 1 & = a' \cdot 0' && \text{1 is the successor of 0} \\
+           & = a' \cdot 0 + a' && \text{2nd rule of multiplication} \\
+           & = 0 + a' && \text{1st rule of multiplication} \\
            & = a' && \qedhere
 \end{align*}
 
 \end{proof}
 }
-\Question{证明乘法分配律。
+\Question{Prove the distributive property of multiplication by Peano's axioms.
 
 \begin{proof}
-只证明左侧的分配律$c(a + b) = ca + cb$。对$b$使用数学归纳法，$b = 0$时：
+We only prove the left distributive law: $c(a + b) = ca + cb$. By induction on $b$, when $b = 0$:
 
 \begin{align*}
-c(a + 0) & = ca && \text{加法规则一} \\
-         & = ca + 0 && \text{反向用加法规则一} \\
-         & = ca + c0 && \text{反向用乘法规则一}
+c(a + 0) & = ca && \text{1st rule of addition} \\
+         & = ca + 0 && \text{1st rule of addition (converse)} \\
+         & = ca + c0 && \text{1st rule of multiplication (converse)}
 \end{align*}
 
-递推假设$c(a + b) = ca + cb$，接下来证明$c(a + b') = ca + cb'$
+Assume $c(a + b) = ca + cb$ holds, we are going to show $c(a + b') = ca + cb'$:
 
 \begin{align*}
-c(a + b') & = c(a + b)' & \text{加法规则二} & \\
-          & = c(a + b) + c & \text{乘法规则二} &\\
-          & = ca + cb + c & \text{递推假设} &\\
-          & = ca + (cb + c) & \text{加法结合律} &\\
-          & = ca + cb' & \text{反向用乘法规则二} & \qedhere
+c(a + b') & = c(a + b)' & \text{2nd rule of addition} & \\
+          & = c(a + b) + c & \text{2nd rule of multiplication} &\\
+          & = ca + cb + c & \text{induction assumption} &\\
+          & = ca + (cb + c) & \text{associativity of addition} &\\
+          & = ca + cb' & \text{2nd rule of multiplication (converse)} & \qedhere
 \end{align*}
 \end{proof}
 }
-\Question{证明乘法结合律和交换律。
-
-我们只证明乘法结合律$(ab)c = a(bc)$，乘法交换律的证明则给出一个提纲。
+\Question{Prove the associativity and commutativity of multiplication by Peano's axioms.
 
 \begin{proof}
-对$c$使用数学归纳法，$c = 0$时：
+We only prove the associative law: $(ab)c = a(bc)$ and outline the scheme to prove the commutative law. By induction on $c$, when $c = 0$:
 
 \begin{align*}
-(ab)0 & = 0 && \text{乘法规则一} \\
-      & = a0 && \text{反向用乘法规则一} \\
-      & = a(b0) && \text{反向用乘法规则一}
+(ab)0 & = 0 && \text{1st rule of multiplication} \\
+      & = a0 && \text{1st rule of multiplication (converse)} \\
+      & = a(b0) && \text{1st rule of multiplication (converse)}
 \end{align*}
 
-递推假设$(ab)c = a(bc)$，接下来要证明$(ab)c' = a(bc')$
+Assume $(ab)c = a(bc)$, we are going to show $(ab)c' = a(bc')$:
 
 \begin{align*}
-(ab)c' & = (ab)c + ab & \text{乘法规则二} &\\
-       & = a(bc) + ab & \text{递推假设} &\\
-       & = a(bc + b) & \text{上题证明的分配律} &\\
-       & = a(bc') & \text{反向用乘法规则二} &\qedhere
+(ab)c' & = (ab)c + ab & \text{2nd rule of multiplication} &\\
+       & = a(bc) + ab & \text{induction assumption} &\\
+       & = a(bc + b) & \text{distributive law (previous exercise)} &\\
+       & = a(bc') & \text{2nd rule of multiplication} &\qedhere
 \end{align*}
 \end{proof}
 
-证明乘法交换律可以分为三步，都使用数学归纳法。首先证明$1a = a$，然后再证明右侧的分配律$(a + b)c = ac + bc$，最后再证明交换律。
+One may prove the commutative law for multiplication in three steps, each with induction: (1) show $1a = a$; (2) prove the right distributive law: $(a + b)c = ac + bc$; (3) prove the commutative law finally.
 }
 
-\Question{如何利用皮亚诺公理验证3 + 147 = 150？
+\Question{How to verify $3 + 147 = 150$ by Peano's axiom?
 
 \vspace{3mm}
-我们先看看经典的2 + 2 = 4是怎么证明的：
+Here is the classic proof to $2 + 2 = 4$:
 
 \begin{align*}
-2 + 2 &=  0'' + 0'' && \text{2是0的两次后继} \\
-      &=  (0'' + 0')' && \text{加法定义规则二} \\
-      &=  ((0'' + 0)')' && \text{加法定义规则二} \\
-      &=  ((0'')')' && \text{加法定义规则一} \\
-      &=  0'''' = 4 && \text{0的4次后继}
+2 + 2 &=  0'' + 0'' && \text{each is the twice successor of 0} \\
+      &=  (0'' + 0')' && \text{2nd rule of addition} \\
+      &=  ((0'' + 0)')' && \text{2nd rule of addition} \\
+      &=  ((0'')')' && \text{1st rule of addition} \\
+      &=  0'''' = 4 && \text{four times successor of 0}
 \end{align*}
 
-显然用这个方法证明3 + 147 = 150太冗长了，我们可以用先前证明的加法交换律证明147 + 3 = 150会容易一些。另一个方法是通过数学归纳法证明$3 + a = a'''$。
+It would be too long to show $3 + 147 = 150$ in this way. We may apply the commutative law (in previous exercise) first, convert it to an easier one: $147 + 3 = 150$; alternatively, we show $3 + a = a'''$ by induction.
 }
 \end{Answer}
 
@@ -955,7 +953,7 @@ c(a + b') & = c(a + b)' & \text{加法规则二} & \\
 \section{Answer}
 \shipoutAnswer
 
-\section{加法交换律}
+\section{Commutativity of addition}
 \subimport{inc/}{addcom-en}
 
 \begin{thebibliography}{99}
