@@ -31,7 +31,7 @@ Contents
 Install
 --------
 
-You may use [gitpod](https://gitpod.io/#https://github.com/liuxinyu95/algoxy) to build the PDF book from cloud desktop. (It takes about 15 ~ 20 min to build the workspace at the first time, while [later access](https://gitpod.io/workspaces) is quick.) For local build, you need TeXLive. We use LuaLaTeX, an extended version of TeX. Please refer to [INSTALL](https://github.com/liuxinyu95/amathtour/blob/main/INSTALL.md) for detail.
+We use LuaLaTeX, an extended version of TeX, which is provided in TeXLive distribution. Please refer to [INSTALL](https://github.com/liuxinyu95/amathtour/blob/main/INSTALL.md) for detail.
 
 --
 
