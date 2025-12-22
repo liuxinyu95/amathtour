@@ -293,6 +293,7 @@ When looking back, Egyptian fractions were hard to use and compute; it was in si
 % https://mathshistory.st-andrews.ac.uk/Miller/mathsym/fractions/
 \begin{table}[htbp]
   \centering
+  \renewcommand{\arraystretch}{1.5}
   \begin{tabular}{|c|l|l||c|l|l|}
   \hline
   value & term & meaning & value & term & meaning \\
@@ -358,14 +359,15 @@ People find complete arithmetic rules for fractions with varies of problems from
 \end{figure}
 
 \index{fraction!reduce}
-有了分数记法，接下来《九章算术》要处理一个分数的值是否“唯一”的问题。这就引出了“约分”的概念。作者用两道例题说明：
+With the notation of fractions, the author of \emph{Nine chapters} next dealt with the problem that whether the value of a fraction was definitive, in other word, will multiple notations correspond to the same value? This leads to the reduction operation and the concept of lowest terms (irreducible fraction). The author explained with example of problems:
+
 \begin{enumerate}[1)]
-\item 今有十八分之十二，问约之得几何？答曰：三分之二。（即：$\dfrac{12}{18} = \dfrac{2}{3}$）
-\item 又有九十一分之四十九，问约之得几何？答曰：十三分之七。（即：$\dfrac{49}{91} = \dfrac{7}{13}$）
+\item Now there is twelve eighteenth ($\dfrac{12}{18}$), if reduce to its lowest terms, what is the result? The answer is two third. ($\dfrac{12}{18} = \dfrac{2}{3}$)
+\item There is forty nine ninety-first ($\dfrac{49}{91}$), if reduce to its lowest terms, what is the result? The answer is seven thirteenth. ($\dfrac{49}{91} = \dfrac{7}{13}$)
 \end{enumerate}
 
-\index{辗转相除} \index{欧几里得算法!减法形式} \label{sec:gcd-minus}
-具体怎样约分呢？《九章算术》给出了“辗转相除”法，即著名的欧几里得算法求最大公约数（也叫做最大公因数）：“可半者半之；不可半者，副置分母、子之数，以少减多，\underdot{更相减损}，求其等也。以等数约之。”解释成现代汉语：首先是特殊情况。若分子分母都是偶数，先不断$\div 2$，化为奇数。然后是一般情况。记分数为$\dfrac{b}{a}$，记$a$与$b$的最大公约数为$(a, b)$，则：
+\index{Euclidean algorithm} \label{sec:gcd-minus}
+How to reduce a fraction to its lowest terms? the author of \emph{Nine chapters} gave a method which was exactly known as Euclidean algorithm in the west, ``First, halve the nominator and denominator repeatedly if both are even; second, for the two numbers of the nominator and denominator, subtract the less one from the greater one repeatedly until they become the same value; finally, reduce the fraction with this value.'' For fraction $\dfrac{b}{a}$, if both $a$ and $b$ are even, divide each by 2 and repeat; otherwise, denote the greatest common divisor of $a$ and $b$ by $(a, b)$, then
 
 \be
 \label{eq:gcd-minus}
@@ -376,35 +378,35 @@ People find complete arithmetic rules for fractions with varies of problems from
   \end{cases}
 \ee
 
-就是“以少减多，更相减损、求其等也”的意思。这种方法在欧几里得的《几何原本》中有系统的描述和正确性证明，今天被称做“欧几里得算法”，在中国常被称做辗转相除法。对比一般的方法：把$a$、$b$分解为因子的积，然后找出最多的公因子相乘，欧几里得算法的效率极高\footnote{利用除法代替\cref{eq:gcd-minus}中的减法可以达到“对数复杂度”。100位的整数，大约递归8次左右即可算出。}，便于机械化计算，是当今数论和密码学的基础算法\footnote{在抽象代数，如环论、域论中也有重要应用}。我们将在下一章中详细介绍它的原理。这里举一个例子：求18和12的最大公约数。
+If $a = b$, the their greatest common divisor is $a$ (or $b$). If $a > b$, then subtract $b$ from $a$; it turns the original problem of finding the greatest common divisor of $a$ and $b$, to a new problem of finding the greatest common divisor of $a - b$ and $b$. If $a < b$, then subtract $a$ from $b$; the original problem turns to find the greatest common divisor of $a$ and $b - a$. We delay the proof to Euclidean algorithm to \cref{sec:Euclidean-algorithm}. Euclidean algorithm calculates the great common divisors much faster\footnote{The improved Euclidean algorithm in practice implements the repeat of subtraction in \cref{eq:gcd-minus} as division, which calculates in logarithmic time. For numbers of 100 digits, it can find the greatest common divisor in about 8 recursions.} than the method of factorization, which needs to first factorize $a$ and $b$ into primes, then pick the most common factors and calculate their product. It is suitable for computer machine implementation and becomes the fundamental algorithm in number theory and cryptography\footnote{Euclidean algorithm is also important in abstract algebra, such as ring and field theory.}. Below example shows the steps to find the greatest common divisor of 18 and 12 with Euclidean algorithm.
 
 \[
 (18, 12) = (18 - 12, 12) = (6, 12) = (6, 12 - 6) = (6, 6) = 6
 \]
 
-只用了3步就求出了结果。最后分子分母同除以最大公约数得：$\dfrac{12}{18} = \dfrac{12/6}{18/6} = \dfrac{2}{3}$。
+It gives the greatest common divisor in three steps. To reduce to the lowest terms, divide the nominator and denominator by 6: $\dfrac{12}{18} = \dfrac{12/6}{18/6} = \dfrac{2}{3}$.
 
-《九章算术》接下来通过例题引入分数加法：
+The author of \emph{Nine chapters} next introduced addition for fractions with below example problems:
 
 \begin{enumerate}[1)]
-\item 今有三分之一，五分之二，问合之得几何？答曰：十五分之十一。（即：$\dfrac{1}{3} + \dfrac{2}{5} = \dfrac{11}{15}$）
-\item 又有三分之二，七分之四，九分之五，问合之得几何？答曰：得一、六十三分之五十。（即：$\dfrac{2}{3} + \dfrac{4}{7} + \dfrac{5}{9} = 1\dfrac{50}{63}$）
+\item What is the sum of one third and two fifth? The answer is eleven fifth. ($\dfrac{1}{3} + \dfrac{2}{5} = \dfrac{11}{15}$)
+\item What is the sum of two third, four seventh, and five ninth? The answer is one and fifty sixty-third. ($\dfrac{2}{3} + \dfrac{4}{7} + \dfrac{5}{9} = 1\dfrac{50}{63}$)
 %% \item 又有二分之一，三分之二，四分之三，五分之四，问合之得几何？答曰：得二、六十分之四十三。（即：$\dfrac{1}{2} + \dfrac{2}{3} + \dfrac{3}{4} + \dfrac{4}{5} = 2\dfrac{43}{60}$）
 \end{enumerate}
 
-作者解释分数加法原理：“母互乘子，并以为实。母相乘为法。”即：
+The author explained, `let the sum of the products of the each denominator and the other nominator be the nominator of the result; let the product of the two denominators be the denominator of the result.' that is,
 
 \be
 \frac{b}{a} + \frac{d}{c} = \frac{bc + ad}{ac}
 \ee
 
-新的分子叫“实”，分母叫“法”。接下来：“实如法而一。不满法者，以法命之。”即$\dfrac{n}{n} = 1$，抽取整数部分化为带分数。最后说：“其母同者，直相从之。”即：
+As the result may not be in the lowest terms, the author continued with a special case, `the result is 1 if the nominator equals to the denominator', and followed with the mixed number for the general case. At last the author pointed out for the special simple case that the two denominators are same, one add the nominator directly.
 
 \be
 \frac{b}{a} + \frac{c}{a} = \frac{b + c}{a}
 \ee
 
-分母相同时，直接将分子相加。可见《九章算术》的通分并未使用最小公倍数，而是直接将分母相乘。
+We see the author of \emph{Nine chapters} didn't convert the fractions to the terms of their least common denominator, but just multiplied the denominators. We skip the subtraction part in \emph{Nine chapters} as it is similar to addition.
 
 《九章算术》接下来介绍分数减法，基本上类似于加法，我们省略跳过。之后介绍分数大小的比较。《九章算术》的作者采用和减法一样的处理，通过母子互乘比大小。即将$\dfrac{b}{a}$与$\dfrac{d}{c}$的大小比较转化为$bc$与$ad$的大小比较。接下来在介绍多个分数的平均数之后讲解分数除以整数，例如：“今有七人，分八钱三分钱之一。问人得几何？答曰：人得一钱二十一分钱之四。”即$8\dfrac{1}{3} \div 7 = 1\dfrac{4}{21}$。作者解释说：“以人数为法，钱数为实，实如法而一。有分者通之。”即用金额作分子，人数作分母。这里并没有考虑除数是分数的情况。最后是分数乘法：
 
