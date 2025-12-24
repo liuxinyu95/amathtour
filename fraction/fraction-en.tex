@@ -536,7 +536,7 @@ Hence Achilles caught up the tortoise in 10 seconds according to Zeno's logic.
 
 \subsection{Repeating decimals}
 \index{repeating decimals}
-To convert irreducible fraction $\dfrac{b}{a}$ to decimal, one divides $b$ by $a$. The division terminates sometimes, for example, $\dfrac{1}{2} = 0.5$, $\dfrac{1}{8} = 0.125$, $\dfrac{1}{25} = 0.4$, otherwise repeating, for example, $\dfrac{1}{3} = 0.\dot{3} = 0.333\cdots$, $\dfrac{1}{7} = 0.\dot{1}\dot{4}\dot{2}\dot{8}\dot{5}\dot{7}$. In what condition does it terminate? and in what condition does it repeat? It seems depend on our luck; in fact, we are very unlucky: it repeats in common. Below theorem tells how unlucky we are.
+To convert irreducible fraction $\dfrac{b}{a}$ to decimal, one divides $b$ by $a$. The division terminates sometimes, for example, $\dfrac{1}{2} = 0.5$, $\dfrac{1}{8} = 0.125$, $\dfrac{1}{25} = 0.4$, otherwise repeating, for example, $\dfrac{1}{3} = 0.\dot{3} = 0.333\cdots$, $\dfrac{1}{7} = 0.\dot{1}\dot{4}\dot{2}\dot{8}\dot{5}\dot{7}$. In what condition does it terminate? and in what condition does not? It seems depend on our luck; in fact, we are very unlucky: it repeats in common. Below theorem tells how unlucky we are.
 
 \index{terminating decimals}
 \begin{theorem} \label{thm:finite-decimal}
@@ -555,20 +555,20 @@ is integral, there are $n$ places in the decimal of $\dfrac{b}{a}$, which is $0.
 Conversely, expand the $n$-places decimal $0.a_1 a_2 \cdots a_n$ to sum of fractions:
 
 \begin{align*}
-\frac{a_1}{10} + \frac{a_2}{10^2} + \cdots + \frac{a_n}{10^n} &= \frac{a_1 10^{n-1} + a_2 10^{n-2} + \cdots + a_n}{10^n} & \text{reduce to the same denominator} \\
-  &= \frac{B}{10^n} & \text{Denote the nominator by }B \\
+\frac{a_1}{10} + \frac{a_2}{10^2} + \cdots + \frac{a_n}{10^n} &= \frac{a_1 10^{n-1} + a_2 10^{n-2} + \cdots + a_n}{10^n} & \text{sum} \\
+  &= \frac{B}{10^n} & \text{denote the nominator by }B \\
   &= \frac{B}{2^n 5^n} = \frac{b}{a} & \text{in the lowest terms}
 \end{align*}
 
-Because the factors of the denominator $10^n = 2^n 5^n$ are all powers of 2 and 5, so the factors of the lowest term $a$.
+Because the factors of the denominator $10^n = 2^n 5^n$ are all powers of 2 and 5, so are the factors of the lowest term $a$.
 \end{proof}
 
-It turns out that for any irreducible fraction, if there is any factor besides 2 and 5, for example, 3, 7, 11, ... then its decimal does not terminate. We may extend this theorem to $b$-based decimals: if the denominator contains any factor that can't divide $b$, then it does not terminate. This explains why $\dfrac{5}{12} = 0.41666\cdots$ repeats, but terminates as Babylonian 60-based decimal 0, 25; and why $\dfrac{5}{14}$ repeats even as an Babylonian decimal. In particular, any fractions not in form of $\dfrac{b}{2^n}$ does not terminate as binary decimal, which leads to rounding errors in computer system.
+It turns out if there is any factor besides 2 and 5 for any irreducible fraction, like 3, 7, 11, ... then the decimal does not terminate. We may extend this theorem to $b$-based decimals, which don't terminate if the denominator contains any factor that does not divide $b$. This explains why the repeating decimal $\dfrac{5}{12} = 0.41666\cdots$ terminates as Babylonian 60-based decimal 0, 25; and why $\dfrac{5}{14}$ repeats even as Babylonian decimal. In particular, any fractions not in the form of $\dfrac{b}{2^n}$ does not terminate as binary decimal, which leads to rounding error in computer system.
 
-除此之外的分数就只能化成无限循环小数了（下一章我们将看到既约分数不可能产生无限\underdot{不}循环小数）。但我们发现有的有一位循环节，如$\dfrac{1}{3} = 0.\dot{3}$，有的有两位，如$\dfrac{5}{11} = 0.\dot{4}\dot{5}$，有的更长，如$\dfrac{1}{7} = 0.\dot{1}\dot{4}\dot{2}\dot{8}\dot{5}\dot{7}$，有的一开始不循环，后面才开始循环，如$\dfrac{5}{12} = 0.41\dot{6}$，这里面有什么规律么？
+The decimal of fractions either terminates or repeats (the next chapter shows fraction can't produce non-terminating non-repeating decimal); Among those repeating, some have periodic cycle of 1 digit, like $\dfrac{1}{3} = 0.\dot{3}$, some have cycle of 2 digits, like $\dfrac{5}{11} = 0.\dot{4}\dot{5}$, some even longer, like $\dfrac{1}{7} = 0.\dot{1}\dot{4}\dot{2}\dot{8}\dot{5}\dot{7}$; some is pure repeating, some is mixed, like $\dfrac{5}{12} = 0.41\dot{6}$. What are the rules?
 
 \begin{proposition}
-$\dfrac{a}{9}$的小数形式是$0.\dot{a} = 0.aaa\cdots$
+The decimal of $\dfrac{a}{9}$ is $0.\dot{a} = 0.aaa\cdots$
 \end{proposition}
 
 \begin{proof}
@@ -580,13 +580,13 @@ $\dfrac{a}{9}$的小数形式是$0.\dot{a} = 0.aaa\cdots$
   \end{align*}
 \end{proof}
 
-所以$\dfrac{1}{3} = \dfrac{3}{9} = 0.\dot{3} = 0.333\cdots$进一步：
+It explains $\dfrac{1}{3} = \dfrac{3}{9} = 0.\dot{3} = 0.333\cdots$, further,
 
 \begin{proposition} \label{th:cyclic-decimal}
-无限循环小数$0.\dot{a_1} \dot{a_2} \cdots \dot{a_n}$的分数形式是$\dfrac{a_1 a_2 \cdots a_n}{99 \cdots 9} = \dfrac{a_1 a_2 \cdots a_n}{10^{n+1} - 1}$。
+The fraction of the repeating decimal $0.\dot{a_1} \dot{a_2} \cdots \dot{a_n}$ is $\dfrac{a_1 a_2 \cdots a_n}{99 \cdots 9} = \dfrac{a_1 a_2 \cdots a_n}{10^{n+1} - 1}$.
 \end{proposition}
 
-我们把此命题的证明留作\cref{qn:cyclic-decimal}。可以用$\dfrac{1}{7}$验证一下：
+We leave the proof as \cref{qn:cyclic-decimal}. Let's verify it with $\dfrac{1}{7}$:
 
 \begin{center}
 \opmul[displayshiftintermediary=all,
@@ -594,13 +594,15 @@ $\dfrac{a}{9}$的小数形式是$0.\dot{a} = 0.aaa\cdots$
        voperation=top]{142857}{7}
 \end{center}
 
-故：
+Hence,
 \[
 0.\dot{1}\dot{4}\dot{2}\dot{8}\dot{5}\dot{7} = \frac{142857}{999999} = \frac{142857}{142857 \times 7} = \frac{1}{7}
 \]
 
-\index{循环节}
-这个命题使得我们可以轻松看出$\dfrac{2}{11}$、$\dfrac{4}{33}$等分数的循环小数表示，例如$\dfrac{2}{11} = \dfrac{2 \times 9}{11 \times 9} = \dfrac{18}{99} = 0.\dot{1}\dot{8}$。通过这个命题还可以发现循环节长度的规律。如果$\dfrac{a_1 a_2 \cdots a_n}{99 \cdots 9}$约分后是$\dfrac{b}{a}$，那么$ak = 999 \cdots 9$。也就是说$ak + 1 = 100 \cdots 0$。因此如果$100\cdots 0$（$n$个0）除以$a$的余数是1，那么$\dfrac{b}{a}$的循环节的长度\underdot{最长}为$n$。循环节的长度仅和分母有关\footnote{数论中的费马小定理断言，素数$p$除$10^{p-1}$的余数等于1。例如1000000除以7余1，$\dfrac{b}{7}$的循环节长6。尽管$10^{11-1} = 10000000000$除以11余1，但$\dfrac{2}{11} = 0.\dot{1}\dot{8}$的循环节长2。我们需要更多的数论知识，例如欧拉定理，才能唯一确定循环节的长度。这超出了本书的范围。参见《哈代数论》IX}。我们还需要最后一个定理来回答什么时候开始循环的问题。
+\index{periodic cycle}
+By this proposition, we can easily tell the decimal of some fractions, like $\dfrac{2}{11}$, $\dfrac{4}{33}$, the former is $\dfrac{2}{11} = \dfrac{2 \times 9}{11 \times 9} = \dfrac{18}{99} = 0.\dot{1}\dot{8}$.
+
+通过这个命题还可以发现循环节长度的规律。如果$\dfrac{a_1 a_2 \cdots a_n}{99 \cdots 9}$约分后是$\dfrac{b}{a}$，那么$ak = 999 \cdots 9$。也就是说$ak + 1 = 100 \cdots 0$。因此如果$100\cdots 0$（$n$个0）除以$a$的余数是1，那么$\dfrac{b}{a}$的循环节的长度\underdot{最长}为$n$。循环节的长度仅和分母有关\footnote{数论中的费马小定理断言，素数$p$除$10^{p-1}$的余数等于1。例如1000000除以7余1，$\dfrac{b}{7}$的循环节长6。尽管$10^{11-1} = 10000000000$除以11余1，但$\dfrac{2}{11} = 0.\dot{1}\dot{8}$的循环节长2。我们需要更多的数论知识，例如欧拉定理，才能唯一确定循环节的长度。这超出了本书的范围。参见《哈代数论》IX}。我们还需要最后一个定理来回答什么时候开始循环的问题。
 
 \begin{theorem}\label{thm:cyclic-decimal}
 既约真分数$\dfrac{b}{2^{\alpha} 5^{\beta} q}$，其中$q$不含任何2、5为因子。令$n = \max(\alpha, \beta)$，则其小数形式从$n$位后开始循环，循环节的长度是$m$，并且$10^{m+1}$除以$q$余1。
