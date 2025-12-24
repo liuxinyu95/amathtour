@@ -450,7 +450,7 @@ Which denote three fourth. After the fraction line that separated the nominator 
 Fibonacci was the first who introduced the modern notation of fractions to Europe. However, he adopted the right to left writing direction from the Arabic, consequently, the fractional part was written to the left of the integral part\cite{Miller-2025}. The fraction line posed considerable printing difficulties; Thomas Twining, the founder of renowned British Twining Tea company, used a slash instead of a horizontal fraction line in accounting book in 1718, for example: 1/4 pound of tea. This made it easy to print and type fractions using a typewriter. Today, many word processing and editing applications support typing fractions conveniently, with \LaTeX convention for example, the input \lstinline|\frac{b}{a}| renders $\dfrac{b}{a}$.
 
 \index{decimal} \index{Liu Hui}
-With Hindu-Arabic numeral system, the Arabic mathematicians introduced decimals. For example, Al-Kashi (920 - 980 CE) in his \emph{al-Risali al-mohitije} (Treatise on the circumference) wrote $\pi$ as `sah-hah 3 14159', where sah-hah means the integral part (corresponding to sahih in Turkish today) 3, then followed by the decimal part. There hadn't been the point symbol yet. Liu Hui, a Chinese mathematician of the Wei-Jin period (about 225 - 295 CE, \cref{fig:liuhui}) who annotated the \emph{Nine chapters}, was not satisfied with the value 3 of $\pi$ in the book. He decided to approximate it with decimals. When using a regular 96-gon to approximate the circle, he obtained the value of $314\dfrac{169}{625}$ cun\footnote{1 cun $\approx$ 2.31 cm in Han Dynasty.} with a diameter of 100 cun. He thought this value, which was about 3.14, exceeded $\pi$; he followed by doubling the edges to 192-gon, which approximates to $314\dfrac{4}{25} = 314.16$ cun.
+With Hindu-Arabic numeral system, the Arabic mathematicians introduced decimals. For example, Al-Kashi (920 - 980 CE) in his \emph{al-Risali al-mohitije} (Treatise on the circumference) wrote $\pi$ as `sah-hah 3 14159', where sah-hah means the integral part (corresponding to sahih in Turkish today) 3, then followed by the decimal part. There hadn't been the point symbol yet. Liu Hui, a Chinese mathematician of the Wei-Jin period (about 225 - 295 CE, \cref{fig:liuhui}) who annotated the \emph{Nine chapters}, was not satisfied with the value 3 of $\pi$ in the book. He decided to approximate it with decimals. When using a regular 96-gon to approximate the circle, he obtained the value of $314\dfrac{169}{625}$ cun\footnote{1 cun $\approx$ 2.31 cm in Han Dynasty.} with a diameter of 100 cun. He thought this value, which was about 3.14, exceeded $\pi$; he followed by doubling the edges to 192-gon, which approximated to $314\dfrac{4}{25} = 314.16$ cun.
 
 \begin{figure}[htbp]
  \centering
@@ -461,81 +461,81 @@ With Hindu-Arabic numeral system, the Arabic mathematicians introduced decimals.
 \end{figure}
 
 \index{decimal point} \index{John Napier} \index{percent}
-1530年，鲁道夫（Christoff Rudolff，1499～1545年）使用一条数线分隔整数和小数部分。后来马吉尼（Magini，1555年～1617年）将竖线改进成了小数点，但并未得到广泛使用。直到20年后英国学者约翰·纳皮尔（John Napier，1550年～1617年，见\cref{fig:napier}）发明对数时使用了小数点，现代小数形式才被广泛接受。我们常用的百分数符号\%是佚名的某位意大利人在1425年引入的。
+Christoff Rudolff (1499 - 1545) in 1530 separated the integral and decimal parts with a vertical bar. Magini (1555 - 1617) changed the bar to a point, but it was not widely adopted until John Napier's (1550 - 1617, see \cref{fig:napier}) work about logarithms was translated in 1616. The percentage symbol \% was invented by some anonymous Italian in 1425.
 
-\index{基点}
-从另一角度看，小数是分母为10、100、1000……的分数的和。百分数看似是分母为100的分数，实则只是小数乘以100的结果。这是因为百分数的分子不一定是整数。例如某网站说它的可靠性非常高，达99.999\%（俗称5个9），这相当于小数0.99999。在日常生活中，人们还会用千分数，写作999.99\textperthousand。在金融领域还会用基点（BPS：base points的缩写）这个量。1bps = 0.01\% = 0.0001。比如我们看见新闻说美联储（美国联邦储备委员会，是美国的中央银行的核心管理机构）宣布降息25个基点。实际上就是降低利息0.25\% = 0.0025。例如利率从2.5\%降低25个基点就变成2.5\% - 0.25\% = 2.25\%。
+\index{base point}
+A decimal can be considered as the sum of fractions with denominators of 10, 100, 1000, ... A percentage number looks like a fraction with denominator of 100, but it is actually the result by multiplying 100 to the decimal value. This is because its nominator may not be integral necessarily. For example, one says the availability of some internet service is very high, reaching 99.999\% (or five nines). It equals to the decimal value of 0.99999; or written as per mille as 999.99\textperthousand. In some areas like finance or economics, people often use base points (BPS), 1bps = 0.01\% = 0.0001, for example, we often heard the news that Fed (Federal Reserve) announced a 25-bps interest rate cut, which meant the interest rate decreased by 0.25\% = 0.0025. If the previous interest rate is 2.5\%, then the new rate became 2.5\% - 0.25\% = 2.25\%.
 
-\subsection{分数与小数的关系}
+\subsection{Fraction and decimal}
 
-现在我们回过头来说为何小数是分母为10、100、1000……的分数和？并提出一个问题：是否每个分数都可以\underdot{唯一}地表示成小数？举例来说0.125 = $\dfrac{1}{10} + \dfrac{2}{100} + \dfrac{5}{1000}$，恰好是分母为10的$\dfrac{1}{10}$，分母为100的$\dfrac{2}{100}$，分母为1000的$\dfrac{5}{1000}$的和。一般来说，小数$0.a_1 a_2 \dots a_n$可表示为：
+Is any decimal a sum of fractions with denominators of 10, 100, 1000, ...? Conversely, does any fraction correspond to a \emph{unique} decimal? For instance, 0.125 = $\dfrac{1}{10} + \dfrac{2}{100} + \dfrac{5}{1000}$, is the sum of fractions of $\dfrac{1}{10}$ (denominator of 10), $\dfrac{2}{100}$ (denominator of 100), and $\dfrac{5}{1000}$ (denominator of 1000). In general a decimal $0.a_1 a_2 \dots a_n$ can be expressed as:
 
 \be
 a_1 \frac{1}{10} + a_2 \frac{1}{100} + \cdots + a_n \frac{1}{10^n}
 \label{eq:decimal-as-sum}
 \ee
 
-\index{无限循环小数}
-我们在数学课上知道，小数分为有限小数（如0.125）和无限小数（如$0.\dot{3} = 0.333\cdots, 0.\dot{1}\dot{5} = 0.1515\cdots, \pi = 3.14159\cdots$）。根据\cref{eq:decimal-as-sum}，无限小数可写成无限个分数的和。那么这无限个正数的和是个有限值还是无限大？为了解答这个问题，我们先引入一个看似反直觉的命题：
+\index{repeating decimal}
+We learn from school math that there are terminating decimals, like 0.125, and non-terminating decimals, also known as infinite decimals, like $0.\dot{3} = 0.333\cdots, 0.\dot{1}\dot{5} = 0.1515\cdots, \pi = 3.14159\cdots$. By \cref{eq:decimal-as-sum}, an infinite decimal is then a sum of infinitely many fractions. It naturally arises the question: is the sum of such infinitely many positive numbers finite or infinite? Here is a proposition that looks counter-intuitive:
 
 \begin{lemma} \label{th:cycle-of-9}
-  无限循环小数$0.999\cdots$的值是1。
+  The repeating decimal $0.999\cdots$ equals to 1.
 \end{lemma}
 
-乍看上去左边的$0.999\cdots$和右边的1明显是两个不同的数，它们怎么会相等呢？
+The left side $0.999\cdots$ looks obviously different from the right side 1, why do they equal?
 
 \begin{proof}
-  令$x = 0.999\cdots$，扩大10倍：$10x = 9.999\cdots$，相减：
+  Let $x = 0.999\cdots$, enlarge 10 times: $10x = 9.999\cdots$, and subtract:
   \begin{align*}
     10x - x &= 9.999\cdots - 0.999\cdots && \\
-         9x &= 9 & \text{右侧的小数部分减光了} & \\
+         9x &= 9 & \text{the decimal parts get canceled.} & \\
           x &= 1  && \qedhere
   \end{align*}
 \end{proof}
 
-注意，小数部分只有有限个9时等号不成立，哪怕有$n = 10000$个9。因为$9.99\cdots9$（个位的9和小数部分的9999个9）减$0.99\cdots9$（小数部分的1万个9）等于$8.99\cdots91$。因此$x = \dfrac{8.99\cdots91}{9} \ne 1$。即1万位有限小数$0.99\cdots9 \ne 1$。这样无限个正数的和$\dfrac{9}{10} + \dfrac{9}{100} + \cdots = 1$，是个确定的有限值\footnote{我们也可以用高中数学的极限概念进行证明。注意到$n$位有限小数：$0.99\cdots9 = 1 - 0.00\cdots01 = 1 - \dfrac{1}{10^{n+1}}$，所以$0.999\cdots = \lim\limits_{n\to\infty} (1 - \dfrac{1}{10^{n+1}}) = 1 - \lim\limits_{n\to\infty} \dfrac{1}{10^{n+1}} = 1 - 0 = 1$。}。
+The proposition does not hold for finitely many 9. Even if there are $n = 10000$ of 9 because $9.99\cdots9$ (a 9 as whole number and 9999 places of 9) subtract $0.99\cdots9$ (a 0 as whole number and 10000 places of 9) gives $8.99\cdots91$, hence $x = \dfrac{8.99\cdots91}{9} \ne 1$. The 10 thousand digits terminating decimal $0.99\cdots9 \ne 1$. The proposition shows that the sum of infinitely many positives, $\dfrac{9}{10} + \dfrac{9}{100} + \cdots = 1$, is a finite value\footnote{Alternatively, one may prove with the concept of limitation: the decimal of $n$ places, $0.99\cdots9 = 1 - 0.00\cdots01 = 1 - \dfrac{1}{10^{n+1}}$; taking limit, $0.999\cdots = \lim\limits_{n\to\infty} (1 - \dfrac{1}{10^{n+1}}) = 1 - \lim\limits_{n\to\infty} \dfrac{1}{10^{n+1}} = 1 - 0 = 1$.}.
 
 \begin{corollary}
-  把任何无限小数$0.a_1a_2\cdots$写成无穷多个分数的和：$a_1 \dfrac{1}{10} + a_2 \dfrac{1}{100} + \cdots$这个和是有限的。
+  For any non-terminating decimal $0.a_1a_2\cdots$, the sum of infinitely many fractions: $a_1 \dfrac{1}{10} + a_2 \dfrac{1}{100} + \cdots$ is finite.
 \end{corollary}
 
 \begin{proof}
-  由于每个小数位$0 \leq a_i \leq 9$，所以
+  For every place $0 \leq a_i \leq 9$, the sum
   \begin{align*}
 0 \leq 0.a_1 a_2 \cdots = a_1\frac{1}{10} + a_2\frac{1}{10^2} + \cdots \leq \frac{9}{10} + \frac{9}{10^2} + \cdots = 0.999\cdots = 1 & \qedhere
   \end{align*}
 \end{proof}
 
-\index{芝诺悖论!阿基里斯与乌龟悖论}
-这个结论：$0.a_1a_2\cdots \leq 1$看似说了一句废话，但无限多个（正）值加起来是有限的是一个极为惊人的数学与逻辑断言。它是解决一个有着两千多年历史的悖论的钥匙。古希腊的哲学家，埃利亚的芝诺（Zeno of Elea，约公元前490～425年）提出了著名的四个悖论。第一个悖论最为人们所津津乐道，名叫阿基里斯与乌龟悖论。阿基里斯是荷马史诗《伊里亚特》中的英雄，以英勇著称。这个悖论说：如果让爬得很慢的乌龟在阿基里斯前面一段路程出发，那么阿基里斯将永远追不上乌龟。这是因为，阿基里斯为了赶上乌龟，必须先到达乌龟的出发点$A$，但当阿基里斯到达$A$点时，乌龟已经在这段时间前进到了$B$点。但当阿基里斯到达$B$点时，乌龟又已经到了前面的$C$点……以此类推，两者间的距离虽然越来越近，但阿基里斯总是落在乌龟的后面而追不上乌龟。如\cref{fig:Achilles-paradox}所示。
+\index{paradoxes of Zeno!Achilles paradox}
+Though the fact of $0.a_1a_2\cdots \leq 1$ looks obvious, it's a remarkable mathematical and logical statement that the sum of infinitely many positive values are finite. It's the key to solve a paradox with a history over two thousand years. Zeno of Elea (about 490 - 425 BCE) a Greek philosopher, designed four paradoxes; the first one called Achilles paradox was the most popular. Achilles, the greatest warrior in Trojan war according to Homer's \emph{Iliad}, was fleet-footed. However, Zeno argued that Achilles when started behind a slow-moving tortoise in a race, would never catch up with it. Because Achilles must first reach the point $A$ where the tortoise started, by which time the tortoise would have moved ahead to point $B$; by the time Achilles traversed the distance to this latter point $B$, the tortoise would have moved ahead to another point $C$, and so on. Although the distance between Achilles and the tortoise got closer and closer, Achilles was always left behind the tortoise, as shown in \cref{fig:Achilles-paradox}.
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.4]{img/achilles-paradox}
- \caption{阿基里斯与乌龟悖论}
+ \caption{Achilles paradox}
  \label{fig:Achilles-paradox}
 \end{figure}
 
-但这与我们生活中的常识是不相符的。我们在小学数学课上学习过“追及问题”，通常利用相对运动加以解决。令乌龟的速度为$v_1$，阿基里斯的速度为$v_2$，则阿基里斯相对于乌龟的运动速度为$v_2 - v_1$。若乌龟在阿基里斯前方距离$s$处，则阿基里斯在$t = \dfrac{s}{v_2 - v_1}$时与乌龟相遇并接下来超过乌龟。但系统严密的相对运动概念要等到现代科学之父伽利略在两千多年之后才提出。芝诺的推理是如此让人信服，以至于千百年来吸引了无数学者的研究。刘易斯·卡罗尔（Lewis Carrol）、侯世达（Douglas Hofstadter）甚至拿乌龟和阿基里斯作为文学作品中的主人公。
+This is counter our common sense. We learn from school math how to solve such problem through the method of `relative motion'. Denote the speed of the tortoise by $v_1$, the speed of Achilles by $v_2$; the relative speed of Achilles to the tortoise was $v_2 - v_1$. If the tortoise started head of Achilles by $s$, then Achilles would catch up and overtook the tortoise by the time of $t = \dfrac{s}{v_2 - v_1}$. However, it was not until Galileo who gave the concept of relative motion systematically. Zeno's argument seemed so sound that the paradox attracted many great minds in history. Lewis Carrol and Douglas Hofstadter took Achilles and the tortoise as figures in their literary works.
 
-阿基里斯与乌龟悖论的解决通常需要极限的概念。但我们手里的武器——作为分数和的小数已经足够强大到解决它。为了让推理更直观，假设阿基里斯的速度是乌龟的10倍，即$v_2 : v_1 = 10$，乌龟在阿基里斯前$s = 100$米\footnote{古希腊类似的长度单位叫做Pous，翻译为“尺”，也叫做“脚长”，是一种基于人体尺度的长度单位，大约合0.308米。}处。按照芝诺的推理，阿基里斯需要先跑完$s = 100$米，此时乌龟向前爬了$\dfrac{1}{10}s = 10$米；接下来阿基里斯要继续跑这10米，但乌龟又向前爬了$\dfrac{1}{100}s = 1$米……所以阿基里斯要跑的距离是：
+In Analysis, it's common to solve Achilles paradox with the concept of limitation. Alternatively, we may solve it with the tool: the decimal as the sum of fractions. Let's quantify the problem for easy understanding. Suppose Achilles was 10 times faster than the tortoise, i.e., $v_2 : v_1 = 10$; the tortoise started a head by the distance $s = 100$ pous\footnote{1 pous $\approx$ 0.308 feet in ancient Greece.}. According to Zeno, Achilles need first traverse $s = 100$ pous, by which time the tortoise would have moved $\dfrac{1}{10}s = 10$ pous ahead; then Achilles traversed this 10 pous, by which time the tortoise would have moved another$\dfrac{1}{100}s = 1$ pous, ... the total distance Achilles need to traverse would be:
 
 \[
 s(1 + \frac{1}{10} + \frac{1}{100} + \cdots) = 100\times(1 + 0.1 + 0.01 + \cdots) = 100 \times 1.11\cdots = 111.11\cdots
 \]
 
-假设阿基里斯是个“百米飞人”，只用9秒就可以跑完100米。但接下来他需要再用0.9秒跑完10米，然后再用0.09秒跑完1米……总共需要的时间是：
+Suppose the fleet-footed Achilles run 100 pous in 9 second; he need run another 0.9 second for the next 10 pous, and another 0.09 second for the next 1 pous, ..., the total time would be:
 
 \begin{align*}
 9 + 0.9 + 0.09 + \cdots &= 9.99\cdots = 10 \times 0.99\cdots & \\
-                        &= 10 \times 1 & \text{据引理\ref{th:cycle-of-9}} \\
+                        &= 10 \times 1 & \text{by Lemma \ref{th:cycle-of-9}} \\
                         &= 10
 \end{align*}
 
-这样即使按照芝诺的推理，阿基里斯在10秒时就可以追上并超越乌龟。
+Hence Achilles caught up the tortoise in 10 seconds according to Zeno's logic.
 
-\subsection{无限循环小数}
-\index{无限循环小数}
+\subsection{Repeating decimals}
+\index{repeating decimals}
 为了把既约分数$\dfrac{b}{a}$转化为小数，我们用$b$除以$a$。有的能除尽，如$\dfrac{1}{2} = 0.5$、$\dfrac{1}{8} = 0.125$、$\dfrac{1}{25} = 0.4$，有的除不尽产生循环，如$\dfrac{1}{3} = 0.\dot{3} = 0.333\cdots$、$\dfrac{1}{7} = 0.\dot{1}\dot{4}\dot{2}\dot{8}\dot{5}\dot{7}$。什么时候能除尽？什么时候除不尽？这好像是一个运气问题。实际上我们的运气非常“差”，通常是除不尽的。下面的定理揭示了我们要有多幸运才能除尽。
 
 \index{有限小数}
