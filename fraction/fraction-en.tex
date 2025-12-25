@@ -516,7 +516,7 @@ Though the fact of $0.a_1a_2\cdots \leq 1$ looks obvious, it's a remarkable math
  \label{fig:Achilles-paradox}
 \end{figure}
 
-This is counter our common sense. We learn from school math how to solve such problem through the method of `relative motion'. Denote the speed of the tortoise by $v_1$, the speed of Achilles by $v_2$; the relative speed of Achilles to the tortoise was $v_2 - v_1$. If the tortoise started head of Achilles by $s$, then Achilles would catch up and overtook the tortoise by the time of $t = \dfrac{s}{v_2 - v_1}$. However, it was not until Galileo who gave the concept of relative motion systematically. Zeno's argument seemed so sound that the paradox attracted many great minds in history. Lewis Carrol and Douglas Hofstadter took Achilles and the tortoise as figures in their literary works.
+This is counter our common sense. We learn from school math how to solve such problem through the method of `relative motion'. Denote the speed of the tortoise by $v_1$, the speed of Achilles by $v_2$; the relative speed of Achilles to the tortoise was $v_2 - v_1$. If the tortoise started head of Achilles by $s$, then Achilles would catch up and overtook the tortoise by the time of $t = \dfrac{s}{v_2 - v_1}$. However, it was not until Galileo, that the concept of relative motion was established systematically. Zeno's argument seemed so sound that the paradox attracted many great minds in history. Lewis Carrol and Douglas Hofstadter took Achilles and the tortoise as figures in their literary works.
 
 In Analysis, it's common to solve Achilles paradox with the concept of limitation. Alternatively, we may solve it with the tool: the decimal as the sum of fractions. Let's quantify the problem for easy understanding. Suppose Achilles was 10 times faster than the tortoise, i.e., $v_2 : v_1 = 10$; the tortoise started a head by the distance $s = 100$ pous\footnote{1 pous $\approx$ 0.308 feet in ancient Greece.}. According to Zeno, Achilles need first traverse $s = 100$ pous, by which time the tortoise would have moved $\dfrac{1}{10}s = 10$ pous ahead; then Achilles traversed this 10 pous, by which time the tortoise would have moved another$\dfrac{1}{100}s = 1$ pous, ... the total distance Achilles need to traverse would be:
 
@@ -600,30 +600,29 @@ Hence,
 \]
 
 \index{periodic cycle}
-By this proposition, we can easily tell the decimal of some fractions, like $\dfrac{2}{11}$, $\dfrac{4}{33}$, the former is $\dfrac{2}{11} = \dfrac{2 \times 9}{11 \times 9} = \dfrac{18}{99} = 0.\dot{1}\dot{8}$.
-
-通过这个命题还可以发现循环节长度的规律。如果$\dfrac{a_1 a_2 \cdots a_n}{99 \cdots 9}$约分后是$\dfrac{b}{a}$，那么$ak = 999 \cdots 9$。也就是说$ak + 1 = 100 \cdots 0$。因此如果$100\cdots 0$（$n$个0）除以$a$的余数是1，那么$\dfrac{b}{a}$的循环节的长度\underdot{最长}为$n$。循环节的长度仅和分母有关\footnote{数论中的费马小定理断言，素数$p$除$10^{p-1}$的余数等于1。例如1000000除以7余1，$\dfrac{b}{7}$的循环节长6。尽管$10^{11-1} = 10000000000$除以11余1，但$\dfrac{2}{11} = 0.\dot{1}\dot{8}$的循环节长2。我们需要更多的数论知识，例如欧拉定理，才能唯一确定循环节的长度。这超出了本书的范围。参见《哈代数论》IX}。我们还需要最后一个定理来回答什么时候开始循环的问题。
+By this proposition, we can easily tell the decimal of some fractions, like $\dfrac{2}{11}$, $\dfrac{4}{33}$, the former is $\dfrac{2}{11} = \dfrac{2 \times 9}{11 \times 9} = \dfrac{18}{99} = 0.\dot{1}\dot{8}$. The proposition also gives clue to the periodic cycle. If the lowest terms of $\dfrac{a_1 a_2 \cdots a_n}{99 \cdots 9}$ is $\dfrac{b}{a}$, then $ak = 999 \cdots 9$ for some integer $k$. It turns out that $ak + 1 = 100 \cdots 0$. If the remainder of $100\cdots 0$ (total $n$ digits of 0) divided by $a$ is 1, then the periodic cycle of $\dfrac{b}{a}$ contains \emph{at most} $n$ digits. The periodic cycle only depends on the denominator\footnote{In number theory, Fermat's theorem asserts the remainder of a prime $p$ dividing $10^{p-1}$ is 1. For example, the remainder of 7 dividing 1000000 is 1. The periodic cycle of $\dfrac{b}{7}$ contains 6 digits. Although the remainder of 11 dividing $10^{11-1} = 10000000000$ is 1, the periodic cycle of $\dfrac{2}{11} = 0.\dot{1}\dot{8}$ contains 2 digits. We need additional tool, i.e., Euler theorem in number theory, to get the definitive number of digits of a periodic cycle. Refer to chapter IX of \emph{An introduction to the theory of numbers} by Hardy and Wright.}. Below theorem answers where the periodic cycle starts.
 
 \begin{theorem}\label{thm:cyclic-decimal}
-既约真分数$\dfrac{b}{2^{\alpha} 5^{\beta} q}$，其中$q$不含任何2、5为因子。令$n = \max(\alpha, \beta)$，则其小数形式从$n$位后开始循环，循环节的长度是$m$，并且$10^{m+1}$除以$q$余1。
+For irreducible proper fraction $\dfrac{b}{2^{\alpha} 5^{\beta} q}$, where $q$ can't be divided by 2 or 5, let $n = \max(\alpha, \beta)$, then the decimal starts repeating after the decimal point by $n$ places, and the periodic cycle contains $m$ digits, where the remainder of $10^{m+1}$ divided by $q$ is 1.
 \end{theorem}
 
 \begin{proof}
-我们组合之前的证明过程。首先证明前$n$位不循环：
+We first show the first $n$ places don't repeat:
 
 \[
 10^n \frac{b}{2^{\alpha} 5^{\beta} q} = \frac{2^n 5^n b}{2^{\alpha} 5^{\beta} q} = \frac{2^{n - \alpha} 5^{n - \beta} b}{q} = X + \frac{b'}{q}
 \]
-这相当于扩大$10^n$后化带分数，其中$X$是整数部分，$0 \leq X < 10^n$。接下来由于$10^{m+1}$除以$q$余1，所以它减1后能被$q$整除：
+
+Which is the mixed number after multiplied by $10^n$, where $X$ is the whole number part satisfying $0 \leq X < 10^n$. Since the remainder of $10^{m+1}$ divided by $q$ is 1, it follows that $q$ divides $10^{m+1} - 1$:
 
 \begin{align*}
-  (10^{m+1} - 1) \frac{b'}{q} &= k b' = a_1 a_2 \cdots a_m & \text{是整数}\\
-                \frac{b'}{q} &= \frac{a_1 a_2 \cdots a_m}{99\cdots9} & m\text{个}9
+  (10^{m+1} - 1) \frac{b'}{q} &= k b' = a_1 a_2 \cdots a_m & \text{is integral}\\
+                \frac{b'}{q} &= \frac{a_1 a_2 \cdots a_m}{99\cdots9} & m\text{ digits of }9
 \end{align*}
-由命题\ref{th:cyclic-decimal}知它是无限循环小数。
+Which is a repeating decimal by proposition \ref{th:cyclic-decimal}.
 \end{proof}
 
-例如$\dfrac{5}{12} = 0.41\dot{6}$，其中$12 = 2^2 \times 5^0 \times 3$，指数2和0的最大值是2，所以2位后开始循环；$q = 3$，循环节长1。
+For example, $\dfrac{5}{12} = 0.41\dot{6}$, where $12 = 2^2 \times 5^0 \times 3$, the greater one of the exponents 2 and 0 is 2, hence the periodic cycle starts after 2 places; as $q = 3$, the remainder of $10^1 / 3$ is 1, the cycle contains 1 digit.
 
 \begin{mdframed}
 
