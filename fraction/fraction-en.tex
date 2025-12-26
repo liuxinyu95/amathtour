@@ -671,38 +671,38 @@ Although Zeno's paradoxes are easy to understand, the arguments are confusing: m
 \end{mdframed}
 
 \section{Fractions as numbers}
-在某种意义上，分数是人类在历史上第一次正式扩展数系。分数看起来和0、1、2、3……大相径庭。它有两个部分：分子和分母；它抽象了多种不同的东西：小数、百分数、除法、比例$a:b$，它们本质上都是分数。尤其是后两种，它们展示出0、1、2、3……不具备的一个特性：$\dfrac{1}{2} = \dfrac{2}{4} = \dfrac{50}{100} = 3 \div 6 = 7:14 = \cdots$这说明一个值的分数表示是\underdot{不唯一}的。这反映了不同的除法式子可以得出相等的值（或比例）。如果要把分数加入“数”的大家庭，我们就必须解决一系列问题：
+In some sense, fractions were quite different from natural numbers of 0, 1, 2, 3, ... a fraction has two compounds: nominator and denominator; it has different forms, including decimal, percentage, expression of division, and ratio ($a:b$), all are fractions essentially. The last two demonstrate a particular feature that natural numbers of 0, 1, 2, 3... do not have: $\dfrac{1}{2} = \dfrac{2}{4} = \dfrac{50}{100} = 3 \div 6 = 7:14 = \cdots$, a definitive value with \emph{multiple} representations. Varies of expressions may evaluate to the same value (or ratio).  Below are some questions when one wants to treat fractions and natural numbers uniformly as `numbers':
 
-\begin{enumerate}[问题1.]
-\item 哪些分数（比例）是等价的？
-\item 怎样比较分数间的大小？怎样比较分数与其它数的大小？分数在数轴上的位置是什么？
-\item 分数间的四则运算是怎样的？分数与其它数的四则运算是怎样的？
-\item 五大运算定律对分数适用么？加法、乘法的单位元对分数的意义一样么？
+\begin{enumerate}[Q1.]
+\item Which fractions (ratios) are identical?
+\item How to compare two fractions? How to compare between a fraction and a whole number? Where is a fraction located on the number line?
+\item What are the arithmetic operations for fractions, and for fractions and whole numbers?
+\item Are the arithmetic laws applicable to fractions? For the multiplicative unit and additive unit of whole numbers, do they act same on fractions?
 \end{enumerate}
 
-\index{等价关系} \label{sec:frac-equiv}
-先看问题1，若$\dfrac{b}{a} = \dfrac{d}{c}$，两边乘以$ac$有$bc = ad$，这个结果被形象地称为“交叉相乘”（见\cref{fig:cross-mul}）。在小学数学课中，我们知道比例相等时$b : a = d : c$有外项积等于内项积，即$bc = ad$，这和分数等价是一致的。在数学上，一个关系$\sim$要成为\underdot{等价关系}需要满足三个条件：
+\index{equivalence relation} \label{sec:frac-equiv}
+For Q1, if $\dfrac{b}{a} = \dfrac{d}{c}$ holds, multiply $ac$ to both sides, it turns out $bc = ad$; this is known as `cross-multiplication' as shown in \cref{fig:cross-mul}. It also applies to the equation of ratios: the `inner' and `outer' products of $b : a = d : c$ are same, i.e., $bc = ad$. This is because the two forms, fraction and ratio，are essentially same. In mathematics, we call a relation $\sim$ \underdot{equivalence} if below three properties hold:
 
-\begin{enumerate}[条件1.]
-\item 自反性，即$a \sim a$。
-\item 对称性，若$a \sim b$则$b \sim a$。
-\item 传递性，若$a \sim b, b \sim c$则$a \sim c$。
+\begin{enumerate}[P1.]
+\item Reflective: $a \sim a$;
+\item Symmetric: if $a \sim b$, then $b \sim a$;
+\item Transitive: if $a \sim b, b \sim c$, then $a \sim c$.
 \end{enumerate}
 
-\index{等价关系!分数}
-我们不难验证$bc = ad$是一个等价关系。首先验证自反性，比较$\dfrac{b}{a}$和$\dfrac{b}{a}$自己，显然$ab = ab$，满足自反性。其次验证对称性，如果$\dfrac{b}{a}$和$\dfrac{d}{c}$满足$bc = ad$，显然也有$ad = bc$，这样$\dfrac{d}{c}$和$\dfrac{b}{a}$之间也成立，满足对称性。最后验证传递性，若$\dfrac{b}{a}$和$\dfrac{d}{c}$满足$bc = ad$，并且$\dfrac{d}{c}$和$\dfrac{f}{e}$满足$de = cf$。等量相乘有$bcde = adcf$。因为$c \ne 0$是分母，可以消去得$bde = adf$。若$d \ne 0$也可以消去，进一步有$be = af$；否则$d = 0$，则$bc = ad = 0 = de = cf$，因此$b = f = 0$，同样有$be = af$。满足传递性。
+\index{equivalence relation!fractions}
+Let's verify $bc = ad$ is an equivalence relation satisfying them. First for the reflective property, comparing $\dfrac{b}{a}$ with itself, it's plainly that $ab = ab$; next for symmetric property, if $bc = ad$ holds for $\dfrac{b}{a}$ and $\dfrac{d}{c}$, then $ad = bc$ also hold for $\dfrac{d}{c}$ and $\dfrac{b}{a}$; last for transitive property, if $bc = ad$ holds for $\dfrac{b}{a}$ and $\dfrac{d}{c}$, and $de = cf$ holds for $\dfrac{d}{c}$ and $\dfrac{f}{e}$, multiply the two equations: $bcde = adcf$. Since the denominator $c \ne 0$, it can be canceled to give $bde = adf$. If $d \ne 0$ which can be further canceled to $be = af$; otherwise if $d = 0$, then $bc = ad = 0 = de = cf$, hence $b = f = 0$, which gives $be = af$ too. It follows the relation holds for $\dfrac{b}{a}$ and $\dfrac{f}{e}$.
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.4]{img/cross-mul}
- \caption{交叉相乘}
+ \caption{cross-multiplication}
  \label{fig:cross-mul}
 \end{figure}
 
-\index{既约分数} \index{最简分数}
-有了这个等价关系，就可以判断任何两个分数（或比例）是否等价。我们可以在众多的分数表示中选取$\dfrac{b}{a}$，且$a, b$没有除1以外的公因子（也称为互素，记作$(a, b) = 1$）的作为\underdot{代表}，称为“既约分数”（也叫最简分数）。唯一的例外是0，我们选取0作为$\dfrac{0}{a}$的代表。这样的代表只有一个，因为若$\dfrac{b}{a} = \dfrac{d}{c}$，且各自的分子分母互素，由等价关系$bc = ad$，所以$a$整除$bc$。又因为$a$和$b$互素，所以$a$必然整除$c$；反过来由等价关系$bc = ad$还可以推出$c$整除$ad$。又因为$c$和$d$互素，所以$c$必然整除$a$。这样$a$和$c$互相能够整除对方，所以它们必然相等，即$a = c$。同理可证$b = d$，这就证明了既约分数的代表是唯一的。
+\index{irreducible fraction} \index{lowest terms}
+With this equivalence relation, one can tell any two fractions (and ratios) equivalent. Among all equivalent fractions, we chose the $\dfrac{b}{a}$, where $a, b$ have no common divisor except 1 (their greatest common divisor is $(a, b) = 1$, called coprime), as the \emph{representative}, which is called the irreducible fraction (or in the lowest terms). The only exception is 0, which we chosen as the representative of $\dfrac{0}{a}$. Such representative is unique for if $\dfrac{b}{a} = \dfrac{d}{c}$ both irreducible and their denominators are coprime, by the equivalence relationship $bc = ad$, it implies $c$ divides $ad$; meanwhile since $c$ and $d$ are coprime, $c$ divides $a$. It follows that $a$ and $c$ divides each other, hence identical, i.e., $a = c$. In the same way, $b = d$, which shows the representative irreducible fraction is unique.
 
-也许有读者问，为什么要引入这么复杂的等价关系？为什么不直接约分看结果是否一样？古人一开始的确是自然地采用约分来判断相等的，如同上节《九章算术》中介绍的那样。并且在小学数学课上我们也是这样做的。但随着我们用分数这个武器挑战更大的数和更复杂的问题，就发现新的情况了。乘法远远比除法更容易。面对$\dfrac{8723}{22814}$和$\dfrac{143}{374}$这样的分数时，恐怕很少有人能一眼看出如何约分，即使借助计算器或使用欧几里得算法。但做乘法就快多了，用计算器很快就算出$8723 \times 374 = 3262402$并且$22814 \times 143 = 3262402$，所以它们相等。中学数学把分数拓展到了分式，我们发现这个等价关系依然好用。例如$\dfrac{x^5 - 1}{x^3 - 1}$和$\dfrac{1 + x + x^2 + x^3 + x^4}{1 + x + x^2}$，同学们对它们进行因式分解再约分通常会遇到困难\footnote{其中一个方法是：看出$1^n - 1 = 0$，所以$x-1$是$x^n-1$的一个因子。接下来用多项式长除法得出另一个因子。}。但多项式乘法却容易得多：
+It's natural to ask why need such equivalence relationship? why not check if the fractions reduce to the same lowest terms? People did compare by reduction at the beginning as we see in the book of \emph{Nine chapters} and as we were taught at school. However, as the numbers get bigger, people realized division is harder than multiplication. For example, it's a bit hard to compare $\dfrac{8723}{22814}$ and $\dfrac{143}{374}$ by reduction even with a calculator or applying Euclidean algorithm. But it's easy to multiply, which is fast, and compare the product of $8723 \times 374 = 3262402$ and $22814 \times 143 = 3262402$, which are obviously identical. This equivalence relationship can be extended to fractional expressions, for example, for $\dfrac{x^5 - 1}{x^3 - 1}$ and $\dfrac{1 + x + x^2 + x^3 + x^4}{1 + x + x^2}$, it's a bit hard to factorize\footnote{One solution is based on the obvious fact that $1^n - 1 = 0$, consequently, $x-1$ is a factor of $x^n-1$. Then by long division method, one can factorize it.} and reduce to lowest terms, but multiplication is much easier:
 
 \begin{align*}
 (x^3 - 1)(1 + x + x^2 + x^3 + x^4) &= \cancel{x^3} + \cancel{x^4} + x^5 + x^6 + x^7 - 1 - x - x^2 - \cancel{x^3} - \cancel{x^4} \\
@@ -711,42 +711,42 @@ Although Zeno's paradoxes are easy to understand, the arguments are confusing: m
   &= x^7 + x^6 + x^5 - x^2 - x - 1
 \end{align*}
 
-所以这两个分式是相等的。这就是数学家们为何要抽象出等价关系的概念，并精挑细选地用“交叉相乘”来判断分数、比例、分式相等。
+It shows the two fractions equal. This justifies why mathematicians generalize the abstract concept of equivalence relationship and chose the cross-multiplication as its application to fractions and ratios.
 
 \vspace{3mm}
-对于问题2，我们可以利用《九章算术》中的办法，通过$\dfrac{b}{a} - \dfrac{d}{c}$与0的关系来判断大小。这个过程相当于通分后比较新的分子间大小。我们可以把任何整数$n$转化为$\dfrac{n}{1}$，这样所有的大小关系就转化为分数之间的比较。这也意味着任何一个分数都对应到数轴上的一点。对于任何多个数，包括整数、分数、小数都可以对应到数轴上的各自位置。然后从左到右整理出它们的序关系。
+For Q2, we may reuse the method in \emph{Nine chapters}, comparing through the difference of $\dfrac{b}{a} - \dfrac{d}{c}$ with 0. It amounts to comparing the nominators after reducing them to the same denominators. As any whole number $n$ equals to $\dfrac{n}{1}$, we unify the comparison across whole numbers and fractions simply to comparison of fractions. The ordering across whole numbers, fractions, and decimals sorts out their positions on the number line.
 
 \vspace{3mm}
-对于问题3，《九章算术》给出了分数间的四则运算规则。概括为加减先通分，再加减分子，最后约分；乘法把分子分母各自相乘、约分。一个数$n \ne 0$的倒数是$\dfrac{1}{n}$，因为$n\dfrac{1}{n} = \dfrac{n}{n} = 1$。如果$n$是分数$\dfrac{b}{a}$，它的倒数是$\dfrac{a}{b}$，因为$\dfrac{b}{a}\dfrac{a}{b} = 1$。分数本质上相当于除法，我们可以通过倒数在分数——除法——乘法间转换：
+For Q3, the arithmetic operations were also given in \emph{Nine chapters}, which can be summarized as: for $+/-$, reduce to the common denominator then add/subtract the nominators; for $\times$, multiply the nominators and denominators respectively, followed by reduction. The reciprocal of a number $n \ne 0$ is $\dfrac{1}{n}$ because $n\dfrac{1}{n} = \dfrac{n}{n} = 1$. If $n$ is fractional, expressed as $\dfrac{b}{a}$, then its reciprocal is $\dfrac{a}{b}$ because $\dfrac{b}{a}\dfrac{a}{b} = 1$. It shows that a fraction is itself a expression of division, hence the reciprocal is a bridge between division and multiplication:
 
 \[
 \frac{b}{a} = b \div a = b \times 1 \div a = b \times \frac{1}{a}
 \]
 
-以及：
+and
 
 \[
 \frac{b}{a} \div \frac{d}{c} = \frac{b}{a} \times 1 \div \frac{d}{c} = \frac{b}{a} \times \frac{c}{d}
 \]
 
-或：
+or
 
 \begin{align*}
-\frac{b}{a} \div \frac{d}{c} = \dfrac{\quad\dfrac{b}{a}\quad}{\dfrac{d}{c}} &= \frac{bc}{ad} & \text{上下同} \times ac
+\frac{b}{a} \div \frac{d}{c} = \dfrac{\quad\dfrac{b}{a}\quad}{\dfrac{d}{c}} &= \frac{bc}{ad} & \text{denominator and nominator} \times ac
 \end{align*}
 
-同样，任何整数$n$可以转化为$\dfrac{n}{1}$，从而将整数与分数的四则运算转化为分数间的四则运算。
+By converting any whole number $n$ to $\dfrac{n}{1}$, we unify the arithmetic operations from whole numbers to fractions.
 
 \vspace{3mm}
-\index{封闭运算}
-对于问题4，我们发现将分数引入数系后，任何数都可表示为分数：整数$n$包括0，表示为$\dfrac{n}{1}$；分数、有限小数、无限循环小数表示为$\dfrac{b}{a}, a \ne 0$。这个数系称做\underdot{有理数}，记作$\mathbb{Q}$。我们将在第4章解释这个名字的含义。在整数$\mathbb{Z}$中，每个数$x$都有相反数（加法的逆元）$-x$，但只有$\pm 1$有倒数（乘法的逆元）。在有理数$\mathbb{Q}$中，每个不等于0的数$x$都有倒数（乘法的逆元）$\dfrac{1}{x}$。自然数$\mathbb{N}$对加法减运算不是封闭的，例如$1 - 3 = -2 \notin \mathbb{N}$。但加减运算在整数$\mathbb{Z}$内是封闭的，任何两个整数$m, n$，总有$m \pm n \in \mathbb{Z}$。整数$\mathbb{Z}$对四则运算不是封闭的，因为$1 \div 2 = \dfrac{1}{2} = 0.5 \notin \mathbb{Z}$。但四则运算在有理数$\mathbb{Q}$内是封闭的，任何两个有理数$p, q$，总有$p \pm q, pq, \dfrac{p}{q} (q \ne 0)$都在$\mathbb{Q}$内。
+\index{close}
+For Q4, fraction provides a unified way to express numbers: a whole number $n$ including 0 can be expressed as $\dfrac{n}{1}$, terminating and repeating decimals can be expressed as $\dfrac{b}{a}, a \ne 0$. This `family' of numbers (the set of fractions) is called \emph{rationals}, denoted by $\mathbb{Q}$. We'll explain this name in chapter 4. For every number $x$ of integers $\mathbb{Z}$, it has a negative (additive reverse) number $-x$, but only $\pm 1$ has reciprocal (multiplicative reverse). For every non-zero number $x$ of rationals $\mathbb{Q}$, it has a reciprocal (multiplicative reverse) $\dfrac{1}{x}$. The addition and subtraction are not closed for natural numbers $\mathbb{N}$, for example, $1 - 3 = -2 \notin \mathbb{N}$, but they are closed for integers $\mathbb{Z}$: for any two integers $m, n$, $m \pm n \in \mathbb{Z}$ always hold. While the arithmetic operations are not closed for integers $\mathbb{Z}$ because $1 \div 2 = \dfrac{1}{2} = 0.5 \notin \mathbb{Z}$, but they are closed for rationals $\mathbb{Q}$: for any two rationals $p, q$, the result of $p \pm q, pq, \dfrac{p}{q} (q \ne 0)$ are always in $\mathbb{Q}$.
 
-可以验证五大运算定律对于分数都成立，我们这里验证加法的结合率、乘法对加法的分配律，其余三个留作\cref{qn:arithmatic-law-fraction}。
+The five arithmetic laws hold for fractions, we only verify the associative law for addition and the distribution law and leave the remaining three as \cref{qn:arithmatic-law-fraction}.
 \begin{proof}
-分数加法的结合律：
+Associative law for fractions:
 \begin{align*}
 (\frac{b}{a} + \frac{d}{c}) + \frac{f}{e} & = \frac{bc + ad}{ac} + \frac{f}{e} = \frac{bce + ade + acf}{ace} && \\
-  & = \frac{bce + (ade + acf)}{ace} & \text{对分子和用结合律} & \\
+  & = \frac{bce + (ade + acf)}{ace} & \text{associative law to nominators} & \\
   & = \frac{b\cancel{ce}}{a\cancel{ce}} + \frac{ade + acf}{ace} && \\
   & = \frac{b}{a} + (\frac{\cancel{a}d\cancel{e}}{\cancel{a}c\cancel{e}} + \frac{\cancel{ac}f}{\cancel{ac}e}) && \\
   & = \frac{b}{a} + (\frac{d}{c} + \frac{f}{e}) && \qedhere
@@ -754,50 +754,51 @@ Although Zeno's paradoxes are easy to understand, the arguments are confusing: m
 \end{proof}
 
 \begin{proof}
-我们只证明左侧的分数分配律，右侧的证明可以利用分数乘法交换律。
+We only show the left side distribution law, the right one rests on commutative law for multiplication.
 \begin{align*}
   \frac{b}{a}(\frac{d}{c} + \frac{f}{e}) &= \frac{b}{a}\frac{de + cf}{ce} && \\
-    &= \frac{b(de + cf)}{ace} = \frac{bde + bcf}{ace} & \text{分子用分配律} & \\
+    &= \frac{b(de + cf)}{ace} = \frac{bde + bcf}{ace} & \text{distribution law to nominators} & \\
     &= \frac{bd\cancel{e}}{ac\cancel{e}} + \frac{b\cancel{c}f}{a\cancel{c}e} && \\
     &= \frac{b}{a}\frac{d}{c} + \frac{b}{a}\frac{f}{e} && \qedhere
 \end{align*}
 \end{proof}
 
 \vspace{3mm}
-\index{平均律}
-让我们回到毕达哥拉斯追寻天籁之音的故事。发现了分数导致和谐的乐音后，如何调整里尔琴上的七根琴弦呢？如果加上第八根琴弦，那么它应该是第一根琴弦的一半，这样才能跨越八度音程。毕达哥拉斯发现纯五度音程$3:2$叠加一个纯四度音程$4:3$恰好是一个八度音程，因为：$\dfrac{3}{2} \times \dfrac{4}{3} = 2$。他用纯五度音程的比例$3:2$作为倍数，不断提高音调，得到一组等比数列：
+\index{equal temperament}
+Return to the legend of Pythagoras. After the discovery of the theory of music, that fractions ruled the harmonic sound, how to tune the seven strings of a lyre? If add the eighth string, then its length should be half of the first string, such that to get an octave. Pythagoras found overlapping a perfect fifth (ratio $3:2$) to a perfect four (ratio $4:3$) is an octave because $\dfrac{3}{2} \times \dfrac{4}{3} = 2$. He used the ratio $3:2$ of a perfect fifth as a basis scale, multiplied a geometric series:
 
 \[
 (\frac{3}{2})^{-1}, (\frac{3}{2})^0, (\frac{3}{2})^{1}, (\frac{3}{2})^2, (\frac{3}{2})^{3}, (\frac{3}{2})^4, (\frac{3}{2})^{5} = \frac{2}{3}, 1, \frac{3}{2}, \frac{9}{4}, \frac{27}{8}, \frac{81}{16}, \frac{243}{32}
 \]
 
-其中后面4个数大于2，超过了八度音程。因此毕达哥拉斯把它们每个数都除以2或4，找到其对应的前一个八度音程的数，然后重新从小到大排列得到：
+Where the last four were greater than 2, which exceeded an octave. Pythagoras divided them by either 2 or 4, which mapped them back to the octave, then reordered them as:
 
 \[
 1, \frac{9}{8}, \frac{81}{64}, \frac{4}{3}, \frac{3}{2}, \frac{27}{16}, \frac{243}{128}, \frac{2}{1}
 \]
 
-它表示的是音阶中每个音与最低音的比例关系。为了知道每个音的相对关系，于是让相邻的两个数相除，又得到：
+It gave the ratio of each tone to the base. To list the ratio between each adjacent tones, he calculate the quotient between every two numbers:
 
 \[
 \frac{9}{8}, \frac{9}{8}, \frac{256}{243}, \frac{9}{8}, \frac{9}{8}, \frac{9}{8}, \frac{256}{243}
 \]
 
-\index{调性}
-较大的9:8叫全音，较小的256:243叫半音。这个列表就是“全、全、半、全、全、全、半”，在音乐上叫做“大调”。通常表现欢快的，阳刚的主题。而音乐上的“小调”，对应的列表移动一下是“全、半、全、全、半、全、全”。通常表现含蓄的、柔美的主题。可是有没有可能使得每个比例相同，得到完美的“平均律”呢？这超出了毕达哥拉斯所能想到的所有设计。为了达到这样的天籁之音，我们需要在一个八度音程$2:1$中设置5个全音，2个半音，共$5 \times 2 + 2 = 12$个比例，使得：
+\index{tonality}
+In music theory, the greater ratio $9:8$ is called a whole tone (step, W), the less ratio $256:243$ is called a semitone (half step, H). This list, W - W - H - W - W -W - H, is called a major scale. Musical works based on major scale typically create sense of warmth, cheerfulness, and resolution. Another type, known as minor scale, which shifts the list to W - H - W - W - H - W - W; it typically create sense of mellowness and introspection. Is there a harmonic 12-tone equal temperament? Unfortunately, it was out of what Pythagoras could design with fractions. To work out a 12-tone totality, we need setup 5 whole tones, 2 semitones, in total $5 \times 2 + 2 = 12$ ratios within an octave of $2:1$, which satisfy:
 
 \[
 1 = \alpha^0, \alpha^1, \alpha^2, \alpha^3, \alpha^4, \alpha^5, \alpha^6, \alpha^7, \alpha^8, \alpha^9, \alpha^{10}, \alpha^{11}, \alpha^{12} = 2
 \]
 
-显然$\alpha = \sqrt[12]{2}$，但它不是一个分数！让我们沿着数的旅程继续追寻天籁之音吧。
+It has a solution: $\alpha = \sqrt[12]{2}$, but it is not a fraction! While pursuing the sound of heaven, let's continue our tour of numbers.
 
 \begin{Exercise}[label={ex:fractions}]
-\Question{“调和”平均值\footnote{英文harmonic mean，意为“和谐的”平均值。}的名字来自毕达哥拉斯的音乐理论。毕达哥拉斯尝试在长度为$a$和$b$的琴弦之间插入一根琴弦$h$，使得它们发出和谐的声音。他发现弦长$h$的倒数恰好在$a$和$b$的倒数正中间，即：\index{调和平均值}
+\Question{The term harmonic mean comes after Pythagoras's music theory. Pythagoras was trying to insert a string with length $h$ between two strings with lengths of $a$ and $b$, such that they produce harmonic sound. He found the reciprocal of $h$ is at the `middle' of the reciprocal of $a$ and the reciprocal of $b$, which is, \index{harmonic mean}
 \[
 \frac{1}{h} - \frac{1}{a} = \frac{1}{b} - \frac{1}{h}
 \]
-调和平均值因此也称做倒数平均值。请根据调和平均值的定义验证：1) 在两地之间往返的平均速度是前往的速度和返回速度的调和平均值。例如从船只从南京顺流而下到达上海的平均速度是$v_1$，从上海逆流而上的平均速度是$v_2$，则往返的平均速度$v$是$v_1$与$v_2$的调和平均值。2) 在电路中并联的两个不同电阻$R_1$和$R_2$若等效于并联了\underdot{两个相同}的电阻$R$，则$R$的大小是$R_1$与$R_2$的调和平均值。（注意：$R$相当于并联电阻的2倍）
+
+That is why the harmonic mean is also known as the mean of reciprocals. Verify that: 1) A boat travels between $A$ and $B$ with different speed: $v_1$ for go, and $v_2$ for back. The average speed $v$ is the harmonic mean of $v_1$ and $v_2$. 2) Connect two resisters $R_1$ and $R_2$ in parallel, it's equivalent to connect \emph{two} same resisters of $R$, where $R$ is the harmonic mean of $R_1$ and $R_2$.
 }
 
 \Question{$\bigstar$验证$\dfrac{2}{p} = \dfrac{1}{a} + \dfrac{1}{b}$等价于$(2a - p)(2b - p) = p^2$，并由此证明：若$p$为大于2的素数，则$\dfrac{2}{p}$可\underdot{唯一}分解为两个埃及分数$\dfrac{2}{p} = \dfrac{1}{a} + \dfrac{1}{b} (a \ne b)$。\label{qn:unique-decompose-r}}
