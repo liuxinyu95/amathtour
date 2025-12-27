@@ -167,7 +167,7 @@ Do you have any idea why the Egyptian developed such special fractions? On one h
 
 \begin{proof}
   \begin{align*}
-    \frac{1}{n} &= \frac{n+1}{n(n+1)} & \text{both nominator and denominator}\times (n + 1) & \\
+    \frac{1}{n} &= \frac{n+1}{n(n+1)} & \times \text{nominator and denominator by } (n + 1) & \\
                 &= \frac{\cancel{n}}{\cancel{n}(n+1)} + \frac{1}{n(n+1)} && \\
                 &= \frac{1}{n+1} + \frac{1}{n(n+1)} && \qedhere
   \end{align*}
@@ -801,27 +801,27 @@ It has a solution: $\alpha = \sqrt[12]{2}$, but it is not a fraction! While purs
 That is why the harmonic mean is also known as the mean of reciprocals. Verify that: 1) A boat travels between $A$ and $B$ with different speed: $v_1$ for go, and $v_2$ for back. The average speed $v$ is the harmonic mean of $v_1$ and $v_2$. 2) Connect two resisters $R_1$ and $R_2$ in parallel, it's equivalent to connect \emph{two} same resisters of $R$, where $R$ is the harmonic mean of $R_1$ and $R_2$.
 }
 
-\Question{$\bigstar$验证$\dfrac{2}{p} = \dfrac{1}{a} + \dfrac{1}{b}$等价于$(2a - p)(2b - p) = p^2$，并由此证明：若$p$为大于2的素数，则$\dfrac{2}{p}$可\underdot{唯一}分解为两个埃及分数$\dfrac{2}{p} = \dfrac{1}{a} + \dfrac{1}{b} (a \ne b)$。\label{qn:unique-decompose-r}}
+\Question{*Verify $\dfrac{2}{p} = \dfrac{1}{a} + \dfrac{1}{b}$ equals $(2a - p)(2b - p) = p^2$, and use this fact to show: for any prime $p$ greater than 2, $\dfrac{2}{p}$ can be \underdot{unique} decomposed into two Egyptian fractions as $\dfrac{2}{p} = \dfrac{1}{a} + \dfrac{1}{b} (a \ne b)$.\label{qn:unique-decompose-r}}
 
-\Question{证明埃尔德什——斯特劳斯猜想对所有偶数$n$成立。}
+\Question{Show that Erdős-Straus conjecture is true for all even number $n$.}
 
-\Question{实际上我们只要证明埃尔德什——斯特劳斯猜想对于所有素数成立即可。这是为什么？}
+\Question{Explain why it's sufficient to show Erdős-Straus conjecture is true for all primes?}
 
-\Question{证明埃尔德什——斯特劳斯猜想对所有$4k+3$型的素数成立。提示：利用\cref{qn:unique-decompose-r}的结论。}
+\Question{Show that Erdős-Straus conjecture is true for all primes of $4k+3$. Hint: use the result of \cref{qn:unique-decompose-r}.}
 
-\Question{$\bigstar$找出三个儿子按照$\dfrac{1}{a}$、$\dfrac{1}{b}$、$\dfrac{1}{c}$分配$n$个动物的所有可能数值和比例。要求大儿子分得的财产多于二儿子，二儿子分得的财产多于小儿子。恰好借来一只动物后可以分好并余下一只动物。如果你会编程，可以用计算机枚举出所有解。但此题要求手工找出所有可能的$n, a, b, c$。提示：本题本质是求方程$\dfrac{n}{n+1} = \dfrac{1}{a} + \dfrac{1}{b} + \dfrac{1}{c}, a < b < c$的所有正整数解。三儿子至少分得一只动物，那么$n$的最小值是多少？你能据此推出$a$不可能超过3，因而只能是2么？\label{qn:three-sons}}
+\Question{*For the puzzle that three sons divide $n$ animals in the proportions of $\dfrac{1}{a}$, $\dfrac{1}{b}$, and $\dfrac{1}{c}$, where the eldest gets more than the second, the second gets more than the youngest, and they return the borrowed one at last, find all possible $n, a, b, c$, you may write a program to enumerate all solutions, but this exercise can be solved manually. Hint: the problem is to find all solutions in integers for the equation $\dfrac{n}{n+1} = \dfrac{1}{a} + \dfrac{1}{b} + \dfrac{1}{c}$, where $a < b < c$. Since every son gets at least one animal, what is the least $n$? How to show that $a$ can not exceed 3, hence can only be 2? \label{qn:three-sons}}
 
-\Question{$\bigstar$由于$0.999\cdots = 1$，所以任何有限小数有两种表示：$X.a_1a_2 \cdots a_m000\cdots$和$X.a_1a_2 \cdots b999\cdots$，其中$b = a_m - 1$，$X$是整数部分。证明除了这种情况外，任何数值$x$的小数表示是唯一的，其中$0 < x < 1$。}
+\Question{*By $0.999\cdots = 1$, any terminating decimal has two forms: $X.a_1a_2 \cdots a_m000\cdots$ and $X.a_1a_2 \cdots b999\cdots$, where $b = a_m - 1$, $X$ is the whole number part. Show that, except for this special case, the decimal of any value $x$ is unique, where $0 < x < 1$.}
 
-\Question{证明无限循环小数$0.\dot{a_1} \dot{a_2} \cdots \dot{a_n}$的分数形式是$\dfrac{a_1 a_2 \cdots a_n}{99 \cdots 9} = \dfrac{a_1 a_2 \cdots a_n}{10^{n+1} - 1}$。\label{qn:cyclic-decimal}}
+\Question{Show that the fraction of any repeating decimal $0.\dot{a_1} \dot{a_2} \cdots \dot{a_n}$ is $\dfrac{a_1 a_2 \cdots a_n}{99 \cdots 9} = \dfrac{a_1 a_2 \cdots a_n}{10^{n+1} - 1}$. \label{qn:cyclic-decimal}}
 
-\Question{利用分数和引理\ref{th:cycle-of-9}解释：如果阿塔兰塔先跑完全程的$\dfrac{1}{2}$，接下来再跑完剩余的一半，即$\dfrac{1}{4}$，然后不断跑完剩余路程的一半，则她最终可以跑完全程。提示：考虑二进制分数和。\label{qn:dichotomy-paradox}}
+\Question{Use fractions and Lemma \ref{th:cycle-of-9} to show: Atalanta first traverses $\dfrac{1}{2}$ distance, then traverse half of the remaining, which is $\dfrac{1}{4}$ distance, and repeats, she will walk to the end of the path. Hint: using sum of fractions and binary decimal.\label{qn:dichotomy-paradox}}
 
-\Question{验证分数的加法交换律、乘法交换律，乘法结合率。\label{qn:arithmatic-law-fraction}}
+\Question{Verify the additive/multiplicative commutative laws, and multiplicative associative law for fractions.\label{qn:arithmatic-law-fraction}}
 \end{Exercise}
 
 \begin{Answer}[ref={ex:fractions}]
-\Question{根据调和平均值的原始定义：
+\Question{By the definition of harmonic mean:
 
 \begin{align*}
 \frac{1}{h} - \frac{1}{a} &= \frac{1}{b} - \frac{1}{h}    \\
