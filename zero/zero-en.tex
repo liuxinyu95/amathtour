@@ -64,7 +64,7 @@ What does make 0 different from $1, 2, 3, \dotsc$ preventing it from being a fir
 
 \label{sec:archimedes-axiom}
 \begin{enumerate}[1)]
-\item Archimedes axiom. A number\footnote{All numbers refer to natural number in this section.} increases when adding to itself. Archimedes treated it as an axiom: for any non-zero $m < n$, there is a time that $m + m + \cdots > n$. \index{Archimedes axiom}
+\item Archimedes axiom. A number\footnote{All numbers refer to natural number in this section.} increases when was added to itself. Archimedes treated it as an axiom: for any non-zero $m < n$, there is a time that $m + m + \cdots > n$. \index{Archimedes axiom}
 
 \begin{align*}
 1 + 1 &= 2   & 1 + 1 + 1 &= 3 & \dots \\
@@ -392,7 +392,7 @@ We can use number line to give intuitive meanings to the arithmetic operations (
   \end{tabular}
 \end{center}
 
-When $b < 0$, $a + b$ amounts to subtraction; $a - b$ amounts to add $a$ to $-b$. $b$ and $-b$ are additive inverse of each other, one may view subtraction as a special case of addition, thus to generalize above cases into three:
+When $b < 0$, $a + b$ amounts to subtraction; $a - b$ amounts to adding $a$ to $-b$. $b$ and $-b$ are additive inverse of each other, one may view subtraction as a special case of addition, thus to generalize above cases into three:
 
 \begin{center}
 \begin{tabular}{c|c|c|c}
@@ -429,7 +429,7 @@ This is the definition of absolute value, the distance is $|a - b|$. When $b = 0
  \includegraphics[scale=0.4]{img/abs}
 \end{figure}
 
-Distance as absolute value is non-negative, while difference between two numbers $a$ and $b$ on the number line, which is $a - b$ can be negative. If $a - b > 0$, then $a > b$, $a$ is to the right of $b$; if $a - b < 0$, then $a < b$, $a$ is to the left of $b$; if $a - b = 0$, then $a = b$, $a$ and $b$ coincide on the number line. Particularly, the difference between $a$ and the origin 0 is $a - 0 = a$, which equals to $a$ itself. The additive inverse of $a$ is the bilateral symmetric point $-a$ on the number line; the inverse of 0 is 0 itself.
+Distance as absolute value is non-negative, while difference between two numbers $a$ and $b$ on the number line, which is $a - b$ can be negative. If $a - b > 0$, then $a > b$, $a$ is to the right of $b$; if $a - b < 0$, then $a < b$, $a$ is to the left of $b$; if $a - b = 0$, then $a = b$, $a$ and $b$ coincide on the number line. Particularly, the difference between $a$ and the origin 0 is $a - 0 = a$, which equals $a$ itself. The additive inverse of $a$ is the bilateral symmetric point $-a$ on the number line; the inverse of 0 is 0 itself.
 
 \begin{center}
 \begin{tikzpicture}
@@ -444,7 +444,7 @@ Here is how to make something out of nothing (0): $0 \begin{cases} n \\ -n \end{
 
 \subsection{Translation}
 \index{number line!translation}
-Which direction will the number line move if add $+1$ to {\em every} number on the number line? right or left? \cref{fig:plus-1-numline} shows the result:
+In which direction will the number line move if adding $+1$ to {\em every} number on the number line? right or left? \cref{fig:plus-1-numline} shows the result:
 
 \begin{figure}[htbp]
   \centering
@@ -679,7 +679,7 @@ Why does the fifth axiom exclude the counter example of \{0, 0.5, 1, 1.5, 2, 2.5
   \item For any proposition regarding to natural numbers, if it is true for 0, and whenever being true for some number $n$, it is also true for $n'$ (the successor), then the proposition is true for all natural numbers. (This axiom ensures the correctness of mathematical induction.)
 \end{enumerate}
 
-To show we can reach the top floor of a skyscraper by mathematical induction, we take two steps: 1) show we can enter the lobby of the building; 2) show at any floor we can always step upstairs to the next floor. These are Peano's five axioms, which form the axiomatic system known as Peano's arithmetic. We next show how arithmetic operations are defined in this system. The definition of addition consists of two parts: adding 0 to any natural number leaves  the number unchanged; and $a$ plus the successor of $b$ equals to the successor of the sum of $a$ and $b$. \index{natural numbers!addition}
+To show we can reach the top floor of a skyscraper by mathematical induction, we take two steps: 1) show we can enter the lobby of the building; 2) show at any floor we can always step upstairs to the next floor. These are Peano's five axioms, which form the axiomatic system known as Peano's arithmetic. We next show how arithmetic operations are defined in this system. The definition of addition consists of two parts: adding 0 to any natural number leaves the number unchanged; and $a$ plus the successor of $b$ equals the successor of the sum of $a$ and $b$. \index{natural numbers!addition}
 
 \be
 \begin{laligned}
@@ -705,7 +705,7 @@ a \cdot b' &= a \cdot b + a
 \label{eq:peano-multiply}
 \ee
 
-The definition of multiplication consists of two parts: the product of any natural number and 0 is 0, and the product of $a$ and the successor of $b$ equals to adding $a$ to the product of $a$ and $b$. The latter can be expressed as $a \cdot (b+1) = a \cdot b + a \cdot 1$. Let's verify it with $2 \times 3$:
+The definition of multiplication consists of two parts: the product of any natural number and 0 is 0, and the product of $a$ and the successor of $b$ equals $a$ plus the product of $a$ and $bf$. The latter can be expressed as $a \cdot (b+1) = a \cdot b + a \cdot 1$. Let's verify it with $2 \times 3$:
 
 \begin{align*}
 0'' \times 0''' & = 0'' \times 0'' + 0'' = 0'' \times 0' + 0'' + 0'' = 0'' \times 0 + 0'' + 0'' + 0'' \\
@@ -841,7 +841,7 @@ We need consider if it regards ordinal meaning or cardinal meaning; whether rega
 
 \Question{Show that the additive inverse is unique.
   \begin{proof}
-    Suppose $b$ is another additive inverse of $a$, we are going to show $b = -a$:
+    Assume $b$ is another additive inverse of $a$, we are going to show $b = -a$:
     \begin{align*}
       0     & = b + a     & \text{additive inverse} \\
       0 - a & = b + a - a & -a \text{ on both sides} \\
@@ -864,7 +864,7 @@ Since $2x + 1 = 2(x + \frac{1}{2})$, the transformation is to first move {\em le
 
 \Question{Show that a unit is unique.
 \begin{proof}
-Suppose there is another unit $e'$, which satisfies $e' \odot a = a \odot e' = a$ for any element $a$. We are going to show $e = e'$:
+Assume there is another unit $e'$, which satisfies $e' \odot a = a \odot e' = a$ for any element $a$. We are going to show $e = e'$:
 \begin{align*}
 e &= e \odot e' & e'\text{ is a unit} & \\
   &= e'         & e\text{ is a unit}  &\qedhere

@@ -84,7 +84,7 @@ To build the great pyramid, ancient Egyptian created many symbols for big number
 \end{figure}
 
 \index{Babylonian numerals} \index{sexagesimal} \index{cuneiform}
-Although method (3) can handle big numbers, method (2) is convenient for small numbers. Ancient Babylonians lived in Mesopotamia. The name of the region comes from a Greek word, meaning `between rivers'. It refers to the center of the land between Tigris and Euphrates rivers (in Iraq nowadays). The people impressed their symbols in damp clay tablets. After drying in the sun or in a kiln, the tablets became as permanent as stone. Because the symbol given by the stylus is wedge-shaped, the inscriptions are known as cuneiform\footnote{Combined from `wedge' (cuneus in Latin) and `shape' (forma in Latin).}. Ancient Babylonians used sexagesimal (base 60) system, which is partly left today. For example, a minute has 60 seconds; an hour has 60 minutes. An hour 12 minutes and 30 seconds is written as 1:12:30, which equals $1(60\times 60) + 12(60) + 30 = 4350$ seconds. 60 is not a small number, it appears Babylonians used a mixed system in practical: grouped with 10 for numbers less than 60, otherwise, grouped with $60^2$、$60^3$、$60^4, \dotsc$. \Cref{fig:babylonian-numerals} shows the cuneiform symbols from 1 to 59. We can easily see the pattern: a vertical wedge (Y) for number 1, add such a wedge for each number from 2 to 9; a horizontal wedge (<) for 10, from 11 to 19, the number is a horizontal wedge (10) plus the corresponding vertical wedges. Two horizontal wedges for 20, then repeated the rule within 60, i.e., 10 times the number of horizontal wedges plus the number of vertical wedges.
+Although method (3) can handle big numbers, method (2) is convenient for small numbers. Ancient Babylonians lived in Mesopotamia. The name of the region comes from a Greek word, meaning `between rivers'. It refers to the center of the land between Tigris and Euphrates rivers (in Iraq nowadays). The people impressed their symbols in damp clay tablets. After drying in the sun or in a kiln, the tablets became as permanent as stone. Because the symbol given by the stylus is wedge-shaped, the inscriptions are known as cuneiform\footnote{Combined from `wedge' (cuneus in Latin) and `shape' (forma in Latin).}. Ancient Babylonians used sexagesimal (base 60) system, which is partly left today. For example, a minute has 60 seconds; an hour has 60 minutes. An hour 12 minutes and 30 seconds is written as 1:12:30, which equals $1(60\times 60) + 12(60) + 30 = 4350$ seconds. 60 is not a small number, it appears Babylonians used a mixed system in practical: grouped with 10 for numbers less than 60, otherwise, grouped with $60^2$、$60^3$、$60^4, \dotsc$. \Cref{fig:babylonian-numerals} shows the cuneiform symbols from 1 to 59. We can easily see the pattern: a vertical wedge (Y) stands for 1, two wedges stands for 2, ..., and nine wedges for 9; a horizontal wedge (<) stands for 10, from 11 to 19, the number is a horizontal wedge (10) plus the corresponding vertical wedges. Two horizontal wedges stands for 20, then repeated the rule within 60, i.e., 10 times the number of horizontal wedges plus the number of vertical wedges.
 
 \begin{figure}[htbp]
  \centering
@@ -192,7 +192,7 @@ Many Chinese units come from Buddhism\cite{Noguchi2007}, like 恒河沙, means t
 \section{Positional numeral system}
 \index{positional numeral system} \index{Mayan numeral system} \index{solar year}
 
-During early expedition to Yucatán Peninsula (in the central America between the Gulf of Mexico and the Caribbean Sea), the Spanish discovered Maya civilization. They had a well-developed numeral system as shown in \cref{fig:maya-numerals}. Similar to Babylonian 10-60 mixed base system, Mayan had a 5-20 mixed base system. For numbers less than 20, they were 5-based. A dot represented one; two dots for tow; drew a line every time counted to five till 20; then switch to 20-based. They wrote vertically and had a special symbol for zero. It seems that Mayan numerals were used primarily for the calendar. Taking 20 days per month, Mayan found $20 \times 18 = 360$ was close to a solar year. They arranged 18 months with 5 `nameless' days (called Uayeb means unlucky days) setting a year of 365 days. Then added an extra day every 4 years to offset the error. This is almost same as our present definition of a solar year.
+During early expedition to Yucatán Peninsula (in the central America between the Gulf of Mexico and the Caribbean Sea), the Spanish discovered Maya civilization. They had a well-developed numeral system as shown in \cref{fig:maya-numerals}. Similar to Babylonian 10-60 mixed base system, Mayan had a 5-20 mixed base system. For numbers less than 20, they were 5-based. A dot represented one; two dots for tow; drew a line every time counted to five till 20; then switch to 20-based. They wrote vertically and had a special symbol for zero. It seems that Mayan numerals were used primarily for the calendar. Taking 20 days per month, Mayan found $20 \times 18 = 360$ was close to a solar year. They arranged 18 months with 5 `nameless' days (called Uayeb means unlucky days) setting a year of 365 days, then added an extra day every 4 years to offset the error. This is almost same as our present definition of a solar year.
 
 \begin{figure}[htbp]
  \centering
@@ -210,7 +210,7 @@ Neither Mayan 20-based system nor Babylonian 60-based system needs names for gro
 \item A symbol of zero.
 \end{enumerate}
 
-Any number $n$ in a positional numeral system equals to:
+Any number $n$ in a positional numeral system equals:
 
 \be
 n = a_m b^m + a_{m-1} b^{m-1} + \cdots + a_a b + a_0
@@ -242,7 +242,7 @@ One big issue with Roman numbers is ambiguity; there are multiple ways to write 
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.3]{img/Hindu-arabic-num}
- \caption{Hindu-Arabic numerals: (1) Brahmi, 1st century CE, (2) Indian (Gwalior), 9th century, (3) Sanskrit Davanagari, Indian, 11th Cenntury, (4) West Arabic (Gubar or Gobar), 11th century, (5) East Arabic, 11th century, (still used in Turkey), (6) 15th century, (7) 16th century (Dürer)}
+ \caption{Hindu-Arabic numerals: (1) Brahmi, 1st century CE, (2) Indian (Gwalior), 9th century, (3) Sanskrit Davanagari, Indian, 11th century, (4) West Arabic (Gubar or Gobar), 11th century, (5) East Arabic, 11th century, (still used in Turkey), (6) 15th century, (7) 16th century (Dürer)}
  \label{fig:hindu-arabic-numerals}
 \end{figure}
 
@@ -480,7 +480,7 @@ dec = foldl (\n x -> n*2 + x) 0
 \Question{Show that the binary representation of a number is unique.
 
 \begin{proof}
-Suppose there is another representation. If the length are different, we add 0 in front of the shorter one to make them same long. Denote the two numbers after padding with zeros as $a_{m} a_{m-1} \cdots a_1 a_0$ and $c_m c_{m-1} \cdots c_1 c_0$. As they have the same level by \cref{eq:pos-rep}:
+Assume there is another representation. If the length are different, we pad with 0 in front of the shorter one to make them same long. Denote the two numbers after padding with zeros as $a_{m} a_{m-1} \cdots a_1 a_0$ and $c_m c_{m-1} \cdots c_1 c_0$. As they have the same level by \cref{eq:pos-rep}:
 
 \[
   a_m b^m + a_{m-1} b^{m-1} + \cdots + a_1 b + a_0 = c_m b^m + c_{m-1} b^{m-1} + \cdots + c_1 b + c_0

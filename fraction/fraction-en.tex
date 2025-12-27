@@ -400,7 +400,7 @@ The author explained, `let the sum of the products of the each denominator and t
 \frac{b}{a} + \frac{d}{c} = \frac{bc + ad}{ac}
 \ee
 
-As the result may not be in the lowest terms, the author continued with a special case, `the result is 1 if the nominator equals to the denominator', and followed with the mixed number for the general case. At last the author pointed out for the special simple case that the two denominators are same, one add the nominator directly.
+As the result may not be in the lowest terms, the author continued with a special case, `the result is 1 if the nominator equals the denominator', and followed with the mixed number for the general case. At last the author addressed the special simple case of equal denominators: one adds the nominators directly.
 
 \be
 \frac{b}{a} + \frac{c}{a} = \frac{b + c}{a}
@@ -464,7 +464,7 @@ With Hindu-Arabic numeral system, the Arabic mathematicians introduced decimals.
 Christoff Rudolff (1499 - 1545) in 1530 separated the integral and decimal parts with a vertical bar. Magini (1555 - 1617) changed the bar to a point, but it was not widely adopted until John Napier's (1550 - 1617, see \cref{fig:napier}) work about logarithms was translated in 1616. The percentage symbol \% was invented by some anonymous Italian in 1425.
 
 \index{base point}
-A decimal can be considered as the sum of fractions with denominators of 10, 100, 1000, ... A percentage number looks like a fraction with denominator of 100, but it is actually the result by multiplying 100 to the decimal value. This is because its nominator may not be integral necessarily. For example, one says the availability of some internet service is very high, reaching 99.999\% (or five nines). It equals to the decimal value of 0.99999; or written as per mille as 999.99\textperthousand. In some areas like finance or economics, people often use base points (BPS), 1bps = 0.01\% = 0.0001, for example, we often heard the news that Fed (Federal Reserve) announced a 25-bps interest rate cut, which meant the interest rate decreased by 0.25\% = 0.0025. If the previous interest rate is 2.5\%, then the new rate became 2.5\% - 0.25\% = 2.25\%.
+A decimal can be considered as the sum of fractions with denominators of 10, 100, 1000, ... A percentage number looks like a fraction with denominator of 100, but it is actually the result by multiplying 100 to the decimal value. This is because its nominator may not be integral necessarily. For example, one says the availability of some internet service is very high, reaching 99.999\% (or five nines). It equals the decimal value of 0.99999; or written as per mille as 999.99\textperthousand. In some areas like finance or economics, people often use base points (BPS), 1bps = 0.01\% = 0.0001, for example, we often heard the news that Fed (Federal Reserve) announced a 25-bps interest rate cut, which meant the interest rate decreased by 0.25\% = 0.0025. If the previous interest rate is 2.5\%, then the new rate became 2.5\% - 0.25\% = 2.25\%.
 
 \subsection{Fraction and decimal}
 
@@ -479,10 +479,10 @@ a_1 \frac{1}{10} + a_2 \frac{1}{100} + \cdots + a_n \frac{1}{10^n}
 We learn from school math that there are terminating decimals, like 0.125, and non-terminating decimals, also known as infinite decimals, like $0.\dot{3} = 0.333\cdots, 0.\dot{1}\dot{5} = 0.1515\cdots, \pi = 3.14159\cdots$. By \cref{eq:decimal-as-sum}, an infinite decimal is then a sum of infinitely many fractions. It naturally arises the question: is the sum of such infinitely many positive numbers finite or infinite? Here is a proposition that looks counter-intuitive:
 
 \begin{lemma} \label{th:cycle-of-9}
-  The repeating decimal $0.999\cdots$ equals to 1.
+  The repeating decimal $0.999\cdots$ equals 1.
 \end{lemma}
 
-The left side $0.999\cdots$ looks obviously different from the right side 1, why do they equal?
+The left side $0.999\cdots$ looks obviously different from the right side 1, why are they equal?
 
 \begin{proof}
   Let $x = 0.999\cdots$, enlarge 10 times: $10x = 9.999\cdots$, and subtract:
@@ -714,7 +714,7 @@ It's natural to ask why need such equivalence relationship? why not check if the
 It shows the two fractions equal. This justifies why mathematicians generalize the abstract concept of equivalence relationship and chose the cross-multiplication as its application to fractions and ratios.
 
 \vspace{3mm}
-For Q2, we may reuse the method in \emph{Nine chapters}, comparing through the difference of $\dfrac{b}{a} - \dfrac{d}{c}$ with 0. It amounts to comparing the nominators after reducing them to the same denominators. As any whole number $n$ equals to $\dfrac{n}{1}$, we unify the comparison across whole numbers and fractions simply to comparison of fractions. The ordering across whole numbers, fractions, and decimals sorts out their positions on the number line.
+For Q2, we may reuse the method in \emph{Nine chapters}, comparing through the difference of $\dfrac{b}{a} - \dfrac{d}{c}$ with 0. It amounts to comparing the nominators after reducing them to the same denominators. As any whole number $n$ equals $\dfrac{n}{1}$, we unify the comparison across whole numbers and fractions simply to comparison of fractions. The ordering across whole numbers, fractions, and decimals sorts out their positions on the number line.
 
 \vspace{3mm}
 For Q3, the arithmetic operations were also given in \emph{Nine chapters}, which can be summarized as: for $+/-$, reduce to the common denominator then add/subtract the nominators; for $\times$, multiply the nominators and denominators respectively, followed by reduction. The reciprocal of a number $n \ne 0$ is $\dfrac{1}{n}$ because $n\dfrac{1}{n} = \dfrac{n}{n} = 1$. If $n$ is fractional, expressed as $\dfrac{b}{a}$, then its reciprocal is $\dfrac{a}{b}$ because $\dfrac{b}{a}\dfrac{a}{b} = 1$. It shows that a fraction is itself a expression of division, hence the reciprocal is a bridge between division and multiplication:
@@ -765,7 +765,7 @@ We only show the left side distribution law, the right one rests on commutative 
 
 \vspace{3mm}
 \index{equal temperament}
-Return to the legend of Pythagoras. After the discovery of the theory of music, that fractions ruled the harmonic sound, how to tune the seven strings of a lyre? If add the eighth string, then its length should be half of the first string, such that to get an octave. Pythagoras found overlapping a perfect fifth (ratio $3:2$) to a perfect four (ratio $4:3$) is an octave because $\dfrac{3}{2} \times \dfrac{4}{3} = 2$. He used the ratio $3:2$ of a perfect fifth as a basis scale, multiplied a geometric series:
+Return to the legend of Pythagoras. After the discovery of the theory of music, that fractions ruled the harmonic sound, how to tune the seven strings of a lyre? If add an eighth string, then its length should be half of the first string, such that to get an octave. Pythagoras found overlapping a perfect fifth (ratio $3:2$) to a perfect four (ratio $4:3$) is an octave because $\dfrac{3}{2} \times \dfrac{4}{3} = 2$. He used the ratio $3:2$ of a perfect fifth as a basis scale, multiplied a geometric series:
 
 \[
 (\frac{3}{2})^{-1}, (\frac{3}{2})^0, (\frac{3}{2})^{1}, (\frac{3}{2})^2, (\frac{3}{2})^{3}, (\frac{3}{2})^4, (\frac{3}{2})^{5} = \frac{2}{3}, 1, \frac{3}{2}, \frac{9}{4}, \frac{27}{8}, \frac{81}{16}, \frac{243}{32}
