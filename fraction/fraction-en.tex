@@ -829,21 +829,21 @@ That is why the harmonic mean is also known as the mean of reciprocals. Verify t
  h &= \frac{2}{\frac{1}{a} + \frac{1}{b}} = \frac{2ab}{a + b}
 \end{align*}
 
-令两地间距离为$s$，往返的时间分别为：往$t_1 = \dfrac{s}{v_1}$、返$t_2 = \dfrac{s}{v_2}$。平均速度为：
+Denote the distance by $s$, the times of go and return by $t_1 = \dfrac{s}{v_1}$ and $t_2 = \dfrac{s}{v_2}$ respectively, the average speed is:
 \begin{align*}
   v & = \frac{2s}{t_1 + t_2} = \frac{2\cancel{s}}{\frac{\cancel{s}}{v_1} + \frac{\cancel{s}}{v_2}}
     = \frac{2}{\frac{1}{v_1} + \frac{1}{v_2}} = \frac{2v_1 v_2}{v_1 + v_2}
 \end{align*}
 
-恰好是$v_1$和$v_2$的调和平均值。另外，根据往返总时间等于去的时间加返回时间：$\dfrac{2s}{v} = \dfrac{s}{v_1} + \dfrac{s}{v_2}$，两边约去路程$s$就得到$\dfrac{2}{v} = \dfrac{1}{v_1} + \dfrac{1}{v_2}$。恰好也是上边调和平均值$\dfrac{2}{h} = \dfrac{1}{a} + \dfrac{1}{b}$的形式。
+It turns out to be the harmonic mean of $v_1$ and $v_2$. Alternatively, as the total time is the sum of the departure time and return time: $\dfrac{2s}{v} = \dfrac{s}{v_1} + \dfrac{s}{v_2}$, cancel $s$ on both sides: $\dfrac{2}{v} = \dfrac{1}{v_1} + \dfrac{1}{v_2}$, which gives the harmonic mean $\dfrac{2}{h} = \dfrac{1}{a} + \dfrac{1}{b}$ too.
 
 \begin{center}
  \includegraphics[scale=0.4]{img/harmonic-meanr}
- \captionof{figure}{电阻并联}
+ \captionof{figure}{Resisters in parallel}
  \label{fig:harmonic-meanr}
 \end{center}
 
-如\cref{fig:harmonic-meanr}所示，左右电路等效时，加载同样的电压，流过的总电流相等，即：
+As shown in \cref{fig:harmonic-meanr}, under the same voltage, the total currents of both sides, given their overall resisters are equivalent, are equal, that is:
 
 \begin{align*}
 \frac{I}{2} + \frac{I}{2} &= I_1 + I_2 \\
@@ -851,123 +851,129 @@ That is why the harmonic mean is also known as the mean of reciprocals. Verify t
 \frac{2}{R} &= \frac{1}{R_1} + \frac{1}{R_2} \\
 R &= \frac{2}{\frac{1}{R_1} + \frac{1}{R_2}} = \frac{2R_1 R_2}{R_1 + R_2}
 \end{align*}
-所以图中右侧每个电阻等于$R_1$和$R_2$的调和平均值。
+
+Each resister on the right is the harmonic mean of $R_1$ and $R_2$.
 }
 
-\Question{验证$\dfrac{2}{p} = \dfrac{1}{a} + \dfrac{1}{b}$等价于$(2a - p)(2b - p) = p^2$，并由此证明：若$p$为大于2的素数，则$\dfrac{2}{p}$可唯一分解为两个埃及分数$\dfrac{2}{p} = \dfrac{1}{a} + \dfrac{1}{b} (a \ne b)$。
+\Question{Verify $\dfrac{2}{p} = \dfrac{1}{a} + \dfrac{1}{b}$ equals $(2a - p)(2b - p) = p^2$, and use this fact to show: for any prime $p$ greater than 2, $\dfrac{2}{p}$ can be \underdot{unique} decomposed into two Egyptian fractions as $\dfrac{2}{p} = \dfrac{1}{a} + \dfrac{1}{b} (a \ne b)$.
 
   \begin{proof}
   \begin{align*}
-  \frac{2}{p} & = \frac{1}{a} + \frac{1}{b} = \frac{a+b}{ab} & \text{通分} \\
-  2ab & = pa + pb & p, a, b\text{是分母，不为}0 \\
-  4ab - 2pa - 2pb & = 0 & \text{移项} \times 2 \\
-  4ab - 2pa - 2pb + p^2 & = p^2 & \text{两边} + p^2 \\
-  (2a - p)(2b - p) & = p^2 & \text{因式分解}
+  \frac{2}{p} & = \frac{1}{a} + \frac{1}{b} = \frac{a+b}{ab} \\
+  2ab & = pa + pb & p, a, b\text{ as denominators, } \ne 0 \\
+  4ab - 2pa - 2pb & = 0 & \text{move and } \times 2 \\
+  4ab - 2pa - 2pb + p^2 & = p^2 & \text{both sides } + p^2 \\
+  (2a - p)(2b - p) & = p^2 & \text{factorize}
   \end{align*}
-  因为$p$是素数，$p^2$的因子只有1、$p$、$p^2$。由$a \ne b$可以排除掉$p$，所以$2a - p = 1$，$2b - p = p^2$，即：
+  Since $p$ is prime, $p^2$ can only have factors of 1, $p$, or $p^2$; by $a \ne b$, we can exclude $p$, hence $2a - p = 1$ and $2b - p = p^2$, hence,
   \[
   a = \frac{p+1}{2}, b = \frac{p(p+1)}{2}
   \]
-  因为$p$是奇素数，所以$a$是整数。因此：
+  As $p$ is odd prime, $a$ is integral, thereby,
   \[
   \frac{2}{p} = \frac{1}{\frac{1}{2}(p + 1)} + \frac{1}{\frac{1}{2}p(p+1)} \qedhere
   \]
   \end{proof}
 }
 
-\Question{证明埃尔德什——斯特劳斯猜想对所有偶数$n$成立。
+\Question{Show that Erdős-Straus conjecture is true for all even number $n$.
 
 \vspace{2mm}
-令$n = 2m$，则$\dfrac{4}{2m} = \dfrac{2}{m}$，这就是\cref{th:decompose-of-2-n}。
+Let $n = 2m$, so that $\dfrac{4}{2m} = \dfrac{2}{m}$, which is \cref{th:decompose-of-2-n}.
 }
 
-\Question{实际上我们只要证明埃尔德什——斯特劳斯猜想对于所有素数成立即可。这是为什么？
+\Question{Explain why it's sufficient to show Erdős-Straus conjecture is true for all primes?
 
 \vspace{2mm}
 
-注意到：\[
+Note, \[
 \frac{4}{mp} = \frac{1}{ma} + \frac{1}{mb} + \frac{1}{mc}
 \]
 }
 
-\Question{证明埃尔德什——斯特劳斯猜想对所有$4k+3$型的素数成立。
+\Question{Show that Erdős-Straus conjecture is true for all primes of $4k+3$.
   \begin{proof}
-    利用\cref{qn:unique-decompose-r}的结论
+    By \cref{qn:unique-decompose-r},
     \begin{align*}
       \frac{2}{p} &= \frac{1}{\frac{1}{2}(p + 1)} + \frac{1}{\frac{1}{2}p(p + 1)} && \\
-      \frac{4}{p} &= \frac{2}{\frac{1}{2}(p + 1)} + \frac{2}{\frac{1}{2}p(p + 1)} & \text{左右} \times 2 & \\
-      \frac{4}{4k + 3} &= \frac{2}{\frac{1}{2}(4k + 4)} + \frac{2}{\frac{1}{2}(4k + 3)(4k + 4)} & \text{带入} p = 4k + 3 & \\
+      \frac{4}{p} &= \frac{2}{\frac{1}{2}(p + 1)} + \frac{2}{\frac{1}{2}p(p + 1)} & \text{both sides } \times 2 & \\
+      \frac{4}{4k + 3} &= \frac{2}{\frac{1}{2}(4k + 4)} + \frac{2}{\frac{1}{2}(4k + 3)(4k + 4)} & \text{substitute } p = 4k + 3 & \\
                        &= \frac{1}{k + 1} + \frac{1}{(4k + 3)(k + 1)} & & \\
-                       &= \frac{1}{k + 2} + \frac{1}{(k + 1)(k + 2)} + \frac{1}{(4k + 3)(k + 1)} & \text{由\cref{th:egyptian-fraction-split}} & \qedhere
+                       &= \frac{1}{k + 2} + \frac{1}{(k + 1)(k + 2)} + \frac{1}{(4k + 3)(k + 1)} & \text{by \cref{th:egyptian-fraction-split}} & \qedhere
     \end{align*}
   \end{proof}
 }
 
-\Question{找出三个儿子按照$\dfrac{1}{a}$、$\dfrac{1}{b}$、$\dfrac{1}{c}$分配$n$个动物的所有可能数值和比例。要求大儿子分得的财产多于二儿子，二儿子分得的财产多于小儿子。恰好借来一只动物后可以分好并余下一只动物。
+\Question{Find all possible values of $n, a, b, c$, such that the three sons divide $n$ animals in the proportions of $\dfrac{1}{a}$, $\dfrac{1}{b}$, and $\dfrac{1}{c}$, where the eldest gets more than the second, the second gets more than the youngest, and they return the borrowed one at last.
 
 \vspace{2mm}
-我们先给出一个纯数学解法，然后再给出用计算机穷举的解法。读者朋友们可以加以对比。本题本质上是求方程
+We give a pure mathematical solution, followed with a `brute force' program for comparison. The problem amounts to finding all natural numbers satisfying the equation:
+
 \[
 \frac{n}{n+1} = \frac{1}{a} + \frac{1}{b} + \frac{1}{c}, a < b < c
 \]
-的所有正整数解。即借来一只后，把$n+1$只动物分成三份$\dfrac{n + 1}{a}$、$\dfrac{n + 1}{b}$、$\dfrac{n + 1}{c}$。它们的和恰好是$n$，因而可以把剩余的那一只归还。为了简洁，我们令$n' = n + 1$，表示借来一只动物后的数量，把上述方程改写为：
+
+With the one borrowed animal, the sons were able to divide $n+1$ animals into three parts of $\dfrac{n + 1}{a}$, $\dfrac{n + 1}{b}$, and $\dfrac{n + 1}{c}$, whose sum is $n$, such that they could return the last animal. Let $n' = n + 1$, be the number including the borrowed animal, we write above equation in $n'$ as:
 
 \be
 \frac{n'-1}{n'} = \frac{1}{a} + \frac{1}{b} + \frac{1}{c}
 \label{eq:equation-of-inherit}
 \ee
 
-最后只要把$n'$减一就可以了。借来一只动物后能恰好分配，意味着$a, b, c$都能整除$n'$。我们先证明一个重要的结论：大儿子只能分得$\dfrac{1}{2}$的财产，即$a$只能等于2。
+We need decrease $n'$ by 1 to give $n$ finally. With the one borrowed animal, $a, b, c$ all divide $n'$. We shall first show: the eldest son could get only $\dfrac{1}{2}$ animals, hence, $a$ can only be 2.
+
 \begin{proof}
-若$a \geq 3$，由于$a < b < c$，所以：
+Assume $a \geq 3$, since $a < b < c$,
 
 \[
 \frac{1}{a} + \frac{1}{b} + \frac{1}{c} \leq \frac{1}{3} + \frac{1}{4} + \frac{1}{5} = \frac{47}{60}
 \]
 
-小儿子至少分得1只；二儿子分得的比小儿子多，所以至少分得2只；同理，大儿子至少分得3只动物，再加上借来的一只。所以$n' > 3 + 2 + 1 = 6$。于是：
+The youngest son got at least one animal; what the second son got were more than this, which were at least two; and the eldest got even more, which were at least three; plus the borrowed one animal, the sum $n' > 3 + 2 + 1 = 6$, hence,
 
 \[
 \frac{n'-1}{n'} = 1 - \frac{1}{n'} > 1 - \frac{1}{6} = \frac{5}{6} = \frac{50}{60} > \frac{47}{60} \geq \frac{1}{a} + \frac{1}{b} + \frac{1}{c}
 \]
 
-也就是说$a \geq 3$时，方程\cref{eq:equation-of-inherit}不可能成立。所以$a$只能是2。
+It turns out when $a \geq 3$, the equation \cref{eq:equation-of-inherit} can't hold, therefore, $a$ can only be 2.
 \end{proof}
 
-问题于是就化简为，求方程
+Thus the problem is simplified to find all natural numbers satisfying a new equation of
+
 \[
 \frac{n'-1}{n'} = \frac{1}{2} + \frac{1}{b} + \frac{1}{c}
 \]
-的正整数解。我们接下来证明$b$只能是3和4，从而进一步化简问题：
+
+We next show that $b$ can only be 3 or 4 to simplify problem further:
 
 \begin{proof}
-如果$b \geq 5$，由于$b < c$，故：
+Assume $b \geq 5$, since $b < c$,
 
 \[
 \frac{1}{a} + \frac{1}{b} + \frac{1}{c} \leq \frac{1}{2} + \frac{1}{5} + \frac{1}{6} = \frac{13}{15} \approx 0.87
 \]
 
-由于$a, b, c$都能整除$n'$，而$a = 2$，所以$n'$必然是偶数。我们上面推出$n' > 6$，比6大的第一个偶数是8。因此：
+As $a, b, c$ all divide $n'$ and $a = 2$, $n'$ must be even. We deduced $n' > 6$ as above, the first even number being greater 6 is 8, hence,
 
 \[
 \frac{n'-1}{n'} = 1 - \frac{1}{n'} \geq 1 - \frac{1}{8} = \frac{7}{8} = 0.875 > 0.87 \geq \frac{1}{a} + \frac{1}{b} + \frac{1}{c}
 \]
 
-也就是说$b \geq 5$时，方程\cref{eq:equation-of-inherit}不可能成立。所以$b$只能是3或4。
+It turns out when $b \geq 5$, equation \cref{eq:equation-of-inherit} can't hold, therefore, $b$ can be only 3 or 4.
 \end{proof}
 
-\begin{enumerate}[情况1)]
+\begin{enumerate}[{Case}1)]
 \item $a = 2, b = 3$
   \begin{align*}
     \frac{n'-1}{n'} &= \frac{1}{2} + \frac{1}{3} + \frac{1}{c} \\
     1 - \frac{1}{n'} &= \frac{5}{6} + \frac{1}{c} \\
     \frac{1}{6} &= \frac{1}{n'} + \frac{1}{c}
   \end{align*}
-  由于$a = 2, b = 3$都整除$n'$，所以6整除$n'$。不妨设$n' = 6k$，其中$k$为大于1的整数（因为我们前面确定了$n'$最小是8）。代入上式，整理得：
+  As $a = 2, b = 3$ both divide $n'$, 6 divides $n'$. Let $n' = 6k$ for some integer $k > 1$ (as deduced above, $n' \geq 8$), substitute into above equation and simplify:
   \[
   k = \frac{c}{c - 6} \geq 2
   \]
-  解不等式$\dfrac{c}{c - 6} \geq 2$得$c \leq 12$。同时分母$c-6$是正数，所以$c > 6$。这样$c$的值只可能是$7, 8, 9, \cancel{10}, \cancel{11}, 12$。其中10，11不可能，因为此时$k = \dfrac{c}{c - 6}$不是整数。我们得到4个解：
+  Solving the inequality $\dfrac{c}{c - 6} \geq 2$ gives $c \leq 12$. As the denominator $c-6$ is positive, hence $c > 6$. Such valid $c$ can only be $7, 8, 9, \cancel{10}, \cancel{11}, 12$, where 10 and 11 are ruled out because otherwise $k = \dfrac{c}{c - 6}$ isn't integral. We obtain four solutions:
   \begin{align*}
   a &= 2, b = 3, c = 7, n' = 42 & 42\frac{1}{2} + 42\frac{1}{3} + 42\frac{1}{7} &= 21 + 14 + 6 = 41 \\
   a &= 2, b = 3, c = 8, n' = 24 & 24\frac{1}{2} + 24\frac{1}{3} + 24\frac{1}{8} &= 12 + 8 + 3 = 23 \\
@@ -980,38 +986,38 @@ R &= \frac{2}{\frac{1}{R_1} + \frac{1}{R_2}} = \frac{2R_1 R_2}{R_1 + R_2}
     1 - \frac{1}{n'} &= \frac{3}{4} + \frac{1}{c} \\
     \frac{1}{4} &= \frac{1}{n'} + \frac{1}{c}
   \end{align*}
-  由于$a = 2, b = 4$都整除$n'$，所以4整除$n'$。不妨设$n' = 4k$，其中$k \geq 2 $为整数（同理$n'$最小是8）。代入上式，整理得：
+  As $a = 2, b = 4$ both divide $n'$, 4 divides $n'$. Let $n' = 4k$ for some integer $k \geq 2 $ (also $n' \geq 8$), substitute into above equation and simplify:
   \[
   k = \frac{c}{c - 4} \geq 2
   \]
-  解不等式$\dfrac{c}{c - 2} \geq 2$得$c \leq 8$。同时分母$c-4$是正数，所以$c > 4$。这样$c$的值只可能是$5, 6, \cancel{7}, 8$。其中7不可能，因为此时$k = \dfrac{c}{c - 4}$不是整数。我们得到3个解：
+  Solving the inequality $\dfrac{c}{c - 2} \geq 2$ gives $c \leq 8$. As the denominator $c-4$ is positive, hence $c > 4$. Such valid $c$ can only be $5, 6, \cancel{7}, 8$, where 7 is ruled out because otherwise $k = \dfrac{c}{c - 4}$ isn't integral. We obtain another three solutions:
   \begin{align*}
   a &= 2, b = 4, c = 5, n' = 20 & 20\frac{1}{2} + 20\frac{1}{4} + 20\frac{1}{5} &= 10 + 5 + 4 = 19 \\
   a &= 2, b = 4, c = 6, n' = 12 & 12\frac{1}{2} + 12\frac{1}{4} + 12\frac{1}{6} &= 6 + 3 + 2 = 11 \\
   a &= 2, b = 4, c = 8, n' = 8 & 8\frac{1}{2} + 8\frac{1}{4} + 8\frac{1}{8} &= 4 + 2 + 1 = 7
   \end{align*}
 \end{enumerate}
-注意到两种情况都有分11+1只动物的可能，但分配比例不同。总共有7个解。
+Note the solution of 11 + 1 animals, although appears in both cases, the distribution differs. There are 7 solutions in total.
 
 \vspace{3mm}
-用计算机求解时，可以让机器枚举所有可能的$a, b, c$。判断其倒数和是否满足$\dfrac{n + 1}{n}$的形式。显然，$a$从2开始，依次尝试2、3、4……并且由于$a < b < c$，所以我们从$a+1$开始枚举$b$，从$b + 1$开始枚举$c$。接下来我们需要估计$a, b, c$的一个上限，使得枚举的过程可以结束。因为$a < b < c$，所以$c$的上限一定也是$a, b$的上限。此外，三儿子最少分到1只动物，所以$c \leq n'$。从\cref{eq:equation-of-inherit}可以推出：
+We write a program to enumerate all possible $a, b, c$, test whether the sum of their reciprocals being the form of $\dfrac{n + 1}{n}$. We enumerate $a$ from 2, 3, 4, ... As $a < b < c$, we enumerate $b$ from $a + 1$ and enumerate $c$ from $b + 1$. We need estimate the upper limits of $a, b, c$ such that the program terminates. Since $a < b < c$, the upper limit of $c$ is also the upper limit of $a$ and $b$. The youngest son got at least 1 animal, hence, $c \leq n'$, we deduce from \cref{eq:equation-of-inherit}:
 
 \begin{align*}
   1 - \frac{1}{n'} &= \frac{1}{a} + \frac{1}{b} + \frac{1}{c} \\
   1 - \frac{1}{n'} - \frac{1}{c} &= \frac{1}{a} + \frac{1}{b} \leq \frac{1}{2} + \frac{1}{3} = \frac{5}{6} \\
-  \frac{1}{6} &\leq \frac{1}{n'} + \frac{1}{c} \leq \frac{1}{c} + \frac{1}{c} & \text{三儿子至少分得一只，故} \frac{1}{n'} \leq \frac{1}{c} \\
+  \frac{1}{6} &\leq \frac{1}{n'} + \frac{1}{c} \leq \frac{1}{c} + \frac{1}{c} & \text{The youngest son got at least 1, } \frac{1}{n'} \leq \frac{1}{c} \\
   \frac{1}{6} &\leq \frac{2}{c} \Rightarrow c \leq 12
 \end{align*}
 
-因此枚举的上限是12。其次从$1 - \dfrac{1}{n'} = \dfrac{1}{a} + \dfrac{1}{b} + \dfrac{1}{c}$还可以解出$n' = \dfrac{abc}{abc - ab - bc - ac}$，如果其分母不为0，且$a, b, c$都整除$n'$，则找到了一组解。\cref{fig:inherit-program}给出了例子程序。
+The upper limit is 12. Besides, from $1 - \dfrac{1}{n'} = \dfrac{1}{a} + \dfrac{1}{b} + \dfrac{1}{c}$ we deduce $n' = \dfrac{abc}{abc - ab - bc - ac}$, if the denominator is not 0 and $a, b, c$ all divide $n'$, then we find a solution. \Cref{fig:inherit-program} gives an example program.
 
 \begin{center}
  \includegraphics[scale=0.4]{img/inherit-program}
- \captionof{figure}{三子继承问题的Scratch程序}
+ \captionof{figure}{Program of three sons dividing animals in Scratch}
  \label{fig:inherit-program}
 \end{center}
 
-下面是对应的Python和Haskell例子程序。
+Below are example programs in Python and Haskell.
 
 \begin{lstlisting}[language = Python, frame = single]
 s = []
