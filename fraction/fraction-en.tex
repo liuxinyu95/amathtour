@@ -1040,26 +1040,26 @@ print(s)
 \end{Haskell}
 }
 
-\Question{$\bigstar$证明任何数值$x$的小数表示是唯一的，其中$0 < x < 1$。
+\Question{Show that the decimal of any $x$ is unique, where $0 < x < 1$.
 
   \begin{proof}
-    用反证法，令：
+    Assume for contradiction that
 \be
 \frac{a_1}{10} + \frac{a_2}{100} + \cdots = \frac{b_1}{10} + \frac{b_2}{100} + \cdots
 \label{eq:decimal-a-eq-b}
 \ee
-设$a_n$和$b_n$是第一对不相等的。$|a_n - b_n| \geq 1$。于是：
+Where $a_n$ and $b_n$ are the first pair of different digits, $|a_n - b_n| \geq 1$:
 \begin{align*}
 \frac{a_1}{10} + \frac{a_2}{100} + \cdots - (\frac{b_1}{10} + \frac{b_2}{100} + \cdots) & \geq \frac{1}{10^n} - (\frac{|a_{n+1} - b_{n+1}|}{10^{n+1}} + \frac{|a_{n+2} - b_{n+2}|}{10^{n+2}} + \cdots) \\
   & \geq \frac{1}{10^n} - (\frac{9}{10^{n+1}} + \frac{9}{10^{n+2}} + \cdots) \\
   & = \frac{1}{10^n} - \frac{1}{10^n}(0.99\cdots) = 0
 \end{align*}
 
-这与\cref{eq:decimal-a-eq-b}矛盾。
+contradict with \cref{eq:decimal-a-eq-b}.
   \end{proof}
 }
 
-\Question{证明无限循环小数$0.\dot{a_1} \dot{a_2} \cdots \dot{a_n}$的分数形式是$\dfrac{a_1 a_2 \cdots a_n}{99 \cdots 9} = \dfrac{a_1 a_2 \cdots a_n}{10^{n+1} - 1}$。
+\Question{Show that the fraction of any repeating decimal $0.\dot{a_1} \dot{a_2} \cdots \dot{a_n}$ is $\dfrac{a_1 a_2 \cdots a_n}{99 \cdots 9} = \dfrac{a_1 a_2 \cdots a_n}{10^{n+1} - 1}$.
 
   \begin{proof}
     \begin{align*}
@@ -1071,39 +1071,39 @@ print(s)
   \end{proof}
 }
 
-\Question{利用分数和解释：如果阿塔兰塔先跑完全程的$\dfrac{1}{2}$，接下来再跑完剩余的一半，即$\dfrac{1}{4}$，然后不断跑完剩余路程的一半，则她最终可以跑完全程。
+\Question{Use sum of fractions to show: Atalanta first traverses $\dfrac{1}{2}$ distance, then traverse half of the remaining, which is $\dfrac{1}{4}$ distance, and repeats, she will walk to the end of the path.
 
 \vspace{2mm}
-十进制无限循环小数$0.99\cdots = 1$，对应的二进制无限循环小数$0.11\cdots = 1$。证明与十进制类似：
+Analogue to decimal $0.99\cdots = 1$, in binary $0.11\cdots = 1$, because:
 \begin{proof}
   \begin{align*}
     x &= 0.11\cdots & 2x &= 1.11\cdots \\
     x & = 2x - x = 1 & & \qedhere
   \end{align*}
 \end{proof}
-阿塔兰塔先跑到$\dfrac{1}{2}$处，即二进制0.1处；再跑到$\dfrac{1}{4}$处，即二进制0.01处……她跑过的路程和等于二进制小数和：
+Atalanta first traverses $\dfrac{1}{2}$, which is 0.1 in binary; next traverses $\dfrac{1}{4}$, which is 0.01 in binary, ... the total traversed distance is the sum of:
 \[
 0.1 + 0.01 + 0.001 + \cdots = 0.11\cdots = 1
 \]
 }
 
-\Question{验证分数的加法交换律、乘法交换律，乘法结合率。
+\Question{Verify the additive/multiplicative commutative laws, and multiplicative associative law for fractions.
 
 \vspace{2mm}
 
-加法交换律：
+Commutative law for addition:
 \begin{align*}
-  \frac{b}{a} + \frac{d}{c} &= \frac{bc + ad}{ac} &\text{通分} \\
-  &= \frac{ad + bc}{ac} & \text{分子用整数加法交换律} \\
+  \frac{b}{a} + \frac{d}{c} &= \frac{bc + ad}{ac} \\
+  &= \frac{ad + bc}{ac} & \text{apply integral commutative law to nominator} \\
   &= \frac{ad}{ac} + \frac{bc}{ac} = \frac{d}{c} + \frac{b}{a}
 \end{align*}
 
-乘法交换律：
+Commutative law for multiplication:
 \[
 \frac{b}{a} \times \frac{d}{c} = \frac{bd}{ac} = \frac{db}{ca} = \frac{d}{c} \times \frac{b}{a}
 \]
 
-乘法结合律：
+Associative law for multiplication:
 \[
 \frac{b}{a} \times \frac{d}{c} \times \frac{f}{e} = \frac{bdf}{ace} = \frac{b(df)}{a(ce)} = \frac{b}{a}\frac{df}{cd} = \frac{b}{a} \times (\frac{d}{c} \times \frac{f}{e})
 \]
@@ -1114,7 +1114,7 @@ print(s)
 \section{Answer}
 \shipoutAnswer
 
-\section{埃及分数分解算法}
+\section{Algorithm for best Egyptian decomposition}
 \subimport{inc/}{decomposition-en}
 
 \begin{thebibliography}{99}

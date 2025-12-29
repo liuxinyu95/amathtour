@@ -1,20 +1,20 @@
-\section{埃及分数分解算法}
+\section{Algorithm for best Egyptian decomposition}
 \phantomsection
 \label[appendix]{app:best-egyptian-decomposition}
 
-斐波那契的方法保证既约真分数$\dfrac{b}{a}$最多可以分解为$b$个埃及分数。可以在此基础上，机械化地找出“最优”分解，即用最少的埃及分数分解。若这样的分解不止一个，则分母的值越小越好。我们约定用$B = \{\dfrac{1}{q_1}, \dfrac{1}{q_2}, \cdots \dfrac{1}{q_m} \}$来记录找到的最优分解。在算法开始前，$B = \varnothing$。算法的步骤如下：
+Fibonacci's greedy method asserts any irreducible proper fraction $\dfrac{b}{a}$ can be decomposed into at most $b$ Egyptian fractions. The `best' decomposition should not contain more Egyptian fractions than $b$. If there are multiple ways with the same least decomposed fractions, then the less denominator the better. We maintain a set $B = \{\dfrac{1}{q_1}, \dfrac{1}{q_2}, \cdots \dfrac{1}{q_m} \}$ to record the best candidate of decomposition and initialize $B = \varnothing$. Below are the steps of the algorithm:
 
 \begin{enumerate}[1)]
-  \item 对$\dfrac{b}{a}$寻找不超过$n = b$个埃及分数的分解。首先尝试用$\dfrac{b}{a} = \dfrac{1}{q} + x$分解。其中$q = \lfloor \dfrac{a}{b} \rfloor + 1$，即$a$除以$b$的商加1。这一步和斐波那契的方法完全一样。
-  \item 接下来问题就转化为把$x$分解为不超过$n - 1$个埃及分数的和。我们把$\dfrac{1}{q}$记录到集合$Q = \{\dfrac{1}{q}\}$中。接下来计算$x = \dfrac{b}{a} - \dfrac{1}{q} = \dfrac{bq - a}{aq}$，记约分后的结果为$\dfrac{b'}{a'}$（用欧几里得算法求出分子、分母的最大公约数，然后分子、分母分别除以最大公约数）。
-  \item 若$b' = 1$并且$a' > q$，则找到了一个\underdot{候选解}。我们要求$a' > q$是因为：如果找到了解$\dfrac{b}{a} = \dfrac{1}{q_0} + \dfrac{1}{q_1} + \cdots + \dfrac{1}{q_m}$，其中$\dfrac{1}{q_i} \in Q$，则这些$\dfrac{1}{q_i}$的任何排列也是解。为了避免重复，我们要求$\dfrac{1}{q_0} > \dfrac{1}{q_1} > \cdots > \dfrac{1}{q_m}$。否则说明这个解是重复的，需要跳过。如果找到了候选解，我们就把$\dfrac{1}{a'}$加入到$Q$中，然后比较$Q$和$B$中的解哪个更好。如果$B = \varnothing$，或者$|Q|<|B|$（候选解中有更少的埃及分数），或者$Q$中最大的埃及分数的分母更小，就用$Q$替换$B$，然后继续查找可能的最优分解。
-  \item 若$b' \ne 1$，我们把$\dfrac{b'}{a'}$和$Q$一起记录到一个叫做$C$的列表\footnote{实际上是队列}的\underdot{末尾}，以便将来继续在$Q$的基础上对$\dfrac{b'}{a'}$进行分解。
-  \item 接下来，我们把$q$增加1，记为$q' = q + 1$，然后尝试用$\dfrac{b}{a} = \dfrac{1}{q'} + x$分解。显然这样的分解不如斐波那契使用的$q$“贪婪”，剩余的$x$会更大。但是我们要检查一下，如果$n\dfrac{1}{q'} < \dfrac{b}{a}$，说明$n$个$\leq \dfrac{1}{q'}$的分数加在一起不可能达到$\dfrac{b}{a}$。所以继续对$x$分解毫无意义。我们停止这次尝试，从列表$C$的\underdot{头部}取出一对$\dfrac{b'}{a'}$和$Q$，然后从它们开始继续寻找最优分解。否则，如果$n\dfrac{1}{q'} \geq \dfrac{b}{a}$，我们返回步骤2)，继续尝试用不超过$n-1$个埃及分数分解$x$。
-  \item 如此依次尝试$q, q' = q + 1, q'' = q + 2 \cdots $直到$q + i \geq \dfrac{an}{b}$。因为$Q$中的埃及分数是递减的（分母递增），$\dfrac{b}{a} = \dfrac{1}{q+i} + x$中的$x$已经不可能用$n-1$个小于$\dfrac{1}{q+i}$的埃及分数分解。
-  \item 每次从$C$的头部取出一对$\dfrac{b'}{a'}$和$Q$时，如果$Q$不为空集，我们需要: (a) 比较一下$q = \lfloor \dfrac{a'}{b'} \rfloor + 1$和$Q = \{\dfrac{1}{q_0}, \cdots \}$中最小分数的分母$q_0$，从较大的值继续尝试分解。(b) 比较一下$Q$和$B$，如果$B$不为空并且包含更少的埃及分数，则$Q$一定不导致最优解。并且由于我们每次把包含更多埃及分数的分解放在$C$的末尾，所以$C$中后面的记录一定更差。此时$B$就是最优分解。算法结束。
+  \item Decompose $\dfrac{b}{a}$ into no more than $n = b$ Egyptian fractions. First, try to decompose $\dfrac{b}{a} = \dfrac{1}{q} + x$, where $q = \lfloor \dfrac{a}{b} \rfloor + 1$ is 1 plus the quotient of $a$ divided by $b$. This step is as same as Fibonacci's method.
+  \item Simplify the problem to decompose $x$ into no more than $n - 1$ Egyptian fractions. We add $\dfrac{1}{q}$ to a set as $Q = \{\dfrac{1}{q}\}$. Next calculate $x = \dfrac{b}{a} - \dfrac{1}{q} = \dfrac{bq - a}{aq}$ and denote the result in the lowest terms as $\dfrac{b'}{a'}$ (apply Euclidean algorithm to find the greatest common divisor of the nominator and denominator, then reduce the fraction by it.).
+  \item If $b' = 1$ and $a' > q$, then we find a \emph{candidate} decomposition. We restrict $a' > q$ because: if $\dfrac{b}{a} = \dfrac{1}{q_0} + \dfrac{1}{q_1} + \cdots + \dfrac{1}{q_m}$ is a solution where $\dfrac{1}{q_i} \in Q$, then any permutation of $\dfrac{1}{q_i}$ is also a solution. To avoid duplication, we restrict $\dfrac{1}{q_0} > \dfrac{1}{q_1} > \cdots > \dfrac{1}{q_m}$, otherwise we skip the duplicated solution. When find a new solution, we add $\dfrac{1}{a'}$ to $Q$, then compare $Q$ with $B$ for a better one. If $B = \varnothing$ or $|Q|<|B|$ (the new solution has fewer Egyptian fractions) or the maximum denominator in $Q$ is less than that in $B$, then we replace $B$ with $Q$, and then go on search.
+  \item If $b' \ne 1$, we append $\dfrac{b'}{a'}$ together with $Q$ as a pair to the \emph{tail} of a list\footnote{Actually a queue in computer programming} $C$, such that we shall decompose $\dfrac{b'}{a'}$ on top of $Q$ in the future.
+  \item We next increase $q$ by 1 as $q' = q + 1$, then attempt to decompose $\dfrac{b}{a} = \dfrac{1}{q'} + x$. Obviously, such decomposition isn't as greedy as Fibonacci's one with $q$; the remaining part $x$ is greater. Here we need examine if $n\dfrac{1}{q'} < \dfrac{b}{a}$, which means the sum of $n$ fractions $\leq \dfrac{1}{q'}$ can't reach $\dfrac{b}{a}$, hence it does not make sense to further decompose $x$. We stop and poll a pair from the \emph{head} of $C$; the pair contains $\dfrac{b'}{a'}$ and $Q$, from where we continue searching the best decomposition. Otherwise if $n\dfrac{1}{q'} \geq \dfrac{b}{a}$, we return to step 2), and continue try to decompose $x$ into no more than $n-1$ Egyptian fractions.
+  \item We try every candidate from $q, q' = q + 1, q'' = q + 2 \cdots $ to $q + i \geq \dfrac{an}{b}$. Because the Egyptian fractions in $Q$ are descending (their denominators are ascending), the $x$ in $\dfrac{b}{a} = \dfrac{1}{q+i} + x$ can't be decomposed into $n-1$ Egyptian fractions being less than $\dfrac{1}{q+i}$.
+  \item Every time, we poll a pair of $\dfrac{b'}{a'}$ and $Q$ from the head of $C$, if $Q$ isn't empty, we need: (a) Compare the denominator $q_0$ of the minimum fractions in $q = \lfloor \dfrac{a'}{b'} \rfloor + 1$ and $Q = \{\dfrac{1}{q_0}, \cdots \}$, and pick the greater one for further decomposition. (b) Compare $Q$ and $B$, if $B$ is not empty and contains fewer Egyptian fractions, then $Q$ can't be the best solution. Because we always append the candidates containing more fractions to the tail of $C$, the following ones must be worse, hence $B$ is the best and the algorithm terminates.
 \end{enumerate}
 
-下面是这一算法的形式化描述。会编程的读者朋友们可以尝试将其转换为计算机程序。
+Below is the formal description of the algorithm. The reader who knows computer programming may implement it.
 
 \begin{algorithmic}[1]
 \Function{Decompose}{$\dfrac{b}{a}$}
@@ -24,21 +24,21 @@
   \State $n = b, B = \varnothing$
   \State $C = \{(\dfrac{b}{a}, \varnothing)\}$
   \While{$C \ne \varnothing$}
-    \State $(\dfrac{b}{a}, Q) \gets $ \Call{Pop}{$C$}  \Comment{从$C$的头部取出}
-    \State $n' = n - |Q|$                            \Comment{最多分解为$n'$个埃及分数}
+    \State $(\dfrac{b}{a}, Q) \gets $ \Call{Pop}{$C$}  \Comment{poll from the head of $C$}
+    \State $n' = n - |Q|$                            \Comment{decompose at most $n'$ Egyptian fractions}
     \State $q = \lfloor \dfrac{a}{b} \rfloor + 1$
-    \If {$\varnothing \ne Q = \{\dfrac{1}{q_0}, \cdots \}$ 且 $q_0 \geq q$}  \Comment{$Q$中的第一个埃及分数更小}
+    \If {$\varnothing \ne Q = \{\dfrac{1}{q_0}, \cdots \}$ and $q_0 \geq q$}  \Comment{The first fraction in $Q$ is less.}
       \State $q = q_0 + 1$
     \EndIf
     \While{$q \leq \dfrac{an'}{b}$}
-      \If{$B \ne \varnothing$ 且 $|Q| \geq |B| - 1$} \Comment{$C$后面的记录都比$B$差}
+      \If{$B \ne \varnothing$ and $|Q| \geq |B| - 1$} \Comment{Candidates in $C$ are worse than $B$}
         \State \Return $B$
       \EndIf
-      \State $\dfrac{b'}{a'} = $ \Call{Reduce}{$\dfrac{b}{a} - \dfrac{1}{q}$} \Comment{约分}
-      \If{$b' = 1$且$a' > q$}
-        \State 比较$\{\dfrac{1}{a'}, \dfrac{1}{q}\} \cup Q$和$B$，用$B$记录更好的分解
+      \State $\dfrac{b'}{a'} = $ \Call{Reduce}{$\dfrac{b}{a} - \dfrac{1}{q}$} \Comment{reduce to lowest terms}
+      \If{$b' = 1$ and $a' > q$}
+        \State compare $\{\dfrac{1}{a'}, \dfrac{1}{q}\} \cup Q$ and $B$, record the better as $B$
       \Else
-        \State \Call{Push}{$(\dfrac{b'}{a'}, \{\dfrac{1}{q}\} \cup Q), C$} \Comment{记录到$C$的末尾}
+        \State \Call{Push}{$(\dfrac{b'}{a'}, \{\dfrac{1}{q}\} \cup Q), C$} \Comment{Append to the tail of $C$}
       \EndIf
       \State $q \gets q + 1$
     \EndWhile
