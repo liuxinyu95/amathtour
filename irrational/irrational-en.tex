@@ -33,7 +33,7 @@
 
 \epigraph{The book of nature is written in the language of mathematics.}{Galileo Galilei}
 
-At noon at the summer solstice (the day is the year's longest) June 21 in 240 BCE, Eratosthenes (276 - 194 BCE), the director of the great library in Alexandria, was talking to a merchant from Syene (now known as Aswān in southern Egypt, lying exactly on the Tropic of Cancer). \enquote{My hometown is hot and dry,} said the merchant, \enquote{We dig very deep wells to draw water; during this season every year, sunlight can reach down to the very bottom of the wells.} Upon hearing this, Eratosthenes noticed the shadow of a monument on the square. Why isn't the sunlight vertical here in Alexandria? Unless the Earth isn't flat, but round, like a sphere. He asked the merchant, \enquote{How long is from Syene to Alexandria?} \enquote{It's about 5,000 stadias} (a stadia is about 158m in Egypt). Eratosthenes measured the lengths of a pole and its shadow, finding the former was 8 times of the latter. He made a calculation based on \cref{fig:eratosthenes-earth}.
+At noon at the summer solstice (the day is the year's longest) June 21 in 240 BCE, Eratosthenes (276 - 194 BCE), the director of the great library in Alexandria, was talking to a merchant from Syene (now known as Aswān in southern Egypt, lying exactly on the Tropic of Cancer). \enquote{My hometown is hot and dry,} said the merchant, \enquote{We dig very deep wells to draw water; during this season every year, sunlight can reach down to the very bottom of the wells.} Upon hearing this, Eratosthenes noticed the shadow of a monument on the square. Why isn't the sunlight vertical here in Alexandria? Unless the Earth isn't flat, but round, like a sphere. He asked the merchant, \enquote{How long is from Syene to Alexandria?} \enquote{It's about 5,000 stadias} (a stadia is about 158m in Egypt). Eratosthenes measured the lengths of a stick and its shadow, finding the former was 8 times of the latter. He made a calculation based on \cref{fig:eratosthenes-earth}.
 
 \begin{figure}[htbp]
  \centering
@@ -129,14 +129,13 @@ The Pythagorean studied the numbers and the their relations to nature. They deve
 1 + 2 + 3 + ... + n = \frac{1}{2}n(n+1)
 \]
 
-毕达哥拉斯学派还观察到，所有的奇数可以表示成折尺形(或称为“磬折形”)\footnote{gnomon这个字在巴比伦人的原意可能是指日晷上的直杆，用它的阴影来指示时刻。在毕达哥拉斯时代，gnomon指木匠用的方尺。它还表示从正方形的一角切掉一个小正方形后剩余的图形。以后欧几里得又把正方形扩展到平行四边形\citepage[26页]{MKlein-1972}。}，如\cref{fig:gnomon-num}，而前$n$个折尺形可以拼成一个正方形，如\cref{fig:square-num}。这样他们就发现了前$n$个正奇数的求和公式：
+By arranging odd numbers into the shape of gnomon\footnote{The term `gnomon' originally comes from the Babylonian, meaning the stick whose shadow was used to tell time. It changed to mean a carpenter's square in Pythagoras's time: one cut off a small square at a corner of a big square. Later Euclid extended it from square to parallelogram(\cite{MKlein1972}, p31).} as shown in \cref{fig:gnomon-num}, the Pythagorean found the first $n$ gnomon shapes form a square, as in \cref{fig:square-num}, whence they discovered the formula to the sum of $n$-odd numbers.
 
 \[
 1 + 3 + 5 + ... + (2n - 1) = n^2
 \]
 
 \begin{figure}[htbp]
-%\begin{wrapfigure}{R}{0.4\textwidth}
 \centering
 \begin{tikzpicture}[scale=0.5]
 \filldraw (0, 0) circle (0.2);
@@ -154,13 +153,11 @@ The Pythagorean studied the numbers and the their relations to nature. They deve
       (12, 0) circle (0.2)    (12, 1) circle (0.2)    (12, 2) circle (0.2);
 \draw (10.5, -1) node{7};
 \end{tikzpicture}
-\caption{折尺形数（gnomon number）}
+\caption{Gnomon number}
 \label{fig:gnomon-num}
-%\end{wrapfigure}
 \end{figure}
 
 \begin{figure}[htbp]
-%\begin{wrapfigure}{R}{0.4\textwidth}
 \centering
 \begin{tikzpicture}[scale=0.5]
 \filldraw (0, 0) circle (0.2);
@@ -187,25 +184,26 @@ The Pythagorean studied the numbers and the their relations to nature. They deve
       (12, 0) circle (0.2)    (12, 1) circle (0.2)    (12, 2) circle (0.2);
 \draw (10.5, -1) node{16};
 \end{tikzpicture}
-\caption{正方形数（square number）与折尺形数的关系}
+\caption{Decompose a square number into gnomon numbers.}
 \label{fig:square-num}
-%\end{wrapfigure}
 \end{figure}
 
-就这样，毕达哥拉斯学派把几何形状也建立在了数的基础上。他们热衷于用数去解释更多的现象，并相信宇宙的本质就在于“数的和谐”，由此出发，毕达哥拉斯学派试图发展一套以数字为基础的理论，使得几何学可以建立在该理论之上。
+The Pythagorean thus interpreted geometric shapes as numbers. In fact, they were enthusiastic to explain almost everything with numbers and believed \emph{all is number}. This began their attempt to lay the foundation of geometry on numbers.
 
-\section{勾股定理}
+\section{Pythagorean theorem}
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.35]{img/harvest-scene}
- \caption{拉绳测量，来自梅纳陵墓壁画《收割场景》上半部分。梅纳是古埃及第十八王朝（公元前1400～前1352年）的祭司和土地丈量官。现收藏于美国大都会艺术博物馆。}
+ \caption{Rope meter in \emph{Harvest Scenes}, Tomb of Menna, by Charles K. Wilkinson. Menna was a high-ranking official during the reign of Pharaoh Thutmose IV of 18th Dynasty (about 1400 - 1352 BCE). }
  %% https://www.metmuseum.org/art/collection/search/548574
  \label{fig:rope-meter}
 \end{figure}
 
-\index{毕达哥拉斯定理} \index{勾股定理}
-毕达哥拉斯学派最著名的发现当属勾股定理，在西方叫做“毕达哥拉斯定理”。据说毕达哥拉斯对他发现的证明极为高兴，为此献祭了一百头公牛庆贺。但脍炙人口的传说故事往往不真实。毕达哥拉斯学派对团体成员有着极为严格的戒律，任何人的研究发现都归学派所有并必须保密。我们所知的以“毕达哥拉斯”命名的成果大都来自学派内的佚名作者。勾股定理并非孤立成果，各个文明都独立发现了它。如第3章中的\cref{fig:babylonian-yale}所示，这块古巴比伦泥板的时间大约是公元前1900年～前1600年，此外人们还发现了刻有勾股数表的泥板。古埃及的测量员用绳子作为软尺（称为拉绳人，见\cref{fig:rope-meter}）。相传他们在绳上打结，把绳子分成长度为3比4比5的三段，然后用来形成直角三角形。但这个说法没有文献证实\citepage[16页]{MKlein-1972}。古印度数学家包德哈亚那（Baudhayana，生活在公元前800年到公元前400年间）的著作《绳法经》(Śulba Sutra)也提到了这个定理。在古代中国，成书于公元前一世纪的《周髀算经》中载有西周时代（约公元前11世纪）周公和商高的一段对话，其中提到“勾三、股四、弦五”\footnote{商高说：“……故折矩，勾广三，股修四，经隅五。”}，故在中国称之为“勾股定理”。《九章算术》的注解中载有三国时代的赵爽和魏晋时刘徽给出的勾股定理证明\footnote{对赵爽和刘徽给出的究竟是严格意义的证明还是某种程度的解释历来有不同观点。}。
+\index{Pythagorean theorem}
+Pythagorean theorem, the well-known geometric theorem, was commonly attributed to Pythagoras. A legend said Pythagoras was so satisfied and proud with the discovery of the theorem, that he sacrificed a hecatomb (100 head of cattle). However, it was mostly not true because Pythagoras was a vegetarian. The Pythagorean school, in modern terms, is a monastery, where all members took strict vows of secrecy, and all new mathematical results for several centuries were attributed to his name. Thus, not only is the first proof of the theorem not known, there is also some doubt that Pythagoras himself actually proved the theorem that bears his name. The Pythagorean theorem was probably independently discovered in several different cultures. For example, the Babylonian tablet as shown in \cref{fig:babylonian-yale} in chapter 3 was around 1900 - 1600 BCE. There were also tablets inscribed with table of Pythagorean triples. The Egyptian made measurement with ropes (known as rope meter as shown in \cref{fig:rope-meter}).
+
+相传他们在绳上打结，把绳子分成长度为3比4比5的三段，然后用来形成直角三角形。但这个说法没有文献证实\citepage[16页]{MKlein-1972}。古印度数学家包德哈亚那（Baudhayana，生活在公元前800年到公元前400年间）的著作《绳法经》(Śulba Sutra)也提到了这个定理。在古代中国，成书于公元前一世纪的《周髀算经》中载有西周时代（约公元前11世纪）周公和商高的一段对话，其中提到“勾三、股四、弦五”\footnote{商高说：“……故折矩，勾广三，股修四，经隅五。”}，故在中国称之为“勾股定理”。《九章算术》的注解中载有三国时代的赵爽和魏晋时刘徽给出的勾股定理证明\footnote{对赵爽和刘徽给出的究竟是严格意义的证明还是某种程度的解释历来有不同观点。}。
 
 \begin{figure}[htbp]
  \centering
