@@ -231,26 +231,26 @@ The remarkable Pythagorean theorem is the source of three great streams of mathe
 
 \section{Number theory}
 \index{Pythagorean triples}
-并非任意两个平方数的和一定是平方数，例如$3^2 + 5^2 = 34$不是任何正整数的平方。我们把满足勾股定理的三个正整数$(a, b, c)$叫做勾股数或毕达哥拉斯三元组\footnote{Pythagoras triple}。各个文明都发现了常见的勾股数如$3^2 + 4^2 = 5^2$，$5^2 + 12^2 = 13^2$。古巴比伦的石板上刻有长长的勾股数表。那么究竟怎样找到勾股数？勾股数是有限多还是无限多？这个问题是欧几里得彻底解决的。欧几里得指出，如果$a^2 + b^2 = c^2$成立，那么这组勾股数的倍数也是勾股数，因为：
+The sum of two squares is not necessarily a square, for example, $3^2 + 5^2 = 34$ is not a square number. The Greek define whole numbers $(a, b, c)$ as a Pythagorean triple. Different cultures independently discovered triples like $3^2 + 4^2 = 5^2$ and $5^2 + 12^2 = 13^2$; some Babylonian tablets list long table of Pythagorean triples. But how to find such triples systematically? Are there finite or infinite Pythagorean triples? Both problems were completely solved by Euclid. First, Euclid simplified the problem that if $a^2 + b^2 = c^2$, then any multiplicities of $a, b, c$ are Pythagorean triples too, because:
 
 \begin{align*}
-(ka)^2 + (kb)^2 &= k^2(a^2 + b^2) & \text{分配律} \\
-  &= k^2c^2 & \text{由}a^2 + b^2 = c^2 \\
+(ka)^2 + (kb)^2 &= k^2(a^2 + b^2) & \text{distributive law} \\
+  &= k^2c^2 & \text{by } a^2 + b^2 = c^2 \\
   &= (kc)^2
 \end{align*}
 
-反过来，如果$a, b$含有公因子$k \ne 1$，则$k$一定也是$c$的因子。同理，如果$b, c$含有公因子$k$，则由于$a^2 = c^2 - b^2$，所以$k$一定也是$a$的因子。本质上我们只需要寻找彼此互素的$a, b, c$（公因子只有1，或$(a, b) = (b, c) = 1$，见\ref{sec:gcd-minus}节），然后乘上倍数就得到更多的勾股数。例如勾股数(12, 16, 20)都是偶数，显然含有公因子2。分别除以2就得到更“简单”的勾股数(6, 8, 10)。继续除以2得到(3, 4, 5)。此时3、4、5彼此互素，已经不能再化简了。我们不妨称这样的勾股数为“最简勾股数”。由于$a$和$a^2$的奇偶相同：奇数的平方还是奇数，偶数的平方还是偶数。如果$a, b$一奇一偶，则$c$一定是奇数。欧几里得进一步排除了$a, b$都是奇数的情况，因为：
+Conversely, if $a, b$ have some common factor $k \ne 1$, then $k$ is also a factor of $c$. In the same way, since $a^2 = c^2 - b^2$, the common factor $k$ of $b, c$ is also a factor of $a$. It turns out we only need to search those Pythagorean triples consists of coprime $a, b, c$ (the only common factor of them is 1, i.e., $(a, b) = (b, c) = 1$, see \ref{sec:gcd-minus}), and their multiplicities are all Pythagorean triples. For example, each of (12, 16, 20) is even, they have common factor of 2; halving them gives `simpler' triple of (6, 8, 10); halving again gives (3, 4, 5); they are coprime and can't be simplified any more. We may call such a triple the `simplified Pythagorean triple'. Because the parity of $a$ and $a^2$ are same: the square of odd is odd; the square of even is even. If $a, b$ has different parity (an even and an odd), then $c$ must be odd. Euclid further ruled out the case the both $a, b$ are odd, because:
 
 \begin{align*}
-a^2 + b^2 &= (2m + 1)^2 + (2n + 1)^2 & \text{把}a, b\text{写成奇数形式} \\
-  &= 4m^2 + 4m + 1 + 4n^2 + 4n + 1 & \text{分别用完全平方公式展开} \\
-  &= 4(m^2 + m + n^2 + n) + 2 = 4k + 2 & \text{令整数} k = m^2 + m + n^2 + n
+a^2 + b^2 &= (2m + 1)^2 + (2n + 1)^2 & \text{both }a, b\text{ are odd} \\
+  &= 4m^2 + 4m + 1 + 4n^2 + 4n + 1 & \text{expand} \\
+  &= 4(m^2 + m + n^2 + n) + 2 = 4k + 2 & \text{let } k = m^2 + m + n^2 + n
 \end{align*}
 
-这个值除以4余2。但是不管$c$是奇数还是偶数，$c^2$除以4都不可能余2。因为：偶数$(2k)^2 = 4k^2$被4整除，而奇数$(2k + 1)^2 = 4(k^2 + k) + 1$除以4余1。因此$a$和$b$不可能都是奇数，只能是一奇一偶。我们可以任选一个（比如第一个）为偶数，另一个是奇数。这样问题就化简为寻找第一个数为偶数，彼此互素的勾股数。它的答案赫然出现在《几何原本》卷十中的引理1\footnote{《几何原本》中使用正方形代表平方数，并用语言描述做法，见\citepage[330页]{Elements}。这里使用代数符号方便理解。}。
+The remainder of this value divided by 4 is 2, but no matter $c$ is even or odd, the remainder of $c^2$ divided by 4 can not be 2, for even, $(2k)^2 = 4k^2$ can be divided by 4; for odd, $(2k + 1)^2 = 4(k^2 + k) + 1$ gives remainder 1. Therefore, $a$ and $b$ can not both be odd, but an odd and an even. We may let one, for example the first, be the even and the other be odd. Now the problem turns to find those Pythagorean triples, consisting numbers being coprime and the first being even. The solution was given as Lemma 1 in Book X of \emph{Elements}\footnote{We use algebraic symbols here for easy understanding; Euclid stated in geometric language\citepage[p330]{Elements}.}
 
-\begin{lemma}[欧几里得《几何原本》卷十，引理1] \label{thm:pythagoras-triples}
-方程$x^2 + y^2 = z^2$其中$x, y, z$彼此互素，且$x$是偶数的\underdot{所有}正整数解，可表示为：
+\begin{lemma}[Euclid, Elements, Book X, Lemma 1] \label{thm:pythagoras-triples}
+For equation $x^2 + y^2 = z^2$, where $x, y, z$ are coprime and $x$ is even, \underdot{all} solutions in whole numbers are:
 \be
 \begin{cases}
 x = 2mn \\
@@ -258,10 +258,10 @@ y = m^2 - n^2 \\
 z = m^2 + n^2
 \end{cases}
 \ee
-其中$m > n$，是奇偶不同且互素的任意正整数。
+where $m > n$ are whole numbers in opposite parity.
 \end{lemma}
 
-注意“所有”二字，这意味着不存在其它最简勾股数能逃出欧几里得的解。换言之，这是\underdot{充分必要}条件。我们接下来证明这一优美的结论。
+This lemma covers \emph{all} solutions. 注意“所有”二字，这意味着不存在其它最简勾股数能逃出欧几里得的解。换言之，这是\underdot{充分必要}条件。我们接下来证明这一优美的结论。
 
 \begin{proof}
 首先正向证明充分性：
