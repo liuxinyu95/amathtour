@@ -207,30 +207,30 @@ Pythagorean theorem, the well-known geometric theorem, was commonly attributed t
  \centering
  \subcaptionbox{Logo of the Chinese Mathematical Society (CMS) \label{fig:cms-logo}}{\includegraphics[scale=0.5]{img/cms}} \quad
  \subcaptionbox{Zhao Shuang's Chord diagram \label{fig:zhaoshuang}}{\includegraphics[scale=0.2]{img/zhaoshuang}}
- \caption{Zhao Shuang's Chord diagram became the logo of International Congress of Mathematicians (ICM) 2002 and Chinese Mathematical Society. \label{fig:cms-zhaoshuang}}
+ \caption{The logo of Chinese Mathematical Society comes from Zhao Shuang's Chord diagram; it which was also used as the logo of International Congress of Mathematicians (ICM) 2002. \label{fig:cms-zhaoshuang}}
 \end{figure}
 
-这一定理自提出以来，吸引了无数聪明的头脑对它进行证明。如今在中学数学课堂上就至少有“赵爽弦图”（见\cref{fig:cms-zhaoshuang}），传说中的“毕达哥拉斯证法”（见\cref{fig:pythagoras-pww}）和《原本》证法。在4000年的时间里，诞生了超过300多种不同的证明，包括意大利文艺复兴时期的全才达·芬奇（见\cref{fig:davinci}）和美国总统加菲尔德的证明。
+Since discovered, the theorem has fascinated people for nearly 4,000 years. More than 300 proofs has been developed, including Zhao Shuang's diagram (\cref{fig:cms-zhaoshuang}), the proof shown in \cref{fig:pythagoras-pww} is said attributed to Pythagoras, the famous \enquote{windmill} proof by Euclid, the ones by the Italian artist-inventor Leonardo da Vinci (1452 - 1519, \cref{fig:pythagoras-pww}), and even U.S. president James Garfield (1831 - 1881, \cref{fig:garfield}).
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.25]{img/pythagoras-pww}
- \caption{传说中的毕达哥拉斯证法\label{fig:pythagoras-pww}}
+ \caption{The proof that is said by Pythagoras. \label{fig:pythagoras-pww}}
 \end{figure}
 
-\index{勾股定理!达·芬奇证法}
-达·芬奇的方法把原直角三角形复制两份：一份上下颠倒拼到上方，一份平移拼到斜边组成的正方形下方。此时把\cref{fig:davinci}中的“T”形点划线上方的四边形左右镜像翻转，就拼出一个和下方全等的六边形。它们的面积相等，因此各自减去两个原直角三角形的面积后仍相等，即$a^2 + b^2 = c^2$。\cref{qn:pythagoras-thm-garfield}要求解释美国总统加菲尔德的证明方法。
+\index{Pythagorean theorem!Leonardo da Vinci's proof}
+Leonardo da Vinci's duplicated the original right triangle to two copies: one was reflective against the line through the point at the right angle; the other moves to the bottom of the big square as shown in \cref{fig:davinci}. If `flip' the quadrilateral above the `T' shape, one gets two identical hexagons of the same area. Each substitute two copies of the original right triangle gives the same remaining area, which is $a^2 + b^2 = c^2$. \Cref{qn:pythagoras-thm-garfield} asks to explain president Garfield's proof.
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.3]{img/davinci}
- \caption{列昂纳多·达·芬奇证法\label{fig:davinci}}
+ \caption{Leonardo da Vinci's proof to the Pythagorean theorem \label{fig:davinci}}
 \end{figure}
 
-勾股定理具有非凡的意义，犹如发源的清泉，流淌出了三条壮阔的大河\cite{Stillwell-2010}：1）数论，通过寻找哪些数构成勾股数（也叫做毕达哥拉斯三元组），古希腊人开启了数学皇冠上的明珠——数论的研究。2）几何，勾股定理本身就是一条定量的几何定理。3）无穷，把勾股定理和欧几里得算法结合，古希腊人被无穷次的递归困扰，直接导致了无理数的发现。
+The remarkable Pythagorean theorem is the source of three great streams of mathematical thoughts\cite{Stillwell-2010}: (1) numbers, by searching the whole numbers satisfying Pythagoras theorem (known as Pythagorean triples), the Greek started the study of number theory; (2) geometry, it an important geometric theorem about right triangle and squares; (3) infinity, by applying the theorem to Euclidean algorithm, the Greek discovered a totally new family of numbers, the irrationals.
 
-\section{数论}
-\index{勾股数}
+\section{Number theory}
+\index{Pythagorean triples}
 并非任意两个平方数的和一定是平方数，例如$3^2 + 5^2 = 34$不是任何正整数的平方。我们把满足勾股定理的三个正整数$(a, b, c)$叫做勾股数或毕达哥拉斯三元组\footnote{Pythagoras triple}。各个文明都发现了常见的勾股数如$3^2 + 4^2 = 5^2$，$5^2 + 12^2 = 13^2$。古巴比伦的石板上刻有长长的勾股数表。那么究竟怎样找到勾股数？勾股数是有限多还是无限多？这个问题是欧几里得彻底解决的。欧几里得指出，如果$a^2 + b^2 = c^2$成立，那么这组勾股数的倍数也是勾股数，因为：
 
 \begin{align*}
