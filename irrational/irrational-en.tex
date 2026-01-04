@@ -250,7 +250,7 @@ a^2 + b^2 &= (2m + 1)^2 + (2n + 1)^2 & \text{both }a, b\text{ are odd} \\
 The remainder of this value divided by 4 is 2, but no matter $c$ is even or odd, the remainder of $c^2$ divided by 4 can not be 2, for even, $(2k)^2 = 4k^2$ can be divided by 4; for odd, $(2k + 1)^2 = 4(k^2 + k) + 1$ gives remainder 1. Therefore, $a$ and $b$ can not both be odd, but an odd and an even. We may let one, for example the first, be the even and the other be odd. Now the problem turns to find those Pythagorean triples, consisting numbers being coprime and the first being even. The solution was given as Lemma 1 in Book X of \emph{Elements}\footnote{We use algebraic symbols here for easy understanding; Euclid stated in geometric language\citepage[p330]{Elements}.}
 
 \begin{lemma}[Euclid, Elements, Book X, Lemma 1] \label{thm:pythagoras-triples}
-For equation $x^2 + y^2 = z^2$, where $x, y, z$ are coprime and $x$ is even, \underdot{all} solutions in whole numbers are:
+For equation $x^2 + y^2 = z^2$, where $x, y, z$ are coprime and $x$ is even, \underdot{all} solutions in natural numbers are:
 \be
 \begin{cases}
 x = 2mn \\
@@ -258,55 +258,55 @@ y = m^2 - n^2 \\
 z = m^2 + n^2
 \end{cases}
 \ee
-where $m > n$ are whole numbers in opposite parity.
+where $m > n$ are natural numbers in opposite parity.
 \end{lemma}
 
-This lemma covers \emph{all} solutions. 注意“所有”二字，这意味着不存在其它最简勾股数能逃出欧几里得的解。换言之，这是\underdot{充分必要}条件。我们接下来证明这一优美的结论。
+This lemma covers \emph{all} solutions; there are not any Pythagorean triples out of scope. In other words, it is \emph{necessary and sufficient}.
 
 \begin{proof}
-首先正向证明充分性：
+We first show any such $x, y, z$ is a Pythagorean triple:
 
 \begin{align*}
-x^2 + y^2 &= (2mn)^2 + (m^2 - n^2)^2 & \text{代入} \\
-  &= 4m^2n^2 + m^4 + n^4 - 2m^2n^2 & \text{完全平方公式展开} \\
-  &= m^4 + n^4 + 2m^2n^2 = (m^2 + n^2)^2 &\text{反向用完全平方公式} \\
-  &= z^2 &\text{代入}z
+x^2 + y^2 &= (2mn)^2 + (m^2 - n^2)^2 \\
+  &= 4m^2n^2 + m^4 + n^4 - 2m^2n^2 & \text{expand} \\
+  &= m^4 + n^4 + 2m^2n^2 = (m^2 + n^2)^2 &\text{perfect square formula} \\
+  &= z^2
 \end{align*}
 
-接下来反向证明必要性。把$x^2 + y^2 = z^2$移项后用平方差公式：
+Conversely, we show any Pythagorean triple is in this form. Move $y^2$ in the left side of $x^2 + y^2 = z^2$ to the right:
 \begin{align}
-x^2 &= z^2 - y^2 = (z + y)(z - y) &\text{平方差公式} \label{eq:x-as-z-pm-y} \\
-(\frac{x}{2})^2 &= (\frac{z + y}{2}) (\frac{z - y}{2}) &\text{左右同除以4}
+x^2 &= z^2 - y^2 = (z + y)(z - y) &\text{difference of squares} \label{eq:x-as-z-pm-y} \\
+(\frac{x}{2})^2 &= (\frac{z + y}{2}) (\frac{z - y}{2}) &\text{both sides divided by 4}
 \end{align}
 
-$x$是偶数，$y, z$都是奇数，故$z \pm y$都是偶数。因此左边的$\dfrac{x}{2}$，右边的$\dfrac{z \pm y}{2}$都是正整数。进一步，由于$z, y$互素，所以$\dfrac{z + y}{2}$和$\dfrac{z - y}{2}$也互素（见\cref{qn:coprime-of-half-a-pm-b}）。如果两个互素的数的乘积是一个平方数，则它们也都是平方数（见\cref{qn:coprime-product-as-square}）。因此：
+$x$ is even, $y, z$ are odd, hence $z \pm y$ are odd. It follows that both $\dfrac{x}{2}$ on the left and $\dfrac{z \pm y}{2}$ on the right are whole numbers. Moreover, since $z, y$ are coprime, $\dfrac{z + y}{2}$ and $\dfrac{z - y}{2}$ are coprime (by \cref{qn:coprime-of-half-a-pm-b}). For two coprime numbers, if their product is a square, then each is a square (by \cref{qn:coprime-product-as-square}), thereby,
 
 \begin{align*}
 \frac{z+y}{2} &= m^2 \\
 \frac{z-y}{2} &= n^2
 \end{align*}
 
-其中正整数$m > n$。两式相加消去$y$求得$z = m^2 + n^2$，两式相减消去$z$求得$y = m^2 - n^2$。代入\cref{eq:x-as-z-pm-y}得：$x^2 = 2m^2 2n^2$，故$x = 2mn$。
+where $m > n$ are natural numbers. Adding the two equations cancels $y$ and gives $z = m^2 + n^2$; subtracting the two equations cancels $z$ and gives $y = m^2 - n^2$; finally substituting into \cref{eq:x-as-z-pm-y} gives: $x^2 = 2m^2 2n^2$, hence $x = 2mn$.
 \end{proof}
 
-例如取$m = 2, n = 1$就得到(3, 4, 5)，取$m = 3, n = 2$就得到(12, 5, 13)。而所有勾股数的就可以表示为：
+For example, taking $m = 2, n = 1$ gives the triple of (3, 4, 5); taking $m = 3, n = 2$ gives the triple of (12, 5, 13). All Pythagorean triples are:
 
 \be
 x = 2mnr, \quad y = r(m^2 - n^2), \quad z = r(m^2 + n^2)
 \ee
 
-其中$r$是任意正整数。
+where $r$ any natural number.
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.6]{img/Euclid}
- \caption{欧几里得，约公元前300年前后}
+ \caption{Euclid, about 300 BCE}
  \label{fig:Euclid}
 \end{figure}
 
 \begin{mdframed}
 
-\index{数学家!欧几里得} \index{原本（《几何原本》）}
+\index{Euclid} \index{Elements}
 欧几里得（Euclid）是古希腊数学家，以其所著的《几何原本》闻名于世。对于他的生平，现在知道的很少。柏拉图学派晚期的导师普罗克洛斯（Proclus）在《几何学发展概要》中记述了这样的趣事：当时的埃及国王，亚历山大的托勒密一世有一次问欧几里得，学习几何学又没有什么捷径可走。欧几里得回答到：“在几何里，没有专为国王铺设的大道。\footnotemark”（There is no royal road to geometry），学习没有捷径成为了千古传颂的箴言。斯托比亚斯（Stobaeus）记述另一则故事说。一个学生刚开始学习第一个命题，就问欧几里得学习几何后将得到什么。欧几里得说：“给他三个钱币，因为他想在学习中获取实利。”由此可知欧几里得主张学习必须循序渐进、刻苦钻研、不赞成投机取巧的作风，也反对狭隘的实用观点\cite{Elements}。
 
 欧几里得的《几何原本》是一部划时代的著作。其伟大的历史意义在于它是用公理建立起演绎体系的最早典范。过去所积累下来的数学知识是零碎的、片断的，可以比作木石砖瓦。只有借助于逻辑方法，把这些知识组织起来，加以分类比较，解释彼此间的内在联系，整理在一个严密的系统之中，才能建成巍峨的大厦。《几何原本》完成了这一艰巨的任务，它对整个数学的发展产生了深远的影响。
