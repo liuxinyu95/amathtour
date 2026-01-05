@@ -231,7 +231,7 @@ The remarkable Pythagorean theorem is the source of three great streams of mathe
 
 \section{Number theory}
 \index{Pythagorean triples}
-The sum of two squares is not necessarily a square, for example, $3^2 + 5^2 = 34$ is not a square number. The Greek define whole numbers $(a, b, c)$ as a Pythagorean triple. Different cultures independently discovered triples like $3^2 + 4^2 = 5^2$ and $5^2 + 12^2 = 13^2$; some Babylonian tablets list long table of Pythagorean triples. But how to find such triples systematically? Are there finite or infinite Pythagorean triples? Both problems were completely solved by Euclid. First, Euclid simplified the problem that if $a^2 + b^2 = c^2$, then any multiplicities of $a, b, c$ are Pythagorean triples too, because:
+The sum of two squares is not necessarily a square, for example, $3^2 + 5^2 = 34$ is not a square number. The Greek define whole numbers $(a, b, c)$ as a Pythagorean triple. Different cultures independently discovered triples like $3^2 + 4^2 = 5^2$ and $5^2 + 12^2 = 13^2$; some Babylonian tablets list long table of Pythagorean triples. But how to find such triples systematically? Are there finite or infinite Pythagorean triples? Both problems were completely solved by Euclid. First, Euclid simplified the problem that if $a^2 + b^2 = c^2$, then any multiples of $a, b, c$ are Pythagorean triples too, because:
 
 \begin{align*}
 (ka)^2 + (kb)^2 &= k^2(a^2 + b^2) & \text{distributive law} \\
@@ -239,7 +239,7 @@ The sum of two squares is not necessarily a square, for example, $3^2 + 5^2 = 34
   &= (kc)^2
 \end{align*}
 
-Conversely, if $a, b$ have some common factor $k \ne 1$, then $k$ is also a factor of $c$. In the same way, since $a^2 = c^2 - b^2$, the common factor $k$ of $b, c$ is also a factor of $a$. It turns out we only need to search those Pythagorean triples consists of coprime $a, b, c$ (the only common factor of them is 1, i.e., $(a, b) = (b, c) = 1$, see \ref{sec:gcd-minus}), and their multiplicities are all Pythagorean triples. For example, each of (12, 16, 20) is even, they have common factor of 2; halving them gives `simpler' triple of (6, 8, 10); halving again gives (3, 4, 5); they are coprime and can't be simplified any more. We may call such a triple the `simplified Pythagorean triple'. Because the parity of $a$ and $a^2$ are same: the square of odd is odd; the square of even is even. If $a, b$ has different parity (an even and an odd), then $c$ must be odd. Euclid further ruled out the case the both $a, b$ are odd, because:
+Conversely, if $a, b$ have some common factor $k \ne 1$, then $k$ is also a factor of $c$. In the same way, since $a^2 = c^2 - b^2$, the common factor $k$ of $b, c$ is also a factor of $a$. It turns out we only need to search those Pythagorean triples consists of coprime $a, b, c$ (the only common factor of them is 1, i.e., $(a, b) = (b, c) = 1$, see \ref{sec:gcd-minus}), and their multiplies are all Pythagorean triples. For example, each of (12, 16, 20) is even, they have common factor of 2; halving them gives `simpler' triple of (6, 8, 10); halving again gives (3, 4, 5); they are coprime and can't be simplified any more. We may call such a triple the `simplified Pythagorean triple'. Because the parity of $a$ and $a^2$ are same: the square of odd is odd; the square of even is even. If $a, b$ has different parity (an even and an odd), then $c$ must be odd. Euclid further ruled out the case the both $a, b$ are odd, because:
 
 \begin{align*}
 a^2 + b^2 &= (2m + 1)^2 + (2n + 1)^2 & \text{both }a, b\text{ are odd} \\
@@ -249,7 +249,7 @@ a^2 + b^2 &= (2m + 1)^2 + (2n + 1)^2 & \text{both }a, b\text{ are odd} \\
 
 The remainder of this value divided by 4 is 2, but no matter $c$ is even or odd, the remainder of $c^2$ divided by 4 can not be 2, for even, $(2k)^2 = 4k^2$ can be divided by 4; for odd, $(2k + 1)^2 = 4(k^2 + k) + 1$ gives remainder 1. Therefore, $a$ and $b$ can not both be odd, but an odd and an even. We may let one, for example the first, be the even and the other be odd. Now the problem turns to find those Pythagorean triples, consisting numbers being coprime and the first being even. The solution was given as Lemma 1 in Book X of \emph{The Elements}\footnote{We use algebraic symbols here for easy understanding; Euclid stated in geometric language\citepage[p330]{Elements}.}
 
-\begin{lemma}[Euclid, The Elements, Book X, Lemma 1] \label{thm:pythagoras-triples}
+\begin{lemma}[Euclid, Lemma 1, Book X, The Elements] \label{thm:pythagoras-triples}
 For equation $x^2 + y^2 = z^2$, where $x, y, z$ are coprime and $x$ is even, \underdot{all} solutions in natural numbers are:
 \be
 \begin{cases}
@@ -313,53 +313,52 @@ From ancient times to present, {\em The Elements} has been used as a perfect exa
 \end{mdframed}
 
 \index{prime}
-Euclid's lemma completely solved the equation of $x^2 + y^2 = z^2$ in Pythagorean triples. It's natural to extend the equations to $x^3 + y^3 = z^3$, $x^4 + y^4 = z^4$, or generally, equation of $x^n + y^n = z^n$, where the integer $n \geq 3$.
+Euclid's lemma completely solved the equation of $x^2 + y^2 = z^2$ in Pythagorean triples. It's natural to extend the equations to $x^3 + y^3 = z^3$, $x^4 + y^4 = z^4$, or generally, equation of $x^n + y^n = z^n$, where the integer $n \geq 3$. However, people encountered exceptional difficulties with them; it seems, except for the trivial one $xyz = 0$, there was no integral solution. It was not until the 17 century, about 1,800 years later, Fermat achieved some result for $n = 4$ (see \cref{sec:FLT-4}). The problem of Pythagorean triples demonstrated what is typically concerned in number theory: the study of numbers and their properties. For a long time, people called it `arithmetic', for example, Diaphanous's classic work \emph{Arithmetica} and Gauss's famous work \emph{Disquisitiones Arithmeticae}. It deals with the things like parity (even and odd), divisibility, prime numbers, factors, remainders, and so on. In the study of figurate numbers, the Greek recognized the rectangle numbers, for example $12 = 3 \times 4$ could be formed with three rows and four columns of pebbles. It arose the notion of factor, that the sides corresponded to the factors of the rectangle number; and there were multiple factors, because $12 = 3 \times 4 = 2 \times 6$, 2, 3, 4, and 6 are all factors of 12. Some numbers were not rectangle numbers, like 5, which could only be formed with a row or a column of five pebbles\footnote{Obviously, the Greek distinguished segment from rectangle since they did not accept $1 \times 5$ or $5 \times 1$ as a rectangle number.}. This led to the notion of prime number: a prime $p$ can be divided only by 1 and itself. Prime numbers are basic bricks to form other composite numbers (through multiplication), the first prime numbers are 2, 3, 4, 7, 11, ... It naturally arose questions: (1) As the bricks to other numbers, how many prime numbers are there? finitely or infinitely? (2) Are there any patterns of prime numbers? is there a formula or an algorithm to generate prime numbers? The first question was, again, answered by Euclid, while the second was much harder; it was Eratosthenes who took the first step to the second question.
 
-却难住了古人。似乎除了$xyz = 0$再也找不出任何整数解了。我们要等到1800年后的十七世纪，青年“业余”数学家费马才在$n = 4$上获得突破（见第\ref{sec:FLT-4}章）。勾股定理的整数解问题展示了数论这一数学分支的典型问题：研究数，特别是整数的性质。在很长一段时间，这门学科被称为“算术”（arithmetic），例如古希腊数学家丢番图的名著《丢番图算术》，德国数学家高斯的划时代著作《算术研究》都是数论方面的经典。奇偶性、素数、整除、公因子，余数等是这门学科的基础概念。在“长方形数”的探索中，古希腊人发现某些数可以表示成长方形，如$12 = 3 \times 4$可以用三行四列的小石子摆出。这样就引出了因数的概念，长方形数的边长就是其因子。并且因子可能有多个，例如$12 = 3 \times 4 = 2 \times 6$，所以2、3、4、6都是12的因子。但是有些数却无法表示成长方形数，例如5，只能摆成一行五个石子或一列五个石子\footnote{显然古希腊人在这里区分了线段和矩形，他们并不认可$1 \times 5$或$5 \times 1$是一个长方形数。}。这种数形结合的方法引出了素数的概念。素数$p$只能被1和$p$整除，是构成其它数的砖石。前几个素数是2、3、5、7、11……这样的探索自然引出了有趣的问题：1）作为构成其它数的砖石，素数有多少个？是有限多还是无限多？2）素数的出现有何规律？有没有产生素数的公式和方法？其中第一个问题又是由欧几里得解决的，而埃拉托斯特尼在第二个问题上迈出了关键的第一步。
+The Greek tried to avoid using the notion of infinity after Zeno's paradoxes. Aristotle thought all Zeno's paradoxes concerning infinity. He distinguished {\em potential} and {\em actual} infinities. Potential infinity is a process that never stops; it can be a collection of \enquote{things} that continues without terminating, going on or repeating itself over and over again with no recognizable ending point. The obvious example is natural numbers of 1, 2, 3, ... given any number $n$, there always exists another number $n + 1$ to proceed. In geometry, a line can be extended any long as needed. Actual infinity involves never-ending sets or \enquote{things} within a space that has a beginning and end; it is a series that is technically \enquote{completed} but consists of infinitely many members. According to Aristotle, actual infinities cannot exist because they are paradoxical. It is impossible to say that you can always \enquote{take another step} or \enquote{add another member} in a completed set with a beginning and end, unlike a potential infinite. It was ultimately Aristotle’s rejection of the actual infinite that allowed him to refute Zeno’s paradox. Aristotle's opinion was widely accepted, that Euclid never used the term of `infinity' or `infinitely many' in \emph{The Elements}. Nevertheless, he successfully showed there are `infinitely many' prime numbers in our modern view; his proof was thought to be one of the most beautiful proofs in history.
 
-自从芝诺悖论提出后，古希腊人就试图避免无穷这个概念。亚里士多德认为所有芝诺悖论中的问题都源自无穷，他提出了一个影响至今的区分：潜无穷和实无穷\footnote{英文分别是potential infinity和actual infinity}。所谓潜无穷或潜无限，是指无限在永远延伸着，是一种变化的、不断产生出来概念。它永远在构造中，永远完成不了，是潜在的，而不是实在的。自然数就是一种潜无穷，对于任何一个自然数$n$，我们都可以找到它的后继$n + 1$，也就是一个更大的自然数。欧几里得几何中的直线也是一种潜无穷，我们可以按需延伸直线。所谓实无穷是指把无限的整体本身作为一个实在的单位，是已经构造出来的东西。也就是把无限对象看作可完成的过程或无穷整体。在做了这种区分后，亚里士多德承认存在潜无穷，但是拒绝承认实无穷的概念。他对实无穷的排斥深刻而长远地影响了日后数学的发展\cite{HanXueTao16}。亚里士多德代表了当时古希腊的哲学观点，关于潜无穷和实无穷的概念区分以及争论一直影响至今。纵观《原本》全书，欧几里得从未在其中使用“无穷”或者“无限”一词。尽管如此他还是成功证明了素数有无限多个，并且这一证明被人们认为是历史上最优美的证明之一。
-
-\begin{theorem}[欧几里得《原本》第九卷，命题20]
-预先给定任意多的素数，则有比它们更多的素数。
+\begin{theorem}[Euclid, Proposition 20, Book IX, The Elements]
+Prime numbers are more than any assigned multitude of prime numbers.
 \end{theorem}
 
-欧几里得在叙述这个命题时，小心谨慎地避免使用无穷这样的说法。“预先给定……总有更多的……”这种处理经常出现在《原本》中。我们今天往往直接说“存在无穷多的素数”。欧几里得在证明这个命题时，使用了著名的反证法。我们用现代的语言来描述这一证明。
+Euclid carefully avoided using term of infinitely many, but stated, \enquote{more than any assigned ...}. This is common treatment in many places in \emph{The Elements}. We often directly say there are infinitely many prime numbers today. Euclid applied the method of proof by contradiction (Reduction ad Absurdum in Latin), in our language:
 
 \begin{proof}
-假设只存在有限多个素数，$p_1, p_2, \dotsc, p_n$。欧几里得构造一个新数：
+Assume for contradiction there are $n$ primes, $p_1, p_2, \dotsc, p_n$, Euclid made a new number:
 \[
 p_1 p_2 \dotsm p_n + 1
 \]
-也就是把这$n$个素数乘起来再加一。这个数要么是素数，要么不是素数。
+
+which is the product of these $n$ primes plus 1. It is either prime or composite.
 
 \begin{itemize}
-\item 如果它是素数，明显这个数不等于$p_1$到$p_n$中的任何一个，这就在有限多个素数之外又增加了一个新的素数；
-\item 如果这个数不是素数，那么它就存在一个素因子$p$。但是由于$p_1$到$p_n$中的任何一个都不能整除构造的这个数（除不尽余1），所以素数$p$与任何$p_1$到$p_n$中的数都不同，是一个新的素数。
+\item If it is prime, then the number doesn't equal any of $p_1, \dotsc, p_n$, hence a new prime number not in the list.
+\item If it is composite, then it must be divided by some prime $p$, but none of $p_1, \dotsc, p_n$ divides this number (with remainder 1), hence a new prime number not in the list.
 \end{itemize}
-所以在任何情况下，我们都可以获得一个新的素数。这与有限个素数的假设矛盾，因此存在无穷多的素数。
+
+In both cases, one gets a new prime number, contradicting with the finitely many prime numbers. Thereby, there are infinitely many primes.
 \end{proof}
 
-\label{sec:sieve} \index{筛法} \index{埃拉托斯特尼筛法}
-欧几里得用反正法得到了一种“存在性证明”，他证明了存在无穷多的素数，但却没有给出怎样得到这些素数。这在我们今天看来，是很自然的一种处理。然而在十九世纪末二十世纪初却引发了关于数学根本性的争论。迄今为止，人们没有发现任何素数公式。我们不说“计算”出素数”，而只能说寻找素数。一个非常低效的方法是从$2, 3, 4, \dotsc$开始逐一检查每个数$n$是否是素数。根据定义，需要检查$n$是否含有1和$n$之外的其它因子。这需要依次判断$2, 3, \dotsc, n - 1 $是否整除$n$。当然，由于$a \times b = b \times a$，我们可以把这个范围缩小到判断$2, 3, \dotsc, \lfloor \sqrt{n} \rfloor$是否整除$n$，即把上限定为不大于$n$的开平方的整数。这个方法很差，除法的计算量非常大。埃拉托斯特尼给出了一种快速寻找素数的方法，被称为埃拉托斯特尼筛法。首先我们列出从2开始的整数：
+\label{sec:sieve} \index{Eratosthenes's sieve}
+Euclid's proof is \emph{indirect}, by reduction to absurdity, he showed the existence of infinitely many prime numbers, but didn't show how to obtain them. It, although looks quite natural to us, led to hotly debating about the foundation of logic and mathematics in the late 19th and early 20th century. People haven't discovered any \enquote{formula of prime numbers}; instead of saying compute prime numbers, we say search for prime numbers. A natural but inefficient way to test whether $n$ is prime is, by the definition, checking if 1 and $n$ are the only factors. It needs examine if any of $2, 3, 4, \dotsc, n - 1$ divides $n$. Since $a \times b = b \times a$, we can reduce the range to only examine $2, 3, \dotsc, \lfloor \sqrt{n} \rfloor$, where the upper bound is the biggest number not greater than the square root of $n$. This method performs poorly as division is a heavy operation. Eratosthenes gave a much faster method named after him, the Eratosthenes sieve. First, list numbers from 2:
 
 \[2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, \dotsc \]
 
-2是第一素数。然后从2开始，筛除掉所有2的倍数：
+One may stop at his please, for example $n$. 2 is the first prime number; from the next, rule out those multiples of 2:
 
 \[2, 3, \cancel{4}, 5, \cancel{6}, 7, \cancel{8}, 9, \cancel{10}, 11, \cancel{12}, 13, \cancel{14}, 15, \cancel{16}, 17, \cancel{18}, 19, \cancel{20}, \dotsc\]
 
-
-接下来的3就是第一轮筛除后新找到的素数。然后再筛除3的倍数：
+3, the first remaining, is the newly found prime from the first round of sieving. Next rule out multiples of 3:
 
 \[2, 3, 5, 7, \cancel{9}, 11, 13, \cancel{15}, 17, 19, \cancel{21}, 23, 25, \cancel{27}, 29, \dotsc\]
 
-接下来的5是新找到的素数。然后筛除掉所有5的倍数：
+5 is the next found prime numbers. Next rule out multiples of 5:
 
 \[2, 3, 5, 7, 11, 13, 17, 19, 23, \cancel{25}, 29, \dotsc\]
 
-每轮筛除后，剩余的第一个数$p$是新找到的素数，接下来的一轮筛除掉所有$p$的倍数。这样不断进行下去。通常在应用埃拉托斯特尼筛法时，我们事先定出一个目标：寻找$n$以内的素数。接下来不断进行筛除，直到把不大于$\sqrt{n}$的所有倍数都筛除为止。\cref{qn:seive-of-eratosthenes-100}要求利用筛法找出100以内的所有素数。
+After every round, the first remaining $p$ is the newly found prime numbers, we next rule out multiples of $p$ and repeat. For a given $n$, we terminate after dropping all multiples of $\sqrt{n}$. \Cref{qn:seive-of-eratosthenes-100} gives all prime numbers within 100.
 
-\index{完全数} \index{完美数}
+\index{perfect number}
 有了因子的概念，毕达哥拉斯学派开始研究这些因子和数的关系。他们发现某些数的所有真因子\footnote{真因子是小于数本身的因子}之和恰好等于这个数本身，于是将其命名为完美数（也叫做完全数），并成功地找到两个。最小的完美数是6，因为6的真因子有1、2、3，而6 = 1 + 2 + 3，下一个是28，其真因子为1、2、4、7、14，并且28 = 1 + 2 + 4 + 7 + 14。毕达哥拉斯学派并非纯粹的学术团体，学派信奉数字神秘主义。他们对完美数如此着迷，认为：“6象征着完满的婚姻以及健康和美丽，因为它的部分是完整的，并且其和等于自身。”中世纪后，更是赋予了完美数宗教意义。人们认为6和28是上帝创造世界时所用的基本数字，因为上帝创造世界花了六天，二十八天则是月亮绕地球一周的日数。真正从数论的角度对完美数进行研究并取得关键进展的还是欧几里得。
 
 \begin{theorem}[欧几里得《原本》卷九，命题36]
