@@ -408,33 +408,36 @@ s &= (1 + 2 + \dotsb + 2^n) + p(1 + 2 + \dotsb + 2^{n-1}) \\
 It shows $2^n(2^{n+1}-1)$ are perfect numbers. They were called Euclidean perfect numbers named after Euclid. Two questions arose from Euclid's result: (1) How to find prime numbers in the form of $2^{n+1} - 1$, which generate perfect numbers? (2) Obviously, all Euclidean perfect numbers are even, but are perfect numbers all even? in other words, are there any odd perfect numbers? It's easy to verify what the Pythagorean discovered, namely 6 and 28, are all Euclidean perfect numbers, for $2^1\times(2^2-1)=2 \times 3 = 6$ and $2^2 \times (2^3 - 1) = 4 \times 7 = 28$, which are the cases of $n = 1$ and $n = 2$. However, they were not always luck, as $2^4 - 1 = 15$ was not prime, but $2^5 - 1 = 31$ was, hence, $2^4 \times 31 = 16 \times 31 = 496$ was the next Euclidean perfect number. Went on, $2^6 - 1 = 63$ was not prime, while $2^7 - 1 = 127$ was, hence, $2^6 \times 127 = 8128$ was a perfect number. It turns out none of $n = 8, 9, 10, 11, 12$ is prime; the next prime is $2^{13}-1 = 8191$, which is a bit hard to manually verify and the corresponding perfect number grows as large as 33550336. Euclidean perfect numbers increased so fast, that it almost immediately exceeded what the Greek could compute as they lacked positional decimal system. For question (2), it turns out exceptional hard. Euler further showed every even perfect numbers must be an Euclidean perfect number (see \cref{app:even-perfect-number}). People from ancient times haven't found any odd perfect numbers till now. There is a open conjecture of non-existence of odd perfect number, which attracted many mathematicians from Euler to Terry Tao.
 
 \index{Fermat's number}
-十七世纪，法国神父梅森和数学家费马通过书信往来继续研究了形如$2^n \pm 1$的素数。费马于1640年给出了一个惊人的“素数公式”：
+In the 17th century, Mersenne and Fermat studied the prime numbers of $2^n \pm 1$ through correspondence. Fermat found a \enquote{formula of prime numbers} in 1640:
 
 \be
 F_n = 2^{2^n} + 1
 \ee
 
-计算不难发现：$F_0 = 2^{2^0} + 1 = 3$是素数，$F_1 = 2^{2^1} + 1 = 5$是素数，$F_2 = 2^{2^2} + 1 = 17$是素数，$F_3 = 2^{2^3} + 1 = 257$是素数，$F_4 = 2^{2^4} + 1 = 65537$还是素数。费马高兴地断言，所有$F_n = 2^{2^n} + 1$都是素数！我们可以想像手工验算65537的难度，并且这个指数的指数“爆炸”速度极为惊人。费马的猜测令人兴奋，因为从未有人发现任何有效的产生素数的公式。今天我们称$F_n$为费马数。但是近一个世纪后，大数学家欧拉于1732年发现：$F_5= 641 \times 6700417$是一个合数。并且从那以后，人们利用手算或计算机验算了$F_5$到$F_{30}$，很不幸它们都是合数。是否$n = 5$以后所有的$F_n$都是合数至今仍然是一个未证明的猜想。故事并未结束，第\ref{sec:geometric-cons-polygon}节我们将会看到费马数惊人地出现在正多边形尺规作图的背后。
+He verified $F_0 = 2^{2^0} + 1 = 3$ is prime, $F_1 = 2^{2^1} + 1 = 5$ is prime, $F_2 = 2^{2^2} + 1 = 17$ is prime, $F_3 = 2^{2^3} + 1 = 257$ is prime, and $F_4 = 2^{2^4} + 1 = 65537$ is, again, prime. Fermat then conjectured all $F_n = 2^{2^n} + 1$ were prime! It was not easy to verify the primarily of 65537 manually in Fermat's time and the exponent of exponent \eqnuote{exploded} extremely fast. Nevertheless, Fermat's conjecture was astonishing since nobody had ever found any formula of prime numbers; $F_n$ is called Fermat's number nowadays. However, after about a century, Euler found in 1732 that $F_5= 641 \times 6700417$ was composite. Sadly, people later have verified every Fermat's number from $F_5$ to $F_{30}$ by computer of manually, none of them is prime. The counter conjecture: from $n = 5$, every $F_n$ is composite, is still open today. The story doesn't complete, \cref{sec:geometric-cons-polygon} shows another astonishing result: Fermat's numbers rule the geometric construction of regular polygons.
 
 \begin{mdframed}
-你也许好奇，欧拉是如何手算找到$F_5$的因子的。这是多么巨大的计算量啊！但欧拉就是欧拉，他可能是通过这一巧妙的方法完成对$F_5$的因子分解的\citepage[27页]{Coxeter2022}\citepage[18页]{Hardy2009}。欧拉重新发现费马的研究成果后，必定对费马大定理$x^n + y^n = z^n$感兴趣。在研究四次方和（$n = 4$）时很容易遇到$5^4 + 2^4= 641$。而费马数$F_5 = 2^{2^5} + 1 = 2^{32} + 1$。注意到把$641 = 5^4 + 2^4$乘以$2^{28}$就能凑到$2^{32}$：
+One may wonder how Euler factored $F_5$, which demanded heavy computation. Euler was Euler, he might work it out in this way\citepage[p27]{Coxeter2022}\citepage[p18]{Hardy2009}. After reading Fermat's work, particularly about the Diophantine equation $x^n + y^n = z^n$, namely Fermat's last theorem, Euler could known $5^4 + 2^4= 641$ when studying sum of quartic ($n = 4$). Multiplied it by $2^{28}$ gave $2^{32}$, which was part of Fermat's number $F_5 = 2^{2^5} + 1 = 2^{32} + 1$:
+
 \[
 641 \times 2^{28} = (5^4 + 2^4)2^{28} = 5^42^{28} + 2^{32} = A
 \]
 
-令这个数为$A$。从$A$中减去$5^42^{28}$再加上1就是费马数$F_5$，令$B = 5^42^{28} - 1$，则$F_5 = A - B$。另一方面$641 = 640 + 1 = 5 \times 128 + 1 = 5 \times 2^{7} + 1$。注意到它是$B$的一个因子！我们可以两次用平方差公式对$B$进行因式分解：
+denoted by $A$. Note that $A$ minus $5^42^{28}$ plus 1 equals $F_5$. Let $B = 5^42^{28} - 1$, then $F_5 = A - B$. Besides, $641 = 640 + 1 = 5 \times 128 + 1 = 5 \times 2^{7} + 1$, which turns out to be a factor of $B$. We may actually factor $B$ as below:
 
 \begin{align*}
-B = 5^4 2^{28} - 1 &= (5^2 2^{14} + 1)(5^2 2^{14} - 1) && \text{平方差公式} \\
-  &= (5^2 2^{14} + 1)(5 \times 2^7 + 1)(5 \times 2^7 - 1) && \text{对第2项用平方差公式} \\
+B = 5^4 2^{28} - 1 &= (5^2 2^{14} + 1)(5^2 2^{14} - 1) && \text{difference of squares} \\
+  &= (5^2 2^{14} + 1)(5 \times 2^7 + 1)(5 \times 2^7 - 1) && \text{difference of squares} \\
   &= (5^2 2^{14} + 1) \times 641 \times (5 \times 2^7 - 1)
 \end{align*}
 
-由于641既整除$A$也整除$B$，所以641整除$A - B = F_5$。这样就证明了费马数$F_5$不是素数。这一年（1732年），欧拉只有25岁。
+Thus 641 divides both $A$ and $B$, hence divides their difference $A - B = F_5$; it shows $F_5$ is composite. Euler was at the age of 25 in that year of 1732.
 \end{mdframed}
 
-\index{梅森素数}
-与费马通信、讨论后，梅森对形如$2^n - 1$的素数进行了大量的计算、验证，并取得了重要的进展。我们不知道如下的结论是来自费马、梅森，还是来自后人：
+\index{Mersenne's prime}
+During the correspondence with Fermat, Mersenne studied the prime numbers of $2^n - 1$.
+
+的素数进行了大量的计算、验证，并取得了重要的进展。我们不知道如下的结论是来自费马、梅森，还是来自后人：
 
 \begin{proposition}[梅森素数]
 如果$n > 1$且$a^n - 1$是素数，则必然有$a = 2$并且$n$是素数。
