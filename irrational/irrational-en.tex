@@ -352,63 +352,62 @@ One may stop at his please, for example $n$. 2 is the first prime number; from t
 
 \[2, 3, 5, 7, \cancel{9}, 11, 13, \cancel{15}, 17, 19, \cancel{21}, 23, 25, \cancel{27}, 29, \dotsc\]
 
-5 is the next found prime numbers. Next rule out multiples of 5:
+5 is the next prime. Next rule out multiples of 5:
 
 \[2, 3, 5, 7, 11, 13, 17, 19, 23, \cancel{25}, 29, \dotsc\]
 
-After every round, the first remaining $p$ is the newly found prime numbers, we next rule out multiples of $p$ and repeat. For a given $n$, we terminate after dropping all multiples of $\sqrt{n}$. \Cref{qn:seive-of-eratosthenes-100} asks to sieve all prime numbers within 100.
+After every round, the first remaining $p$ is the newly found prime number; next rule out multiples of $p$ and repeat. For a given $n$, the process terminates after dropping all multiples of $\sqrt{n}$. \Cref{qn:seive-of-eratosthenes-100} asks to sieve all prime numbers within 100.
 
 \index{perfect number}
-The Pythagorean studied numbers and their factors; they found some `perfect numbers' that such a number exactly equaled the sum of its proper\footnote{A factor of $n$ is called proper if it is positive and less than $n$.} factors. They managed found the first two perfect numbers: $6 = 1 + 2 + 3$, where 1, 2, 3 are proper factors of 6; and $28 = 1 + 2 + 4 + 7 + 14$, where 1, 2, 4, 7, 14 are proper factors. The Pythagorean was a secret society rather than a school, the members hold numerical mysticism.
+The Pythagorean studied numbers and their factors; they found some \enquote{perfect numbers} that such a number was exactly equal to the sum of its proper\footnote{A factor of $n$ is called proper if it is positive and less than $n$.} factors. They managed found the first two perfect numbers: $6 = 1 + 2 + 3$, where 1, 2, 3 are proper factors of 6, and $28 = 1 + 2 + 4 + 7 + 14$, where 1, 2, 4, 7, 14 are proper factors. The Pythagorean school was a secret society rather than a academic school. They embraced numerical mysticism and believed 6 symbolized health, beauty, and perfect marriage because the sum of its parts equals itself. In the Middle Ages, people gave perfect numbers moral qualities and such ideas found credence among the early Christian theologians. Often the 28-day cycle of the Moon around the Earth was given as an example of a \enquote{Heavenly,} hence perfect, event that naturally was a perfect number. It was Euclid who made significant mathematical discovery in perfect numbers.
 
-毕达哥拉斯学派并非纯粹的学术团体，学派信奉数字神秘主义。他们对完美数如此着迷，认为：“6象征着完满的婚姻以及健康和美丽，因为它的部分是完整的，并且其和等于自身。”中世纪后，更是赋予了完美数宗教意义。人们认为6和28是上帝创造世界时所用的基本数字，因为上帝创造世界花了六天，二十八天则是月亮绕地球一周的日数。真正从数论的角度对完美数进行研究并取得关键进展的还是欧几里得。
-
-\begin{theorem}[欧几里得《原本》卷九，命题36]
-如果$2^{n+1}-1$是素数，则$2^n(2^{n+1}-1)$是完美数\footnote{这里用代数符号简化了叙述，《原本》原文为：设从单位起有一些连续二倍起来的连比例数，若所有数之和是素数，则这个和乘最后一个数的乘积将是一个完全数。进行对比，不难看出代数符号的威力。}。
+\begin{theorem}[Proposition 36, Book IX, The Elements]
+If $2^{n+1}-1$ is prime, then $2^n(2^{n+1}-1)$ is a perfect number\footnote{The original statement was: \emph{If as many numbers as we please beginning from a unit are set out continuously in double proportion until the sum of all becomes prime, and if the sum multiplied into the last makes some number, then the product is perfect.} Thanks to the algebraic notations bringing simplicity and elegance.}.
 \end{theorem}
 
 \begin{proof}
-素数$p = 2^{n+1}-1$只有两个因子$1, p$；$2p$含有四个因子$1, 2, p, 2p$；$4p = 2^2p$含有6个因子$1, 2, 4, p, 2p, 4p$；以此类推$2^n p$含有$2(n+1)$个因子$1, 2, 4, \dotsc, 2^n, p, 2p, 4p, \dotsc, 2^n p$。最后一个不是真因子，剩余的真因子和为：
+If $p = 2^{n+1}-1$ is prime, then it has only two factors: $1, p$; for $2p$, it has four factors: $1, 2, p, 2p$; for $4p = 2^2p$, it has 6 factors: $1, 2, 4, p, 2p, 4p$; and so on, basically, for $2^n p$, it has $2(n+1)$ factors: $1, 2, 4, \dotsc, 2^n, p, 2p, 4p, \dotsc, 2^n p$, all are proper factors except for the last one. The sum of the proper factors is,
 
 \begin{align*}
 s &= 1 + 2 + \dotsb + 2^n + p + 2p + \dotsb + 2^{n-1}p \\
   &= (1 + 2 + \dotsb + 2^n) + p(1 + 2 + \dotsb + 2^{n-1})
 \end{align*}
 
-我们在高中学习过等比数列求和，这里不妨用方程从头推导一下。令：
+We may work out the sum of geometric series through equation; let
 
 \be
 x = 1 + 2 + 4 + \dotsb + 2^n
 \label{eq:sum-of-power2}
 \ee
 
-把\cref{eq:sum-of-power2}乘以2:
+Double \cref{eq:sum-of-power2}:
 
 \be
 2x = 2 + 4 + 8 + \dotsb + 2^n + 2^{n+1}
 \label{eq:2sum-of-power2}
 \ee
 
-\cref{eq:2sum-of-power2}减\cref{eq:sum-of-power2}得：
+Subtract \cref{eq:2sum-of-power2} by \cref{eq:sum-of-power2}:
 
 \begin{align*}
 2x - x & = \quad \ \cancel{2} + \cancel{4} + \dotsb + \cancel{2^n} + 2^{n+1} \\
        & - 1 - \cancel{2} - \cancel{4} - \dotsb - \cancel{2^n} \\
-  x &= 2^{n+1} - 1
+  x &= 2^{n+1} - 1 = p
 \end{align*}
 
-把这个结果代入真因子和求$s$：
+We can also get: $1 + 2 + \dotsb + 2^{n - 1} = 2^n - 1$. Substitute them into the sum of proper factors,
 
 \begin{align*}
-s & = 2^{n + 1} - 1 + p(2^n - 1) &&\text{代入}p = 2^{n+1} - 1 \\
-  & = p + 2^n p - p = 2^n p = 2^n (2^{n+1} - 1) && \qedhere
+s &= (1 + 2 + \dotsb + 2^n) + p(1 + 2 + \dotsb + 2^{n-1}) \\
+  &= p + p(2^n - 1) &&\text{substitute }p = 2^{n+1} - 1 \\
+  &= \cancel{p} + 2^n p - \cancel{p} = 2^n p = 2^n (2^{n+1} - 1) && \qedhere
 \end{align*}
 \end{proof}
 
-\index{欧几里得完美数} \index{偶完美数}
-所以$2^n(2^{n+1}-1)$是完美数。后人把这一形式的完美数称为欧几里得完美数。根据欧几里得的结果，不难看出：1）只要找到更多的形如$2^{n+1} - 1$的素数，就能找到更多的完美数。2）所有欧几里得完美数都是偶数，但完美数一定是偶数吗？很容易验证毕达哥拉斯学派的找到的6和28都是欧几里得完美数：$2^1\times(2^2-1)=2 \times 3 = 6$，$2^2 \times (2^3 - 1) = 4 \times 7 = 28$，分别是$n = 1, n = 2$时的情况。但后面就没有这么幸运了。$2^4 - 1 = 15$不是素数。不过$2^5 - 1 = 31$是素数，所以$2^4 \times 31 = 16 \times 31 = 496$是下一个完美数。但$2^6 - 1 = 63$不是素数，$2^7 - 1 = 127$是素数，所以$2^6 \times 127 = 8128$是完美数。接下来$n = 8, 9, 10, 11, 12$都不是素数，下一个素数是$2^{13}-1 = 8191$。凭借手算验证这个数是素数已经很困难了，其对应的完美数更是巨大到了33550336。欧几里得完美数的增加极其快速，由于古希腊人没有强大的位值制十进制计数系统，寻找更多完美数的研究遇到了困境。而问题2）的难度远非常人想象。数学家欧拉进一步证明了，任何偶完美数必然是欧几里得完美数（见附录\ref{app:even-perfect-number}）。古希腊人没有找到任何奇完美数。不仅如此，直到今天也没有发现任何奇完美数。于是人们猜想不存在奇完美数，但迄今为止没有人能证明这个猜想。这成了当今数学中的悬案，吸引了从欧拉到陶哲轩一代又一代数学家对它进行研究。
+\index{Euclidean perfect number} \index{even perfect number}
+It shows $2^n(2^{n+1}-1)$ are perfect numbers. They were called Euclidean perfect numbers named after Euclid. Two questions arose from Euclid's result: (1) How to find prime numbers in the form of $2^{n+1} - 1$, which generate perfect numbers? (2) Obviously, all Euclidean perfect numbers are even, but are perfect numbers all even? in other words, are there any odd perfect numbers? It's easy to verify what the Pythagorean discovered, namely 6 and 28, are all Euclidean perfect numbers, for $2^1\times(2^2-1)=2 \times 3 = 6$ and $2^2 \times (2^3 - 1) = 4 \times 7 = 28$, which are the cases of $n = 1$ and $n = 2$. However, they were not always luck, as $2^4 - 1 = 15$ was not prime, but $2^5 - 1 = 31$ was, hence, $2^4 \times 31 = 16 \times 31 = 496$ was the next Euclidean perfect number. Went on, $2^6 - 1 = 63$ was not prime, while $2^7 - 1 = 127$ was, hence, $2^6 \times 127 = 8128$ was a perfect number. It turns out none of $n = 8, 9, 10, 11, 12$ is prime; the next prime is $2^{13}-1 = 8191$, which is a bit hard to manually verify and the corresponding perfect number grows as large as 33550336. Euclidean perfect numbers increased so fast, that it almost immediately exceeded what the Greek could compute as they lacked positional decimal system. For question (2), it turns out exceptional hard. Euler further showed every even perfect numbers must be an Euclidean perfect number (see \cref{app:even-perfect-number}). People from ancient times haven't found any odd perfect numbers till now. There is a open conjecture of non-existence of odd perfect number, which attracted many mathematicians from Euler to Terry Tao.
 
-\index{费马数}
+\index{Fermat's number}
 十七世纪，法国神父梅森和数学家费马通过书信往来继续研究了形如$2^n \pm 1$的素数。费马于1640年给出了一个惊人的“素数公式”：
 
 \be

@@ -406,14 +406,15 @@ x = 1 + 2 + 4 + \dotsb + 2^n
 \begin{align*}
 2x - x & = \quad \ \cancel{2} + \cancel{4} + \dotsb + \cancel{2^n} + 2^{n+1} \\
        & - 1 - \cancel{2} - \cancel{4} - \dotsb - \cancel{2^n} \\
-  x &= 2^{n+1} - 1
+  x &= 2^{n+1} - 1 = p
 \end{align*}
 
-把这个结果代入真因子和求$s$：
+同样可以求出$1 + 2 + \dotsb + 2^{n - 1} = 2^n - 1$，把这两个结果代入真因子和求$s$：
 
 \begin{align*}
-s & = 2^{n + 1} - 1 + p(2^n - 1) &&\text{代入}p = 2^{n+1} - 1 \\
-  & = p + 2^n p - p = 2^n p = 2^n (2^{n+1} - 1) && \qedhere
+s &= (1 + 2 + \dotsb + 2^n) + p(1 + 2 + \dotsb + 2^{n-1}) \\
+  &= p + p(2^n - 1) &&\text{代入}p = 2^{n+1} - 1 \\
+  &= \cancel{p} + 2^n p - \cancel{p} = 2^n p = 2^n (2^{n+1} - 1) && \qedhere
 \end{align*}
 \end{proof}
 
