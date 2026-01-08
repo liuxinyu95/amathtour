@@ -356,10 +356,12 @@ One may stop at his please, for example $n$. 2 is the first prime number; from t
 
 \[2, 3, 5, 7, 11, 13, 17, 19, 23, \cancel{25}, 29, \dotsc\]
 
-After every round, the first remaining $p$ is the newly found prime numbers, we next rule out multiples of $p$ and repeat. For a given $n$, we terminate after dropping all multiples of $\sqrt{n}$. \Cref{qn:seive-of-eratosthenes-100} gives all prime numbers within 100.
+After every round, the first remaining $p$ is the newly found prime numbers, we next rule out multiples of $p$ and repeat. For a given $n$, we terminate after dropping all multiples of $\sqrt{n}$. \Cref{qn:seive-of-eratosthenes-100} asks to sieve all prime numbers within 100.
 
 \index{perfect number}
-有了因子的概念，毕达哥拉斯学派开始研究这些因子和数的关系。他们发现某些数的所有真因子\footnote{真因子是小于数本身的因子}之和恰好等于这个数本身，于是将其命名为完美数（也叫做完全数），并成功地找到两个。最小的完美数是6，因为6的真因子有1、2、3，而6 = 1 + 2 + 3，下一个是28，其真因子为1、2、4、7、14，并且28 = 1 + 2 + 4 + 7 + 14。毕达哥拉斯学派并非纯粹的学术团体，学派信奉数字神秘主义。他们对完美数如此着迷，认为：“6象征着完满的婚姻以及健康和美丽，因为它的部分是完整的，并且其和等于自身。”中世纪后，更是赋予了完美数宗教意义。人们认为6和28是上帝创造世界时所用的基本数字，因为上帝创造世界花了六天，二十八天则是月亮绕地球一周的日数。真正从数论的角度对完美数进行研究并取得关键进展的还是欧几里得。
+The Pythagorean studied numbers and their factors; they found some `perfect numbers' that such a number exactly equaled the sum of its proper\footnote{A factor of $n$ is called proper if it is positive and less than $n$.} factors. They managed found the first two perfect numbers: $6 = 1 + 2 + 3$, where 1, 2, 3 are proper factors of 6; and $28 = 1 + 2 + 4 + 7 + 14$, where 1, 2, 4, 7, 14 are proper factors. The Pythagorean was a secret society rather than a school, the members hold numerical mysticism.
+
+毕达哥拉斯学派并非纯粹的学术团体，学派信奉数字神秘主义。他们对完美数如此着迷，认为：“6象征着完满的婚姻以及健康和美丽，因为它的部分是完整的，并且其和等于自身。”中世纪后，更是赋予了完美数宗教意义。人们认为6和28是上帝创造世界时所用的基本数字，因为上帝创造世界花了六天，二十八天则是月亮绕地球一周的日数。真正从数论的角度对完美数进行研究并取得关键进展的还是欧几里得。
 
 \begin{theorem}[欧几里得《原本》卷九，命题36]
 如果$2^{n+1}-1$是素数，则$2^n(2^{n+1}-1)$是完美数\footnote{这里用代数符号简化了叙述，《原本》原文为：设从单位起有一些连续二倍起来的连比例数，若所有数之和是素数，则这个和乘最后一个数的乘积将是一个完全数。进行对比，不难看出代数符号的威力。}。
