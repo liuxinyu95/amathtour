@@ -414,7 +414,7 @@ In the 17th century, Mersenne and Fermat studied the prime numbers of $2^n \pm 1
 F_n = 2^{2^n} + 1
 \ee
 
-He verified $F_0 = 2^{2^0} + 1 = 3$ is prime, $F_1 = 2^{2^1} + 1 = 5$ is prime, $F_2 = 2^{2^2} + 1 = 17$ is prime, $F_3 = 2^{2^3} + 1 = 257$ is prime, and $F_4 = 2^{2^4} + 1 = 65537$ is, again, prime. Fermat then conjectured all $F_n = 2^{2^n} + 1$ were prime! It was not easy to verify the primarily of 65537 manually in Fermat's time and the exponent of exponent \eqnuote{exploded} extremely fast. Nevertheless, Fermat's conjecture was astonishing since nobody had ever found any formula of prime numbers; $F_n$ is called Fermat's number nowadays. However, after about a century, Euler found in 1732 that $F_5= 641 \times 6700417$ was composite. Sadly, people later have verified every Fermat's number from $F_5$ to $F_{30}$ by computer of manually, none of them is prime. The counter conjecture: from $n = 5$, every $F_n$ is composite, is still open today. The story doesn't complete, \cref{sec:geometric-cons-polygon} shows another astonishing result: Fermat's numbers rule the geometric construction of regular polygons.
+He verified $F_0 = 2^{2^0} + 1 = 3$ is prime, $F_1 = 2^{2^1} + 1 = 5$ is prime, $F_2 = 2^{2^2} + 1 = 17$ is prime, $F_3 = 2^{2^3} + 1 = 257$ is prime, and $F_4 = 2^{2^4} + 1 = 65537$ is, again, prime. Fermat then conjectured all $F_n = 2^{2^n} + 1$ were prime! It was not easy to verify the primality of 65537 manually in Fermat's time and the exponent of exponent \eqnuote{exploded} extremely fast. Nevertheless, Fermat's conjecture was astonishing since nobody had ever found any formula of prime numbers; $F_n$ is called Fermat's number nowadays. However, after about a century, Euler found in 1732 that $F_5= 641 \times 6700417$ was composite. Sadly, people later have verified every Fermat's number from $F_5$ to $F_{30}$ by computer of manually, none of them is prime. The counter conjecture: from $n = 5$, every $F_n$ is composite, is still open today. The story doesn't complete, \cref{sec:geometric-cons-polygon} shows another astonishing result: Fermat's numbers rule the geometric construction of regular polygons.
 
 \begin{mdframed}
 One may wonder how Euler factored $F_5$, which demanded heavy computation. Euler was Euler, he might work it out in this way\citepage[p27]{Coxeter2022}\citepage[p18]{Hardy2009}. After reading Fermat's work, particularly about the Diophantine equation $x^n + y^n = z^n$, namely Fermat's last theorem, Euler could known $5^4 + 2^4= 641$ when studying sum of quartic ($n = 4$). Multiplied it by $2^{28}$ gave $2^{32}$, which was part of Fermat's number $F_5 = 2^{2^5} + 1 = 2^{32} + 1$:
@@ -434,54 +434,52 @@ B = 5^4 2^{28} - 1 &= (5^2 2^{14} + 1)(5^2 2^{14} - 1) && \text{difference of sq
 Thus 641 divides both $A$ and $B$, hence divides their difference $A - B = F_5$; it shows $F_5$ is composite. Euler was at the age of 25 in that year of 1732.
 \end{mdframed}
 
-\index{Mersenne's prime}
-During the correspondence with Fermat, Mersenne studied the prime numbers of $2^n - 1$.
+\index{Mersenne prime}
+During the correspondence with Fermat, Mersenne discovered the prime numbers named after him in the form of $2^n - 1$.
 
-的素数进行了大量的计算、验证，并取得了重要的进展。我们不知道如下的结论是来自费马、梅森，还是来自后人：
-
-\begin{proposition}[梅森素数]
-如果$n > 1$且$a^n - 1$是素数，则必然有$a = 2$并且$n$是素数。
+\begin{proposition}[Mersenne prime]
+For integers $a$ and $n > 1$, if $a^n - 1$ is prime, then $a = 2$ and $n$ is prime.
 \end{proposition}
 
 \begin{proof}
-可以利用等比数列求和公式证明$a = 2$。考虑下面的等比数列：
+We shall apply the sum of geometric series to show $a = 2$.
 
 \begin{align*}
 s  &= 1 + a + a^2 + \dotsb + a^{n-1}  \\
-as &= a + a^2 + \dotsb + a^{n-1} + a^n && \text{两边乘以}a \\
+as &= a + a^2 + \dotsb + a^{n-1} + a^n && \text{multiply both sides by }a \\
 as - s &= \cancel{a} + \cancel{a^2} + \dotsb + \cancel{a^{n-1}} + a^n - 1 - \cancel{a} - \cancel{a^2} - \dotsb - \cancel{a^{n-1}} \\
 (a - 1)s &= a^n - 1 \\
- s &= \frac{a^n - 1}{a - 1}
+ s &= \frac{a^n - 1}{a - 1} && \text{where } a \ne 1
 \end{align*}
 
-这说明$a - 1$是$a^n - 1$的一个因子\footnote{也可以用函数的方法证明这点：考虑函数$f(x) = x^n - 1$，显然$x = 1$是方程$f(x) = 0$的一个解：$1^n - 1 = 0$。因此$x-1$是$x^n - 1$的因子。}，但如果$a^n - 1$是素数，它只有1和自己两个因子。这样必然有$a - 1 = 1$，即：$a = 2$。
+Consequently, $a - 1$ is a factor of $a^n - 1$\footnote{Alternatively, consider the function: $f(x) = x^n - 1$, $x = 1$ is obviously a root of equation $f(x) = 0$ since $1^n - 1 = 0$. It turns out that $x-1$ is a factor of $x^n - 1$.}; since $a^n - 1$ is prime, which has only two factors: 1 and itself. We rule out the latter since $a \ne 1$, it implies $a - 1 = 1$, hence, $a = 2$.
 
-我们接下来证明$n$必然是素数。用反证法，假设$2^n - 1$是素数，但$n = ab$不是素数，可以分解为两个大于1的数的积。考虑等比数列的和：
+We next show $n$ is prime. Assume by contradiction that given $2^n - 1$ is prime, but $n = cb$ is not, and can be factored by two numbers greater than 1. The sum of geometric series,
 \[
-s = 1 + 2^a + (2^a)^2 + (2^a)^3 + \dotsb + (2^a)^{b-1}
+s = 1 + 2^c + (2^c)^2 + (2^c)^3 + \dotsb + (2^c)^{b-1}
 \]
 
-其中每项都是前一项的$2^a$倍。两边同时乘以$2^a$再减去原数列，消去除首尾的中间项得：
+with the proportion of $2^c$. Multiply both sides by $2^c$, then subtract the original series to cancel the terms in the middle:
 
 \[
-s = \frac{(2^a)^b - 1}{2^a - 1} = \frac{2^{ab} - 1}{2^a - 1}
+s = \frac{(2^c)^b - 1}{2^c - 1} = \frac{2^{cb} - 1}{2^c - 1}
 \]
 
-这说明$2^a - 1$整除$2^{ab} - 1$。并且根据假设$a > 1$，有$2^a - 1 > 1$。这与$2^n - 1 = 2^{ab} - 1$是素数矛盾。所以$n$必然是素数。
+Because the sum $s$ is integral, it turns out $2^c - 1$ divides $2^{cb} - 1$. By the assumption that $c > 1$, it follows $2^c - 1 > 1$, which contradicts with $2^n - 1 = 2^{ab} - 1$ being prime, hence proofs $n$ is prime.
 \end{proof}
 
-注意，这一命题的逆命题\underdot{不成立}。$p$是素数时，$2^p - 1$不一定是素数。例如$2^{11} - 1 = 2047 = 23 \times 89$。但这一命题使得梅森只需要寻找形如$2^p - 1$的素数。1644年，梅森在他的著作《物理数学随感》\footnote{拉丁文Cogitata Physica-Mathematica}的前言中断言：在$257$以内，只有$p$等于2, 3, 5, 7, 13, 17, 19, 31, 67, 127, 257时$2^p - 1$才是素数。尽管这一列表有两处错误（有两个不是素数，但缺失了两个真正的素数，正确的列表应为：2, 3, 5, 7, 13, 17, 19, 31, 61, 89, 107, 127）梅森的发现仍然极为重要。今天，人们定义这样的素数为梅森素数，记为$M_p = 2^p - 1$。尽管没有费马数那样“指数的指数级爆炸”，梅森素数依然是“指数爆炸”式增长的，没有人能轻易验证$M_p$是否是素数。直到1750年，欧拉才验证了$M_{31}$的确是素数。但即使是欧拉也错误地断言$M_{41}$和$M_{47}$是素数。人们直到1886年才发现梅森漏掉了$M_{61}$这个素数。1876年，法国数学家卢卡斯发现了一种检验梅森素数的方法，并成功确认了$M_{127}$是素数。这一素数长达39位。同时卢卡斯判定$M_{67}$不是素数，但是他并未找到其因子。1903年数学家科尔在一次数学会议上走上讲台，一言不发在黑板上写下：$2^{67} - 1 = 193707721 \times 761838257287$。面对台下的掌声，科尔说这花掉了了他三年来的每个星期天。今天人们利用计算机和互联网的强大算力寻找更多的梅森素数。截至2024年，人们共发现了52个梅森素数。其中第52个为$2^{136279841} - 1$共有41024320位。这个记录还在不断被打破。
+Note that the converse is \underdot{not} true: when $p$ is prime, $2^p - 1$ is not necessarily prime, for counter example, $2^{11} - 1 = 2047 = 23 \times 89$. This proposition allowed Mersenne to narrow down primes of $2^p - 1$. Mersenne, in the preface of his \emph{Cogitata Physica-Mathematica} in 1644, claimed for $p < 257$, $2^p - 1$ was prime only when $p$ was one of 2, 3, 5, 7, 13, 17, 19, 31, 67, 127, and 257. In fact, Mersenne's list had errors; two were not prime and missed two. The correct list is: 2, 3, 5, 7, 13, 17, 19, 31, 61, 89, 107, and 127. Nevertheless, Mersenne's discovery is remarkable; people call prime numbers of $M_p = 2^p - 1$ Mersenne primes. Although it doesn't explode as exponent of exponent as Fermat's number, Mersenne prime increases geometrically. Nobody can easily verify if $M_p$ is prime, for example, it was not until 1750 that Euler showed $M_{31}$ was prime, but he incorrectly claimed $M_{41}$ and $M_{47}$ were prime. People finally found the missing one $M_{61}$ in 1886. French Mathematician Lucas in 1876 developed a primality test for Mersenne numbers, and managed verified $M_{127}$ was prime. This prime number is of 39 digits long! In a meeting of the American Mathematical Society in October, 1903, Frank Nelson Cole walked to the blackboard when called to give his lecture. Without saying anything, he worked out the calculation, longhand, of $2^67$. Then he carefully subtracted 1. Moving to another area of the board, he then multiplied out $193,707,721 \times 761,838,257,287$. The numbers matched. Cole returned to his seat to thunderous applause, having delivered the only lecture in history in which not a word was spoken. When asked how long it had taken him to find these factors, he reportedly replied, \enquote{Three years of Sundays.} Note that $M_{67}$ factored by Cole was in Mersenne's original list. It becomes a good challenge for distributive computer algorithms to search large Mersenne prime numbers in the era of internet. As of 2024, people have found 52 Mersenne primes, among which the last one, $2^{136279841} - 1$, is of 41,024,320 digits. This record will be broken soon.
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.35]{img/MarinMersenne}
  %% https://commons.wikimedia.org/wiki/File:MarinMersenneDuflos.jpg
- \caption{克劳德·迪弗洛创作的版画：马林·梅森像}
+ \caption{Marin Mersenne portrait by Claude Dufolos}
  \label{fig:marin-mersenne}
 \end{figure}
 
 \begin{mdframed}
-\index{数学家!梅森}
+\index{Mersenne}
 马林·梅森（Marin Mersenne, 1588～1648，见\cref{fig:marin-mersenne}）是法国著名的修道士、自然哲学家、数学家。他是17世纪欧洲科学界独特的中心人物。梅森与当时欧洲最伟大的思想家、科学家、数学家保持通信，定期组织学术讨论，发表并传播他们的成果，鼓励年轻的学者参与科学研究，极大地促进了法国和欧洲的科学和思想进步。
 
 %% https://mathshistory.st-andrews.ac.uk/Biographies/Mersenne/
