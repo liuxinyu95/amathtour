@@ -509,13 +509,11 @@ A popular legend said Hippasus of Metapontum, a philosopher and an early followe
  \label{fig:pentagram}
 \end{figure}
 
-The legend about Hippasus was mostly not true; we haven't discovered any document as evidence. The only thing we know was from Aristotle, saying Hippasus and Heraclitus both identified fire as the first element in the universe. The Greek might be able to easily recognize pentagram, the symbol of Pythagorean, infinitely inscribed pentagon as shown in \cref{fig:pentagram}.
-
-这些追寻宇宙奥秘的学者们不可能对此感到害怕和恐慌，而是感到好奇和着迷。说希帕索斯发现$\sqrt{2}$也很可疑，等腰直角三角形如此特殊，任何了解勾股定理的人都会发现这个特殊的值。根据亚里士多德的说法，毕达哥拉斯学派用归谬法（即反证法）证明了$\sqrt{2}$的无理性：
+The legend about Hippasus was mostly untrue; we haven't discovered any document as evidence. The only thing we know was from Aristotle, saying Hippasus and Heraclitus both identified fire as the first element in the universe. The Greek might be able to easily recognize pentagram, the symbol of Pythagorean, infinitely inscribed pentagon as shown in \cref{fig:pentagram}. The scholars exploring the universe would be curious or fascinated rather than fear. It's same doubtful to attribute the discovery of $\sqrt{2}$ to Hippasus; the isosceles right angle is so special that anyone who knows the Pythagorean theorem will notice this particular length. According to Aristotle, Pythagoras showed $\sqrt{2}$ irrational by reductio ad absurdum (proof by contradiction).
 
 \index{无理数}
-\begin{theorem}[毕达哥拉斯]
-$\sqrt{2}$不能表示为整数的比，它是无理数。
+\begin{theorem}[Pythagoras]
+$\sqrt{2}$ is not a ratio of whole numbers, hence irrational.
 \end{theorem}
 
 \begin{figure}[htbp]
@@ -528,60 +526,64 @@ $\sqrt{2}$不能表示为整数的比，它是无理数。
     \node[above, sloped] at (0.3,0.5) {$x = \sqrt{2}$};
     \draw[thick] (0.1,0) -- (0.1,0.1) -- (0,0.1);
   \end{tikzpicture}
-  \caption{边长为1的正方形和对角线}
+  \caption{A square with side of 1 and its diagonal}
   \label{fig:square-diagonal}
 \end{figure}
 
-这一定理曾经以命题117出现在欧几里得《原本》卷十中。对比古代的版本，人们发现它是后人加入的。最新的《原本》已经删除了此定理。考虑边长为1的正方形和对角线（间\cref{fig:square-diagonal}）。令对角线长为$x$，根据勾股定理有：$x^2 = 1^2 + 1^2 = 2$。记$x = \sqrt{2}$。我们这里给出两种证明方法，其中第一个证明来自毕达哥拉斯。
+This theorem was list as Proposition 117 in Book X of \emph{The Elements}; after comparing with the old version, it turns out to be added by someone later. The latest version excluded it again. Consider a square with side of 1 and its diagonal (\cref{fig:square-diagonal}). Let the length of the diagonal be $x$; by Pythagorean theorem, $x^2 = 1^2 + 1^2 = 2$, denoted by $x = \sqrt{2}$. We give two proofs; the first was attributed to Pythagoras.
 
 \begin{proof}
-用反证法，假设$x$可以表示为既约分数$\dfrac{a}{b}$，其中$a, b$互素，且$b \ne 1$。我们有：
+Assume by contradiction that $x$ equals some irreducible fraction $\dfrac{a}{b}$, where $a, b$ are coprime and $b \ne 1$.
+
 \begin{align*}
-2 &= x^2 = (\frac{a}{b})^2  && \text{勾股定理} \\
-a^2 &= 2b^2  && \text{两边乘以}b^2
+2 &= x^2 = (\frac{a}{b})^2  && \text{by Pythagorean theorem} \\
+a^2 &= 2b^2  && \text{multiply both sides by }b^2
 \end{align*}
-这说明$a^2$是偶数，所以$a$是偶数。令$a = 2c$，代入后得：
+
+It implies $a^2$ is even, so is $a$ even. Let $a = 2c$ and substitute it:
+
 \begin{align*}
 (2c)^2 &= 2b^2 \\
-2c^2 &= b^2 && \text{两边除以}2
+2c^2 &= b^2 && \text{both sides divided by }2
 \end{align*}
-这说明$b^2$也是偶数，因此$b$也是偶数。这与$a, b$互素矛盾。所以$x = \sqrt{2}$无法表示成既约分数，是无理数。
+
+It follows $b^2$ is even, so is $b$; but $a, b$ are coprime, a contradiction. Thereby, $x = \sqrt{2}$ can not be irreducible fraction but irrational.
 \end{proof}
 
-第二个证明更加一般，它是寻找更多无理数的钥匙：
+The second proof, which is more generic, is the key to find more irrationals.
 \begin{proof}
-根据$a^2 = 2b^2$，并且$a, b$互素，一定有$b$整除$a^2$。因为$b \ne 1$，所以$b$的任何素因子$p$也整除$a^2$。因为$p$是素数，所以$p$也整除$a$。这样$p$就既整除$a$也整除$b$，这与$a, b$互素矛盾。
+by $a^2 = 2b^2$ and $a, b$ are coprime, $b$ divides $a^2$. Since $b \ne 1$, any prime factor $p$ of $b$ also divides $a^2$. As $p$ is prime, it also divides $a$, it follows that $p$ divides both $a$ and $b$, which contradicts that $a, b$ are coprime.
 \end{proof}
 
-仔细观察这两个证明就会发现，毕达哥拉斯的证明实际是第二个证明的特殊情况：$p = 2$。下面我们就证明一个更强的定理：
+Essentially, Pythagoras's proof is a special case of $p = 2$ of the second proof. The generic method leads to a stronger theorem.
 
 \begin{theorem}
-如果$n$不是某个整数的$m$次方，则$\sqrt[m]{n}$是无理数。
+If $n$ is not $m$-th power of some number, then $\sqrt[m]{n}$ is irrational.
 \end{theorem}
 
 \begin{proof}
-用反证法，假设$\sqrt[m]{n} = \dfrac{a}{b}$可以表示为既约分数，其中$a, b$互素，且$b \ne 1$。两边乘$m$次方得：
+Assume for contradiction that $\sqrt[m]{n} = \dfrac{a}{b}$ is some irreducible fraction, where $a, b$ are coprime and $b \ne 1$. Take the $m$-th power of both sides:
 \[
 a^m = n b^m
 \]
-这说明$b$整除$a^m$。因此$b$的任何素因子$p$一定也整除$a^m$。因为$p$是素数，所以$p$也整除$a$。这样$p$就既整除$a$也整除$b$，这与$a, b$互素矛盾。
+It implies $b$ divides $a^m$, hence, any prime factor $p$ of $b$ also divides $a^m$. As $p$ is prime, it also divides $a$, it follows that $p$ divides both $a$ and $b$, which contradicts that $a, b$ are coprime.
 \end{proof}
 
-\index{尺规作图}
-作为这个定理的特殊情况，如果$n$不是完全平方数，那么$\sqrt{n}$必然是无理数。这样古希腊人就通过几何量发现了无理数。谈到古希腊几何就一定会谈到尺规作图。顾名思义，就是只用直尺和圆规作图。按照古希腊哲学家柏拉图立下的传统，直尺是没有刻度的。所以其对应的英文是straight edge而非ruler。圆规一旦从平面上抬起，两脚就在重力的作用下自然合拢。这和我们今天使用的文具圆规有所不同。据说这样简陋的绘图工具源自古埃及的拉绳测量。把两点间的绳子绷直相当于画线段，后来演变成了直尺。把绳子的一端固定于某点，取定长的另一端自由移动相当于画圆，后来演变成了圆规。这看来简陋的绘图工具，在严格的规则限制下，却挑战着古希腊学者们的智慧，结出了欧几里得几何学的硕果。文艺复兴时代的伟大艺术家拉斐尔在他的旷世杰作《雅典学院》中描绘了专注用圆规作图的欧几里得（见\cref{fig:euclid-soa}）。
+\index{straight edge and compass construction}
+When $n$ is not a square number, as a special case of this theorem, then $\sqrt{n}$ is irrational. In this way, the Greek discovered irrational geometric magnitude. When talking about geometric construction in Greece, it actually means the construction only with ruler and compass. According to the tradition of Plato, the ruler was unmarked, which was rather a straight edge. Different from the compass we used today, the two legs closed naturally due to gravity when lifted off the plan in ancient times. It was said the geometric construction with ruler and compass derived from the rope-meter in Egypt. Stretching the rope tight into a straight line, it derived to the ruler; Fixing one end and moving the other end of the rope, it derived to the compass. The Greek insisted on challenging drawing all shapes only with such simple instruments and strict rules, from where Euclidean geometry flourished. \Cref{fig:euclid-soa} is part of \emph{School of Athens} by Raphael, a great artist in Renaissance. It shows Euclid drawing with a compass.
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.35]{img/euclid-soa}
- \caption{拉斐尔《雅典学院》局部，湿壁画，位于梵蒂冈签字厅}
+ \caption{Part of \emph{School of Athens}, fresco by Raphael, in the Stanza della Segnatura in the Vatican.}
  \label{fig:euclid-soa}
 \end{figure}
 
-在《原本》中，欧几里得甚至把尺规作图以公设确定下来：
-\begin{enumerate}[(公设1)]
-\item 过两点可作一条直线。（直尺）
-\item 一条有限的直线可继续延长。（直尺）
-\item 以任意点为心及任意的距离可以画圆。（圆规）
+Euclid postulated geometry constructions in the beginning of \emph{The Elements}:
+\begin{enumerate}[{Postulate} (1)]
+\item To draw a straight line from any point to any point. (ruler)
+\item To produce a finite straight line continuously in a straight line. (ruler)
+\item To describe a circle with any center and radius. (compass)
 \end{enumerate}
 
 从$\sqrt{2}$开始，古希腊人利用尺规作图和勾股定理（毕达哥拉斯定理）找出了一系列无理数。任给一条线段$AB$，规定其长度为1，用圆规在直线上依次截取长为$AB$的线段$n$次就得到了长为$n$的线段。然后在其一端作垂线（见\cref{qn:perp-of-point}），并截取出长为$m$的线段。最后连接两条相互垂直的线段端点，就得到了直角三角形。根据勾股定理，斜边长度为$\sqrt{n^2 + m^2}$（见\cref{fig:rt-mn}）。当$m = n = 1$时，古希腊人就作出了$\sqrt{2}$，当$m=1, n=2$时，古希腊人就作出了$\sqrt{5}$。
