@@ -586,11 +586,11 @@ Euclid postulated geometry constructions in the beginning of \emph{The Elements}
 \item To describe a circle with any center and radius. (compass)
 \end{enumerate}
 
-从$\sqrt{2}$开始，古希腊人利用尺规作图和勾股定理（毕达哥拉斯定理）找出了一系列无理数。任给一条线段$AB$，规定其长度为1，用圆规在直线上依次截取长为$AB$的线段$n$次就得到了长为$n$的线段。然后在其一端作垂线（见\cref{qn:perp-of-point}），并截取出长为$m$的线段。最后连接两条相互垂直的线段端点，就得到了直角三角形。根据勾股定理，斜边长度为$\sqrt{n^2 + m^2}$（见\cref{fig:rt-mn}）。当$m = n = 1$时，古希腊人就作出了$\sqrt{2}$，当$m=1, n=2$时，古希腊人就作出了$\sqrt{5}$。
+Started from $\sqrt{2}$, the Greek were able to construct a family of irrational numbers through the Pythagorean theorem. Given a line segment $AB$, let its length be 1, one may obtain a segment of length $n$ by copying $AB$ for $n$ times. Next draw a perpendicular line at one end (see \cref{qn:perp-of-point}), and then copy $AB$ for $m$ times. Finally connect the two ends of the perpendicular segment to form a right triangle. By the Pythagorean theorem, the length of the hypotenuse is $\sqrt{n^2 + m^2}$ (see \cref{fig:rt-mn}). When $m = n = 1$, the length is $\sqrt{2}$; when $m=1, n=2$, the length is $\sqrt{5}$.
 
 \begin{figure}[htbp]
   \centering
-  \subcaptionbox{直角边为$n$和$m$的三角形\label{fig:rt-mn}}{
+  \subcaptionbox{The right triangle with the two sides of $n$ and $m$. \label{fig:rt-mn}}{
     \begin{tikzpicture}[scale=0.8]
       \draw (0,0) -- (7,0) -- (0,4) -- cycle;
       \node[below] at (3.5,0) {$n$};
@@ -598,7 +598,7 @@ Euclid postulated geometry constructions in the beginning of \emph{The Elements}
       \node[above, sloped] at (3.5,2.5) {$\sqrt{m^2 + n^2}$};
       \draw[thick] (0.1,0) -- (0.1,0.1) -- (0,0.1);
     \end{tikzpicture}
-  }\subcaptionbox{直角边为1和2的三角形\label{fig:rt-12}}{
+  }\subcaptionbox{The right triangle with the two sides of 1 and 2. \label{fig:rt-12}}{
     \begin{tikzpicture}[scale=2]
       \draw (0,0) -- (2,0) -- (0,1) -- cycle;
       \node[below] at (1,0) {$2$};
@@ -607,27 +607,27 @@ Euclid postulated geometry constructions in the beginning of \emph{The Elements}
       \draw[thick] (0.1,0) -- (0.1,0.1) -- (0,0.1);
     \end{tikzpicture}
   }
-  \caption{利用勾股定理获得无理数}
+  \caption{Irrational numbers obtained from the Pythagorean theorem.}
   \label{fig:irrational-tagent}
 \end{figure}
 
-\index{黄金分割} \index{黄金比}
-这个值可不一般。我们延长$\sqrt{5}$一个单位（用圆规在斜边延长线上截取1）得到$1 + \sqrt{5}$，然后再取其一半（见\cref{qn:perp-of-point}）得到$\phi = \frac{1 + \sqrt{5}}{2}$。这个值就是大名鼎鼎的黄金分割比。其十进制小数约为1.618\footnote{也叫做黄金分割数、黄金数或黄金比。中学数学课上给出的黄金比近似值是0.618，可以通过在斜边$\sqrt{5}$上截掉1，然后折半得到。}。\cref{fig:gold-ratio}是文艺复兴时期的大师达·芬奇的名作维特鲁威人。据说他正是通过研究完美的人体比例深刻认识到了黄金分割比，并且有意识地在艺术作品的构图和建筑设计中大量使用黄金比。令维特鲁威人的身高为1，腰部以下的部分为$x$，腰部以上为$1 - x$。达·芬奇认识到腰部将人体分割为两部分的比例（即$(1 - x) : x$）等于腰部以下部分与人体身高的比例（即$x : 1$），写成等式就是$(1 - x) : x = x : 1$。欧几里得在《原本》中称其为“极端与平均比率”（extreme and mean ratio）。利用比例内项积等于外项积（见第\ref{sec:frac-equiv}节）将此化为$x^2 + x - 1 = 0$，解二次方程得$x_{1, 2} = \frac{-1 \pm \sqrt{5}}{2}$。
+\index{Golden ratio}
+$\sqrt{5}$ is closely connected with a notorious number. Copy and append the unit segment (with length of 1) to make $1 + \sqrt{5}$, then halve it (see \cref{qn:perp-of-point}) to get $\phi = \frac{1 + \sqrt{5}}{2}$. This is the \emph{golden ratio}, its value\footnote{some uses 0.618, the approximate value of $\frac{\sqrt{5} - 1}{2}$ as the golden ratio. It can be obtained by first cutting off 1 from $\sqrt{5}$ followed by halving.} is approximately 1.618. \Cref{fig:gold-ratio} is the \emph{Vitruvian Man} by Leonardo da Vinci. It said he identified the golden ratio when studying the perfect human body, and intensely applied the golden ratio in his art works. Let the height of the Vitruvian man be 1, denote the section below waist by $x$, the section above waist by $1 - x$. da Vinci recognized the golden ratio of the two sections divided by waist, which was $(1 - x) : x$, equaled the ratio of the below section and the height of the body, which was $x : 1$. Written in equation as $(1 - x) : x = x : 1$. In fact, this golden ratio was also discovered by the Greek in ancient times. Euclid, in \emph{The Elements}, called it, \enquote{extreme and mean ratio.} Change the equation to the identical of inner product and outer product (see \cref{sec:frac-equiv}), which gives: $x^2 + x - 1 = 0$; the two solutions of this quadratic equation are $x_{1, 2} = \frac{-1 \pm \sqrt{5}}{2}$.
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.4]{img/gold-ratio}
- \caption{达·芬奇的素描维特鲁威人，1490年}
+ \caption{Vitruvian Man by Leonardo da Vinci, 1490}
  \label{fig:gold-ratio}
 \end{figure}
 
-由于\cref{fig:gold-ratio}中的$x < 1$，故取$x = \frac{\sqrt{5} - 1}{2} \approx 0.618$。如果令腰部以上的部分为1，腰部以下部分为$x$。同样的黄金分割——使得腰部将人体分割为两部分的比例（即$1 : x$）等于腰部以下部分与人体身高的比例（即$x : (1 + x)$），写成等式就是$1 : x = x : (1 + x)$。这导致另一个方程$x^2 - x - 1 = 0$，解此二次方程得$x_{1, 2} = \frac{1 \pm \sqrt{5}}{2}$。这里由于$x > 0$，故取$x = \frac{1 + \sqrt{5}}{2} \approx 1.618$。注意到这两个值互为倒数：
+By \cref{fig:gold-ratio}, $x < 1$, hence, $x = \frac{\sqrt{5} - 1}{2} \approx 0.618$. If let the section above the waist be 1, the section below the waist be $x$, then the golden ration, which divides the height of the body, is $1 : x$; it equal the ratio of the section below the waist and the height of the body, which is $x : (1 + x)$. Written in equation $1 : x = x : (1 + x)$, or in quadratic form of $x^2 - x - 1 = 0$. The two solutions are: $x_{1, 2} = \frac{1 \pm \sqrt{5}}{2}$. As $x > 0$, hence, $x = \frac{1 + \sqrt{5}}{2} \approx 1.618$. It turns out the two values are reciprocal of each other:
 
 \[
 \frac{\sqrt{5} - 1}{2} \times \frac{\sqrt{5} + 1}{2} = \frac{(\sqrt{5})^2 - 1}{4} = \frac{5 - 1}{4} = 1
 \]
 
-所以我们在提到黄金比时，$\phi = \frac{\sqrt{5} \pm 1}{2}$都正确，要取决于上下文的具体含义（见\cref{fig:2-cases-phi}）。我们接下来证明黄金数是一个无理数。
+This is the reason that both $\phi = \frac{\sqrt{5} \pm 1}{2}$ are values of golden ratio depends on the context as shown in \cref{fig:2-cases-phi}. We next show either value of the golden ratio is irrational.
 
 \begin{figure}
   \centering
@@ -660,19 +660,20 @@ Euclid postulated geometry constructions in the beginning of \emph{The Elements}
         \draw[<->] (0,-0.4) -- (1,-0.4) node[midway,below] {$1 + \phi$};
     \end{tikzpicture}
   }
-  \caption{黄金分割的两种含义}
+  \caption{Two values of the golden ratio}
   \label{fig:2-cases-phi}
 \end{figure}
 
 
 \begin{proof}
-用反证法，假设黄金数$\phi = \dfrac{a}{b}$可以写成既约分数，其中$b \ne 1$。它满足方程$\phi^2 \pm \phi - 1 = 0$，代入$\dfrac{a}{b}$：
+Assume for contradiction that the golden ratio is rational, hence equals some irreducible fraction $\phi = \dfrac{a}{b}$, where $b \ne 1$. Substitute $\dfrac{a}{b}$ into the equation $\phi^2 \pm \phi - 1 = 0$,
+
 \begin{align*}
 (\frac{a}{b})^2 & = 1 \pm \frac{a}{b}  \\
-a^2 &= b^2 \pm ab && \text{两边乘以}b^2 \\
+a^2 &= b^2 \pm ab && \text{multiply both sides by }b^2 \\
 a^2 &= b(b \pm a)
 \end{align*}
-因为$a, b$互素，它们不可能都是偶数。如果$a$是奇数$b$是偶数，则左边$a^2$是奇数，但右边是偶数导致矛盾；如果$a$是偶数$b$是奇数，则左边$a^2$是偶数，但右边的$b \pm a$是奇数，乘以奇数$b$还是奇数，也导致矛盾；如果$a, b$都是奇数，则左边$a^2$是奇数，但右边$b \pm a$是偶数，所以右边的值是偶数，仍然矛盾。故假设错误，黄金数是无理数。
+Because $a, b$ are coprime, they can not be both even. Suppose $a$ is odd and $b$ is even, then $a^2$ on the left is odd, but the right side is even, a contradiction; If $a$ is even and $b$ is odd, then $a^2$ on the left is even, but $b \pm a$ on the right is odd; multiply by $b$, which is odd, gives odd again. It also leads to contradiction. If both $a, b$ are odd, the $a^2$ on the left is odd, but $b \pm a$ on the right is even, the product on the right is even. All three cases lead to contradiction, hence the golden ratio is irrational.
 \end{proof}
 
 还记得希帕索斯传说的另一个版本么？毕达哥拉斯学派的五角星徽章标志包含着无理数。这个无理数恰好就是黄金分割数$\phi$。我们接下来揭示这个神秘的联系。这一方法来自洛克哈特的《度量》一书。
