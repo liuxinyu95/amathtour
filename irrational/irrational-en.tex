@@ -697,23 +697,23 @@ We divide the regular pentagon as \cref{fig:pentagon}. The isosceles triangle 1 
 It leads to the equation of $x^2 + x - 1 = 0$, to which the solution is the golden ration: $\phi = \frac{\sqrt{5} - 1}{2}$. For the Pythagorean badge, if the diagonal of the pentagram is 1, then the distance between two adjacent vertices is $\phi$, the side length of each angle is $1 - \phi$.
 
 \index{Fibonacci sequence} \label{sec:Fibonacci-numbers}
-The interest in golden ratio was revived from Renaissance. It has been mystified and became such a popular number, that may sayings or even rumors arose. It was said many ancient Greek and Roman arts and architectures employed the golden ratio, the most iconic example being the Parthenon in Athens. Leonardo da Vinci's work, such as the \emph{Mona Lisa} and \emph{The Virgin and Child with Saint Anne}, were all said to conform to the golden ratio. A rectangle whose length‑to‑width ratio equals the golden ratio is claimed to be the most beautiful of all rectangles, so much so that photographs, paper, and books are said to adopt dimensions based on the golden ratio. Some even assert that the golden ratio is hidden in all things in nature: the shell of the nautilus grows according to the golden ratio, and the seeds of a sunflower, the leaves of plants, and the inflorescences of broccoli all conform to it. These various claims have become increasingly mystical as they have spread, even appearing in novels and films (such as The Da Vinci Code). It was again, Fibonacci, who gave us the tool to explain these phenomenon.
+The interest in golden ratio was revived from Renaissance. It has been mystified and became such a popular number, that may sayings or even rumors arose. It was said many ancient Greek and Roman arts and architectures employed the golden ratio, the most iconic example being the Parthenon in Athens. Leonardo da Vinci's work, such as the \emph{Mona Lisa} and \emph{The Virgin and Child with Saint Anne}, were all said to conform to the golden ratio. A rectangle whose length-to-width ratio equals the golden ratio is claimed to be the most beautiful of all rectangles, so much so that photographs, paper, and books are said to adopt dimensions based on the golden ratio. Some even assert that the golden ratio is hidden in all things in nature: the shell of the nautilus grows according to the golden ratio, and the seeds of a sunflower, the leaves of plants, and the inflorescences of broccoli all conform to it. These various claims have become increasingly mystical as they have spread, even appearing in novels and films (such as \emph{The Da Vinci Code}). It was Fibonacci, again, who gave us a tool to explain these phenomenon. He gave a well known problem in \emph{Liber Abaci}. Given a pair of newly born rabbits, one mail and one female; they are able to mate after one month and produce another pair of rabbits by the second month. Suppose rabbits never die and a mating pair always produces a new pair, one male and one female, every month. How many pairs will be there in one year?
 
-要想破除这些数字迷信，就需要我们的老朋友——斐波那契登场了。斐波那契在《算盘书》中给出了一个问题：兔子在出生两个月后，就有繁殖能力，一对兔子每个月能生出一对小兔子来。如果所有兔子都不死，那么一年以后可以繁殖多少对兔子？开始时有一对兔子。第一个月小兔尚未具备繁殖能力，所以仍然只有一对兔子。第二个月它们生下一对小兔，共有两对。第三个月大兔子又生下一对小兔，而上月生的小兔还在成长，总共有2+1=3对。第四个月有两对大兔子产下两对小兔，加上原有的三对兔子，总共有3+2=5对（见\cref{fig:Fibonacci-rabbits}）。按照这样，我们可以得到一个序列
+In the first month, there is a pair; in the second month, plus the newly born pair, there are two pairs; in the third month, the matured pair produces another pair, while the pair born in the previous months are still young, in total 2 + 1 = 3 pairs; in the fourth month, the two matured pairs produce another two baby pairs, plus the three pairs in the third month, in total 3 + 2 = 5 pairs (see \cref{fig:Fibonacci-rabbits}). It results in a sequence of numbers,
 
 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...
 
 \begin{figure}[htbp]
  \centering
- \subcaptionbox{正方形的边长组成了斐波那契序列\label{fig:fibonacci-spiral}}[0.45\linewidth]{
+ \subcaptionbox{The sides of squares form a Fibonacci sequence.\label{fig:fibonacci-spiral}}[0.45\linewidth]{
      \includegraphics[scale=0.4]{img/fibonacci_spiral}}
- \subcaptionbox{黑色：成兔，白色：小兔\label{fig:Fibonacci-rabbits}}[0.45\linewidth]{
+ \subcaptionbox{black: mature; white: newly born\label{fig:Fibonacci-rabbits}}[0.45\linewidth]{
      \includegraphics[scale=0.4]{img/Fibonacci-rabbits}}
  %\captionsetup{labelformat=empty}
- \caption{斐波那契序列展开}
+ \caption{Fibonacci sequence interpretation}
 \end{figure}
 
-这个数列被称做斐波那契数列。它很有规律，从第三项后，任何一项都等于前两项的和。我们可以这样思考它的原理，如果前一个月有$m$对兔子，这个月有$n$对兔子，那么增加的一定都是新产下的小兔，共有$n-m$对，而剩下的都是成年兔子，共$m$对。到下个月时，这$n-m$对小兔刚刚成熟，而$m$对成兔又产下了$m$对小兔。所以下个月的兔子总数等于小兔加上成兔为：$(n - m) + m + m = n + m$对。根据这一推理，我们可以给出斐波那契数列的递归定义：
+This sequence is called Fibonacci sequence, named after Fibonacci. It follows an obvious pattern: from the third one, every number is the sum of the previous two. We may understand its reason like this: suppose there are $n$ pairs of rabbits in some month and $m$ pairs in its previous month. The difference, which is $n - m$ pairs, are all newly born baby rabbits, while the remaining $m$ pairs are matured. In the next month, the $n - m$ pairs grow, and the $m$ matured pairs produces another $m$ pairs of baby rabbits. Hence the sum of matured pairs and baby pairs is $(n - m) + m + m = n + m$. It gives the recursive definition of Fibonacci sequence:
 
 \begin{lalign}
 F_0 &= 0 \\
@@ -721,10 +721,10 @@ F_1 &= 1 \\
 F_{n+2} &= F_n + F_{n+1}
 \end{lalign}
 
-\index{斐波那契螺线}
-通常将斐波那契数列的起始值定义为0和1\footnote{如果起始值是1和3，我们就得到了卢卡斯数列1, 3, 4, 7, 11, 18, ...}。\cref{fig:fibonacci-spiral}给出了斐波那契数列的几何意义。从两个单位正方形（边长为1）开始，把它们拼成矩形。这个矩形的宽为1，长为1+1=2。把这个矩形和边长为2的正方形拼到一起，得到一个宽为2，长为2+1=3的矩形。接下来把这个矩形再和边长为3的正方形拼到一起得到宽为3，长为5的矩形。重复这一步骤，我们总可以把一个宽为$F_{n-2}$，长为$F_{n-1}$的矩形和一个边长为$F_{n-1}$的正方形拼在一起，得到一个宽$F_{n-1}$长为$F_n = F_{n-1} + F_{n-2}$的矩形。如果把每个正方形的内切1/4圆弧连起来，就得到了一个螺线，称为斐波那契螺线。
+\index{Fibonacci spiral}
+Fibonacci sequence starts from 0 and 1\footnote{When start from 1 and 3, one get Lucas sequence: $1, 3, 4, 7, 11, 18, \cdots$}. \Cref{fig:fibonacci-spiral} interprets Fibonacci sequence with a spiral. Start from two unit squares (side length of 1), form a rectangle with width of 1 and length of 1 + 1 = 2; Next put this $1 \times 2$ rectangle and a $2 \times 2$ square together to form a bigger rectangle with width of 2 and length of 2 + 1 = 3. Next put this $2 \times 3$ rectangle and a $3 \times 3$ square to form a rectangle of $3 \times 5$ and repeat. At any step, put a rectangle of $F_{n-2} \times F_{n-1}$ and a square $F_{n-1} \times F_{n-1}$ together to form a bigger rectangle with width of $F_{n - 1}$ and length of $F_n = F_{n-1} + F_{n-2}$. Inscribe every square with a 1/4 arc, these arcs form a Fibonacci spiral.
 
-斐波那契数列增加的非常快，兔子几乎是按照指数爆炸的速度疯狂繁殖，1年后从一对变成了144对。我们知道等比数列是指数爆炸的，每一项都是前一项的固定倍数。说斐波那契数列“几乎”是指数爆炸究竟是什么意思呢？显然每一项与前一项的比不是一个固定倍数，\cref{tab:fibonacci-ratios}列出了斐波那契数列相邻项的比值。
+Fibonacci sequence grows very fast, the rabbits reproduce \emph{almost} exponentially, from a pair to 144 pairs in one year. We know geometric series increases exponentially as every number is proportional to its predecessor at a fixed factor. What does the term `almost' exponentially mean? The proportion between any two adjacent Fibonacci numbers is not fixed as shown in \cref{tab:fibonacci-ratios}.
 
 \begin{table}[ht]
     \centering
@@ -744,40 +744,40 @@ F_{n+2} &= F_n + F_{n+1}
            &      &              &        20 & 6765 & 1.6180339632 \\
         \hline
     \end{tabular}
-    \caption{斐波那契数列相邻项比值}
+    \caption{Proportion between adjacent Fibonacci numbers}
     \label{tab:fibonacci-ratios}
 \end{table}
 
-虽然不是等比数列，但相邻项的比值越来越接近，小数点后四位稳定在1.6180。用计算器计算黄金比例$\phi = \frac{1+\sqrt{5}}{2} \approx 1.6180339887$，这与$F_{20}/F_{19}$的小数点后7位完全一样。这难道仅仅是巧合么？
+Tough it is not a geometric series, as $n$ increases, the proportion between adjacent numbers is closing to a fixed value, which approximates to 1.6180 in four places. Calculate the golden ratio, with a calculator, $\phi = \frac{1+\sqrt{5}}{2} \approx 1.6180339887$, which matches $F_{20}/F_{19}$ for 7 places. Is that merely a coincidence?
 
 \begin{proposition}
-若斐波那契数列相邻项的比值收敛，则其极限为黄金分割数$\phi$。
+If the proportion of adjacent numbers of Fibonacci sequence converges, then its limit is the golden ratio $\phi$.
 \end{proposition}
 
-注意这个命题没有断定一定有极限，而是说\underdot{如果}有的话，那么一定是$\phi$。证明极限存在需要高等数学的相关知识，但使用中学数学中的二次方程已经能够破解神秘的问题了。
+Note this proposition does not assert the existence of the limit, but \emph{if} exits, then it is $\phi$. Despite we need analysis to show the limit exits, school math is sufficient for demystifying.
 
 \begin{proof}
-根据斐波那契数列的递归关系：$F_n = F_{n-1} + F_{n-2}$，两边同时除以$F_{n-1}$得：
+By the recursive definition of Fibonacci sequence: $F_n = F_{n-1} + F_{n-2}$, divide both sides by $F_{n-1}$,
 
 \[
 \frac{F_n}{F_{n-1}} = 1 + \frac{F_{n-2}}{F_{n-1}}
 \]
 
-如果斐波那契数列相邻项的比收敛于$x$，即当$n$越来越大$n \to \infty$时，$\frac{F_n}{F_{n-1}}$和$\frac{F_{n-1}}{F_{n-2}}$都趋近$x$，那么上式趋近：
+If the proportion of adjacent numbers converges to $x$, which means when $n$ is increasing $n \to \infty$, both $\frac{F_n}{F_{n-1}}$ and $\frac{F_{n-1}}{F_{n-2}}$ converge to $x$, then the above equation turns out to be:
 
 \begin{align*}
 x = 1 + \frac{1}{x}  \\
-x^2 - x + 1 = 0 && \text{两边乘以}x
+x^2 - x + 1 = 0 && \text{multiply both sides by }x
 \end{align*}
-这恰恰是黄金分割数满足的方程，解方程并舍弃负根得$x = \frac{\sqrt{5} + 1}{2} = \phi$。
+Which is exactly the golden ration equation, after discard the negative root, the solution is $x = \frac{\sqrt{5} + 1}{2} = \phi$.
 \end{proof}
 
-再加上一点点理性思维，我们就能破解数字迷信了。自然界中的生物，如果在原有基础上生长，就会满足斐波那契数列。例如鹦鹉螺的螺壳，在第$n$个生长周期中，原有的部分$F_{n-1}$不会消失，并且在这个基础上又增长到$F_n$，下一个生长周期就会在$F_{n-1}$和$F_{n}$的基础上继续生长成$F_{n+1} = F_{n} + F_{n-1}$。这恰恰是斐波那契数列，所以鹦鹉螺的壳如同\cref{fig:fibonacci-spiral}那样的螺线。而这个螺线的外切矩形的长宽比为$F_{n}/F_{n-1}$，近似于并逐渐趋近于黄金比。同样的道理，\cref{fig:sunflower}中的种子在原有的基础上生长，也构成斐波那契数列。其生长轨迹是斐波那契螺线，其外切矩形的长宽比近似并趋近黄金比。这一模式在自然界中是如此普遍，这就解释了为何叶子、花序、种子、螺壳等等都呈现着斐波那契数列和黄金比。
+With a bit rational reasoning, we are able to explain why the golden ratio arises from many living things in nature: when something grows on top of its base but not reset, it follows the Fibonacci sequence. For example, a nautilus in its $n$-th growing cycle, grows on its base part of $F_{n-1}$ but not reset. Suppose it grows to $F_n$, then in the next cycle, it will grow based on $F_{n-1}$ and $F_n$ to $F_{n+1} = F_{n} + F_{n-1}$. It grows exactly by following the recursive relation of Fibonacci sequence as shown in \cref{fig:fibonacci-spiral}, a Fibonacci spiral. This spiral inscribes a rectangle whose length-to-width ration equals $F_{n}/F_{n-1}$, which converges to the golden ratio. In the same way as shown in \cref{fig:sunflower}, the sunflower grows on its base but not reset, hence the numbers of seeds become a Fibonacci sequence. Its growing pattern forms a Fibonacci spiral, which inscribes rectangles whose dimension close to the golden ratio. This pattern is so common in nature, that it explains why leaves, inflorescences, seeds, shells, and so on all describe Fibonacci numbers, hence describe the golden ratio.
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.3]{img/sunflower}
- \caption{向日葵的种子按照斐波那契数列生长}
+ \caption{Seeds of a sunflower follow Fibonacci sequence.}
  \label{fig:sunflower}
 \end{figure}
 
