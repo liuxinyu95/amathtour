@@ -781,18 +781,18 @@ With a bit rational reasoning, we are able to explain why the golden ratio arise
  \label{fig:sunflower}
 \end{figure}
 
-最后一个需要破除的传言是纸张的尺寸符合黄金分割比。\cref{fig:ISO216}是国际标准化组织（ISO）制定的A系列和B系列纸张尺寸。分别以国际单位制毫米（mm）和英制单位英寸（in）标注。我们熟悉的A4打印纸的尺寸为$210 \times 297$平方毫米，长宽比为$297/210 = 1.41429$，不等于黄金比1.618。B0纸张的长宽比是$1414/1000 = 1.414$。这些纸张的长宽比看似是一样的。而1.414接近$\sqrt{2}$，古希腊人发现的第一个无理数，边长为1的正方形的对角线。这是巧合么？我们只要了解ISO制定的纸张尺寸原理就能利用初中几何和方程找到答案了。为了生产方便，ISO标准定义A0的大小是1平方米，A0对折剪裁就得到两张A1，它们同A0的形状一样；一张A1对折剪裁就得到两张A2，它们的形状也一样，以此类推。同样一张B0对折剪裁得到两张B1，一张B1对折剪裁得到两张B2，以此类推，并且它们的形状都一样。我们从初中几何中立即得出，所有A系列的纸张是\underdot{相似}的矩形，所有B系列的纸张也是相似的矩形。那么什么长宽比能满足这个方便剪裁的需求呢？我们假设矩形长$r$，宽$1$（例如B0纸），对折后剪裁成两张宽$\dfrac{r}{2}$，长$1$的小矩形（例如两张B1纸）。由于图形相似，所以：
+The last rumor to be clarified is about paper size, which is said to adopt golden ratio. \Cref{fig:ISO216} shows the definition of International Standards Organization (ISO) paper size of A series and B series, annotated in both mm and in. The commonly used A4 paper for example, is $210 \times 297 mm^2$, its length-to-width ratio is $297/210 = 1.41429$ unequal to the golden ration of 1.618. The ratio of B0 paper is $1414/1000 = 1.414$. It looks that the length-to-width ratio of these papers are close. While 1.414 is near $\sqrt{2}$, the diagonal length of a unit square and the notorious irrational number discovered by the ancient Greeks. Is that a coincidence? According to the explanation of ISO, a piece of A0 paper covers area of $1 m^2$; a piece of A0 paper can be divided into two pieces of A1 paper, in the same shape of rectangle; a piece of A1 paper can be divided into two pieces of A2 paper in the same shape of rectangle, and so on. Similarly, a piece of B0 paper can be divided into two pieces of B1; a piece of B1 can be divided into two pieces of B2, and so on. The meaning of same shape, by school math, is \emph{similar} rectangle for both A series and B series. To figure out what length-to-width ratio satisfying such dividing rule, let the length be $r$ and the width be $1$ (B0 for example); divide it into two pieces of small paper (B1 for example) with length of $1$ and width of $\dfrac{r}{2}$. Since they are similar,
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.25]{img/ISO216}
- \caption{国际标准化A系列和B系列纸张尺寸}
+ \caption{ISO A series and B series.}
  \label{fig:ISO216}
 \end{figure}
 
 \begin{align*}
-r : 1 &= 1 : \frac{r}{2}  && \text{图形相似} \\
-1 &= \frac{r^2}{2} && \text{内、外项积相等} \\
+r : 1 &= 1 : \frac{r}{2}  && \text{Similar} \\
+1 &= \frac{r^2}{2} && \text{inner product equals outer product} \\
 r^2 &= 2
 \end{align*}
 
