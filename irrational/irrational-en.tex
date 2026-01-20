@@ -724,7 +724,7 @@ F_{n+2} &= F_n + F_{n+1}
 \index{Fibonacci spiral}
 Fibonacci sequence starts from 0 and 1\footnote{When start from 1 and 3, one get Lucas sequence: $1, 3, 4, 7, 11, 18, \cdots$}. \Cref{fig:fibonacci-spiral} interprets Fibonacci sequence with a spiral. Start from two unit squares (side length of 1), form a rectangle with width of 1 and length of 1 + 1 = 2; Next put this $1 \times 2$ rectangle and a $2 \times 2$ square together to form a bigger rectangle with width of 2 and length of 2 + 1 = 3. Next put this $2 \times 3$ rectangle and a $3 \times 3$ square to form a rectangle of $3 \times 5$ and repeat. At any step, put a rectangle of $F_{n-2} \times F_{n-1}$ and a square $F_{n-1} \times F_{n-1}$ together to form a bigger rectangle with width of $F_{n - 1}$ and length of $F_n = F_{n-1} + F_{n-2}$. Inscribe every square with a 1/4 arc, these arcs form a Fibonacci spiral.
 
-Fibonacci sequence grows very fast, the rabbits reproduce \emph{almost} exponentially, from a pair to 144 pairs in one year. We know geometric series increases exponentially as every number is proportional to its predecessor at a fixed factor. What does the term `almost' exponentially mean? The proportion between any two adjacent Fibonacci numbers is not fixed as shown in \cref{tab:fibonacci-ratios}.
+Fibonacci sequence grows very fast, the rabbits reproduce \emph{almost} exponentially, from a pair to 144 pairs in one year. We know geometric series increases exponentially as the ratio of any two consecutive numbers is fixed. What does the term `almost exponentially' mean? The proportions of two consecutive Fibonacci numbers are different as shown in \cref{tab:fibonacci-ratios}.
 
 \begin{table}[ht]
     \centering
@@ -744,17 +744,17 @@ Fibonacci sequence grows very fast, the rabbits reproduce \emph{almost} exponent
            &      &              &        20 & 6765 & 1.6180339632 \\
         \hline
     \end{tabular}
-    \caption{Proportion between adjacent Fibonacci numbers}
+    \caption{Proportions of consecutive Fibonacci numbers}
     \label{tab:fibonacci-ratios}
 \end{table}
 
-Tough it is not a geometric series, as $n$ increases, the proportion between adjacent numbers is closing to a fixed value, which approximates to 1.6180 in four places. Calculate the golden ratio, with a calculator, $\phi = \frac{1+\sqrt{5}}{2} \approx 1.6180339887$, which matches $F_{20}/F_{19}$ for 7 places. Is that merely a coincidence?
+Tough Fibonacci sequence is not a geometric series, as $n$ increases, the proportions of consecutive numbers are closing to a fixed value, which approximates to 1.6180 in four places. Calculate the golden ratio, with a calculator, $\phi = \frac{1+\sqrt{5}}{2} \approx 1.6180339887$, which matches $F_{20}/F_{19}$ for 7 places. Is that merely a coincidence?
 
 \begin{proposition}
-If the proportion of adjacent numbers of Fibonacci sequence converges, then its limit is the golden ratio $\phi$.
+If the proportions of consecutive Fibonacci numbers converge, then the limit is the golden ratio $\phi$.
 \end{proposition}
 
-Note this proposition does not assert the existence of the limit, but \emph{if} exits, then it is $\phi$. Despite we need analysis to show the limit exits, school math is sufficient for demystifying.
+Note this proposition does not assert the existence of limit, but \emph{if} exits, then it is $\phi$. Despite we need analysis to show the limit exits, school math is sufficient for demystifying.
 
 \begin{proof}
 By the recursive definition of Fibonacci sequence: $F_n = F_{n-1} + F_{n-2}$, divide both sides by $F_{n-1}$,
@@ -763,16 +763,16 @@ By the recursive definition of Fibonacci sequence: $F_n = F_{n-1} + F_{n-2}$, di
 \frac{F_n}{F_{n-1}} = 1 + \frac{F_{n-2}}{F_{n-1}}
 \]
 
-If the proportion of adjacent numbers converges to $x$, which means when $n$ is increasing $n \to \infty$, both $\frac{F_n}{F_{n-1}}$ and $\frac{F_{n-1}}{F_{n-2}}$ converge to $x$, then the above equation turns out to be:
+If the proportions of consecutive Fibonacci numbers converge to $x$, which means when $n$ is increasing $n \to \infty$, both $\frac{F_n}{F_{n-1}}$ and $\frac{F_{n-1}}{F_{n-2}}$ converge to $x$, then the above equation turns out to be:
 
 \begin{align*}
 x = 1 + \frac{1}{x}  \\
 x^2 - x + 1 = 0 && \text{multiply both sides by }x
 \end{align*}
-Which is exactly the golden ration equation, after discard the negative root, the solution is $x = \frac{\sqrt{5} + 1}{2} = \phi$.
+Which is exactly the equation of golden ratio. After discard the negative root, the solution is $x = \frac{\sqrt{5} + 1}{2} = \phi$.
 \end{proof}
 
-With a bit rational reasoning, we are able to explain why the golden ratio arises from many living things in nature: when something grows on top of its base but not reset, it follows the Fibonacci sequence. For example, a nautilus in its $n$-th growing cycle, grows on its base part of $F_{n-1}$ but not reset. Suppose it grows to $F_n$, then in the next cycle, it will grow based on $F_{n-1}$ and $F_n$ to $F_{n+1} = F_{n} + F_{n-1}$. It grows exactly by following the recursive relation of Fibonacci sequence as shown in \cref{fig:fibonacci-spiral}, a Fibonacci spiral. This spiral inscribes a rectangle whose length-to-width ration equals $F_{n}/F_{n-1}$, which converges to the golden ratio. In the same way as shown in \cref{fig:sunflower}, the sunflower grows on its base but not reset, hence the numbers of seeds become a Fibonacci sequence. Its growing pattern forms a Fibonacci spiral, which inscribes rectangles whose dimension close to the golden ratio. This pattern is so common in nature, that it explains why leaves, inflorescences, seeds, shells, and so on all describe Fibonacci numbers, hence describe the golden ratio.
+With a bit rational reasoning, we are able to explain why the golden ratio arises from many living things in nature: when something grows on top of its base but not reset, it follows the Fibonacci sequence. For example, a nautilus shell in its $n$-th growing cycle, grows on its base part of $F_{n-1}$ but not reset. Suppose it grows to $F_n$, then in the next cycle, it will grow based on $F_{n-1}$ and $F_n$ to $F_{n+1} = F_{n} + F_{n-1}$. It grows exactly by following the recursive relation of Fibonacci sequence as shown in \cref{fig:fibonacci-spiral}, a Fibonacci spiral. This spiral inscribes a rectangle whose length-to-width ratio is $F_{n}/F_{n-1}$, which converges to the golden ratio. In the same way as shown in \cref{fig:sunflower}, the sunflower grows on its base but not reset, hence the numbers of seeds become a Fibonacci sequence. Its growing pattern forms a Fibonacci spiral, which inscribes rectangles whose dimension close to the golden ratio. This pattern is so common in nature, that it explains why leaves, flowers, seeds, shells, and so on, all describe Fibonacci numbers, hence describe the golden ratio.
 
 \begin{figure}[htbp]
  \centering
@@ -781,7 +781,7 @@ With a bit rational reasoning, we are able to explain why the golden ratio arise
  \label{fig:sunflower}
 \end{figure}
 
-The last rumor to be clarified is about paper size, which is said to adopt golden ratio. \Cref{fig:ISO216} shows the definition of International Standards Organization (ISO) paper size of A series and B series, annotated in both mm and in. The commonly used A4 paper for example, is $210 \times 297 mm^2$, its length-to-width ratio is $297/210 = 1.41429$ unequal to the golden ration of 1.618. The ratio of B0 paper is $1414/1000 = 1.414$. It looks that the length-to-width ratio of these papers are close. While 1.414 is near $\sqrt{2}$, the diagonal length of a unit square and the notorious irrational number discovered by the ancient Greeks. Is that a coincidence? According to the explanation of ISO, a piece of A0 paper covers area of $1 m^2$; a piece of A0 paper can be divided into two pieces of A1 paper, in the same shape of rectangle; a piece of A1 paper can be divided into two pieces of A2 paper in the same shape of rectangle, and so on. Similarly, a piece of B0 paper can be divided into two pieces of B1; a piece of B1 can be divided into two pieces of B2, and so on. The meaning of same shape, by school math, is \emph{similar} rectangle for both A series and B series. To figure out what length-to-width ratio satisfying such dividing rule, let the length be $r$ and the width be $1$ (B0 for example); divide it into two pieces of small paper (B1 for example) with length of $1$ and width of $\dfrac{r}{2}$. Since they are similar,
+The next rumor to be clarified is about paper size, which is said to adopt golden ratio because such rectangles look most beautiful. \Cref{fig:ISO216} shows the definition of International Standards Organization (ISO) paper size of A series and B series, annotated in both mm and in. The commonly used A4 paper for example, is $210 \times 297 mm^2$; its length-to-width ratio is $297/210 = 1.41429$, unequal to the golden ration of 1.618. The ratio of B0 paper is $1414/1000 = 1.414$. It looks that the length-to-width ratio of these papers are close. While 1.414 is near $\sqrt{2}$, the diagonal length of a unit square and the notorious irrational number discovered by the ancient Greeks. Is that a coincidence? According to the explanation of ISO, a piece of A0 paper covers area of $1 m^2$; a piece of A0 paper can be divided into two pieces of A1 paper, in the same shape of rectangle; a piece of A1 paper can be divided into two pieces of A2 paper in the same shape of rectangle, and so on. Similarly, a piece of B0 paper can be divided into two pieces of B1; a piece of B1 can be divided into two pieces of B2, and so on. The meaning of same shape, by school math, is \emph{similar} rectangle for both A series and B series. To figure out what length-to-width ratio satisfying such dividing rule, let the length be $r$ and the width be $1$ (B0 for example); divide it into two pieces of small paper (B1 for example) with length of $1$ and width of $\dfrac{r}{2}$. Since they are similar,
 
 \begin{figure}[htbp]
  \centering
@@ -796,9 +796,9 @@ r : 1 &= 1 : \frac{r}{2}  && \text{Similar} \\
 r^2 &= 2
 \end{align*}
 
-开方得$r = \sqrt{2}$。这就说明了为何国际标准的纸张长宽比必然是无理数$\sqrt{2}$。由于这个数是无理数，化成小数是无限不循环的。经过四舍五入和单位转换就出现了精度损失。例如$B5$的长宽比为$250/176 = 1.42$。我们甚至能自己推出A0的尺寸：由于A0的面积是1平方米，令其宽为$a$，长为$a\sqrt{2}$，面积$s = a^2\sqrt{2} = 1$，解方程得$a = \sqrt{\frac{1}{\sqrt{2}}} \approx 0.841$米。长为$1 / 0.841 = 1.189$米，和\cref{fig:ISO216}完全一样。同时我们也立即知道了B系列的定义: B0的尺寸为$\sqrt{2}$平方米。所以每个$B$系列的尺寸是对应$A$系列尺寸的$\sqrt{2}$倍。我们甚至可以进一步推测：建筑的瓷砖如果易于切割，产生相似的矩形，则它们也必然满足$\sqrt{2}$的长宽比。这样我们就破除了谣言和迷信，而回归了科学和理性。也许你觉得这太不浪漫了，缺少了神秘感。但这样的推理过程本身是优美的，我们解开了大自然和人类自己生产劳动的内在规律，这些规律同样是和谐的，是美的，是浪漫的。
+Therefor, $r = \sqrt{2}$. It explains why the length-to-width ratio of ISO papers equals $\sqrt{2}$. Since irrational, it is non-repeating decimal, hence there is precision loss after rounding or unit changing. For example, the ratio of $B5$ is $250/176 = 1.42$. One may figure out the size of A0 by himself: since A0 covers $1 m^2$, let the width be $a$, the length be $a\sqrt{2}$; the area $s = a^2\sqrt{2} = 1$. Solving this equation gives $a = \sqrt{\frac{1}{\sqrt{2}}} \approx 0.841 m$. Hence the length is $1 / 0.841 = 1.189 m$, which is exactly as same as \cref{fig:ISO216}. At the same time, one may deduce the definition of B series: a B0 paper covers area of $\sqrt{2} m^2$. Each size of $B$ series is $\sqrt{2}$ times to the size of A series. We can further reason out that, when manufacturing rectangular bricks or tiles, to make them easy cutting to similar pieces, the length-to-width ratio must be $\sqrt{2}$. In this way, we demystified and clarified the rumors with rationality and mathematics. Some may think its dull, not romantic at all. While, the reasoning process itself is beautiful, reveals the theories and rules of nature and human activities. Aren't these theories and rules harmonic, beautiful, and romantic?
 
-\index{数学家!华罗庚} \index{优选法}
+\index{Luogeng Hua} \index{优选法}
 作为本节的结束，我们摘录一段我国伟大的数学家华罗庚先生的“最后的演讲”\footnote{1985年6月12日下午，74岁的华罗庚在日本东京大学理学部作题为《理论、应用与普及》的演讲。演讲完毕后，他在热烈的掌声中走向轮椅，但不幸倒在地上。因心脏病突发，华罗庚于当日晚十时去世\citepage[21页]{ZhangJianan-2017}。}。
 
 \begin{quotation}
