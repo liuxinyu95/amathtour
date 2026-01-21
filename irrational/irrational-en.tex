@@ -863,7 +863,7 @@ Suppose line segment $a$ and $b$ are commensurable. If they have the same length
   \label{fig:line-seg-gcm}
 \end{figure}
 
-\subsection{Extended Euclidean algorithm} \index{division algorithm}
+\subsection{Improved Euclidean algorithm} \index{division algorithm}
 The operation of subtracting $b$ from $a$ and repeating to get $a'$, by definition, is exactly the division algorithm: $a' = a - qb$, where $q$ is the quotient and $a'$ is the remainder. Gauss introduced a notation, namely $a'= a \bmod b$, with which we may simplify the repeat of segment cutting (by compass) in Euclidean algorithm. When a magnitude is some multiple of the other, for example, $b \leq a$ and $b$ divides $a$, we immediately know the greatest common measure is $b$. Since the remainder, $a \bmod b = 0$, we define $(0, b) = (b, 0) = b$. Before applying Euclidean algorithm, we may firstly compare $a$ and $b$, if $a < b$, then swap them. Since $a \bmod b$ must be less than $b$, we swap before recursively computing $(b, a \bmod b)$. Below definition summarizes these improvement.
 
 \be
@@ -899,31 +899,31 @@ We are going to show $r_n$, in the last step, measures both $a$ and $b$. \Cref{e
 Next we are going to show $r_n$ is the greatest common measurement; in other words, any common measure $c$ of $a$ and $b$ measures $r_n$. As $c$ is a common measure, both $a$ and $b$ are its multiples, let $a = mc, b = nc$, where $m, n$ are integral. Substitute into $a = b q_0 + r_0$, it gives $mc = ncq_0 + r_0$; turn it into $r_0 = (m - nq_0)c$, which shows $c$ measures $r_0$. In the same way, $c$ measures $a, b, r_0, r_1, \dotsc, r_n$. Thus any common measure $c$ also measures $r_n$, hence $r_n$ is the greatest common measure. This proves the Euclidean algorithm.
 \end{proof}
 
-We often use symbol $d = r_n$ for the greatest common measure of $a$ and $b$. Actually, $d$ is the greatest common measure for every below pair:
+We often use symbol $d = r_n$ for the greatest common measure of $a$ and $b$. Actually, $d$ is the greatest common measure of every pair below:
 
 \be
 d = (a, b) = (b, r_0) = \dotso = (r_{n-1}, r_n) = r_n
 \label{eq:recursive-gcm}
 \ee
 
-\cref{fig:geometric-GCM}给出了欧几里得算法的一个几何解释。求线段$a, b$的最大公度相当于找到一块最大的方砖，可以恰好铺满长$a$，宽$b$的矩形地板。想象一张$a \times b$大小的纸，我们首先反复剪掉边长为$b$的正方形，最后得到$b \times r_0$大小的矩形纸；然后再反复剪掉边长为$r_0$的正方形，得到$r_0 \times r_1$大小的矩形；不断剪掉正方形，最后剩下的一个正方形的边长就是最大公度。我们可以用这样大小的方砖铺满矩形地板。
+\Cref{fig:geometric-GCM} gives another geometric interpretation on Euclidean algorithm. The greatest common measure of $a$ and $b$ corresponds to the biggest square tile that paves a rectangle with length of $a$ and width of $b$. Consider a piece of paper with size of $a \times b$, we first cut off squares with side of $b$; it remains a piece of paper with size of $b \times r_0$. Next cut off squares with side of $r_0$; it remains a piece of paper with size of $r_0 \times r_1$; cut off squares and repeat, the side of the finally remained square is the greatest common measure. We can pave the rectangle with tiles of such a square.
 
 \begin{figure}[htbp]
  \centering
- \subcaptionbox{反复剪掉正方形。(1) 左上：长$b$宽$a$的矩形；(2) 左下：剪掉两个边为$a$的正方形；(3) 右上：剪掉3个边为$c$的矩形；(4) 右下：剪掉4个边为$d$的矩形。}{\includegraphics[scale=0.4]{img/GCM}}
- \subcaptionbox{用最终的小正方形铺满原图}{
+ \subcaptionbox{Cut off squares and repeats: (1) up left: rectangle of $b \times a$; (2) bottom left: cut off two squares with side of $a$; (3) up right: cut off three squares with side of $c$; (4) bottom right: cut off four squares with side of $d$.}{\includegraphics[scale=0.4]{img/GCM}}
+ \subcaptionbox{Pave the rectangle with the biggest squares}{
    \begin{adjustbox}{max width=0.8\textwidth}
    \begin{tikzpicture}
      \draw[step=1, thin] (0, 0) grid (30, 13);
    \end{tikzpicture}
    \end{adjustbox}
  }
- \caption{欧几里得算法的几何解释}
+ \caption{Geometric interpretation on Euclidean algorithm}
  \label{fig:geometric-GCM}
 \end{figure}
 
-\subsection{扩展欧几里得算法}
-\index{扩展欧几里得算法} \index{贝祖等式}
+\subsection{Extended Euclidean algorithm}
+\index{Extended Euclidean algorithm} \index{Bézout's identity}
 
 贝祖等式（Bézout's identity，或称贝祖定理，也译作裴蜀定理）是欧几里得算法的一个重要结果。整数中的贝祖等式最早由巴谢（见\cref{fig:Bachet}）证明。法国数学家贝祖（见\cref{fig:Bezout}）证明了它对多项式也成立\footnote{在抽象代数中，贝祖等式可推广到任意主理想环上。}。
 
@@ -934,7 +934,7 @@ d = (a, b) = (b, r_0) = \dotso = (r_{n-1}, r_n) = r_n
  \caption{贝祖和巴谢}
 \end{figure}
 
-\begin{theorem}[贝祖等式]
+\begin{theorem}[Bézout's identity]
 如果$d$是$a$和$b$的最大公度，则存在整数$x$和$y$使得：
 
 \be
