@@ -864,7 +864,7 @@ Suppose line segment $a$ and $b$ are commensurable. If they have the same length
 \end{figure}
 
 \subsection{Extended Euclidean algorithm} \index{division algorithm}
-将$b$反复从$a$中减去，最后得到$a'$的过程恰好是带余数除法的定义，即$a' = a - qb$，其中$q$是商，$a'$相当于余数。我们把这个取余数的过程记为$a'= a \bmod b$，并用除法和求余数运算代替原始欧几里得算法中的反复相减（用圆规截去）。此外，当一个量是另一个量的整倍数时，例如$b \leq a$且$b$可以整除$a$，我们立即知道最大公度为$b$。此时求余数的结果$a \bmod b = 0$，为此可以定义$(0, b) = (b, 0) = b$。我们可以先比较$a$和$b$的大小，如果$a < b$就交换两个量。由于我们知道$a \bmod b$一定小于$b$, 所以下次递归时可以直接交换为$(b, a \bmod b)$。这样就得到了改进的欧几里得算法：
+The operation of subtracting $b$ from $a$ and repeating to get $a'$, by definition, is exactly the division algorithm: $a' = a - qb$, where $q$ is the quotient and $a'$ is the remainder. Gauss introduced a notation, namely $a'= a \bmod b$, with which we may simplify the repeat of segment cutting (by compass) in Euclidean algorithm. When a magnitude is some multiple of the other, for example, $b \leq a$ and $b$ divides $a$, we immediately know the greatest common measure is $b$. Since the remainder, $a \bmod b = 0$, we define $(0, b) = (b, 0) = b$. Before applying Euclidean algorithm, we may firstly compare $a$ and $b$, if $a < b$, then swap them. Since $a \bmod b$ must be less than $b$, we swap before recursively computing $(b, a \bmod b)$. Below definition summarizes these improvement.
 
 \be
 (a, b) = \begin{cases}
@@ -876,7 +876,7 @@ Suppose line segment $a$ and $b$ are commensurable. If they have the same length
 \ee
 
 \begin{proof}
-为什么这个算法可以求出最大公度呢？我们分两步证明它的正确性：第一步证明这一算法可以求出公度；第二步证明求出的公度是最大的。设$b \leq a$（否则交换$a, b$），利用带余数除法求$a$除以$b$。令整数$q_0$为商（从线段$a$中用圆规截去$b$的次数），$r_0$为余数（截去后剩余的线段），即$a = b q_0 + r_0$。如果$r_0$为零，就找到了公度（截去后无剩余，线段$b$可以量尽$a$），为此我们只需要考虑$r_0$不为零的情况。继续用带余数除法：$b = r_0 q_1 + r_1$，类似地，只要余数不为零，可以一直列出这样的式子：
+We take two steps to show why this algorithm gives the greatest common measure: (1) show this algorithm gives a common measure; (2) show it is the greatest. Suppose $b \leq a$, otherwise swap them. Apply the division algorithm to $a$ and $b$; let $q_0$ be the quotient (a integer, which is the number of times that cutting $b$ from $a$ by compass), $r_0$ be the remainder (the remaining segment), such that $a = b q_0 + r_0$. If $r_0 = 0$, then $b$ is the common measure (segment $b$ measures $a$ perfectly); we only need consider the case of $r_0 \ne 0$. Apply the division algorithm again: $b = r_0 q_1 + r_1$; as far as the remainder isn't zero, we get a list like below:
 
 \begin{align*}
 a   &= b q_0 + r_0 \\
@@ -886,7 +886,7 @@ r_1 &= r_2 q_3 + r_3 \\
     & \cdots
 \end{align*}
 
-但只要$a$、$b$是可公度的，这些式子就不会无限列下去。因为商是整数（用圆规截取整数次），并且余数总小于除数，即：$b > r_0 > r_1 > r_2 > \dotsb \ge 0$。但余数不可能小于零，而起始值是有限的，所以最终一定在有限步内得到：
+The list can not be endless since $a$ and $b$ are commensurable. This is because the quotients are integral (the times of cutting off a segment by compass), and the remainders are always less than the divisors. For the chain of remainders: $b > r_0 > r_1 > r_2 > \dotsb \ge 0$, since the remainder can't be negative and the starting number is finite, it eventually reaches,
 
 \begin{salign}
        & \cdots \\
@@ -894,12 +894,12 @@ r_{n-1} &= r_n q_{n+1}
 \label{eq:termination-of-euclidean-algorithm}
 \end{salign}
 
-接下来我们证明最后得到的$r_n$可以同时度量$a$和$b$。根据度量的定义和\cref{eq:termination-of-euclidean-algorithm}，显然$r_n$可以度量$r_{n-1}$。然后考虑倒数第二式$r_{n-2} = r_{n-1} q_n + r_n$。由于$r_n$可以度量$r_{n-1}$，所以$r_n$也可以度量$r_{n-1} q_n$，自然它也可以度量$r_{n-1} q_n + r_n$，这个量恰好就是$r_{n-2}$。以此类推向上逐一证明$r_n$可以度量$r_{n-1}, r_{n-2}, \dotsc, b, a$。这样就证明了欧几里得算法得到的答案$r_n$是$a$和$b$的公度。
+We are going to show $r_n$, in the last step, measures both $a$ and $b$. \Cref{eq:termination-of-euclidean-algorithm} implies $r_n$ measures $r_{n-1}$ by definition. By the second last equation $r_{n-2} = r_{n-1} q_n + r_n$, since $r_n$ measures $r_{n-1}$, $r_n$ also measures $r_{n-1} q_n$, hence it measures $r_{n-1} q_n + r_n$, which equals $r_{n-2}$. In the same way, $r_n$ measures $r_{n-1}, r_{n-2}, \dotsc, b, a$, thereby, $r_n$ is a common measure of $a$ and $b$.
 
-第二步我们要证明$r_n$是最大公度，即任何$a$和$b$的公度$c$也可以度量$r_n$。由于$c$是公度，因此$a$和$b$是它的整数倍。记$a = mc, b = nc$，其中$m, n$都是整数。代入$a = b q_0 + r_0$得$mc = ncq_0 + r_0$。移项得$r_0 = (m - nq_0)c$，因此$c$也可以度量$r_0$。以此类推逐一证明$c$可以度量$a, b, r_0, r_1, \dotsc, r_n$。这样就证明了任何公度$c$都可以度量$r_n$，因此$r_n$是最大公度。这样就证明了欧几里得算法的正确性。
+Next we are going to show $r_n$ is the greatest common measurement; in other words, any common measure $c$ of $a$ and $b$ measures $r_n$. As $c$ is a common measure, both $a$ and $b$ are its multiples, let $a = mc, b = nc$, where $m, n$ are integral. Substitute into $a = b q_0 + r_0$, it gives $mc = ncq_0 + r_0$; turn it into $r_0 = (m - nq_0)c$, which shows $c$ measures $r_0$. In the same way, $c$ measures $a, b, r_0, r_1, \dotsc, r_n$. Thus any common measure $c$ also measures $r_n$, hence $r_n$ is the greatest common measure. This proves the Euclidean algorithm.
 \end{proof}
 
-我们用符号$d = r_n$表示$a, b$的最大公度。进一步，$d$还是下面每一对量的最大公度：
+We often use symbol $d = r_n$ for the greatest common measure of $a$ and $b$. Actually, $d$ is the greatest common measure for every below pair:
 
 \be
 d = (a, b) = (b, r_0) = \dotso = (r_{n-1}, r_n) = r_n
