@@ -813,16 +813,14 @@ The Greeks identified the newly discovered numbers different from other numbers.
 We mentioned in geometric construction, first define a given line segment as 1, then one may extend (by taking with compass) it to $n$. The segment of 1 acts like a ruler, which is used to `measure' a segment of $n$. Explained in `all is number', the Pythagoreans raised the notion of measure: when the length of a line segment A, equals the total length of finite many line segments of V, then define V measures A. In other words, one duplicates a line segment integral times to form another segment. Two line segments $A$ and $B$ may have their own different measures, but if a segment $V$ measures $A$ and $B$, it must be their \emph{common measure}, that is $V$ measures $A$ and $V$ measures $B$. Thus `all is number' means there exists common measure for any two line segments.
 
 \index{The greatest common measure}
-There can be multiple common measures, so it makes sense to define the \emph{greatest} common measure\footnote{abbreviated as gcm. In the context of numbers but not line segments, the corresponding concept is the greatest common divisor, abbreviated as gcd.} as the greatest line segment $V$ that measures both $A$ and $B$, and is not less than any common measure of them. Given two line segments, how to find their greatest common measure? It was this problem that led to a famous algorithm in history: Euclidean algorithm.
+There can be multiple common measures, so it makes sense to define the \emph{greatest} common measure\footnote{abbreviated as gcm. In the context of numbers but not line segments, the corresponding concept is the greatest common divisor, abbreviated as gcd.} as the greatest line segment $V$ that measures both $A$ and $B$, and is not less than any common measure of them. Given two line segments, how to find their greatest common measure? It was this problem that led to a famous algorithm in history: Euclidean algorithm\footnote{Euclidean algorithm was developed independently in other cultures, such as India and China. Indian mathematician Aryabhata applied this algorithm to solving Diophantine equations by the end of the 5th century. In a Chinese book \emph{The Mathematical Classic of Sunzi}, the corresponding Euclidean algorithm was treated as a special case of Chinese remainder theorem. In 1274 (the Southern Song Dynasty), mathematician Qiushao Qin gave a detailed account of Euclidean algorithm in his book \emph{The Mathematical Treatise in Nine Chapters}.}. This algorithm appears\footnote{There is another one, namely the Proposition 1 in Book VII, about Euclidean algorithm for integers. This one, which is for line segments, covers integers.} as Proposition 3, in Book X of Euclid's \emph{The Elements}.
 
-如果线段V是线段A和线段B的公度，并且比其它公度都大，则称V是A和B的最大公度。已知两条线段，怎样才能求得最大公度呢？这就引出了历史上著名的递归算法——欧几里得算法（又称辗转相除法）\footnote{印度和中国分别独立发现了欧几里得算法。五世纪末，印度数学家阿耶波多（Aryabhata）用这一算法解不定方程（丢番图方程）。在《孙子算经》中，欧几里得算法可以作为中国剩余定理的特例。在1247年，南宋数学家秦九韶在《数书九章》中详细给出了欧几里得算法。}。在欧几里得《原本》卷十命题3中\cite{Elements}，详细阐述了这一算法\footnote{在《原本》卷七的命题1中，有针对整数的欧几里得算法。但针对线段的情形实际上覆盖了整数。}。
-
-\index{欧几里得算法}
-\begin{proposition}[《原本》，卷十，命题3]
-已知两个可公度的量，求它们的最大公度量。
+\index{Euclidean algorithm}
+\begin{proposition}[Proposition 3, Book X, The Elements]
+To find the greatest common measure of two given commensurable magnitudes.
 \end{proposition}
 
-第\ref{sec:gcd-minus}节中，我们介绍了欧几里得算法的减法形式求两个自然数的最大公约数。《原本》将其从自然数扩展到几何量，从而更加通用。欧几里得给出的方法，只需要使用递归和减法。因此本质上可以用尺规作图的方式求出最大公度。我们在此把这一算法的形式化定义列出：
+We brief the Euclidean algorithm in \cref{sec:gcd-minus} to compute the greatest common divisor of two natural numbers. In \emph{The Elements}, it was actually extended to geometric magnitudes, such as line segments, as a generic algorithm. The original algorithm given by Euclid only required recursive subtraction, hence could be implemented by ruler and compass. perfectly. Below is the definition:
 
 \[
 (a, b) = \begin{cases}
@@ -832,7 +830,7 @@ There can be multiple common measures, so it makes sense to define the \emph{gre
   \end{cases}
 \]
 
-设两条线段$a$、$b$可公度，如果它们相等，则最大公度就是其中的任一条线段，此时算法返回$a$作为结果。如果线段$a$比$b$长，就用圆规\underdot{不断}从$a$中截去$b$（通过递归），然后求截短的线段$a'$和$b$的最大公度；否则如果线段$b$比$a$长，就反过来\underdot{不断}从$b$中截去$a$，然后求$a$和截短的线段$b'$的最大公度。\cref{fig:line-seg-gcm}描述了这一算法作用于两条线段的计算步骤。我们也可将这一算法应用于整数42和30并与处理线段的过程进行对比：
+Suppose line segment $a$ and $b$ are commensurable. If they have the same length, then the greatest common measure is either segment; the algorithm gives $a$ as the result. If $a$ is longer than $b$, we cut off $b$ from $a$ and repeat (through recursion), then recursively compute the greatest common measure of the remaining segment $a'$ and $b$; if $b$ is longer than $a$, then cut off $a$ from $b$ and repeat, then recursively compute the greatest common measure of $a$ and the remaining segment $b'$. \Cref{fig:line-seg-gcm} shows the steps when applying this algorithm to two line segments. We may also apply it to numbers 42 and 30 as,
 
 \[
 (42, 30) = (12, 30) = (12, 18) = (12, 6) = (6, 6) = 6
@@ -861,11 +859,11 @@ There can be multiple common measures, so it makes sense to define the \emph{gre
     \filldraw (0, -50) circle (0.5)   (6, -50) circle (0.5);
     \draw (-8, -50) node{$b'$} (0, -50) -- (6, -50);
   \end{tikzpicture}
-  \caption{欧几里得算法的线段示意}
+  \caption{Steps of Euclidean algorithm.}
   \label{fig:line-seg-gcm}
 \end{figure}
 
-\subsection{改进欧几里得算法} \index{带余数除法}
+\subsection{Extended Euclidean algorithm} \index{division algorithm}
 将$b$反复从$a$中减去，最后得到$a'$的过程恰好是带余数除法的定义，即$a' = a - qb$，其中$q$是商，$a'$相当于余数。我们把这个取余数的过程记为$a'= a \bmod b$，并用除法和求余数运算代替原始欧几里得算法中的反复相减（用圆规截去）。此外，当一个量是另一个量的整倍数时，例如$b \leq a$且$b$可以整除$a$，我们立即知道最大公度为$b$。此时求余数的结果$a \bmod b = 0$，为此可以定义$(0, b) = (b, 0) = b$。我们可以先比较$a$和$b$的大小，如果$a < b$就交换两个量。由于我们知道$a \bmod b$一定小于$b$, 所以下次递归时可以直接交换为$(b, a \bmod b)$。这样就得到了改进的欧几里得算法：
 
 \be
