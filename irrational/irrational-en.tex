@@ -935,7 +935,7 @@ Bézout's identity is a direct result from Euclidean algorithm. Bachet (\cref{fi
 \end{figure}
 
 \begin{theorem}[Bézout's identity]
-如果$d$是$a$和$b$的最大公度，则存在整数$x$和$y$使得：
+For the greatest common measure $d$ of $a$ and $b$, there are integers $x$ and $y$ satisfying
 
 \be
 ax + by = d
@@ -944,29 +944,29 @@ ax + by = d
 \end{theorem}
 
 \begin{proof}
-考虑所有形如$ax + by$这样的正数（或正的线段长度）组成的集合：
+Consider the set of all positive magnitudes in the form of $ax + by$, namely,
 
 \[
-S = \{ ax + by \}, x, y \text{是整数，且} ax + by > 0
+S = \{ ax + by \}, x, y \text{are integral, and } ax + by > 0
 \]
 
-$S$一定不为空，它至少包含$a$（此时$x = 1, y = 0$）和$b$（此时$x = 0, y = 1$）。因为$S$的所有元素都为正，所以它一定有一个最小的元素，我们将其记为$d = as + bt$。我们接下来要证明$d$就是$a$和$b$的最大公度。使用带余数的除法用$a$除以$d$：
+$S$ is not empty as at least, it contains $a$ (for $x = 1, y = 0$) and $b$ ( for $x = 0, y = 1$). Since all elements of $S$ are positive, there exists the least one, denoted by $d = as + bt$. We are going to show $d$ is the greatest measure of $a$ and $b$. Apply the division algorithm to $a$ divided by $d$,
 
 \be
 a = qd + r
 \label{eq:Euclidean-division}
 \ee
 
-其中$q$是商，余数$0 \leq r < d$。余数$r$要么为0，要么在集合$S$中，这是因为：
+Where $q$ is the quotient. Since the remainder $0 \leq r < d$, it follows that the remainder $r$ is either 0, or in $S$, because,
 
 \begin{align*}
-r & = a - qd          && \text{由\cref{eq:Euclidean-division}} \\
-  & = a - q(as + bt)  && \text{代入}d = as + bt \\
-  & = a(1 - qs) - bqt && \text{合并整理} \\
-  & = ax' + by'       && \text{令}x' = 1 - qs, y' = -bq
+r & = a - qd          && \text{by \cref{eq:Euclidean-division}} \\
+  & = a - q(as + bt)  && \text{substitute in }d = as + bt \\
+  & = a(1 - qs) - bqt && \text{collect the terms} \\
+  & = ax' + by'       && \text{let }x' = 1 - qs, y' = -bq
 \end{align*}
 
-符合集合$S$中元素的形式。但我们之前假设$d$是$S$中的最小正元素，而$r$却比$d$还小，这样就会产生矛盾。因此必定有$r = 0$。\cref{eq:Euclidean-division}就化为$a = qd$，因此$d$可以度量$a$。用同样的方法可以证明$d$也可以度量$b$。因此$d$是它们的公度。我们接下来证明$d$是最大公度。令$c$为$a$和$b$的任意公度，根据定义，存在整数$m$、$n$使得$a = mc$、$b = nc$。这样$d$就可以表示为：
+which is in the form of elements contained in $S$. Remind we selected $d$ as the least positive element in $S$, but $r$ is less than $d$, a contradiction. Therefore, $r = 0$, \cref{eq:Euclidean-division} is then $a = qd$, which implies $d$ measures $a$. In the same way, $d$ also divides $b$. Hence $d$ is the common measure. 我们接下来证明$d$是最大公度。令$c$为$a$和$b$的任意公度，根据定义，存在整数$m$、$n$使得$a = mc$、$b = nc$。这样$d$就可以表示为：
 
 \begin{align*}
 d & = as + bt    \\
