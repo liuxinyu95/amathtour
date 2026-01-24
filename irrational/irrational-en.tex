@@ -966,21 +966,21 @@ r & = a - qd          && \text{by \cref{eq:Euclidean-division}} \\
   & = ax' + by'       && \text{let }x' = 1 - qs, y' = -bq
 \end{align*}
 
-which is in the form of elements contained in $S$. Remind we selected $d$ as the least positive element in $S$, but $r$ is less than $d$, a contradiction. Therefore, $r = 0$, \cref{eq:Euclidean-division} is then $a = qd$, which implies $d$ measures $a$. In the same way, $d$ also divides $b$. Hence $d$ is the common measure. 我们接下来证明$d$是最大公度。令$c$为$a$和$b$的任意公度，根据定义，存在整数$m$、$n$使得$a = mc$、$b = nc$。这样$d$就可以表示为：
+which is in the form of elements contained in $S$. Remind we selected $d$ as the least positive element in $S$, but $r$ is less than $d$, a contradiction. Therefore, $r = 0$, \cref{eq:Euclidean-division} is then $a = qd$, which implies $d$ measures $a$. In the same way, $d$ also divides $b$. Hence $d$ is the common measure. Next, we shall show $d$ is the greatest common measure. For any common measure $c$ of $a$ and $b$, by definition, $a = mc$ and $b = nc$ for some integers $m$ and $n$. Substitute them in,
 
 \begin{align*}
 d & = as + bt    \\
-  & = mcs + nct  && c\text{是$a$和$b$的公度} \\
-  & = c(ms + nt) && d\text{是$c$的倍数}
+  & = mcs + nct  && c\text{ is common measure of $a$ and $b$.} \\
+  & = c(ms + nt) && d\text{ is multiple of $c$.}
 \end{align*}
 
-这说明$c$可以度量$d$，也就是说$c \leq d$。这就证明了$d$是最大公度。综上我们就证明了贝祖等式，即存在整数使得$ax + by = d$，并且进一步得知最大公度是所有形如$ax + by$的正值中最小的。
+It follows that $c$ measures $d$, hence, $c \leq d$. As $c$ is an arbitrary common measure, thereby, $d$ is the greatest common measure. This proves Bézout's identity, i.e., there are integers $x$ and $y$ satisfying $ax + by = d$, and the greatest common measure is the smallest one among all the positive numbers of $ax + by$.
 \end{proof}
 
-但如何找到具体的$x$和$y$使得$d = ax + by$呢？使用贝祖等式，我们可以推导出\underdot{扩展}欧几里得算法，同时找出最大公度和对应的$x$与$y$：
+How to find $x$ and $y$ such that $d = ax + by$? With Bézout's identity, we \emph{extend} the Euclidean algorithm, which will compute the greatest common measure and the corresponding $x$ and $y$:
 
 \begin{align*}
-ax + by & = d = (a, b)   && \text{贝祖等式} \\
+ax + by & = d = (a, b)   && \text{by Bézout's identity} \\
         & = (b, r_0)     && \text{欧几里得算法，\cref{eq:recursive-gcm}} \\
         & = bx' + r_0 y' && \text{对$b$和$r_0$使用贝祖等式} \\
         & = bx' + (a - bq_0)y'  && \text{由$a = b q_0 + r_0$} \\
