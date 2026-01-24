@@ -981,27 +981,27 @@ How to find $x$ and $y$ such that $d = ax + by$? With Bézout's identity, we \em
 
 \begin{align*}
 ax + by & = d = (a, b)   && \text{by Bézout's identity} \\
-        & = (b, r_0)     && \text{欧几里得算法，\cref{eq:recursive-gcm}} \\
-        & = bx' + r_0 y' && \text{对$b$和$r_0$使用贝祖等式} \\
-        & = bx' + (a - bq_0)y'  && \text{由$a = b q_0 + r_0$} \\
-        & = ay' + b(x' - y'q_0) && \text{整理为$a$和$b$的项} \\
-        & = ay' + b(x' - y' \lfloor a / b \rfloor) && \text{将$q_0$表示为$a$与$b$的商}\lfloor a / b \rfloor
+        & = (b, r_0)     && \text{by Euclidean algorithm, \cref{eq:recursive-gcm}} \\
+        & = bx' + r_0 y' && \text{Apply Bézout's identity to $b$ and $r_0$.} \\
+        & = bx' + (a - bq_0)y'  && \text{by } a = b q_0 + r_0 \\
+        & = ay' + b(x' - y'q_0) && \text{collect terms of $a$ and $b$} \\
+        & = ay' + b(x' - y' \lfloor a / b \rfloor) && \text{$q_0$ as the quotient of }\lfloor a / b \rfloor
 \end{align*}
 
-这样就得出了关系：
+This is a recursive relation of,
 
 \[
 x = y' \qquad y = x' - y' \lfloor a / b \rfloor
 \]
 
-边界条件出现在$b = 0$的时候，此时最大公度$(a, 0) = 1a + 0b$。把边界条件和上述关系归纳起来就得到了扩展欧几里得算法：
+The recursion terminates when $b = 0$, at this point, the greatest common measure is $(a, 0) = 1a + 0b$. We summarize these to the extended Euclidean algorithm:
 
 \be
 (a, b)' =
 \begin{cases}
   a < b: & (b, a)' \\
   b = 0: & (a, 1, 0) \\
-  a > b: & (d, y', x' - y' \lfloor a / b \rfloor), \text{其中}(d, x', y') = (b, a \bmod b)'
+  a > b: & (d, y', x' - y' \lfloor a / b \rfloor), \text{where }(d, x', y') = (b, a \bmod b)'
 \end{cases}
 \label{eq:gcm-ext}
 \ee
