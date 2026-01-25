@@ -1028,14 +1028,14 @@ Here is an application of the Extended Euclidean algorithm for example, In a pop
 $A$ & $B$ & operation \\
 \hline
 0 & 0 & start \\
-$a$ & 0 & fill $A$ \\
-0 & $a$ & pour $A$ to $B$ \\
-$a$ & $a$ & fill $A$ \\
-$2a - b$ & $b$ & pour $A$ to $B$ \\
-$2a - b$ & 0 & empty $B$ \\
-$0$ & $2a - b$ & pour $A$ to $B$ \\
-$a$ & $2a - b$ & fill $A$ \\
-$3a - 2b$ & $b$ & pour $A$ to $B$ \\
+0 & $b$ & fill $B$ \\
+$b$ & 0 & pour $B$ to $A$ \\
+$b$ & $b$ & fill $B$ \\
+$a$ & $2b - a$ & pour $B$ to $A$ \\
+0 & $2b - a$ & empty $A$ \\
+$2b - a$ & 0 & pour $B$ to $A$ \\
+$2b - a$ & b & fill $B$ \\
+a & $3b - 2a$ & pour $B$ to $A$ \\
 ... & ... & ... \\
 \hline
 \end{tabular}
@@ -1043,29 +1043,29 @@ $3a - 2b$ & $b$ & pour $A$ to $B$ \\
 \label{tab:jug-ops}
 \end{table}
 
-无论进行何种操作，每个瓶子中的水的容量总可以表示为$ax + by$的形式，其中$x$、$y$是整数。根据贝祖等式的证明，水容量的最小正值就是$a$和$b$的最大公度$d$。给定两个瓶子的容量，我们立即能够判断是否可以得到体积为$c$的水——当且仅当$c$能够被$d$度量\footnote{如果容积为整数，当且仅当$c$能够被最大公约数$d$整除。}，并且$c$不超过较大瓶子的容积。例如，使用容量为4升和6升的瓶子，我们永远无法得到5升水。4与6的最大公约数是2，但5不能被2整除。（换个思路想这个问题：用两个容积为偶数升的瓶子，永远无法从河里打到奇数升的水。）如果$a$和$b$是互素的整数，即最大公度$(a, b) = 1$，则可以得到任意自然数$c$升的水，其中$c$小于大瓶子的容积。
+The key point is that, whatever operations, the water in each jug is $ax + by$ litres for some integral $x$ and $y$. We known from the proof of Bézout's identity, the least positive volume of water is the greatest common measure $d$ of $a$ and $b$. One is able to obtain $c$ litres of water if and only if $d$ measures\footnote{For integral capacities, if and only if the greatest common divisor $d$ divides $c$} $c$, and $c$ doesn't exceed the capacity of the bigger jug. For example, one can not get 5 litres of waters with two jugs of 4 litres and 6 litres, because the greatest common divisor of 4 and 6 is 2, which does not divide 5 (In other words, one can't get odd litres of water with two jugs of even litres capacity). If $a$ and $b$ are coprime, of which the greatest common divisor $(a, b) = 1$, then one is able to get any $c$ litres of water, where $c$ is a natural number is less than the capacity of the bigger jag.
 
-虽然检查$d$能否度量$c$可以判断是否有解，但我们并不知道具体的倒水步骤。如果可以找到整数$x$和$y$，使得$ax + by = c$，就可以得到倒水的步骤：若$x > 0$、$y < 0$，我们需要倒满$A$瓶$x$次，倒空$B$瓶$y$次；反之若$x < 0$、$y > 0$，则需要倒空$A$瓶$x$次，倒满$B$瓶$y$次。例如，大瓶容积$a=5$、小瓶容积$b=3$，要取得$c=4$升水。由于$4 = 3 \times 3 - 5$，即$x = -1$、$y = 3$，我们设计如\cref{tab:designed-jugs-ops}中的一系列操作。
+Though one can tell if it's possible to get $c$ litres of water by examine the greatest common divisor $d$, he doesn't know the detailed steps. We may work out the steps from the two integers $x$ and $y$ satisfying $ax + by = c$ such that if $x > 0$ and $y < 0$, we fill $A$ for $x$times and empty $B$ for $y$ times; otherwise if $x < 0$, $y > 0$, then empty $A$ for $x$ times and fill $B$ for $y$ times. For example, suppose the bigger jug has capacity of $a=5$ litres, the smaller jug has capacity of $b=3$ litres, and the goal is to get $c=4$ litres of water; by $4 = 3 \times 3 - 5$, that is $x = -1$ and $y = 3$, design steps as \cref{tab:designed-jugs-ops}.
 
 \begin{table}[htbp]
 \centering
 \begin{tabular}{l|l|l}
-$A$ & $B$ & 操作 \\
+$A$ & $B$ & operation \\
 \hline
-0 & 0 & 开始 \\
-0 & 3 & 倒满$B$ \\
-3 & 0 & 将$B$倒入$A$ \\
-3 & 3 & 倒满$B$ \\
-5 & 1 & 将$B$倒入$A$ \\
-0 & 1 & 将$A$倒空 \\
-1 & 0 & 将$B$倒入$A$ \\
-1 & 3 & 倒满$B$ \\
-4 & 0 & 将$B$倒入$A$ \\
+0 & 0 & start \\
+0 & 3 & fill $B$ \\
+3 & 0 & pour $B$ to $A$ \\
+3 & 3 & fill $B$ \\
+5 & 1 & pour $B$ to $A$ \\
+0 & 1 & empty $A$ \\
+1 & 0 & pour $B$ to $A$ \\
+1 & 3 & fill $B$ \\
+4 & 0 & pour $B$ to $A$ \\
 \end{tabular}
-\caption{取得4升水需要进行的操作} \label{tab:designed-jugs-ops}
+\caption{steps to get 4 litres of water} \label{tab:designed-jugs-ops}
 \end{table}
 
-在这一系列操作中，倒满$B$共3次，倒空$A$共1次。剩下的问题是寻找整数$x$和$y$，使得$ax + by = c$。根据扩展欧几里得算法，可以找到满足贝祖等式的一组解$ax_0 + by_0 = d$。因为$c$是最大公度$d$的$m$倍，我们只要把$x_0$和$y_0$相应加大$m$倍即可得到一组特解：
+In total, we fill $B$ for 3 times and empty $A$ once. The remaining is to find integers $x$ and $y$ such that $ax + by = c$. Applying the extended Euclidean algorithm, one gets a special solution to the Bézout's identity $ax_0 + by_0 = d$. Suppose $c$ is a multiple of the greatest common measure $d$ for $m$ times, multiply $x_0$ and $y_0$ by $m$ to get a solution of,
 
 \[
 \begin{dcases}
@@ -1074,8 +1074,8 @@ $A$ & $B$ & 操作 \\
 \end{dcases}
 \]
 
-\label{sec:linear-diophantus-equation} \index{不定方程} \index{丢番图方程}
-根据这组特解，可以找到满足不定方程\footnote{又叫做丢番图方程，是用古希腊亚历山大的数学家丢番图（Diophantus，约200-284）的名字命名的。丢番图在他的著作《算术》中，独创地引入了代数符号系统。被一些数学史家誉为“代数学之父”\cite{HanXueTao2009}。}的所有整数解：
+\label{sec:linear-diophantus-equation} \index{linear Diophantine equation}
+We then generate \emph{all} solutions from it to the Diophantine equation\footnote{Named after Diophantus of Alexandria (about 200-284 CE), who introduced algebraic notation and symbolism in his influential work \emph{Arithmetica}. Diophantus was known as \enquote{the father of algebra.}\cite{HanXueTao2009}.}:
 
 \be
 \begin{dcases}
@@ -1084,9 +1084,9 @@ $A$ & $B$ & 操作 \\
 \end{dcases}
 \ee
 
-其中$k$为整数。这样就找到了倒水问题的\underdot{所有}解。接下来我们把这个方法应用到原题目上，用9升和4升的瓶子从河中打出6升水。应用扩展欧几里得算法求$(9, 4)'$, 递归求$(4, 1)'$，再递归求$(1, 0)'$得到$(d = 1, x''= 1, y'' = 0)$，仿照前面的方法逐一返回求得$(d = 1, x = 1, y = -2)$。扩大6倍，需要倒满9升的瓶子6次，倒空4升的瓶子12次。\cref{qn:best-steps-water}要求找出最少的倒水步骤。
+Where $k$ is integral. For the puzzle of getting 6 litres of water from jugs of 9 and 4 litres, apply the extended Euclidean algorithm to the computation of $(9, 4)'$, which in turn to recursively compute $(4, 1)'$, then recursively compute $(1, 0)'$ to get $(d = 1, x''= 1, y'' = 0)$; return to give $(d = 1, x = 1, y = -2)$. Multiply it by 6 times, thereby, one need fill the jug of 9 litres for 6 times and empty the jug of 4 litres for 12 times. \Cref{qn:best-steps-water} ask to figure out the fewest steps.
 
-\subsection{欧几里得算法与无理数}
+\subsection{Euclidean algorithm and irrationals}
 
 欧几里得算法不仅可以寻找整数的最大公约数，还可以寻找几何量的最大公度。而后者包含了前者（长度是整数时）。和毕达哥拉斯学派的想法相反，几何不仅没有建立在“万物皆数”之上，反而独立发展，解决了整数和整数比之外的问题。以至于古希腊数学形成了这样的传统：任何关于数的结论，都需要给出几何证明。这一传统直到十六世纪仍然影响着人们。意大利数学家卡尔达诺在关于解三次、四次方程的著作《大术》中，仍然使用立方体填补法的几何论证\cite{HanXueTao2009}（见第\ref{sec:geometric-cubic-solution}节）。欧几里得算法是一把锋利的宝剑，但反过来指向了“万物皆数”的基石——万物彼此间都可以公度。如果把欧几里得算法应用到正方形的边长和对角线上，就会得出这样的结论：
 
