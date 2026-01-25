@@ -1088,23 +1088,23 @@ Where $k$ is integral. For the puzzle of getting 6 litres of water from jugs of 
 
 \subsection{Euclidean algorithm and irrationals}
 
-欧几里得算法不仅可以寻找整数的最大公约数，还可以寻找几何量的最大公度。而后者包含了前者（长度是整数时）。和毕达哥拉斯学派的想法相反，几何不仅没有建立在“万物皆数”之上，反而独立发展，解决了整数和整数比之外的问题。以至于古希腊数学形成了这样的传统：任何关于数的结论，都需要给出几何证明。这一传统直到十六世纪仍然影响着人们。意大利数学家卡尔达诺在关于解三次、四次方程的著作《大术》中，仍然使用立方体填补法的几何论证\cite{HanXueTao2009}（见第\ref{sec:geometric-cubic-solution}节）。欧几里得算法是一把锋利的宝剑，但反过来指向了“万物皆数”的基石——万物彼此间都可以公度。如果把欧几里得算法应用到正方形的边长和对角线上，就会得出这样的结论：
+Euclidean algorithm applies to both integers and geometric magnitudes; the latter actually covers the former (when the length is integral). Contrary to what the Pythagoreans thought, geometry was not built on top of the idea of \enquote{all is number}, but was developed independently on the notion of numbers or ratios of numbers. The Greek in turn established a tradition, that all propositions, even about number, had to provide geometric argument. It influenced people deeply, that in the 16th century, when the Italian mathematician Cardano published solutions to the cubic and quartic equations, he gave geometric argument in \emph{Ars Magna}\cite{HanXueTao2009} (see \cref{sec:geometric-cubic-solution}). However, the Euclidean algorithm, as a double-sided sword, attack back to the Pythagoreans's belief, \enquote{all is number}, that all numbers are commensurable. Applying the Euclidean algorithm to the side and diagonal of a square,
 
 \begin{proposition}
-正方形的边长和对角线不可公度。
+The side and diagonal of a square are not commensurable.
 \end{proposition}
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=1.5]{img/irrational}
- \caption{正方形的边长和对角线}
+ \caption{Side and diagonal of a square}
  \label{fig:irrational}
 \end{figure}
 
 \begin{proof}
-十九世纪的苏格兰数学家乔治·克里斯托尝试重建了古希腊人的证明。使用反证法，假设存在线段$c$能够公度正方形的边和对角线。由度量的定义，令边长为$nc$，对角线长$mc$，其中$m$、$n$都是正整数。如\cref{fig:irrational}所示，以点A为圆心，边长为半径做圆弧交对角线AC于点E。然后从E出发作垂直于对角线的直线，并交边BC于点F。
+In the 19th century, Scottish mathematician George Chrystal reconstructed the Greek proof. Assume for contradiction there exists some segment $c$ that measures the side and diagonal of a square, let the side be $nc$ and the diagonal be $mc$, where $m$ and $n$ are natural numbers. As shown in \cref{fig:irrational}, taking the side as radius, draw an arc around $A$ as the center, which intersects the diagonal $AC$ at point $E$. Then draw a line from $E$ perpendicular to the diagonal and intersects side $BC$ at point $F$.
 
-由圆的定义，线段AE的长度等于正方形的边长，所以线段EC的长度等于$(m - n)c$。因为EF垂直于AC，而角$\angle ECF$是$45\degree$，故三角形ECF是等腰直角三角形。由两腰相等有$|EC| = |EF|$。接下来注意两个直角三角形$\triangle AEF$和$\triangle ABF$，由于边AE等于AB，同时AF是公共边，因此两个直角三角形全等。这样就得到边$|EF| = |FB|$。综合下来，有$|EC| = |EF| = |FB|$。这样线段FB的长度也等于$(m - n)c$，所以线段CF的长度等于CB的长度减去FB的长度，等于$nc - (m - n)c = (2n - m)c$。我们把得到的结论列在下面。
+For arc, the length of $AE$ equals the square side, hence the length of EC equals $(m - n)c$. Since EF is perpendicular to AC and $\angle ECF$ is $45\degree$, ECF is a isosceles right triangle; the two sides $|EC| = |EF|$. The two right triangles, $\triangle AEF$ and $\triangle ABF$ are congruent because they share a side of $AF$ and AE equals AB. Thereby, $|EF| = |FB|$, it follows that $|EC| = |EF| = |FB|$, so the length of FB equals $(m - n)c$ too. The length of CF which is CB minus FB, equals $nc - (m - n)c = (2n - m)c$. We list them side by side as below.
 
 \[
 \begin{array}{c|c}
@@ -1116,11 +1116,11 @@ Where $k$ is integral. For the puzzle of getting 6 litres of water from jugs of 
 |CF| = (2n - m)c \\
 |CE| = (m - n)c
 \end{cases} \\[4ex]
-\text{大正方形} & \text{小正方形}
+\text{big square} & \text{small square}
 \end{array}
 \]
 
-由于$m$、$n$都是正整数，$c$也可以公度小正方形的对角线$CF$和边$CE$。仿照上面的方法，我们可以继续作出更小的正方形，并且重复作出无穷无尽的更小的正方形。而$c$总可以公度每一个小正方形的斜边和对角线。由于$m$、$n$是有限的正整数，这一过程不可能无限做下去，这样就产生了矛盾。所以一开始的假设不成立，正方形的边和对角线不可公度。
+As $m$ and $n$ are natural numbers, and $c$ measures diagonal $CF$ and side $CE$. In the same way, we can construct another smaller square and repeat infinitely. 而$c$总可以公度每一个小正方形的斜边和对角线。由于$m$、$n$是有限的正整数，这一过程不可能无限做下去，这样就产生了矛盾。所以一开始的假设不成立，正方形的边和对角线不可公度。
 \end{proof}
 
 类似地，\cref{qn:pentagon-irrational}要求证明正五边形的边长和对角线不可公度。就这样，欧几里得找到了区分有理数和无理数的方法——欧几里得算法是否终止，并由此定义了有理量和无理量。
