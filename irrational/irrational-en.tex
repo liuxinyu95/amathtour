@@ -1006,51 +1006,40 @@ The recursion terminates when $b = 0$, at this point, the greatest common measur
 \label{eq:gcm-ext}
 \ee
 
-为了和标准欧几里得算法区别，扩展算法用记号$(a, b)'$，它的结果包含3部分：$(d, x, y)$，分别是最大公度和对应的$x$与$y$。如果$a$小于$b$，就交换它们再求最大公度；如果$b = 0$，则最大公度就是a，并且$x = 1, y = 0$。此时结果为$(a, 1, 0)$；否则，我们递归地用扩展算法求$(b, a \bmod b)'$的最大公度$d$和对应的$x'$与$y'$，然后利用关系$x = y', y = x' - y' \lfloor a / b \rfloor$进一步求出$x, y$。
+We use the notation of $(a, b)'$ to differentiate it from the original Euclidean algorithm; its result contains three parts: $(d, x, y)$, which are the greatest common measure and the corresponding $x$ and $y$. If $a < b$, then swap them; if $b = 0$, then $a$ is the greatest common measure and $x = 1, y = 0$, hence the result is $(a, 1, 0)$; otherwise, we recursively apply the extended Euclidean algorithm to compute $(b, a \bmod b)'$ for the greatest common measure $d$ and the corresponding $x'$ and $y'$, then by the recursive relation of $x = y', y = x' - y' \lfloor a / b \rfloor$, to obtain $x, y$.
 
-我们再次用42和30作为例子，应用扩展欧几里得算法求$(d, x, y) = (42, 30)'$。
-\begin{enumerate}[步骤(1)]
-\item 递归求$(d, x', y') = (30, 12)'$，其中12是42除以30的余数;
-\item 递归求$(d, x'', y'') = (12, 6)'$，其中6是30除以12的余数;
-\item 递归求$(6, 0)'$，其中0是12除以6的余数，根据边界条件$(6, 0)' = (6, 1, 0)$，即$(d = 6, x''' = 1, y''' = 0)$；
-\item 返回(2)得$(d = 6, x'' = y''' = 0, y'' = x''' - \lfloor 12/6 \rfloor y''' = 1 - 2 \times 0 = 1)$；
-\item 返回(1)得$(d = 6, x' = y'' = 1, y' = x'' - \lfloor 30/12 \rfloor y'' = 0 - 2 \times 1 = -2)$；
-\item 最终返回得$(d = 6, x = y' = -2, y = x' - \lfloor 42/30 \rfloor y' = 1 - 1 \times (-2) = 3)$。
+For the same example of 42 and 30, apply the extended Euclidean algorithm: $(d, x, y) = (42, 30)'$,
+\begin{enumerate}[{Step}(1)]
+\item Recursively compute $(d, x', y') = (30, 12)'$, where 12 is the remainder of $42 \div 30$;
+\item Recursively compute $(d, x'', y'') = (12, 6)'$, where 6 is the remainder of $30 \div 12$;
+\item Recursively compute $(6, 0)'$, where 0 is the remainder of $12 \div 6$. By the termination case, $(6, 0)' = (6, 1, 0)$, hence, $(d = 6, x''' = 1, y''' = 0)$;
+\item Return to (2), it gives $(d = 6, x'' = y''' = 0, y'' = x''' - \lfloor 12/6 \rfloor y''' = 1 - 2 \times 0 = 1)$;
+\item Return to (1), it gives $(d = 6, x' = y'' = 1, y' = x'' - \lfloor 30/12 \rfloor y'' = 0 - 2 \times 1 = -2)$;
+\item Finally return to get $(d = 6, x = y' = -2, y = x' - \lfloor 42/30 \rfloor y' = 1 - 1 \times (-2) = 3)$.
 \end{enumerate}
-最后验证：$ax + by = 42 \times (-2) + 30 \times 3 = 6 = d$，的确等于最大公度。
+It's easy to verify that $ax + by = 42 \times (-2) + 30 \times 3 = 6 = d$, indeed, it is the greatest common measure.
 
-作为扩展欧几里得算法的应用，我们给出一道有趣的题目\citepage[23页]{LiuXinyu-2022}。有两个水瓶，容量分别是9升和4升，问如何才能从河中打出6升水？这道题目有很多变化形式，瓶子的容积和取水的容量可以是其它数值。有一个故事说解决这道题目的主人公是少年时代的法国数学家泊松（Sim\`{e}on Denis Poisson）。两个瓶子共有6种操作。记大瓶子为$A$，容积为$a$；小瓶子为$B$，容积为$b$：
-
-\begin{itemize}
-\item 将大瓶子$A$装满水；
-\item 将小瓶子$B$装满水；
-\item 将大瓶子$A$中的水倒空；
-\item 将小瓶子$B$中的水倒空；
-\item 将大瓶子$A$中的水倒入小瓶子$B$；
-\item 将小瓶子$B$中的水倒入大瓶子$A$。
-\end{itemize}
-
-最后两种操作中，任意一个瓶子满或者空时就停止。\cref{tab:jug-ops}给出了一系列倒水动作的例子，这里假设容积$b < a < 2b$。
+Here is an application of the Extended Euclidean algorithm for example, In a popular puzzle\citepage[p23]{LiuXinyu-2022}, given two jugs of 9 and 4 litres, how to get 6 litres of water from river? This puzzle has some variants and can be traced back to ancient Greeks. A story said French mathematician Sim\`{e}on Denis Poisson solved this puzzle when he was a child. Let the small jug be $A$ of capacity $a$, the big jug be $B$ of capacity $b$. There are 6 operations each time: (1) Fill jug $A$; (2) Fill jug $B$; (3) Empty jug $A$; (4) Empty jug $B$; (5) Pour from jug $A$ to $B$; (6) Pour from jug $B$ to $A$. The last two operations stop when either jug is full or empty. \Cref{tab:jug-ops} lists a series of operation for example (suppose $a < b < 2a$).
 
 \begin{table}[htbp]
 \centering
 \begin{tabular}{|l|l|l|}
 \hline
-$A$ & $B$ & 操作 \\
+$A$ & $B$ & operation \\
 \hline
-0 & 0 & 开始 \\
-0 & $b$ & 倒满$B$ \\
-$b$ & 0 & 将$B$倒入$A$ \\
-$b$ & $b$ & 倒满$B$ \\
-$a$ & $2b - a$ & 将$B$倒入$A$ \\
-0 & $2b - a$ & 倒光$A$ \\
-$2b - a$ & 0 & 将$B$倒入$A$ \\
-$2b - a$ & b & 倒满$B$ \\
-a & $3b - 2a$ & 将$B$倒入$A$ \\
+0 & 0 & start \\
+$a$ & 0 & fill $A$ \\
+0 & $a$ & pour $A$ to $B$ \\
+$a$ & $a$ & fill $A$ \\
+$2a - b$ & $b$ & pour $A$ to $B$ \\
+$2a - b$ & 0 & empty $B$ \\
+$0$ & $2a - b$ & pour $A$ to $B$ \\
+$a$ & $2a - b$ & fill $A$ \\
+$3a - 2b$ & $b$ & pour $A$ to $B$ \\
 ... & ... & ... \\
 \hline
 \end{tabular}
-\caption{两个瓶子的水量和倒水操作的对应关系}
+\caption{The water in two jugs and operations}
 \label{tab:jug-ops}
 \end{table}
 
