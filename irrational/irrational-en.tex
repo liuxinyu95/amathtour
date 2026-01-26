@@ -1146,64 +1146,64 @@ Euclidean algorithm has many applications. \Cref{sec:linear-diophantus-equation}
 Every positive integer (except the number 1) can be represented in exactly one way apart from rearrangement as a product of one or more primes\citepage[p2-3]{Hardy2009}.
 \end{theorem}
 
-For example, $12 = 2 \times 2 \times 3 = 2 \times 3 \times 2$, where apart from the order of 2 and 3, there is essentially only one representation of $2^2 \times 3$. 算术基本定理明确地告诉我们，素数是构成整数的基本砖石，并且这种构造是唯一确定的。为了证明算术基本定理，我们第一步先证明：
+For example, $12 = 2 \times 2 \times 3 = 2 \times 3 \times 2$, where apart from the order of 2 and 3, there is essentially only one representation of $2^2 \times 3$. The Fundamental theorem of arithmetic tells us primes are basic bricks to factorize numbers, and the way of factorization is unique. To proof this theorem, we first show that,
 
-\begin{lemma}[欧几里得]
-如果素数$p$整除积$ab$，其中$a, b$是互素的数，那么要么$p$整除$a$，要么$p$整除$b$。
+\begin{lemma}[Euclid]
+If prime $p$ divides the product of $ab$, where $a, b$ are coprime, then $p$ divides $a$ or $p$ divides $b$.
 \end{lemma}
 
 \begin{proof}
-假设$p$不整除$a$，把欧几里得算法应用到$p, a$上，可以得到它们的最大公约数1，然后根据贝祖等式得到：
+Suppose $p$ does not divide $a$, apply Euclidean algorithm to $p$ and $a$, which gives their greatest common divisor, 1. By Bézout's identity,
 
 \begin{align*}
-px + ay &= 1 && \text{贝祖等式} \\
-pxb + aby & = b && \text{两边乘以}b
+px + ay &= 1 && \text{Bézout's identity} \\
+pxb + aby & = b && \text{multiply both sides by }b
 \end{align*}
 
-$p$整除左边的第一项，由于$p$整除$ab$，所以$p$也整除左边的第二项。因此$p$整除左边，所以$p$整除$b$。
+$p$ divides the first term on the left, and since $p$ divides $ab$, it also divides the second term on the left. Therefor, $p$ divides the left, hence it divides $b$.
 \end{proof}
 
-有了这个引理，就可以证明算术基本定理了。
+We shall prove the fundamental theorem of arithmetic with this lemma.
 
 \begin{proof}
-用反证法，假设某一正整数$n$有两种素数分解：
+Assume for contradiction, there is some natural number $n$ with two distinct prime factorization:
 \[
 p_1 p_2 \dotsm p_j = q_1 q_2 \dotsm q_k
 \]
-其中某个素因子$p_i$不等于右侧任何素因子。根据欧几里得引理，因为素数$p_i$整除彼此互素数的积$n = q_1 q_2 \dotsm q_k$，所以$p_i$要么整除$q_1$，要么整除$q_2$……要么整除$q_k$。但这是不可能的，因为每个素数$q_1, q_2, \dotsc, q_k$都不可能被任何其它素数整除。因此假设不成立，任何正整数$n$只有一种素数分解。
+Where there is some prime factor $p_i$ on the left different from any prime number on the right. Since the prime $p_i$ divides the product $n = q_1 q_2 \dotsm q_k$, where $q_i$ are coprime, by Euclidean lemma, $p_i$ divides $q_1$, or divides $q_2$, ..., or divides $q_k$. But it's impossible because every prime number, $q_1, q_2, \dotsc, q_k$ can not be divided by any other prime number, a contradiction. Therefor, any natural number $n$ has a unique factorization.
 \end{proof}
 
-算术基本定理也被称做唯一分解定理。1843年德国数学家库默尔在研究费马大定理时意识到了唯一分解定理在复整数上可能不成立，这引发了代数数论的诞生（见第7章）。
+The fundamental theorem of arithmetic is also called the unique factorization theorem. Kummer, when studied Fermat's last theorem in 1843, realized that the unique factorization theorem might not necessary true for complex numbers, where algebraic number theory arose (see chapter 7).
 
-\subsubsection{连分数}
-\index{连分数}
-第二个例子是连分数。如果分子、分母不是整数，而是分数或分数与整数的和，就会构造出更加复杂的分数，例如：$1 + \frac{1}{1 + \frac{1}{2}}$，它的值是$\dfrac{5}{3}$。这样的构造甚至可以是无限的，例如：
+\subsubsection{Continued fraction}
+\index{continued fraction}
+The second application is continued fraction. If the numerator or the denominator isn't integers, but is fraction or sum of fraction and integers, then it leads to more complex form of fractions, for example, $1 + \frac{1}{1 + \frac{1}{2}}$; its value equals $\dfrac{5}{3}$. Such construction may be infinite, such as,
 
 \[
 x = 1 + \dfrac{1}{2 + \dfrac{1}{3 + \dfrac{1}{4 + \dfrac{1}{\dotso}}}}
 \]
 
-用代数符号表示就是：
+expressing in algebraic symbols,
 
 \be
 x = n_1 + \dfrac{1}{n_2 + \dfrac{1}{n_3 + \dfrac{1}{n_4 + \dfrac{1}{\dotso}}}}
 \ee
 
-人们把形如这样的分数叫做连分数，连分数可以是有限的或者无限的。有限的连分数虽然复杂，但是毕竟经过有限步的分数加法、除法可以化简为普通的分数值，例如上面例子中的$\dfrac{5}{3}$。但无限的连分数有确定的值么？如果有的话，有什么样的规律？我们甚至可以想象一些有趣的模式，例如$1 = n_1 = n_2 = \dotso $，这个连分数形如：
+We call it continued fraction. A continued fraction can be finite or infinite. The finite fraction, though complex, can be simplified to normal fractions in finite steps of addition and division. The above example is simplified to $\dfrac{5}{3}$. The question is, if the infinite continued fraction has definitive value? if yes, are there any patterns? One may easily imagine some interesting patterns, such as, $1 = n_1 = n_2 = \dotso $, which corresponding to the continued fraction of,
 
 \[
 x = 1 + \dfrac{1}{1 + \dfrac{1}{1 + \dfrac{1}{1 + \dfrac{1}{\dotso}}}}
 \]
 
-它的值是什么？如果$n_1, n_2, \dotsc$像无限循环小数那样形成循环节时会怎样？如果它们不循环，但是一个无限的序列，如$1, 2, 3, \dotso$时，这个连分数的值会是什么？所有这些有趣的问题都令人兴奋。而欧几里得算法给了我们一个对连分数的解读方法。考虑$x = \dfrac{42}{30}$，
+What is its value? What if $n_1, n_2, \dotsc$ repeat analogous to repeating decimals? What if it doesn't repeat, but form a infinite series, like $1, 2, 3, \dotso$, what is the value then? These interesting problems look fantastic, and the Euclidean algorithm provides interpretation to continued fractions. Considering $x = \dfrac{42}{30}$,
 
-\begin{enumerate}[第1步，]
-\item 使用带余数除法：$42 = 30 \times 1 + 12$，所以$x$的整数部分$n_1 = 1$，剩余部分为$\dfrac{12}{30}$, 放在一起就是$x = 1 + \dfrac{1}{\frac{30}{12}}$。
-\item 对$x' = \dfrac{30}{12}$使用带余数除法：$30 = 12 \times 2 + 6$，所以$x'$的整数部分$n_2 = 2$，剩余部分为$\dfrac{6}{12}$，放在一起就是：
+\begin{enumerate}[{Step} 1, ]
+\item Apply division algorithm: $42 = 30 \times 1 + 12$, it follows the integral part of $x$ is $n_1 = 1$, and the remaining part is $\dfrac{12}{30}$; put them together, $x = 1 + \dfrac{1}{\frac{30}{12}}$.
+\item For $x' = \dfrac{30}{12}$, apply division algorithm again: $30 = 12 \times 2 + 6$, hence the integral part of $x'$ is $n_2 = 2$, and the remaining part is $\dfrac{6}{12}$. put them together,
 \[
 x = 1 + \dfrac{1}{2 + \dfrac{1}{\dfrac{12}{6}}}
 \]
-\item 对$x'' = \dfrac{12}{6}$使用带余数除法：$12 = 6 \times 2 + 0$，所以$x''$的整数部分$n_3 = 2$，没有剩余部分，所以最终的连分数为：
+\item For $x'' = \dfrac{12}{6}$, apply division algorithm: $12 = 6 \times 2 + 0$, hence the integral part of $x''$ is $n_3 = 2$ without remaining part; the final result in continued fraction is,
 \[
 \dfrac{42}{30} = 1 + \dfrac{1}{2 + \dfrac{1}{2}}
 \]
@@ -1212,33 +1212,33 @@ x = 1 + \dfrac{1}{2 + \dfrac{1}{\dfrac{12}{6}}}
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.5]{img/cont-frac}
- \caption{用欧几里得算法构造$\dfrac{45}{13} = 3 + \dfrac{1}{2 + \dfrac{1}{6}}$}
+ \caption{Construct by Euclidean algorithm of $\dfrac{45}{13} = 3 + \dfrac{1}{2 + \dfrac{1}{6}}$}
  \label{fig:cont-frac}
 \end{figure}
 
-这样看来，欧几里得算法就是构造连分数的过程。\cref{fig:cont-frac}给出了用欧几里得算法构造连分数的几何解释。我们根据命题\ref{th:irrational-gcm}知道无理数是不可公度的，欧几里得算法不会停止。一旦把欧几里得算法应用到无理数$x$上，就会构造出无限连分数。让我们用$x = \sqrt{2}$试试看：
+It shows the process of Euclidean algorithm forms continued fraction. \Cref{fig:cont-frac} gives geometric explanation of constructing continued fraction with the Euclidean algorithm. We know any irrational number, by \cref{th:irrational-gcm}, is incommensurable, hence the Euclidean algorithm won't terminate. Thus when applying Euclidean algorithm to a irrational number $x$, it constructs infinite continued fraction. For example, $x = \sqrt{2}$, is irrational,
 
-\begin{enumerate}[第1步，]
-\item 由于$1 < 2 < 4$，开方后有$1 < \sqrt{2} < 2$。所以$x = \sqrt{2}$的整数部分$n_1 = 1$，剩余部分为$x - n_1 = \sqrt{2} - 1$，放在一起就是
+\begin{enumerate}[{Step} 1, ]
+\item Because $1 < 2 < 4$, taking square root, $1 < \sqrt{2} < 2$. Therefor, the integral part of $x = \sqrt{2}$ is $n_1 = 1$, and the remaining part is $x - n_1 = \sqrt{2} - 1$; put them together,
 \[
  \sqrt{2} = 1 + (\sqrt{2} - 1) = 1 + \dfrac{1}{\dfrac{1}{\sqrt{2} - 1}}
 \]
-\item 考虑$x' = \dfrac{1}{\sqrt{2} - 1}$，利用平方差公式化简：
+\item For $x' = \dfrac{1}{\sqrt{2} - 1}$, simplify it with the difference of squares:
   \begin{align*}
     x' = \dfrac{1}{\sqrt{2} - 1} = \dfrac{\sqrt{2} + 1}{(\sqrt{2} - 1)(\sqrt{2} + 1)} = \dfrac{\sqrt{2} + 1}{2 - 1} = \sqrt{2} + 1
   \end{align*}
-  由于$1 < \sqrt{2} < 2$，所以$2 < \sqrt{2} + 1 < 3$。因此$x' = \sqrt{2} + 1$的整数部分$n_2 = 2$，剩余部分为$x' - n_2 = \sqrt{2} + 1 - 2 = \sqrt{2} - 1$。这和第一步的剩余部分相同。放在一起就是
+  Since $1 < \sqrt{2} < 2$, add 1 to both sides, $2 < \sqrt{2} + 1 < 3$. Therefor, the integral part of $x' = \sqrt{2} + 1$ is $n_2 = 2$, and the remaining part is $x' - n_2 = \sqrt{2} + 1 - 2 = \sqrt{2} - 1$, which, in turn, is as same as the remaining part in step 1. Put them together,
 \[
  \sqrt{2} = 1 + \dfrac{1}{2 + \dfrac{1}{\sqrt{2} - 1}}
 \]
 \end{enumerate}
-到这里就重复循环了。我们获得了$\sqrt{2}$的无限连分数表示：
+It repeats onward. Thereby, the infinite continued fraction form of $\sqrt{2}$ is,
 
 \[
  \sqrt{2} = 1 + \dfrac{1}{2 + \dfrac{1}{2 + \dfrac{1}{2 + \dfrac{1}{\dotso}}}}
 \]
 
-我们能想象在没有计算机排版前，印刷连分数是多么困难。为此数学家们引入了连分数记法$[n_1; n_2, n_3, \dotso]$。注意第一个分隔符是分号，后面是逗号。使用这个记法，无理数$\sqrt{2} = [1; 2, 2, \dotso]$。并且我们发现$\sqrt{2} + 1 = [2; 2, 2, \dotso]$构成了完美的循环。\cref{qn:phi-continue-frac}要求给出黄金分割数$\phi$的连分数表示。回顾分数和小数的关系：有理数可以表示成有限和无限循环的小数，但无理数只能表示成无限不循环的小数；有理数可以表示成有限的连分数，一些无限不循环的小数却可以表示成无限循环的连分数。那么有没有只能表示成无限不循环连分数的无理数呢？有的，我们熟悉的圆周率$\pi$就是这样的数。让我们继续这段无理数的旅程。
+One can image how hard to print continued fractions before the invention of modern computer. Mathematicians introduced a notation to address this problem, namely $[n_1; n_2, n_3, \dotso]$. Note the first deliminator is semicolon, followed with commas. In this notation, the irrational number $\sqrt{2} = [1; 2, 2, \dotso]$. With a minor change: $\sqrt{2} + 1 = [2; 2, 2, \dotso]$ forms a perfect repeating cycle. \Cref{qn:phi-continue-frac} ask to work out the continued fraction form of the golden ratio $\phi$. When compare with the relation of fractions and decimals: a rational number can be expressed in finite or repeating decimal, but a irrational number can only be expressed in infinite non-repeating decimal; a rational number can be expressed in finite continued fraction, and some infinite non-repeating decimals can be expressed in repeating continued fraction. Are there any numbers can only be expressed in infinite non-repeating continued fraction? Yes, for example, the renown $\pi$ is such a number. Let's continue our tour of numbers.
 
 \begin{Exercise}[label={ex:irrationals}]
 \Question{给出正五边形数的通项公式。
