@@ -1238,62 +1238,62 @@ It repeats onward. Thereby, the infinite continued fraction form of $\sqrt{2}$ i
  \sqrt{2} = 1 + \dfrac{1}{2 + \dfrac{1}{2 + \dfrac{1}{2 + \dfrac{1}{\dotso}}}}
 \]
 
-One can image how hard to print continued fractions before the invention of modern computer. Mathematicians introduced a notation to address this problem, namely $[n_1; n_2, n_3, \dotso]$. Note the first deliminator is semicolon, followed with commas. In this notation, the irrational number $\sqrt{2} = [1; 2, 2, \dotso]$. With a minor change: $\sqrt{2} + 1 = [2; 2, 2, \dotso]$ forms a perfect repeating cycle. \Cref{qn:phi-continue-frac} ask to work out the continued fraction form of the golden ratio $\phi$. When compare with the relation of fractions and decimals: a rational number can be expressed in finite or repeating decimal, but a irrational number can only be expressed in infinite non-repeating decimal; a rational number can be expressed in finite continued fraction, and some infinite non-repeating decimals can be expressed in repeating continued fraction. Are there any numbers can only be expressed in infinite non-repeating continued fraction? Yes, for example, the renown $\pi$ is such a number. Let's continue our tour of numbers.
+One can image how hard to print continued fractions before the invention of modern computer. Mathematicians introduced a notation to address this problem, namely $[n_1; n_2, n_3, \dotso]$. Note the first deliminator is semicolon, followed with commas. In this notation, the irrational number $\sqrt{2} = [1; 2, 2, \dotso]$. With a minor change: $\sqrt{2} + 1 = [2; 2, 2, \dotso]$ forms a perfect repeating cycle. \Cref{qn:phi-continue-frac} ask to work out the continued fraction form of the golden ratio $\phi$. When compare with the relation of fractions and decimals: a rational number can be represented in finite or repeating decimal, but a irrational number can only be represented in infinite non-repeating decimal; a rational number can be represented in finite continued fraction, and some infinite non-repeating decimals can be represented in repeating continued fraction. Are there any numbers can only be represented in infinite non-repeating continued fraction? Yes, for example, the renown $\pi$ is such a number. Let's continue our tour of numbers.
 
 \begin{Exercise}[label={ex:irrationals}]
-\Question{给出正五边形数的通项公式。
+\Question{What is the formula of pentagon numbers (\cref{fig:pentagon-numbers})?
 \begin{center}
  \includegraphics[scale=0.4]{img/pentagon-numbers}
- \captionof{figure}{正五边形数}
+ \captionof{figure}{pentagon numbers}
  \label{fig:pentagon-numbers}
 \end{center}
 }
-\Question{\cref{fig:garfield}是第20任美国加菲尔德的勾股定理证法，请解释这一证明。\label{qn:pythagoras-thm-garfield}
+\Question{\Cref{fig:garfield} shows the proof to the Pythagorean theorem by the 20th US president, James Garfield. Explain it. \label{qn:pythagoras-thm-garfield}
 \begin{center}
  \includegraphics[scale=0.3]{img/garfield}
- \captionof{figure}{美国总统詹姆斯·加菲尔德证法（1876）}
+ \captionof{figure}{Proof by US president James Garfield (1876)}
  \label{fig:garfield}
 \end{center}
 }
 
-\Question{\cref{fig:mosaic}是一家老饭店地面上铺的瓷砖，你能从中看出勾股定理么？
+\Question{\Cref{fig:mosaic} show the mosaic paved in a hotel. How does it interpret Pythagorean theorem?
 \begin{center}
  \includegraphics[scale=0.4]{img/mosaic}
- \captionof{figure}{勾股定理与马赛克瓷砖。}
+ \captionof{figure}{Pythagorean theorem in paved mosaic}
  \label{fig:mosaic}
 \end{center}
 }
 
-\Question{$a, b$是互素的奇数，证明$\dfrac{a \pm b}{2}$互素。\label{qn:coprime-of-half-a-pm-b}}
+\Question{$a, b$ are coprime odd numbers, show that $\dfrac{a \pm b}{2}$ are coprime. \label{qn:coprime-of-half-a-pm-b}}
 
-\Question{数论中的\underdot{算术基本定理}说：任何整数可以表示成素数的积，不考虑顺序的情况下，这种表示是唯一的。使用算术基本定理证明：$a, b$互素，若$ab = c^2$，则$a, b$都是平方数。\label{qn:coprime-product-as-square}}
+\Question{The fundamental theorem of arithmetic state that every positive integer (except the number 1) can be represented in exactly one way apart from rearrangement as a product of one or more primes. Use this theorem to show: given $a, b$ being coprime, if $ab = c^2$, then both $a$ and $b$ are squares. \label{qn:coprime-product-as-square}}
 
-\Question{利用埃拉托斯特尼筛法找出100以内的所有素数。\label{qn:seive-of-eratosthenes-100}}
+\Question{Find the prime numbers within 100 with sieve of Eratosthenes. \label{qn:seive-of-eratosthenes-100}}
 
-\Question{任给一条线段$AB$，(1) 作其通过$A$点的垂线。(2) 作通过不在$AB$上的一点$C$的垂线。\label{qn:perp-of-point}}
+\Question{Given a line segment $AB$, (1) draw a line perpendicular to it at $A$; (2) draw a line perpendicular to it through a point $C$ out of $AB$. \label{qn:perp-of-point}}
 
-\Question{给定直线$l$和不在直线上的一点$p$，作通过$p$平行$l$的直线。\label{qn:parallel-through-p}}
+\Question{Given a line $l$ and a point $p$ out of it, draw a line parallel to $l$ through $p$. \label{qn:parallel-through-p}}
 
-\Question{古希腊的圆规抬起后两脚合拢，无法像今天的圆规那样直接截取线段。在古希腊，给定一条线段$AB$和一条直线$l$，如何在$l$上截取长度$AB$？\label{qn:mark-off-segment}}
+\Question{The two legs of a compass close naturally due to gravity when lifted off the plane in ancient Greek times, which couldn't be used to mark off a segment directly as it does today. Given a line segment $AB$, how to mark its length off a line $l$ with such a compass? \label{qn:mark-off-segment}}
 
-\Question{我们在证明欧几里得算法正确性的过程中说：“每次都保证余数小于除数。即$b > r_0 > r_1 > r_2 > ... > 0$，但是余数不可能小于零。由于起始值是有限的，故最终算法一定中止。”为什么不会出现，$r_{n}$无限接近于零但不等于零的情况？算法一定会中止么？$a$和$b$是可公度的这一前提保证了什么？}
+\Question{In the proof to the Euclidean algorithm, it states \enquote{, for the chain of remainders: $b > r_0 > r_1 > r_2 > \dotsb \ge 0$, since the remainder can't be negative and the starting number is finite, it eventually terminates.} Why can not $r_{n}$ infinitely close to 0 but not be 0? Why does the algorithm terminate? What does the precondition that $a$ and $b$ are commensurable assert?}
 
-\Question{对于二元线性不定方程$ax + by = c$，若$x_1$、$y_1$和$x_2$、$y_2$为两对整数解。试证明$|x_1 - x_2|$的最小值为$b/(a, b)$，且$|y_1 - y_2|$的最小值为$a/(a, b)$。}
+\Question{For linear Diophantine equation $ax + by = c$, suppose $x_1$, $y_1$ and $x_2$, $y_2$ are two pairs of integral solution. Show that the minimum of $|x_1 - x_2|$ is $b/(a, b)$ and the minimum of $|y_1 - y_2|$ is $a/(a, b)$.}
 
-\Question{找出用9升和4升的瓶子从河中打出6升水的最少步骤。\label{qn:best-steps-water}}
+\Question{List the fewest steps to obtain 6 litres of water with two jugs of 9 and 4 litres. \label{qn:best-steps-water}}
 
-\Question{证明正五边形的边长和对角线不可公度。\label{qn:pentagon-irrational}}
+\Question{Show that the side and diagonal of pentagon are incommensurable. \label{qn:pentagon-irrational}}
 
-\Question{黄金分割数$\phi = \frac{1 + \sqrt{5}}{2}$的连分数表示是什么？\label{qn:phi-continue-frac}}
+\Question{What the continued fraction of the golden ratio $\phi = \frac{1 + \sqrt{5}}{2}$? \label{qn:phi-continue-frac}}
 
 \end{Exercise}
 
-%% ========== 答案 ====================
+%% ========== Answer ====================
 
 \begin{Answer}[ref={ex:irrationals}]
-\Question{正五边形数的通项公式。
+\Question{The formula of pentagon numbers.
 
-如\cref{fig:pentagon-numbers}，从1开始，边长每增大1时，五边形数增加$4, 7, 10, \dotsc$，即3倍的原边长加上1。所以增加的序列是$4 = 3\times 1 + 1, 7 = 3\times 2 + 1, 10 = 3\times 3 + 1, \dotsc, 3(n-1) + 1$。因此正五边形数$S_n$等于：
+As shown in \cref{fig:pentagon-numbers}, starting from 1, at each time when the side increases by 1, the pentagon number increases by $4, 7, 10, \dotsc$, which is 3 times of the side plus 1. The series are $4 = 3\times 1 + 1, 7 = 3\times 2 + 1, 10 = 3\times 3 + 1, \dotsc, 3(n-1) + 1$. The pentagon number $S_n$ is,
 
 \begin{align*}
   S_n & = 1 + (3\times 1 + 1) + (3\times 2 + 1) + \dotsb + (3(n-1) + 1) \\
@@ -1302,35 +1302,36 @@ One can image how hard to print continued fractions before the invention of mode
 \end{align*}
 }
 
-\Question{勾股定理的总统证法。
+\Question{US president Garfield's proof to the Pythagorean theorem,
 
   \begin{proof}
-梯形面积等于两个原直角三角形和一个等腰直角三角形的面积和。
+  The trapezoid consists of two copies of the original right triangle and a isosceles right triangle, the area,
   \begin{align*}
     S &= S_1 + S_2 + S_3 \\
     \frac{(a + b)h}{2} &= \frac{ab}{2} + \frac{c^2}{2} + \frac{ab}{2} \\
-    (a + b)(a + b) &= 2ab + c^2 && \text{高}h = a + b\\
+    (a + b)(a + b) &= 2ab + c^2 && \text{height }h = a + b\\
     a^2 + \cancel{2ab} + b^2 & = \cancel{2ab} + c^2 \\
     a^2 + b^2 = c^2 && \qedhere
   \end{align*}
   \end{proof}
 }
 
-\Question{瓷砖中蕴含的勾股定理，
-见\cref{fig:pythagoras-mosaic}中的辅助线。
+\Question{Pythagorean theorem in paved mosaic,
+
+See the lines in \cref{fig:pythagoras-mosaic}.
 \begin{center}
  \includegraphics[scale=0.4]{img/pythagoras-mosaic}
- \captionof{figure}{勾股定理与马赛克瓷砖。}
+ \captionof{figure}{Pythagorean theorem in paved mosaic}
  \label{fig:pythagoras-mosaic}
 \end{center}
 }
 
-\Question{若$a, b$是互素的奇数，证明$\dfrac{a \pm b}{2}$互素。
+\Question{If $a, b$ are coprime, show that $\dfrac{a \pm b}{2}$ are coprime.
   \begin{proof}
-    设$d$为$\dfrac{a \pm b}{2}$的公因子，令$dm = \dfrac{a + b}{2}, dn = \dfrac{a - b}{2}$，其中$m, n$为整数。两式相加求得$a = dm + dn = d(m + n)$，所以$d$整除$a$；两式相减得$b = dm - dn = d (m - n)$，所以$d$也整除$b$。这样$d$也是$a, b$的公因子。但$a, b$互素，所以$d$只能是1，即$\dfrac{a \pm b}{2}$互素。
+    Denote the greatest common divisor of $\dfrac{a \pm b}{2}$ by $d$, such that $dm = \dfrac{a + b}{2}, dn = \dfrac{a - b}{2}$, for some integers $m, n$. Their sum is $a = dm + dn = d(m + n)$, hence $d$ divides $a$; their difference is $b = dm - dn = d (m - n)$, hence $d$ divides $b$, thereby, $d$ is a common divisor of $a, b$. But $a, b$ are coprime, hence $d$ can only be 1, which implies $\dfrac{a \pm b}{2}$ are coprime.
   \end{proof}
 }
-\Question{$a, b$互素，若$ab = c^2$，证明$a, b$都是平方数。
+\Question{$a, b$ are coprime, if $ab = c^2$, show that both $a$ and $b$ are squares.
   \begin{proof}
     利用算术基本定理，把$a, b$各自表示为素数幂的积：$a = p_1^{a_1} p_2^{a_2} \dotsm p_n^{a_n}, b = q_1^{b_1} q_2^{b_2} \dotsm q_m^{b_m}$，其中$p_i, q_j$都是素数。由于$a, b$互素，它们的公因数只有1，故$p_i \ne q_j$。它们的积是个平方数$c^2 = p_1^{a_1} p_2^{a_2} \dotsm p_n^{a_n} q_1^{b_1} q_2^{b_2} \dotsm q_m^{b_m}$，所以必然有$a_i, b_j$全部是偶数，即$a, b$都是平方数。
   \end{proof}
