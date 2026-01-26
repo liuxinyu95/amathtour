@@ -1120,33 +1120,33 @@ For arc, the length of $AE$ equals the square side, hence the length of EC equal
 \end{array}
 \]
 
-As $m$ and $n$ are natural numbers, and $c$ measures diagonal $CF$ and side $CE$. In the same way, we can construct another smaller square and repeat infinitely. 而$c$总可以公度每一个小正方形的斜边和对角线。由于$m$、$n$是有限的正整数，这一过程不可能无限做下去，这样就产生了矛盾。所以一开始的假设不成立，正方形的边和对角线不可公度。
+As $m$ and $n$ are natural numbers, and $c$ measures diagonal $CF$ and side $CE$. In the same way, we can construct smaller and smaller squares and repeat infinitely, while $c$ measures the side and diagonal of each small square. Since $m$ and $n$ are finite natural numbers, the process can't be endless, a contradiction. Therefore, the side and diagonal of a square are not commensurable.
 \end{proof}
 
-类似地，\cref{qn:pentagon-irrational}要求证明正五边形的边长和对角线不可公度。就这样，欧几里得找到了区分有理数和无理数的方法——欧几里得算法是否终止，并由此定义了有理量和无理量。
+Analog to square, \cref{qn:pentagon-irrational} requires to show the side and diagonal of a pentagon are not commensurable. In this way, Euclid gave the criterion of differentiate rationals and irrationals: whether Euclidean algorithm terminates. He also used this criterion to define rational magnitude and irrational magnitude.
 
-\index{不可公度}
-\begin{proposition}[《原本》，卷十，命题2] \label{th:irrational-gcm}
-如果从两个不等量的大量中连续减去小量，直到余量小于小量，再从小量中连续减去余量直到小于余量，这样一直作下去，当所余的量总不能量尽它前面的量时，则称两个量不可公度。
+\index{incommensurable}
+\begin{proposition}[Proposition 2, Book X, The Elements] \label{th:irrational-gcm}
+If, when the less of two unequal magnitudes is continually subtracted in turn from the greater that which is left never measures the one before it, then the two magnitudes are incommensurable.
 \end{proposition}
 
-\begin{definition}[《原本》，卷十，定义3]
-与给定线段可公度的线段是\underdot{有理}线段，凡与此线段不可公度的线段叫做\underdot{无理}线段。
+\begin{definition}[Definition 3, Book X, The Elements]
+... with an assigned straight line. Let then the assigned straight line be called rational, and those straight lines which are commensurable with it, whether in length and in square, or in square only, \emph{rational}, but those that are incommensurable with it \emph{irrational}.
 \end{definition}
 
-\subsection{欧几里得算法的应用}
+\subsection{Applications of Euclidean algorithm}
 
-\index{RSA算法}
-欧几里得算法有着诸多的应用。第\ref{sec:linear-diophantus-equation}节展示了如何使用扩展欧几里得算法给出二元一次丢番图方程$ax + by = c$的整数解。具体来说，就是先求出最大公度$d$，并判断$d$是否整除$c$，若不能，则无整数解。否则，将满足贝祖等式的$x_0$，$y_0$，扩大$c/d$倍得到一组特解$x_1$、$y_1$，然后得到通解$x = x_1 - k b / d$和$y = y_1 + k a / d$。欧几里得算法是最著名的递归算法。德国数学家狄利克雷（Dirichlet）在他的著作《数论讲义》中评价到：“整个数论的结构都建立在同一个基础之上，这个基础就是欧几里得算法。”现代密码学的RSA加密算法\footnote{RSA算法是最早的一种公开密钥加密的非对称加密算法，1977年由罗纳德·李维斯特（Ron Rivest）、阿迪·萨莫尔（Adi Shamir）和伦纳德·阿德曼（Leonard Adleman）一起提出的。当时他们三人都在麻省理工学院工作。RSA就是他们三人姓氏开头字母拼在一起组成的。}直接使用了扩展欧几里得算法。这颗数论的明珠支持了今天的互联网通讯和电子交易。我们接下来再通过两个例子了解欧几里得算法的威力：一个是算术基本定理，另一个是连分数。
+\index{RSA algorithm}
+Euclidean algorithm has many applications. \Cref{sec:linear-diophantus-equation} shows how to apply Euclidean algorithm to the linear Diophantine equation of $ax + by = c$, firstly, figure out the greatest measurement $d$, and test whether $d$ divides $c$; if no, then there is no integral solution; otherwise, multiply a pair of $x_0$ and $y_0$ that satisfying Bézout's identity by $c/d$ to obtain a special pair of solution, $x_1$ and $y_1$; the solutions are $x = x_1 - k b / d$ and $y = y_1 + k a / d$. Euclidean algorithm is a renowned recursive algorithm. Dirichlet, the founder of analytic number theory, commented in his \emph{Lectures on number theory} \enquote{, The structure of the whole number theory is based on the same foundation, which is the greatest common divisor algorithm.} The modern RSA cryptosystem\footnote{The world first public-key asymmetric crypto algorithm developed by Ron Rivest, Adi Schamir, and Leonard Adelman in MIT, 1977, abbreviated as RSA, the initial letters of their names.}, which utilizes the extended Euclidean algorithm directly, is the key to the security of internet communication and e-commerce. We present another two applications of Euclidean algorithm: the fundamental theorem of arithmetic and continued fraction.
 
 \label{sec:fundamental-theorem-of-arithmetic}
-\subsubsection{算术基本定理}
-\index{算术基本定理}
-\begin{theorem}[算术基本定理]
-任何正整数可以表示成素数的积，若不考虑这些素数的顺序，则这种表示是唯一的。
+\subsubsection{The fundamental theorem of arithmetic}
+\index{The fundamental theorem of arithmetic}
+\begin{theorem}[The fundamental theorem of arithmetic]
+Every positive integer (except the number 1) can be represented in exactly one way apart from rearrangement as a product of one or more primes\citepage[p2-3]{Hardy2009}.
 \end{theorem}
 
-例如$12 = 2 \times 2 \times 3 = 2 \times 3 \times 2$，这两种分解只有2, 3的顺序不同，本质上是一种分解$2^2 \times 3$。算术基本定理明确地告诉我们，素数是构成整数的基本砖石，并且这种构造是唯一确定的。为了证明算术基本定理，我们第一步先证明：
+For example, $12 = 2 \times 2 \times 3 = 2 \times 3 \times 2$, where apart from the order of 2 and 3, there is essentially only one representation of $2^2 \times 3$. 算术基本定理明确地告诉我们，素数是构成整数的基本砖石，并且这种构造是唯一确定的。为了证明算术基本定理，我们第一步先证明：
 
 \begin{lemma}[欧几里得]
 如果素数$p$整除积$ab$，其中$a, b$是互素的数，那么要么$p$整除$a$，要么$p$整除$b$。
