@@ -1268,7 +1268,7 @@ One can image how hard to print continued fractions before the invention of mode
 
 \Question{The fundamental theorem of arithmetic state that every positive integer (except the number 1) can be represented in exactly one way apart from rearrangement as a product of one or more primes. Use this theorem to show: given $a, b$ being coprime, if $ab = c^2$, then both $a$ and $b$ are squares. \label{qn:coprime-product-as-square}}
 
-\Question{Find the prime numbers within 100 with sieve of Eratosthenes. \label{qn:seive-of-eratosthenes-100}}
+\Question{Find all prime numbers within 100 with sieve of Eratosthenes. \label{qn:seive-of-eratosthenes-100}}
 
 \Question{Given a line segment $AB$, (1) draw a line perpendicular to it at $A$; (2) draw a line perpendicular to it through a point $C$ out of $AB$. \label{qn:perp-of-point}}
 
@@ -1333,38 +1333,38 @@ See the lines in \cref{fig:pythagoras-mosaic}.
 }
 \Question{$a, b$ are coprime, if $ab = c^2$, show that both $a$ and $b$ are squares.
   \begin{proof}
-    利用算术基本定理，把$a, b$各自表示为素数幂的积：$a = p_1^{a_1} p_2^{a_2} \dotsm p_n^{a_n}, b = q_1^{b_1} q_2^{b_2} \dotsm q_m^{b_m}$，其中$p_i, q_j$都是素数。由于$a, b$互素，它们的公因数只有1，故$p_i \ne q_j$。它们的积是个平方数$c^2 = p_1^{a_1} p_2^{a_2} \dotsm p_n^{a_n} q_1^{b_1} q_2^{b_2} \dotsm q_m^{b_m}$，所以必然有$a_i, b_j$全部是偶数，即$a, b$都是平方数。
+    By the fundamental theorem of arithmetic, represent $a, b$ as product of primes: $a = p_1^{a_1} p_2^{a_2} \dotsm p_n^{a_n}, b = q_1^{b_1} q_2^{b_2} \dotsm q_m^{b_m}$, where $p_i, q_j$ are prime. As $a, b$ are coprime, 1 is their only common divisor, hence $p_i \ne q_j$. Their product is a square $c^2 = p_1^{a_1} p_2^{a_2} \dotsm p_n^{a_n} q_1^{b_1} q_2^{b_2} \dotsm q_m^{b_m}$, which implies $a_i, b_j$ are all even, therefor, $a, b$ are both squares.
   \end{proof}
 }
 
-\Question{利用埃拉托斯特尼筛法找出100以内的所有素数。
+\Question{Find all prime numbers within 100 with sieve of Eratosthenes.
 
   \begin{align*}
-2) &2, 3, \cancel{4}, 5, \cancel{6}, \dotsc, 99, \cancel{100} && \text{筛除2的倍数} \\
-3) &2, 3, 5, 7, \cancel{9}, 11, 13, \dotsc, 97, \cancel{99} && \text{筛除3的倍数} \\
-5) &2, 3, 5, 7, 11, 13, 17, 19, 23, \cancel{25}, 29, \dotsc, \cancel{95}, 97 && \text{筛除5的倍数} \\
+2) &2, 3, \cancel{4}, 5, \cancel{6}, \dotsc, 99, \cancel{100} && \text{filter out multiples of 2} \\
+3) &2, 3, 5, 7, \cancel{9}, 11, 13, \dotsc, 97, \cancel{99} && \text{filter out multiples of 3} \\
+5) &2, 3, 5, 7, 11, 13, 17, 19, 23, \cancel{25}, 29, \dotsc, \cancel{95}, 97 && \text{filter out multiples of 5} \\
 7) &2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, \\
-   &47, \cancel{49}, 53, 59, 61, 67, 71, 73, \cancel{77}, 79, 83, 89, \cancel{91}, 97 && \text{筛除7的倍数} \\
+   &47, \cancel{49}, 53, 59, 61, 67, 71, 73, \cancel{77}, 79, 83, 89, \cancel{91}, 97 && \text{filter out multiples of 7} \\
 \to &2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, \\
-&47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97 && 11^2 > 100 \text{结束}
+&47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97 && 11^2 > 100 \text{ done}
   \end{align*}
 }
 
 
-\Question{任给一条线段$AB$，(1) 作其通过$A$点的垂线。(2) 作通过不在$AB$上的一点$C$的垂线。
+\Question{Given a line segment $AB$, (1) draw a line perpendicular to it at $A$; (2) draw a line perpendicular to it through a point $C$ out of $AB$.
 
-(1) 如\cref{fig:perp-of-point}所示，反向延长$AB$，以$A$为圆心$AB$为半径交延长线于点$B'$。分别以点$B$和$B'$为圆心，$BB'$为半径画两圆。连接两圆交点得垂线$CD$。
+(1) As shown in \cref{fig:perp-of-point}, extend $AB$ backward; draw a circle at center of $A$ with radius of $AB$, which intersects $BA$ at $B'$. Draw two circles at the center of $B$ and $B'$ with radius of $BB'$. Connect the two intersections $CD$ of the circle, which is the perpendicular line to be constructed.
 \begin{center}
  \includegraphics[scale=0.25]{img/perp}
- \captionof{figure}{过直线上定点的垂线}
+ \captionof{figure}{Perpendicular line through an end.}
  \label{fig:perp-of-point}
 \end{center}
 
-(2) 如\cref{fig:perp-of-point2}所示，分别以$A$为圆心$AC$为半径画圆；以$B$为圆心$BC$为半径画圆。两圆交于$C, C'$两点。连接$CC'$垂直交于$AB$延长线。
+(2) As shown in \cref{fig:perp-of-point2}, draw two circles, one at the center of $A$ with radius of $AC$, the other at the center of $B$ with radius of $BC$. The two circles intersect at $C, C'$; connect $CC'$ which is perpendicular to the extension of $AB$.
 
 \begin{center}
  \includegraphics[scale=0.3]{img/perp2}
- \captionof{figure}{过直线外定点的垂线}
+ \captionof{figure}{Perpendicular line through a point out of the given line.}
  \label{fig:perp-of-point2}
 \end{center}
 }
