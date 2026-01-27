@@ -5,29 +5,29 @@
 Euler proves that any even perfect number is an Euclidean perfect number. To do this, he developed a powerful tool, $\sigma$ function. For any whole number $n$, the $\sigma(n)$ function is defined as the sum of all its factors. Note the factors need be proper, hence $n$ itself is included in this sum. For example, $\sigma(1) = 1$, $\sigma(2) = 1 + 2 = 3$, $\sigma(6) = 1 + 2 + 3 + 6 = 12$, $\sigma(9) = 1 + 3 + 9 = 13$, $\sigma(28) = 1 + 2 + 4 + 7 + 14 + 28 = 56$. There are some interesting properties of the $\sigma$ function, for example, for any prime number $p$, the value $\sigma(p) = 1 + p$. By the definition of perfect number, $\sigma(n) = 2n$ if $n$ is perfect, this is because the sum of all proper factors is $n$, plus $n$ itself equals $2n$. Euler also discovered that $\sigma$ function is multiplicative in some sense:
 
 \begin{lemma}
-若$a, b$互素，则$\sigma(ab) = \sigma(a)\sigma(b)$。
+If $a, b$ are coprime, then $\sigma(ab) = \sigma(a)\sigma(b)$.
 \end{lemma}
 
-为了证明这一结论，我们需要先证明：
+We need a proposition in order to proof this lemma:
 
 \begin{proposition}
-如果$a, b$互素，则任何$ab$的因子必然是某个$a$的因子与某个$b$的因子的积。
+If $a, b$ are coprime, then any factor of $ab$ is a product of some factor of $a$ and some factor of $b$.
 \end{proposition}
 
 \begin{proof}
-利用算术基本定理，把$a, b$各自表示为素数幂的积：$a = p_1^{a_1} p_2^{a_2} \dotsm p_n^{a_n}, b = q_1^{b_1} q_2^{b_2} \dotsm q_m^{b_m}$，其中$p_i, q_j$都是素数。由于$a, b$互素，它们的公因数只有1，故$p_i \ne q_j$。它们的积$ab = p_1^{a_1} p_2^{a_2} \dotsm p_n^{a_n} q_1^{b_1} q_2^{b_2} \dotsm q_m^{b_m}$。任何$ab$的因数可以表示为：
+By the fundamental theorem of arithmetic, represent $a, b$ as product of prime numbers: $a = p_1^{a_1} p_2^{a_2} \dotsm p_n^{a_n}, b = q_1^{b_1} q_2^{b_2} \dotsm q_m^{b_m}$, where $p_i, q_j$ are prime numbers. Since $a, b$ are coprime, 1 is the only common divisor of them, hence, $p_i \ne q_j$. For their product $ab = p_1^{a_1} p_2^{a_2} \dotsm p_n^{a_n} q_1^{b_1} q_2^{b_2} \dotsm q_m^{b_m}$, any factor of $ab$ is,
 
 \begin{align*}
-d &= p_1^{c_1} p_2^{c_2} \dotsm p_n^{c_n} q_1^{d_1} q_2^{d_2} \dotsm q_m^{d_m}  & \text{其中}0 \leq c_i \leq a_i, 0 \leq d_j \leq b_j \\
+d &= p_1^{c_1} p_2^{c_2} \dotsm p_n^{c_n} q_1^{d_1} q_2^{d_2} \dotsm q_m^{d_m}  & \text{where }0 \leq c_i \leq a_i, 0 \leq d_j \leq b_j \\
   &= (p_1^{c_1} p_2^{c_2} \dotsm p_n^{c_n}) (q_1^{d_1} q_2^{d_2} \dotsm q_m^{d_m}) \\
-  &= d_a d_b & d_a\text{是}a\text{的因子，}d_b\text{是}b\text{的因子} & \qedhere
+  &= d_a d_b & d_a\text{ is a factor of }a, d_b\text{is a factor of }b & \qedhere
 \end{align*}
 \end{proof}
 
-我们接下来证明欧拉$\sigma$函数具有乘法性质。
+We are going to show Euler's $\sigma$ function is multiplicative.
 
 \begin{proof}
-令$a$的所有因子为$1, a_1, a_2, \dotsc, a$，根据定义它们的和等于$\sigma(a)$；$b$的所有因子为$1, b_1, b_2, \dotsc, b$，它们的和等于$\sigma(b)$。由于$a, b$互素，因此任何$ab$的因子都是$a$的某个因子乘以$b$的某个因子的积。我们按照如下顺序列出$ab$的所有因子：
+Denote all factors of $a$ by $1, a_1, a_2, \dotsc, a$, and their sum is $\sigma(a)$ by definition; denote all factors of $b$ by $1, b_1, b_2, \dotsc, b$, and their sum is $\sigma(b)$. Since $a, b$ are coprime, any factor of $ab$ is the product of some factor of $a$ and some factor of $b$. We list all factors of $ab$ in below order:
 
 \begin{align*}
 \sigma(ab)
@@ -36,63 +36,63 @@ d &= p_1^{c_1} p_2^{c_2} \dotsm p_n^{c_n} q_1^{d_1} q_2^{d_2} \dotsm q_m^{d_m}  
   &\quad b_2 + b_2a_1 + b_2a_2 + \dotsb + b_2a + \\
   &\quad \dotso + \\
   &\quad b + ba_1 + ba_2 + \dotsb + ba \\
-  &= \sigma(a) + b_1\sigma(a) + b_2\sigma(a) + \dotsb + b\sigma(a) & \text{代入}\sigma(a) = 1 + a_1 + a_2 + \dotsb + a \\
+  &= \sigma(a) + b_1\sigma(a) + b_2\sigma(a) + \dotsb + b\sigma(a) & \text{substitute }\sigma(a) = 1 + a_1 + a_2 + \dotsb + a \\
   &= \sigma(a)(1 + b_1 + b_2 + \dotsb + b) \\
   &= \sigma(a)\sigma(b) && \qedhere
 \end{align*}
 \end{proof}
 
-有了这一引理，我们就可以证明欧拉的偶完美数定理了。\index{欧拉偶完美数定理}
+We shall show Euler's even perfect number theorem with this lemma. \index{Euler's even perfect number theorem}
 
-\begin{theorem}[欧拉偶完美数]
-任何偶完美数一定是欧几里得完美数，具有$2^n(2^{n+1}-1)$的形式，其中$2^{n+1}-1$是素数。
+\begin{theorem}[Euler's even perfect number]
+Any even perfect number is an Euclidean perfect number, which is in the form of $2^n(2^{n+1}-1)$, where $2^{n+1}-1$ is prime.
 \end{theorem}
 
 \begin{proof}
-我们把偶完美数$N$中的所有2的因子抽出来，写成$N = 2^nb$的形式。这样$b$一定是奇数，并且$2^n$和$b$互素。$2^n$的全部因子为：$1, 2, 4, \dotsc, 2^n$。这些因子和就是$\sigma(2^n)$，它等于：
+For any even perfect number $N$, extract all factors of 2, such that $N = 2^nb$. $b$ must be odd, hence $2^n$ and $b$ are coprime. All factors of $2^n$ are: $1, 2, 4, \dotsc, 2^n$, their sum is $\sigma(2^n)$, which equals,
 
 \begin{align*}
-\sigma(2^n) &= 1 + 2 + 4 + \dotsb + 2^n = 2^{n+1} - 1 && \text{等比数列求和}
+\sigma(2^n) &= 1 + 2 + 4 + \dotsb + 2^n = 2^{n+1} - 1 && \text{sum of geometric series}
 \end{align*}
 
-根据$\sigma$函数的乘法性质，有：
+By the multiplicative property of $\sigma$ function,
 
 \[
 \sigma(N) = \sigma(2^n)\sigma(b) = (2^{n+1}-1)\sigma(b)
 \]
 
-由于$N$是完美数，所以：
+Since $N$ is perfect,
 
 \begin{align*}
-\sigma(N) &= 2N  & \text{完美数的因子和} \\
-          &= 2 \times 2^n b & \text{代入}N = 2^n b \\
+\sigma(N) &= 2N  & \text{sum of factors of a perfect number} \\
+          &= 2 \times 2^n b & \text{substitute }N = 2^n b \\
           &= 2^{n+1} b
 \end{align*}
 
-比较上面两式有：
+Compare the above equations:
 \begin{align*}
 (2^{n+1}-1)\sigma(b) &= \sigma(N) = 2^{n+1}b \\
 \frac{b}{\sigma(b)} &= \frac{2^{n+1} - 1}{2^{n+1}} \\
 \end{align*}
-右侧的分数分子分母相差1，必定是既约分数。所以左侧分数的分子分母是右侧分子分母的某个倍数：
+For the fraction on the right, their nominator and denominator differ by 1, hence is irreducible. Therefor, for the fraction on the left, their nominator and denominator are some multiples of the right side:
 
 \[
 b = (2^{n+1} - 1)c, \quad \sigma(b) = 2^{n+1}c
 \]
 
-其中$c$是某个整数。如果$c > 1$，则$b$至少含有因子$1, b, c$，这样因子和：
+where $c$ is some integer. If $c > 1$, then the factor of $b$ contains at least $1, b, c$, hence the sum of factors:
 
 \begin{align*}
-\sigma(b) &\geq 1 + b + c   & \text{至少有因子}1, b, c \\
-          &= 1 + (2^{n+1} -1)c + c &\text{代入} b = (2^{n+1} - 1)c \\
-          &= 1 + 2^{n+1}c - \cancel{c} + \cancel{c} > 2^{n+1}c = \sigma(b) &\text{代入} \sigma(b) = 2^{n+1}c
+\sigma(b) &\geq 1 + b + c   & \text{contains at least }1, b, c \\
+          &= 1 + (2^{n+1} -1)c + c &\text{substitute } b = (2^{n+1} - 1)c \\
+          &= 1 + 2^{n+1}c - \cancel{c} + \cancel{c} > 2^{n+1}c = \sigma(b) &\text{substitute } \sigma(b) = 2^{n+1}c
 \end{align*}
-这个结果：$\sigma(b) > \sigma(b)$显然矛盾，所以不可能$c > 1$，只能是$c=1$。这样$b = 2^{n+1} - 1$，而完美数$N = 2^nb = 2^n(2^{n+1}-1)$。我们接下来证明$2^{n+1}-1$是素数。注意到：
+The result $\sigma(b) > \sigma(b)$ is obviously absurd, hence $c > 1$ can't be hold, it implies $c=1$, and $b = 2^{n+1} - 1$, it follows that the perfect number $N = 2^nb = 2^n(2^{n+1}-1)$. We shall next show $2^{n+1}-1$ is prime. Note:
 
 \begin{align*}
 \sigma(2^{n+1} - 1) &= \sigma(b) \\
           &= 2^{n+1}c = 2^{n+1} & \text{由}c = 1 \\
           &=1 + (2^{n + 1} - 1)
 \end{align*}
-这说明$2^{n+1}-1$只有两个因子1和$2^{n+1} - 1$本身，所以它是素数。这就证明了任何偶完美数一定是欧几里得完美数。
+It turns out that $2^{n+1}-1$ only has two factors: 1 and $2^{n+1} - 1$ itself, therefor, is prime. This proves any even perfect number is an Euclidean perfect number.
 \end{proof}
