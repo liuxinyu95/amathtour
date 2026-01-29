@@ -1478,76 +1478,76 @@ The Greeks discovered irrational numbers by ruler and compass, which couldn't be
 
 \section{geometric construction and arithmetic}
 \label{sec:geometric-arthimetic} \index{geometric construction}
-In Euclidean algorithm, one needs cut off segment $b$ from $a$, which corresponds to subtraction of $a - b$. The reverse construction that extends segment $a$ by length of $b$ (marked off) corresponds to addition of $a + b$（见\cref{qn:mark-off-segment}）。如何实现乘法$ab$呢？有读者说画一个长$a$宽$b$的矩形，面积就是$ab$了。但是古希腊人思考的是如何作出一条线段，其长度是$ab$。他们从欧几里得几何中找到了工具——相似三角形。
+In Euclidean algorithm, one needs cut off segment $b$ from $a$, which corresponds to subtraction of $a - b$. The reverse construction of extending segment $a$ by length of $b$ (marked off) corresponds to addition of $a + b$ (see \cref{qn:mark-off-segment}). How to realize multiplication of $ab$? one may draw a rectangle with length of $a$ and width of $b$, of which the area is $ab$. However, what the Greeks considering was to draw a ling segment with the length of $ab$, and they figured this out from the tool of similar triangles.
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.33]{img/product}
- \caption{尺规作图和乘法运算}
+ \caption{Implement multiplication by geometric construction.}
  \label{fig:product}
 \end{figure}
 
 \begin{proposition}
-给定单位线段（长度为1的线段），线段$a$和$b$，可以作出长为$ab$的线段。
+Given a unit line segment (of length 1), and two segments of length $a$ and $b$, it possible to construct a line segment of length $ab$.
 \end{proposition}
 
 \begin{proof}
-如\cref{fig:product}所示，在长为1的单位线段AD的一端作垂线并截出长为$b$的线段AC（见\cref{qn:perp-of-point}），在单位线段的延长线上截取长为$a$的线段BD。连接CD构成小三角形ACD。过点B作CD的平行线（见\cref{qn:parallel-through-p}）交AC的延长线于点E，从而构成大三角形AEB。由于小三角形ACD和大三角形AEB相似（请读者朋友思考为什么？），所以：
+As shown in 如\cref{fig:product}, draw a perpendicular line to the unit segment AD (of length 1) at one end and mark off AC of length $b$ (see \cref{qn:perp-of-point}); then extend the unit segment and mark off BD of length $a$. Connect CD to construct a triangle ACD. Draw the parallel line to CD through point B (see \cref{qn:parallel-through-p}), which intersects the extension of AC at point E; it form a bigger triangle of AEB. It follows that the smaller triangle ACD is similar to the bigger triangle AEB (can you justify it?), therefor,
 
 \begin{align*}
-\dfrac{1}{b} & = \dfrac{AD}{AC} = \dfrac{AB}{AE} = \dfrac{1 + a}{b + x} && \text{三角形相似} \\
-b + x & = b(1 + a) && \text{交叉相乘} \\
-x & = b(1 + a) - b = ab && \text{线段CE长为}ab \qedhere
+\dfrac{1}{b} & = \dfrac{AD}{AC} = \dfrac{AB}{AE} = \dfrac{1 + a}{b + x} && \text{by similar triangles} \\
+b + x & = b(1 + a) && \text{cross multiplication} \\
+x & = b(1 + a) - b = ab && \text{the length of CE is }ab \qedhere
 \end{align*}
 \end{proof}
 
-这样就建立了尺规作图和乘法运算的对应关系。接下来要解决的是用尺规作图实现除法运算。我们的策略是先用尺规作图实现$a \ne 0$的倒数$\dfrac{1}{a}$，然后再利用乘法运算实现$\dfrac{b}{a} = b \times \dfrac{1}{a}$。再次利用相似三角形。
+It gives geometric interpretation of multiplication. We shall next establish the correspondence between geometric construction and division. The first step is to realize the reciprocal of $a \ne 0$, which is $\dfrac{1}{a}$, then turn the division into multiplication of $\dfrac{b}{a} = b \times \dfrac{1}{a}$. Using similar triangles again,
 
 \begin{proposition}
-给定长为1的单位线段和线段$a$，可以作出长度为$\dfrac{1}{a}$的线段。
+Given a unit line segment (of length 1) and a segment of length $a$, it is possible to construct a line segment of length $\dfrac{1}{a}$.
 \end{proposition}
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.33]{img/reciprocal}
- \caption{尺规作图和倒数运算}
+ \caption{Geometric interpretation of reciprocal}
  \label{fig:reciprocal}
 \end{figure}
 
 \begin{proof}
-如\cref{fig:reciprocal}所示，在长度为1的单位线段AD的一端作垂线并截取长为$a$的线段AC。延长AC并截取长度为1的线段CE。连接CD构成小三角形ACD。过E作平行于CD的直线交AD的延长线于点B。连接BD构成大三角形AEB。由于小三角形ACD和大三角形AEB相似（请读者朋友思考并确认）：
+As shown in \cref{fig:reciprocal}, draw a perpendicular line to the unit line segment AD (of length 1) at one end and mark off AC of length $a$; extend AC and mark off CE of length 1. Connect CD to form a triangle ACD. Draw a parallel line to CD through point E, which intersects the extension of AD at point B. Connect BD to from a bigger triangle AEB. Sine the smaller triangle ACD is similar to the bigger triangle AEB (can you justify it?),
 
 \begin{align*}
-\frac{1}{a} &= \frac{AD}{AC} = \frac{AB}{AE} = \frac{1 + x}{1 + a}  && \text{三角形相似} \\
-a(1 + x) & = 1 + a && \text{交叉相乘} \\
-x &= \frac{1 + a}{a} - 1 = \frac{1}{a} && \text{线段BD长为}\frac{1}{a} \qedhere
+\frac{1}{a} &= \frac{AD}{AC} = \frac{AB}{AE} = \frac{1 + x}{1 + a}  && \text{by similar triangles} \\
+a(1 + x) & = 1 + a && \text{cross multiplication} \\
+x &= \frac{1 + a}{a} - 1 = \frac{1}{a} && \text{the length of BD is }\frac{1}{a} \qedhere
 \end{align*}
 \end{proof}
 
-这样就用尺规作图实现了倒数，进而可以实现除法。我们看到加减乘除四则运算都可以由尺规作图实现。由毕达哥拉斯定理，给定长度$a$和$b$的线段，可以作长为$\sqrt{a^2 + b^2}$的线段。接下来我们用尺规作图\underdot{直接}作长为$\sqrt{a}$的线段。
+This realizes the reciprocal operation, based on which one can further realizes division. It shows that all the arithmetic operations of $+, -, \times, \div$ have their corresponding geometric realization. Given two segments of length $a$ and $b$, by Pythagorean theorem, it's possible to construct a line segment of length $\sqrt{a^2 + b^2}$. We are going to show how to construct a line segment of length $\sqrt{a}$ directly.
 
 \begin{proposition}\label{thm:sqrt-a}
-给定长为1的单位线段和长为$a$的线段，可以作长为$\sqrt{a}$的线段。
+Given a unit line segment and a line segment of length $a$, it is possible to construct a line of length $\sqrt{a}$.
 \end{proposition}
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.35]{img/sqrt}
- \caption{尺规作图和开方运算}
+ \caption{Geometric interpretation of square root}
  \label{fig:sqrt}
 \end{figure}
 
 \begin{proof}
-如\cref{fig:sqrt}所示，在长度为1的单位线段AC的延长线上截取长度为$a$的线段CB。以AB为直径作圆（作AB的中垂线，以垂足为圆心，垂足到点A的距离为半径）。过C作垂线交圆于点D。连接AD和BD构成小直角三角形ACD和大直角三角形DCB，这两个直角三角形相似（请读者朋友思考并确认）。
+As shown in \cref{fig:sqrt}, extend the unit line segment (of length 1) and mark off a segment CB of length $a$. Draw a circle with AB as the diameter (draw the perpendicular bisector of AB; then draw the circle at the center of the foot with the bisected length as the radius). Draw a perpendicular line to AB at C, which intersects the circle at point D. Connect AD and BD to form a smaller right triangle ACD and a bigger triangle DCB; they are similar triangles (please justify it).
 
 \begin{align*}
-\frac{1}{x} &= \frac{AC}{CD} = \frac{CD}{CB} = \frac{x}{a} && \text{三角形相似} \\
-x^2 &= a && \text{交叉相乘} \\
-x &= \sqrt{a} && \text{线段CD长为}\sqrt{a} \qedhere
+\frac{1}{x} &= \frac{AC}{CD} = \frac{CD}{CB} = \frac{x}{a} && \text{by the similar triangles} \\
+x^2 &= a && \text{cross multiplication} \\
+x &= \sqrt{a} && \text{the length of CD is }\sqrt{a} \qedhere
 \end{align*}
 \end{proof}
 
-这样我们在义务教育阶段学习过的四则运算和开二次方根运算就都有了各自对应的尺规作图实现。这意味着任何算术运算和开二次方根运算能产生的数都可以通过尺规作图作出。这个结果和毕达哥拉斯学派的想法相反：几何不但没有建立在算术之上，反而算术可以建立在几何之上。古希腊学者并没有停止于此，而是继续探索用尺规作图解决更多的问题。
+Thus the operation of extracting square root as well as the arithmetic operations all can be realized by ruler and compass. It turns out that any number, as the result of these operations, can be constructed by ruler and compass. Contrary to what the Pythagoreans thought, geometry was not established based on arithmetic, but arithmetic could be based on geometry. 古希腊学者并没有停止于此，而是继续探索用尺规作图解决更多的问题。
 
 \subsection{正多边形}
 \index{正多边形}
