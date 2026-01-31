@@ -1563,16 +1563,16 @@ The Greeks constructed many regular polygons with ruler and compass. The side in
 \index{geometric construction!regular pentagon}
 Connect each vertex and its circumcircle, which divides the regular hexagon into 6 small equilateral triangles. It follows that if the radius of the circumcircle is 1 then the side of the regular hexagon is 1. For the inscribed equilateral triangle, each side together with two radii of length 1 form a isosceles triangle, whose two sides span $120\degree$. Based on this, it's easy to calculate the side of the inscribed equilateral triangle is $\sqrt{3}$. One may `double' a square to obtain a regular octagon; we leave it as exercise to calculate the side length of the regular octagon. It's a bit hard to construct a regular pentagon, nevertheless, the Greeks worked it out. We show two solutions here and another solution in chapter 6.
 
-由第\ref{sec:pentagon-edge}节知，正五边形的对角线为1时，其边长为黄金数$\phi = \dfrac{\sqrt{5}-1}{2}$。这样问题就转变为：如何用尺规做出长度为$\phi$ 的线段？在用勾股定理探索无理数时，我们发现$5 = 2^2 + 1^2$。所以任给一条线段，只要做出其2倍长的垂线段，就可构成一直角三角形，根据勾股定理，此三角形的斜边长为$\sqrt{2^2 + 1^2} = \sqrt{5}$。如果将此三角形各边缩小一半，则斜边长为$\dfrac{\sqrt{5}}{2}$，然后再从斜边截去短直角边（长$\dfrac{1}{2}$）就获得了长为$\dfrac{\sqrt{5}-1}{2}$的线段。
+\Ref{sec:pentagon-edge} shows when the diagonal of a regular pentagon is 1, the side length is the golden ratio $\phi = \dfrac{\sqrt{5}-1}{2}$. The problem turns out how to construct a line segment of length $\phi$? We know, by Pythagorean theorem, $5 = 2^2 + 1^2$. Given a unit line segment, double it to form a right triangle, the length of its hypotenuse, by Pythagorean theorem, is $\sqrt{2^2 + 1^2} = \sqrt{5}$. Halve the right triangle gives $\dfrac{\sqrt{5}}{2}$; cut the shorter side (of length $\dfrac{1}{2}$) off the hypotenuse, one gets a segment of length$\dfrac{\sqrt{5}-1}{2}$.
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.3]{img/phi}
- \caption{作长为$\phi = \dfrac{\sqrt{5} - 1}{2}$的线段}
+ \caption{construct a line segment of length $\phi = \dfrac{\sqrt{5} - 1}{2}$.}
  \label{fig:phi}
 \end{figure}
 
-如\cref{fig:phi}所示，先做单位圆和两条垂直的直径。然后做半径AB的中垂线，这样直角三角形ACD的斜边就是$\dfrac{\sqrt{5}}{2}$。以D为圆心，DC为半径划弧交BA方向的直径于E，则AE长就是$\dfrac{\sqrt{5} - 1}{2}$。
+As shown in \cref{fig:phi}, draw a unit circle and two perpendicular diameters. Next draw the perpendicular bisector of the radius AB, thus the length of the hypotenuse of right triangle ACD is $\dfrac{\sqrt{5}}{2}$. Draw an arc at the center of D with radius of DC, which intersects line BA at point E, then the length of AE is $\dfrac{\sqrt{5} - 1}{2}$.
 
 \begin{figure}[htbp]
  \centering
