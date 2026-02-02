@@ -1627,25 +1627,25 @@ We skipped the detailed steps to construct a regular polygon of 17 sides. Richel
 The regular polygon of $p$ sides, where $p$ is prime, can be constructed by ruler and compass if and only if $p=2^{2^n} + 1$, in other words, $p$ is Fermat's number. The regular polygon of $n$ sides can be constructed by ruler and compass if and only if $n=2^k p_1 p_2 \dotsm p_m$ where $p_i$ are distinct Fermat's prime numbers \cite{Edward-1977}.
 \end{theorem}
 
-\subsection{尺规的限制}
-高斯——旺策尔定理告诉我们尺规作图的能力是有边界的，而不是万能的。例如正七边形的边长线段是无法用尺规作图构造出的\footnote{我们这里限制为古希腊的无刻度直尺和圆规，使用其它工具，包括有刻度的尺子是可能作出的。}。既然尺规能实现算术运算和开二次方根，那么正七边形的边长显然不能用有理数的加减乘除、开二次方根等一系列运算计算出来。它是一个无理数，但我们不知道如何用算术方法表示它。借助三角函数，当正七边形的外接圆半径为1时，其边长为$x = 2\sin(\dfrac{180\degree}{7})$，如\cref{fig:heptagon}所示。
+\subsection{Limitation of geometric construction}
+Gauss-Wantzel theorem shows there is limitation of geometric construction: there exist things that can't be constructed by ruler and compass only. For example, one can not construct a regular heptagon, nor he can obtain a line segment equal the side length of a regular heptagon\footnote{Here we limit to use the ruler without marks, i.e., a straightedge, and compass only, otherwise, it's possible.}. Since ruler and compass can implement arithmetic operations and square root, the side length of a regular heptagon can't be calculated from a series of arithmetic operation and taking square root of rational numbers. It is a irrational number, but we don't know how to represent it arithmetically. Using trigonometrical functions, if the radius of the circumcircle of a regular heptagon is 1, then its side length is $x = 2\sin(\dfrac{180\degree}{7})$ as shown in \cref{fig:heptagon}.
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.35]{img/heptagon}
- \caption{用三角函数表示正七边形的边长。外接圆半径为1，正七边形将圆周角$360\degree$分成7份，$\theta = \dfrac{360\degree}{7}$，其一半的正弦为$\sin(\dfrac{180\degree}{7})$，它恰好是边长的一半。}
+ \caption{Represent the side length of a regular heptagon. Suppose the length of the radius of the circumcircle is 1, the regular heptagon divides $360\degree$ into seven equal angles, each $\theta = \dfrac{360\degree}{7}$, the $\sin$ of its half is $\sin(\dfrac{180\degree}{7})$, which is half of the side length.}
  \label{fig:heptagon}
 \end{figure}
 
-\index{三大作图难题}
-古希腊人并不知道这一点，他们坚守柏拉图立下的传统，坚持用尺规探索世界。他们攻克了一个又一个的问题，但也困惑于著名的三大作图问题：
+\index{three geometric construction problems}
+The Greeks didn't know about this, nevertheless, they strictly followed the tradition from Plato, solved one problem after another with ruler and compass only. However, there were three popular problems about geometric construction they couldn't solve:
 
 \begin{enumerate}[(1)]
-\item 倍立方。将立方体的体积扩大到2倍。传说古代雅典城爆发了瘟疫，众人到阿波罗神庙祈求太阳神的帮助。祭司说阿波罗要求把立方体祭坛扩大到2倍以消除灾难。这难倒了人们。用今天的语言描述，若原立方体的边长为1，倍立方问题就是用尺规作长为$\sqrt[3]{2}$的线段。
+\item Double a cube. 将立方体的体积扩大到2倍。传说古代雅典城爆发了瘟疫，众人到阿波罗神庙祈求太阳神的帮助。祭司说阿波罗要求把立方体祭坛扩大到2倍以消除灾难。这难倒了人们。用今天的语言描述，若原立方体的边长为1，倍立方问题就是用尺规作长为$\sqrt[3]{2}$的线段。
 
-\item 三分角。任给一个角度$\theta$，作其三等分角$\dfrac{\theta}{3}$。注意，有些特殊的角可用尺规三分，如$90\degree$、$135\degree$、$180\degree$、$360\degree$，但一般的角$\theta$不可三分，例如$60\degree$。
+\item Trisect an angle. 三分角。任给一个角度$\theta$，作其三等分角$\dfrac{\theta}{3}$。注意，有些特殊的角可用尺规三分，如$90\degree$、$135\degree$、$180\degree$、$360\degree$，但一般的角$\theta$不可三分，例如$60\degree$。
 
-\item 圆化方。求作正方形，使得其面积等于给定圆的面积。若圆的半径为1，就是求边长为$\sqrt{\pi}$的正方形。
+\item Square the circle. 求作正方形，使得其面积等于给定圆的面积。若圆的半径为1，就是求边长为$\sqrt{\pi}$的正方形。
 \end{enumerate}
 
 直到十九世纪，伴随着抽象代数，特别是域论、群论、伽罗瓦理论的发展，人们才最终解决了古希腊三大作图问题——它们的答案都是否定的，即不存在尺规作图方法可以倍立方、三分角、圆化方\footnote{倍立方和三分角都由旺策尔解决，圆化方本质是证明$\pi$是一个超越数，1882年由德国数学家林德曼证明。}。
