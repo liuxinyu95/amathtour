@@ -1610,23 +1610,20 @@ From the above explanation, it's sufficient to show it's possible to construct a
 \end{proof}
 
 \index{Gauss} \label{sec:Gauss-17-gon}
-We'll give the third construction of regular pentagon in Chapter 6 based on complex number. %and de Moivre's formula.
-The Greeks met great difficulty in constructing regular heptagon with ruler and compass. About 2,000 years later,
-
-第6章中我们会再给出一种利用复数和棣莫佛定理作正五边形的方法。这样正五边形尺规作图的问题得以解决了。可是接下来正7边形难住了古希腊人，人们一直没有找到它的尺规作图方法。时光跨越了两千多年。1792年，一个15岁的少年正在踌躇于下一步的人生决定。他生于德国布伦瑞克一个普通人的家庭，母亲是一位贫穷石匠的女儿，虽然十分聪明，但却没有接受过教育，近似于文盲。父亲曾做过园丁。尽管家里很穷，父亲也不认为学问有何用，但他依旧喜欢看书。童年的时候，冬天吃完饭后父亲就会要他上床睡觉，以节省燃油，但他把蔓菁的内部挖空，塞入棉布卷，当成灯来使用，以继续读书。在9岁的时候，这孩子已经找出了计算1到100求和的方法：$1 + 100 = 2 + 99 = \dotso = 50 + 51 = 101$，一共50个101。这让他的老师极为惊异。这位神童惊动了布伦瑞克公爵，决定资助他接受教育。15岁时，他犹豫应该在未来从事神学还是研究数学。这一年他证明了正17边形可以用尺规作出\cite{Gauss-Britannia-2025}，他极为兴奋和自豪，从此定下了投身数学的决心。这位少年就是数学王子高斯。
+We'll give the third construction of regular pentagon in Chapter 6 based on complex number and Euler's formula. The Greeks met great difficulty in constructing regular heptagon with ruler and compass. About 2,000 years later in 1792, a young man was about to choose between theology and mathematician. He was born in Brunswick as the only child of a poor family. His father earned living mainly from manual labor. At the age of seven, he started elementary school. His teacher once asked the students to calculate the sum of $1 + 2 + \dotsb + 100$; he observed that $1 + 100 = 2 + 99 = \dotso = 50 + 51 = 101$, in total 50 such pairs, so the answer was 5050. This amazed his teachers. Later, duke of Brunswick heard about him and granted him financial assistance to continue his education. At the age of 15 when thinking about if next to study theology or mathematics, the young man proved a regular polygon of 17 sides can be constructed by ruler and compass alone\cite{Gauss-Britannia-2025}. Being so exciting and motivated, that he decided to devoted to mathematics. This young man was Carl Friedrich Gauss.
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.5]{img/gauss-17gon}
- \caption{高斯解决正17边形尺规作图的纪念邮票}
+ \caption{A stamp to memorize Gauss solved geometric construction of a regular polygon of 17 sides.}
  \label{fig:gauss-17gon}
 \end{figure}
 
 \label{sec:geometric-cons-polygon}
-我们这里跳过了正17边形具体的作图方法。1832年，两位数学家给出了正257边形的作图方法。德国哥廷根大学的图书馆至今保存着一大箱子正65537边形作图过程的稿纸\citepage[27页]{Coxeter2022}，它耗费了作者爱马仕\footnote{Hermes，约翰·古斯塔夫·爱马仕。他于1894年完成了65537边形的尺规作图法。}整整10年的努力。且慢，这些数字怎么看着这么熟悉？正三角形能作出，$3 = 2^{2^0} + 1$；正五边形能作出，$5 = 2^{2^1} + 1$，正17边形能作出，$17 = 2^{2^2} + 1$；正257边形能作出，$257 = 2^{2^3} + 1$；正65537边形能作出，$65537 = 2^{2^4} + 1$。它们竟然是费马数！而且一旦能作出正$n$边形，通过中垂线二分就能作出正$2n$边形。那么正$2^k m$边形能否作出，取决于正$m$边形能否作出，其中$m$是奇数。这就是高斯的发现：如果$m$是不同的费马素数的乘积，那么这样的正多边形就能用尺规作出。法国数学家旺策尔于1837\footnote{皮埃尔·旺策尔这一年只有23岁，他英年早逝，34岁时死于过量的工作，无规律的生活和吸食鸦片。}年证明了高斯的发现，今天这一定理被称做高斯——旺策尔定理。
+We skipped the detailed steps to construct a regular polygon of 17 sides. Richelot and Schwendenwein constructed the regular 257-gon in 1832. J. Hermes constructed the regular 65537-gon in 1894; he spent ten years on it and deposited the manuscript in a large box in the University of Göttingen. We stop for a while: don't these numbers look familiar? The equilateral triangle can be constructed, $3 = 2^{2^0} + 1$; the regular pentagon can be constructed, $5 = 2^{2^1} + 1$; the regular 17-gon can be constructed, $17 = 2^{2^2} + 1$; the regular 257-gon can be constructed, $257 = 2^{2^3} + 1$; and the regular 65537-gon can be constructed, $65537 = 2^{2^4} + 1$. They are Fermat's numbers! Once construct a regular $n$-gon, by perpendicular bisecting each side, one can construct a regular $2n$-gon. It turns out that a regular polygon of $2^k m$ sides can be constructed if a regular $m$-gon can be constructed, where $m$ is odd. What Gauss discovered was when $m$ was a product of distinct Fermat's prime numbers, the regular $m$-gon can be constructed by ruler and compass only. It was proven by French mathematician Wantzel\footnote{Pierre Wantzel was at the age of 23 this year. He died at the age of 34 due to irregular work and life. He usually worked during the evening, not going to bed until late in the night, then reading, and got but a few hours of agitated sleep, alternatively abusing coffee and opium, taking his meals, until his marriage, at odd and irregular hours.} in 1837, and was named Gauss-Wantzel theorem.
 
-\index{高斯——旺策尔定理}
-\begin{theorem}[高斯——旺策尔]
+\index{Gauss-Wantzel theorem}
+\begin{theorem}[Gauss-Wantzel]
 正$p$边形，其中$p$为素数，可以用尺规做出的条件是$p=2^{2^n} + 1$ ，即素数$p$为费马数。正$n$边形可以用尺规做出的条件是$n=2^k p_1 p_2 \dotsm p_m$其中$p_i$是不同的费马素数\cite{Edward-1977}。
 \end{theorem}
 
