@@ -1627,8 +1627,8 @@ We skipped the detailed steps to construct a regular polygon of 17 sides. Richel
 The regular polygon of $p$ sides, where $p$ is prime, can be constructed by ruler and compass if and only if $p=2^{2^n} + 1$, in other words, $p$ is Fermat's number. The regular polygon of $n$ sides can be constructed by ruler and compass if and only if $n=2^k p_1 p_2 \dotsm p_m$ where $p_i$ are distinct Fermat's prime numbers \cite{Edward-1977}.
 \end{theorem}
 
-\subsection{Limitation of geometric construction}
-Gauss-Wantzel theorem shows there is limitation of geometric construction: there exist things that can't be constructed by ruler and compass only. For example, one can not construct a regular heptagon, nor he can obtain a line segment equal the side length of a regular heptagon\footnote{Here we limit to use the ruler without marks, i.e., a straightedge, and compass only, otherwise, it's possible.}. Since ruler and compass can implement arithmetic operations and square root, the side length of a regular heptagon can't be calculated from a series of arithmetic operation and taking square root of rational numbers. It is a irrational number, but we don't know how to represent it arithmetically. Using trigonometrical functions, if the radius of the circumcircle of a regular heptagon is 1, then its side length is $x = 2\sin(\dfrac{180\degree}{7})$ as shown in \cref{fig:heptagon}.
+\subsection{Limitations of geometric construction}
+Gauss-Wantzel theorem shows there are limitations of geometric construction: there exist things that can't be constructed by ruler and compass only. For example, one can not construct a regular heptagon, nor he can obtain a line segment equal the side length of a regular heptagon\footnote{Here we limit to use the ruler without marks, i.e., a straightedge, and compass only, otherwise, it's possible.}. Since ruler and compass can implement arithmetic operations and square root, the side length of a regular heptagon can't be calculated from a series of arithmetic operation and taking square root of rational numbers. It is a irrational number, but we don't know how to represent it arithmetically. Using trigonometrical functions, if the radius of the circumcircle of a regular heptagon is 1, then its side length is $x = 2\sin(\dfrac{180\degree}{7})$ as shown in \cref{fig:heptagon}.
 
 \begin{figure}[htbp]
  \centering
@@ -1641,20 +1641,20 @@ Gauss-Wantzel theorem shows there is limitation of geometric construction: there
 The Greeks didn't know about this, nevertheless, they strictly followed the tradition from Plato, solved one problem after another with ruler and compass only. However, there were three popular problems about geometric construction they couldn't solve:
 
 \begin{enumerate}[(1)]
-\item Double a cube. 将立方体的体积扩大到2倍。传说古代雅典城爆发了瘟疫，众人到阿波罗神庙祈求太阳神的帮助。祭司说阿波罗要求把立方体祭坛扩大到2倍以消除灾难。这难倒了人们。用今天的语言描述，若原立方体的边长为1，倍立方问题就是用尺规作长为$\sqrt[3]{2}$的线段。
+\item Duplication of the cube. To double the volume of a cube. According to a legend, a plague broken out in Athens; people went to the Tempo of Apollo to pray for help. The priest declared that Apollo demanded the cubic altar be doubled in volume to dispel the disaster. Nobody could solve it (with ruler and compass only). If denote the side of the original cube by 1, the problem is asking to construct a line segment of length $\sqrt[3]{2}$.
 
-\item Trisect an angle. 三分角。任给一个角度$\theta$，作其三等分角$\dfrac{\theta}{3}$。注意，有些特殊的角可用尺规三分，如$90\degree$、$135\degree$、$180\degree$、$360\degree$，但一般的角$\theta$不可三分，例如$60\degree$。
+\item Trisection of an angle. Given an arbitrary angle $\theta$, construct an angle of $\dfrac{\theta}{3}$. Note there exists some special angle that can be trisected, for example, $90\degree$, $135\degree$, $180\degree$, and $360\degree$, but an arbitrary angle $\theta$ can not necessarily be trisected, for example $60\degree$.
 
-\item Square the circle. 求作正方形，使得其面积等于给定圆的面积。若圆的半径为1，就是求边长为$\sqrt{\pi}$的正方形。
+\item Squaring the circle. Construct a square whose area equal to the area of a given circle. If the radius of the circle is 1, the problem is to construct a square with side length of $\sqrt{\pi}$.
 \end{enumerate}
 
-直到十九世纪，伴随着抽象代数，特别是域论、群论、伽罗瓦理论的发展，人们才最终解决了古希腊三大作图问题——它们的答案都是否定的，即不存在尺规作图方法可以倍立方、三分角、圆化方\footnote{倍立方和三分角都由旺策尔解决，圆化方本质是证明$\pi$是一个超越数，1882年由德国数学家林德曼证明。}。
+It was not until the 19 century, as the development of abstract algebra, particularly field theory, group theory, and Galois theory, that people finally solved all three problems -- they are all insoluble; it's impossible to duplicate the cube, trisect of an arbitrary angle, or square the circle with ruler and compass only\footnote{Wantzel proved that neither duplication of the cube nor trisection of an angle was geometric constructible; Lindemann proved $\pi$ was a transcendental number in 1882, hence the problem of squaring the circle was non-constructible.}.
 
-\index{解析几何}
-尽管高斯——旺策尔定理的证明需要抽象代数和域论的知识，但我们可以给出一个大致的原理性解释（附录\ref{app:gauss-wantzel-theorem}给出了一个证明梗概）。十七世纪，笛卡尔创造了解析几何（英文analytic geometry，也称做坐标几何，英文coordinate geometry），重新将几何建立在代数（方程和函数）的基础上。古希腊的尺规作图也有了全新的代数解释。
+\index{analytic geometry}
+Despite it need abstract algebra and field theory to prove Gauss-Wantzel theorem, we may give some simplified explanation to it (see the prove outline in \cref{app:gauss-wantzel-theorem}). In the 17th century, Descartes developed analytic geometry (also known as coordinate geometry, Fermat independently developed analytic geometry with Descartes), reestablished geometry on top of algebra (equation and function). It gave the new interpretation on the ancient Greek ruler and compass construction.
 
-\subsubsection{两点确定一直线}
-平面上的一条直线可以用函数$y = kx + b$描述，其中$k$是斜率，$b$是截距，特殊直线为$x = a$。欧几里得几何的公设1，过两点可作一直线。其对应的解析几何解释为：连接不同的两点$(x_1, y_1)$和$(x_2, y_2)$得到一条直线（其中$x_1 \ne x_2$）。这两点都满足直线方程：
+\subsubsection{The straight line through two points}
+A straight line in a plan can be described by function $y = kx + b$, where $k$ is the slop, and $b$ is the interception. Vertical lines are specially represented as $x = a$. The postulate 1 in Euclid's \emph{The Elements} \enquote{, To draw a straight line from any point to any point.} is interpreted in analytic geometry as the straight line that passes through two points of $(x_1, y_1)$ and $(x_2, y_2)$, where $x_1 \ne x_2$. The two points satisfy the same linear equation:
 
 \[
 \begin{cases}
@@ -1663,7 +1663,7 @@ y_2 = k x_2 + b
 \end{cases}
 \]
 
-解此二元一次方程组可求出$k$和$b$。两式相减得$k = \dfrac{y_2 - y_1}{x_2 - x_1}$，代回可求出$b = y_1 - k x_1$。我们也可以直接使用“两点式”得到这条直线方程（见\cref{fig:line2p}）：
+Solving this system of two unknowns, namely $k$ and $b$: subtract the two equations to obtain $k = \dfrac{y_2 - y_1}{x_2 - x_1}$, then substitute back to obtain $b = y_1 - k x_1$. Alternatively, one may apply the \enquote{two points form} as shown in \cref{fig:line2p},
 
 \[
 \frac{y - y_1}{x - x_1} = \frac{y_2 - y_1}{x_2 - x_1}
@@ -1672,11 +1672,11 @@ y_2 = k x_2 + b
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.35]{img/line2p}
- \caption{两点式的几何解释：连接两点$A, B$成一直线，$P = (x, y)$为直线上任意一点。直角三角形ACB和AQP相似，所以$\dfrac{PQ}{QA} = \dfrac{BC}{CA}$。}
+ \caption{Two points form: Draw the straight line that passes two points $A$ and $B$. Suppose $P = (x, y)$ is some point on the line, the right triangles ACB and AQP are similar, hence $\dfrac{PQ}{QA} = \dfrac{BC}{CA}$.}
  \label{fig:line2p}
 \end{figure}
 
-若$x_1 = x_2$，则连接两点的直线是函数$x = x_1$。记这两点确定的线段的长为$r$，根据勾股定理$(x_2 - x_1)^2 + (y_2 - y_1)^2 = r^2$，得$r = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$。长度$r$是一个二次根式，它是勾股定理确定的一元二次方程（未知数为$r$）的解。总结起来，两点确定一条直线本质上是说：若两点坐标中的数属于数集$K$（例如$K = \mathbb{Q}$是有理数，$K$也可以是比有理数更大的数集），则其确定的直线是系数为$K$的一次函数。这两点的距离是系数为$K$的一元二次方程的解。
+When $x_1 = x_2$, then the line that passes the two points is vertical, the equation is $x = x_1$. Denote the distance between the two points by $r$, by Pythagorean theorem, $(x_2 - x_1)^2 + (y_2 - y_1)^2 = r^2$, then $r = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$. In other words, $r$ is a square root; it is the positive solution of a quadratic equation defined by the Pythagorean theorem (with $r$ as the unknown). Essentially, the meaning of \enquote{to draw a straight line from any point to any point} in analytic geometry is this: suppose the coordinates of the two points are in set $K$ (for example, $K = \mathbb{Q}$ means the coordinates are rational points. $K$ may be other set containing rationals), then the straight line is a linear function with coefficients in $K$. The distance between the two points is a solution of a quadratic equation with coefficients in $K$.
 
 顺便说一下，过一点作另一直线的垂线的解析几何解释。与直线$y = kx + b$垂直的直线具有$y = -\dfrac{1}{k} x + b'$的形式，其中$k \ne 0$。若垂线过点$(x_0, y_0)$，则：$y_0 = -\dfrac{1}{k} x_0 + b'$，从中得到$b' = y_0 + \dfrac{1}{k}$。与特殊直线$x = a$垂直的直线具有$y = b$的形式，若垂线过点$(x_0, y_0)$，则确定出的垂线方程为$y = y_0$。总结起来，若给定直线的斜率和通过的点属于数集$K$，则其确定的垂线是系数为$K$的一次函数。
 
