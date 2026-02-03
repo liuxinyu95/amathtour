@@ -1654,7 +1654,7 @@ It was not until the 19 century, as the development of abstract algebra, particu
 Despite it need abstract algebra and field theory to prove Gauss-Wantzel theorem, we may give some simplified explanation to it (see the prove outline in \cref{app:gauss-wantzel-theorem}). In the 17th century, Descartes developed analytic geometry (also known as coordinate geometry, Fermat independently developed analytic geometry with Descartes), reestablished geometry on top of algebra (equation and function). It gave the new interpretation on the ancient Greek ruler and compass construction.
 
 \subsubsection{The straight line through two points}
-A straight line in a plan can be described by function $y = kx + b$, where $k$ is the slop, and $b$ is the interception. Vertical lines are specially represented as $x = a$. The postulate 1 in Euclid's \emph{The Elements} \enquote{, To draw a straight line from any point to any point.} is interpreted in analytic geometry as the straight line that passes through two points of $(x_1, y_1)$ and $(x_2, y_2)$, where $x_1 \ne x_2$. The two points satisfy the same linear equation:
+A straight line in a plan can be described by function $y = kx + b$, where $k$ is the slope, and $b$ is the interception. Vertical lines are specially represented as $x = a$. The postulate 1 in Euclid's \emph{The Elements} \enquote{, To draw a straight line from any point to any point.} is interpreted in analytic geometry as the straight line that passes through two points of $(x_1, y_1)$ and $(x_2, y_2)$, where $x_1 \ne x_2$. The two points satisfy the same linear equation:
 
 \[
 \begin{cases}
@@ -1676,16 +1676,16 @@ Solving this system of two unknowns, namely $k$ and $b$: subtract the two equati
  \label{fig:line2p}
 \end{figure}
 
-When $x_1 = x_2$, then the line that passes the two points is vertical, the equation is $x = x_1$. Denote the distance between the two points by $r$, by Pythagorean theorem, $(x_2 - x_1)^2 + (y_2 - y_1)^2 = r^2$, then $r = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$. In other words, $r$ is a square root; it is the positive solution of a quadratic equation defined by the Pythagorean theorem (with $r$ as the unknown). Essentially, the meaning of \enquote{to draw a straight line from any point to any point} in analytic geometry is this: suppose the coordinates of the two points are in set $K$ (for example, $K = \mathbb{Q}$ means the coordinates are rational points. $K$ may be other set containing rationals), then the straight line is a linear function with coefficients in $K$. The distance between the two points is a solution of a quadratic equation with coefficients in $K$.
+When $x_1 = x_2$, then the line that passes the two points is vertical, the equation is $x = x_1$. Denote the distance between the two points by $r$, by Pythagorean theorem, $(x_2 - x_1)^2 + (y_2 - y_1)^2 = r^2$, then $r = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$. In other words, $r$ is a square root; it is the positive solution of a quadratic equation defined by the Pythagorean theorem (with $r$ as the unknown). Essentially, the meaning of \enquote{to draw a straight line from any point to any point} in analytic geometry is this: suppose the coordinates of the two points are in set $K$ (for example, $K = \mathbb{Q}$ means the coordinates are rational points. $K$ may be \enquote{bigger} set containing rationals), then the straight line is a linear function with coefficients in $K$. The distance between the two points is a solution of a quadratic equation with coefficients in $K$.
 
-顺便说一下，过一点作另一直线的垂线的解析几何解释。与直线$y = kx + b$垂直的直线具有$y = -\dfrac{1}{k} x + b'$的形式，其中$k \ne 0$。若垂线过点$(x_0, y_0)$，则：$y_0 = -\dfrac{1}{k} x_0 + b'$，从中得到$b' = y_0 + \dfrac{1}{k}$。与特殊直线$x = a$垂直的直线具有$y = b$的形式，若垂线过点$(x_0, y_0)$，则确定出的垂线方程为$y = y_0$。总结起来，若给定直线的斜率和通过的点属于数集$K$，则其确定的垂线是系数为$K$的一次函数。
+Given a straight line and a point, one may draw the perpendicular line through this point. In analytical geometry, the perpendicular line to a line defined by $y = kx + b$ has the form of $y = -\dfrac{1}{k} x + b'$, where $k \ne 0$. If it passes point $(x_0, y_0)$, then $y_0 = -\dfrac{1}{k} x_0 + b'$, whence, $b' = y_0 + \dfrac{1}{k}$. For the special case of vertical line $x = a$, the perpendicular line (horizontal) has the form of $y = b$. If it passes point $(x_0, y_0)$, then the equation is determined by $y = y_0$. Basically, if the slope of the given line and the coordinate that the perpendicular line passed through are in set $K$ containing rationals, then the perpendicular line is some linear equation with coefficients in $K$.
 
-\subsubsection{点和半径确定一个圆}
+\subsubsection{A circle with a center and radius}
 
-欧几里得几何公设3说：以任意点为圆心及任意的距离可以画圆。平面上给定三点$O, M, N$，以$O$为圆心，线段$MN$的长度为半径，可以唯一确定一个圆。其中半径$r = \sqrt{(x_m - x_n)^2 + (y_m - y_n)^2}$，是通过$M, N$的坐标和勾股定理确定的长度。我们从高中的解析几何中知道圆心为$(a, b)$，半径为$r$的圆可用方程$(x - a)^2 + (y - b)^2 = r^2$来描述。总结起来，若三点的坐标属于数集$K$，则其确定的圆是系数为$K$的二次方程。
+The Postulate 3 in \emph{The Elements} states: to describe a circle with any center and radius. Given three points $O, M, N$ in a plane, one may draw a circle at the center of $O$ with the radius equal the length of segment $MN$. The radius $r = \sqrt{(x_m - x_n)^2 + (y_m - y_n)^2}$, is determined by the coordinates of $M, N$, and Pythagorean theorem. From the school math, the circle at the center of $(a, b)$ with radius of $r$ can be described by equation $(x - a)^2 + (y - b)^2 = r^2$. Basically, if the coordinates of the three points are in set $K$ containing rationals, then the circle is described by a quadratic equation with coefficients in $K$.
 
-\subsubsection{交点}
-交点有三种：直线与直线的交点，直线与圆的交点，圆与圆的交点。两直线的交点是二元一次方程组
+\subsubsection{intersection}
+There are three types of intersection: a line intersects another line, a line intersects a circle, and a circle intersects another circle. The intersection of two lines is the solution to two linear equations,
 
 \[
 \begin{cases}
@@ -1694,9 +1694,9 @@ y = k_2 x + b_2
 \end{cases}
 \]
 
-的解。若两直线不平行（$k_1 \ne k_2$）则解是唯一的，交点唯一确定。若$k_1 = k_2$，但$b_1 \ne b_2$，则两直线平行，没有交点，方程组无解。若$k_1 = k_2$且$b_1 = b_2$，两直线重合。交点有无穷多。总之，不平行的直线有交点，若直线方程的系数属于数集$K$，则交点的坐标也属于数集$K$。
+If the two lines are not parallel ($k_1 \ne k_2$), then the solution is uniquely determined. If $k_1 = k_2$ but $b_1 \ne b_2$, then the two lines are parallel, hence no solution, no intersection. If $k_1 = k_2$ and $b_1 = b_2$, then the two lines overlap, they have infinitely many \enquote{intersections}. Basically, for nonparallel lines intersect; if the coefficients of the linear equations are in set $K$ containing rationals, then the coordinates of the intersection are in $K$.
 
-直线和圆的关系可用方程组
+The relation between a line and a circle is described by a system of,
 
 \[
 \begin{cases}
@@ -1705,23 +1705,24 @@ y = kx + c
 \end{cases}
 \]
 
-的解来确定。把第二式代入第一式可得一元二次方程
+Substitute the second equation to the first,
 
 \begin{align*}
-& (x - a)^2 + (kx + c - b)^2 = r^2  &&\text{代入}y = kx + c \\
-& x^2 + a^2 - 2ax + k^2x^2 + d^2 + 2kdx - r^2 =0 && \text{令}d = c - b \\
-& (1 + k^2)x^2 + 2(kd - a)x + a^2 + d^2 - r^2 = 0 && \text{合并同类项} \\
+& (x - a)^2 + (kx + c - b)^2 = r^2  &&\text{substitute }y = kx + c \\
+& x^2 + a^2 - 2ax + k^2x^2 + d^2 + 2kdx - r^2 =0 && \text{let }d = c - b \\
+& (1 + k^2)x^2 + 2(kd - a)x + a^2 + d^2 - r^2 = 0 && \text{collect terms} \\
 & Ax^2 + 2Bx + C = 0
 \end{align*}
 
-其中$A = 1 + k^2, B = kd - a, C = a^2 + d^2 - r^2$, 它的判别式$\Delta = \sqrt{4B^2 - 4AC} = 2\sqrt{B^2 - AC}$。有三种情况：
+where $A = 1 + k^2, B = kd - a, C = a^2 + d^2 - r^2$, the discriminant of this quadratic equation is $\Delta = \sqrt{4B^2 - 4AC} = 2\sqrt{B^2 - AC}$. There are three cases:
 \begin{itemize}
-\item 若$B^2 < AC$，直线与圆相离，没有交点。
-\item 若$B^2 = AC$，直线与圆相切，方程的解为切点。
-\item 若$B^2 > AC$，直线与圆相割，方程的解为两交点。
+\item if $B^2 < AC$, the line is separate from the circle, hence no intersection.
+\item if $B^2 = AC$, the line is tangent to the circle, they have exactly one common point.
+\item if $B^2 > AC$, the line intersects the circle, they have two distinct common points.
 \end{itemize}
 
-两圆的关系用方程组
+The relation between two circles is described by two equations,
+
 \[
 \begin{cases}
 (x - a)^2 + (y - b)^2 = r_1^2 \\
@@ -1729,22 +1730,22 @@ y = kx + c
 \end{cases}
 \]
 
-的解来确定。它同样能化为一元二次方程，然后用判别式$\Delta >, =, < 0$来描述两圆相离、相切、相交。总结下来，直线与圆、圆与圆的交点的坐标是二次方程的解。注意：这些方程的系数并不一定是有理数，例如\cref{fig:P1}中的直线CE对应的一次方程的斜率$k$和截距$b$都不是有理数。
+We can convert it to a quadratic equation, then by its discriminant, $\Delta >, =, < 0$, to determine if the two circles are separate (including the case that a circle is inside the other without touching), externally/internally tangent to each other, or intersect each other. Basically, for line and circle, circle and circle, the coordinates of their intersection, if exists, are solutions to some quadratic equation. The coefficients may not be rational, for example, in \cref{fig:P1}, neither the slope $k$ nor intercept $b$ of the linear equation describing line CE is rational.
 
-至此，尺规作图的能力范围已经全被笛卡尔掌握并定义出了。在平面上给定两个点A和B，我们指定其中一个为原点$(0, 0)$，另一个为$(1, 0)$。这两点就确定了长度为1的单位线段。我们可以进行第一轮尺规作图，包括：(1) 连接所有的已知点得到一组直线$\mathbf{L}_1$; (2) 以所有的已知点为圆心，已知线段为半径作一组圆$\mathbf{C}_1$；(3) 作所有不平行直线的交点，所有直线和圆的交点、切点，所有圆彼此间的交点和切点，记这些点为$\mathbf{P}_1$。
+As such, we describe ruler and compass construction with equations through Descartes's analytical geometry. This is the tool that helps us understand the capability/limitation of geometric construction. Given two points A and B in a plane, we define one as the origin $(0, 0)$, the other as $(1, 0)$, hence also define the unit segment of length 1. We may conduct a round of ruler and compass construction, including: (1) connect all known points to form a set of straight lines, $\mathbf{L}_1$; (2) draw circles at the center of each point, with the radius of each known segment; denote this set of circles by $\mathbf{C}_1$; (3) mark the intersections between lines, lines and circles, and circles; denote the set of these points by $\mathbf{P}_1$.
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.35]{img/P1}
- \caption{第一轮尺规作图后得到的点$\mathbf{P}_1 = \{A, B, C, D, E, F\}$}
+ \caption{The set of points from the first round of ruler and compass construction: $\mathbf{P}_1 = \{A, B, C, D, E, F\}$}
  \label{fig:P1}
 \end{figure}
 
-如\cref{fig:P1}所示，第一轮尺规作图后获得1条直线，两个圆，6个点。\underdot{所有}可能作出的长度，无非是系数为有理数的一元一次方程和一元二次方程的解，记为$K_1$。接下来在此基础上进行第二轮尺规作图，同样包括三部分：(1) 连接$\mathbf{P}_1$中所有任意两点得到的一组直线$\mathbf{L}_2$; (2) 用$\mathbf{P}_1$中所有任意三点$O, M, N$作圆，圆心为$O$，半径为线段$MN$的长度，这样得到一组圆$\mathbf{C}_2$；(3) 所有$\mathbf{L}_2$中直线的交点，所有$\mathbf{L}_2$中的直线与所有$\mathbf{C}_2$中圆的交点、切点，所有$\mathbf{C}_2$中圆彼此间的交点、切点，记这些点为$\mathbf{P}_2$。
+As shown in \cref{fig:P1}, after the first round of ruler and compass construction, we obtained a line, two circles, and six points. \emph{All} the constructed length are solutions to some linear or quadratic equations with rational coefficients. Denote the set of these numbers by $K_1$. We next conduct the second round of ruler and compass construction, including: (1) connect all points in $\mathbf{P}_1$ to form a new set of lines $\mathbf{L}_2$; (2) Draw circles with all combinations of three points $O, M, N$ in set $\mathbf{P}_1$, at the center of $O$ with radius of segment $MN$; denote the set of these circles by $\mathbf{C}_2$; (3) Mark the intersections between lines in $\mathbf{L}_2$, between every line in $\mathbf{L}_2$ and every circle in $\mathbf{C}_2$, and between circles in $\mathbf{C}_2$; denote the set of these points by $\mathbf{P}_2$.
 
-第二轮尺规作图能作出的量，是以$K_1$为系数的一元一次方程和一元二次方程的解，记为$K_2$。重复这一步骤，我们可以一轮一轮进行尺规作图，从而得到越来越多尺规可作出的量$K_1, K_2, K_3, \dotsc$其中包括这样的数：$1 + \sqrt{2} + \sqrt{2\sqrt{3} - \sqrt{5}}$等等。读者朋友们，你能举出更多的例子么？
+The constructed magnitudes from the second round are solutions to linear and quadratic equations with coefficients in $K_1$; denote the set of these magnitudes as $K_2$. We repeat, round after round, which construct more and more magnitudes in $K_1, K_2, K_3, \dotsc$ including numbers like $1 + \sqrt{2} + \sqrt{2\sqrt{3} - \sqrt{5}}$. Can you give some more examples?
 
-尺规可作数的集合，随着轮数的增加，规模以指数爆炸的形式增加。一轮一轮无穷无尽，不断以上一轮的数为系数组成新的一元一次方程和一元二次方程，它们的解构成下一轮的数。它是一个无穷集合，尽管如此$\sqrt[3]{2}$却不在其中（见附录\ref{app:gauss-wantzel-theorem}）。它不是任何以有理数为系数的一次或二次方程的解；它不是任何以$K_1$为系数的一次或二次方程的解；它不是任何以$K_2$为系数的一次或二次方程的解……它是尺规不可作的\footnote{$\sqrt[3]{2}$是三次方程$x^3 - 2 = 0$的唯一实根，另外两个根是复数$-\sqrt[3]{2}\dfrac{1 \pm \sqrt{3}}{2}$，详见第6章。}。这就是倍立方问题无法解决的原因。如\cref{fig:heptagon}所示，正$n$边形的边长为$x = 2\sin(\dfrac{360\degree}{2n})$。如果它是某个$K_i$中的一次或二次方程的解，则尺规可作出，否则尺规不可作出。
+The size of the set, as the round of construction increases, grows exponentially. The construction continues infinitely, every round is equivalent to solving linear and quadratic equations with coefficients constructed from previous round. The set of all constructible numbers is infinite, however, it does not contain $\sqrt[3]{2}$ (see \cref{app:gauss-wantzel-theorem}). Because it is not a solution to any linear or quadratic equation with rational coefficients, nor a solution to any linear or quadratic equation with coefficients in $K_1$, nor a solution to any linear or quadratic equation with coefficients in $K_2$ ... It can not be constructed by ruler and compass\footnote{$\sqrt[3]{2}$ is the unique real solution to cubic equation $x^3 - 2 = 0$, the other two roots are complex numbers of $-\sqrt[3]{2}\dfrac{1 \pm \sqrt{3}}{2}$, see chapter 6.}. Thereby, it's impossible to duplicate a cube. As shown in \cref{fig:heptagon}, the side length of a regular polygon of $n$ sides is $x = 2\sin(\dfrac{360\degree}{2n})$. It can be constructed by ruler and compass if and only if it is a solution to some linear or quadratic equation with coefficients in some $K_i$ (i.e., in $K_{i+1}$).
 
 由高斯——旺策尔定理，正18边形用尺规不可作出（$18 = 2 \times 3^2$，不是不同的费马素数与2的幂的积），所以$360\degree$角的$\dfrac{1}{18}$，即$20\degree$不可作出，进一步可知$60\degree$角无法用尺规三等分。这样就推翻了三分角问题。
 
