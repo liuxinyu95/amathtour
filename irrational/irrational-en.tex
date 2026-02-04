@@ -1807,43 +1807,43 @@ S & = \pi r^2 = \pi (\frac{d}{2})^2 \\
 
 \subsection{Cyclotomic method}
 \index{cyclotomic method}
-在人们不断寻找更精确的圆周率时，古希腊伟大的数学家阿基米德首先给$\pi$限制了范围。通过古埃及人的计算，我们可以大致推测：
+Archimedes was the first one who gave the upper and lower bounds of $\pi$. He developed the method that later mathematicians followed for 1,800 years. From the Egyptians result, we estimate,
 
 \begin{proposition}
-圆周率$\pi$在3和4之间。
+The value of $\pi$ is between 3 and 4.
 \end{proposition}
 
-在小学数学课上，我们曾经在老师的指导下用线绳、直尺测量圆的周长和直径，感知圆周率的存在。$3.14$成为了每个人儿时的机械记忆，它自然是在3和4之间，为什么还要证明呢？这就是古希腊几何的精神所在——追求严密和完美，并在此过程中发展工具和方法。正是通过对圆周率范围的严格界定，阿基米德取得了更好的结果并给后人指出了方向。
+It's still the best practice in school, that the teacher guided students to use a rope and a ruler to measure the circumference and diameter, it's interesting to rediscover $\pi$. The approximate value $3.14$ becomes everyone's memory in childhood. It's definitely between 3 and 4, why need prove? Proof is the Greek tradition, the sprite of geometry -- be rigorous and perfect. It is in pursuing rigor and perfection, the Greeks developed tools and techniques. For example, Archimedes greatly developed the method of exhaustion when approximating $\pi$, he achieved the best ever result.
 
 \begin{proof}
-我们先证明$\pi > 3$。如\cref{fig:inscribed-hexagon}所示，考虑半径为1的单位圆和内接正六边形。连接正六边形的顶点和圆心将其分割为6个正三角形（首先每个三角形是等腰三角形，其中腰是圆的半径；其次每个等腰三角形的顶角等于$\dfrac{360\degree}{6} = 60\degree$）。由于单位圆的半径是1，所以每个等腰三角形的边长是1，所以正六边形的周长是6。由外接圆周长大于正六边形周长6，故：
+First, we are going to show $\pi > 3$. As shown in \cref{fig:inscribed-hexagon}, consider the unit circle with radius of 1 and the inscribed regular hexagon. Connect each vertex and the center; it divides the circle into 6 congruent equilateral triangles (each triangle is isosceles because the sides equal the radius; besides, each angle between the sides equal $\dfrac{360\degree}{6} = 60\degree$). Because the length of the radius is 1, the side length of the equilateral triangle is 1, it follows the circumference of the regular hexagon is 6. Since the circumference of the circle is longer than the inscribed hexagon,
 
 \begin{figure}[htbp]
  \centering
- \subcaptionbox{半径为1的单位圆与内接正六边形\label{fig:inscribed-hexagon}}{\includegraphics[scale=0.4]{img/hexagon}}
- \subcaptionbox{半径为1的单位圆与外切正方形\label{fig:square-hexagon}}{\includegraphics[scale=0.4]{img/square-hexagon}}
- \caption{单位圆、内接六边形、外切正方形}
+ \subcaptionbox{The unit circle and its inscribed regular hexagon. \label{fig:inscribed-hexagon}}{\includegraphics[scale=0.4]{img/hexagon}}
+ \subcaptionbox{The unit circle and its circumscribed square. \label{fig:square-hexagon}}{\includegraphics[scale=0.4]{img/square-hexagon}}
+ \caption{The unit circle, its inscribed regular hexagon, and its circumscribed square.}
 \end{figure}
 
 \[
 \pi = \frac{C}{d} = \frac{C}{2} > \frac{6}{2} = 3
 \]
 
-然后证明$\pi < 4$。如\cref{fig:square-hexagon}所示，进一步作外切正方形。其边长等于直径2，故正方形的周长是8。因为外切正方形的周长大于圆的周长，所以：
+Next, we shall show $\pi < 4$. As shown in \cref{fig:square-hexagon}, draw the circumscribed square of the unit circle. It's side length equals the length of diameter, which is 2. The circumference of the square is 8, and it is longer than the circumference of the circle.
 
 \[
 \pi = \frac{C}{d} = \frac{C}{2} < \frac{8}{2} = 4
 \]
 
-这样就证明了圆周率$3 < \pi < 4$。
+It proves $3 < \pi < 4$.
 \end{proof}
 
-这就是古希腊数学家阿基米德计算圆周率的思想，所不同的是阿基米德同时考虑圆内接和外接正多边形，如\cref{fig:pi-exhaustion}所示。取圆的直径为1，则周长等于$\pi$。圆的周长大于内接正多边形的周长而小于外切正多边形的周长。这样就有：
+This was almost the same idea that Archimedes approximating $\pi$; the only difference was that instead of square Archimedes used the same regular polygon to inscribe and circumscribe the circle as shown in \cref{fig:pi-exhaustion}. Suppose the diameter is 1, the circumference of the circle is $\pi$. It is longer than the inscribed regular polygon but shorter than the circumscribed regular polygon.
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.5]{img/pi-exhaustion}
- \caption{用穷竭法计算圆周率}
+ \caption{Apply method of exhaustion to $\pi$.}
  \label{fig:pi-exhaustion}
 \end{figure}
 
@@ -1851,8 +1851,10 @@ S & = \pi r^2 = \pi (\frac{d}{2})^2 \\
   C_i < \pi < C_o
 \]
 
-\index{穷竭法}
-其中$C_i$、$C_o$分别为内接多边形和外切多边形的周长。不断加大边数$n$，就可以越来越精确地获得$\pi$的范围。这种方法叫做“穷竭法”，它是在现代微积分的前驱。不管指定多么小的精度，比如$\epsilon = 0.00 \dotso 01$，我们都可以找到一个足够大的$n$，使得$C_o - \pi$和$\pi - C_i$都小于$\epsilon$。或者说当$n$趋近于无穷时，$C_o$和$C_i$都趋近于$\pi$。穷竭法由古希腊智人学派的代表人物安提丰（Antiphon，约前480～前410年）首创。他提出用圆内接多边形逼近圆面积的方法来化圆为方。安提丰从一个圆内接正方形开始，不断将边数加倍得到正八边形、十六边形……不断重复这一过程，随着圆面积的逐渐“穷竭”，将得到一个边长越来越微小的圆内接正多边形。安提丰认为最终这一正多边形将与圆重合。后来古希腊数学家欧多克索斯对穷竭法进行了改进和严格化，使其成为解决面积、体积问题的一种有力的几何方法。利用穷竭法，欧多克索斯证明了棱锥体积是同底同高棱柱体积的1/3，圆锥体积是同底同高圆柱体积的1/3。这些成果都记录在欧几里得的《原本》卷12中\cite{HanXueTao16}。
+\index{method of exhaustion}
+where $C_i$ and $C_o$ are the inscribed and circumscribed circumferences of the regular polygon.
+
+分别为内接多边形和外切多边形的周长。不断加大边数$n$，就可以越来越精确地获得$\pi$的范围。这种方法叫做“穷竭法”，它是在现代微积分的前驱。不管指定多么小的精度，比如$\epsilon = 0.00 \dotso 01$，我们都可以找到一个足够大的$n$，使得$C_o - \pi$和$\pi - C_i$都小于$\epsilon$。或者说当$n$趋近于无穷时，$C_o$和$C_i$都趋近于$\pi$。穷竭法由古希腊智人学派的代表人物安提丰（Antiphon，约前480～前410年）首创。他提出用圆内接多边形逼近圆面积的方法来化圆为方。安提丰从一个圆内接正方形开始，不断将边数加倍得到正八边形、十六边形……不断重复这一过程，随着圆面积的逐渐“穷竭”，将得到一个边长越来越微小的圆内接正多边形。安提丰认为最终这一正多边形将与圆重合。后来古希腊数学家欧多克索斯对穷竭法进行了改进和严格化，使其成为解决面积、体积问题的一种有力的几何方法。利用穷竭法，欧多克索斯证明了棱锥体积是同底同高棱柱体积的1/3，圆锥体积是同底同高圆柱体积的1/3。这些成果都记录在欧几里得的《原本》卷12中\cite{HanXueTao16}。
 
 古希腊将穷竭法发展到最高成就的当属阿基米德，他使用内外多边形计算出了圆周率范围：$\dfrac{223}{71} < \pi < \dfrac{22}{7}$。取上下两个边界的平均值，阿基米德相当于计算出$\pi \approx 3.1418$，误差仅有0.0002。这在没有位值制10进制计数系统的古希腊是一个极为惊人的成就。今天西方仍然广泛使用$\dfrac{22}{7}$进行日常计算。除此之外，阿基米德还证明了圆面积公式，球体、锥体的表面积和体积公式，甚至找到了计算抛物线下面积的方法。被称为古希腊的数学之神。
 
