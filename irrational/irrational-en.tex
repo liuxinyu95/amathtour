@@ -1877,7 +1877,7 @@ After Archimedes, the Greek astronomer Ptolemy adopted Babylonian 60-based syste
 \]
 
 \index{Zu Chongzhi} \index{cyclotomic method}
-The ancient Chinese made the similar discovery. In classic mathematical books like \emph{Nine chapters} and \emph{Zhoubi Suanjing} (The arithmetic Classic of the Gnomon and the Circular Paths of Heaven), 3 appears as the ratio of circumference and diameter, i.e., $\pi \approx 3$. The Chinese mathematicians were soon unsatisfied with its precision; they also used polygons to approximate the circle, known as the cyclotomic method, and bit by bit improved the precision. Liu Hui, a mathematician lived in Wei, Jin Dynasties, when comment on the \emph{Nine chapters}, approximated the circle with a regular polygon of 96 sides. Given the diameter of 100 chang\footnote{1 chang is about 2.31 meter in Han Dynasty.}, he calculated the circumference of the circle was $314\dfrac{169}{625}$ chang. He next double the polygon to 192 sides and improved the result to $314\dfrac{4}{25})$, which approximated $pi = 3.1416$. Zu Chongzhi, a mathematician in Southern and Northern Dynasties, further proved $3.1415926 < \pi < 3.1415927$. It would be nice to have details for this remarkable result. Sadly, Zu's book is lost. Actually, we know only briefly about Zu from history records like \emph{History of Southern Dynasties} and \emph{Zizhi Tongjian} (Comprehensive Mirror in Aid of Governance). His achievement regarding $\pi$ is reported in the \emph{History of the Sui Dynasty - Treatise on Harmonics and Calendrical Astronomy}, compiled in the 7th century:
+The ancient Chinese made the similar discovery. In classic mathematical books like \emph{Nine chapters} and \emph{Zhoubi Suanjing} (The arithmetic Classic of the Gnomon and the Circular Paths of Heaven), 3 appears as the ratio of circumference and diameter, i.e., $\pi \approx 3$. The Chinese mathematicians were soon unsatisfied with its precision; they also used polygons to approximate the circle, known as the cyclotomic method, and bit by bit improved the precision. Liu Hui (c. 225 - 295 CE, in Wei-Jin period) when comment on the \emph{Nine chapters}, approximated the circle with a regular polygon of 96 sides. Given the diameter of 100 chang\footnote{1 chang is about 2.31 meter in Han Dynasty.}, he calculated the circumference of the circle was $314\dfrac{169}{625}$ chang. He next double the sides of the polygon to 192 sides and improved the result to $314\dfrac{4}{25})$, which approximated $pi = 3.1416$. Zu Chongzhi, a mathematician in Southern and Northern Dynasties (429 - 501 CE), further proved $3.1415926 < \pi < 3.1415927$. It would be nice to have details for this remarkable result. Sadly, Zu's book is lost. Actually, we know very briefly about Zu from history records like \emph{History of Southern Dynasties} and \emph{Zizhi Tongjian} (Comprehensive Mirror in Aid of Governance). His achievement regarding $\pi$ is reported in the \emph{History of the Sui Dynasty - Treatise on Harmonics and Calendrical Astronomy}, compiled in the 7th century:
 
 \begin{figure}[htbp]
  \centering
@@ -1890,18 +1890,17 @@ The ancient Chinese made the similar discovery. In classic mathematical books li
 Zu Chongzhi further devised a precise method (of calculating). Taking a circle of diameter 10,000,000 chang, he found the circumference of this circle to be less than 31,415,927 chang and greater than 31,415,926 chang. He deduced from these results that the accurate value of the circumference must lie between these two values. Therefore the precise value of the ratio of the circumference of a circle to its diameter is as 355 to 113, and the approximate value is as 22 to 7.
 \end{quotation}
 
-翻译为白话：南朝宋\footnote{宋武帝刘裕所创，又称“刘宋”}末年，南徐州\footnote{永嘉南渡后，汉族士大夫和侨民思念北方的故乡，就用同样的地名冠以“南”字来命名侨居地，如南徐州、南兖州、南琅琊等。}人祖冲之创立了密法，他把一丈化为一亿忽，以此为直径求圆周率。他计算的结果共得到两个数：一个是圆周率的上限（盈数）3.1415927；一个是下限（朒数）为3.1415926。人们把这一数值称做“祖率”。为了使用方便，祖冲之还给出了两个圆周率的分数值，一个是$\dfrac{355}{113}$，比较精密，称为“密率”；一个是$\dfrac{22}{7}$，称为“约率”。注意到约率和阿基米德给出的近似分数不谋而合。密率的十进制小数为$3.1415929$，误差只有$2.7 \times 10^{-7}$。一方面它容易记忆：只要把前三个奇数成对列出113355，然后在中间插入“分之”就得到了“113分之355”；另一方面它的精度很高，是分母在一万以内的所有分数中最接近$\pi$的（\cref{qn:113355best}要求证明这一点）。
+The approximate value, $\dfrac{22}{7}$, coincided with Archimedes's result. The decimal of the precise value $\dfrac{355}{113}$ is $3.1415929$, with error less than $2.7 \times 10^{-7}$. One may memorize it in this way: put the first three odd numbers in pair 113355, then split in the middle by the fractional bar, namely 113 (denominator) | 355 (nominator). In fact, this is the best rational approximation of $\pi$ among all the fractions whose denominator less than 10,000 (\cref{qn:113355best} asks to prove this assertion).
 
-人们猜测祖冲之的方法也是割圆术，据说他使用24576边形逼近$\pi$。但我们没有找到相关的文献实证。无论如何“祖率”的精度达到了割圆术的顶峰，祖冲之几乎给几何方法计算圆周率划上了句号，此后圆周率的计算方法就转向了无穷级数。祖冲之的心血、努力、毅力令人敬佩，是我国古代数学与科学的文化符号。据说1932年国立清华大学入学考试中有一道对联题目：上联是“孙行者”，下联答案是“祖冲之”\cite{BaiHuawen-2018}。
-%% 白化文《学习写对联》
+Although Zu's book isn't survive, we may guess if his approach was the cyclotomic method, he had to use inscribed/circumscribed regular polygon with 24576 sides to achieve this accuracy! This almost put an end to the cyclotomic method considering the extremely lengthy calculation, involving hundreds of square roots, all to 9 decimal places accuracy. Mathematicians need brand new tools to surpass this record. Zu Chongzhi becomes a cultural symbolic figure in China\cite{BaiHuawen-2018}.
 
-\index{倍边公式}
-接下来我们要揭开割圆术的面纱，了解古人到底是如何手工逼近圆周率的。你有没有注意到：割圆术中所有正多边形的边数都是6的倍数，并且是$2^n$次幂倍。例如：$96 = 2^4 \times 6$、$192 = 2^5 \times 6$，甚至传说中的$24576 = 2^{12} \times 6$。这是因为单位圆内接正六边形的周长最容易算出，6个边长为1的正三角形的底边和是6。接下来古人不断把边数加倍：$6, 12, 24, \dotsc$，每次加倍后利用勾股定理算出新的边长。如\cref{fig:double-edges}所示，过外接圆心作正多边形每一边AB的中垂线，交AB于D，交外接圆于C。连接AC、BC就实现了倍边。记原正多边形的边长为$c$，倍边后正多边形的边长为$c'$。直角三角形AOD中，斜边AO等于半径1，直角边AD是原边长的一半$\dfrac{c}{2}$，由勾股定理，另一直角边：
+\index{double sides}
+One may wonder how ancient mathematicians executed the cyclotomic method. It's interesting that almost all the numbers of the sides of the regular polygon are multiples of 6, and they are some $2^n$ times of 6. For example, $96 = 2^4 \times 6$, $192 = 2^5 \times 6$, and what we guessed in Zu Chongzhi's case, $24576 = 2^{12} \times 6$. This is because it's very easy to obtain the circumference of a inscribed regular hexagon, which consists of 6 equilateral triangles with side length of 1, hence the sum is 6. The way ancient people did was to double the sides and repeat: $6, 12, 24, \dotsc$, every time after doubling the sides, calculate the new side length by Pythagorean theorem. Draw the perpendicular bisector of each side as shown in \cref{fig:double-edges}, the bisector of AB intersects the side at D, and intersects the circle at C. Connect AC and BC to double the sides. Denote the original side length of the polygon by $c$, the new side length after doubling by $c'$. In the right triangle AOD, the hypotenuse AO, which equals the radius of length 1 (suppose it is unit circle); the length of AD is half of the original side, which is $\dfrac{c}{2}$, by Pythagorean theorem, the other side is,
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.35]{img/double-edges}
- \caption{正六边形倍边}
+ \caption{Double the sides of a regular hexagon.}
  \label{fig:double-edges}
 \end{figure}
 
@@ -1909,7 +1908,7 @@ Zu Chongzhi further devised a precise method (of calculating). Taking a circle o
 OD = \sqrt{AO^2 - OD^2} = \sqrt{1 - \left(\frac{c}{2}\right)^2}
 \]
 
-在直角三角形ADC中，直角边$DC = OC - OD$。再次应用勾股定理求斜边AC：
+In the right triangle ADC, $DC = OC - OD$, by Pythagorean theorem, the hypotenuse AC is,
 
 \begin{align}
 AC &= \sqrt{DC^2 + AD^2} = \sqrt{(OC - OD)^2 + \left(\frac{c}{2}\right)^2}  \\
@@ -1917,29 +1916,29 @@ c' &= \sqrt{\left(1 - \sqrt{1 - \left(\frac{c}{2}\right)^2}\right)^2 + \left(\fr
 \label{eq:double-edges}
 \end{align}
 
-这个公式叫做“倍边公式”。如果原多边形是正六边形，$c = 1$，则倍边后正十二边形的周长是：
+We call it double sides formula. If the original polygon is regular hexagon and $c = 1$, then the side length of the doubled 12-gon is,
 
 \[
 c' = \sqrt{\left(1 - \sqrt{1 - \left(\frac{1}{2}\right)^2}\right)^2 + \left(\frac{1}{2}\right)^2} = \sqrt{2 - \sqrt{3}}
 \]
 
-\index{开平方}
-这样正十二边形的周长就是$12\sqrt{2 - \sqrt{3}}$，估计出的圆周率为$\pi > 6\sqrt{2 - \sqrt{3}}$。接下来我们还要摆上最后一块拼图：解密古人是如何手算开平方的。为了计算$\sqrt{n} = a.bcd\dotsm$，我们首先估计它的整数部分$a$。以$\sqrt{5}$为例，由$2^2 = 4 < 5 < 9 = 3^2$，估计$\sqrt{5}$的整数部分是$a = 2$，形如$2.bcd\dotsm$。接下来估计十分位小数$b$。考虑$(a + \dfrac{b}{10})^2 < n$。利用完全平方公式：
+\index{square root}
+It turns out the circumference of the regular 12-gon is $12\sqrt{2 - \sqrt{3}}$, we estimate $\pi > 6\sqrt{2 - \sqrt{3}}$. We next the last brick: how did ancient people extract square root? To calculate $\sqrt{n} = a.bcd\dotsm$, one first estimates the integral part $a$. Taking $\sqrt{5}$ for example, as $2^2 = 4 < 5 < 9 = 3^2$, we estimate the integral part of $\sqrt{5}$ is $a = 2$, the square root is like $2.bcd\dotsm$. Next estimate $b$. Since $(a + \dfrac{b}{10})^2 < n$, by the square of sum,
 
 \[
 (a + \frac{b}{10})^2 = a^2 + \frac{ab}{5} + \frac{b^2}{100}  < n \\
 \]
 
-以$\sqrt{5}$为例，代入$a = 2$求$b$：
+Taking $\sqrt{5}$ for example, substitute $a = 2$ in to estimate $b$,
 
 \begin{align*}
 4 + \frac{2b}{5} + \frac{b^2}{100} &< 5 \\
  \Rightarrow & b = 2
 \end{align*}
 
-估计出十分位$b = 2$。这样重复迭代求下一位小数$c$，由$(a + \dfrac{b}{10} + \dfrac{c}{100})^2 < n$估计出$c = 3$。不断重复直到达到所需要的精度\footnote{《九章算术》少广一章中记有古人的方法：“开方术曰：置积为实。借一算步之，超一等。议所得，以一乘所借一算为法，而以除。除已，倍法为定法。其复除。折法而下。复置借算步之如初，以复议一乘之，所得副，以加定法，以除。以所得副从定法。复除折下如前。若开之不尽者为不可开，当以面命之。若实有分者，通分内子为定实。乃开之，讫，开其母报除。若母不可开者，又以母乘定实，乃开之，讫，令如母而一。”}，古人就是这样计算出$\sqrt{3} \approx 1.732$，\cref{qn:calc-sqrt3}要求手工计算$\sqrt{3}$到小数点后3位。把1.732代入倍边公式得到正十二边形的边长$c' = 0.517$，周长为6.204，估计圆周率$\pi > 3.102$。就这样古人可以继续迭代把0.517代入倍边公式，求出正24边形、48边形、96边形……的边长，乘以$n$得到周长，再除以直径估计出越来越精确的圆周率。
+We estimate $b = 2$. For the next digit $c$, by $(a + \dfrac{b}{10} + \dfrac{c}{100})^2 < n$, we estimate $c = 3$. Repeat this to the needed accuracy \footnote{\emph{Nine chapters} documents the method of extracting square root in ancient China.}. In this way, ancient people extracted the square root of $\sqrt{3} \approx 1.732$. \Cref{qn:calc-sqrt3} asks to calculate $\sqrt{3}$ to three decimal places. Substitute 1.732 to the double sides formula, the side length of a regular 12-gon is $c' = 0.517$, and its circumference is 6.204, hence $\pi > 3.102$. Next, substitute 0.517 to the double sides formula and repeat, this is way to calculate side length of regular 24-gon, 48-gon, 96-gon, and so on, multiply by $n$ gives the circumference, finally, divided by the diameter to obtain more and more accurate value of $\pi$.
 
-\subsection{二项式定理}
+\subsection{Binomial theorem}
 \index{二项式定理}
 祖冲之的结果领先了七个世纪。直到1430年才由阿拉伯数学家阿尔·卡西(Al-Kashi)打破。出于天文学计算的需要，阿尔·卡西希望计算出宇宙的周长，并使得精度在一根头发的粗细。他认为宇宙的天球直径是地球直径的600000倍。为此他使用了$2^{26} \times 6 = 805306368$边形进行逼近。算出$\pi = 3.1415926535897932$。我们今天知道，使用39位精度的圆周率计算出可观测宇宙的直径，其误差只有氢原子半径的大小。割圆术至此走到了穷途末路，人们即使穷经皓首投入一生计算，也只能提升圆周率精度几个数位。尽管这样的精度远远超出了实际生产生活所需的范围，但数学的发展动力已经由远古的生产劳动驱使，渐渐转向了由好奇心，由追求真善美驱使。随着微积分的扬帆起航，新的方法出现了。
 
