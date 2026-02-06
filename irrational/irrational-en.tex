@@ -1958,26 +1958,26 @@ The general binomial theorem is also known as Newton's binomial theorem. People 
 The binomial theorem of integral $n$ is often taught as part of combinatorics in school math. We shall use the binomial notation to understand Pascal's proof, namely,
 
 \be
-\binom{n}{k} = C_n^k = \frac{n!}{k!(n-k)!} = \frac{1\cdot2\dotsm n}{(1\cdot2\dotsm k)(1 \cdot 2 \dotsm (n-k))}
+\binom{n}{k} = \frac{n!}{k!(n-k)!} = \frac{1\cdot2\dotsm n}{(1\cdot2\dotsm k)(1 \cdot 2 \dotsm (n-k))}
 \ee
 
-where the factorial $n! = 1 \times 2 \times \dotsb \times n$ is the product of all positive integers from 1 to n. This notation is widely used in combinatorics, number theory, algebra, and etc. It has combinatorial meaning: the number of distinct ways of taking $k$ elements out of a set of $n$ elements. It's symmetric in a sense that, if $k + k' = n$, then $\dbinom{n}{k} = \dbinom{n}{k'}$, because,
+where the factorial $n! = 1 \times 2 \times \dotsb \times n$ is the product of all positive integers from 1 to n. This notation is widely used in combinatorics, number theory, algebra, and etc. It has combinatorial meaning: the number of combinations of $n$ things taken $k$ at a time. It's symmetric in a sense that, if $k + k' = n$, then $\dbinom{n}{k} = \dbinom{n}{k'}$, because,
 
 \[
 \binom{n}{k} = \frac{n!}{k!(n-k)!} = \frac{n!}{(n-k')!k'!} = \binom{n}{k'}
 \]
 
-\index{帕斯卡法则}
-特别地，我们规定$0! = 1$（见\cref{qn:frac-of-zero}），这样就有$\dbinom{n}{0} = \dbinom{n}{n} = 1$。利用$\dbinom{n}{k}$的这一定义，我们可以表述朱世杰在杨辉三角中标注的斜线，在西方称做帕斯卡法则：
+\index{Pascal's formula}
+Specially, we define $0! = 1$ (see \cref{qn:frac-of-zero}), then $\dbinom{n}{0} = \dbinom{n}{n} = 1$. With the notation of $\dbinom{n}{k}$, we can describe the parallel lines in Zhu Shijie's triangular diagram, which is known as Pascal's formula,
 
 \begin{proposition}
-杨辉三角形中的数等于斜上方的两个数字和：$\dbinom{n-1}{k} + \dbinom{n-1}{k-1} = \dbinom{n}{k}$
+Each subsequent row of Pascal's triangle is obtained by adding the two entries diagonally above. $\dbinom{n-1}{k} + \dbinom{n-1}{k-1} = \dbinom{n}{k}$
 \end{proposition}
 
 \begin{proof}
   \begin{align*}
-    \binom{n-1}{k} + \binom{n-1}{k-1} &= \frac{(n-1)!}{k!(n-1-k)!} + \frac{(n-1)!}{(k-1)!(n-\cancel{1}-(k-\cancel{1}))!} &&\text{组合数定义} \\
-  &= \frac{(n-1)!(n - \cancel{k} + \cancel{k})}{k!(n-k)!} &&\text{通分} \\
+    \binom{n-1}{k} + \binom{n-1}{k-1} &= \frac{(n-1)!}{k!(n-1-k)!} + \frac{(n-1)!}{(k-1)!(n-\cancel{1}-(k-\cancel{1}))!} &&\text{by definition} \\
+  &= \frac{(n-1)!(n - \cancel{k} + \cancel{k})}{k!(n-k)!} && \\
   &= \frac{n!}{k!(n-k)!} = \binom{n}{k} &&\qedhere
   \end{align*}
 \end{proof}
