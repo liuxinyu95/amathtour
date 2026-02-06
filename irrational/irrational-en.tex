@@ -1982,11 +1982,11 @@ Each subsequent row of Pascal's triangle is obtained by adding the two entries d
   \end{align*}
 \end{proof}
 
-帕斯卡法则的组合意义可以这样理解：从$n$个不同事物中取出$k$个的方法包含两部分，指定某个事物$a$，(1) 包含$a$的取法是$\dbinom{n-1}{k-1}$，即从除$a$以外的$n-1$个事物中取出$k-1$个，然后再把$a$放进去；(2) 不包含$a$的取法是$\dbinom{n-1}{k}$，即从除$a$以外的$n-1$个事物中取出$k$个。利用帕斯卡法则和数学归纳法就可以证明$n$是整数时的二项式定理了。
+The combinatorial meaning of Pascal's formula is, the combinations of $n$ things taken $k$ at a time consists of two parts: (1) Among these $n$ things, denote some by $a$; those combinations including $a$, in total are $\dbinom{n-1}{k-1}$. We first take $a$ out, then from the remaining $n-1$ things pick $k-1$ out and put them together with $a$. (2) Those combinations without $a$, in total are $\dbinom{n-1}{k}$. We first drop $a$, then from the reaming $n-1$ things, pick $k$ things out. These two parts are disjoint. We are going to show the binomial theorem for integral $n$ with Pascal's formula.
 
-\index{二项式定理}
-\begin{theorem}[二项式定理]
-指数$n$为整数时，二项式展开为：
+\index{binomial formula}
+\begin{theorem}[binomial formula]
+When $n$ is integral,
 
 \begin{align}
 (a+b)^n &= \binom{n}{0}a^n + \binom{n}{1}a^{n-1}b + \binom{n}{2}a^{n-2}b^2 + \dotsb + \binom{n}{n-1}ab^{n-1} + \binom{n}{n}b^n  \\
@@ -1994,7 +1994,7 @@ Each subsequent row of Pascal's triangle is obtained by adding the two entries d
 \end{align}
 \end{theorem}
 
-这个定理包含$n=0$的情况：$(a+b)^0 = 1$，其对应帕斯卡三角的第一行“1”。
+The theorem covers the case that $n=0$, that is $(a+b)^0 = 1$. It corresponds to the first row in Pascal's triangle, a single 1.
 
 \begin{proof}
 利用数学归纳法，当$n = 1$时，$(a + b)^1 = a + b$。假设$n$时成立，考虑$n + 1$时：
