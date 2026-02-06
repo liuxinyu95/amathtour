@@ -1943,25 +1943,25 @@ We estimate $b = 2$. For the next digit $c$, by $(a + \dfrac{b}{10} + \dfrac{c}{
 Zu Chongzhi's record kept for 7 centuries. It was broken by Arabic mathematician Al-Kashi in 1430. For astronomical purpose, Al-Kashi aimed to calculate the circumference of the universe to within a hair's breadth. He took the universe to be a sphere 600,000 times the diameter of the earth. In order to achieve the needed accuracy, he used a regular polygon with $2^{26} \times 6 = 805306368$ sides, which approximated $\pi = 3.1415926535897932$. In fact, 39 places of $\pi$ will compute the circumference of the universe to an accuracy of the radius of the hydrogen atom. The cyclotomic method reached a dead end by this time point. Even if one devoted an entire lifetime to computation, he could only improve a few more decimal places precision. Although it had already far exceeded the practical need, the driving force behind gradually shifted to curiosity and the pursuit of truth. With the rise of calculus, new method emerged.
 
 \index{Newton}
-1665年，英国伦敦爆发了可怕的瘟疫。剑桥大学被迫关闭，学生们只得各自回到家乡躲避。一个22岁的年轻人由此在家渡过了与世隔绝了两年。没有电视，没有手机，没有游戏，没有社交网络。他在大自然和家乡的山水中放飞自己的好奇心和思想，思考出广义二项式定理、流数术（即微积分）、万有引力，还动手用三棱镜发现了光的色散。这个年轻人叫艾萨克·牛顿。
+In 1665 summer, a plague suddenly broke out in London. The University of Cambridge was forced to closed, a young student just received his bachelor's degree in April, had to return to Lincolnshire. He stayed there in isolation for 2 years without television, mobile phone, video game, or social network. He followed his heart full of curiosity and thoughts, dove into the great nature in his hometown. He developed the general binomial theorem, the method of fluxions (that is, calculus), and the law of universal gravitation. He also experimented with a triangular prism and discovered the dispersion of light. This young man was Isaac Newton.
 
-\index{杨辉三角} \index{贾宪三角} \index{帕斯卡三角} \index{朱世杰}
-高中学习排列组合时会介绍二项式定理，通常也叫做牛顿二项式定理。古人很早就知道$n$为自然数时$(a + b)^n$的展开式。\cref{fig:yanghui}来自成书于十三世纪的《详解九章算法》，作者杨辉注明了此图引自贾宪的《释锁算书》。后者成书于十一世纪，已经失传。1303年，元代的朱世杰在《四元玉鉴》中复载此图，增加了两层，并添上了两组平行的斜线（见\cref{fig:zhushijie}，图中为算筹数字）。这明确指明了每个数字等于斜上方两个数字的和。类似的二项式展开系数表在十世纪以后也出现在印度和阿拉伯的数学著作中。在西方，这个三角形表叫做“帕斯卡三角”，以纪念法国数学家帕斯卡1654年的发现。帕斯卡不仅给出了证明，还把二项式展开的系数和组合数联系起来，并把它应用到博弈中从而创建了概率论。牛顿在1665年把$n$推广到有理数，后来欧拉又证明$n$为实数时牛顿二项式定理依然成立。推广后的定理也叫做广义二项式定理。
+\index{Pascal triangle} \index{Yang Hui's triangle}  \index{Zhu Shijie}
+The general binomial theorem is also known as Newton's binomial theorem. People knew the formula of expanding $(a + b)^n$ for natural number $n$ very early in history. The triangle diagram shown in \cref{fig:yanghui} was taken from a Chinese mathematical book \emph{Detailed analysis of the mathematical rules in the Nine Chapters and their reclassifications}, written in 1261. The author, Yang Hui, referenced this diagram from another book by Jia Xian, who lived in the 11th century. But Jia Xian's book was lost\footnote{Jia Xian is known to have written two mathematics books: \emph{The Yellow Emperor's detailed solutions to the Nine Chapters on the Mathematical Art}, and \emph{A collection of ancient mathematical rules}. Both are lost. Thanks to Yang Hui, who explicitly explained the intention in the preface of his book: making better known the work of Jia Xian}. Later, Zhu Shijie, a mathematician in Yuan Dynasty, added two layers to the diagram and drew parallel lines in two directions (see \cref{fig:zhushijie}, the numbers are counting rods numerals) in his book \emph{Jade mirror of the four unknowns} written in 1303. These lines explicitly pointed out every number was the sum of two consecutive numbers from the upper layer. Similar tables containing binomial coefficients appeared in Indian and Arabic mathematical books from the 10th century. The triangular diagram is known as Pascal's triangle, name after French mathematician Blaise Pascal, who rediscovered it in 1654. Pascal did not only proved it by induction (he was the pilot of using induction rigorously), but also gave combinatorial interpretation to the binomial coefficients, and applied it to games thus established theory of probability. Newton extended $n$ to rational numbers in 1665, then Euler further extended $n$ to real numbers. To distinguish the theorem of integral $n$, we call the extended one general binomial theorem.
 
 \begin{figure}[htbp]
  \centering
- \subcaptionbox{杨辉《详解九章算法》中所绘贾宪三角\label{fig:yanghui}}{\includegraphics[scale=0.4]{img/pascal-triangle1}} \qquad
- \subcaptionbox{朱世杰《四元玉鉴》中增加了斜线\label{fig:zhushijie}}{\includegraphics[scale=0.4]{img/pascal-triangle2}}
- \caption{杨辉三角形}
+ \subcaptionbox{Yang Hui referenced Jia Xian's triangular diagram in his book. \label{fig:yanghui}}{\includegraphics[scale=0.4]{img/pascal-triangle1}} \qquad
+ \subcaptionbox{Zhu Shijie added parallel lines to the triangular diagram in \emph{Jade mirror of the four unknowns}. \label{fig:zhushijie}}{\includegraphics[scale=0.4]{img/pascal-triangle2}}
+ \caption{Pascal triangle in ancient Chinese mathematical books}
 \end{figure}
 
-高中数学课通常利用组合思想解释$n$为自然数时的二项式定理，我们这里给出一个数学归纳法证明。首先我们引入一个不同的组合数符号：
+The binomial theorem of integral $n$ is often taught as part of combinatorics in school math. We shall use the binomial notation to understand Pascal's proof, namely,
 
 \be
 \binom{n}{k} = C_n^k = \frac{n!}{k!(n-k)!} = \frac{1\cdot2\dotsm n}{(1\cdot2\dotsm k)(1 \cdot 2 \dotsm (n-k))}
 \ee
 
-其中$n! = 1 \times 2 \times \dotsb \times n$表示阶乘。这个符号在组合数学、数论、代数的相关文章中经常见到。它的组合意义是在$n$个不同事物中取出$k$个的方法数。这个符号具有对称性：若$k + k' = n$则$\dbinom{n}{k} = \dbinom{n}{k'}$，这是因为:
+where the factorial $n! = 1 \times 2 \times \dotsb \times n$ is the product of all positive integers from 1 to n. This notation is widely used in combinatorics, number theory, algebra, and etc. It has combinatorial meaning: the number of distinct ways of taking $k$ elements out of a set of $n$ elements. It's symmetric in a sense that, if $k + k' = n$, then $\dbinom{n}{k} = \dbinom{n}{k'}$, because,
 
 \[
 \binom{n}{k} = \frac{n!}{k!(n-k)!} = \frac{n!}{(n-k')!k'!} = \binom{n}{k'}
