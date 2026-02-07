@@ -2065,30 +2065,30 @@ The next two examples both related to Fermat. He found a beautiful theorem in 16
 
 \index{Fermat's little theorem}
 \begin{theorem}[Fermat's little theorem]\label{thm:fermats-little-theorem}
-若$p$是素数，对任何$p$不能整除的整数$a$都有，$a^{p-1}-1$能被$p$整除，或者等价地说\footnote{或$a^p$和$a$除以$p$的余数相同。}：$p$能整除$a^p - a$。
+if $p$ is a prime number and $a$ is a natural number that can not be divided by $p$, then $p$ divides $a^{p-1}-1$, or equivalently\footnote{or the remainder of $a^p$ and $a$ divided by $p$ are equal.}, $p$ divides $a^p - a$.
 \end{theorem}
 
-费马是个奇怪的数学天才，他研究数学纯粹出于爱好。费马生前不发表任何成果，但喜欢通过书信挑战当时的顶级数学家，然后用自己得到的结论解决各种难题。费马的很多结果只能算是“猜想”，它们大部分是由欧拉证明的。费马小定理的证明并不简单，从发现到欧拉的证明跨越了100年。但大数学家韦伊在研究数论的历史时猜测，费马本人可能证明了小定理，他的工具就是二项式定理和数学归纳法\cite{Weil-1983}。
+From our present view, Fermat was a strange genius - he pursued mathematics purely for love of it. He published no works during his lifetime, yet enjoined challenging the leading mathematicians through correspondence with various of hard problems with the conclusion he had reached. Many of his result were rather conjectures; most of them were later proved by Euler. Fermat's little theorem was by no means easy, it took about 100 years for proving. But Weil thought that Fermat might have a inductive proof based on binomial theorem\cite{Weil-1983}.
 
 \begin{proof}
-对$a$使用数学归纳法。$a = 1$时，$a^p - a = 1^p - 1 = 0$可以被$p$整除；假设$p$整除$(a^p - a)$，对$a + 1$用二项式定理：
+Induct on $a$. If $a = 1$, then $a^p - a = 1^p - 1 = 0$ can be divided by $p$. Suppose $p$ divides $(a^p - a)$, apply the binomial theorem to the case of $a + 1$,
 
 \begin{align*}
  & (a + 1)^p - (a + 1) \\
-= & a^p + \binom{p}{1}a^{p-1} + \dotsb + \binom{p}{p-1}a + \cancel{1} - a - \cancel{1} && \text{二项式展开} \\
+= & a^p + \binom{p}{1}a^{p-1} + \dotsb + \binom{p}{p-1}a + \cancel{1} - a - \cancel{1} && \text{binomial theorem} \\
 = & a^p - a + \binom{p}{1}a^{p-1} + \dotsb + \binom{p}{p-1}a
 \end{align*}
 
-由递推假设，$p$整除$a^p - a$；并且$p$整除每个$\dbinom{p}{k}$，其中$1 \leq k < p$，这是因为：
+By induction assumption, $p$ divides $a^p - a$ and $p$ divides each $\dbinom{p}{k}$ where $1 \leq k < p$ because,
 
 \[
 \binom{p}{k} = \frac{p!}{k!(p-k)!} = \frac{1\cdot2\dotsm p}{(1\cdot2\dotsm k)(1 \cdot 2 \dotsm (p-k))}
 \]
 
-注意到分子中的素因子$p$不能被分母中的任何因子约掉（小于$p$的整数都不能整除素数$p$）。而二项式的所有系数$\dbinom{p}{k}$又都是整数，所以$p$必然整除$a^p - a$后的每一项，因此$p$整除$(a + 1)^p - (a + 1)$。这样就证明了对于任何$a$，$p$整除$a^p - a = a(a^{p-1} -1)$。若$p$不能整除$a$，则$p$整除$a^{p-1} - 1$。
+The prime factor $p$ of the nominator can't be divided by any factor of the denominator (since any natural number less than $p$ can't divide the prime number $p$). While all the coefficients of $\dbinom{p}{k}$ are integral, hence $p$ divides every term after $a^p - a$. It follows that $p$ divides $(a + 1)^p - (a + 1)$, which shows $p$ divides $a^p - a = a(a^{p-1} -1)$ for any $a$，and if $p$ does not divide $a$, then $p$ divides $a^{p-1} - 1$.
 \end{proof}
 
-这恐怕是费马小定理最简洁的\underdot{初等}证明\footnote{费马小定理最简洁的证明是利用抽象代数群论中的拉格朗日定理。}，读者可以和附录\ref{app:fermat-little-theorem}中的组合证明方法对比。但韦伊也只是猜测，而没有找到费马相关的书信或笔记实证。费马肯定非常熟悉整数指数的二项式定理，但当时严格使用数学归纳法的数学家只有帕斯卡\cite{Stillwell-2010}。
+This is roughly the most elegant \emph{elementary} proof to Fermat's little theorem\footnote{费马小定理最简洁的证明是利用抽象代数群论中的拉格朗日定理。}，读者可以和附录\ref{app:fermat-little-theorem}中的组合证明方法对比。但韦伊也只是猜测，而没有找到费马相关的书信或笔记实证。费马肯定非常熟悉整数指数的二项式定理，但当时严格使用数学归纳法的数学家只有帕斯卡\cite{Stillwell-2010}。
 
 \begin{figure}[htbp]
   \centering
