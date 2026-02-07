@@ -2030,15 +2030,15 @@ In 1646, Pascal's father had his leg injured; the two bonesetters who treated É
 Pascal completely withdrew from mathematical and scientific study after 1654; he fully devoted to religious and philosophical thought. Though it was a loss to mathematics, it was a gain for religious philosophy and literature. Pascal wrote \emph{Provincial Letters}, which consists of eighteen essays. They have become classics of French prose. Pascal’s \emph{Pensées} was published posthumously and stands as a classic in the thought and philosophy, exerting a profound influence on subsequent generations\cite{Jerphagnon-Orcibal-2025}.
 \end{mdframed}
 
-二项式定理的威力巨大，它在牛顿手中成了锋利的宝剑。牛顿经常把前人无法解决的曲线或函数表示成二项式，展开后逐项进行积分或微分，取得了惊人的成果。让我们通过三个例子来了解二项式定理的威力：（1）$1^m + 2^m + \dotsb  + n^m$的求和公式，其中$m$是正整数；(2) 数论中的费马小定理; (3) 求$x^n$的导数，其中$n$是正整数。
+Binomial theorem is a powerful tool. Newton applied it to many problems that his predecessors failed to solve. By representing the curves or functions in to binomials, he could expand them, then perform derivation or integration term by term, and achieved remarkable result. We give three applications of this theorem: (1) the formula to the sum of $1^m + 2^m + \dotsb  + n^m$ where $m$ is positive integer. (2) prove Fermat's little theorem in number theory. (3) the derivation of $x^n$ where $n$ is positive integer.
 
-毕达哥拉斯学派的古人通过把小石子摆成形数发现了自然数列的求和公式$1 + 2 + \dotsb + n = \dfrac{n(n+1)}{2}$。但如何求自然数列的平方和、立方和、四次方和等等呢？二项式定理提供了解决这一问题的代数方法。由二项式展开$(m + 1)^3 = m^3 + 3m^2 + 3m + 1$，有：
+The Pythagoreans discovered the sum of natural numbers $1 + 2 + \dotsb + n = \dfrac{n(n+1)}{2}$ by arranging pebbles in triangular numbers (\cref{fig:triangular-num,fig:oblong-num}). But how to derive the formula to the sum of squares, cubes, and so on? The binomial theorem provides a solution: expand $(m + 1)^3 = m^3 + 3m^2 + 3m + 1$, change it to,
 
 \[
 (m + 1)^3 - m^3 = 3m^2 + 3m + 1
 \]
 
-把$m = 1, 2, \dotsc, n$代入得到$n$个式子：
+Let $m = 1, 2, \dotsc, n$ to obtain $n$ equations:
 
 \begin{align*}
 2^3 - 1^3 &= 3\cdot1^2 + 3\cdot1 + 1 \\
@@ -2047,24 +2047,24 @@ Pascal completely withdrew from mathematical and scientific study after 1654; he
 (n+1)^3 - n^3 &= 3\cdot n^2 + 3\cdot n + 1
 \end{align*}
 
-把这$n$个式子相加，左边正负项消去后只剩下$(n+1)^3$和$-1^3$，右边出现了自然数列的和与平方和：
+Add these $n$ equations; the left remains $(n+1)^3$ and $-1^3$ only as other terms all being canceled; the sum of squares and natural numbers appear on the right:
 
 \[
 (n+1)^3 - 1^3 = 3(1^2 + 2^2 + \dotsb + n^2) + 3(1 + 2 + \dotsb + n) + n
 \]
 
-代入自然数列求和公式求出平方和的表达式：
+Substitute the closed form of the sum of natural numbers in,
 \begin{align*}
 1^2 + 2^2 + \dotsb + n^2 &= \frac{(n+1)^3 - 1^3 - 3\frac{n(n+1)}{2} - n}{3} \\
- &= \frac{n(n+1)(2n+1)}{6} && \text{整理}
+ &= \frac{n(n+1)(2n+1)}{6} && \text{simplified}
 \end{align*}
 
-这样就得到了平方和公式，我们可以在此基础上得到立方和公式：(1) 由二项式展开$(m + 1)^4 = m^4 + 4m^3 + 6m^2 + 4m + 1$，得出$(m + 1)^4 - m^4$的表达式。(2) 代入$m = 1, 2, \dotsc, n$后得到$n$个式子。(3) 相加后左侧消去正负项只剩下$(m + 1)^4 - 1^4$，右侧得到$4S_3 + 6S_2 + 4S_1 + n$，其中$S_2$是平方和，等于$\dfrac{n(n+1)(2n+1)}{6}$，$S_1$是自然数列的和，等于$\dfrac{n(n+1)}{2}$。移项整理就可以得到立方和$S_3$的表达式（见\cref{qn:sum-of-cubics}）。重复这个过程，我们就可以得到四次方和，五次方和……的表达式。
+This is the closed form of the sum of squares. We may obtain the sum of the cubes base on this result: (1) by binomial theorem, $(m + 1)^4 = m^4 + 4m^3 + 6m^2 + 4m + 1$, give the formula of $(m + 1)^4 - m^4$. (2) substitute $m = 1, 2, \dotsc, n$ in, it gives $n$ equations. (3) add these $n$ equations, the left remains $(m + 1)^4 - 1^4$ after canceling other terms, the right side becomes $4S_3 + 6S_2 + 4S_1 + n$, where $S_2$ is the sum of squares, equals $\dfrac{n(n+1)(2n+1)}{6}$, and $S_1$ is the sum of natural numbers, equals $\dfrac{n(n+1)}{2}$. Simplify it to the closed form of $S_3$, the sum of cubes (see \cref{qn:sum-of-cubics}). Repeat to give the closed forms of $S_4$ (sum of $i^4$), $S_5$ (sum of $i^5$), and so on.
 
-接下来的两个例子都和费马有关。费马于1636年发现了一个优美的定理，称做费马小定理（Fermat's little theorem）。他在1640年10月18日写给友人，法国数学家弗朗尼克·德·贝西（Bernard Frénicle de Bessy）的信中首次提出了这个定理。但费马生前没有发表证明。直到100年后，才由欧拉在1736年给出了一个证明。但从莱布尼茨未发表的手稿中发现他在1683年以前已经得到几乎相同的证明。之所以命名为“小定理”是为了区别于举世闻名的费马大定理。
+The next two examples both related to Fermat. He found a beautiful theorem in 1636, named Fermat's little theorem nowadays. It first appeared in correspondence with his friend Bernard Frénicle de Bessy in 18th October 1640. Fermat didn't publish any proof before his death. The first published proof was given by Euler in 1736, almost a century later. However, Leibniz had almost the same proof before 1683 in his unpublished manuscripts. It's called \enquote{little} to distinguish with the renowned Fermat's last theorem.
 
-\index{费马小定理}
-\begin{theorem}[费马小定理]\label{thm:fermats-little-theorem}
+\index{Fermat's little theorem}
+\begin{theorem}[Fermat's little theorem]\label{thm:fermats-little-theorem}
 若$p$是素数，对任何$p$不能整除的整数$a$都有，$a^{p-1}-1$能被$p$整除，或者等价地说\footnote{或$a^p$和$a$除以$p$的余数相同。}：$p$能整除$a^p - a$。
 \end{theorem}
 
