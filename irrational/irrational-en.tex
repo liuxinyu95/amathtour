@@ -2468,46 +2468,47 @@ Leibniz got involved in a bitter dispute with Newton over the priority of the in
 \end{mdframed}
 
 \subsection{Irrationality of \texorpdfstring{$\pi$}{π}*}
-人们计算出$\pi$后面越来越多位后发现，这些数字完全没有规律，没有任何循环和模式。任何人都能在$\pi$中找到自己的生日。有些人觉得记忆圆周率是个有趣的挑战，在我国有“山巅一寺一壶酒”的助记口诀。在英语中常用“May I have a large container of coffee?”来记忆$\pi$。其中每个单词的字母个数为3 1 4 1 5 9 2 6。数学家强烈地意识到$\pi$是个无理数，但是却无法如$\sqrt{2}$那样给出简洁的证明。直到1768年才由数学家约翰·海因里希·兰伯特给出了第一个证明。兰伯特的思路仍然是反证法，而使用的武器则是连分数和无穷级数。
 
-\index{麦克劳林公式}
-在此之前，欧拉已经利用连分数证明了自然对数的底$e$是无理数。兰伯特是欧拉在柏林科学院的同事，他受到启发，想到用连分数表示$\tan x$。这个想法成了证明$\pi$是无理数的钥匙。为此兰伯特需要先将$\tan x$展开成无穷级数，这就需要著名的麦克劳林展开公式了。麦克劳林公式是大名鼎鼎的泰勒级数在$x = 0$时的特殊形式，其思路朴素直观。麦克劳林考虑用多项式来逼近函数：
+As more decimal places of $\pi$ were calculated, people found that these digits had no pattern, no repetition, and no cycle. Anyone can find their birthday in $\pi$. Some people find it an interesting challenge to memorize the digits of $\pi$. In English, the phrase \enquote{May I have a large container of coffee?} is commonly used to remember $\pi$, where the number of letters in each word corresponds to the digits 3 1 4 1 5 9 2 6. Mathematicians were strongly aware that $\pi$ is an irrational number, but they could not provide a concise proof like that for $\sqrt{2}$. It was not until 1768 that mathematician Johann Heinrich Lambert provided the first proof. Lambert's approach was still based on proof by contradiction, but his tools were continued fractions and infinite series.
+
+\index{MacLaurin formula}
+Euler was the first to use continued fractions to prove the irrationality of $e$. Lambert, who was a colleague of Euler at the Berlin Academy of Sciences, was inspired by this and thought of using continued fractions to represent $\tan x$. This idea became the key to proving the irrationality of $\pi$. To do this, Lambert needed to first expand $\tan x$ into an infinite series, which required the famous MacLaurin expansion formula. The MacLaurin formula is a special case of the well-known Taylor series at $x = 0$, and its idea is simple and intuitive. MacLaurin considered using polynomials to approximate functions:
 
 \[
 f(x) = a_0 + a_1 x + a_2 x^2 + \dotsb + a_n x^n + \dotsb
 \]
 
-麦克劳林需要找到由$f(x)$确定出$a_0, a_1, a_2, \dots$的方法。由待定系数法，令$x = 0$就可以确定$a_0$，此时$f(0) = a_0$，而右边的其余项在$x = 0$时都是0。如果$f(x)$可导，对上式两边求导就能确定$a_1$：
+MacLaurin's idea is to find a method to determine the coefficients $a_0, a_1, a_2, \dots$ from the function $f(x)$. First, let $x = 0$ to determine $a_0$, at which point $f(0) = a_0$, and the remaining terms on the right side are all 0 when $x = 0$. If $f(x)$ is differentiable, we can take the derivative of both sides to determine $a_1$:
 
 \[
 f'(x) = a_1 + 2a_2 x + 3 a_3 x^2 + \dotsb + n a_n x^{n-1} + \dotsb
 \]
 
-令$x = 0$得到$f'(0) = a_1$，而右边的其余项都是0。以此类推，如果$f(x)$有二阶导数，那么继续求导就有：
+Let $x = 0$ to determine $a_1$, at which point $f'(0) = a_1$, and the remaining terms on the right side are all 0 when $x = 0$. If $f(x)$ has a second derivative, we can continue to take the derivative to determine $a_2$:
 
 \[
 f''(x) = 2a_2 + 2 \cdot 3 a_3 x^2 + \dotsb + (n-1)n a_n x^{n-2} + \dotsb
 \]
 
-令$x = 0$得到$f''(0) = 2a_2$，右边其余项都是0。因此$a_2 = \dfrac{f''(0)}{2}$。一般地，如果$f(x)$有$n$阶导数，那么连续求$n$次导数后有：
+Let $x = 0$ to determine $a_2$, at which point $f''(0) = 2a_2$, and the remaining terms on the right side are all 0 when $x = 0$. Therefore, $a_2 = \dfrac{f''(0)}{2}$. Generally, if $f(x)$ has an $n$-th derivative, then by continuously taking the derivative $n$ times, we have:
 
 \[
 f^{(n)}(x) = n!a_n + 2 \cdot 3 \cdot n (n+1) a_{n+1} x + \dotsb
 \]
 
-令$x = 0$得到$f^{(n)}(0) = n!a_n$，右边其余项都是0。因此$a_n = \dfrac{f^{(n)}(0)}{n!}$。这样就确定了$a_0 = f(0), a_1 = f'(0), a_2 = \dfrac{f''(0)}{2!}, \dotsc, a_n = \dfrac{f^{(n)}(0)}{n!}, \dotsc$，从而得到麦克劳林展开公式：
+Let $x = 0$ to determine $a_n$, at which point $f^{(n)}(0) = n!a_n$, and the remaining terms on the right side are all 0 when $x = 0$. Therefore, $a_n = \dfrac{f^{(n)}(0)}{n!}$. This gives us the coefficients of the MacLaurin series:
 
 \be \label{eq:maclaurin}
 f(x) = f(0) + \frac{f'(0)}{1!}x + \frac{f''(0)}{2!}x^2 + \dotsb + \frac{f^{(n)}(0)}{n!}x^n + \dotsb
 \ee
 
-但麦克劳林公式需要两个前提条件：(1) $f(x)$要有各阶导数。(2) 展开式收敛。幸运地是三角函数$\sin x, \cos x$不仅满足这两个条件，而且还是很有规律：每4次求导就循环，如\cref{tab:sin-cos-derivatives}所示。
+However, there are two prerequisites for the MacLaurin formula: (1) $f(x)$ must have derivatives of all orders. (2) The expansion must converge. Fortunately, the trigonometric functions $\sin x$ and $\cos x$ not only satisfy these two conditions but also have a very regular pattern: every 4 derivatives, they cycle back, as shown in \cref{tab:sin-cos-derivatives}.
 
 \begin{table}[htbp]
   \centering
   \begin{tabular}{|c|c|c||c|c|}
     \hline
-    $n$阶导数 & $\sin x$ & $x = 0$的值 & $\cos x$ & $x = 0$的值 \\
+    $n$-the derivative & $\sin x$ & value at $x = 0$ & $\cos x$ & value at $x = 0$ \\
     \hline
     1 & $\cos x$  & 1  & $-\sin x$ & 0 \\
     \hline
@@ -2518,89 +2519,88 @@ f(x) = f(0) + \frac{f'(0)}{1!}x + \frac{f''(0)}{2!}x^2 + \dotsb + \frac{f^{(n)}(
     4 & $\sin x$  & 0  & $\cos x$  & 1 \\
     \hline
   \end{tabular}
-  \caption{正弦、余弦函数的导数与$x = 0$时的值每4次循环\label{tab:sin-cos-derivatives}}
+  \caption{The derivatives of sine and cosine functions and their values at $x = 0$, which cycle every 4 derivatives. \label{tab:sin-cos-derivatives}}
 \end{table}
 
-\index{三角函数!级数展开}
-将\cref{tab:sin-cos-derivatives}代入麦克劳林公式就得到了正弦、余弦函数的无穷级数展开：
+\index{Trigonometric functions!infinite series expansion}
+Substituting the values from \cref{tab:sin-cos-derivatives} into the MacLaurin formula gives us the infinite series expansions of sine and cosine functions:
 
 \begin{align}
 \sin x &= x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \dotsb \\
 \cos x &= 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \dotsb
 \end{align}
 
-在计算机内部和许多科学计算场合，人们广泛使用这两个公式的前几项求正弦、余弦函数的近似值。兰伯特将这两个展开式相除，得到了正切函数的连分数表示。附录\ref{app:tan-as-cfrac}给出了具体的步骤。
+People widely use the first few terms of these two expansions to approximate the values of sine and cosine functions in computer and many scientific calculations. Lambert divided these two expansions to get the continued fraction representation of the tangent function. The specific steps are given in \cref{app:tan-as-cfrac}.
 
 \be
 \tan x = \frac{\sin x}{\cos x} = \cfrac{x}{1 - \cfrac{x^2}{3 - \cfrac{x^2}{5 - \cfrac{x^2}{7 - \cfrac{x^2}{\dotso}}}}}
 \ee
 
-兰伯特接下来证明了一个引理：
+Lambert next proved a lemma:
 
 \begin{lemma}
-当$x$是有理数时，$\tan x$是无理数。
+If $x$ is a non-zero rational number, then $\tan x$ is irrational.
 \end{lemma}
 
 %% https://math.stackexchange.com/questions/895611/lamberts-original-proof-that-pi-is-irrational
 %% https://mp.weixin.qq.com/s/cBuBPtzh_IMdIRgmplFHyA
 %% https://hal.science/hal-02984214/document
 \begin{proof}
-简单起见，我们只考虑正数的情况。令正有理数$x = \dfrac{b}{a}$为既约分数，代入$\tan x$的连分数表示。然后\underdot{每层}分数线都乘以$a$化简：
+To make it simple, we only consider the case of positive numbers. Let $x = \dfrac{b}{a}$ be a positive rational number in lowest terms, and substitute it into the continued fraction representation of $\tan x$. Then multiply each level of the fraction by $a$ to simplify:
 
 \[
 \tan(\frac{b}{a}) = \cfrac{\frac{b}{a}}{1 - \cfrac{(\frac{b}{a})^2}{3 - \cfrac{(\frac{b}{a})^2}{5 - \cfrac{(\frac{b}{a})^2}{7 - \cfrac{(\frac{b}{a})^2}{\dotso}}}}} =
 \cfrac{b}{a - \cfrac{b^2}{3a - \cfrac{b^2}{5a - \cfrac{b^2}{7a - \cfrac{b^2}{\dotso}}}}}
 \]
 
-这个连分数的第一个分子是$b$，此后都是$b^2$，而分母却越来越大（不断增加$2a$）。根据阿基米德公理（见第\ref{sec:archimedes-axiom}节）分母一定在某个时候超过$b^2$，从而这部分开始的分数值小于1。假设在$(2n - 1)a$处超过$b^2$，接下来我们证明从$(2n - 1)a$开始的部分连分数是无理数，从而整个连分数也是无理数。用反证法，假设它是有理数，等于某个既约分数$\dfrac{\lambda_1}{\lambda_0}$，即：
+Except for the nominator in the first level being $b$, all the other numerators are $b^2$, and the denominators are getting larger and larger (increasing by $2a$). By the Archimedean axiom (see \cref{sec:archimedes-axiom}), the denominator will eventually exceed $b^2$, then from that point on, the value of the fraction is less than 1. Suppose it exceeds $b^2$ at $(2n - 1)a$, we are going to show that the continued fraction from $(2n - 1)a$ is irrational, thus the whole continued fraction is also irrational. Assume for contradiction it is rational, equal to some reduced fraction $\dfrac{\lambda_1}{\lambda_0}$, i.e.:
 
 \[
 \frac{\lambda_1}{\lambda_0} = \cfrac{b^2}{(2n - 1)a - \cfrac{b^2}{(2n + 1)a - \cfrac{b^2}{(2n + 3)a - \cfrac{b^2}{\dotso}}}} < 1
 \]
 
-其中$0 < \lambda_1 < \lambda_0$都是正整数。令：
+where $0 < \lambda_1 < \lambda_0$ are all positive integers. Let:
 
 \[
 \rho_1 = \cfrac{b^2}{(2n + 1)a - \cfrac{b^2}{(2n + 3)a - \cfrac{b^2}{\dotso}}} < 1
 \]
 
-为后面部分的连分数，于是：
+be the tail part of the continued fraction, then:
 
 \[
 \frac{\lambda_1}{\lambda_0} = \frac{b^2}{(2n - 1)a - \rho_1}
 \]
 
-所以：
+hence,
 
 \[
 \rho_1 = \frac{(2n - 1)a\lambda_1 - b^2\lambda_0}{\lambda_1} < 1
 \]
 
-注意到分子、分母都是正整数。如果$\rho_1 = \dfrac{\lambda_2}{\lambda_1}$是有理数，则$\lambda_2 < \lambda_1$。继续此过程，可以获得不断减小的正整数序列：$\lambda_0 > \lambda_1 > \lambda_2 > \dotsb$，但这是不可能的。从任何有限的正整数开始，都不能得到无限的递减正整数序列。所以假设错误，连分数必然为无理数。
+Note that the numerator and denominator of $\rho_1$ are all positive integers. If $\rho_1 = \dfrac{\lambda_2}{\lambda_1}$ is a rational number, then $\lambda_2 < \lambda_1$. Continuing this process, we can obtain an infinite decreasing sequence of positive integers: $\lambda_0 > \lambda_1 > \lambda_2 > \dotsb$, which is impossible. Starting from any finite positive integer, we cannot get an infinite decreasing sequence of positive integers, a contradiction. Therefore, the continued fraction is irrational.
 \end{proof}
 
-有了这个引理，兰伯特就可以证明$\pi$是无理数了。
+With this lemma, Lambert could show that $\pi$ was irrational.
 
-\begin{theorem}[兰伯特]
-圆周率$\pi$是无理数。
+\begin{theorem}[Lambert]
+$\pi$ is irrational.
 \end{theorem}
 
 \begin{proof}
-$\tan(\dfrac{\pi}{4}) = 1$，但1是有理数。据上述引理知$\dfrac{\pi}{4}$必然不是有理数（逆否命题），所以$\pi$不是有理数。
+$\tan(\dfrac{\pi}{4}) = 1$, but 1 is rational. According to the above lemma, $\dfrac{\pi}{4}$ must be irrational (by contrapositive), so $\pi$ is irrational.
 \end{proof}
 
-在无理数的大家庭中，像$\pi$这样的无理数是不是很罕见呢？是否像$\sqrt{2}$、黄金分割数$\phi$这样的无理数更多呢？答案令人吃惊，是相反的。第7章将指出，如果把无理数比作浩瀚的苍穹，像$\pi$这样的无理数就如同无尽的黑色背景，而$\sqrt{2}$、$\phi$这样的数只不过是点点星光。
+Among the irrational numbers, are numbers like $\pi$ rare? Are there more irrational numbers like $\sqrt{2}$ and the golden ratio $\phi$? The answer is surprising: it's the opposite. Chapter 7 points out that if we compare irrational numbers to the vast sky, numbers like $\pi$ are like the endless black background, while numbers like $\sqrt{2}$ and $\phi$ are just specks of starlight.
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.33]{img/Lambert}
- \caption{兰伯特，恩格尔曼据维涅龙所绘肖像创作的版画}
-%%  Johann Lambert, detail of a lithograph by Gottfried Englemann, after a portrait by Pierre-Roch Vigneron
+ \caption{Johann Lambert, detail of a lithograph by Gottfried Englemann, after a portrait by Pierre-Roch Vigneron.}
  \label{fig:lambert}
 \end{figure}
 
 \begin{mdframed}
-\index{数学家!兰伯特}
+\index{Lambert}
 约翰・海因里希・兰伯特（Johann Heinrich Lambert，1728～1777年，见\cref{fig:lambert}）瑞士/德国数学家、天文学家、物理学家、哲学家。他第一个严格证明了圆周率$\pi$是无理数。兰伯特的人生是一个励志故事。1728年8月，兰伯特出生于米尔豪森（今天位于法国）的一个穷人家里，他的父亲和爷爷都是裁缝。兰伯特全家都是加尔文教派信徒，为了躲避三十年战争，辗转逃到了和瑞士结盟的米尔豪森。兰伯特的父亲养育了7个孩子，五个男孩、两个女孩。父亲微薄的收入根本不够教育孩子们。尽管学习优秀，兰伯特在12岁只好辍学回家跟着父亲做裁缝。尽管白天和父亲一起干活很累，兰伯特每天晚上坚持自己学习。生活的担子越来越重，为了多挣钱，兰伯特在15岁时在塞波瓦的一家铁厂找到了一份工作，塞波瓦位于米尔豪森以南，巴塞尔的正西方。兰伯特靠坚持自学逐渐成长了起来，他开始利用业余时间担任私人家庭教师。17岁时，兰伯特离开铁厂，担任了《巴塞尔日报》主编的秘书。这份工作使得他有更多的时间自学数学、天文和哲学。他在一封信中写道：“我的确缺乏正规教育，所以我需要更加勤奋。”
 
 1748年，20岁的兰伯特成了瑞士联邦的彼得·冯·萨利斯伯爵的家庭教师。伯爵家有一个很好的图书馆，兰伯特得以博览群书，更深入地钻研数学和科学。为了进行天文观测，兰伯特自己动手制作了实验仪器。兰伯特逐渐进入学术圈——位于巴塞尔的瑞士科学协会。一开始他只做一些气象观测工作，1755年，他首次尝试发表关于热学的科研文章。1758年兰伯特出版了他的第一本关于光学研究的书。但谋求一份学术工作的道路并不顺利，哥廷根和巴黎都拒绝了他的教职申请。1760年他出版了《光的测量》一书。兰伯特的名字被用于光强的单位（1兰伯特等于1流明每平方厘米，符号L或la，它并非国际单位）以纪念他的贡献。转机出现在1760年，欧拉推荐兰伯特任圣·彼得堡科学院天文学教授。接着，他被任命在慕尼黑组建巴伐利亚科学院。1761年，兰伯特在宇宙学研究中提出了由星系组成的有限宇宙概念。1764年，兰伯特收到了来自欧拉的邀请，如愿以偿加入了柏林科学院，成了欧拉和拉格朗日的同事。同年，他发表了自己的哲学著作《新工具论》。可是腓特烈大帝一开始以貌取人，拒绝任命其貌不扬、行为古怪的兰伯特加入科学院。出身穷苦家庭的兰伯特非常谦逊，但断然不肯改变生活习惯以取悦上流社会。后来腓特烈大帝逐渐了解了兰伯特，极为欣赏他的深刻洞见。
