@@ -2340,104 +2340,104 @@ For any rational number $\alpha$,
 This was definitely astonishing, but also very dangerous. Substituting $x = -1$ into the sum of infinite series of geometric progression, the mathematicians in the 17th century got the result $1 - 1 + 1 - 1 + \dotsb = 1/2$, which was quite ridiculous. Some people argued that $S = (1 - 1) + (1 - 1) + \dotsb = 0$; some others thought $S = 1 + (-1 + 1) + (-1 + 1) + \dotsb = 1$. Some agreed with the result of 1/2, because $S = 1 - (1 - 1 + 1 - 1 + \dotsb) = 1 - S$, solving the equation gives $S = 1/2$. Even Leibniz advocated that its sum could be either 0 or 1, and the probability is equal, so its \enquote{true} value should be their average, which is 1/2. Italian mathematician Grandi made another \enquote{wonderful} explanation: a father left a gem to two sons, and they took turns to keep it for one year each. Therefore, when handing it over to each other, we can say the ownership is 0, when keeping it by oneself, we can say the ownership is 1, and on average, each person's ownership is 1/2\cite{HanXueTao16}. These strange problems all exposed the loopholes in the foundation of calculus. 
 
 \subsection{Leibniz's formula*}
-\index{莱布尼茨公式}
-微积分的严格化要等到150年后。经由柯西、魏尔斯特拉斯等人之手，逐渐引入$\epsilon-\delta$语言、极限、收敛性、连续性、可微性等概念，才最终回归严密。其中的最后一砖——实数理论是由戴德金盖到大厦上去的。微积分的发展进程可以说是“先上车，再补票”。先取得了应用上的巨大成功，摘得了无数成果之后，再着手建立严密理论的。这和今天的人工智能（AI）类似，人们尚未弄明白构建于人工神经元网络之上的大语言模型为何能“涌现”出惊人的智能。尚未解释其背后的数学、逻辑学、哲学原理究竟为何，就全力拥抱AI，以眼花缭乱的速度创造一个又一个的应用。与此类似，当牛顿、莱布尼茨把微积分应用到三角函数上时，意外地发现了各种各样的“圆周率公式”。1673年，莱布尼茨通过逐项积分发现了莱布尼茨公式\citepage[179页]{Stillwell-2010}：
+\index{Leibniz's formula}
+We need wait for 150 years for the rigor of calculus. Through the efforts of Cauchy, Weierstrass, and etc., the concepts of $\epsilon-\delta$ language, limits, convergence, continuity, differentiability were gradually introduced. The last brick - definition of real numbers was given by Dedekind. The development of calculus can be said to be \enquote{get on the bus first, then buy the ticket.} It achieved great success in applications before a rigorous theory being established. This is similar to the artificial intelligence (AI) today. People have not yet figured out why large language models (LLMs) built on artificial neural networks can \enquote{emerge} with amazing intelligence. Without fully understanding the mathematical, logical and philosophical principles behind, we embrace AI with various of applications. Similarly, when Newton and Leibniz applied calculus to trigonometric functions, they discovered exceptional \enquote{pi formulas.} In 1673, Leibniz discovered below formula through term-by-term integration\citepage[p179]{Stillwell-2010}:
 
 \be
 \frac{\pi}{4} = 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \dotsb
 \ee
 
-\index{三角函数的导数}
-为了证明这一结论，我们先求出常见三角函数的导数。为此我们需要两个常用的极限：
+\index{Derivative of trigonometric functions}
+To prove this formula, we need the derivative of some trigonometric functions. But first, we need two common limits:
 
 \begin{align}
 \lim_{x \to 0} \frac{\sin x}{x} &= 1  & \lim_{x \to 0} \frac{\cos x - 1}{x} &= 0
 \end{align}
 
-附录\ref{app:calculus}结合单位圆和“夹逼定理”给出了第一个极限的证明，\cref{qn:cos-1-to-x}要求在此基础上证明第二个极限。有了这两个极限，就可以推出$\sin x$和$\cos x$的导数了。首先是$(\sin x)'$：
+\Cref{app:calculus} gives the proof of the first limit, and \cref{qn:cos-1-to-x} requires proving the second limit. With these two limits, we shall derive the derivatives of $\sin x$ and $\cos x$. First, for $(\sin x)'$:
 
 \begin{align*}
 (\sin x)' &= \lim_{\Delta x \to 0} \frac{\sin(x + \Delta x) - \sin x}{\Delta x} \\
-  &= \lim_{\Delta x \to 0} \frac{\sin x \cos \Delta x + \cos x\sin \Delta x - \sin x}{\Delta x} & \text{和角公式} \\
+  &= \lim_{\Delta x \to 0} \frac{\sin x \cos \Delta x + \cos x\sin \Delta x - \sin x}{\Delta x} & \text{sin of sum of angles} \\
   &= \sin x \cdot \lim_{\Delta x \to 0} \frac{\cos \Delta x - 1}{\Delta x} + \cos x \cdot \lim_{\Delta x \to 0} \frac{\sin \Delta x}{\Delta x} \\
   &= \sin x \cdot 0 + \cos x \cdot 1 = \cos x
 \end{align*}
 
-类似地可以推出$(\cos x)' = - \sin x$（见\cref{qn:derivative-cos}）。接下来我们利用导数的除法规则求$\tan x$的导数。除法规则说，函数$f(x)/g(x)$的导数可以通过各自的导数求出：
+In the same way, one may derive $(\cos x)' = - \sin x$ (see \cref{qn:derivative-cos}). Next, we are going to derive the derivative of $\tan x$ by using the quotient rule of derivatives. The quotient rule states that the derivative of a function $f(x)/g(x)$ can be calculated by the derivatives of $f(x)$ and $g(x)$:
 
 \be
-(\frac{f(x)}{g(x)})'= \frac{f'(x)g(x) - f(x)g'(x)}{g(x)^2}\qquad \text{其中}g(x) \ne 0
+(\frac{f(x)}{g(x)})'= \frac{f'(x)g(x) - f(x)g'(x)}{g(x)^2}\qquad \text{where }g(x) \ne 0
 \ee
 
-\cref{qn:derivative-division}要求利用导数的定义证明除法规则。利用$\tan x = \dfrac{\sin x}{\cos x}$，并将正弦、余弦函数极其导数代入：
+\Cref{qn:derivative-division} requires proving the quotient rule by using the definition of derivative. By  $\tan x = \dfrac{\sin x}{\cos x}$, and substitute the derivatives of $\sin x$ and $\cos x$ into the quotient rule:
 
 \begin{align*}
 (\tan x)' & = (\frac{\sin x}{\cos x})' = \frac{(\sin x)'\cos x - \sin x (\cos x)'}{\cos^2 x} \\
  &= \frac{\cos^2 x + \sin^2 x}{\cos^2 x} = \frac{1}{\cos^2 x} = \sec^2 x
 \end{align*}
 
-其中$\sec x$叫做正割函数，它是余弦函数的倒数。并且由$\cos^2 x + \sin^2 x = 1$，两边除以$\cos^2 x$可以得到$1 + \tan^2 x = \sec^2 x$。接下来我们利用这一等式、正切函数的导数与微积分基本定理得到一个结论：
+where $\sec x$, called the secant function, is the reciprocal of cosine function. By $\cos^2 x + \sin^2 x = 1$, dividing both sides by $\cos^2 x$ gives $1 + \tan^2 x = \sec^2 x$. Next, we use this equation, the derivative of tangent function, and the fundamental theorem of calculus to show a closed form of integration:
 
 \be
 \int \frac{1}{1 + x^2} \mathrm{d} x = \tan^{-1} x + C
 \ee
 
 \begin{proof}
-其中$\tan^{-1} x = \arctan x$是反正切函数的另一种记号。令$x = \tan \theta$，对其求导：
+Where $\tan^{-1} x = \arctan x$ is another notation of the inverse tangent function. Let $x = \tan \theta$, and take the derivative of both sides:
 
 \begin{align*}
 \frac{\mathrm{d} x}{\mathrm{d} \theta} &= (\tan \theta)' = \sec^2 \theta \\
 \mathrm{d} x &= \sec^2 \theta \mathrm{d} \theta
 \end{align*}
 
-将$x = \tan \theta$与$\mathrm{d} x = \sec^2 \theta \mathrm{d} \theta$代入左侧的积分：
+Substituting $x = \tan \theta$ and $\mathrm{d} x = \sec^2 \theta \mathrm{d} \theta$ into the left side of the integral:
 
 \begin{align*}
 \int \frac{1}{1 + x^2} \mathrm{d} x &= \int \frac{1}{1 + \tan^2 \theta} \sec^2 \theta \mathrm{d} \theta \\
-  &= \int \frac{1}{\sec^2 \theta} \sec^2 \theta \mathrm{d} \theta &&\text{由} 1 + \tan^2 \theta = \sec^2 \theta \\
-  &= \int \mathrm{d} \theta = \theta + C && \text{微积分基本定理} \\
-  &= \tan^{-1} x + C &&\text{由} x = \tan \theta \qedhere
+  &= \int \frac{1}{\sec^2 \theta} \sec^2 \theta \mathrm{d} \theta &&\text{by } 1 + \tan^2 \theta = \sec^2 \theta \\
+  &= \int \mathrm{d} \theta = \theta + C && \text{fundamental theorem of calculus} \\
+  &= \tan^{-1} x + C &&\text{by } x = \tan \theta \qedhere
 \end{align*}
 \end{proof}
 
-最后，我们利用广义二项式定理证明莱布尼茨公式。
+Finally, we use the general binomial theorem to prove Leibniz's formula.
 
 \begin{proof}
-当$|x| < 1$时，
+When $|x| < 1$, we have
   \begin{align*}
-\frac{1}{1 + x^2} = \frac{1}{1 - (-x^2)} &= 1 - (x^2) + (x^2)^2 - (x^2)^3 + \dotsb & \text{由\cref{eq:series-reciprocal-of-binom}} \\
+\frac{1}{1 + x^2} = \frac{1}{1 - (-x^2)} &= 1 - (x^2) + (x^2)^2 - (x^2)^3 + \dotsb & \text{by \cref{eq:series-reciprocal-of-binom}} \\
   &= 1 - x^2 + x^4 - x^6 + \dotsb
   \end{align*}
 
-两边积分，并利用上面的引理：
+Take the integral of both sides, and use the above lemma:
 
 \begin{align*}
 \int \frac{1}{1 + x^2} \mathrm{d} x &= \int (1 - x^2 + x^4 - \dotsb) \mathrm{d} x \\
-\tan^{-1} x + C &= x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \dotsb &&\text{由\cref{eq:int-of-xn}逐项积分}
+\tan^{-1} x + C &= x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \dotsb &&\text{by \cref{eq:int-of-xn}, term by term integration}
 \end{align*}
-为了确定$C$，我们令$x = 0$，有：$\tan^{-1} 0 + C = 0$，因此$C = 0$。然后代入$x = 1$（等腰直角三角形45度时的正切为1，对应的弧度为$\dfrac{\pi}{4}$）得到莱布尼茨公式\footnote{此处略去了收敛性证明。}：
+To determine the constant $C$, we let $x = 0$, then $\tan^{-1} 0 + C = 0$, hence $C = 0$. Then substitute $x = 1$ (the tangent of 45 degrees in an isosceles right triangle is 1, corresponding to $\dfrac{\pi}{4}$ in radians) gives the Leibniz formula\footnote{The proof of convergence is omitted here.}:
 
 \begin{align*}
 \frac{\pi}{4} = tan^{-1} 1 = 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \dotsb && \qedhere
 \end{align*}
 \end{proof}
 
-\index{格雷戈里公式}
-莱布尼茨公式开辟了全新的求圆周率的方法，只要把奇数的倒数乘以4，交错加在一起就能得到越来越精确的$\pi$。对比割圆术，这极大地简化了计算。但是莱布尼茨公式的收敛速度很慢，例如，如果要达到0.00005的精度，由于$0.00005 = \frac{1}{20000}$，我们需要计算10000个奇数的倒数。\cref{qn:leibniz-pi}要求用莱布尼茨公式尝试计算圆周率。为了改进，我们可以利用反正切函数的展开式\footnote{此处增加了级数收敛的条件$-1 \leq x \leq 1$。级数收敛的判定超出了本书范围，读者可参考常见的微积分课本。这一公式今天叫做格雷戈里级数以纪念它的发现者，苏格兰数学家詹姆斯·格雷戈里（1638～1675）。}：
+\index{Gregory's formula}
+Leibniz's formula gives a totally new way to calculate $\pi$. By multiplying the reciprocal of odd numbers by 4 and adding them alternately, one gets more and more accurate approximations of $\pi$. Compared with the method of exhaustion (cyclotomic method), it greatly simplifies the calculation. However, Leibniz's formula converges very slowly. For example, to achieve an accuracy of 0.00005, since $0.00005 = \frac{1}{20000}$, we need to calculate the reciprocals of 10000 odd numbers. \Cref{qn:leibniz-pi} requires using Leibniz's formula to to calculate $\pi$. To speed up, one may use the expansion of the arctangent function\footnote{Here we added the condition for convergence of the series $-1 \leq x \leq 1$. The criterion for convergence of series is beyond the scope of this book, readers can refer to common calculus textbooks. This formula is now called Gregory's series in honor of its discoverer, Scottish mathematician James Gregory (1638–1675).}:
 
 \be
-\tan^{-1} x = x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \dotsb \quad \text{其中} -1 \leq x \leq 1
+\tan^{-1} x = x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \dotsb \quad \text{where } -1 \leq x \leq 1
 \ee
 
-30度（对应的弧度为$\dfrac{\pi}{6}$）的正切值是$\frac{1}{\sqrt{3}}$，代入上式得：
+The tangent of 30 degrees (or $\dfrac{\pi}{6}$ in radians) is $\frac{1}{\sqrt{3}}$, substituting it into the above formula gives:
 
 \begin{align*}
 \frac{\pi}{6} = \tan^{-1} \frac{1}{\sqrt{3}} &= \frac{1}{\sqrt{3}} - \frac{1}{3}(\frac{1}{\sqrt{3}})^3 + \frac{1}{5}(\frac{1}{\sqrt{3}})^5 - \frac{1}{7}(\frac{1}{\sqrt{3}})^7 + \dotsb \\
-  &= \frac{1}{\sqrt{3}}(1 - \frac{1}{3 \cdot 3} + \frac{1}{5 \cdot 3^2} - \frac{1}{7 \cdot 3^3} + \dotsb && \text{乘法分配律}
+  &= \frac{1}{\sqrt{3}}(1 - \frac{1}{3 \cdot 3} + \frac{1}{5 \cdot 3^2} - \frac{1}{7 \cdot 3^3} + \dotsb && \text{by distributive law}
 \end{align*}
 
-\index{麦钦公式}\label{sec:machin-formula}
-这个序列的收敛速度就快多了。第10项为$\dfrac{1}{\sqrt{3}}\dfrac{1}{19 \cdot 3^9} < 0.00005$，比莱布尼茨公式快了100倍！接下来人们发现了更快的方法：$\dfrac{\pi}{4} = \tan^{-1} \dfrac{1}{2} + \tan^{-1} \dfrac{1}{3}$（第\ref{sec:proof-to-machin}节利用复数给出一个简洁的证明），把$\dfrac{1}{2}, \dfrac{1}{3}$代入反正切展开式，相加后乘以4就得到了圆周率。1706年麦钦（Machin）发现了以他名字命名的公式（证明见第\ref{sec:proof-to-machin}节）\cite{Chronology-pi-2000}：
+\index{Machin's formula} \label{sec:machin-formula}
+This infinite series converges much faster than Leibniz's formula. The 10th term is $\dfrac{1}{\sqrt{3}}\dfrac{1}{19 \cdot 3^9} < 0.00005$, which is 100 times faster than Leibniz's formula! People next found an even faster method: $\dfrac{\pi}{4} = \tan^{-1} \dfrac{1}{2} + \tan^{-1} \dfrac{1}{3}$ (a concise proof is given in \cref{sec:proof-to-machin} using complex numbers), substituting $\dfrac{1}{2}, \dfrac{1}{3}$ into the expansion of arctangent function, adding them together and multiplying by 4 gives the value of $\pi$. In 1706, Machin discovered the formula named after him (see the proof in \cref{sec:proof-to-machin})\cite{Chronology-pi-2000}:
 
 %% z_1 = 2 + i, z_2 = 3 + i, z_1 z_2 = (2 + i)(3 + i) = 5 + 5i
 %% arg(z_1 z_2) = arg(z_1) + arg(z_2)
@@ -2446,7 +2446,7 @@ This was definitely astonishing, but also very dangerous. Substituting $x = -1$ 
 \frac{\pi}{4} = 4\tan^{-1} \frac{1}{5} - \tan^{-1} \frac{1}{239}
 \ee
 
-他一举计算出了圆周率小数点后100位。今天，计算越来越长的圆周率已经成为检验计算机性能和算法的竞赛。2025年，这一世界记录已经计算到了小数点后300万位。$\pi$成了一种文化。2011年，国际数学协会将每年的3月14日定为国际数学日，也被称做“$\pi$日”，旨在庆祝 “数学在我们日常生活中的美丽与重要”。
+He used this formula to calculate $\pi$ to 100 decimal places. Today, people are competing to compute $\pi$ to many decimal places; it has become a challenge to the performance of computer algorithms. In 2025, the world record has been calculated to 3 million decimal places. $\pi$ has become a culture. In 2011, the International Mathematical Union designated March 14th of each year as International Mathematics Day, also known as \enquote{Pi Day}, to celebrate \enquote{the beauty and importance of mathematics in our daily lives.}
 
 \begin{figure}[htbp]
  \centering
