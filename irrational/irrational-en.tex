@@ -2291,56 +2291,55 @@ This gives the \emph{indefinite integral} of $x^n$:
 
 where $C$ is some constant\footnote{When taking derivative on both sides, the derivative of constant $C$ is 0, hence $(\dfrac{x^{n+1}}{n+1} + C)' = x^n$. Since $C$ is undetermined, it's called indefinite integral. The fundamental theorem of calculus can also be described in terms of definite integral: if $F(x)' = f(x)$, then $\int_{a}^{b} f(x) \mathrm{d} x = F(b) - F(a)$.}. \Cref{qn:zero-derivative} requires showing the derivative of constant is 0. The d in Leibniz's notation $\mathrm{d} x$ is the first letter of differentiation, meaning the differential of $x$, and $\dfrac{\mathrm{d}y}{\mathrm{d}x}$ means the derivative. But in Leibniz's time, the meaning of $\mathrm{d}$ was a vague \enquote{infinitesimal}. Newton's \enquote{fluxion} was half-baked. Euler also used infinitesimal in a \enquote{freewheeling} way. This drew fierce criticism from serious philosophers, including Hobbes and Bishop Berkeley. At that time, there was no concept of limit, Newton and others said $\Delta x$ being not 0, could be canceled out, but later said $\Delta x$ being 0, could be discarded, which was indeed contradictory and contained logical loopholes.
 
-\subsection{无穷级数*}
-另一个疑点是对无穷级数的处理。有限的等比数列和可以这样求出：
+\subsection{Infinite series*}
+Another problem is the handling of infinite series. The sum of a finite geometric series can be calculated as follows:
 
 \begin{align*}
 S & = 1 + x + x^2 + \dotsb + x^n & xS & = x + x^2 + \dotsb + x^{n+1} \\
 (1 - x)S &= 1 + \cancel{x} - \cancel{x} + \cancel{x^2} - \cancel{x^2} + \dotsb + \cancel{x^n} - \cancel{x^n} - x^{n+1} \\
-S &= \frac{1 - x^{n+1}}{1 - x} = 1 + x + x^2 + \dotsb + x^n  && \text{其中}x \ne 1
+S &= \frac{1 - x^{n+1}}{1 - x} = 1 + x + x^2 + \dotsb + x^n  && \text{where }x \ne 1
 \end{align*}
 
-牛顿注意到，若$|x| < 1$，在$n$趋近于无穷时分子中的$x^{n+1}$趋近于0，这样就得到了无穷序列和：
+Newton noticed when $|x| < 1$, as $n$ approaches infinity, the term $x^{n+1}$ in the numerator approaches 0, thus he got the sum of infinite series of geometric progression:
 
 \be
 \frac{1}{1 - x} = 1 + x + x^2 + \dotsb
 \ee
 
-并且代入$-x$到上式就得到了无穷交错和：
+Substituting $x$ with $-x$ gives the sum of infinite series of alternating geometric progression:
 
 \be
 \frac{1}{1 + x} = \frac{1}{1 - (-x)} = 1 - x + x^2 - x^3 + \dotsb
 \label{eq:series-reciprocal-of-binom}
 \ee
 
-\index{广义二项式定理}
-牛顿于是把二项式定理推广到了无穷项：
+\index{general binomial theorem}
+Newton's thereby had the idea of extending the binomial theorem to infinite series:
 
 \[
 \frac{1}{1 + x} = (1 + x)^{-1} = 1 + \binom{-1}{1} x + \binom{-1}{2}x^2 + \binom{-1}{3}x^3 + \dotsb
 \]
 
-然后用待定系数法确定：
+Then by equating the coefficients of $x^k$,
 
 \be
 \binom{\alpha}{k} = \frac{\alpha(\alpha - 1)\dotsm(\alpha - k + 1)}{k!}
 \ee
 
-注意到：$\dbinom{-1}{1} = \dfrac{-1}{1} = -1$,
+Note that: $\dbinom{-1}{1} = \dfrac{-1}{1} = -1$,
 $\dbinom{-1}{2} = \dfrac{-1 \cdot -2}{1 \cdot 2} = 1$,
-$\dbinom{-1}{3} = \dfrac{-1 \cdot -2 \cdot -3}{1 \cdot 2 \cdot 3} = -1$，
-等等。一般地，$\dbinom{-1}{k} = \dfrac{-1 \cdot -2\dotsm-k}{1\cdot 2 \dotsm k} = (-1)^k$。于是牛顿给出了广义二项式定理：
+$\dbinom{-1}{3} = \dfrac{-1 \cdot -2 \cdot -3}{1 \cdot 2 \cdot 3} = -1$, and so on. In general, $\dbinom{-1}{k} = \dfrac{-1 \cdot -2\dotsm-k}{1\cdot 2 \dotsm k} = (-1)^k$. Thus Newton gave the general binomial theorem:
 
-\begin{theorem}[广义二项式定理]
-对任何有理数$\alpha$，
+\begin{theorem}[general binomial theorem]
+For any rational number $\alpha$,
 \be
 (1 + x)^\alpha = 1 + \binom{\alpha}{1} x + \binom{\alpha}{2}x^2 + \dotsb
 \ee
 \end{theorem}
 
-但这样大胆的推广也会产生啼笑皆非的结果。把$x = -1$代入无穷级数和$1 + x + x^2 + x^3 + ... = 1/(1-x)$，17世纪的数学家们得到了$1 - 1 + 1 - 1 + ... = 1/2$这样的结果。这时有人提出了不同的意见：$S = (1 - 1) + (1 - 1) + ... = 0$；还有人认为：$S = 1 + (-1 + 1) + (-1 + 1) + ... = 1$。有人赞同1/2的结果，因为$S = 1 - (1 - 1 + 1 - 1 + ...) = 1 - S$，解方程得$S = 1/2$。就连莱布尼茨也主张，它的和可能是0或者1，而且概率相等，所以其“真”值应该是它们的平均值1/2。意大利数学家格兰迪还做出了另一个“奇妙”的解释：父亲留给两个儿子一块宝石，由兄弟二人轮流保存，每人一年。于是，交给对方保存的时候，可以说所有权是0，自己保存的时候，可以说所有权是1，而平均而言，每人的所有权为1/2\cite{HanXueTao16}。这些奇怪的问题，都暴露了微积分基础中的漏洞。
+This was definitely astonishing, but also very dangerous. Substituting $x = -1$ into the sum of infinite series of geometric progression, the mathematicians in the 17th century got the result $1 - 1 + 1 - 1 + \dotsb = 1/2$, which was quite ridiculous. Some people argued that $S = (1 - 1) + (1 - 1) + \dotsb = 0$; some others thought $S = 1 + (-1 + 1) + (-1 + 1) + \dotsb = 1$. Some agreed with the result of 1/2, because $S = 1 - (1 - 1 + 1 - 1 + \dotsb) = 1 - S$, solving the equation gives $S = 1/2$. Even Leibniz advocated that its sum could be either 0 or 1, and the probability is equal, so its \enquote{true} value should be their average, which is 1/2. Italian mathematician Grandi made another \enquote{wonderful} explanation: a father left a gem to two sons, and they took turns to keep it for one year each. Therefore, when handing it over to each other, we can say the ownership is 0, when keeping it by oneself, we can say the ownership is 1, and on average, each person's ownership is 1/2\cite{HanXueTao16}. These strange problems all exposed the loopholes in the foundation of calculus. 
 
-\subsection{莱布尼茨公式*}
+\subsection{Leibniz's formula*}
 \index{莱布尼茨公式}
 微积分的严格化要等到150年后。经由柯西、魏尔斯特拉斯等人之手，逐渐引入$\epsilon-\delta$语言、极限、收敛性、连续性、可微性等概念，才最终回归严密。其中的最后一砖——实数理论是由戴德金盖到大厦上去的。微积分的发展进程可以说是“先上车，再补票”。先取得了应用上的巨大成功，摘得了无数成果之后，再着手建立严密理论的。这和今天的人工智能（AI）类似，人们尚未弄明白构建于人工神经元网络之上的大语言模型为何能“涌现”出惊人的智能。尚未解释其背后的数学、逻辑学、哲学原理究竟为何，就全力拥抱AI，以眼花缭乱的速度创造一个又一个的应用。与此类似，当牛顿、莱布尼茨把微积分应用到三角函数上时，意外地发现了各种各样的“圆周率公式”。1673年，莱布尼茨通过逐项积分发现了莱布尼茨公式\citepage[179页]{Stillwell-2010}：
 
