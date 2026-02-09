@@ -25,7 +25,7 @@
 \maketitle
 \fi
 
-\markboth{Irrationals}{A tour of numbers}
+\markboth{Irrationals}{A Tour of Numbers}
 
 \ifx\wholebook\relax
 \chapter{Irrationals}
@@ -2153,7 +2153,7 @@ We needn't compute exactly $(n-1)$-th power of $a$, instead, use remainder of $a
 \begin{enumerate}[(1)]
 \item Addition. If $a \equiv b \pmod{n}$ and $c \equiv d \pmod{n}$, then $a + c \equiv b + d \pmod{n}$. This is because $p$ divides both $a - b$ and $c - d$ by the definition of congruence, therefore, $p$ divides $(a - b) + (c - d) = (a + c) - (b + d)$, hence $a + c$ and $b + d$ are congruent. For example, if $2^3 \equiv 3 \pmod{5}$ and $2^4 \equiv 1 \pmod{5}$, then $2^3 + 2^4 = 24 \equiv 4 = 3 + 1 \pmod{5}$.
 
-\item Multiplication. If $a \equiv b \pmod{n}$ and $c \equiv d \pmod{n}$, then $ac \equiv bd \pmod{n}$. This is because $a = b + k_1n$ and $c = d + k_2n$ for some integers $k_1, k_2$ by the definition of congruence. Their product, 
+\item Multiplication. If $a \equiv b \pmod{n}$ and $c \equiv d \pmod{n}$, then $ac \equiv bd \pmod{n}$. This is because $a = b + k_1n$ and $c = d + k_2n$ for some integers $k_1, k_2$ by the definition of congruence. Their product,
   \begin{align*}
     ac &= (b + k_1n)(d + k_2n) \\
        &= bd + bk_2n + dk_1n + k_1k_2n^2 \\
@@ -2218,16 +2218,17 @@ And for any $i \ne j$, we have $a \cdot i \not\equiv a \cdot j$ because $a$ is c
 \index{Miller-Rabin primality test}
 If select $k$ distinct witnesses for Fermat test, we can reduce the probability of false positive to $\frac{1}{2^k}$. However, there exist some special composite numbers $n$, such that $a^{n-1} \equiv 1 \pmod n$ holds for any $a < n$ that is coprime to $n$; in other words, $n$ passes Fermat test for whatever witness! Robert Carmichael found first such number 561 = 3 $\times$ 11 $\times$ 17 in 1910. They are called Carmichael numbers or Fermat pseudoprimes\footnote{Czech mathematician Václav Šimerka found the first 7 Fermat pseudoprimes: 561 = 3 $\times$7 $\times$11, 1105 = 5 $\times$13 $\times$7, 1729 = 7 $\times$13 $\times$19, 2465 = 5 $\times$17 $\times$29, 2821 = 7 $\times$13 $\times$31, 6601 = 7 $\times$23 $\times$41, 8911 = 7 $\times$19 $\times$67. However, his work was not well known.}. Erdős conjectured there were infinitely many Carmichael numbers. In 1994, people proved for sufficient large $n$, there were at least $n^{2/7}$ Carmichael numbers from 1 to $n$, thus explained Erdős' conjecture\cite{Carmichael-number}.
 
-The practical RSA cryptosystem adopted an algorithm called Miller-Rabin primality test. It is also a probabilistic algorithm\footnote{There is a deterministic version of Miller-Rabin algorithm, but the correctness depends on the generalized Riemann hypothesis (GRH)\cite{Miller-1976}.}. By \cref{thm:fermat-test}, over 100 distinct witnesses, the probability of failure is expected less than $\dfrac{1}{2^{100}}$. Donald Knuth commented \enquote{, far less, for instance, than the probability that a random cosmic ray will sabotage the computer during the computation!} 
+The practical RSA cryptosystem adopted an algorithm called Miller-Rabin primality test. It is also a probabilistic algorithm\footnote{There is a deterministic version of Miller-Rabin algorithm, but the correctness depends on the generalized Riemann hypothesis (GRH)\cite{Miller-1976}.}. By \cref{thm:fermat-test}, over 100 distinct witnesses, the probability of failure is expected less than $\dfrac{1}{2^{100}}$. Donald Knuth commented \enquote{, far less, for instance, than the probability that a random cosmic ray will sabotage the computer during the computation!}
 
-\subsection{微积分基本定理*}
-\index{导数}
-作为微积分的先驱，费马在寻找曲线的切线时使用了相当于微分的方法。如\cref{fig:tagent}所示，取曲线上邻近的两点$f(x)$和$f(x + \Delta x)$，连接两点的割线斜率为$\dfrac{\Delta y}{\Delta x}$。不断缩小$\Delta x$让两点越来越接近，则割线就不断逼近切线。用今天的语言，函数$f(x)$在$x$处的导数定义为：
+\subsection{Foundamental theorem of calculus*}
+\index{derivative}
+
+Fermat, as an early pioneer of calculus, applied a method equivalent to differentiation to the curve to find its tangent line. As shown in \cref{fig:tagent}, for two points $f(x)$ and $f(x + \Delta x)$ on the curve, the slope of the secant line connecting them is $\dfrac{\Delta y}{\Delta x}$. By shrinking $\Delta x$ to make the two points closer and closer, the secant line approaches the tangent line. In the language of calculus, the derivative of a function $f(x)$ at $x$ is defined as:
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.4]{img/tagent}
- \caption{缩小$\Delta x$逼近曲线的切线}
+ \caption{Reduce $\Delta x$ to approach the tangent line.}
  \label{fig:tagent}
 \end{figure}
 
@@ -2235,31 +2236,31 @@ The practical RSA cryptosystem adopted an algorithm called Miller-Rabin primalit
 f'(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
 \ee
 
-当$\Delta x$趋近于0时，割线斜率的极限就是导数。牛顿结合二项式定理，找出了一系列函数的导数，特别是$x^n$的导数：
+When $\Delta x$ is closing to 0, the limit of the slope is the derivative. Newton applied binomial theorem to find the derivatives of a series of functions, especially the power function $x^n$:
 
 \begin{proposition}\label{thm:derivation-of-power-of-x}
-$x^n$的导数是$nx^{n-1}$。
+The derivative of $x^n$ is $nx^{n-1}$.
 \end{proposition}
 
 \begin{proof}
   \begin{align*}
    (x^n)' &= \lim_{\Delta x \to 0} \frac{(x + \Delta x)^n - x^n}{\Delta x} \\
-  &= \lim_{\Delta x \to 0} \frac{\cancel{x^n} + \binom{n}{1}x^{n-1}\Delta x + \dotsb + (\Delta x)^n - \cancel{x^n}}{\Delta x} &&\text{二项式展开} \\
+  &= \lim_{\Delta x \to 0} \frac{\cancel{x^n} + \binom{n}{1}x^{n-1}\Delta x + \dotsb + (\Delta x)^n - \cancel{x^n}}{\Delta x} &&\text{binomial theorem} \\
   &= \lim_{\Delta x \to 0} nx^{n-1} + \binom{n}{2}x^{n-2}\Delta x + \dotsb + (\Delta x)^{n-1} &&\binom{n}{1} = n \\
   &= nx^{n-1} &&\qedhere
   \end{align*}
 \end{proof}
 
-反过来，牛顿利用微积分基本定理又得到了$x^n$的积分。使用莱布尼茨的符号，微积分基本定理指出了微分和积分互为逆运算：
+Newton's great insight is to find that differentiation and integration are inverse operations. This is the fundamental theorem of calculus, In Leibniz's notation, 
 
-\index{微积分基本定理}
-\begin{theorem}[微积分基本定理]
+\index{fundamental theorem of calculus}
+\begin{theorem}[Fundamental theorem of calculus]
 \be
 \frac{\mathrm{d}}{\mathrm{d}x} \int f(x) \mathrm{d}x = f(x)
 \ee
 \end{theorem}
 
-莱布尼茨是符号大师，他精心设计的微积分符号使用至今。积分符号$\int$实际是被拉长的字母S，而S是sum（和）的首字母。这就强烈暗示了积分是一种特殊的和——用莱布尼茨的语言说就是无数长为$f(x)$宽为$\Delta x$的小矩形面积加在一起（见\cref{fig:integral-sum}）。使用极限的语言就是：
+Leibniz is the master of mathematical notation; his carefully designed calculus notation is still in use today. The integral symbol $\int$ is actually an elongated letter S, which is the first letter of sum. This strongly suggests that integration is a special kind of sum - in Leibniz's language, it's the sum of infinitely many small rectangles with length $f(x)$ and width $\Delta x$ (see \cref{fig:integral-sum}). In the language of limits, it is:
 
 \[
 F(x) = \int f(x) \mathrm{d}x = \lim_{\Delta x \to 0} \sum f(x) \Delta x
@@ -2268,27 +2269,27 @@ F(x) = \int f(x) \mathrm{d}x = \lim_{\Delta x \to 0} \sum f(x) \Delta x
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.33]{img/integral-sum}
- \caption{用小矩形的和逼近曲线下方的面积}
+ \caption{The sum of small rectangles approximates the area under the curve.}
  \label{fig:integral-sum}
 \end{figure}
 
-在莱布尼茨看来对积分的结果再次求导，$F(x+ \Delta x) - F(x)$就只剩下最后一个小矩形$f(x)\Delta x$，因此除以$\Delta x$就又得到了$f(x)$，即：$\dfrac{\mathrm{d}F(x)}{\mathrm{d}x} = f(x)$。这就是微积分基本定理的含义。为了求$x^n$的积分，把$(x^n)' = nx^{n-1}$代入微积分基本定理得：
+Leibniz thought in the derivative of the integral result, the $F(x + \Delta x) - F(x)$ is the area of the last small rectangle, which equals $f(x)\Delta x$. Therefore, after dividing by $\Delta x$, we get $f(x)$ back, which is the original function. In other words, $\dfrac{\mathrm{d}F(x)}{\mathrm{d}x} = f(x)$. This is the meaning of the fundamental theorem of calculus. To find the integral of $x^n$, substitute $(x^n)' = nx^{n-1}$ into the fundamental theorem of calculus:
 
 \begin{align*}
 \frac{\mathrm{d}}{\mathrm{d}x} \int nx^{n-1} \mathrm{d}x & = (x^n)' \\
-\frac{\mathrm{d}}{\mathrm{d}x} \int (m + 1)x^m \mathrm{d}x & = (x^{m+1})' && \text{令}m = n-1 \\
-\frac{\mathrm{d}}{\mathrm{d}x} \int x^m \mathrm{d}x & = (\frac{x^{m+1}}{m+1})' && \text{两边除以}m + 1
+\frac{\mathrm{d}}{\mathrm{d}x} \int (m + 1)x^m \mathrm{d}x & = (x^{m+1})' && \text{let }m = n-1 \\
+\frac{\mathrm{d}}{\mathrm{d}x} \int x^m \mathrm{d}x & = (\frac{x^{m+1}}{m+1})' && \text{both sides divided by }m + 1
 \end{align*}
 
-\index{不定积分}
-这样就得到了\underdot{不定}积分：
+\index{indefinite integral}
+This gives the \emph{indefinite integral} of $x^n$:
 
 \be
 \int x^n \mathrm{d}x = \frac{x^{n+1}}{n+1} + C
 \label{eq:int-of-xn}
 \ee
 
-其中$C$是某个常数\footnote{两边取导数时，常数$C$的导数为0，因此$(\dfrac{x^{n+1}}{n+1} + C)' = x^n$。由于$C$不确定，因此叫做不定积分。微积分基本定理也可用定积分描述为：若$F(x)' = f(x)$，则$\int_{a}^{b} f(x) \mathrm{d} x = F(b) - F(a)$。}，\cref{qn:zero-derivative}要求证明常数的导数为0。莱布尼茨设计的符号$\mathrm{d} x$中的d是微分differentiation的首字母，意思是$x$的微分，而$\dfrac{\mathrm{d}y}{\mathrm{d}x}$的含义就是导数。但在莱布尼茨的时代，符号$\mathrm{d}$的含义却是似是而非的“无穷小量”。牛顿使用的“瞬”与此半斤八两。欧拉同样“奔放”地使用无穷小概念。这招致了严肃哲学家们的激烈批评，包括霍布斯和贝克莱主教。彼时还没有极限的概念，牛顿等人一会儿说$\Delta x$不等于0，可以约去，最后又说$\Delta x$等于0，可以舍去，的确矛盾，含有逻辑漏洞。
+where $C$ is some constant\footnote{When taking derivative on both sides, the derivative of constant $C$ is 0, hence $(\dfrac{x^{n+1}}{n+1} + C)' = x^n$. Since $C$ is undetermined, it's called indefinite integral. The fundamental theorem of calculus can also be described in terms of definite integral: if $F(x)' = f(x)$, then $\int_{a}^{b} f(x) \mathrm{d} x = F(b) - F(a)$.}. \Cref{qn:zero-derivative} requires showing the derivative of constant is 0. The d in Leibniz's notation $\mathrm{d} x$ is the first letter of differentiation, meaning the differential of $x$, and $\dfrac{\mathrm{d}y}{\mathrm{d}x}$ means the derivative. But in Leibniz's time, the meaning of $\mathrm{d}$ was a vague \enquote{infinitesimal}. Newton's \enquote{fluxion} was half-baked. Euler also used infinitesimal in a \enquote{freewheeling} way. This drew fierce criticism from serious philosophers, including Hobbes and Bishop Berkeley. At that time, there was no concept of limit, Newton and others said $\Delta x$ being not 0, could be canceled out, but later said $\Delta x$ being 0, could be discarded, which was indeed contradictory and contained logical loopholes.
 
 \subsection{无穷级数*}
 另一个疑点是对无穷级数的处理。有限的等比数列和可以这样求出：
