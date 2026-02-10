@@ -1,4 +1,4 @@
-\section{高斯——旺策尔定理的证明梗概}
+\section{Proof outline of Gauss-Wantzel theorem}
 \phantomsection
 \label[appendix]{app:gauss-wantzel-theorem}
 
@@ -6,126 +6,127 @@
 %% https://www.raahilmullick.com/wp-content/uploads/2024/10/SUMaC_Research_Project.pdf
 %% https://mp.weixin.qq.com/s/vyDQ7wMUTOuvsomFLWcgqg
 
-高斯——旺策尔定理的证明梗概需要复数的知识，建议读者先阅读第6章。这一定理给出了正$n$边形可用尺规作出的\underdot{充分必要}条件。即$n=2^k p_1 p_2 \dotsm p_m$其中$p_i$是彼此不同的费马素数。
+We need the basic knowledge of complex numbers to understand this proof outline, readers may read Chapter 6 first. This theorem states that a regular polygon with $n$ sides can be constructed by ruler and compass if and only if $n = 2^k p_1 p_2 \dotsm p_m$ where $p_i$ are distinct Fermat primes.
 
-\subsection{域} \index{域}
-我们首先引入域的概念。这是抽象代数中的一个重要概念，可以帮助我们把所有尺规可作出数的范围严格地界定出来。在历史上，第一个明确使用这个概念的人是法国数学天才伽罗瓦，但是他没有给这个概念命名。1871年，德国数学家戴德金给出了域的德语名字körper\footnote{中文译作“体”，例如范·德·瓦尔登《代数学》的中译本。}，其对应的英文为field。
+\subsection{Field} \index{field}
+We need the concept of field, an important concept in abstract algebra, to rigorously define the scope of all numbers that can be constructed by ruler and compass. Galois was the first one who consciously used this concept, but he did not give it a name. In 1871, Dedekind gave it the name of körper which corresponds to the English term \enquote{field}. 
 
 \begin{definition}
-一个集合$\mathbf{F}$叫做域，如果它上面定义了加法和乘法两种运算，并且满足如下条件：
+A set $\mathbf{F}$ is called a field if it has two operations, addition and multiplication, and satisfies the following axioms:
 \begin{enumerate}[(1)]
-\item 结合律。加法、乘法都满足结合律，即：
+\item Associativity. Both addition and multiplication are associative, i.e.:
   \begin{align*}
     a + b + c &= a + (b + c) \\
     abc &= a(bc)
   \end{align*}
 
-\item 交换律。加法、乘法都满足交换律，即：
+\item Commutativity. Both addition and multiplication are commutative, i.e.:
   \begin{align*}
     a + b &= b + a \\
     ab &= ba
   \end{align*}
 
-\item 分配律，即：$(a + b)c = ac + bc$。由于满足交换律，所以$c(a + b) = ca + cb$也成立。
-\item 加法有单位元0，乘法有单位元1（见第\ref{sec:unit}节），并且$0 \ne 1$，即：
+\item Distributivity. Multiplication distributes over addition, that is, $(a + b)c = ac + bc$. And by the commutativity, hence, $c(a + b) = ca + cb$ also holds.
+\item 0 is the unit element for addition, 1 is the unit element for multiplication (see Section \ref{sec:unit}), and $0 \ne 1$, i.e.:
 \[
 a + 0 = 0 + a = a \qquad a1 = 1a = a
 \]
 
-\item 加法存在逆，即对$\mathbf{F}$中任何元素$a$，存在$b$使得：
+\item The inverse of addition exists, i.e. for any element $a \in \mathbf{F}$, there exists $b \in \mathbf{F}$ such that:
 \[
 a + b = b + a = 0
 \]
-这个条件本质上定义了减法。
+This condition essentially defines subtraction.
 
-\item 对任何非零元素，乘法存在逆，即对任何$\mathbf{F}$中的元素$a \ne 0$，存在$b$使得：
+\item The inverse of multiplication exists for any non-zero element, i.e., for any non-zero $a \in \mathbf{F}$, there exists $b \in \mathbf{F}$ such that:
 \[
 ab = ba = 1
 \]
-这个条件本质上定义了除法。
+This condition essentially defines division.
 \end{enumerate}
 \end{definition}
 
-读者也许看出来了：域就是可以做加减乘除四则运算的集合。例如, 全体有理数$\mathbb{Q}$是一个域；全体实数$\mathbb{R}$是一个域；全体复数$\mathbb{C}$是一个域。我们还能找到更精细的域么？例如比有理数域大，但比实数域小？为此我们引入记号$\mathbb{Q}(\sqrt{a})$，其中$a$为不含平方因子的正整数。我们用例子$\mathbb{Q}(\sqrt{2})$来解释一下这个符号。它是所有形如
+You may have noticed that a field is merely a set that allows arithmetic operations of $+, -, \times$, and $\div$. For example, the set $\mathbb{Q}$ of rational numbers, $\mathbb{R}$ of real numbers, and $\mathbb{C}$ of complex numbers are all fields. Are there any more refined fields? For example, larger than $\mathbb{Q}$ but smaller than $\mathbb{R}$? To this end, we introduce the notation $\mathbb{Q}(\sqrt{a})$, where $a$ is a positive and square free integer. Let us use $\mathbb{Q}(\sqrt{2})$ for example. It is the set of all numbers that can be obtained by evaluating polynomials,
 
 \be
 x = a_0 + a_1 x + a_2 x^2 + \dotsb + a_n x^n
 \ee
-的多项式，当$x = \sqrt{2}$时得出的数构成的集合。其中$a_0, a_1, a_2, \dotsc, a_n$都是有理数。代入$\sqrt{2}$就是：
+
+for $x = \sqrt{2}$, where the coefficients $a_0, a_1, a_2, \dotsc, a_n$ are rationals. Substituting $\sqrt{2}$ into the above polynomial gives:
 
 \be
 x = a_0 + a_1 \sqrt{2} + a_2 (\sqrt{2})^2 + \dotsb + a_n (\sqrt{2})^n
 \label{eq:polynomial-sqrt2}
 \ee
 
-这个数看似吓人，其实是个“纸老虎”。因为$(\sqrt{2})^2 = 2$是有理数，$(\sqrt{2})^4, (\sqrt{2})^6, \dotsc$都是有理数；$(\sqrt{2})^3 = 2\sqrt{2}$是$a\sqrt{2}$的形式，$(\sqrt{2})^5 = 4\sqrt{2}$是$a\sqrt{2}$的形式……所以\ref{eq:polynomial-sqrt2}的所有奇数项都是有理数$p_i$，所有的偶数项都是$q_i\sqrt{2}$，合并同类项后得：
+Don't be scared by the above expression. Since $(\sqrt{2})^2 = 2$ is rational, $(\sqrt{2})^4, (\sqrt{2})^6, \dotsc$ are all rational; since $(\sqrt{2})^3 = 2\sqrt{2}$ is of the form $a\sqrt{2}$, $(\sqrt{2})^5 = 4\sqrt{2}$ is of the form $a\sqrt{2}$, etc., all odd terms in \ref{eq:polynomial-sqrt2} are rationals $p_i$, and all even terms are $q_i \sqrt{2}$. Collecting terms, it simplifies to:
 
 \[
 x = p + q\sqrt{2}
 \]
 
-其中$p, q$都是有理数，也就是说$\mathbb{Q}(\sqrt{2})$含有所有形如$p + q\sqrt{2}$的数，并且：
+where $p, q$ are rationals, in other words, $\mathbb{Q}(\sqrt{2})$ contains all numbers of the form $p + q\sqrt{2}$, and:
 
 \begin{proposition}
-所有形如$p + q\sqrt{2}$的数经过加减乘除四则运算后仍然在$\mathbb{Q}(\sqrt{2})$内，其中$p, q$是有理数。
+All numbers of the form $p + q\sqrt{2}$, after $+, -, \times$, and $\div$ operations, still remain in $\mathbb{Q}(\sqrt{2})$, where $p, q$ are rationals.
 \end{proposition}
 
 \begin{proof}
-加减法的结果为$a + b\sqrt{2} \pm (c + d\sqrt{2}) = (a \pm c) + (b \pm d)\sqrt{2}$，仍然是$p + q\sqrt{2}$的形式，在$\mathbb{Q}(\sqrt{2})$内。
+The sum and difference are in form of $(a + b\sqrt{2}) \pm (c + d\sqrt{2}) = (a \pm c) + (b \pm d)\sqrt{2}$, which is still in the form of $p + q\sqrt{2}$, hence in $\mathbb{Q}(\sqrt{2})$.
 
-乘法的结果为$(a + b\sqrt{2})(c + d\sqrt{2}) = (ac + 2bd) + (bc + ad)\sqrt{2}$，仍然是$p + q\sqrt{2}$的形式，在$\mathbb{Q}(\sqrt{2})$内。
+The product is in form of $(a + b\sqrt{2})(c + d\sqrt{2}) = (ac + 2bd) + (bc + ad)\sqrt{2}$, which is still in the form of $p + q\sqrt{2}$, hence in $\mathbb{Q}(\sqrt{2})$.
 
-除法的结果为
+The result of division is,
 
 \begin{align*}
-\frac{a + b\sqrt{2}}{c + d\sqrt{2}} &= \frac{(a + b\sqrt{2})(c - d\sqrt{2})}{(c + d\sqrt{2})(c - d\sqrt{2})} &&\text{分子分母同乘}c - d\sqrt{2} \\
-&= \frac{(ac - 2bd) + (bc - ad)\sqrt{2}}{c^2 - 2d^2} &&\text{平方差公式} \\
+\frac{a + b\sqrt{2}}{c + d\sqrt{2}} &= \frac{(a + b\sqrt{2})(c - d\sqrt{2})}{(c + d\sqrt{2})(c - d\sqrt{2})} &&\text{multiply the nominator and denominator by }c - d\sqrt{2} \\
+&= \frac{(ac - 2bd) + (bc - ad)\sqrt{2}}{c^2 - 2d^2} &&\text{difference of squares} \\
 &= \frac{ac - 2bd}{c^2 - 2d^2} + \frac{bc - ad}{c^2 - 2d^2}\sqrt{2}
 \end{align*}
-仍然是$p + q\sqrt{2}$的形式，在$\mathbb{Q}(\sqrt{2})$内。
+It is still in the form of $p + q\sqrt{2}$, hence in $\mathbb{Q}(\sqrt{2})$.
 \end{proof}
 
-这就证明了$\mathbb{Q}(\sqrt{2})$是一个域。这个域有什么特殊之处呢？我们知道方程$x^2 - 2 = 0$在有理数域上无解，即不存在任何有理数$q$满足这个方程。但是它却在$\mathbb{Q}(\sqrt{2})$上有解$x_{1, 2} = \pm \sqrt{2}$。把无理数$\sqrt{2}$“加入”有理数$\mathbb{Q}$后，域扩大了。这说明域有大小，并且：
+This proves that $\mathbb{Q}(\sqrt{2})$ is a field. What is special about this field? We know that the equation $x^2 - 2 = 0$ has no solution in the rational field, i.e., there is no rational number $q$ such that $q^2 = 2$. However, it does have solutions in $\mathbb{Q}(\sqrt{2})$, which are $x_{1, 2} = \pm \sqrt{2}$. After \emph{adjoin} the irrational number $\sqrt{2}$ to the rational numbers $\mathbb{Q}$, the field is extended (enlarged). This shows that a field can be contained in another field, for example:
 
 \[
 \mathbb{Q} \subset \mathbb{Q}(\sqrt{2}) \subset \mathbb{R} \subset \mathbb{C}
 \]
 
-用尺规作出长为$\sqrt{2}$的线段（边长为1的正方形的对角线）后，再用尺规进行加减乘除运算（见第\ref{sec:geometric-arthimetic}节）能作出的所有长度就是集合$\mathbb{Q}(\sqrt{2})$。给定长度$a$，由于我们能用尺规作出$\sqrt{a}$长的线段（见命题\ref{thm:sqrt-a}），所以能获得域$\mathbb{Q}(\sqrt{a})$。
+After construct the length of $\sqrt{2}$ (the diagonal of a unit square) by ruler and compass, all lengths that can be constructed by ruler and compass through arithmetic operations (see \cref{sec:geometric-arthimetic}) are exactly the set $\mathbb{Q}(\sqrt{2})$. Given a length $a$, since we can construct a line segment of length $\sqrt{a}$ (see proposition \ref{thm:sqrt-a}), we can obtain the field $\mathbb{Q}(\sqrt{a})$.
 
-第二个重要的意义在于，把无理数$\sqrt{2}$加入有理数$\mathbb{Q}$后，“维度”变了。有理数只有一个维度：$\{q | q \in \mathbb{Q}\}$，而$\mathbb{Q}(\sqrt{2})$有两个维度：$\{p + q \sqrt{2} | p, q \in \mathbb{Q}\}$，我们需要两个变量$p, q$才能确定一个值，维度扩大了2倍。我们用符号：
+The second important thing of $\mathbb{Q}(\sqrt{2})$ is that the \enquote{dimension} changes after adjoining $\sqrt{2}$ to $\mathbb{Q}$. The rational numbers have only one dimension: $\{q | q \in \mathbb{Q}\}$, while $\mathbb{Q}(\sqrt{2})$ has two: $\{p + q \sqrt{2} | p, q \in \mathbb{Q}\}$, we need two variables $p, q$ to determine a value, the dimension is doubled. We use the notation:
 
 \[
 [\mathbb{Q}(\sqrt{2}) : \mathbb{Q}] = 2
 \]
 
-来定量表示扩大了多少。不难想象，我们用尺规作出$\sqrt{3}$，把它加入$\mathbb{Q}(\sqrt{2})$后，域$\mathbb{Q}(\sqrt{2})(\sqrt{3})$是这样的数组成的集合：
+to qualify the dimension change. It is not hard to imagine that if we construct $\sqrt{3}$ by ruler and compass, and adjoin it to $\mathbb{Q}(\sqrt{2})$, the field $\mathbb{Q}(\sqrt{2})(\sqrt{3})$ is the set of all numbers of the form:
 
 \begin{align*}
   \mathbb{Q}(\sqrt{2})(\sqrt{3}) &= \{a + b \sqrt{3} | a, b \in \mathbb{Q}(\sqrt{2}) \} \\
-  &= \{p + q \sqrt{2} + (r + s\sqrt{2})\sqrt{3} \} && a, b \text{都形如} p + q\sqrt{2} \\
+  &= \{p + q \sqrt{2} + (r + s\sqrt{2})\sqrt{3} \} && a, b \text{ are in the form of } p + q\sqrt{2} \\
   &= \{p + q \sqrt{2} + r\sqrt{3} + s\sqrt{6} \}
 \end{align*}
 
-\index{扩域}
-有4个变量，维度是4。我们看到维度又扩大了2倍。它相当于把两个无理数$\sqrt{2}, \sqrt{3}$加入有理数域的结果，简写成$\mathbb{Q}(\sqrt{2}, \sqrt{3})$。我们把这样的过程叫做\underdot{扩域}。注意到尺规作图的过程，就是一轮一轮扩域的过程：不断解二次方程，把$\sqrt{a}, \sqrt{b}, \dotsc$加入，构成一个扩域链：
+\index{field extension}
+There are 4 variables $p, q, r, s$ in the above expression; the dimension changes to 4, being doubled again. It is equivalent to adjoining two irrationals $\sqrt{2}, \sqrt{3}$ to the rational field, denoted as $\mathbb{Q}(\sqrt{2}, \sqrt{3})$. We call this process \emph{field extension}. It means the ruler and compass construction is a process of field extension: continuously solving quadratic equations and adjoining $\sqrt{a}, \sqrt{b}, \dotsc$ to form a chain of field extensions:
 
 \be
 \mathbb{Q} \subset K_1 \subset K_2 \subset \dotsb \subset K_m
 \label{eq:tower-of-geometric-field-ext}
 \ee
 
-但不管怎样，尺规作图每次只能把维度扩大2倍，总有$[K_{i+1} : K_i] = 2$，所以$[K_m : \mathbb{Q}] = 2^m$。读者朋友们，从维度的角度出发，$\mathbb{Q}(\sqrt[3]{2})$在这个扩域链中么？你能就此推翻倍立方问题么？(见\cref{fig:double-cube})
+Whatever constructed length being adjoined, since ruler and compass can only solve quadratic equations, which means the dimension can only be doubled, i.e., $[K_{i+1} : K_i] = 2$. It follows that $[K_m : \mathbb{Q}] = 2^m$. Based on this, can you figure out whether $\mathbb{Q}(\sqrt[3]{2})$ is in this chain of field extensions? Can you use this to disprove the doubling cube problem? (see \cref{fig:double-cube})
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.5]{../img/double-cube}
- \caption{多项式$a_0 + a_1\sqrt[3]{2} + a_2(\sqrt[3]{2})^2 + \dotsb + a_n(\sqrt[3]{2})^n$合并同类项后可表示为$p + q\sqrt[3]{2} + r(\sqrt[3]{2})^2$。故$[\mathbb{Q}(\sqrt[3]{2}) : \mathbb{Q}] = 3$，不在尺规作图的扩域链中。}
+ \caption{The polynomial $a_0 + a_1\sqrt[3]{2} + a_2(\sqrt[3]{2})^2 + \dotsb + a_n(\sqrt[3]{2})^n$, by collecting terms, can be simplified to the form $p + q\sqrt[3]{2} + r(\sqrt[3]{2})^2$. Hence $[\mathbb{Q}(\sqrt[3]{2}) : \mathbb{Q}] = 3$, which is not in the chain of field extensions in ruler and compass construction.}
  \label{fig:double-cube}
 \end{figure}
 
-\subsection{分圆方程} \index{分圆方程}
-高斯将正$n$边形尺规作图的问题转化为把单位圆的圆周$n$等分问题，再利用复数进一步转化为求方程$x^n - 1 = 0$的全部复数根的问题，这种特殊的方程名叫“分圆方程”（cyclotomic equation），$n$次分圆方程有$n$个复数根：$\zeta_0 = 1, \zeta_1, \dotsc, \zeta_{n-1}$，任何$\zeta_k$满足$(\zeta_k)^n = 1$，所以又叫做$n$次单位根。根据高中学习的欧拉公式和棣莫佛定理，可以用三角函数表示单位根：
+\subsection{Cyclotomic equations} \index{cyclotomic equations}
+Gauss transformed the problem of constructing a regular polygon with $n$ sides by ruler and compass into the problem of dividing the circumference of a unit circle into $n$ equal parts, and further transformed it into the problem of finding all complex roots of the equation $x^n - 1 = 0$ by using complex numbers. This special equation is called a \emph{cyclotomic equation}, which has $n$ complex roots: $\zeta_0 = 1, \zeta_1, \dotsc, \zeta_{n-1}$, any $\zeta_k$ satisfies $(\zeta_k)^n = 1$, hence also called \emph{$n$th roots of unity}. According to Euler's formula and De Moivre's theorem learned in high school, the roots of unity can be expressed using trigonometric functions:
 
 \be
 \zeta_k = e^{i\frac{2k\pi}{n}} = \cos(\frac{2k\pi}{n}) + i\sin(\frac{2k\pi}{n})
