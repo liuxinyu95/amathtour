@@ -796,7 +796,7 @@ r : 1 &= 1 : \frac{r}{2}  && \text{Similar} \\
 r^2 &= 2
 \end{align*}
 
-Therefor, $r = \sqrt{2}$. It explains why the length-to-width ratio of ISO papers equals $\sqrt{2}$. Since irrational, it is non-repeating decimal, hence there is precision loss after rounding or unit changing. For example, the ratio of $B5$ is $250/176 = 1.42$. One may figure out the size of A0 by himself: since A0 covers $1 m^2$, let the width be $a$, the length be $a\sqrt{2}$; the area $s = a^2\sqrt{2} = 1$. Solving this equation gives $a = \sqrt{\frac{1}{\sqrt{2}}} \approx 0.841 m$. Hence the length is $1 / 0.841 = 1.189 m$, which is exactly as same as \cref{fig:ISO216}. At the same time, one may deduce the definition of B series: a B0 paper covers area of $\sqrt{2} m^2$. Each size of $B$ series is $\sqrt{2}$ times to the size of A series. We can further reason out that, when manufacturing rectangular bricks or tiles, to make them easy cutting to similar pieces, the length-to-width ratio must be $\sqrt{2}$. In this way, we demystified and clarified the rumors with rationality and mathematics. Some may think its dull, not romantic at all. While, the reasoning process itself is beautiful, reveals the theories and rules of nature and human activities. Aren't these theories and rules harmonic, beautiful, and romantic?
+Therefore, $r = \sqrt{2}$. It explains why the length-to-width ratio of ISO papers equals $\sqrt{2}$. Since irrational, it is non-repeating decimal, hence there is precision loss after rounding or unit changing. For example, the ratio of $B5$ is $250/176 = 1.42$. One may figure out the size of A0 by himself: since A0 covers $1 m^2$, let the width be $a$, the length be $a\sqrt{2}$; the area $s = a^2\sqrt{2} = 1$. Solving this equation gives $a = \sqrt{\frac{1}{\sqrt{2}}} \approx 0.841 m$. Hence the length is $1 / 0.841 = 1.189 m$, which is exactly as same as \cref{fig:ISO216}. At the same time, one may deduce the definition of B series: a B0 paper covers area of $\sqrt{2} m^2$. Each size of $B$ series is $\sqrt{2}$ times to the size of A series. We can further reason out that, when manufacturing rectangular bricks or tiles, to make them easy cutting to similar pieces, the length-to-width ratio must be $\sqrt{2}$. In this way, we demystified and clarified the rumors with rationality and mathematics. Some may think its dull, not romantic at all. While, the reasoning process itself is beautiful, reveals the theories and rules of nature and human activities. Aren't these theories and rules harmonic, beautiful, and romantic?
 
 \index{Luogeng Hua} \index{optimization method}
 We end this section with `the last lecture' of Chinese mathematician, Luogeng Hua\footnote{Hua died of a heart attack at the end of this lecture he gave in Tokyo on 12 June 1985 at the age of 74. The lecture was titled \emph{Theory, application, and its popularization}. After the lecture, Hua walked towards his wheelchair in applause, but unfortunately collapsed to the ground. He died at 10 PM that same night\citepage[p21]{ZhangJianan-2017}.}.
@@ -1160,7 +1160,7 @@ px + ay &= 1 && \text{Bézout's identity} \\
 pxb + aby & = b && \text{multiply both sides by }b
 \end{align*}
 
-$p$ divides the first term on the left, and since $p$ divides $ab$, it also divides the second term on the left. Therefor, $p$ divides the left, hence it divides $b$.
+$p$ divides the first term on the left, and since $p$ divides $ab$, it also divides the second term on the left. Therefore, $p$ divides the left, hence it divides $b$.
 \end{proof}
 
 We shall prove the fundamental theorem of arithmetic with this lemma.
@@ -1170,7 +1170,7 @@ Assume for contradiction, there is some natural number $n$ with two distinct pri
 \[
 p_1 p_2 \dotsm p_j = q_1 q_2 \dotsm q_k
 \]
-Where there is some prime factor $p_i$ on the left different from any prime number on the right. Since the prime $p_i$ divides the product $n = q_1 q_2 \dotsm q_k$, where $q_i$ are coprime, by Euclidean lemma, $p_i$ divides $q_1$, or divides $q_2$, ..., or divides $q_k$. But it's impossible because every prime number, $q_1, q_2, \dotsc, q_k$ can not be divided by any other prime number, a contradiction. Therefor, any natural number $n$ has a unique factorization.
+Where there is some prime factor $p_i$ on the left different from any prime number on the right. Since the prime $p_i$ divides the product $n = q_1 q_2 \dotsm q_k$, where $q_i$ are coprime, by Euclidean lemma, $p_i$ divides $q_1$, or divides $q_2$, ..., or divides $q_k$. But it's impossible because every prime number, $q_1, q_2, \dotsc, q_k$ can not be divided by any other prime number, a contradiction. Therefore, any natural number $n$ has a unique factorization.
 \end{proof}
 
 The fundamental theorem of arithmetic is also called the unique factorization theorem. Kummer, when studied Fermat's last theorem in 1843, realized that the unique factorization theorem might not necessary true for complex numbers, where algebraic number theory arose (see chapter 7).
@@ -1219,7 +1219,7 @@ x = 1 + \dfrac{1}{2 + \dfrac{1}{\dfrac{12}{6}}}
 It shows the process of Euclidean algorithm forms continued fraction. \Cref{fig:cont-frac} gives geometric explanation of constructing continued fraction with the Euclidean algorithm. We know any irrational number, by \cref{th:irrational-gcm}, is incommensurable, hence the Euclidean algorithm won't terminate. Thus when applying Euclidean algorithm to a irrational number $x$, it constructs infinite continued fraction. For example, $x = \sqrt{2}$, is irrational,
 
 \begin{enumerate}[{Step} 1, ]
-\item Because $1 < 2 < 4$, taking square root, $1 < \sqrt{2} < 2$. Therefor, the integral part of $x = \sqrt{2}$ is $n_1 = 1$, and the remaining part is $x - n_1 = \sqrt{2} - 1$; put them together,
+\item Because $1 < 2 < 4$, taking square root, $1 < \sqrt{2} < 2$. Therefore, the integral part of $x = \sqrt{2}$ is $n_1 = 1$, and the remaining part is $x - n_1 = \sqrt{2} - 1$; put them together,
 \[
  \sqrt{2} = 1 + (\sqrt{2} - 1) = 1 + \dfrac{1}{\dfrac{1}{\sqrt{2} - 1}}
 \]
@@ -1227,7 +1227,7 @@ It shows the process of Euclidean algorithm forms continued fraction. \Cref{fig:
   \begin{align*}
     x' = \dfrac{1}{\sqrt{2} - 1} = \dfrac{\sqrt{2} + 1}{(\sqrt{2} - 1)(\sqrt{2} + 1)} = \dfrac{\sqrt{2} + 1}{2 - 1} = \sqrt{2} + 1
   \end{align*}
-  Since $1 < \sqrt{2} < 2$, add 1 to both sides, $2 < \sqrt{2} + 1 < 3$. Therefor, the integral part of $x' = \sqrt{2} + 1$ is $n_2 = 2$, and the remaining part is $x' - n_2 = \sqrt{2} + 1 - 2 = \sqrt{2} - 1$, which, in turn, is as same as the remaining part in step 1. Put them together,
+  Since $1 < \sqrt{2} < 2$, add 1 to both sides, $2 < \sqrt{2} + 1 < 3$. Therefore, the integral part of $x' = \sqrt{2} + 1$ is $n_2 = 2$, and the remaining part is $x' - n_2 = \sqrt{2} + 1 - 2 = \sqrt{2} - 1$, which, in turn, is as same as the remaining part in step 1. Put them together,
 \[
  \sqrt{2} = 1 + \dfrac{1}{2 + \dfrac{1}{\sqrt{2} - 1}}
 \]
@@ -1333,7 +1333,7 @@ See the lines in \cref{fig:pythagoras-mosaic}.
 }
 \Question{$a, b$ are coprime, if $ab = c^2$, show that both $a$ and $b$ are squares.
   \begin{proof}
-    By the fundamental theorem of arithmetic, represent $a, b$ as product of primes: $a = p_1^{a_1} p_2^{a_2} \dotsm p_n^{a_n}, b = q_1^{b_1} q_2^{b_2} \dotsm q_m^{b_m}$, where $p_i, q_j$ are prime. As $a, b$ are coprime, 1 is their only common divisor, hence $p_i \ne q_j$. Their product is a square $c^2 = p_1^{a_1} p_2^{a_2} \dotsm p_n^{a_n} q_1^{b_1} q_2^{b_2} \dotsm q_m^{b_m}$, which implies $a_i, b_j$ are all even, therefor, $a, b$ are both squares.
+    By the fundamental theorem of arithmetic, represent $a, b$ as product of primes: $a = p_1^{a_1} p_2^{a_2} \dotsm p_n^{a_n}, b = q_1^{b_1} q_2^{b_2} \dotsm q_m^{b_m}$, where $p_i, q_j$ are prime. As $a, b$ are coprime, 1 is their only common divisor, hence $p_i \ne q_j$. Their product is a square $c^2 = p_1^{a_1} p_2^{a_2} \dotsm p_n^{a_n} q_1^{b_1} q_2^{b_2} \dotsm q_m^{b_m}$, which implies $a_i, b_j$ are all even, therefore, $a, b$ are both squares.
   \end{proof}
 }
 
@@ -1428,7 +1428,7 @@ y &= y_0 + k \dfrac{a}{d} \\
 x &= x_0 - k \dfrac{b}{d} && \text{substitute back}
 \end{align*}
 
-Which proves that all solutions are in this form. For any two pairs of solution, their different is minimized when $k = 1$. Therefor, the minimum of $|x_1 - x_2|$ is $b/(a, b)$ and the minimum of $|y_1 - y_2|$ is $a/(a, b)$.
+Which proves that all solutions are in this form. For any two pairs of solution, their different is minimized when $k = 1$. Therefore, the minimum of $|x_1 - x_2|$ is $b/(a, b)$ and the minimum of $|y_1 - y_2|$ is $a/(a, b)$.
 }
 
 \Question{List the fewest steps to obtain 6 litres of water with two jugs of 9 and 4 litres.
@@ -1440,7 +1440,7 @@ Which proves that all solutions are in this form. For any two pairs of solution,
 \Question{Show that the side and diagonal of a regular pentagon are incommensurable.
 
 \begin{proof}
-Assume for contradiction, they are commensurable. Denote the side by $mc$, the diagonal by $nc$ for some positive integers $m, n$. As shown in \cref{fig:pentagon-irrational}, since BEC is isosceles triangle, $EC = BE = nc$; Since ABE and FBE are congruent, $AB = FE = mc$. It follows $FC = EC - FE = (n-m)c$. The diagonal of the smaller pentagon, $CD = mc$ and its side $FC = (n -m)c$ is also commensurable. Repeat this, one gets smaller and smaller pentagons infinitely. But this conflicts with the assumption that $m, n$ are finite positive integers. Therefor, the side and diagonal of a regular pentagon are incommensurable.
+Assume for contradiction, they are commensurable. Denote the side by $mc$, the diagonal by $nc$ for some positive integers $m, n$. As shown in \cref{fig:pentagon-irrational}, since BEC is isosceles triangle, $EC = BE = nc$; Since ABE and FBE are congruent, $AB = FE = mc$. It follows $FC = EC - FE = (n-m)c$. The diagonal of the smaller pentagon, $CD = mc$ and its side $FC = (n -m)c$ is also commensurable. Repeat this, one gets smaller and smaller pentagons infinitely. But this conflicts with the assumption that $m, n$ are finite positive integers. Therefore, the side and diagonal of a regular pentagon are incommensurable.
 \end{proof}
 
 \begin{center}
@@ -1492,7 +1492,7 @@ Given a unit line segment (of length 1), and two segments of length $a$ and $b$,
 \end{proposition}
 
 \begin{proof}
-As shown in 如\cref{fig:product}, draw a perpendicular line to the unit segment AD (of length 1) at one end and mark off AC of length $b$ (see \cref{qn:perp-of-point}); then extend the unit segment and mark off BD of length $a$. Connect CD to construct a triangle ACD. Draw the parallel line to CD through point B (see \cref{qn:parallel-through-p}), which intersects the extension of AC at point E; it form a bigger triangle of AEB. It follows that the smaller triangle ACD is similar to the bigger triangle AEB (can you justify it?), therefor,
+As shown in 如\cref{fig:product}, draw a perpendicular line to the unit segment AD (of length 1) at one end and mark off AC of length $b$ (see \cref{qn:perp-of-point}); then extend the unit segment and mark off BD of length $a$. Connect CD to construct a triangle ACD. Draw the parallel line to CD through point B (see \cref{qn:parallel-through-p}), which intersects the extension of AC at point E; it form a bigger triangle of AEB. It follows that the smaller triangle ACD is similar to the bigger triangle AEB (can you justify it?), therefore,
 
 \begin{align*}
 \dfrac{1}{b} & = \dfrac{AD}{AC} = \dfrac{AB}{AE} = \dfrac{1 + a}{b + x} && \text{by similar triangles} \\
@@ -2032,7 +2032,7 @@ Pascal completely withdrew from mathematical and scientific study after 1654; he
 
 Binomial theorem is a powerful tool. Newton applied it to many problems that his predecessors failed to solve. By representing the curves or functions in to binomials, he could expand them, then perform derivation or integration term by term, and achieved remarkable result. We give three applications of this theorem: (1) the formula to the sum of $1^m + 2^m + \dotsb  + n^m$ where $m$ is positive integer. (2) prove Fermat's little theorem in number theory. (3) the derivation of $x^n$ where $n$ is positive integer.
 
-The Pythagoreans discovered the sum of natural numbers $1 + 2 + \dotsb + n = \dfrac{n(n+1)}{2}$ by arranging pebbles in triangular numbers (\cref{fig:triangular-num,fig:oblong-num}). But how to derive the formula to the sum of squares, cubes, and so on? The binomial theorem provides a solution: expand $(m + 1)^3 = m^3 + 3m^2 + 3m + 1$, change it to,
+The Pythagoreans discovered the sum of natural numbers $1 + 2 + \dotsb + n = \dfrac{n(n+1)}{2}$ by arranging pebbles in triangular numbers (\cref{fig:triangular-num,fig:oblong-num}). But how to derive the formula to the sum of squares, cubics, and so on? The binomial theorem provides a solution: expand $(m + 1)^3 = m^3 + 3m^2 + 3m + 1$, change it to,
 
 \[
 (m + 1)^3 - m^3 = 3m^2 + 3m + 1
@@ -2610,7 +2610,7 @@ In 1766, Lambert published a paper called \emph{Studies on Parallel Lines}, wher
 %% https://www.britannica.com/biography/Johann-Heinrich-Lambert
 \end{mdframed}
 
-\section{Sword of mind}
+\section{Sword of thought}
 
 The Greeks leant from geometric constructions that there are quantities that cannot be expressed as ratios of integers, i.e., rational numbers. These quantities objectively exist and can indeed be constructed with a compass and straightedge, such as the diagonal of a unit square. They can even be marked on the number line. However, they involve infinite processes, but the Greeks rejected the acutal infinity from Aristotle. How could represent them, define them, and calculate with them?
 
@@ -2627,164 +2627,161 @@ Define that the ratio of two magnitutes $A$ and $B$, denoted by $A:B$, is equal 
 
 Clearly, this definition was influenced by the Pythagorean concept of commensurability. Eudoxus's theory of proportion solved the crisis of irrational numbers faced by the ancient Greeks, and it continued to work for over 2000 years until people started thinking about what a true \enquote{continuum} is.
 
-\subsection{Dedekind's cut}
-\index{戴德金分割}
+\subsection{Dedekind cut}
+\index{Dedekind cut}
 
-为了解决微积分基础的严密性问题，十九世纪的数学家们开始重新思考牛顿、莱布尼茨、欧拉等人使用的一些令人困惑的概念。包括无穷小量和无穷级数等等。经过柯西和魏尔斯特拉斯等人的工作，终于给出了极限和收敛等概念。但有一个本质问题始终未得到圆满的解决。那就是实数的概念。微积分具有强烈的实用性背景，它是解决现实物理世界的有力武器。自然数是离散的一个一个的数，有理数在古希腊人眼中是用一把给定的尺子测量世界的产物。在现实中，通常情况下是量不尽的。人们感受到了现实世界的连续性，创造了“连续统”的概念。微积分是建立在实数连续性上的。可人们仍然没有一个关于实数满意的定义。最早人们把有理数比作直线，结果发现有理数间充满了间隙，它是不完备、不连续的。而我们则把直线看作没有间隙的、完备的连续统。直线的连续性究竟是什么意思？人们迫切需要连续性的一个精确定义。
+To address the issue of rigor in the foundations of calculus, mathematicians in the 19th century began to rethink some of the confusing concepts used by Newton, Leibniz, Euler, and others, including infinitesimals and infinite series. Through the work of Cauchy and Weierstrass, concepts such as limits and convergence were finally established. However, one fundamental problem remained unresolved: the concept of real numbers. Calculus has a strong practical background and is a powerful tool for solving problems in the physical world. Natural numbers are discrete, one by one, and rational numbers were seen by the ancient Greeks as products of measuring the world with a given ruler. In reality, most quantities are incommensurable. People felt the continuity of the real world and created the concept of a \enquote{continuum}. Calculus was built on the continuity of real numbers. However, people still did not have a satisfactory definition of real numbers. Initially, people compared rational numbers to points on a line, but they found that there were gaps between rational numbers; they were incomplete and discontinuous. On the other hand, we view a line as a seamless, complete continuum. What exactly does the continuity of a line mean? People urgently needed a precise definition of continuity.
 
-戴德金经过多年的思考，终于在1858年想出了一个方法——即著名的戴德金分割。戴德金指出，有理数具有稠密性，即任意两个有理数间，不管多么靠近，总存在着另外的有理数。但是有理数却不连续。连续的直线究竟意味着什么呢？此时让我们想象一把最锋利的“思想之刀”，在天衣无缝的直线上切下去，将它分割成两截\citepage[196页]{HanXueTao16}。
+Dedekind, after years of consideration, finally came up with a method in 1858 — known as the Dedekind cut. Dedekind pointed out that rational numbers were density, meaning that between any two rational numbers, no matter how close they are, there always exists another rational number. However, rational numbers were not continuous. What does the continuity of a line actually mean? Let's imagine a sharp \enquote{knife of thought} cutting through the seamless line, dividing it into two parts\citepage[p196]{HanXueTao16}.
 
-由于直线是连续的，天衣无缝的，不管多么锋利，这一刀一定落在某一点上，而不是在两点的缝隙间。（如果是有理数而非实数，这一刀可能落在某个有理数代表的点上，也可能落在两个有理数之间，比如恰好落在$\sqrt{2}$代表的位置上。）假定从点$A$的位置上把直线切开，则$A$不在左边，就在右边。二者必居其一，不会两边都有，也不会两边都没有。这是因为点不可分割、也不会消失掉。换言之，直线的连续性意味着，不管从何处将直线切成两段，总是有一段是带有端点的，而另一段没有端点。
+As the line is continuous and seamless, no matter how sharp the knife is, it must cut at some point, not in the gap between two points. (If we were dealing with rational numbers instead of real numbers, the knife could cut either at a point represented by a rational number, or between two rational numbers, such as exactly at the position represented by $\sqrt{2}$.) Supposing that the knife cuts at the position of point $A$, then $A$ is either on the left side or on the right side. Either must be true; it cannot be on both sides, nor can it be on neither side. This is because points are indivisible and do not disappear. In other words, the continuity of a line means that no matter where you cut the line into two segments, there will always be one segment that has an endpoint and another segment that does not have an endpoint.
 
-由此，戴德金定义了这样的一个分割$(A_1, A_2)$，$A_1$和$A_2$分别叫作下类和上类。其中下类$A_1$中的每个数都小于上类$A_2$中的任意一个数。也就是说$A_1$对应分割的左半段直线，而$A_2$对应着右半段直线。对于这样的分割，要么$A_1$中存在着一个最大数，要么$A_2$中存在着一个最小数。二者必居其一，且仅居其一。
+Dedekind thus defined a partition of the line into two sets $(A_1, A_2)$, where $A_1$ and $A_2$ are called the lower class and upper class, respectively. Every number in the lower class $A_1$ is less than any number in the upper class $A_2$. In other words, $A_1$ corresponds to the left half of the line, while $A_2$ corresponds to the right half of the line. For such a partition, either there exists a maximum number in $A_1$, or there exists a minimum number in $A_2$. One of these must be true, and only one can be true.
 
 \begin{figure}[htbp]
  \centering
  \subimport{img/}{Dedekind-cut}
- \caption{用戴德金分割构造的$\sqrt{2}$}
+ \caption{Definition of $\sqrt{2}$ by Dedekind cut.}
  \label{fig:Dedekind-cut}
 \end{figure}
 
-用戴德金分割来分析全体有理数，会发现有理数是不连续的。如果$A_1$包含了所有小于等于2的有理数，$A_2$包含了所有大于2的有理数，这一分割就定义了有理数2。但是考虑这样一个反例：下类$A_1$包含所有负有理数，以及非负的，但平方小于等于2的有理数；上类$A_2$包含剩余的有理数。不难发现在这一分割中，下类没有最大数，同时上类没有最小数。这说明有理数间存在着缝隙，从这里砍下去，这一刀就会落空。这个划分实际上确定了一个新数$\sqrt{2}$，但它不是有理数。如\cref{fig:Dedekind-cut}所示。
+When analyze the set of all rational numbers using Dedekind cuts, we find that rational numbers are not continuous. For example, if $A_1$ contains all rational numbers less than or equal to 2, and $A_2$ contains all rational numbers greater than 2, this partition defines the rational number 2. However, consider a counterexample: let the lower class $A_1$ contain all negative rational numbers and non-negative rational numbers whose squares are less than or equal to 2; let the upper class $A_2$ contain the remaining rational numbers. It is not difficult to see that in this partition, the lower class does not have a maximum number, and the upper class does not have a minimum number. This shows that there are gaps between rational numbers, and if we cut through these gaps, the knife will fall into emptiness. This partition actually defines a new number $\sqrt{2}$, but it is not a rational number, as shown in \cref{fig:Dedekind-cut}.
 
 \begin{align*}
 A_1 &= \{r | r^2 < 2\}  & A_2 &= \{r | r^2 > 2\}
 \end{align*}
 
 \label{sec:Dedekind-cut}
-戴德金定义$\sqrt{2}$为上面这样一对集合$(A_1, A_2)$。他得到结论：\underdot{有理数}的每一个分割就叫作一个实数。包含端点的分割（$A_1$存在最大有理数或$A_2$存在最小有理数）叫作有理数，不包含端点的分割（$A_1$没有最大有理数且$A_2$没有最小有理数）叫作无理数。而实数正好包含有理数和无理数，用符号$\mathbb{R}$来表示。戴德金分割仅仅使用有理数定义了实数，直线上的每个点可以表示一个实数。戴德金的分割概念也给出了实数连续性的依据。
+Dedekind's definition of $\sqrt{2}$ is the pair of sets $(A_1, A_2)$ as described above. He concluded that every partition of rational numbers corresponds to a real number. A partition that includes an endpoint (where $A_1$ has a maximum rational number or $A_2$ has a minimum rational number) is called a rational number, while a partition that does not include an endpoint (where $A_1$ has no maximum rational number and $A_2$ has no minimum rational number) is called an irrational number. The set of real numbers, denoted by $\mathbb{R}$, includes both rational and irrational numbers. Dedekind's cut defined real numbers using only rational numbers, and every point on the line can be represented by a real number. The concept of Dedekind cuts also provides a basis for the continuity of real numbers.
 
-从毕达哥拉斯学派发现无理数到戴德金给出实数的严格定义，时光经历了两千多年\footnote{同一年，魏尔斯特拉斯通过有界单调序列理论，康托尔通过有理数序列理论也都从有理数出发定义出无理数，从而构筑起了实数理论。可谓殊途同归。}。戴德金自己对这个定义非常满意，他清楚地记得灵感迸发的那一天并自豪地说\citepage[1页]{Dedekind-1858}：
+It took more than two thousand years from the discovery of irrational numbers by the Pythagorean school to Dedekind's rigorous definition of real numbers\footnote{In the same year, Weierstrass defined irrational numbers using the theory of bounded monotone sequences, and Cantor defined them using the theory of rational number sequences, thus building up the theory of real numbers. It can be said that they all arrived at the same destination through different paths.}. Dedekind himself was very satisfied with this definition. He clearly remembered the day when inspiration struck and proudly said\citepage[p1]{Dedekind-1858}:
 
 \begin{quotation}
-人们常说微积分研究的是连续的量，然而关于这种连续性的解释却无处可寻…… 唯一的办法就是从算术的基本原理中探寻其真正起源，同时为连续性的本质确立一个真正的定义。我于1858年11月24日成功地做到了。
+The statement is so frequently made that the differential calculus deals with continuous magnitude, and yet an explanation of this continuity is nowhere given. . . . It then only remained to discover its true origin in the elements of arithmetic and thus at the same time secure a real definition of the essence of continuity. I succeeded Nov. 24 1858.
 \end{quotation}
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.4]{img/Dedekind}
- \caption{理查德·戴德金（1831～1916年）}
+ \caption{Richard Dedekind (1831 - 1916)}
  \label{fig:Dedekind}
 \end{figure}
 
 \begin{mdframed}
-\index{数学家!戴德金}
-戴德金是德国数学家、教育家。1831年10月6日生于德国的布伦瑞克镇的一个知识分子家庭。这里也是著名数学家高斯的故乡。戴德金的父亲为法学教授，母亲也是一位教授的女儿。1850年戴德金到哥廷根大学师从著名的数学大师高斯研究最小二乘法和高等测量，向斯特恩学习数论基础，向韦伯学习物理，他还选修过天文学。1852年他在高斯的指导下获得博士学位，博士论文是《关于欧拉积分的理论》。在哥廷根求学期间，他还结识了黎曼、狄利克雷。在与这些世界级的数学家交流中，他获益匪浅，并逐渐萌生了用算术性质来重新定义无理数的想法。1854年戴德金留校任代课教师。他很早就在教学中讲授抽象代数中的伽罗瓦理论并引入了域的概念。
+\index{Dedekind}
+Richard Dedekind (1831 - 1916, see \cref{fig:Dedekind}) was a German mathematician and educator. He was born on October 6, 1831, in the town of Braunschweig in Germany, into an intellectual family. This town was also the hometown of the famous mathematician Gauss. Dedekind's father was a professor of law, and his mother was also the daughter of a professor. In 1850, Dedekind went to the University of Göttingen to study under Gauss, researching least squares and advanced surveying, learning number theory foundations from Stern, and studying physics with Weber. He also took courses in astronomy. In 1852, under Gauss's guidance, he obtained his doctorate with a thesis on \emph{Theory of Euler Integrals}. During his studies at Göttingen, he also befriended Riemann and Dirichlet. Through interactions with these world-class mathematicians, he benefited greatly and gradually developed the idea of redefining irrational numbers using arithmetic properties. In 1854, Dedekind stayed at the university as a lecturer. He was one of the earliest to teach Galois theory in abstract algebra and introduced the concept of fields.
 
-戴德金为人谦逊。他的许多成果并不为当时的人所知。在狄利克雷去世之后，戴德金根据当时的笔记整理出了《数论讲义》这一名著。尽管戴德金在后继版本中添加了很多结论，但他却谦逊地将这本书记在了狄利克雷名下。令人遗憾的是，这种做法对其职业生涯造成了影响。他没有能获得哥廷根大学的终身教席，而是去了一家比较小的技术大学\citepage[119页]{StepanovRose15}——在他家乡的布伦瑞克高等工业学院。
+Dedekind was a modest person. Many of his achievements were not known to people at the time. After Dirichlet's death, Dedekind organized the notes at that time and published the masterpiece \emph{Lectures on Number Theory}. Although Dedekind added many conclusions in later versions, he humbly credited the book to Dirichlet. Unfortunately, this approach had an impact on his career. He did not obtain a permanent position at the University of Göttingen but went to a smaller technical university\citepage[p119]{StepanovRose15} — the Braunschweig University of Technology in his hometown.
 
-事物总是两面性的，在布伦瑞克，戴德金感觉自己有从事数学研究的充分时间与足够自由。1888年，戴德金提出了算术公理的完整系统，其中包括数学归纳法的准确表达方式\cite{Dedekind-1858}，直接影响了后来皮亚诺的自然数公理的诞生。戴德金的主要成就是在抽象代数方面。他研究过域、环、群、模等问题，并由德国数学家库默尔提出的理想数出发创造出了理想的概念。戴德金还是实数理论的建立者。现今数学上的许多命题和术语，都与他的名字联系在一起。
-
-%% 戴德金于1916年2月12日去世。说到他的去世，有一则趣闻。有一天，戴德金发现托博纳写的《数学家传记》中，赫然写到：1897年9月4日戴德金去世。出于纠正这个错误的想法，他给传记的编辑写去了一封信：“根据我本人的日记，我在这一天非常健康，而且与我的午餐客人，尊敬的朋友康托尔一起谈论着一些趣事，过得非常愉快。”\cite{HanXueTao16}
+However, this move turned out to be a blessing in disguise. In Brauschweig, Dedekind had more time and freedom to engage in mathematical research. In 1888, Dedekind proposed a complete system of axioms for arithmetic, including an accurate expression of mathematical induction\cite{Dedekind-1858}, which directly influenced the later birth of Peano's axioms for natural numbers. Dedekind's main achievements were in abstract algebra. He studied problems related to fields, rings, groups, modules, and created the concept of ideals based on the ideal numbers proposed by Kummer. Dedekind was also the founder of real number theory. Many propositions and terms in modern mathematics are associated with his name.
 \end{mdframed}
 
 \begin{Exercise}[label={ex:reals}]
 
-\Question{证明祖冲之的密率是分母在一万以内的所有分数中最接近$\pi$的。提示：利用祖率 $3.1415926 < \pi < 3.1415927$。\label{qn:113355best}
-}
+\Question{Show that Zu Chongzhi's approximation $\dfrac{355}{113}$ is the closest fraction to $\pi$ among all fractions with denominators less than 10,000. Hint: Use Zu's approximation $3.1415926 < \pi < 3.1415927$.\label{qn:113355best}}
 
-\Question{利用古人的方法手工计算$\sqrt{3}$到小数点后3位。\label{qn:calc-sqrt3}}
+\Question{Calculate $\sqrt{3}$ to three decimal places using the method of the ancients. \label{qn:calc-sqrt3}}
 
-\Question{阶乘$n! = 1 \times 2 \times 3 \dotsm n$，也可以递归地定义为$n! = n \times (n - 1)!$，利用这一点说明$0! = 1$。\label{qn:frac-of-zero}}
+\Question{Factorial $n! = 1 \times 2 \times 3 \dotsm n$ can also be defined recursively as $n! = n \times (n - 1)!$. Use this to show that $0! = 1$.\label{qn:zero-factorial}}
 
-\Question{利用$(m + 1)^4 - m^4$的二项式展开导出自然数立方和求和公式。\label{qn:sum-of-cubics}}
+\Question{Use the binomial expansion of $(m + 1)^4 - m^4$ to derive the formula for the sum of the first $n$ cubics. \label{qn:sum-of-cubics}}
 
-\Question{证明常数的导数为0。\label{qn:zero-derivative}}
+\Question{Show that the derivative of a constant is zero. \label{qn:zero-derivative}}
 
-\Question{用广义二项式定理将$\dfrac{1}{\sqrt{1 - x^2}}$展开。}
+\Question{Use the generalized binomial theorem to expand $\dfrac{1}{\sqrt{1 - x^2}}$. }
 
-\Question{利用极限$\lim_{\Delta x \to 0} \dfrac{\sin x}{x} = 1$证明$\lim_{x \to 0} \dfrac{\cos x - 1}{x} = 0$。提示：由余弦函数的倍角公式可推出$\cos x = 1 - 2\sin \dfrac{x}{2}$。\label{qn:cos-1-to-x}}
+\Question{Show that $\lim_{x \to 0} \dfrac{\cos x - 1}{x} = 0$ using the limit $\lim_{\Delta x \to 0} \dfrac{\sin x}{x} = 1$. Hint: Use the double angle formula for cosine to show that $\cos x = 1 - 2\sin^2 \dfrac{x}{2}$.\label{qn:cos-1-to-x}}
 
-\Question{求$\cos x$的导数。\label{qn:derivative-cos}}
+\Question{Find the derivative of $\cos x$.\label{qn:derivative-cos}}
 
-\Question{利用导数的定义证明导数的除法规则。\label{qn:derivative-division}}
+\Question{Use the definition of derivative to prove the quotient rule.\label{qn:derivative-division}}
 
-\Question{分别使用莱布尼茨公式、麦钦公式的前几项计算圆周率的近似值，比较收敛速度。如果你会编程，尝试用前100项计算圆周率的近似值。\label{qn:leibniz-pi}}
+\Question{Compute approximate values of $\pi$ using the first few terms of the Leibniz formula and the Machin formula, and compare their convergence rates. If you know programming, try calculating an approximate value of $\pi$ using the first 100 terms. \label{qn:leibniz-pi}}
 \end{Exercise}
 
-%% ========== 答案 ====================
+%% ========== Answer ====================
 
 \begin{Answer}[ref={ex:reals}]
 
-\Question{证明祖冲之的密率是分母在一万以内的所有分数中最接近$\pi$的。
+\Question{Show that Zu Chongzhi's approximation $\dfrac{355}{113}$ is the closest fraction to $\pi$ among all fractions with denominators less than 10,000.
 
   \begin{proof}
-$\pi$和$\dfrac{355}{113}$的误差为
+The error between $\pi$ and $\dfrac{355}{113}$ is,
 \[
 \delta \approx |\frac{355}{133} - 3.1415926| = 2.67 \times 10^{-7}
 \]
-假设存在既约分数$\dfrac{b}{a}$更接近$\pi$，则：
+Assume there is some irreducible fraction $\dfrac{b}{a}$ that is closer to $\pi$, then
 
 \[
 |\frac{b}{a} - \frac{355}{113}| \leq |\frac{b}{a} - \pi| + |\pi - \frac{355}{133}| \leq \delta + \delta = 2\delta
 \]
-通分
+Simplifying the left-hand side:
 \[
 \frac{|113b - 355a|}{113a} = \frac{k}{113a} \leq 2\delta
 \]
-其中$k = |113b - 355a| \geq 1$是正整数。因此：
+where $k = |113b - 355a| \geq 1$ is a positive integer. Therefore:
 
 \begin{align*}
 1 &\leq k \leq 113a \cdot 2\delta  \\
 a &\geq \frac{1}{226\delta} \approx \frac{1}{226 \times 2.67 \times 10^{-7}} > 16586 > 10000
 \end{align*}
-这个更接近$\pi$的分数的分母至少是16586，不可能小于一万。所以密率是所有分母在一万以内的分数中最接近$\pi$的。
+The denominator of any fraction closer to $\pi$ must be at least 16586, which is greater than 10000. Therefore, Zu Chongzhi's approximation $\dfrac{355}{113}$ is the closest fraction to $\pi$ among all fractions with denominators less than 10,000.
   \end{proof}
 }
 
-\Question{利用古人的方法手工计算$\sqrt{3}$到小数点后3位。
+\Question{Calculate $\sqrt{3}$ to three decimal places using the method of the ancients.
 
 \vspace{2mm}
-先估计整数部分：$1^2 < 3 < 2^2 = 4$，所以整数部分为1。接下来估计十分位：
+First, extimate the integral part: $1^2 < 3 < 2^2 = 4$, hence the integral part is 1. Next, estimate the tenths digit:
 \begin{align*}
 & (1 + \frac{a}{10})^2 < 3  \\
 & 1 + \frac{a}{5} + \frac{a^2}{100} < 3 \\
 & \Rightarrow a = 7
 \end{align*}
-接下来估计百分位：
+Next, estimate the hundredths digit:
 \begin{align*}
 & (1.7 + \frac{b}{100})^2 < 3 \\
 &2.89 + \frac{3.4}{100}b + \frac{b^2}{10000} < 3 \\
 &3.4b + \frac{b^2}{100} < 300 - 289 = 11 \\
 & \Rightarrow b = 3
 \end{align*}
-接下来估计千分位：
+Next, estimate the thousandths digit:
 \begin{align*}
 & (1.73 + \frac{c}{1000})^2 < 3 \\
 & 2.9929 + \frac{3.46}{1000}c + \frac{c^2}{1000000} < 3 \\
 & 3.46c + \frac{c^2}{1000} < 7.01 \\
 & \Rightarrow c = 2
 \end{align*}
-故$\sqrt{3} \approx 1.732$
+Therefore, $\sqrt{3} \approx 1.732$
 }
 
-\Question{阶乘$n! = 1 \times 2 \times 3 \dotsm n$，也可以递归地定义为$n! = n \times (n - 1)!$，利用这一点说明$0! = 1$。
+\Question{Factorial $n! = 1 \times 2 \times 3 \dotsm n$ can also be defined recursively as $n! = n \times (n - 1)!$. Use this to show that $0! = 1$.
 
   \begin{proof}
-方法一：考虑1的阶乘的递归定义：$1! = 1 \times 0!$。另一方面$1! = 1$。因此$0! = 1$。
+Method 1: Consider the recursive definition of $1! = 1 \times 0!$. On the other hand, $1! = 1$. Therefore, $0! = 1$.
 
-方法二：两种定义须一致，将递归展开：
+Method 2: The two definitions must be consistent, so we can expand the recursion:
 \begin{align*}
 n! & = 1 \times 2 \times 3 \dotsm n = n \times (n-1)!  \\
    & = n \times (n-1) \times (n-2)! \\
    & = n \times (n-1) \times (n-2) \dotsm 1 \times 0!
 \end{align*}
-约去两边相同的因子得$1 = 0!$
+Canceling both sides by $1 \times 2 \times 3 \dotsm n$ gives $1 = 0!$
   \end{proof}
-回顾第\ref{sec:unit}节单位元的定义，我们看到“空乘积”（empty product）的结果是乘法单位圆1；而“空和”（empty sum）的结果是加法单位圆0。
+Remind that in multiplication, the \enquote{empty product} results in the multiplicative identity 1; by analogue, in addition, the \enquote{empty sum} results in the additive identity 0, as defined in \cref{sec:unit}.
 }
 
-\Question{利用$(m + 1)^4 - m^4$的二项式展开导出自然数立方和求和公式。
+\Question{Use the binomial expansion of $(m + 1)^4 - m^4$ to derive the formula for the sum of the first $n$ cubics.
 
 \vspace{2mm}
 \begin{align*}
 (m + 1)^4 - m^4 &= m^4 + 4m^3 + 6m^2 + 4m + 1 - m^4 \\
   &= 4m^3 + 6m^2 + 4m + 1
 \end{align*}
-依次代入$m = 1, 2, \dotsc, n$，并相加：
+Substitute $m = 1, 2, \dotsc, n$ in, and add them up:
 
 \[(n+1)^4 - 1^4 = 4S_3 + 6S_2 + 4S_1 + n\]
-其中$S_i = 1^i + 2^i + 3^i + \dotsb + n^i$，为自然数的$i$次方和。所以：
+where $S_i = 1^i + 2^i + 3^i + \dotsb + n^i$, is the sum of the $i$-th powers of the first $n$ natural numbers. Therefore,
 \begin{align*}
 S_3 &= \frac{(n + 1)^4 - 1 - 6S_2 - 4S_1 - n}{4}  \\
     &= \frac{(n+1)^4 - 6\frac{n(n+1)(2n+1)}{6} - 4\frac{n(n+1)}{2} - n - 1}{4} \\
@@ -2795,7 +2792,7 @@ S_3 &= \frac{(n + 1)^4 - 1 - 6S_2 - 4S_1 - n}{4}  \\
 \end{align*}
 }
 
-\Question{证明常数的导数为0。
+\Question{Show that the derivative of a constant is zero.
 
   \begin{proof}
     \begin{align*}
@@ -2803,7 +2800,7 @@ S_3 &= \frac{(n + 1)^4 - 1 - 6S_2 - 4S_1 - n}{4}  \\
     \end{align*}
   \end{proof}
 }
-\Question{用广义二项式定理将$\dfrac{1}{\sqrt{1 - x^2}}$展开。
+\Question{Use the generalized binomial theorem to expand $\dfrac{1}{\sqrt{1 - x^2}}$. 
 
 \vspace{2mm}
 
@@ -2812,7 +2809,7 @@ S_3 &= \frac{(n + 1)^4 - 1 - 6S_2 - 4S_1 - n}{4}  \\
 &= 1 + \frac{1}{2}x^2 + \frac{1 \cdot 3}{2 \cdot 4}x^4 + \frac{1 \cdot 3 \cdot 5}{2 \cdot 4 \cdot 6}x^6 + \dotsb
 \end{align*}
 
-其中的关键是：
+The key step is:
 
 \begin{align*}
 \binom{-\frac{1}{2}}{k} &= \frac{\frac{-1}{2}\frac{-3}{2}\dotsm\frac{-(2k-1)}{2}}{1\cdot2\cdot3\dotsm k} \\
@@ -2821,17 +2818,17 @@ S_3 &= \frac{(n + 1)^4 - 1 - 6S_2 - 4S_1 - n}{4}  \\
 \end{align*}
 }
 
-\Question{利用极限$\lim_{\Delta x \to 0} \dfrac{\sin x}{x} = 1$证明$\lim_{x \to 0} \dfrac{\cos x - 1}{x} = 0$。提示：由余弦函数的倍角公式可推出$\cos x = 1 - 2\sin \dfrac{x}{2}$。
+\Question{Show that $\lim_{x \to 0} \dfrac{\cos x - 1}{x} = 0$ using the limit $\lim_{\Delta x \to 0} \dfrac{\sin x}{x} = 1$. Hint: Use the double angle formula for cosine to show that $\cos x = 1 - 2\sin^2 \dfrac{x}{2}$.
 
   \begin{proof}
-    由余弦函数的和角公式$\cos(\alpha + \beta) = \cos \alpha \cos \beta - \sin \alpha \sin \beta$，代入$\alpha = \beta$可得倍角公式：
+    By the sum angle formula for cosine, $\cos(\alpha + \beta) = \cos \alpha \cos \beta - \sin \alpha \sin \beta$, substituting $\alpha = \beta$ gives the double angle formula:
 
     \begin{align*}
       \cos x = \cos(2\frac{x}{2}) &= \cos^2 \frac{x}{2} - \sin^2 \frac{x}{2} \\
-  &= (1 - \sin^2 \frac{x}{2}) - \sin^2 \frac{x}{2} && \text{由} \sin^2 \theta + \cos^2 \theta = 1 \\
+  &= (1 - \sin^2 \frac{x}{2}) - \sin^2 \frac{x}{2} && \text{by } \sin^2 \theta + \cos^2 \theta = 1 \\
   & = 1 - 2\sin^2 \frac{x}{2}
     \end{align*}
-  代入要证明的极限：
+  Substituting this into the limit to be proved:
   \begin{align*}
     \lim_{x \to 0} \frac{\cos x - 1}{x} &= \lim_{x \to 0} \frac{(\cancel{1} - 2\sin^2 \frac{x}{2}) - \cancel{1}}{2 \frac{x}{2}} \\
   &= \lim_{x \to 0} \frac{- \sin^2 \frac{x}{2}}{\frac{x}{2}} \\
@@ -2840,7 +2837,7 @@ S_3 &= \frac{(n + 1)^4 - 1 - 6S_2 - 4S_1 - n}{4}  \\
   \end{proof}
 }
 
-\Question{求$\cos x$的导数。
+\Question{Find the derivative of $\cos x$.
 
   \begin{align*}
 (\cos x)' & = \lim_{\Delta x \to 0} \frac{\cos (x + \Delta x) - \cos x}{\Delta x} \\
@@ -2850,10 +2847,10 @@ S_3 &= \frac{(n + 1)^4 - 1 - 6S_2 - 4S_1 - n}{4}  \\
   \end{align*}
 }
 
-\Question{利用导数的定义证明导数的除法规则。
+\Question{Use the definition of derivative to prove the quotient rule.
 
 \begin{proof}
-设\(f(x) = \frac{u(x)}{v(x)}\)，其中\(v(x) \neq 0\)，且\(u(x)\)、\(v(x)\)均可导。据导数定义：
+Let \(f(x) = \frac{u(x)}{v(x)}\), where \(v(x) \neq 0\), and \(u(x)\), \(v(x)\) both have derivatives at point \(x\). By the definition of derivative, we have:
 
 \begin{align*}
 f'(x) & = \lim_{\Delta x \to 0} \frac{f(x+\Delta x) - f(x)}{\Delta x} \\
@@ -2866,36 +2863,37 @@ f'(x) & = \lim_{\Delta x \to 0} \frac{f(x+\Delta x) - f(x)}{\Delta x} \\
 \end{proof}
 }
 
-\Question{分别使用莱布尼茨公式、麦钦公式的前几项计算圆周率的近似值，比较收敛速度。如果你会编程，尝试用前100项计算圆周率的近似值。
+\Question{Compute approximate values of $\pi$ using the first few terms of the Leibniz formula and the Machin formula, and compare their convergence rates. If you know programming, try calculating an approximate value of $\pi$ using the first 100 terms.
 
 \vspace{2mm}
-莱布尼茨公式：
+Leibniz formula:
 \[
 4(1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \frac{1}{9} - \frac{1}{11} + \frac{1}{13}) = 3.28
 \]
 
-麦钦公式：
+Machin formula:
 \begin{align*}
  & 4[4(1 - \frac{1}{3}\frac{1}{5} + \frac{1}{5}(\frac{1}{5})^3 - \frac{1}{7}(\frac{1}{5})^5 + \frac{1}{9}(\frac{1}{5})^7 - \frac{1}{11}(\frac{1}{5})^9 + \frac{1}{13}(\frac{1}{5})^{11}) - \\
 & (1 - \frac{1}{3}\frac{1}{239} + \frac{1}{5}(\frac{1}{239})^3 - \frac{1}{7}(\frac{1}{239})^5 + \frac{1}{9}(\frac{1}{239})^7 - \frac{1}{11}(\frac{1}{239})^9 + \frac{1}{13}(\frac{1}{239})^{11})] \\
 = & 3.1415926536
 \end{align*}
 
-莱布尼茨公式计算Scratch程序：
+Scratch program for calculating $\pi$ using Leibniz formula:
+
 \begin{center}
  \includegraphics[scale=0.4]{img/scratch-leibniz}
- \captionof{figure}{莱布尼茨公式计算，结果：3.151493}
+ \captionof{figure}{Leibniz formula calculation, result: 3.151493}
  \label{fig:scratch-leibniz}
 \end{center}
 
-麦钦公式计算Scratch程序：
+Scratch program for calculating $\pi$ using Machin formula:
 \begin{center}
  \includegraphics[scale=0.4]{img/scratch-machin}
- \captionof{figure}{麦钦公式计算，结果：3.141593}
+ \captionof{figure}{Machin formula calculation, result: 3.141593}
  \label{fig:scratch-machin}
 \end{center}
 
-下面是对应的Python例子程序：
+Python program for calculating $\pi$ using both formulas:
 \begin{lstlisting}[language = Python, frame = single]
 def gregory(x, n):
     s = 0
@@ -2916,7 +2914,7 @@ def machin(n):
 \end{Answer}
 
 \ifx\wholebook\relax \else
-\section{参考答案}
+\section{Answers}
 \shipoutAnswer
 
 \subimport{inc/}{evenpfnum-zh-cn}
