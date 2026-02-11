@@ -1,8 +1,8 @@
-\section{关于正弦函数的极限}
+\section{A limit related to the sine function}
 \phantomsection
 \label[appendix]{app:calculus}
 
-通过观察单位圆上的正弦$\sin x$和\underdot{弧度}$x$（如\cref{fig:unit-circle-trigonometric}），弧长PQ等于$x$，它趋近于0时，正弦$\sin x$趋近于弧长，即：
+Observe the sine function $\sin x$ and the \underdot{radian} $x$ on the unit circle (as shown in \cref{fig:unit-circle-trigonometric}), the arc length PQ is equal to $x$, when it approaches 0, the $\sin x$ approaches the arc length, that is:
 
 \begin{figure}[htbp]
   \centering
@@ -30,7 +30,7 @@
 
     \fill[black] (1,0) circle (0.02) node[below right] {$Q(1,0)$};
   \end{tikzpicture}
-  \caption{单位圆上的三角函数}
+  \caption{Unit circle and trigonometric functions.}
   \label{fig:unit-circle-trigonometric}
 \end{figure}
 
@@ -38,9 +38,9 @@
 \lim_{x \to 0} \frac{\sin x}{x} = 1
 \ee
 
-\index{夹逼定理} \index{三明治定理}
+\index{squeeze theorem} \index{sandwich theorem}
 \begin{proof}
-我们用著名的“夹逼定理”（也叫做三明治定理）来证明这一极限。过\cref{fig:unit-circle-trigonometric}中的Q点作圆的切线交OP的延长线，这样就构成了外切弧PQ的直角三角形。它的两个直角边分别为1和$\tan x$。现在考虑弧PQ内接直角三角形（它的两个直角边分别为$\cos x$和$\sin x$）的面积$S_i$，弧PQ所在的扇形面积$S$，弧PQ外切直角三角形的面积$S_o$：
+We are going to use the famous \underdot{Squeeze Theorem} (also called the Sandwich Theorem) to prove this limit. Draw a tangent line at point $Q$ in \cref{fig:unit-circle-trigonometric} that intersects the extension of $OP$, thus forming a right triangle with the outer arc $PQ$. Its two legs are 1 and $\tan x$ respectively. Now consider the inscribed right triangle formed by the arc $PQ$ (its two legs are $\cos x$ and $\sin x$ respectively), the area of the sector formed by the arc $PQ$, denoted by $S$, and the area of the circumscribed right triangle formed by the arc $PQ$, denoted by $S_o$:
 
 \begin{align*}
   S_i &< S < S_o \\
@@ -49,40 +49,40 @@
   \cos x &< \frac{x}{\sin x} < \frac{1}{\cos x} &&\text{两边除以}\sin x \\
   \frac{1}{\cos x} &> \frac{\sin x}{x} > \cos x &&{取倒数} \\
 \end{align*}
-注意这里我们限制了$x > 0$，现在对不等式取$x \to 0^+$极限。$\cos x$和它的倒数的极限都是1。所以中间所夹的$\dfrac{\sin x}{x}$的极限也是1。读者可以证明$x < 0$，从左侧逼近时的情况。
+Suppose $x > 0$, now take the limit $x \to 0^+$. The limits of $\cos x$ and its reciprocal are both 1. So the limit of $\dfrac{\sin x}{x}$, which is squeezed in between, must also be 1. One may also prove the case when $x < 0$, approaching from the left side.
 \end{proof}
 
-\section{正切函数的连分数表示}
+\section{Tangent function in continued fraction}
 \phantomsection
 \label[appendix]{app:tan-as-cfrac}
 
-正切函数是正弦函数与余弦函数的商，代入$\sin x, \cos x$的展开式得：
+Tangent function is the quotient of sine function and cosine function, substituting the expansions of $\sin x$ and $\cos x$ gives:
 
 \begin{align*}
 \tan x & = \frac{\sin x}{\cos x} = \frac{x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \dotsb}{1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \dotsb} \\
-  &= x \frac{1 - \frac{x^2}{3!} + \frac{x^4}{5!} - \frac{x^6}{7!} + \dotsb}{1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \dotsb} && \text{分子提出}x \\
+  &= x \frac{1 - \frac{x^2}{3!} + \frac{x^4}{5!} - \frac{x^6}{7!} + \dotsb}{1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \dotsb} && \text{extract }x \text{from the nominator} \\
   &= x \frac{B(x)}{A(x)} = \frac{x}{\frac{A(x)}{B(x)}}
 \end{align*}
 
-其中级数$A(x) = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \dotsb$，$B(x) = 1 - \frac{x^2}{3!} + \frac{x^4}{5!} - \frac{x^6}{7!} + \dotsb$。接下来用带余数的除法求$A(x)$除以$B(x)$的商和余式：
+Where the series $A(x) = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \dotsb$，$B(x) = 1 - \frac{x^2}{3!} + \frac{x^4}{5!} - \frac{x^6}{7!} + \dotsb$. Next we are going to apply the division algorithm to the two series $A(x)$ and $B(x)$:
 
 \begin{align*}
-A(x) &= 1 \cdot B(x) + R_1(x) && \text{商1，余}R_1(x) \\
-R_1(x) &= A(x) - B(x) && \text{商1可消去常数项} \\
+A(x) &= 1 \cdot B(x) + R_1(x) && \text{quotient is 1, remainder is }R_1(x) \\
+R_1(x) &= A(x) - B(x) && \text{the quotient 1 can cancel the constant term} \\
   &= -(\frac{1}{2!} - \frac{1}{3!})x^2 + (\frac{1}{4!} - \frac{1}{5!})x^4 -(\frac{1}{6!} - \frac{1}{7!})x^6 + \dotsb \\
   &= - \frac{2}{3!}x^2 + \frac{4}{5!}x^4 - \frac{6}{7!}x^6 + \dotsb \\
   &= - \frac{1}{3}\frac{1}{1!}x^2 + \frac{1}{5}\frac{1}{3!}x^4 - \frac{1}{7}\frac{1}{5!}x^6 + \dotsb \\
-  &= -x^2(\frac{1}{3} - \frac{1}{5}\frac{1}{3!}x^2 + \frac{1}{7}\frac{1}{5!}x^4 - \dotsb) = -x^2 R_1'(x) && \text{提取出}-x^2
+  &= -x^2(\frac{1}{3} - \frac{1}{5}\frac{1}{3!}x^2 + \frac{1}{7}\frac{1}{5!}x^4 - \dotsb) = -x^2 R_1'(x) && \text{extract }-x^2
 \end{align*}
 
-其中我们利用了关系$\frac{2n}{(2n + 1)!} = \frac{1}{2n+1}\frac{1}{(2n-1)!}$。此时连分数化成了：
+Here we use the relation $\frac{2n}{(2n + 1)!} = \frac{1}{2n+1}\frac{1}{(2n-1)!}$ to simplify the coefficients. Now the tangent function can be written as a continued fraction:
 
 \[
 \tan x = \frac{x}{\frac{A(x)}{B(x)}} = \cfrac{x}{1 + \frac{R_1(x)}{B(x)}}
  = \cfrac{x}{1 + \frac{-x^2 R_1'(x)}{B(x)}} = \cfrac{x}{1 - \cfrac{x^2}{\frac{B(x)}{R_1'(x)}}}
 \]
 
-其中$R_1'(x) = \frac{1}{3} - \frac{1}{5}\frac{1}{3!}x^2 + \frac{1}{7}\frac{1}{5!}x^4 - \dotsb$是$R_1(x)$提取出$-x^2$后剩余的部分。接下来迭代地把$\frac{B(x)}{R_1'(x)}$化为连分数。再次利用带余数除法求$B(x)$除以$R_1'(x)$, 注意到商3可消去常数项：
+where $R_1'(x) = \frac{1}{3} - \frac{1}{5}\frac{1}{3!}x^2 + \frac{1}{7}\frac{1}{5!}x^4 - \dotsb$ is the remaining part of $R_1(x)$ after extracting $-x^2$. Next we are going to iteratively convert $\frac{B(x)}{R_1'(x)}$ into a continued fraction. Again using the division algorithm to divide $B(x)$ by $R_1'(x)$, note that the quotient 3 can cancel the constant term:
 
 \begin{align*}
 B(x) &= 3R_1'(x) + R_2(x)  \\
@@ -91,7 +91,7 @@ R_2(x) &= B - 3R_1'(x) \\
    &= -x^2(\frac{1}{3 \cdot 5} - \frac{1}{5 \cdot 7}\frac{1}{3!}x^2 + \frac{1}{7 \cdot 9}\frac{1}{5!}x^4 - \dotsb) = -x^2 R_2'(x)
 \end{align*}
 
-这里我们利用了关系$\frac{2n}{2n+3}\frac{1}{(2n+1)!} = \frac{1}{(2n + 1)(2n + 3)}\frac{1}{(2n - 1)!}$。此时连分数化成了：
+Here we use the relation $\frac{2n}{2n+3}\frac{1}{(2n+1)!} = \frac{1}{(2n + 1)(2n + 3)}\frac{1}{(2n - 1)!}$ to simplify the coefficients. Now the tangent function can be written as:
 
 \[
 \tan x = \cfrac{x}{1 - \cfrac{x^2}{\frac{B(x)}{R_1'(x)}}}
@@ -99,7 +99,7 @@ R_2(x) &= B - 3R_1'(x) \\
  =\cfrac{x}{1 - \cfrac{x^2}{3 - \cfrac{x^2}{\frac{R_1'(x)}{R_2'(x)}}}}
 \]
 
-其中$R_2'(x) = \frac{1}{3 \cdot 5} - \frac{1}{5 \cdot 7}\frac{1}{3!}x^2 + \frac{1}{7 \cdot 9}\frac{1}{5!}x^4 - \dotsb$是$R_2(x)$提取出$-x^2$后剩余的部分。接下来用同样方法求$\frac{R_1'(x)}{R_2'(x)}$的连分数表示。再次用带余数除法求$R_1'(x)$除以$R_2'(x)$，注意到商5可以消去常数项：
+where $R_2'(x) = \frac{1}{3 \cdot 5} - \frac{1}{5 \cdot 7}\frac{1}{3!}x^2 + \frac{1}{7 \cdot 9}\frac{1}{5!}x^4 - \dotsb$ is the remaining part of $R_2(x)$ after extracting $-x^2$. Next we are going to iteratively convert $\frac{R_1'(x)}{R_2'(x)}$ into a continued fraction. Again using the division algorithm to divide $R_1'(x)$ by $R_2'(x)$, note that the quotient 5 can cancel the constant term:
 
 \begin{align*}
 R_1'(x) &= 5R_2'(x) + R_3(x)  \\
@@ -108,15 +108,15 @@ R_3(x) &= R_1'(x) - 5R_2'(x) \\
    &= -x^2(\frac{1}{3 \cdot 5 \cdot 7} - \frac{1}{5 \cdot 7 \cdot 9}\frac{1}{3!}x^2 + \frac{1}{7 \cdot 9 \cdot 11}\frac{1}{5!}x^4 - \dotsb) = -x^2 R_3'(x)
 \end{align*}
 
-此时连分数化成了：
+The continued fraction of tangent function can be written as:
 
 \[
 \tan x = \cfrac{x}{1 - \cfrac{x^2}{3 - \cfrac{x^2}{\frac{R_1'(x)}{R_2'(x)}}}} =
   \cfrac{x}{1 - \cfrac{x^2}{3 - \cfrac{x^2}{5 - \cfrac{x^2}{\frac{R_2'(x)}{R_3'(x)}}}}}
 \]
 
-\index{正切函数的连分数}
-不断重复上述步骤最终得到正切函数的连分数：
+\index{tangent function in continued fraction}
+Repeat this process indefinitely to get the continued fraction of the tangent function:
 
 \begin{align*}
 \tan x  &= \cfrac{x}{1 - \cfrac{x^2}{3 - \cfrac{x^2}{5 - \cfrac{x^2}{7 - \cfrac{x^2}{\dotso}}}}}
