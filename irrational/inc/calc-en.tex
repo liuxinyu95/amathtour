@@ -46,8 +46,8 @@ We are going to use the famous \underdot{Squeeze Theorem} (also called the Sandw
   S_i &< S < S_o \\
   \frac{1}{2}\cos x \sin x &< \frac{1}{2}x < \frac{1}{2}1\cdot \tan x \\
   \cos x \sin x &< x < \tan x = \frac{\sin x}{\cos x} \\
-  \cos x &< \frac{x}{\sin x} < \frac{1}{\cos x} &&\text{两边除以}\sin x \\
-  \frac{1}{\cos x} &> \frac{\sin x}{x} > \cos x &&{取倒数} \\
+  \cos x &< \frac{x}{\sin x} < \frac{1}{\cos x} &&\text{divided both sides by }\sin x \\
+  \frac{1}{\cos x} &> \frac{\sin x}{x} > \cos x && \text{reciprocal of all three sides} \\
 \end{align*}
 Suppose $x > 0$, now take the limit $x \to 0^+$. The limits of $\cos x$ and its reciprocal are both 1. So the limit of $\dfrac{\sin x}{x}$, which is squeezed in between, must also be 1. One may also prove the case when $x < 0$, approaching from the left side.
 \end{proof}
@@ -60,7 +60,7 @@ Tangent function is the quotient of sine function and cosine function, substitut
 
 \begin{align*}
 \tan x & = \frac{\sin x}{\cos x} = \frac{x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \dotsb}{1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \dotsb} \\
-  &= x \frac{1 - \frac{x^2}{3!} + \frac{x^4}{5!} - \frac{x^6}{7!} + \dotsb}{1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \dotsb} && \text{extract }x \text{from the nominator} \\
+  &= x \frac{1 - \frac{x^2}{3!} + \frac{x^4}{5!} - \frac{x^6}{7!} + \dotsb}{1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \dotsb} && \text{extract }x \text{ from the nominator} \\
   &= x \frac{B(x)}{A(x)} = \frac{x}{\frac{A(x)}{B(x)}}
 \end{align*}
 
