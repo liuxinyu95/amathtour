@@ -1,6 +1,6 @@
 \ifx\wholebook\relax \else
 
-\documentclass[b5paper]{ctexart}
+\documentclass[b5paper]{article}
 \usepackage[nomarginpar
   %, margin=.5in
 ]{geometry}
@@ -9,89 +9,89 @@
 \addtolength{\evensidemargin}{-0.05in}
 \addtolength{\textwidth}{0.1in}
 
-\usepackage[cn]{../prelude}
+\usepackage[en]{../prelude}
 
 \setcounter{page}{1}
 
 \begin{document}
 
-\title{复数}
+\title{Complex numbers}
 
-\author{刘新宇
-\thanks{{\bfseries 刘新宇} \newline
+\author{Xinyu LIU
+\thanks{{\bfseries Xinyu LIU} \newline
   Email: liuxinyu99@hotmail.com \newline}
   }
 
 \maketitle
 \fi
 
-\markboth{复数}{数的旅程}
+\markboth{Complex numbers}{A Tour of Numbers}
 
 \ifx\wholebook\relax
-\chapter{复数}
+\chapter{Complex numbers}
 \fi
 
-%% On earth there is nothing great but man; and in man there is nothing great but mind.
-\epigraph{地球上最伟大的是人，人之中最伟大的是心灵。}{威廉·汉密尔顿}
+\epigraph{On earth there is nothing great but man; and in man there is nothing great but mind.}{William Hamilton}
 
-读过金庸武侠小说的读者一定对“华山论剑”津津乐道。天下武林中的顶级高手约定在华山比武论剑。大家各自身怀秘不外传的绝世武功，通过比武确定谁是真正的天下武功第一。十六世纪的意大利也上演了精彩的华山论剑。只不过没有刀光剑影、没有拳脚身法，而是一场关于数学与荣誉的挑战。1535年2月13日深夜，塔尔塔利亚在威尼斯的家中踱来踱去，为即将到来的挑战苦思冥想。文艺复兴时期的意大利，学者间经常进行骑士般的公开挑战。这种挑战并不使用刀剑火枪进行决斗，双方各自向对方提出同等数目的数学题目，并在规定时间内作答。答出正确多的人获胜。胜利的一方赢得荣誉或一定数目的奖金。这种一对一的“单挑”发生在知名学者之间，通常在大教堂这类城市公共场所进行，引起众人围观。有时甚至市长或者贵族也会前来观看，因而胜负具有非常的意义，影响双方的社会地位、学术评价甚至职业发展。
+At the night of February 13, 1535, Tartaglia was pacing back and forth in his house in Venice, pondering over the upcoming challenge. During the Renaissance period in Italy, scholars often engaged in public challenges that were knightly in nature. These challenges did not involve swords or guns but were mathematical contests where both parties would present a set of mathematical problems to each other and solve them within a specified time. The one who solved more correctly would win. The victor would earn honor or a certain amount of money. These 1:1 \enquote{duels} took place between well-known scholars, usually in public places like cathedrals, attracting crowds of onlookers. Sometimes even mayors or nobles would come to watch, making the outcome highly significant, affecting the social status, academic reputation, and even career development of both parties.
 
-例如1225年，神圣罗马帝国皇帝腓特烈二世在西西里行宫接见了斐波那契。宫廷学者看不起商人出身的数学家，于是向斐波那契发起了挑战。斐波那契成功解决了全部问题，为自己赢得了荣誉。这些题目中包含了一道一元三次方程\footnote{当时还没有代数符号，是用文字描述的，如：找到一个数，其立方加上其平方的两倍再加上其十倍是二十。}：\[x^3 + 2x^2 + 10x = 20\]
+We mentioned in \cref{sec:fibonacci-Liber-Abaci}, that Fibonacci was invited to the court of Frederick II, the Holy Roman Emperor, in Sicily in 1225. The court scholars looked down on Fibonacci as a mathematician of merchant origin and challenged him with a series of problems. Fibonacci successfully solved all the problems, earning himself great honor. Among these problems was a cubic equation\footnote{At that time, there were no algebraic symbols; the problem was described in words, such as: Find a number such that its cube plus twice its square plus ten times itself equals twenty.}:\[x^3 + 2x^2 + 10x = 20\]
 
-斐波那契使用古巴比伦的60进制数值解法给出了正确答案：
+Fibonacci gave a numerical answer in Babylonian sexagesimal:
+
 \[
 1^022^{I}7^{II}42^{III}33^{IV}4^{V}40^{VI} = 1 + \frac{22}{60} + \frac{7}{60^2} + \frac{42}{60^3} + \dotsb
 \]
 
-相当于十进制小数1.3688081075，精确到了小数点后9位。这种公开挑战也造成了一种奇特现象：学者们把自己的研究成果视为高度机密。因为这样可以使得他在挑战中获得优势。一旦泄露，对方就能解出自己提出的问题。学者们在生前不发表自己的成果，而是在死前传给信任的门生。这在“不发表就发霉”的今天是很难理解的\cite{HanXueTao2012}。
+It is approximately $1.3688081075$ in decimal, accurate to 9 decimal places. Such public challenge also created a peculiar phenomenon: scholars treated their research results as highly confidential. This was because it could give them an advantage in the challenge. Once leaked, the opponent could solve the problem they proposed. Scholars would not publish their results during their lifetime but would pass them on to trusted disciples before their death. This is hard to understand in today's world of \enquote{publish or perish} \cite{HanXueTao2012}.
 
-塔尔塔利亚面临的挑战就是关于三次方程的，对手名叫费奥尔\footnote{安东尼奥・马里亚・费奥尔，Antonio Maria Fior}。尽管古巴比伦人在公元前2000左右就掌握了一元二次方程的解法，但人们在接下来的3500多年一直没有突破一般三次方程。人们并不满足于斐波那契的数值解法，而希望得到求根公式。所谓\underdot{一般}是指形如$ax^3 + bx^2 + cx + d = 0$的三次方程，特殊三次方程，如$x^3 = a$自然容易解出一个\footnote{另外两个根是复数：$\dfrac{-1 \pm i\sqrt{3}}{2}\sqrt[3]{a}$}根$x = \sqrt[3]{a}$。塔尔塔利亚经过自己的努力，独立发现了形如$x^3 + ax^2 = b$这种特殊三次方程的解。
+The challenge Tartaglia faced was about cubic equations, and his opponent was Antonio Maria Fior. Although the Babylonians had already been able to solve quadratic equations around 2000 BC, there was no breakthrough in solving general cubic equations for the next 3500 years. People were not satisfied with the numerical solution (as what Fibonacci had done) but wanted a formula. The term \enquote{general} refers to cubic equations of the form $ax^3 + bx^2 + cx + d = 0$. Special cubic equations, such as $x^3 = a$, are trivial, yielding a root $x = \sqrt[3]{a}$\footnote{The other two roots are complex: $\dfrac{-1 \pm i\sqrt{3}}{2}\sqrt[3]{a}$}. Tartaglia independently discovered the solution to a special cubic equation of the form $x^3 + ax^2 = b$.
 
-但费奥尔不断向世人吹嘘他会解三次方程，是意大利最好的学者，并向塔尔塔利亚发起挑战。双方约定各出30道题目，用火漆封好，在教堂决出谁更优秀。塔尔塔利亚心中忐忑不安。从费奥尔向别人炫耀的题目中，他隐隐感觉到费奥尔所能解出的三次方程不是$x^3 + ax^2 = b$，而是另一种形式：$x^3 + ax = b$，例如：“找到一个数，把它的立方加到自身上等于6”（相当于$x^3 + x = 6$）。塔尔塔利亚不知道如何解出这种方程\cite{MacTour-Tartaglia-Cardan}，他为此辗转反侧，茶饭不思。他思绪万千，童年的一幕幕不断闪现在脑海中。
+But Fior kept boasting about his ability to solve cubic equations, claiming to be the best mathematician in Italy, and challenged Tartaglia. Both parties agreed to present 30 problems each and determine who was superior in a cathedral. Tartaglia was anxious. It seemed that the type of cubic equations Fior could solve was not $x^3 + ax^2 = b$, but another form: $x^3 + ax = b$, such as: \enquote{Find a number such that when its cube is added to itself equals 6} (equivalent to $x^3 + x = 6$). Tartaglia did not know how to solve this type of equation\cite{MacTour-Tartaglia-Cardan}. He couldn't sleep at that night, many thoughts and scenes from his childhood kept flashing in his mind.
 
-\index{数学家!塔尔塔利亚}
-塔尔塔利亚原名尼科洛・丰塔纳，约1500年出生于意大利的布雷西亚。父亲米凯莱·丰塔纳是一名邮递员，在布雷西亚周边的山区送邮件。家中有两男一女三个孩子，生活贫苦。尼科洛6岁时，父亲在送信的路上被人谋杀。失去了顶梁柱，全家陷入了极度贫困。更可怕的灾难还在后面。1512年，法军进攻布雷西亚\footnote{1494～1559年爆发了意大利战争。法国国王路易十二企图征服意大利，这遭到了西班牙哈布斯堡王朝等欧洲列强的反对，引发了战争。}，为了报复布雷西亚人的坚决抵抗，法军在攻占后杀死了4.6万人。母亲带着尼科洛和妹妹想躲进教堂避难，但尼科洛还是在混乱中被一名法国士兵砍伤了面部，嘴巴上有两道触目惊心的伤痕。母亲找到了奄奄一息的孩子，但却没有钱请医生，她只好每天给他舔舐伤口。尼科洛奇迹般地活了下来，但是却因伤终身口吃。为此他得到了一个外号“小结巴”，塔尔塔利亚就是意大利语结巴的意思。他年长后一直留着胡子以遮掩脸上的伤疤（见\cref{fig:tartaglia}）。
+\index{Tartaglia}
+Tartaglia's real name was Niccolò Fontana, born around 1500 in Brescia, Italy. His father, Michele Fontana, was a postman who delivered mail in the mountainous areas around Brescia. The family had three children, two boys and a girl, and lived in poverty. When Niccolò was six years old, his father was murdered while delivering mail. Losing the breadwinner, the family fell into extreme poverty. Worse disasters were yet to come. In 1512, the French army attacked Brescia\footnote{The Italian Wars broke out from 1494 to 1559. King Louis XII of France attempted to conquer Italy, which was opposed by European powers such as the Spanish Habsburgs, leading to war.}. To retaliate against the determined resistance of the people of Brescia, the French army killed 46,000 people after capturing the city. His mother tried to take Niccolò and his sister to hide in a church for safety, but Niccolò was still injured in the face by a French soldier during the chaos, leaving two shocking scars on his mouth. His mother found him barely alive but had no money to hire a doctor, so she had to literaly lick his wounds every day. Miraculously, Niccolò survived but developed a lifelong stutter due to the injury. He earned the nickname \enquote{Tartaglia}, which means \enquote{stutterer} in Italian. As he grew older, he kept a beard to cover the scars on his face (see \cref{fig:tartaglia}).
 
-尽管遭遇了诸多不幸，塔尔塔利亚却展现出了学习的天赋。他基本靠自学，买不起纸就用墓碑当作石板来代替。后来母亲终于找到了一位好心人资助他去帕多瓦学习。学成后塔尔塔利亚在维罗纳成了一名小学数学教师。1534年他搬到威尼斯，在圣扎诺波洛教堂教数学。此后他通过赢得一系列的公开挑战越来越有名气\cite{MacTour-Tartaglia}。往事如烟，现在塔尔塔利亚必须集中精神，尽快解决不含有二次项的三次方程。这个晚上，奇迹发生了，他终于找到了解法。当双方撕开火漆密封的题目，其实胜负已分：塔尔塔利亚的30道题目包含了两种特殊的三次方程，既有不含一次项的，也有不含二次项的；而费奥尔的只有不含二次项的一种。塔尔塔利亚只用了两个小时就解出了全部题目，但费奥尔被不含一次项的方程困住了。
+Despite the many misfortunes, Tartaglia showed a talent for learning. He was mostly self-taught, using tombstones as slates when he couldn't afford paper. Later, his mother finally found a kind person to sponsor him to study in Padua. After completing his studies, Tartaglia became a primary school mathematics teacher in Verona. In 1534, he moved to Venice and taught mathematics at the Church of San Zanipolo. He gained more and more fame by winning a series of public challenges\cite{MacTour-Tartaglia}. At the present, Tartaglia had to concentrate and quickly solve cubic equations without quadratic terms. That night, a miracle happened, and he finally found the solution. When both parties open the sealed problems, the outcome was already decided: Tartaglia's 30 problems included two types of special cubic equations, both without linear terms and without quadratic terms; while Fior's only had one type without quadratic terms. Tartaglia solved all the problems in just two hours, but Fior was stuck on the equations without linear terms.
 
-\index{数学家!卡尔达诺}
-塔尔塔利亚取得了胜利，他拒绝了奖金，只接受了荣誉。这次“华山论剑”不胫而走，传到了意大利米兰，引起了一位名叫卡尔达诺\footnote{拉丁文Cardano，也有人根据英文Cardan译作卡尔丹。}的人的注意。吉罗拉莫·卡尔达诺（1501～1576）是一个私生子（见\cref{fig:cardano}）。他的父亲法齐奥·卡尔达诺是米兰的一位律师，同时也是数学家，在帕维亚大学和米兰大学任教。据说达·芬奇曾向法齐奥请教几何问题。
+\index{Cardano}
+As the winner, Tartaglia refused the prize money and only accepted the honor. The news reaching Milan in Italy, where it caught the attention of a man named Girolamo Cardano\footnote{In Latin, Cardano, also translated as Cardan in English.} (1501–1576). He was an illegitimate child (see \cref{fig:cardano}). His father, Fazio Cardano, was a lawyer and mathematician who taught at the University of Pavia and the University of Milan. It is said that Leonardo da Vinci once consulted Fazio on geometric problems.
 
-由于私生子的身份，卡尔达诺生活贫困，体弱多病。经过争取，法齐奥同意送他去帕维亚大学学习医学。意大利战争期间，学校被迫关闭，卡尔达诺只好去帕多瓦大学完成学业。他的父亲不久也去世了。在乱世中，卡尔达诺很快花光了父亲不多的遗产，并染上了赌博的恶习。他很有数学头脑，逐渐悟出了概率原理（一个世纪后帕斯卡和费马才创立概率论），因此经常击败其他赌徒。卡尔达诺争强斗狠，当他怀疑对方出老千时，会毫不犹豫拔出匕首斗殴。这使得他臭名昭著，以至于1525年获得医学博士后，米兰市拒绝向卡尔达诺颁发行医许可。他只得一边私下偷偷行医一边继续赌博。很快输光了老婆的嫁妆和家当，全家不得不搬到米兰的救济院。走投无路的卡尔达诺从父亲生前的大学获得了一个数学教职。他的医学才能逐渐显示了出来，治好了很多名人的疾病，米兰总督甚至当地的医生也私下找他看病。终于在1539年他迎来了人生转机：米兰市迫于卡尔达诺治好的那些著名患者的压力，向他颁发了行医执照。对于卡尔达诺的私生子身份，米兰医学会认为法齐奥最终与其生母结婚，因此出身“合法”。卡尔达诺春风得意，在这一年出版了两部数学书。此外他还做了一件事：在过去四年，他尝试自己找出三次方程的解法，但是失败了。他通过一位往返米兰与威尼斯的书商询问塔尔塔利亚，并许诺把塔尔塔利亚的解法加入他即将出版的书中。但卡尔达诺等来的是冷冰冰的拒绝。塔尔塔利亚说他自己将来会把三次方程的解法著书出版。卡尔达诺不死心，再次托人询问能否告知具体解法并承诺保密，但还是被拒绝了。
+Due to his illegitimate status, Cardano lived in poverty and was in bad health. After some struggle, Fazio agreed to send him to study medicine at the University of Pavia. During the Italian Wars, the school was forced to close, and Cardano had to go to the University of Padua to complete his studies. His father also died soon after. In the chaotic times, Cardano quickly spent all of his father's meager inheritance and developed a gambling addiction. He had a mathematical mind and gradually realized the principles of probability (which were not formally established until a century later by Pascal and Fermat), thus often defeating other gamblers. Cardano was aggressive, and when he suspected others of cheating, he would not hesitate to draw a dagger and fight. This made him notorious, and in 1525, after obtaining his medical doctorate, the city of Milan refused to grant him a medical license. He had to practice medicine secretly while continuing gambling. Soon he lost all of his wife's dowry and family fortune, and the whole family had to move into a poorhouse in Milan. Cardano later obtained a mathematics teaching position from his father's former university. His medical talents gradually showed themselves, curing many famous people's diseases, and even the governor of Milan and local doctors privately sought his help. Finally, in 1539, he had a turning point in life: due to pressure from those famous patients cured by Cardano, the city of Milan granted him a medical license. Regarding Cardano's illegitimate status, the Milan Medical Association considered that Fazio eventually married his mother, thus making his birth \enquote{legitimate}. Cardano was elated; in that year he published two mathematical books. Besides that, he did one more thing: for the past four years, he had been trying to find the solution to cubic equations on his own but failed. He inquired about Tartaglia through a bookseller who traveled between Milan and Venice and promised to include Tartaglia's solution in his upcoming book if Tartaglia shared it with him. But what Cardano got was a cold refusal. Tartaglia said that he would publish the solution to cubic equations himself in the future. Cardano was not giving up; he asked again through someone if Tartaglia could tell him the specific solution and promised confidentiality but was still rejected.
 
-于是赌场老江湖卡尔达诺亲自给塔尔塔利亚写了一封信，措辞技巧极高。一方面，他责怪塔尔塔利亚不识好歹，暗示要与他进行一场公开挑战；另一方面，说他和自己治好的患者——米兰总督阿方索·德·阿瓦洛斯·瓦斯托侯爵——讨论了塔尔塔利亚的才能……塔尔塔利亚上钩了。出身卑微的他渴望更高的社会地位。他给卡尔达诺回信，询问能否介绍他和总督认识，并向总督亲自展示自己的才能。卡尔达诺于是邀请塔尔塔利亚拜访他米兰的住所，并许诺安排和德·阿瓦洛斯侯爵见面。1539年3月，塔尔塔利亚走进了卡尔达诺的大门。主人殷勤招待，有求必应。但有个小小的遗憾：侯爵大人临时有事，事发突然，不能赴约。在卡尔达诺一碗一碗的迷魂汤下，塔尔塔利亚终于答应吐露三次方程的解法。但他要求卡尔达诺发下重誓：第一，至死不向任何人透露；第二，只能用暗语记录以防别人识破。然后他读出了一首诗\footnote{我们省略了中间部分。塔尔塔利亚的诗包含三种特殊的三次方程，并指出第三种可以转化为第二种。}：
+So the old gambler Cardano wrote a letter to Tartaglia, with very high rhetorical skills. On the one hand, he blamed Tartaglia for being ungrateful and hinted at a public challenge; on the other hand, he said that he had discussed Tartaglia's talents with his patients—the Marquis Alfonso de Avalos Vasto, the governor of Milan... Tartaglia took the bait. He was of humble origin and yearned for higher social status. He replied to Cardano, asking if he could introduce him to the governor and personally demonstrate his talents to him. Cardano then invited Tartaglia to visit his residence in Milan and promised to arrange a meeting with Marquis de Avalos. In March 1539, Tartaglia walked through Cardano's door. The host was hospitable and accommodating. But there was a small regret: the Marquis had a sudden matter and couldn't attend the meeting. Under Cardano's skillful persuasion, Tartaglia finally agreed to reveal the solution to cubic equations. But he required Cardano to swear an oath: first, never to reveal it to anyone until death; second, only to record it in code to prevent others from deciphering it. Then he recited a poem\footnote{We omit the middle part. Tartaglia's poem contains three special types of cubic equations and points out that the third type can be transformed into the second type.}:
 
 \begin{verse}
-当立方加上一些事物，\\
-等于某个整数，\\
-找出两个数，其差与此数相同，\\
-此后你要按惯例考虑，\\
-它们的乘积始终等于，\\
-这些事物的立方的三分之一，\\
-那么一般的余数，\\
-从它们的立方根中准确地减去，\\
-将是未知量的值。\\
-…… \\
-我发现这些，并非缓慢达成，\\
-在一千五百三十四年，\\
-有着非常坚实和稳固的基础，\\
-在那座被大海环绕的城市。
+When the cube and things together \\
+Are equal to some discreet number, \\
+Find two other numbers differing in this one. \\
+Then you will keep this as a habit \\
+That their product should always be equal \\
+Exactly to the cube of a third of the things. \\
+The remainder then as a general rule \\
+Of their cube roots subtracted \\
+Will be equal to your principal thing \\
+... \\
+These things I found, and not with sluggish steps,
+In the year one thousand five hundred, four and thirty.
+With foundations strong and sturdy
+In the city girdled by the sea.
 \end{verse}
 
-屋子里鸦雀无声，除了卡尔达诺和塔尔塔利亚，只有一个十八岁的年轻仆人，名叫费拉里（Lodovico Ferrari）。塔尔塔利亚不记得自己是怎样走出卡尔达诺家的大门的。他手里拿着一封卡尔达诺给公爵的介绍信。一阵风吹来，他打了个寒战。他没有继续留在米兰求见公爵，而是匆匆返回了威尼斯。他后悔了。这一年卡尔达诺出版了两本书，塔尔塔利亚逐一检查了每一本，内容是关于赌博概率的计算以及数学讲义。卡尔达诺似乎信守了诺言，没有只字透露三次方程的解法。
+Nobody in the room when Tartaglia reciting the poem except Cardano and, an eighteen-year-old servant named Lodovico Ferrari. Tartaglia couldn't remember how he walked out of Cardano's house. He held a letter of introduction from Cardano to the Marquis. He didn't stay in Milan to meet the Marquis but hurried back to Venice. He regretted it. That year, Cardano published two books, which Tartaglia checked one by one, about calculating gambling probabilities and mathematical lectures. Cardano seemed to have kept his promise and did not reveal a word about the solution to cubic equations.
 
-卡尔达诺和他的仆人费拉里彻底研究了塔尔塔利亚的解法，并继续解决了所有形式的三次方程。本质上，主仆二人找到了一般三次方程的解法。并且费拉里在主人的指导下一举攻克了四次方程。但毕竟发过重誓，他们不能发表这些结果，而只能把这一秘密用于和别人“华山论剑”。转机发生在1543年，卡尔达诺和费拉里前往博洛尼亚旅行。从一位名叫德拉·纳韦的人那里得知，在很早以前当地的学者德尔·费罗（Scipione del Ferro，1465～1926）就解出了三次方程。费罗从1496年起任数学教授，而1535年被塔尔塔利亚击败的费奥尔正是费罗的学生！卡尔达诺立刻意识到，既然第一个解出三次方程的人是费罗而非塔尔塔利亚，他可以把誓言丢到九霄云外了。1545年，卡尔达诺出版了数学史上意义非凡的一本书《大术》（Ars magna），公开了完整的三次和四次方程的解法，并在第8页写道：
+Cardano and Ferrari thoroughly studied Tartaglia's solution and continued to solve all forms of cubic equations. Essentially, they found a general solution to cubic equations. Ferrari, under Cardano's guidance, also solved quartic equations. But after all, they had sworn an oath, and they couldn't publish these results. They could only use this secret for challenges with others. The turning point came in 1543 when Cardano and Ferrari traveled to Bologna. They learned from a man named Della Nave that Scipione del Ferro (1465–1526) had solved cubic equations long ago. Ferro had been a mathematics professor since 1496, and Fior, who was defeated by Tartaglia in 1535, was Ferro's student! Cardano immediately realized that since the first person to solve cubic equations was Ferro, not Tartaglia, he could throw the oath to the wind. In 1545, Cardano published a book of great significance in the history of mathematics, \emph{Ars magna}, which publicly revealed the complete solutions to cubic and quartic equations. On page 8, he wrote:
 
 \begin{quotation}
-在我们这个时代，博洛尼亚的德尔·费罗解决了无二次项的特殊三次方程，这是一项极为优雅且令人钦佩的成就。由于这门技艺超越了人类所有的精妙构思以及凡人天赋的敏锐洞察力，它是一种真正来自上天的恩赐，也是对人类思维能力的一次明确考验，任何致力于此的人都会相信，没有什么是他无法理解的。受他的激励，我的朋友，布雷西亚的尼科洛·塔尔塔利亚，不甘示弱，在与费罗的学生费奥尔的一场竞赛中，也解决了同样的问题。在我多次恳请下，他将解法告诉了我……得到塔尔塔利亚的解法后，我寻求它的证明，进而明白还有许多相关内容有待发掘。秉持着这个想法并满怀信心，我陆续发现了这些成果。它们部分是我独自完成的，部分来自我的学生费拉里。
+In our own days Scipione del Ferro of Bologna has solved the case of the cube and first power equal to a constant, a very el- egant and admirable accomplishment. Since this art surpasses all human subtlety and the perspicuity of mortal talent and is a truly celestial gift and a very clear test of the capacity of men’s minds, whoever applies himself to it will believe that there is nothing that he cannot understand. In emulation of him, my friend Niccolo` Tartaglia of Brescia, wanting not to be outdone, solved the same case when he got into a contest with his [Sci- pione’s] pupil, Antonio Maria Fior, and, moved by my many entreaties, gave it to me . . . having received Tartaglia’s solution and seeking a proof of it, I came to understand that there were a great many other things that could also be had. Pursuing this thought and with increased confidence, I discovered these others, partly by myself and partly through Lodovico Ferrari, formerly my pupil.
 \end{quotation}
 
-卡尔达诺声名鹊起，但塔尔塔利亚被激怒了。他觉得卡尔达诺背叛了誓言，泄露了秘密。第二年，塔尔塔利亚出版了一本小册子《新问题新发明》，试图给出故事的真想，揭露卡尔达诺背信弃义的恶行。但卡尔达诺再次展现了老江湖的斗争策略。他退到幕后保持沉默，而放任仆人费拉里公开和塔尔塔利亚唇枪舌剑、互相攻击。这在外人看来，小学教师塔尔塔利亚似乎只能和卡尔达诺的仆人论战，因而和仆人在同一水平，而低于著名学者、数学家、名医卡尔达诺。费拉里公开向塔尔塔利亚发起挑战，但塔尔塔利亚真正想挑战的人是卡尔达诺，而后者始终对他不予理睬。塔尔塔利亚和费拉里互相谩骂攻击了一年后，发生了戏剧性的一幕。布雷西亚大学邀请塔尔塔利亚回家乡任教，但条件是他必须去米兰参加和费拉里的“华山论剑”。于是1548年8月10日，第二次华山论剑在米兰的圣母玛利亚感恩大教堂（见\cref{fig:church-Milan}）上演了。日落时，费拉里占尽了优势，他不仅掌握了三次方程的解法，还用四次方程挑战对手。塔尔塔利亚在当晚不辞而别，他输了。
+Ths book brought great fame to Cardano, but Tartaglia was furious. He felt that Cardano had betrayed the oath and revealed the secret. The following year, Tartaglia published a booklet \emph{New Problems and Inventions}, trying to give the true story and expose Cardano's treacherous act. But Cardano once again showed his old-school fighting strategy. He retreated to the background and kept silent while letting his servant Ferrari publicly engage in a war of words with Tartaglia. To outsiders, it seemed that primary school teacher Tartaglia could only argue with Cardano's servant, thus being on the same level as the servant and below the famous scholar, mathematician, and renowned doctor Cardano. Ferrari publicly challenged Tartaglia, but the person Tartaglia really wanted to challenge was Cardano, who always ignored him. After a year of mutual insults and attacks between Tartaglia and Ferrari, a dramatic scene occurred. The University of Brescia invited Tartaglia to teach in his hometown, but on the condition that he must go to Milan to participate in a \enquote{duel} with Ferrari. So on August 10, 1548, the second duel took place in Milan's Church of Santa Maria delle Grazie (see \cref{fig:church-Milan}). At sunset, Ferrari had all the advantages; he not only mastered the solution to cubic equations but also challenged his opponent with quartic equations. Tartaglia left without saying goodbye that night; he lost.
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[scale=0.33]{img/churchmilan}
-  \caption{米兰圣母玛丽亚感恩大教堂}
+  \caption{Church of Santa Maria delle Grazie in Milan.}
  \label{fig:church-Milan}
 \end{figure}
 
@@ -1391,13 +1391,13 @@ z_1z_2 = (a_1 + b_1i)(a_2 + b_2i) = a_1a_2 - b_1b_2 + (a_1b_2 + b_1a_2)i
 \end{Answer}
 
 \ifx\wholebook\relax
-\chapter{代数数}
+\chapter{Algebraic numbers}
 \else
-\section{代数数}
+\section{Algebraic numbers}
 \fi
 
 %% For English version, use Kronecker's saying ``God made the natural numbers, the rest is the work of man.''
-\epigraph{这个世界的意义就在于理想与现实的分离。}{哥德尔}
+\epigraph{Mathematics constructs an ideal world where everything is perfect and yet true.}{Bertrand Russell}
 %% "The meaning of the world is the separation of wish and fact. Wish is a force as applied to thinking beings, to realize something. A fulfilled wish is a union of wish and fact. The meaning of the whole world is the separation and the union of fact and wish". [9.4.3]
 %%  Hao Wang’s supplemental biography of Gödel, A Logical Journey, MIT Press, 1996.
 
