@@ -1,0 +1,75 @@
+\section{斐波那契数列的通项公式}
+\phantomsection
+\label[appendix]{app:fibonacci-formula}
+
+数学家棣莫弗用斐波那契数列作为系数定义了一个函数$f(x)$：
+
+\be
+f(x) = F_0 + F_1 x + F_2 x^2 + \dotsb + F_n x^n + \dotsb
+\ee
+
+其中$F_0 = 0, F_1 = 1, F_2 = 1, F_3 = 2, F_4 = 3, F_5 = 5, F_4 = 8, \dotsc$然后他分别求出了$xf(x)$和$x^2f(x)$的表达式：
+
+\be
+xf(x) = F_0 x + F_1 x^2 + F_2 x^3 + \dotsb + F_{n-1} x^n + \dotsb
+\ee
+
+\be
+x^2f(x) = F_0 x^2 + F_1 x^3 + F_2 x^4 + \dotsb + F_{n-2} x^n + \dotsb
+\ee
+
+根据斐波那契数列的递归定义$F_n = F_{n-1} + F_{n-2}$，棣莫弗计算出$f(x) - (xf(x) + x^2f(x))$的表达式为：
+
+\begin{align*}
+f(x) - (xf(x) + x^2f(x)) &= F_0 + (F_1 - F_0)x + \\
+  & \quad (F_2 - (F_1 + F_0))x^2 + \\
+  & \quad (F_3 - (F_2 + F_1))x^3 + \dotsb + \\
+  & \quad (F_n - (F_{n-1} + F_{n-2})x^n + \dotsb \\
+f(x)(1 - x - x^2) &= 0 + (1 - 0)x  = x && \text{由}F_n = F_{n-1} + F_{n-2} \\
+f(x) &= \frac{x}{1 - x - x^2}
+\end{align*}
+
+只要把右侧展开成无穷级数，然后用待定系数法就可以求出$F_n$。注意到分母构成的二次方程$1 - x - x^2 = 0$就是著名黄金分割方程，两个根是黄金分割数$x_{1, 2} = \frac{-1 \pm \sqrt{5}}{2}$。这样就可以对右侧分母因式分解：
+
+\begin{align*}
+f(x) &= \frac{-x}{(x_1 - x)(x_2 - x)} = \frac{1}{x_1 - x_2}\frac{x(x_2 - x_1)}{(x_1 - x)(x_2 - x)} \\
+  &= \frac{1}{x_1 - x_2}(\frac{x_1}{x_1 - x} - \frac{x_2}{x_2 - x}) && \text{通分可验证这一步}\\
+  &= \frac{1}{\sqrt{5}}(\frac{1}{1 - \frac{1}{x_1}x}) - \frac{1}{1 - \frac{1}{x_2}x} && \text{可验证} x_{1,2} \text{互为倒数} \\
+  &= \frac{1}{\sqrt{5}}(\frac{1}{1 - \frac{1 + \sqrt{5}}{2}x} -\frac{1}{1 - \frac{1 - \sqrt{5}}{2}x})
+\end{align*}
+
+考虑\underdot{收敛}的无穷级数：
+\begin{align*}
+S &= 1 + ax + a^2x^2 + \dotsb && \text{其中} |ax| < 1 \\
+axS &= ax + a^2x^2 + \dotsb \\
+S(1 - ax) &= 1 + (ax - ax) + (a^2x^2 - a^2x^2) + \dotsb = 1 \\
+\frac{1}{1 - ax} &= 1 + ax + a^2x^2 + \dotsb
+\end{align*}
+
+因此右侧可以展开成两个几何级数：
+
+\begin{align*}
+\frac{1}{1 - \frac{1 + \sqrt{5}}{2}x} &= 1 + \frac{1 + \sqrt{5}}{2}x + (\frac{1 + \sqrt{5}}{2})^2x^2 + \dotsb \\
+\frac{1}{1 - \frac{1 - \sqrt{5}}{2}x} &= 1 + \frac{1 - \sqrt{5}}{2}x + (\frac{1 - \sqrt{5}}{2})^2x^2 + \dotsb
+\end{align*}
+
+其中$|\dfrac{1\pm\sqrt{5}}{2}x| < 1$。合并同类项得到$f(x)$的表达式：
+
+\be
+f(x) = \frac{1}{\sqrt{5}}(\frac{1 + \sqrt{5}}{2} - \frac{1 - \sqrt{5}}{2})x + \dotsb + \frac{1}{\sqrt{5}}((\frac{1 + \sqrt{5}}{2})^n - (\frac{1 - \sqrt{5}}{2})^n)x^n + \dotsb
+\ee
+
+利用待定系数法得到斐波那契数列的通项公式：\index{斐波那契数列通项公式}
+
+\be
+F_n = \frac{1}{\sqrt{5}}((\frac{1 + \sqrt{5}}{2})^n - (\frac{1 - \sqrt{5}}{2})^n)
+\ee
+
+当$n$很大时，由于$|\dfrac{1 - \sqrt{5}}{2}| < 1$ 上式近似于：
+
+\begin{align*}
+F_n &\approx \frac{1}{\sqrt{5}}(\frac{1 + \sqrt{5}}{2})^n \\
+  &= ke^{\ln (1 + \phi)^n} = ke^{n\ln(1 + \phi)} = ke^{bn}
+\end{align*}
+
+其中，$\phi = \dfrac{-1 + \sqrt{5}}{2}$是黄金数$0.618\dotsm$，$k = \dfrac{1}{\sqrt{5}}$，$b = \ln (1 + \phi)$。这符合等角螺线的方程，因此斐波那契数列近似分布在等角螺线上。
