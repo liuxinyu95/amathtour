@@ -95,38 +95,39 @@ Ths book brought great fame to Cardano, but Tartaglia was furious. He felt that 
  \label{fig:church-Milan}
 \end{figure}
 
-塔尔塔利亚失去了布雷西亚的教授工作，他在贫穷和愤恨中走完了自己的一生。卡尔达诺的誓言似乎冥冥中笼罩着自己。1560年卡尔达诺的长子被控毒杀不忠的妻子被判处死刑。他被丧子之痛彻底击倒，从米兰搬到了布雷西亚。1565年，卡尔达诺再次遭受打击，得意门生费拉里被他姐姐毒杀。卡尔达诺沉迷赌博和占星术，他因推算出了耶稣的星象，被教会判处大逆不道，于1570年锒铛入狱。出狱后他移居罗马，在生命的最后一年出版了一本自传。在自传中，他不断重复丧子之痛，吹嘘自己的成就，但只用一句话轻描淡写地谈到了塔尔塔利亚。我们今天对这段历史的还原主要来自塔尔塔利亚的《新问题新发明》，以及他和中间人书商、卡尔达诺、费拉里往来的信件。
+Tartaglia suffered as a result of the contest. After giving his lectures for a year in Brescia, he was informed that his stipend was not going to be honoured. Even after enumours lawsuit, he could not get any payment. He returned to his previous job in Venice, nursing a huge resentment of Cardan. It seemed that Cardano's oath was hovering over him. In 1560, Cardano's eldest son was accused of poisoning his unfaithful wife and sentenced to death. He was completely devastated by the loss of his son and moved from Milan to Brescia. In 1565, Cardano suffered another blow when his favorite pupil Ferrari was poisoned by his sister. Cardano indulged in gambling and astrology, and he was imprisoned in 1570 for casting the horoscope of Jesus Christ and writting a book in praise of Nero, which was considered heresy by the church. After being released from prison, he moved to Rome and published an autobiography in the last year of his life. In the autobiography, he repeatedly mentioned the pain of losing his son and boasted about his achievements but only briefly mentioned Tartaglia in one sentence. The story here mainly comes from Tartaglia's \emph{New Problems and Inventions} and the letters between him, the intermediary bookseller, Cardano, and Ferrari.
 
 \begin{figure}[htbp]
  \centering
- \subcaptionbox{塔尔塔利亚\label{fig:tartaglia}}{\includegraphics[scale=0.35]{img/tartaglia-coin}}
- \subcaptionbox{卡尔达诺\label{fig:cardano}}{\includegraphics[scale=0.3]{img/Cardano}}
- \caption{塔尔塔利亚与卡尔达诺}
+ \subcaptionbox{Tartaglia \label{fig:tartaglia}}{\includegraphics[scale=0.35]{img/tartaglia-coin}}
+ \subcaptionbox{Cardano \label{fig:cardano}}{\includegraphics[scale=0.3]{img/Cardano}}
+ \caption{Tartaglia and Cardano.}
 \end{figure}
 
-今天，人们把三次方程的求根公式叫做卡尔达诺——塔尔塔利亚公式，简称卡尔达诺公式。此外塔尔塔利亚还在1546年发表过弹道学著作，第一个给出了弹道表格。1543年他第一个把欧几里得《原本》翻译成意大利语出版，此外他把阿基米德的一些著作翻译成意大利语。除了明显的缺陷外，卡尔达诺是一名百科全书式的学者。他是第一个对斑疹伤寒做出临床描述的人，数学上的贡献涵盖代数、概率论。他还发明了万向轴，被称作卡尔达诺轴。莱布尼茨评价到：“尽管有缺点，他是个伟人；但如果没有这些缺点，他将是无与伦比的。”
+We call the formula to the cubic equation the Cardano-Tartaglia formula, or simply the Cardano formula. Besides that, Tartaglia also published a book on ballistics in 1546, which was the first to provide ballistic tables. In 1543, he was the first to translate Euclid's \emph{Elements} into Italian and publish it. He also translated some of Archimedes' works into Italian. Despite his obvious flaws, Cardano was an encyclopedic scholar. He was the first to give a clinical description of typhus, and his mathematical contributions covered algebra and probability theory. He also invented the universal joint, known as the Cardan shaft. Leibniz commented: \enquote{Despite his flaws, he is a great man; but if it were not for these flaws, he would be incomparable.}
 
-\section{三次方程}
+\section{The solution of the cubic}
 
-与通常的观点不同，复数\underdot{不是}在解二次方程的过程中，而是在解三次方程时被意外发现的。高中数学课上会给出卡尔达诺公式\footnote{人教版普通高中《数学》B版，必修第4册10.1.1复数的概念。}。本节将利用代数与几何两种方法推导这个公式。
+Different from the common understanding, complex numbers were not discovered in the process of solving quadratic equations but were unexpectedly found when solving cubic equations. In this section, we will derive the Cardano formula using both algebraic and geometric methods.
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[scale=0.33]{img/plimpton322}
-  \caption{编号普林普顿322的古巴比伦泥板，内容为勾股数表，约公元前2020年。藏于哥伦比亚大学。二十世纪二十年代由乔治·亚瑟、普林普顿捐赠给哥伦比亚大学。}
+  \caption{Babylonian clay tablet, Plimpton 322, containing a table of Pythagorean triples, dating from around 2020 BC. It is housed at Columbia University. It was donated to Columbia University in the 1920s by George Arthur Plimpton.}
  \label{fig:plimpton322}
 \end{figure}
 
-\index{古巴比伦勾股数表}
+\index{Babylonian table of Pythagorean triples}
 %% https://personal.math.ubc.ca/~cass/courses/m446-03/pl322/pl322.html
-我们是从古巴比伦泥板上了解到二次方程的早期历史的。如\cref{fig:plimpton322}所示，这是藏于哥伦比亚大学的一块泥板，编号为普林普顿322。这块泥板上的楔形文字内容很有特点，德国科学史家诺伊格鲍尔和萨克斯发现它竟然是一张勾股数表。根据第1章给出的古巴比伦计数系统，我们很容易看出最后一列是编号$1, 2, 3, \dotsc, 15$，其中5，6，15三个数字损毁了。同样右边第二列也是编号。左边第二列的表头注明是直角三角形的底，从上到下转换为十进制依次是：$119, 3367, 4601, \dotsc, 1771, 56$，其中最后的56损毁了，并且有两处错误。左边第三列的表头注明是直角三角形的斜边，从上到下转换成十进制依次为：$169, 4825, 6649, \dotsc, 3229, 106$，同样最后的数字有错并且损毁了。左边第一列的数字最难破译，古巴比伦此时还没有使用零，也没有小数点。科学家们将其破译并转换为十进制数字，依次为：$1.9834\dotso, 1.94916\dotso, 1.9188\dotso$直到$1.43024\dotso, 1.38716\dotso$ 60进制小数转换为10进制通常会除不尽（见\cref{thm:finite-decimal}），因此带有省略号。如果记直角三角形的底为$w$，斜边为$d$，高为$h$，科学家们发现第一列的数字是$\dfrac{d^2}{h^2}$，根据勾股定理它等于$\dfrac{d^2}{d^2 - w^2}$。例如第一行：$d = 169, w = 119$，计算可得：
+
+We learned about the early history of quadratic equations from Babylonian clay tablets. As shown in \cref{fig:plimpton322}, this is a clay tablet housed at Columbia University, numbered Plimpton 322. The cuneiform text on this tablet is quite special. German historians of science Neugebauer and Sachs discovered that it is actually a table of Pythagorean triples. Based on the ancient Babylonian numeral system given in Chapter 1, we can easily see that the last column is numbered $1, 2, 3, \dotsc, 15$, with the numbers 5, 6, and 15 damaged. Similarly, the second column from the right is also numbered. The header of the second column from the left indicates the base of a right triangle, which converts to decimal as follows: $119, 3367, 4601, \dotsc, 1771, 56$, with the last number 56 damaged and two errors. The header of the third column from the left indicates the hypotenuse of a right triangle, which converts to decimal as follows: $169, 4825, 6649, \dotsc, 3229, 106$, with the last number also having an error and being damaged. The numbers in the first column from the left are the most difficult to decipher; at that time, ancient Babylonians had not yet used zero or decimal points. Scientists deciphered it and converted it to decimal numbers as follows: $1.9834\dotso, 1.94916\dotso, 1.9188\dotso$ until $1.43024\dotso, 1.38716\dotso$. Sexagesimal fractions converted to decimal usually do not terminate (see \cref{thm:finite-decimal}), hence the ellipsis. If we denote the base of a right triangle as $w$, the hypotenuse as $d$, and the height as $h$, scientists found that the numbers in the first column are $\dfrac{d^2}{h^2}$, which equals $\dfrac{d^2}{d^2 - w^2}$ according to the Pythagorean theorem. For example, for the first row: $d = 169$ and $w = 119$, we can calculate:
 
 \[
 \frac{d^2}{d^2 - w^2} = \frac{169^2}{169^2 - 119^2} = 1.9843\dotso
 \]
 
 %% https://engelsbergideas.com/notebook/the-brilliance-of-babylonian-mathematics/
-正好是第一行中的第一个数字。这个勾股数表证实古巴比伦人知晓勾股定理（尽管没有定理的证明），并将其应用于计算。随着更多楔形文字泥板的出土，科学家们还发现了勾股定理的“配套练习题”。其中一道题目说：“已知长方形的面积和对角线，求长方形的两个边长。”这道典型的土地丈量问题相当于解方程：
+Which is exactly the number in the first column. This table evidently shows that the Babylonians were aware of the Pythagorean theorem (although without a proof of the theorem) and applied it in calculations. As more cuneiform tablets were unearthed, scientists also found \enquote{practice problems} related to the Pythagorean theorem. One of the problems states: \enquote{Given the area and the diagonal of a rectangle, find the lengths of the two sides of the rectangle.} This typical land measurement problem is equivalent to solving the system of equations:
 
 \[
 \begin{cases}
@@ -135,40 +136,40 @@ Ths book brought great fame to Cardano, but Tartaglia was furious. He felt that 
 \end{cases}
 \]
 
-\index{一元二次方程的几何解法}
-其中$s$是面积，$d$是对角线。将$b = \dfrac{s}{a}$代入第二式，就得到关于$a^2$二次方程$(a^2)^2 - d^2 a^2 + s^2 = 0$。当时还没有代数符号系统，古巴比伦人解二次方程的过程是通过文字描述的。初中学习求根公式前，通常会介绍“配方法”（complete square），本质上也是一种代数解法。阿拉伯数学家花拉子密在他的《代数学》\footnote{即Hisab al-jabr w'al-muqabala，见第\ref{sec:Khwarizmi}节}中还遵循古希腊传统给出了二次方程的几何解释。如果$a \ne 0$，我们可以把一般二次方程$ax^2 + bx + c = 0$的二次项系数化成1，然后把常数项移到右侧，得到$x^2 + \dfrac{b}{a}x = -\dfrac{c}{a}$。令$p = \dfrac{b}{a}, q= -\dfrac{c}{a}$，我们要通过几何方法解方程$x^2 + px = q$。如果$p > 0$，\cref{fig:quadratic1}给出了方程左侧的几何意义。$q$相当于一个正方形的面积$x^2$加上一个长$p$宽$x$的矩形面积。
+\index{geometric solution to the quadratic equations}
+where $s$ is the area and $d$ is the diagonal. By substituting $b = \dfrac{s}{a}$ into the second equation, we get a quadratic equation in terms of $a^2$, which is $(a^2)^2 - d^2 a^2 + s^2 = 0$. At that time, there was no algebraic symbol system, and the Babylonians described the process of solving quadratic equations in words. Before learning the quadratic formula in middle school, we usually introduce the \enquote{completing the square} method, which is essentially an algebraic solution. The Arab mathematician Al-Khwarizmi, in his book \emph{Al-Kitab al-Mukhtasar fi Hisab al-Jabr wal-Muqabala}\footnote{This is the original Arabic title of \emph{The Compendious Book on Calculation by Completion and Balancing}, see \cref{sec:Khwarizmi}}, also followed the Greek tradition and provided a geometric explanation for quadratic equations. If $a \ne 0$, we can transform the general quadratic equation $ax^2 + bx + c = 0$ into a form where the coefficient of the quadratic term is 1, and move the constant term to the right side, obtaining $x^2 + \dfrac{b}{a}x = -\dfrac{c}{a}$. Let $p = \dfrac{b}{a}$ and $q = -\dfrac{c}{a}$, we shall solve the equation $x^2 + px = q$ using geometric methods. If $p > 0$, \cref{fig:quadratic1} illustrates the geometric meaning of the left side of the equation. The term $q$ corresponds to the area of a square with side length $x$ plus the area of a rectangle with length $p$ and width $x$.
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[scale=0.5]{img/quadratic1}
-  \caption{$x^2 + px$的几何意义：正方形与长方形的面积和}
+  \caption{geometric interpretation of $x^2 + px$: the sum of a square and a rectangle.}
  \label{fig:quadratic1}
 \end{figure}
 
-\index{配方法}
-配方法的几何意义是把矩形切分成两个同样的长$\dfrac{p}{2}$宽$x$的小矩形（见\cref{fig:quadratic2}左侧），然后把其中一个移动到正方形的下方，再补上一个边长为$\dfrac{p}{2}$的小正方形（见\cref{fig:quadratic2}右侧的黑色正方形）拼成一个边长为$x + \dfrac{p}{2}$的大正方形。左右两边图形中的白色面积相等，即：
+\index{completing the square}
+The method of completing squares has a geometric interpretation: it involves cutting the rectangle into two smaller rectangles of equal length $\dfrac{p}{2}$ and width $x$ (see the left side of \cref{fig:quadratic2}), then moving one of them to the bottom of the square, and adding a small square with side length $\dfrac{p}{2}$ (see the black square on the right side of \cref{fig:quadratic2}) to form a larger square with side length $x + \dfrac{p}{2}$. The white areas in both diagrams are equal, which means:
 
 \begin{align*}
- \left(x + \frac{p}{2}\right)^2 &= q + \left(\frac{p}{2}\right)^2 &&\text{大正方形面积等于白色部分加黑色部分} \\
- x + \frac{p}{2} &= \pm \sqrt{q + \left(\frac{p}{2}\right)^2} &&\text{两边开方} \\
+ \left(x + \frac{p}{2}\right)^2 &= q + \left(\frac{p}{2}\right)^2 &&\text{the area of the large square equals the sum of white and black areas} \\
+ x + \frac{p}{2} &= \pm \sqrt{q + \left(\frac{p}{2}\right)^2} &&\text{taking square root on both sides} \\
  x &= -\frac{p}{2} \pm \sqrt{q + \frac{p^2}{4}} \\
- x &= -\frac{b}{2a} \pm \sqrt{-\frac{c}{a} + \frac{b^2}{4a^2}} &&\text{代入}p = \frac{b}{a}, q= -\frac{c}{a} \\
+ x &= -\frac{b}{2a} \pm \sqrt{-\frac{c}{a} + \frac{b^2}{4a^2}} &&\text{substituting back } p = \frac{b}{a}, q= -\frac{c}{a} \\
  x &= \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
 \end{align*}
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[scale=0.5]{img/quadratic2}
-  \caption{$x^2 + px$的几何意义：正方形与长方形的面积和}
+  \caption{geometric interpretation of $x^2 + px$: the sum of a square and a rectangle.}
  \label{fig:quadratic2}
 \end{figure}
 
-\index{卡尔达诺公式}
-这就是一元二次方程求根公式。但花拉子密时代还不接受负数，因此当一次项为负时就需要给出$x^2 - px = q$的几何解释；当常数项为负时需要给出$x^2 - q = px$的几何解释（见\cref{qn:geometric-quadratic}）。卡尔达诺在《大术》中遵循了这样的传统，同时给出了三次方程的代数解法和几何解释。我们先介绍代数解法。对于一般三次方程$a_3x^3 + a_2x^2 + a_1x + a_0 = 0, a_3 \ne 0$，首先两边同时除以$a_3$把三次项系数化为1，即$x^3 + \dfrac{a_2}{a_3} x^2 + \dfrac{a_1}{a_3} x + \dfrac{a_0}{a_3} = 0$。重新命名系数为$x^3 + ax^2 + bx + c = 0$。大约在十四世纪末，意大利佛罗伦萨的数学家就发现可以通过变量替换$x = y - \dfrac{a}{3}$把二次项消去：
+\index{Cardano formula}
+This is the formula for solving quadratic equations. However, during the time of Al-Khwarizmi, negative numbers were not accepted, so when the linear term is negative, a geometric interpretation of $x^2 - px = q$ is needed; when the constant term is negative, a geometric interpretation of $x^2 - q = px$ is needed (see \cref{qn:geometric-quadratic}). Cardano followed this tradition in \emph{Ars magna}, providing both algebraic solutions and geometric interpretations for cubic equations. Let's first introduce the algebraic solution. For a general cubic equation $a_3x^3 + a_2x^2 + a_1x + a_0 = 0, a_3 \ne 0$, we first divide both sides by $a_3$ to make the coefficient of the cubic term equal to 1, obtaining $x^3 + \dfrac{a_2}{a_3} x^2 + \dfrac{a_1}{a_3} x + \dfrac{a_0}{a_3} = 0$. Renaming the coefficients as $x^3 + ax^2 + bx + c = 0$. Around the end of the 14th century, mathematicians in Florence discovered that by substituting $x = y - \dfrac{a}{3}$, the quadratic term can be eliminated:
 
 \begin{align*}
 (y - \frac{a}{3})^3 + a(y - \frac{a}{3})^2 + b(y - \frac{a}{3}) + c &= 0  \\
-y^3 -\cancel{ay^2} + \frac{a^2}{3}y - \frac{a^3}{27} + \cancel{ay^2} - \frac{2a^2}{3}y + \frac{a^3}{9} + by - \frac{ab}{3} + c &= 0 && \text{二项式展开} \\
+y^3 -\cancel{ay^2} + \frac{a^2}{3}y - \frac{a^3}{27} + \cancel{ay^2} - \frac{2a^2}{3}y + \frac{a^3}{9} + by - \frac{ab}{3} + c &= 0 && \text{binomial expansion} \\
 y^3 + (b - \frac{a^2}{3})y + \frac{2a^3}{27} - \frac{ab}{3} + c &= 0 \\
 y^3 + py + q &= 0
 \end{align*}
