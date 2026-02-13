@@ -174,7 +174,7 @@ y^3 + (b - \frac{a^2}{3})y + \frac{2a^3}{27} - \frac{ab}{3} + c &= 0 \\
 y^3 + py + q &= 0
 \end{align*}
 
-其中$p = b - \dfrac{a^2}{3}, q = c + \dfrac{2a^2}{27} - \dfrac{ab}{3}$。由于当时人们不接受负数，根据$p, q$的正负，这种“缺二次项”的三次方程共有三种形式：
+where $p = b - \dfrac{a^2}{3}$ and $q = c + \dfrac{2a^2}{27} - \dfrac{ab}{3}$. As people rejected negative numbers at that time, there are three forms of cubic equations without the quadratic term depending on the signs of $p$ and $q$:
 
 \begin{align}
 y^3 + py &= q \label{eq:cubic-linear} \\
@@ -182,16 +182,16 @@ y^3 + py &= q \label{eq:cubic-linear} \\
 y^3 + q &= py
 \end{align}
 
-其中费罗独立发现的是\cref{eq:cubic-linear}形式的解，而\cref{eq:cubic-complex}形式的解直接导致了复数的发现。我们不妨以$y^3 = py + q$为例继续推导求根公式。令$y = u + v$，则方程左侧化为：
+What Ferro discovered was the solution to \cref{eq:cubic-linear}, while the solution to \cref{eq:cubic-complex} directly led to the discovery of complex numbers. Let's take $y^3 = py + q$ as an example to derive the formula for solving cubic equations. Let $y = u + v$, then the left side of the equation becomes:
 
 \begin{align*}
-y^3 = (u + v)^3 &= u^3 + 3u^2v + 3uv^2 + v^3 && \text{二项式展开} \\
+y^3 = (u + v)^3 &= u^3 + 3u^2v + 3uv^2 + v^3 && \text{binomial expansion} \\
   &= u^3 + v^3 + 3uv(u + v) \\
   &= u^3 + v^3 + 3uvy && \text{代入} y = u + v \\
-  &= (3uv)y + (u^3 + v^3) = py + q && \text{左边等于右边}
+  &= (3uv)y + (u^3 + v^3) = py + q 
 \end{align*}
 
-由待定系数法知：
+equating the coefficients of $y$ and the constant terms, we get:
 
 \[
 \begin{cases}
@@ -200,19 +200,19 @@ y^3 = (u + v)^3 &= u^3 + 3u^2v + 3uv^2 + v^3 && \text{二项式展开} \\
 \end{cases}
 \]
 
-这相当于关于$u, v$的二元方程组。从第一个方程中得到：$v = \dfrac{p}{3u}$，代入第二个方程得：
+This is a system of two equations in terms of $u$ and $v$. From the first equation, we can express $v$ as $v = \dfrac{p}{3u}$, and substitute it into the second equation to get:
 
 \[
 u^3 + (\frac{p}{3u})^3 = q
 \]
 
-这实际上是一个关于$u^3$的二次方程：$(u^3)^2 - qu^3 + (\dfrac{p}{3})^3 = 0$，利用二次方程求根公式得到：
+It is acutally a quadratic equation in terms of $u^3$, that is, $(u^3)^2 - qu^3 + (\dfrac{p}{3})^3 = 0$. Using the quadratic formula, we can solve for $u^3$:
 
 \[
 u^3 = \frac{q}{2} \pm \sqrt{\left(\frac{q}{2}\right)^2 - \left(\frac{p}{3}\right)^3}
 \]
 
-注意到$u, v$在上面的二元方程组中是完全对称的，$v^3$必然具有同样的形式。我们不妨让它们分别取这两个根：
+Since $u$ and $v$ are symmetric in the above system of equations, $v^3$ must have the same form. We can let them take these two roots respectively:
 
 \[
 \begin{dcases}
@@ -221,54 +221,54 @@ v^3 = \dfrac{q}{2} - \sqrt{\left(\dfrac{q}{2}\right)^2 - \left(\dfrac{p}{3}\righ
 \end{dcases}
 \]
 
-\index{卡尔达诺公式}
-这样它们满足$u^3 + v^3 = q$。最后由$y = u + v$，我们得到方程的根：
+\index{Cardano formula}
+They satisfy $u^3 + v^3 = q$. Finally, since $y = u + v$, we can obtain the root of the equation: 
 
 \be \label{eq:cardano}
 y = u + v = \sqrt[3]{\frac{q}{2} + \sqrt{\left(\frac{q}{2}\right)^2 - \left(\frac{p}{3}\right)^3}} + \sqrt[3]{\frac{q}{2} - \sqrt{\left(\frac{q}{2}\right)^2 - \left(\frac{p}{3}\right)^3}}
 \ee
 
-\index{一元三次方程的几何解法} \label{sec:geometric-cubic-solution}
-这就是高中数学课上的卡尔达诺公式。我们进一步可以用$x = y - \dfrac{a}{3}$求出未知数$x$。与此对照，我们接下来用几何法解三次方程$y^3 + py = q$。如\cref{fig:cube-decompose}所示，把一个边长为$r$的大正方体切分为5部分：左前下角的边长为$r-s$的小正方体；右后上角的边长为$s$的小正方体；三个长$r$宽$r-s$高$s$的长方体，分别位于左上、右前、后下。大正方体的体积等于这5部分的体积之和，即：
+\index{geometric solution to cubic equations} \label{sec:geometric-cubic-solution}
+This is the Cardano formula for solving cubic equations. We can further find the unknown $x$ using $x = y - \dfrac{a}{3}$. We will next solve the cubic equation $y^3 + py = q$ using geometric methods. As shown in \cref{fig:cube-decompose}, we can cut a large cube with side length $r$ into 5 parts: a small cube with side length $r-s$ at the lower left front corner; a small cube with side length $s$ at the upper right back corner; and three rectangular prisms with length $r$, width $r-s$, and height $s$, located at the upper left, lower right front, and lower right back corners respectively. The volume of the large cube equals the sum of the volumes of these 5 parts, that is:
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[scale=0.4]{img/cube-decompose}
-  \caption{把边长为$r$的正方体切分成5部分}
+  \caption{A cube with side length of $r$ consists of 5 parts.}
  \label{fig:cube-decompose}
 \end{figure}
 
 \begin{align*}
-r^3 = (r-s)^3 + s^3 + 3rs(r-s)  &&\text{两个正方体加三个长方体} \\
+r^3 = (r-s)^3 + s^3 + 3rs(r-s)  &&\text{two cubes and three rectangular prisms} \\
 (r-s)^3 + 3rs(r-s) = r^3 - s^3
 \end{align*}
 
-令$p = 3rs, q = r^3 - s^3$，则上述等式就是$(r-s)^3 + p(r-s) = q$。显然$y = r - s$就是方程$y^3 + py = q$的一个解。所以只要根据$p, q$找到合适$r, s$就能解出三次方程了。由$p = 3rs$得$s = \dfrac{p}{3r}$，代入$q = r^3 - s^3$得到方程：
+Let $p = 3rs, q = r^3 - s^3$ and substitute into the above equation: $(r-s)^3 + p(r-s) = q$. Obviously, $y = r - s$ is a solution to the equation $y^3 + py = q$. Therefore, as long as we can find suitable $r$ and $s$ based on $p$ and $q$, we can solve the cubic equation. From $p = 3rs$, we have $s = \dfrac{p}{3r}$, and substituting it into $q = r^3 - s^3$ gives us the equation:
 
 \[
 r^3 - (\frac{p}{3r})^3 = q
 \]
 
-这本质上是一个关于$r^3$的二次方程$(r^3)^2 - qr^3 - (\dfrac{p}{3})^3 = 0$，利用二次方程求根公式得到：
+This is actually a quadratic equation in terms of $r^3$, that is, $(r^3)^2 - qr^3 - (\dfrac{p}{3})^3 = 0$. Using the quadratic formula, we can solve for $r^3$:
 
 \[
 r^3 = \frac{q}{2} + \sqrt{\left(\frac{q}{2}\right)^2 + \left(\frac{p}{3}\right)^3}
 \]
 
-对称地可以求出$s^3$：
+Since $r$ and $s$ are symmetric in the above equations, we can solve for $s^3$ in the same way, that is:
 
 \[
-s = -\frac{q}{2} + \sqrt{\left(\dfrac{q}{2}\right)^2 + \left(\dfrac{p}{3}\right)^3}
+s^3 = -\frac{q}{2} + \sqrt{\left(\dfrac{q}{2}\right)^2 + \left(\dfrac{p}{3}\right)^3}
 \]
 
-\index{卡尔达诺公式}
-最终求得未知数$y = r - s$：
+\index{Cardano formula}
+And as $y = r - s$:
 
 \[
-y = r - s = \sqrt[3]{\frac{q}{2} + \sqrt{\left(\frac{q}{2}\right)^2 + \left(\frac{p}{3}\right)^3}} - \sqrt[3]{\frac{q}{2} + \sqrt{\left(\frac{q}{2}\right)^2 + \left(\frac{p}{3}\right)^3}}
+y = r - s = \sqrt[3]{\frac{q}{2} + \sqrt{\left(\frac{q}{2}\right)^2 + \left(\frac{p}{3}\right)^3}} + \sqrt[3]{\frac{q}{2} - \sqrt{\left(\frac{q}{2}\right)^2 + \left(\frac{p}{3}\right)^3}}
 \]
 
-和代数法推出的卡尔达诺公\cref{eq:cardano}对比，只有$p$的正负号不同，这是由于方程$y^3 + py = q$和$y^3 = py + q$中$p$的符号相反。我们可以尝试用卡尔达诺公式解方程$x^3 = 6x + 9$。
+Comparing this with the Cardano formula derived from algebraic methods, \cref{eq:cardano}, we can see that the only difference is the sign of $p$. This is because in the equations $y^3 + py = q$ and $y^3 = py + q$, the sign of $p$ is opposite. Let's apply the Cardano formula to the equation $x^3 = 6x + 9$.
 
 \begin{align*}
 x &= \sqrt[3]{\frac{9}{2} + \sqrt{\left(\frac{9}{2}\right)^2 - \left(\frac{6}{3}\right)^3}} + \sqrt[3]{\frac{9}{2} - \sqrt{\left(\frac{9}{2}\right)^2 - \left(\frac{6}{3}\right)^3}} \\
@@ -277,38 +277,38 @@ x &= \sqrt[3]{\frac{9}{2} + \sqrt{\left(\frac{9}{2}\right)^2 - \left(\frac{6}{3}
   &= \sqrt[3]{8} + \sqrt[3]{1} = 2 + 1 = 3
 \end{align*}
 
-验证的确有$3^3 = 27 = 6 \times 3 + 9$。三次方程公式是数学上的重大突破，人们迫不及待地用它来解决各种个样的问题。可是有些方程却令人大惑不解，其中最著名的例子是$x^3 = 15x + 4$。通过观察$x = 4$是方程的一个解：$4^3= 64 = 60 + 4 = 15 \times 4 + 4$。但卡尔达诺公式给出的结果是：
+It's easy to verify that $3^3 = 27 = 6 \times 3 + 9$. Cardano's formula to the cubic equation is a significant breakthrough in mathematics, and people were eager to use it to solve various problems. However, some equations were perplexing, with the most famous example being $x^3 = 15x + 4$. By observation, $x = 4$ is a solution to the equation: $4^3 = 64 = 60 + 4 = 15 \times 4 + 4$. But the result given by the Cardano formula is:
 
 \begin{align*}
 x &= \sqrt[3]{2 + \sqrt{2^2 - 5^3}} + \sqrt[3]{2 - \sqrt{2^2 - 5^3}}  \\
   &= \sqrt[3]{2 + \sqrt{-121}} + \sqrt[3]{2 - \sqrt{-121}}
 \end{align*}
 
-\index{数学家!邦贝利}
-竟然在二次根号下出现了负数。解二次方程时如果判别式为负，人们可以说“无解”。但这个方程明明有一个解$x = 4$，并非“无解”。人们必须正视这个问题。卡尔达诺不知道如何解答，他在《大术》中评论道：“这些数即微妙又无用。”在这个问题上取得突破的是意大利数学家邦贝利（Rafael Bombelli, 1526～1572）。邦贝利设想把$\sqrt[3]{2 \pm \sqrt{-121}}$化简成$a \pm b\sqrt{-1}$的形式。这样卡尔达诺公式的两项加起来就是：
+\index{Bombelli}
+surprisingly, a negative number appears under the square root. When solving quadratic equations, if the discriminant is negative, people can say \enquote{no solution}. But this equation clearly has a solution $x = 4$, which is not \enquote{no solution}. Cardano didn't know how to answer it, and he commented in \emph{Ars magna}: \enquote{These numbers are both subtle and useless.} The breakthrough on this issue was made by the Italian mathematician Rafael Bombelli (1526–1572). Bombelli imagined simplifying $\sqrt[3]{2 \pm \sqrt{-121}}$ into the form $a \pm b\sqrt{-1}$. Then the two terms in the Cardano formula would add up to:
 
 \[
 \sqrt[3]{2 + \sqrt{-121}} + \sqrt[3]{2 - \sqrt{-121}} = a + b\sqrt{-1} + a - b\sqrt{-1} = 2a = 4
 \]
 
-这样就确定出$a = 2$。接下来通过待定系数法确定$b$的值。邦贝利假设$(\sqrt{-1})^2 = -1$，把两边乘3次方：
+Hence, $a = 2$. Next is to determine $b$. Bombelli assumed that $(\sqrt{-1})^2 = -1$, cubing both sides:
 
 \begin{align*}
 2 + \sqrt{-121} &= (2 + b\sqrt{-1})^3 \\
-  &= 8 + 12b\sqrt{-1} - 6b^2 - b^3\sqrt{-1} && \text{二项式展开} \\
+  &= 8 + 12b\sqrt{-1} - 6b^2 - b^3\sqrt{-1} && \text{binomial expansion} \\
   &= (8 - 6b^2) + (12b - b^3)\sqrt{-1}
 \end{align*}
 
-由$2 = 8 - 6b^2$得出$b = \pm 1$；把1代入$(12b - b^3)\sqrt{-1}$得$11\sqrt{-1}$。平方后可验证：$(11\sqrt{-1})^2 = -121$。于是有$\sqrt[3]{2 + \sqrt{-121}} = 2 + \sqrt{-1}$。对于$b = -1$，邦贝利接着通过两边乘3次方验证了$\sqrt[3]{2 - \sqrt{-121}} = 2 - \sqrt{-1}$也成立。他对这个结果非常满意，在1572年出版的《代数》一书中写道：“起初，我感到这样处理更像是诡辩而非真理，但我不断探寻，直至找到证明。”\cite{OMerino-2006}邦贝利的数学观点远远超越了他的时代。当人们尚未接受负数，邦贝利在《代数》中不仅正确地定义了正负数之间的运算规则，还给出了复数的计算规则。他称$\sqrt{-n}$为“负的正”（plus of minus）称$-\sqrt{-n}$为“负的负”（minus of minus），然后写道\cite{MacTour-Bombelli}：
+From $2 = 8 - 6b^2$, it follows that $b = \pm 1$; substituting $1$ into $(12b - b^3)\sqrt{-1}$ gives $11\sqrt{-1}$. Squaring it verifies that $(11\sqrt{-1})^2 = -121$. Therefore, we have $\sqrt[3]{2 + \sqrt{-121}} = 2 + \sqrt{-1}$. For $b = -1$, Bombelli further verified by cubing both sides that $\sqrt[3]{2 - \sqrt{-121}} = 2 - \sqrt{-1}$ also holds. He was very pleased with this result and wrote in his book \emph{Algebra}, published in 1572: \enquote{At first, I felt that such treatment was more like sophistry than truth, but I kept searching until I found the proof.}\cite{OMerino-2006} Bombelli's mathematical perspective was far ahead of his time. When people had not yet accepted negative numbers, Bombelli not only correctly defined the rules of operations between positive and negative numbers in \emph{Algebra}, but also provided the calculation rules for complex numbers. He called $\sqrt{-n}$ the \enquote{plus of minus} and $-\sqrt{-n}$ the \enquote{minus of minus}, then wrote\cite{MacTour-Bombelli}:
 
 \begin{quotation}
-负的正乘以负的正为负，即：$\sqrt{-n} \times \sqrt{-n} = -n$；
+Plus of minus times plus of minus makes minus [$\sqrt{-n} \times \sqrt{-n} = -n$]
 
-负的正乘以负的负为正，即：$\sqrt{-n} \times -\sqrt{-n} = n$；
+Plus of minus times minus of minus makes plus [$\sqrt{-n} \times -\sqrt{-n} = n$]
 
-负的负乘以负的正为正，即：$-\sqrt{-n} \times \sqrt{-n} = n$；
+Minus of minus times plus of minus makes plus [$-\sqrt{-n} \times \sqrt{-n} = n$]
 
-负的负乘以负的正为负，即：$-\sqrt{-n} \times -\sqrt{-n} = -n$；
+Minus of minus times minus of minus makes minus [$-\sqrt{-n} \times -\sqrt{-n} = -n$]
 \end{quotation}
 
 非常遗憾的是，邦贝利原来准备出版五卷本《代数》，但1572年出版了前三卷后他就去世了。剩余的两卷本草稿直到1923年才被发现于意大利博洛尼亚的图书馆。当时的人们并没有相信并接受邦贝利的观点，数学界基本排斥$\sqrt{-1}$。在接下来的200年间，即使有少数学者如沃利斯尝试赋予复数涵义，但大多数人要么怀疑，要么忽视了邦贝利的计算规则。直到1770年，大数学家欧拉仍然在他的著作中“证明”$\sqrt{-2} \times \sqrt{-3} = \sqrt{6}$，我们今天看到这个结论会感到很意外\footnote{欧拉实际上用符号$\sqrt{6}$表示6的一对平方根$\pm\sqrt{6}$，类似地$\sqrt{-2}$表示-2的一对平方根$\pm\sqrt{-2}$，$\sqrt{-3}$表示-3的一对平方根$\pm\sqrt{-3}$，这样欧拉的本意是想表示$\pm \sqrt{-2} \times \pm \sqrt{-3} = \pm \sqrt{6}$的所有组合}。也有人高度评价邦贝利的工作，莱布尼茨说他是“杰出的分析艺术大师。”今天人们称邦贝利为“虚数之父”。
