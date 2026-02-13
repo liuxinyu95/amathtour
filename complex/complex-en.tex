@@ -255,7 +255,7 @@ This is actually a quadratic equation in terms of $r^3$, that is, $(r^3)^2 - qr^
 r^3 = \frac{q}{2} + \sqrt{\left(\frac{q}{2}\right)^2 + \left(\frac{p}{3}\right)^3}
 \]
 
-Since $r$ and $s$ are symmetric in the above equations, we can solve for $s^3$ in the same way, that is:
+by $q = r^3 - s^3$, hence,
 
 \[
 s^3 = -\frac{q}{2} + \sqrt{\left(\dfrac{q}{2}\right)^2 + \left(\dfrac{p}{3}\right)^3}
@@ -311,16 +311,16 @@ Minus of minus times plus of minus makes plus [$-\sqrt{-n} \times \sqrt{-n} = n$
 Minus of minus times minus of minus makes minus [$-\sqrt{-n} \times -\sqrt{-n} = -n$]
 \end{quotation}
 
-非常遗憾的是，邦贝利原来准备出版五卷本《代数》，但1572年出版了前三卷后他就去世了。剩余的两卷本草稿直到1923年才被发现于意大利博洛尼亚的图书馆。当时的人们并没有相信并接受邦贝利的观点，数学界基本排斥$\sqrt{-1}$。在接下来的200年间，即使有少数学者如沃利斯尝试赋予复数涵义，但大多数人要么怀疑，要么忽视了邦贝利的计算规则。直到1770年，大数学家欧拉仍然在他的著作中“证明”$\sqrt{-2} \times \sqrt{-3} = \sqrt{6}$，我们今天看到这个结论会感到很意外\footnote{欧拉实际上用符号$\sqrt{6}$表示6的一对平方根$\pm\sqrt{6}$，类似地$\sqrt{-2}$表示-2的一对平方根$\pm\sqrt{-2}$，$\sqrt{-3}$表示-3的一对平方根$\pm\sqrt{-3}$，这样欧拉的本意是想表示$\pm \sqrt{-2} \times \pm \sqrt{-3} = \pm \sqrt{6}$的所有组合}。也有人高度评价邦贝利的工作，莱布尼茨说他是“杰出的分析艺术大师。”今天人们称邦贝利为“虚数之父”。
+Bombelli had planned five books of \emph{Algebra}, sadly, he died in 1572 after publishing the first three books. The remaining two were not discovered until 1923 in a library in Bologna, Italy. At that time, people did not believe and accept Bombelli's views, and the mathematical community largely rejected $\sqrt{-1}$. In the following 200 years, even though a few scholars like Wallis attempted to give meaning to complex numbers, most people either doubted or ignored Bombelli's calculation rules. It wasn't until 1770 that Euler still \enquote{proved} in his work that $\sqrt{-2} \times \sqrt{-3} = \sqrt{6}$, which would surprise us today\footnote{Euler actually used the symbol $\sqrt{6}$ to represent the two square roots of 6, $\pm\sqrt{6}$; similarly, $\sqrt{-2}$ represents the two square roots of -2, $\pm\sqrt{-2}$; and $\sqrt{-3}$ represents the two square roots of -3, $\pm\sqrt{-3}$. Thus, Euler's original intention was to express all combinations of $\pm \sqrt{-2} \times \pm \sqrt{-3} = \pm \sqrt{6}$.}. Some people highly praised Bombelli's work; Leibniz said he was \enquote{a master of the art of analysis.} Today, Bombelli is known as \enquote{the father of imaginary numbers.}
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[scale=0.4]{img/Bombelli}
-  \caption{拉斐尔·邦贝利，1526～1572}
+  \caption{Rafael Bombelli (1526 - 1572)}
  \label{fig:Bombelli}
 \end{figure}
 
-邦贝利使用了$a + b\sqrt{-1}$的形式。第一个使用这种形式的是卡尔达诺，但是他接着否定了自己。在《大术》第37章，卡尔达诺给出了这样的一个问题：把10分成两部分，使它们的乘积是40。列方程就是：
+Bombelli used the form $a + b\sqrt{-1}$. The first person to use this form was Cardano, but he immediately rejected it. In Chapter 37 of \emph{Ars magna}, Cardano presented a problem: divide 10 into two parts such that their product is 40. The system of equations is:
 
 \[
 \begin{cases}
@@ -329,26 +329,26 @@ xy = 40
 \end{cases}
 \]
 
-消元可得一元二次方程$x(x-10) = 40$。我们知道，把10分成两部分，乘积最大是$5 \times 5 = 25$，所以40是不可能的（也可以这样思考：用一根长20厘米的绳子围成矩形，边长为5的正方形面积最大，为25平方厘米）。卡尔达诺写道：
+Represent $y$ as $10 - x$, and substitute it into the second equation to get $x(10 - x) = 40$. Dividing 10 into two parts, the maximum product is $5 \times 5 = 25$, so 40 is impossible (we can also think of it as using a 20 $cm$ rope to form a rectangle, the square with side length 5 has the largest area of 25 $cm^2$). Cardano wrote:
 
 \begin{quotation}
-显然这是不可能的。尽管如此，我们可以把10均分成两个5，平方是25。减去40，如果你希望的话，得$-15$。用5加、减$-15$的平方根得到的两个数的乘积就是40。因此这两个数是$5 + \sqrt{-15}$和$5 - \sqrt{-15}$。
+  This is clearly impossible. However, if we divide 10 into two parts of 5, the square is 25. Subtracting 40 from it, if you wish, gives $-15$. By adding and subtracting the square root of $-15$ to 5, we get two numbers whose product is 40. Therefore, these two numbers are $5 + \sqrt{-15}$ and $5 - \sqrt{-15}$. Although it may seem absurd, by cubing both sides of the equation
 
-尽管匪夷所思，把两个数$5 + \sqrt{-15}$和$5 - \sqrt{-15}$相乘得$25-(-15)$，乘积的确是40。
+Dismissing mental tortures, and multiplying $5 + \sqrt{-15}$ by $5 - \sqrt{-15}$, we obtain $25 - (-15)$. Therefore the product is 40. .... and thus far does arithmetical subtlety go, of which this, the extreme, is, as I have said, so subtle that it is useless.
 \end{quotation}
 
-\index{虚数}
-卡尔达诺的方法是把10分成$5 + x$和$5 - x$，让它们的积是40。利用平方差公式$(5 + x)(5 - x) = 25 - x^2 = 40$，因此$x^2 = -15$。这样推出解为$5 \pm \sqrt{-15}$。正是由于在现实应用，特别是在一元二次方程中的不合理性，卡尔达诺以及同时代的大多数人舍弃了复数答案。但是邦贝利意识到在三次方程的\underdot{合理}应用中，作为中间结果的复数有其存在价值。那么“虚数”这个名字是怎么来的呢？这要“归功”于笛卡尔。笛卡尔在1637年创建了解析几何\footnote{发表于《谈谈方法》一书的附录《几何学》中。}。方程的根对应曲线间的交点或曲线与坐标轴的零点。尽管当时人们没有认识到代数基本定理，笛卡尔还是敏锐地洞见到方程根的个数等于方程的次数。但是从几何上的观点上看，某些曲线不和$x$轴相交，或者曲线间不相交。面对这些几何上不可能的构造，笛卡尔认为它们的交点或零点是虚构的。“虚数”一词就来自笛卡尔文中的imaginary，在英文中它同时还有想象的涵义。笛卡尔写道：“对于任何方程，人们可以想象（imagine）有着和次数同样多的根，但在很多情况下，这些根对应的值并不存在。”
+\index{imaginary number}
+Cardano's method was to divide 10 into two parts, $5 + x$ and $5 - x$, such that their product is 40. Because $(5 + x)(5 - x) = 25 - x^2 = 40$, hence $x^2 = -15$. This leads to the solution $5 \pm \sqrt{-15}$. Due to the irrationality of negative squares, particularly in the application of quadratic equations, Cardano and most of his contemporaries abandoned complex solutions. However, Bombelli realized that in  cubic equations, such numbers as intermediate results make sense. The term \enquote{imaginary number} attributes to Descartes. When developing analytic geometry\footnote{Published in the appendix \emph{La Géométrie} of his book \emph{Discours de la méthode}.} in 1637, Descartes corresponded the roots of equations to the intersection points between curves or the zeros of curves with coordinate axes. Although people at that time did not recognize the fundamental theorem of algebra, Descartes had insights that the number of roots of an equation equals its degree. Curves may not intersect with each other, or intersect with the $x$-axis, Facing with such geometrically impossible constructions, Descartes considered their intersection points or zeros as imaginary. The term \enquote{imaginary} also has the meaning of being imagined in English. Descartes wrote \enquote{, For any equation, one can imagine as many roots as its degree, but in many cases, these roots correspond to values that do not exist.}
 
-\index{虚数单位i}
-我们今天广泛使用符号$i$作为虚数单位。这个符号是欧拉选定的。它是imaginary的首字母。笛卡尔的态度反映了当时大多数人的观点。数学家们并不喜欢虚构、想象这些涵义。其中一个原因是$\sqrt{-n}$带来了混乱和歧义。例如常见的运算规则$\sqrt{ab} = \sqrt{a}\sqrt{b}$还成立么？有人指出这样的问题：
+\index{i as imaginary unit}
+We use the symbol $i$ as the imaginary unit today. This symbol was chosen by Euler. It is the first letter of \enquote{imaginary}. Descartes' opinion reflected the view of most people at that time. Mathematicians did not like the terms indicating fiction and imagination. One reason is that $\sqrt{-n}$ brought confusion and ambiguity. For example, does the common operation rule $\sqrt{ab} = \sqrt{a}\sqrt{b}$ still hold? Some pointed out such a problem:
 
 \begin{align*}
 70 &= \sqrt{4900} = \sqrt{(-100)\times(-49)} = \sqrt{-100}\sqrt{-49} \\
    &= (10i)(7i) = 70 \times (-1) = -70
 \end{align*}
 
-这样就出现了$70 = -70$的矛盾结论（见\cref{qn:sqrt-of-product}）。复变函数之父柯西建议拒绝符号$\sqrt{-1}$，高斯对$i$也不满意，建议取个新名字。但他的建议太晚了，$i$已经被广泛使用，直到今天。
+$70 = -70$ is absurd (see \cref{qn:sqrt-of-product}). Cauchy, known as the father of complex analysis,  suggested rejecting the symbol $\sqrt{-1}$, and Gauss was also dissatisfied with $i$, suggesting a new name. But his suggestion came too late, as $i$ had already been widely used and continues to be used today.  
 
 \section{佚名数学家}
 
