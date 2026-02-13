@@ -350,31 +350,31 @@ We use the symbol $i$ as the imaginary unit today. This symbol was chosen by Eul
 
 $70 = -70$ is absurd (see \cref{qn:sqrt-of-product}). Cauchy, known as the father of complex analysis,  suggested rejecting the symbol $\sqrt{-1}$, and Gauss was also dissatisfied with $i$, suggesting a new name. But his suggestion came too late, as $i$ had already been widely used and continues to be used today.  
 
-\section{佚名数学家}
+\section{Argand}
 
-为了让复数真正进入数的大家族得到承认，必须解决它的意义问题。并且这种意义不能是牵强附会的空中楼阁，它必须是自然的、让人信服的并且能解决真正的问题。1673年，微积分的先驱者英国数学家沃利斯试图给出复数的几何解释，但是他和成功失之交臂。沃利斯是数轴的发明者，他正是利用数轴作为武器，尝试解方程$x^2 + 2bx + c^2 = 0$。根据二次方程求根公式，方程的两个根是：$x_{1,2} = -b \pm \sqrt{b^2 - c^2}$。如\cref{fig:wallis1}所示，沃利斯在数轴上找到$-b$，然后以这点为垂足构造一左一右两个直角三角形，其高为$c$、斜边为长$b$。根据勾股定理，另一直角边长为$a = \sqrt{b^2 - c^2}$。所以在点$-b$的左右两侧，距离为$a$的两个点就是$x_{1,2}$。
+Nobody will accept complex numbers unless they have a clear meaning, that is natural, convincing, and able to solve real problems. In 1673, Wallis, a pioneer of calculus attempted to give a geometric interpretation of complex numbers. Wallis, who invented the number line, tried to use it to solve the equation $x^2 + 2bx + c^2 = 0$. The two roots are $x_{1,2} = -b \pm \sqrt{b^2 - c^2}$. As shown in \cref{fig:wallis1}, Wallis marked $-b$ on the number line and constructed two right triangles on either side with height $c$ and hypotenuse length $b$. By Pythagorean theorem, the length of other leg is $a = \sqrt{b^2 - c^2}$. Therefore, on either side of the point $-b$, at a distance of $a$, are the two roots $x_{1,2}$.
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[scale=0.33]{img/wallis1}
-  \caption{根$x_{1,2} = -b \pm \sqrt{b^2 - c^2}$在数轴上的位置}
+  \caption{Roots $x_{1,2} = -b \pm \sqrt{b^2 - c^2}$ on the number line.}
  \label{fig:wallis1}
 \end{figure}
 
-到此为止一切正常。接着沃利斯不断增大$c$的值，两个根$x_{1,2}$越来越靠近$-b$点。当$c = b$时两个根重合了。如果继续增大$c$会怎样呢？沃利斯绘制出了这样一幅图，如\cref{fig:wallis2}所示。
+Everything is fine so far. Then Wallis kept increasing the value of $c$, and the two roots $x_{1,2}$ got closer and closer to the point $-b$. When $c = b$, the two roots coincide. What if we keep increasing $c$? Wallis drew a picture as shown in \cref{fig:wallis2}.
 
 \begin{figure}[htbp]
   \centering
-  \subcaptionbox{沃利斯认为$-b \pm i\sqrt{c^2-b^2}$所在的位置\label{fig:wallis2}}{\includegraphics[scale=0.33]{img/wallis2}}
-  \subcaptionbox{实际上$-b \pm i\sqrt{c^2-b^2}$在复平面上的位置\label{fig:wallis3}}{\includegraphics[scale=0.33]{img/wallis3}}
-  \caption{方程$x^2 + 2bx + c^2 = 0$的两个根}
+  \subcaptionbox{Where Wallis marked $-b \pm i\sqrt{c^2-b^2}$. \label{fig:wallis2}}{\includegraphics[scale=0.33]{img/wallis2}}
+  \subcaptionbox{The location of $-b \pm i\sqrt{c^2-b^2}$ in the complex plane. \label{fig:wallis3}}{\includegraphics[scale=0.33]{img/wallis3}}
+  \caption{Roots of $x^2 + 2bx + c^2 = 0$ when $c > b$.}
 \end{figure}
 
-\index{数学家!韦塞尔}
-这已经非常接近真相了。沃利斯认为此时$c$成为斜边，一条直角边是$b$，另一直角边是$\sqrt{c^2 - b^2}$，但它们仍然在点$-b$的左右两侧。实际上沃利斯只要把左右两侧换成上下就能触摸到复平面了。这真令人惋惜。在历史上第一个成功解决复数几何意义的人是丹麦-挪威数学家卡斯帕尔·韦塞尔（Caspar Wessel，1745～1818）。1797年3月10日，韦塞尔向丹麦皇家科学提交了他的著作，题为《论方向的解析表示——主要应用于平面和球面多边形求解的尝试》。他成功地把复数$a + bi$表示为平面直角坐标系中从原点指向坐标$(a, b)$的线段（即向量），并且定义了向量间的代数计算规则，包括加法和乘法。从几何的角度，加法规则相当于“平行四边形”原理；乘法相当于把线段的长度相乘，然后把各自相对于横轴的角度相加。韦塞尔的论文于两年后发表。非常遗憾的是，韦塞尔的职业是一名测量员而非知名数学家，并且论文的语言是丹麦语，当时并未引起广泛关注。韦塞尔的名字被大多数人忽略了，直到约100年后的1895年，他的工作才重新引起人们重视。挪威数学家索菲斯·李重新发表了韦塞尔的论文。更加匪夷所思的是，1806年，一个年轻人重新独立发现了复平面和复数的几何意义，但没有人知道他的名字。
+\index{Wessel}
+It's almost correct. Wallis thought that at this point, $c$ becomes the hypotenuse, one leg is $b$, and the other leg is $\sqrt{c^2 - b^2}$, but they are still on either side of the point $-b$. In fact, if Wallis had just swapped the left and right sides to up and down, he could have touched the complex plane. It's really a pity. The first person in history who successfully gave the geometric interpretation to complex numbers was Danish-Norwegian mathematician Caspar Wessel (1745–1818). On March 10, 1797, Wessel submitted his work to the Royal Danish Academy of Sciences and Letters, titled \emph{On the Analytical Representation of Direction—An Attempt at Solving Problems in Geometry of Position}. He successfully represented a complex number $a + bi$ as a line segment (i.e., a vector) from the origin to the coordinate $(a, b)$ in a Cartesian coordinate system, and defined algebraic rules for calculations between vectors, including addition and multiplication. Geometrically, the addition rule corresponds to the \enquote{parallelogram} principle; multiplication corresponds to multiplying the lengths of the line segments and adding their  angles with respect to the horizontal axis. Wessel's paper was published two years later. Unfortunately, Wessel's was a surveyor rather than a well-known mathematician, and his paper was written in Danish, which did not attract enough attention at that time. Wessel's name was ignored by most people until about 100 years later in 1895 when his work was reappreciated. Norwegian mathematician Sophus Lie republished Wessel's paper. Even more surprisingly, in 1806, a young man independently rediscovered the complex plane and the geometric meaning of complex numbers, but no one knows his name.
 
-\subsection{佚名作者阿尔冈}
-\index{数学家!阿尔冈}
+\subsection{Argand and the mysterious young man}
+\index{Argand}
 1806年金秋，一位年轻人敲开了法国科学院院士勒让德的大门。他十分紧张，勒让德被认为是欧拉最好的弟子，拉格朗日的接班人。拿破仑重建科学院后，任命勒让德为数学部的负责人和法国最高学府——巴黎综合工科学校的主考官。这位年轻人做了简单的自我介绍，由于紧张，他甚至忘记了介绍自己的名字。他恭敬地把自己的一篇手稿交给勒让德，恳请他指正。年轻人没有仔细解释目的，但是当被问起论文内容时，他立刻兴奋起来了。“哦，尊敬的院士先生”，年轻人说：“这是一篇关于虚数的研究工作，我发现虚数其实是有意义的，它就像其它的数那样真实！只要我们把它们看成是线段，就会发现……”面对滔滔不绝的年轻人，勒让德一脸狐疑。他只好打断：“我现在很忙，不过我答应有时间读一读你的文章，我们今天先到这里吧。”在大门关闭前年轻人再次恳请：“院士先生，我非常期待您的批评指正。”
 
 送走了这位年轻人，勒让德很快就忙于其它研究和科学院的事务了。直到几周后，勒让德偶然看到了放在案头的几张纸，题目是《关于在几何构造中表示虚数的一种方法的论述》。这是谁送来的？哦，想起来了，那个年轻人叫什么来着？好像记不清了，不管怎样，勒让德读了下去。出乎意料的是，勒让德一旦开始读就立刻被这篇文章吸引住了。绝对出人意料的创新想法，行云流水般的论述，扎实的计算，精确的结论，把数、几何、三角函数完美地结合在一起。勒让德决定马上联系一下这位小伙子，和他深入讨论。可他翻遍了论文的前前后后，也没有找到任何姓名、地址。怎么会这样呢？也许这位年轻人过两天会再次登门拜访吧？勒让德决定等一等。一天、两天……从深秋等到初冬，转眼巴黎已经飘下了第一场雪。可年轻人再也没有出现。这位年轻人会不会直接在期刊上发表他的论文？这样我就能找到他讨论了。勒让德跑到图书馆检查了过去几个月的各种数学期刊，但再次让他失望。也许当天勒让德的态度让这位年轻人心灰意冷，放弃了这个研究。11月2日，勒让德把这篇论文寄给了他的朋友与合作者数学家弗朗索瓦·弗朗塞，并附上了一小段评论，他称赞了那位不慕虚荣热爱学术的年轻人，并认为尽管是草稿，但是具有足够的创新性。
