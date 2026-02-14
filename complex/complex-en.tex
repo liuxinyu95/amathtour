@@ -509,58 +509,58 @@ Descartes's theorem lighted a path for solving polynomial equations: denote the 
 Any polynomial equation $p(x) = 0$ has at least one complex root.
 \end{theorem}
 
-这个定理有着诸多的版本，吸引着众多聪明的头脑去证明它。高斯一生先后四次用不同的方法证明代数基本定理。1799年，22岁的高斯在其博士论文中证明了任何实系数多项式方程总有一个复数根。接着又在1815年和1816年给出了另外两个证明。1849年，在庆祝取得博士学位50周年的纪念会上，高斯又发表了第四个证明，并把多项式系数推广到了复数。一旦证明了任何多项式方程总有一个复数根，利用笛卡尔定理就能推出$n$次多项式方程总有$n$个复数根（包括重根）：先找到一个根$z = a$，然后抽取因式$q(z) = p(z)/(z - a)$得到$n-1$次方程，重复此步骤就得到$n$个根。代数基本定理还能用因式分解的方式阐述：任何多项式都可以分解为若干一次式或二次式的积。然后利用达朗贝尔的结论，这些二次因式能再次分解为$(z - a)(z - \overline{a})$，所以可以等价地说：任何多项式可以在复数内分解为若干一次式的积。在大学的数学专业课上，能看到各种各样的代数基本定理证明方法，有利用伽罗瓦理论证明的，有利用拓扑学证明的，有利用数学分析证明的。我们这里给出阿尔冈的几何证明，这是所有证明中最简单易懂的。在阿尔冈之前，达朗贝尔于1746年给出过代数基本定理的证明。但高斯在1799年指出其中有“严重缺陷”，未经证明就使用了如下结论：
+This theorem has several variant versions, attracting many brilliant minds to prove it. Gauss proved the fundamental theorem of algebra four times in his lifetime using different methods. In 1799, at the age of 22, Gauss proved in his doctoral thesis that any polynomial equation with real coefficients has a complex root. Then he gave two more proofs in 1815 and 1816. In 1849, at the celebration of the 50th anniversary of obtaining his doctorate, Gauss published a fourth proof and extended the coefficients of polynomials to complex numbers. Once we prove that any polynomial equation has at least one complex root, we can use Descartes's theorem to conclude that an $n$-degree polynomial equation has $n$ complex roots (including repeated roots): first find a root $z = a$, then factorize as $q(z) = p(z)/(z - a)$ to get an $n-1$ degree equation, repeat this process to get $n$ roots. The fundamental theorem of algebra can also be stated in terms of factorization: any polynomial can be factored into a product of several linear or quadratic factors. Then using d'Alembert's conclusion, these quadratic factors can be further factored into $(z - a)(z - \overline{a})$, so we can equivalently say: any polynomial can be factored into a product of several linear factors in complex numbers. In undergraduate mathematics courses, you can see various methods for proving the fundamental theorem of algebra, some using Galois theory, some using topology, some using mathematical analysis. Here we give Argand's geometric proof, which is the simplest and most intuitive among all proofs. Before Argand, d'Alembert gave a proof of the fundamental theorem of algebra in 1746. But Gauss in 1799 criticized it had \enquote{serious flaws}, which used the following conclusion without proof:
 
-\index{达朗贝尔引理}
-\begin{lemma}[达朗贝尔引理]
-如果非常数多项式$p(z)$在复数$z_0$处$p(z_0) \ne 0$，则在$z_0$的附近存在某个$z_0'$使得模$|p(z_0')| < |p(z_0)|$。
+\index{d'Alembert's lemma}
+\begin{lemma}[d'Alembert]
+If a non-constant polynomial $p(z)$ is not zero at a complex number $z_0$, then there exists a complex number $z_0'$ in a neighborhood of $z_0$ such that $|p(z_0')| < |p(z_0)|$.
 \end{lemma}
 
-阿尔冈用复数的几何意义成功地证明了它，从而修复了这个缺陷。“非常数多项式”排除了$p(z) = 2$这样的多项式，它的值总是常数。“附近”实际上是\underdot{邻域}的概念，我们可以直观地想象以$z_0$为中心画一个小圆所覆盖的范围。$|p(z_0)|$表示多项式在$z_0$这一点所取复数值的模。
+Argand's geometric interpretation of complex numbers allowed him to successfully prove this lemma, thus fixing this flaw. The term \enquote{non-constant polynomial} excludes polynomials like $p(z) = 2$, which always takes a constant value. For the term \enquote{neighborhood}, we can intuitively imagine as the area covered by drawing a small circle centered at $z_0$. $|p(z_0)|$ represents the modulus of the complex value taken by the polynomial at the point $z_0$.
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[scale=0.33]{img/dalambert-lemma}
-  \caption{构造满足达朗贝尔引理的$p(z_0 + \Delta z)$}
+  \caption{Find $p(z_0 + \Delta z)$ to be smaller than $p(z_0)$ by choosing $\Delta z$ appropriately.}
  \label{fig:dalambert-lemma}
 \end{figure}
 
 \begin{proof}
-令多项式$p(z) = a_nz^n + \dotsb + a_1z + a_0$。它在复数$z_0$点的值$p(z_0)$是一个向量，长度为$|p(z_0)|$。阿尔冈要在$z_0$的附近找出一个$z_0' = z_0 + \Delta z$，此时多项式的值变成：
+Let the polynomial be $p(z) = a_nz^n + \dotsb + a_1z + a_0$. The value of the polynomial at the complex number $z_0$ is $p(z_0)$, which is a vector with length $|p(z_0)|$. Argand aimed to find a complex number $z_0' = z_0 + \Delta z$ in the neighborhood of $z_0$ such that the value of the polynomial becomes:
 
 \begin{align*}
 p(z_0 + \Delta z) &= a_n (z_0 + \Delta z)^n + \dotsb + a_1 (z_0 + \Delta z) + a_0  \\
- & \text{逐项二项式展开后整理} \\
+ & \text{binomial expand each one and collect terms} \\
  &= (a_n z_0^n + \dotsb + a_1 z_0 + a_0) + A_1 \Delta z + A_2 (\Delta z)^2 + \dotsb + A_n (\Delta z)^n \\
  &= p(z_0) + A \Delta z + \epsilon
 \end{align*}
 
-由于$p(z)$不是常数，所以$A_1, A_2, \dots A_n$不都是0。我们找到第一个不为0的$A_i$，令$A = A_i (\Delta z)^{i - 1}$，把剩余的部分放在一起叫做$\epsilon$。由于$\epsilon$含有更高次的$(\Delta z)^m$，当$|\Delta z|$变小时，会有$|\epsilon| < |A \Delta z|$。接下来阿尔冈选择一个$\Delta z$使得向量$A \Delta z$的方向与$p(z_0)$正好相反，起到了抵消作用，如\cref{fig:dalambert-lemma}所示。因此$|p(z_0 + \Delta z)| < |p(z_0)|$。
+As $p(z)$ is not a constant, not all of $A_1, A_2, \dots A_n$ are zero. We find the first non-zero $A_i$, and define $A = A_i (\Delta z)^{i - 1}$, collecting the remaining terms into $\epsilon$. Since $\epsilon$ contains higher-order terms in $(\Delta z)^m$, when $|\Delta z|$ is small enough, we have $|\epsilon| < |A \Delta z|$. Next, Argand chooses a $\Delta z$ such that the vector $A \Delta z$ points in the opposite direction to $p(z_0)$, effectively canceling it out. This is shown in \cref{fig:dalambert-lemma}. Therefore, $|p(z_0 + \Delta z)| < |p(z_0)|$.
 \end{proof}
 
-但是阿尔冈对代数基本定理的证明也有一处缺陷：它依赖于极值定理（Extreme Value Theorem），即复数多项式的模值具有最小值。阿尔冈认为这是当然成立的（将其视为公理），这个定理后来由波尔查诺在1830年首先证明在实数上成立，1874年，魏尔斯特拉斯证明了它在复数上也成立：
+However, Argand's proof of the fundamental theorem of algebra still has a flaw: it relies on the Extreme Value Theorem, which states that the modulus of a complex polynomial attains a minimum value. Argand considered this to be naturally true (treating it as an axiom), but this theorem was later first proven by Bolzano in 1830 for real numbers, and in 1874, Weierstrass proved that it also holds for complex numbers:
 
-\index{极值定理}
-\begin{theorem}[极值定理]
-连续函数在有界闭集上存在最大值和最小值。
+\index{extreme value theorem}
+\begin{theorem}[Extreme Value Theorem]
+A continuous function on a bounded closed set attains its maximum and minimum values.
 \end{theorem}
 
-利用达朗贝尔引理和极值定理，我们就可以重建阿尔冈的证明了。
+With d'Alembert's lemma and the Extreme Value Theorem, we are going to reconstruct Argand's proof.
 
 \begin{proof}
-对任意复数多项式$p(z)$，考虑连续函数$|p(z)|$。当$|z|$很大时，$p(z) \approx a_n z^n$，最高次项主导了函数值。随着$|z|$的增大，连续函数值$|p(z)|$将会超过一个足够大的圆$|z| = R$。注意到$|z| \leq R$是一个有界闭集，根据极值定理，$|p(z)|$在其中存在最小值。由复数模的定义（向量的长度），这个最小值$\geq 0$。但如果最小值$> 0$，就会和达朗贝尔引理矛盾：总可以在附近找到一个模更小的值，从而比最小值更小。因此最小值只能是0，即存在某个$z_0$使得$|p(z_0)| = 0$，所以$p(z_0) = 0$。
+For any complex polynomial $p(z)$, consider the continuous function $|p(z)|$. When $|z|$ is large, $p(z) \approx a_n z^n$, and the leading term dominates the function value. As $|z|$ increases, the continuous function value $|p(z)|$ will exceed a sufficiently large circle $|z| = R$. Noting that $|z| \leq R$ is a bounded closed set, according to the Extreme Value Theorem, $|p(z)|$ attains its minimum value within it. By the definition of the modulus of a complex number (the length of a vector), this minimum value is $\geq 0$. But if the minimum value is $> 0$, it would contradict d'Alembert's lemma: we can always find a nearby point with a smaller modulus, thus smaller than the minimum value. Therefore, the minimum value can only be 0, which means there exists some $z_0$ such that $|p(z_0)| = 0$, so $p(z_0) = 0$.
 \end{proof}
 
-这样就证明了代数基本定理，任何多项式方程都至少有一个复数根。读到这里，有些朋友恐怕要摩拳擦掌、跃跃欲试准备自己动手解4次方程、5次方程甚至更高次的方程了。且慢！4次方程的确有求根公式公式，但\underdot{一般}的5次以上方程不存在求根公式。它们的解的确存在，但是不能用系数的加减乘除和开方运算表达。从卡尔达诺和费拉里之后，数学家们经过了300年才最终揭开了这个秘密。意大利数学家鲁菲尼和挪威数学家阿贝尔先后证明了这一结论\footnote{鲁菲尼1799年的证明存在瑕疵，阿贝尔于1823年首次严格证明了这一结论。这一定理今天叫做阿贝尔——鲁菲尼定理。}。注意这里说的“一般”是指$ax^5 + bx^4 + cx^3 + dx^2 + ex + f = 0$这种形式，特殊的5次方程是有公式解的，例如$x^5 - 1 = 0$，我们甚至可以通过解这个方程找出正五边形的尺规作图方法（见第\ref{sec:pentagon-equation}节）。什么样的方程根式可解的问题是由法国数学家伽罗瓦彻底解决的。这一理论叫做伽罗瓦理论。
+It proves the foundamental theorem of algebra, that is, any polynomial equation has at least one complex root. At this point, some friends may be eager to try solving quartic equations, quintic equations, or even higher degree equations by themselves. Hold on! There are indeed formulas for solving quartic equations, but there is \underdot{generally} no formula for solving equations of degree 5 or higher. Their solutions do exist, but they cannot be expressed using the operations of addition, subtraction, multiplication, division, and taking roots of the coefficients. After Cardano and Ferrari, it took mathematicians 300 years to finally uncover this secret. Italian mathematician Ruffini and Norwegian mathematician Abel successively proved this conclusion\footnote{Ruffini's proof in 1799 had flaws, and Abel first rigorously proved this conclusion in 1823. This theorem is now called the Abel-Ruffini theorem.}. Note that the term \enquote{generally} refers to equations of the form $ax^5 + bx^4 + cx^3 + dx^2 + ex + f = 0$. Special quintic equations do have formula solutions, such as $x^5 - 1 = 0$, and we can even find the method for ruler-and-compass construction of a regular pentagon by solving this equation (see \cref{sec:pentagon-equation}). The problem of which equations are solvable by radicals was completely solved by French mathematician Galois. This theory is called Galois theory.
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[scale=0.33]{img/d-alembert}
-  \caption{法国洛可可风格肖像莫里斯・康坦・德・拉图尔于1753年创作的《达朗贝尔》，藏于卢浮宫}
+  \caption{Portrait of d'Alembert by Maurice Quentin de La Tour in 1753, housed in the Louvre Museum.}
  \label{fig:dalembert}
 \end{figure}
 
-\index{数学家!达朗贝尔}
+\index{d'Alembert}
 \begin{mdframed}
 让・勒朗・达朗贝尔（1717～1783）是法国著名的数学家、物理学家、天文学家。他是一位被遗弃的私生子。这一身世影响了他的一生。达朗贝尔的生父是一位炮兵军官，生母是一位巴黎著名沙龙\footnotemark 的女主人。达朗贝尔是这位交际花诸多风流韵事之一的结果，但他一出生就被生母遗弃在巴黎圣·乐朗教堂的台阶上。他因此得名让·乐朗（以捡到的地方命名）。一家好心的玻璃匠夫妇收养了可怜的孩子，达朗贝尔终身视养母为自己的亲生母亲。
 
