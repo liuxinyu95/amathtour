@@ -672,67 +672,69 @@ This is a pair of functions and their inverses. When $a = e$, it becomes:
 \index{John Napier} \index{Logarithm}
 It changes the starting point of the history of $e$ to 1618, when the Scottish mathematician John Napier invented logarithms (see \cref{fig:napier}) and printed the first logarithm tables. Coincidentally, the base of the earliest logarithm tables was not 10, but the natural logarithm $e$. Of course, Napier did not realize the existence of the constant $e$; he just wanted to solve the problem of complex multiplication calculations. At that time, astronomical observations and navigation often involved multiplication calculations with huge numbers. We now know that when calculating $Z = XY$, if we let $X = a^x$ and $Y = a^y$, then $Z = a^{x + y}$. So we only need to look up the logarithms $x$ and $y$ corresponding to $X$ and $Y$ in the logarithm tables, add them together to get $z = x + y$, and then look up the number $Z$ corresponding to the logarithm $z$ in the tables. Later, English mathematician Henry Briggs reminded Napier that it would be more convenient and practical to use logarithms with base 10. But by then, Napier was already old and unable to undertake the huge calculations to make this change. The selfless Briggs took it upon himself to create logarithm tables with base 10 and published them in Napier's name\cite{Amerson-2021}.
 
-\index{墨卡托地图}
-从计算效率上来说，对数是一个化时代的发明，是大航海时代的产物。大家一定见过印在纸上的世界地图。把地球的球面不失真地映射到矩形纸上是一个困难的问题，这个问题在数学上是无解的。我们常见的世界地图叫做“墨卡托地图”，是用地理学家杰拉杜斯·墨卡托\footnote{Gerardus Mercator, 1512～1594，佛兰德斯（今比利时）地图绘制者和地理学家。}的名字命名的。墨卡托投影法想象把一张长方形的纸卷成圆筒，然后把透明的地球仪装入这个圆筒，使得赤道刚好和圆柱面相切（见\cref{fig:mercator}）。此时在地球仪球心放一盏灯，在纸上就出现了地图的影子。把这个影子用笔描下来，再把纸展开就得到了墨卡托地图。墨卡托地图能很好地保持方向和形状，但是面积、距离越靠近两极越失真。
+\index{Mercator map}
+Logorithm is a revolutionary invention in terms of computational efficiency, and it is a product of the Age of Exploration. You must have seen world maps printed on paper. Mapping the spherical surface of the Earth onto a rectangular piece of paper without distortion is a difficult problem, and mathematically, it is unsolvable. The world map we commonly see is called the \enquote{Mercator map,} named after the geographer Gerardus Mercator (1512–1594), a cartographer and geographer from Flanders (now Belgium). The Mercator projection imagines rolling a rectangular piece of paper into a cylinder, then placing a transparent globe inside this cylinder so that the equator just touches the cylindrical surface (see \cref{fig:mercator}). At this point, if we place a lamp at the center of the globe, the shadow of the globe will appear on the paper. By tracing this shadow with a pen and then unrolling the paper, we get the Mercator map. The Mercator map preserves directions and shapes well, but areas and distances become increasingly distorted as you move closer to the poles.
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.3]{img/mercator-map}
- \caption{墨卡托映射}
+ \caption{Mercator map}
  \label{fig:mercator}
 \end{figure}
 
-\index{自然对数}
-无独有偶，和杰拉杜斯·墨卡托相同姓氏的德国数学家尼古劳斯·墨卡托于1688年的著作中把以$e$为底的对数命名为“自然对数”。尽管这项工作在雅各布·伯努利之后，但他并不知道$e$的存在和名字。我们要等欧拉来给这个传奇的常数命名。
+\index{Naturual logarithm}
+There was another Mercator, the mathematician Nicolaus Mercator (1620–1687), whose original name was Niklaus Kauffman, and later changed his family name to Mercator. It was a common thing to do at that time. Mercator was the Latin form of \enquote{merchant}. In 1668, Nicolaus Mercator published a book about logarithms, in which he named the logarithm with base $e$ as the \enquote{natural logarithm}. Although this work came after Jacob Bernoulli's discovery of $e$, Mercator was unaware of the existence of $e$. We have to wait for Euler to name this constant.
 
-\subsection{最美公式}
-
-欧拉是约翰·伯努利的学生。当他沿着指数函数——对数函数的方向思考时，发现了一个惊人而又美丽的结果：$e^x$的导数是它本身。
+\subsection{The most beatiful formula}
+Leonhard Euler was a student of Johann Bernoulli. When he was thinking along the direction of exponential v.s. logarithmics, he discovered a surprising and beautiful result: the derivative of $e^x$ is itself.
 
 \be
 (e^x)' = e^x
 \ee
 
+We shall use the modern language and notation of limits in below proof which was not available to Euler at his time.
+
 \begin{proof}
-根据导数的定义：
+By the definition of deriative:
 
 \be \label{eq:derive-of-e}
 (e^x)' = \lim_{\Delta x \to 0} \frac{e^{x + \Delta x} - e^x}{\Delta x} = \lim_{\Delta x \to 0} \frac{e^xe^{\Delta x} - e^x}{\Delta x} = e^x\lim_{\Delta x \to 0} \frac{e^{\Delta x} - 1}{\Delta x}
 \ee
 
-欧拉把雅各布·伯努利对$e$的定义中的$n$取倒数，令$t = \frac{1}{n}$，得：
+In Jacob Bernoulli's definition of $e$, taking the reciprocal of $n$, we let $t = \frac{1}{n}$, we get:
 
 \be \label{eq:def2-of-e}
 e = \lim_{n \to \infty} (1 + \frac{1}{n})^n = \lim_{t \to 0} (1 + t)^{\frac{1}{t}}
 \ee
 
-令$u = e^{\Delta x} - 1$，然后利用约翰·伯努利指出的对数函数与指数函数的反函数关系：$\Delta x = \ln (1 + u)$。代入上面的极限中：
+Let $u = e^{\Delta x} - 1$, then using the inverse relationship between logarithmic and exponential functions pointed out by Johann Bernoulli: $\Delta x = \ln (1 + u)$. Substituting into the above limit:
 
 \begin{align*}
-\lim_{\Delta x \to 0} \frac{e^{\Delta x} - 1}{\Delta x} &= \lim_{u \to 0} \frac{u}{\ln (1 + u)} = \lim_{u \to 0} \frac{1}{\frac{1}{u}\ln (1 + u)} && \text{由} b \ln a = \ln a^b \\
-  &= \lim_{u \to 0} \frac{1}{\ln (1 + u)^{\frac{1}{u}}} && \text{使用\cref{eq:def2-of-e}} \\
-  &= \lim_{u \to 0} \frac{1}{\ln e} = 1 && \text{由} \ln e = 1
+\lim_{\Delta x \to 0} \frac{e^{\Delta x} - 1}{\Delta x} &= \lim_{u \to 0} \frac{u}{\ln (1 + u)} = \lim_{u \to 0} \frac{1}{\frac{1}{u}\ln (1 + u)} && \text{by } b \ln a = \ln a^b \\
+  &= \lim_{u \to 0} \frac{1}{\ln (1 + u)^{\frac{1}{u}}} && \text{by \cref{eq:def2-of-e}} \\
+  &= \lim_{u \to 0} \frac{1}{\ln e} = 1 && \text{by } \ln e = 1
 \end{align*}
-将此结果带回\cref{eq:derive-of-e}就证明了$(e^x)' = e^x$
+Substituting this result back into \cref{eq:derive-of-e} proves that $(e^x)' = e^x$.
 \end{proof}
 
-这意味着二阶导数也是它本身，因为：$(e^x)'' = ((e^x)')' = (e^x)' = e^x$。不论对$e^x$求多少阶导数，得到的结果总是$e^x$。欧拉马上把这个结果代入麦克劳林公式（见\cref{eq:maclaurin}）得到了著名的级数展开式：
+It implies that the derivative of derivative of $e^x$ is also itself, because: $(e^x)'' = ((e^x)')' = (e^x)' = e^x$. No matter how many times we take the derivative of $e^x$, the result is always $e^x$. Substituting this result into the Maclaurin formula (see \cref{eq:maclaurin}) gives the famous series expansion:
 
 \begin{align*}
 e^x &= f(0) + \frac{f'(0)}{1!}x + \frac{f''(0)}{2!}x^2 + \dotsb + \frac{f^{(n)}(0)}{n!}x^n + \dotsb \\
-  &= e^0 + \frac{e^0}{1!}x + \frac{e^{0}}{2!}x^2 + \dotsb + \frac{e^0}{n!}x^n + \dotsb && \text{各阶导数}f^{(n)}(x) = e^x \\
+  &= e^0 + \frac{e^0}{1!}x + \frac{e^{0}}{2!}x^2 + \dotsb + \frac{e^0}{n!}x^n + \dotsb && \text{by }f^{(n)}(x) = e^x \\
   &= 1 + \frac{x}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!} + \dotsb
 \end{align*}
 
-\index{e的级数定义}
-有了展开式，欧拉就可以做出雅各布·伯努利不曾做到的东西了，求$e$的近似值。欧拉把$x = 1$代入展开式得到了著名的$e$的级数定义：
+\index{e as infinite series}
+With the series expansion, Euler could do something that Jacob Bernoulli couldn't: find an approximation of $e$. Euler substituted $x = 1$ into the expansion to get the famous series definition of $e$:
 
 \be
 e = 1 + \frac{1}{1!} + \frac{1}{2!} + \frac{1}{3!} + \dotsb
 \ee
 
-欧拉一口气算出了18位小数：$e = 2.718281828459045235$。这意味着他把级数的前20项计算出来，加到了一起。这一年是1731年，欧拉非常高兴地写信给好朋友哥德巴赫分享了这些成果。在信中，他给这个常数起了名字：“$e$”。很多人以为这是欧拉名字Euler的首字母，也有人说这是指数exponential的首字母，其实都不是。欧拉习惯使用元音字母a、e、i、o、u命名常量，碰巧a在之前已经被用过了，所以欧拉使用了第二个元音字母e。
-%% 但这一巧合使得今天人们把$e$叫做“欧拉常数”以纪念他。This is incorrect. Euler's constant is \gamma in the sum of harmonic series:
+Euler calculated the first 20 terms of the series and summed them up to get an approximation of $e$ with 18 decimal places: $e = 2.718281828459045235$. Euler achieved this in 1731 at the age of 24. He was so excited that he wrote a letter to his good friend Goldbach to share these results. In the letter, he gave this constant a name: \enquote{$e$.} Many people thought it was the first letter of Euler's name, and some said it was the first letter of \enquote{exponential,} but actually neither is true. Euler had a habit of using vowel letters a, e, i, o, u to name constants, and coincidentally, a had already been used before, so Euler used the second vowel letter e. 
+
+%% e isn't called Euler's constant. Euler's constant is \gamma in the sum of harmonic series:
 %% \( \sum_{n \leq x} \frac{1}{n} = \ln x + \gamma + O(\frac{1}{x}) \)
 
 欧拉在信中明确指出了$e$是$n$趋近无穷时$(1 + \dfrac{1}{n})^n$的极限，并且等于1加上所有阶乘的倒数。他继续研究并于1748年发表了更加神奇优美的结果。欧拉把$e^x$级数展开中的奇数项和偶数项分开，并联想到著名的三角函数级数展开：
