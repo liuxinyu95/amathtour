@@ -826,58 +826,61 @@ r = ka^\theta
 \]
 
 \index{Spiral mirabilis}
-其中$k$和$a$是常数。这样$\theta$增加2倍，$r$就增加到$r^2$；$\theta$增加3倍，$r$就增加到$r^3$……\cref{qn:equiangular}要求证明托里拆利的定义和笛卡尔的定义是等价的。雅各布·伯努利对这种螺线进行了深入的研究，他发现了很多极有趣的性质。最令人震惊的是，不管怎么变化，缩放、求渐屈线、渐伸线、垂足线，结果总是不变——又得到了同一形状的螺线。1692年，他把这种迷人的螺线命名为“神奇螺线”（spiral mirabilis），并决定死后在墓碑上刻下这个螺线，如\cref{fig:bernoulli-tomb}所示\cite{MacTour-Equiangular}。他留下了著名的拉丁文墓志铭：Eadem mutata resurgo，中文译作“虽经沧海，我依故我”\cite{Maor-2010}。碑铭内容为：
+where $k$ and $a$ are constants. So when $\theta$ increases by a factor of 2, $r$ increases to $r^2$; when $\theta$ increases by a factor of 3, $r$ increases to $r^3$, and so on... \cref{qn:equiangular} requires proving that Torricelli's definition and Descartes's definition are equivalent. Jacob Bernoulli conducted in-depth research on this spiral and discovered many fascinating properties. The most astonishing is that no matter how you transform it, scale it, take its evolute, involute, or pedal curve, the result is always the same - the same shape of spiral. In 1692, he named this fascinating spiral the \enquote{spiral mirabilis} and decided to engrave this spiral on his tombstone after his death, as shown in \cref{fig:bernoulli-tomb} \cite{MacTour-Equiangular}. He left a famous Latin epitaph: Eadem mutata resurgo, which translates to \emph{Though changed, I shall arise the same} in English \cite{Maor-2010}. The content of the epitaph is:
 
 \begin{figure}[htbp]
  \centering
- \subcaptionbox{雅各布·伯努利的墓碑\label{fig:bernoulli-tomb}}{\includegraphics[scale=0.4]{img/bernoulli-tomb}}
- \subcaptionbox{墓碑下方的螺线\label{fig:bernoulli-epitaph}}{\includegraphics[scale=0.4]{img/bernoulli-epitaph}}
- \caption{雅各布·伯努利的墓志铭：Eadem mutata resurgo\cite{MacTour-Bernoulli-tomb}}
+ \subcaptionbox{Jacob Bernoulli's tomb stone. \label{fig:bernoulli-tomb}}{\includegraphics[scale=0.4]{img/bernoulli-tomb}}
+ \subcaptionbox{The spiral on the tombstone\label{fig:bernoulli-epitaph}}{\includegraphics[scale=0.4]{img/bernoulli-epitaph}}
+ \caption{Jacob Bernoulli's epitaph: Eadem mutata resurgo\cite{MacTour-Bernoulli-tomb}}
 \end{figure}
 
 \begin{mdframed}
 \begin{verse}
-雅各布·伯努利（1654-1705）\\
-‌无与伦比的数学家‌\\
-巴塞尔大学教授（18年）\\
-巴黎科学院与柏林科学院院士\\
-以学术著作闻名于世\\
-虽罹患慢性疾病，却始终神志清明\\
-于主历1705年8月16日安息，享年50岁又7个月\\
-静候复活之日‌纪念者‌\\
-朱迪丝·斯图潘努斯（20年结发之妻）\\
-及其二子\\
-为深切怀念的丈夫与父亲，立此碑铭
+Jacob Bernoulli \\
+Incomparable mathematician \\
+Professor at the University of Basel \\
+For more than 18 years \\
+Member of the Royal Academies of Paris and Berlin \\
+Famous for his writings \\
+Of a chronic illness, of sound mind to the end \\
+Died in the year of grace 1705, the 16th of August \\
+At the age of 50 years and 7 months \\
+Awaiting the resurrection \\
+Judith Stupanus \\
+His wife for 20 years \\
+And his two children \\
+erected a monument to the husband and father \\
+they miss so much.
 \end{verse}
 \end{mdframed}
 
-\index{阿基米德螺线}
-但遗憾的是，石匠错误地把等角螺线刻成了“阿基米德螺线”，如\cref{fig:bernoulli-epitaph}所示。这两个螺线有什么区别呢？阿基米德螺线每圈间的间距是相等的，而等角螺线的间距是等比数列（见\cref{fig:equiangular-spiral}）。如果用极坐标表示，阿基米德螺线的方程是$r = a\theta$。匀速转动阿基米德螺线，则它与坐标轴的交点将匀速平移。那么为什么这种螺线又叫做“对数螺线”呢？从反函数的角度看：
+\index{Achimedes spiral}
+Unfortunately, the mason who did the carving misunderstood the instructions and gave him an Archimedean spiral instead, as shown in \cref{fig:bernoulli-epitaph}. What is the difference between these two spirals? The Archimedean spiral has equal spacing between each turn, while the equiangular spiral has spacing that follows a geometric progression (see \cref{fig:equiangular-spiral}). If we express them in polar coordinates, the equation of the Archimedean spiral is $r = a\theta$. When we rotate the Archimedean spiral at a constant speed, the intersection points with the coordinate axes will translate at a constant speed. So why is this spiral also called a \enquote{logarithmic spiral}? From the perspective of inverse functions:
 
 \begin{figure}[htbp]
  \centering
   \begin{tikzpicture}[scale=0.1]
-      % 定义对数螺线参数：r = a*e^(b*θ)
-      \def\a{0.1}   % 控制螺线起点大小
-      \def\b{0.2}   % 控制螺线旋紧程度（值越小越疏松）
-      \def\turns{5} % 螺线旋转圈数
+      % r = a*e^(b*θ)
+      \def\a{0.1}   
+      \def\b{0.2}   
+      \def\turns{5} 
 
-      % 绘制对数螺线
       \draw[
           line width=1pt,
           blue!80!black,
-          domain=0:{2*pi*\turns},  % 角度范围（从0到指定圈数）
-          samples=360,             % 采样点数（越多越平滑）
+          domain=0:{2*pi*\turns},  % domain of the angle
+          samples=360,             
           variable=\t
       ] plot (
-          {exp(\b*\t)*\a*cos(\t r)},  % x坐标（极坐标转直角坐标）
-          {exp(\b*\t)*\a*sin(\t r)}   % y坐标（r表示弧度）
+          {exp(\b*\t)*\a*cos(\t r)},  % x coordinate
+          {exp(\b*\t)*\a*sin(\t r)}   % y coordinate
       );
 
-      % 可选项：添加原点标记
+      % origin
       \fill[red] (0,0) circle (2pt) node[below right] {O};
   \end{tikzpicture}
-  \caption{等角螺线也叫对数螺线}
+  \caption{Equiangular spiral (logarithimc spiral)}
   \label{fig:equiangular-spiral}
 \end{figure}
 
@@ -885,24 +888,24 @@ r = ka^\theta
 r = ka^\theta && \theta = \log_{a} \frac{r}{k}
 \end{align*}
 
-\index{换底公式} \index{极角} \index{极径}
-螺线上一点的极角与极径成对数关系。因此法国数学家瓦里尼翁\footnote{Pierre Varignon，1654～1722年。曾系统整理和传播牛顿、莱布尼茨的微积分思想，并在力学中引入 “力矩”等重要概念。}把这种螺线叫做对数螺线。我们在高中学习过换底公式：$\log_a x = \dfrac{\ln x}{\ln a}$（\cref{qn:change-base}要求证明此公式），于是：
+\index{change of base formula} 
+For any point on the spiral, the angle $\theta$ and the radius $r$ have a logarithmic relationship. Therefore, the French mathematician Pierre Varignon (1654–1722) named this spiral the \enquote{logarithmic spiral}. We have learned the change of base formula in high school: $\log_a x = \dfrac{\ln x}{\ln a}$ (see \cref{qn:change-base} for a proof of this formula), so:
 
 \begin{align*}
-\theta &= \log_a \frac{r}{k} = \frac{\ln \frac{r}{k}}{\ln a} && \text{换底公式}\\
-\ln \frac{r}{k} &= \theta(\ln a) && \text{两边同乘以}\ln a \\
-\frac{r}{k} &= e^{\theta \ln a} = e^{b\theta} && \text{两边取}e\text{的指数，令}b = \ln a \\
+\theta &= \log_a \frac{r}{k} = \frac{\ln \frac{r}{k}}{\ln a} && \text{change of base}\\
+\ln \frac{r}{k} &= \theta(\ln a) && \text{mulitply both sides by }\ln a \\
+\frac{r}{k} &= e^{\theta \ln a} = e^{b\theta} && \text{raise to power of }e\text{, let }b = \ln a \\
 r &= k e^{b\theta}
 \end{align*}
 
-这样就得到了以$e$为底的等角螺线极坐标方程。这个公式是雅各布·伯努利不曾想象到的，但它可以轻松揭示为何“我依故我”。
+Thus, we have obtained the polar coordinate equation of the equiangular spiral with base $e$. This formula was beyond Jacob Bernoulli's imagination, but it can easily reveal why \enquote{Eadem mutata resurgo.}
 
-\begin{proposition}[雅各布·伯努利]
-等角螺线缩放后形状不变。
+\begin{proposition}[Jacob Bernoulli]
+The shape of the equiangular spiral remains unchanged after scaling.
 \end{proposition}
 
 \begin{proof}
-利用等角螺线极坐标方程$r = ke^{b\theta}$，把极径缩放$a$倍得：
+By the polar coordinate equation of equiangular spiral $r = ke^{b\theta}$, scaling the radius by a factor of $a$ gives:
 
 \begin{align*}
 r' &= (ak)e^{b\theta} = e^{\ln a} k e^{b\theta} \\
@@ -910,48 +913,48 @@ r' &= (ak)e^{b\theta} = e^{\ln a} k e^{b\theta} \\
    &= ke^{b(\theta + \theta_0)} && \text{令} \theta_0 = \frac{\ln a}{b}
 \end{align*}
 
-这相当于把极角旋转了$\theta_0$，而螺线旋转后的形状是不变的。
+It is equivalent to rotating the angle by $\theta_0$, and the shape of the spiral remains unchanged after rotation.
 \end{proof}
 
-\cref{qn:exp-from-fixed-point}要求利用“我依故我”的性质找出$e^x$的展开式。等角螺线还经由$e$和复数产生了联系。
+\Cref{qn:exp-from-fixed-point} requires using the property of \enquote{Eadem mutata resurgo} to find the expansion of $e^x$. The equiangular spiral also has a connection with $e$ and complex numbers.
 
 \begin{proposition}
-任何复数$z = a + bi, b \ne 0$构成的等比数列$z, z^2, z^3, \dotsc$都分布在等角螺线上。
+For any complex number $z = a + bi$ with $b \ne 0$, the geometric sequence $z, z^2, z^3, \dotsc$ formed by its powers is distributed on an equiangular spiral.
 \end{proposition}
 
 \begin{proof}
-用欧拉公式把$z$化成$z = c(\cos\theta_0 + i\sin\theta_0)$的形式，其中$c = \sqrt{a^2 + b^2}, \theta_0 = \tan^{-1} \dfrac{b}{a}$。因为$b \ne 0$，所以$\theta_0 \ne 0$。利用棣莫弗公式，等比数列的第$n$项为：
+Applying Euler's formula, we can express $z$ in the form of $z = c(\cos\theta_0 + i\sin\theta_0)$, where $c = \sqrt{a^2 + b^2}$ and $\theta_0 = \tan^{-1} \dfrac{b}{a}$. Since $b \ne 0$, we have $\theta_0 \ne 0$. Using De Moivre's formula, the $n$-th term of the geometric sequence is:
 
 \[
 z^n = c^n(\cos\theta_0 + i\sin\theta_0)^n = c^n(\cos n\theta + i\sin n\theta)
 \]
 
-我们接下来把$z^n$用极坐标表示，它的极角是$\theta = n\theta_0$，极径是：
+We are going to represent $z^n$ in polar coordinates. Its argument is $\theta = n\theta_0$, and its modulus is:
 
 \begin{align*}
-r &= c^n = e^{\ln(c^n)} && \text{换底} \\
-  &= e^{n\ln c} && \text{对数计算规则} \\
-  &= e^{\frac{\theta}{\theta_0}\ln c} = ke^{b\theta} && \text{其中}k=1, b = \frac{\ln c}{\theta_0} \text{，满足等角螺线极坐标方程} \qedhere
+r &= c^n = e^{\ln(c^n)} && \text{change base} \\
+  &= e^{n\ln c} && \text{rule of logarithm} \\
+  &= e^{\frac{\theta}{\theta_0}\ln c} = ke^{b\theta} && \text{where }k=1, b = \frac{\ln c}{\theta_0} \text{, form of equiangular spiral} \qedhere
 \end{align*}
 \end{proof}
 
-等角螺线出现在自然界的各个角落，这并非偶然。棣莫弗利用待定系数法找出了斐波那契数列的通项公式，它在$n$很大时满足等角螺线方程（见附录\ref{app:fibonacci-formula}）。而我们知道自然界很多生长现象满足斐波那契公式，例如鹦鹉螺的螺壳生长（见\cref{fig:nautilus}），西兰花、向日葵花絮的生长，因此呈现出等角螺线的形状。
+It isn't by accident that the equiangular spiral arises everywhere. De Moivre used the method of equating coefficients to find the general term formula of the Fibonacci sequence, which satisfies the equation of the equiangular spiral when $n$ is large (see \cref{app:fibonacci-formula}). The growth of many creatuers and plants satisfy the Fibonacci formula, such as the growth of the nautilus shell (see \cref{fig:nautilus}), broccoli, and sunflower florets, thus presenting the shape of an equiangular spiral.
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.4]{img/nautilus}
- \caption{鹦鹉螺壳呈等角螺线}
+ \caption{The growth of nautilus shell presents an equiangular spiral}
  \label{fig:nautilus}
 \end{figure}
 
-复数和此前人们认识的数大相径庭。不管是自然数、有理数、无理数，它们都在数轴上有确定的位置。复数却跳出了数轴，来到了复平面。此前的数都是一元的，大小确定，在数轴上的位置确定。复数却是二元的，无论使用实部、虚部表示，模、幅角表示，都需要两个量来确定一个复数。两个复数通常没法比较大小，我们只能比较它们的模的大小。尽管这样奇特，复数彼此之间，复数与实数之间仍然可以计算，并且满足此前的运算定律，包括加法、乘法的交换律，结合率，乘法对加法的分配律。数轴上两个实数$a, b$间的距离是$|a - b|$，复平面上两个复数$z_1 = x_1 + y_1i, z_2 = x_2 + y_2i$间的距离是$|z_1 - z_2|$。这是因为：
+Complex numbers are quite different from the numbers we were familiar with before. Whether it's natural numbers, rational numbers, or irrational numbers, they all have a specific position on the number line. Complex numbers, however, jump out of the number line and come to the complex plane. The previous numbers were one-dimensional, with a definite size and a specific position on the number line. Complex numbers, on the other hand, are two-dimensional; whether represented by real and imaginary parts or by modulus and argument, it takes two quantities to determine a complex number. Two complex numbers usually cannot be compared in size; we can only compare their moduli. Despite being so peculiar, complex numbers can still be calculated with each other and with real numbers, and they satisfy the previously known arithmetic laws, including the commutative and associative properties of addition and multiplication, and the distributive property of multiplication over addition. The distance between two real numbers $a$ and $b$ on the number line is $|a - b|$, while the distance between two complex numbers $z_1 = x_1 + y_1i$ and $z_2 = x_2 + y_2i$ in the complex plane is $|z_1 - z_2|$. This is because:
 
 \[
 |z_1 - z_2| = |(x_1 - x_2) + (y_1 - y_2)i| = \sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}
 \]
 
-\index{复数模的可乘性}
-这的确是对应的笛卡尔平面上两点$(x_1, y_1)$与$(x_2, y_2)$间的距离。实数的绝对值满足可乘性，即：$|ab| = |a||b|$；复数的模也满足可乘性$|z_1z_2| = |z_1||z_2|$，这是因为（也可用欧拉公式证明）：
+\index{Multiplicativity of modulus of complex numbers}
+Which indeed corresponds to the distance between two points $(x_1, y_1)$ and $(x_2, y_2)$ on the Cartesian plane. The absolute value of real numbers satisfies multiplicativity, that is: $|ab| = |a||b|$; the modulus of complex numbers also satisfies multiplicativity $|z_1z_2| = |z_1||z_2|$, which can be proven by (also can be proven using Euler's formula):
 
 \begin{align*}
 |z_1z_2|^2 &= |(x_1 + y_1i)(x_2 + y_2i)|^2 = |(x_1x_2 - y_1y_2) + (x_1y_2 + y_1x_2)i|^2 \\
@@ -959,41 +962,41 @@ r &= c^n = e^{\ln(c^n)} && \text{换底} \\
   &= |z_1|^2|z_2|^2
 \end{align*}
 
-其中(*)是古希腊数学家丢番图最早在研究数论中的平方和时发现的\footnote{丢番图《算术》，卷三，问题19写道：65可以用两种方法分解为平方和$7^2 + 4^2$与$8^2 + 1^2$，这是因为65是13与5的乘积，而它们也都是平方和（$13 = 3^2 + 2^2, 5 = 2^2 + 1^2$）。}。复数打开了一个新世界的大门。它威力无穷，不仅解决了以前的难题，也提出了人们意想不到的问题。
+Where (*) was first discovered by the ancient Greek mathematician Diophantus when he was studying the sum of squares in number theory\footnote{Diophantus's \emph{Arithmetica}, Book III, Problem 19 states that 65 can be expressed as the sum of squares in two different ways: $7^2 + 4^2$ and $8^2 + 1^2$, because 65 is the product of 13 and 5, and both of them are also sums of squares ($13 = 3^2 + 2^2, 5 = 2^2 + 1^2$).}. Complex numbers opened the door to a new world. They are incredibly powerful, not only solving previously difficult problems but also posing unexpected ones.
 
-\section{正五边形}
-\label{sec:pentagon-equation} \index{正五边形尺规作图}
+\section{Regular pentagon}
+\label{sec:pentagon-equation} \index{geometric construction of regular pentagon}
 
-复数是解方程的利器。我们这里展示如何用复数解决正五边形尺规作图的问题。欧拉公式与棣莫弗公式结合赋予了方程$x^n = 1$以新的几何意义。若复数$z = re^{i\theta}$是方程的一个根，即：
+Complex numbers are a powerful tool for solving equations. Here we will show how to use complex numbers to solve the problem of geometric construction of a regular pentagon. The combination of Euler's formula and De Moivre's formula gives a new geometric meaning to the equation $x^n = 1$. If a complex number $z = re^{i\theta}$ is a root of the equation, then:
 
 \[
 1 = z^n = (re^{i\theta})^n = r^ne^{in\theta} = r^n(\cos n\theta + i\sin n\theta)
 \]
 
-我们由此得出模$r = 1$，幅角$n\theta = 2k\pi$，其中$k$是整数（这是由于$\sin 2k\pi = 0, \cos 2k\pi = 1$），这样$z$的幅角$\theta = \dfrac{2k\pi}{n}$。于是根可以表示为：$z = 1e^{\frac{2k\pi}{n}i} = e^{\frac{2k\pi}{n}i}$。这在几何上表示复平面单位圆上的$n$个点，如\cref{fig:heptagon-z}所示。
+It follows that the modulus $r = 1$ and the argument $n\theta = 2k\pi$, where $k$ is an integer (this is because $\sin 2k\pi = 0, \cos 2k\pi = 1$), so the argument of $z$ is $\theta = \dfrac{2k\pi}{n}$. Thus the roots can be expressed as: $z = 1e^{\frac{2k\pi}{n}i} = e^{\frac{2k\pi}{n}i}$. Geometrically, this represents $n$ points on the unit circle in the complex plane, as shown in \cref{fig:heptagon-z}.
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[scale=0.33]{img/heptagon-z}
-  \caption{$x^n = 1$的解在复平面上是正$n$边形的$n$个顶点。}
+  \caption{The roots of $x^n = 1$ are the $n$ vertices of a regular $n$-gon in the complex plane.}
  \label{fig:heptagon-z}
 \end{figure}
 
-圆是周期性的，$e^{\frac{2k\pi}{n}}$转动整数圈后与自己重合。$k = 0, 1, 2, \dotsc, n-1$时，$e^{\frac{2k\pi}{n}i}$是$n$个不同的根。它们的幅角依此是$0, \theta, 2\theta, \dotsc, (n-1)\theta$，把单位圆平均分成了$n$等份。因此方程$x^n = 1$叫做“分圆方程”（cyclotomic equation）。把复平面上这个$n$个根连接起来就构成了正$n$边形。
+As circle is periodic, $e^{\frac{2k\pi}{n}i}$ coincides with itself after rotating an integer number of circles. When $k = 0, 1, 2, \dotsc, n-1$, $e^{\frac{2k\pi}{n}i}$ are $n$ different roots. Their arguments are $0, \theta, 2\theta, \dotsc, (n-1)\theta$ respectively, which divides the unit circle into $n$ equal parts. Therefore, the equation $x^n = 1$ is called the "cyclotomic equation". Connecting these $n$ roots in the complex plane forms a regular $n$-gon.
 
-例如最简单的正多边形是正三角形$n = 3$。$x^3 = 1$有三个复根$1, e^{\frac{2\pi}{3}i}, e^{\frac{4\pi}{3}i} = e^{-\frac{2\pi}{3}i}$。其中：
+The simpliest regular polygon is the equilateral triangle with $n = 3$. The equation $x^3 = 1$ has three complex roots: $1, e^{\frac{2\pi}{3}i}, e^{\frac{4\pi}{3}i} = e^{-\frac{2\pi}{3}i}$. Among them:
 
 \[
 e^{\pm \frac{2\pi}{3}i} = \cos (\pm \frac{2\pi}{3}) + i \sin (\pm \frac{2\pi}{3}) = -\frac{1}{2} \pm \frac{\sqrt{3}}{2}i
 \]
 
-我们可以验证$x^3 - 1 = (x - 1)(x^2 + x + 1)$，二次方程$x^2 + x + 1$的两个根的确是$\dfrac{-1 \pm i\sqrt{3}}{2}$。我们也可以用二项式展开直接验证：
+One may verify that $x^3 - 1 = (x - 1)(x^2 + x + 1)$, and the two roots of the quadratic equation $x^2 + x + 1$ are indeed $\dfrac{-1 \pm i\sqrt{3}}{2}$. We can also directly verify this using binomial expansion:
 
 \[
 \left(-\frac{1}{2} \pm \frac{\sqrt{3}}{2}i\right)^3 = -\frac{1}{8} \pm \frac{3\sqrt{3}}{8}i + \frac{9}{8} \mp \frac{3\sqrt{3}}{8}i = \frac{9-1}{8} = 1
 \]
 
-这三个根构成了单位圆内接正三角形，如\cref{fig:3rd-root-of-1}所示。
+The three roots on the unit circle are evenly spaced at angles of $120^\circ$ (or $\frac{2\pi}{3}$ radians), which means they form an equilateral triangle inscribed in the unit circle, as shown in \cref{fig:3rd-root-of-1}.
 
 \begin{figure}[htbp]
 \centering
@@ -1006,22 +1009,22 @@ e^{\pm \frac{2\pi}{3}i} = \cos (\pm \frac{2\pi}{3}) + i \sin (\pm \frac{2\pi}{3}
    (0, 0) edge node[above] {$e^{\frac{2\pi}{3}i} = \dfrac{-1 + i\sqrt{3}}{2}$} (120:1cm)
    (0, 0) edge node[below] {$e^{\frac{4\pi}{3}i} = \dfrac{-1 - i\sqrt{3}}{2}$} (-120:1cm);
 \end{tikzpicture}
-\caption{$x^3 = 1$的三个复数根}
+\caption{The three complex roots of $x^3 = 1$.}
 \label{fig:3rd-root-of-1}
 \end{figure}
 
-类似地，五次分圆方程$x^5 = 1$的五个根均匀分布在复平面的单位圆上，从而构成一个正五边形，如\cref{fig:pentagon-z}所示。只要求出图中的根$x$，则复平面上$x$到1的距离$|x-1|$就是正五边形的边长。五次方程$x^5 - 1 = 0$显然有一个根是$x = 1$。根据笛卡尔定理，$x-1$是多项式$x^5 - 1$的一个因式。利用多项式长除法（或逆向用等比数列求和）可以进行因式分解：
+Similarly, the five roots of the equation $x^5 = 1$ are evenly spaced at angles of $72^\circ$ (or $\frac{2\pi}{5}$ radians), which means they form a regular pentagon inscribed in the unit circle, as shown in \cref{fig:pentagon-z}. Once construct the root $x$ in above figure, the distance from $x$ to 1 in the complex plane, namely $|x - 1|$, is the length of the side of the regular pentagon. The equation $x^5 - 1 = 0$ obviously has a root at $x = 1$. By the factor theorem, $x - 1$ is a factor of the polynomial $x^5 - 1$. Using polynomial long division (or reverse engineering with geometric series), we can factor it as:
 
 \[
 x^5 - 1 = (x - 1)(x^4 + x^3 + x^2 + x + 1)
 \]
 
-接下来解四次方程$x^4 + x^3 + x^2 + x + 1 = 0$就可以找出\cref{fig:pentagon-z}中的剩余4个顶点。这个四次方程很有特点，只要除以$x^2$就变成一个对称的形式（0不是方程的解，因此$x \ne 0$）：
+Next is to solve the quartic equation $x^4 + x^3 + x^2 + x + 1 = 0$ to find the remaining four vertices in \cref{fig:pentagon-z}. This quartic equation is quite special; if we divide it by $x^2$, it becomes a symmetric form (since 0 is not a root of the equation, we have $x \ne 0$):
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[scale=0.3]{img/pentagon-z}
-  \caption{$x^5 = 1$的根在复平面上是正五边形的顶点。}
+  \caption{The roots of $x^5 = 1$ are the vertices of a regular pentagon in the complex plane.}
  \label{fig:pentagon-z}
 \end{figure}
 
@@ -1029,107 +1032,107 @@ x^5 - 1 = (x - 1)(x^4 + x^3 + x^2 + x + 1)
 x^2 + x + 1 + \frac{1}{x} + \frac{1}{x^2} = 0
 \]
 
-把$x + \dfrac{1}{x}$看成一个整体，并注意到：$(x + \dfrac{1}{x})^2 = x^2 + \dfrac{1}{x^2} + 2$。上面的方程可以化为：
+Treat $x + \dfrac{1}{x}$ as an unknown, and notice that: $(x + \dfrac{1}{x})^2 = x^2 + \dfrac{1}{x^2} + 2$. The above equation can be rewritten as:
 
 \[
 (x + \frac{1}{x})^2 + (x + \frac{1}{x}) - 1 = 0
 \]
 
-令$y = x + \dfrac{1}{x}$，上述方程就是$y^2 + y - 1 = 0$。解此二次方程得到$y_{1,2} = \dfrac{-1 \pm \sqrt{5}}{2}$。利用欧拉公式，若$x = e^{i\theta}$，则$\dfrac{1}{x} = x^{-1} = e^{-i\theta}$，所以$x, \dfrac{1}{x}$是共轭复数（见\cref{fig:pentagon-z}中的$x$与$x^4 = x^{-1}$）。若$x = a + bi$，则$\dfrac{1}{x} = a - bi$，所以$x + \dfrac{1}{x} = 2a$。同理\cref{fig:pentagon-z}中的$x^2, x^3$也是一对共轭复数，分别对应$e^{\frac{4\pi}{5}i}, e^{\frac{6\pi}{5}i} = e^{-\frac{4\pi}{5}i}$。这样我们就判断出：
+Let $y = x + \dfrac{1}{x}$, the above equation becomes $y^2 + y - 1 = 0$. Solving this quadratic equation gives $y_{1,2} = \dfrac{-1 \pm \sqrt{5}}{2}$. Using Euler's formula, if $x = e^{i\theta}$, then $\dfrac{1}{x} = x^{-1} = e^{-i\theta}$, so $x$ and $\dfrac{1}{x}$ are complex conjugates (see $x$ and $x^4 = x^{-1}$ in \cref{fig:pentagon-z}). If $x = a + bi$, then $\dfrac{1}{x} = a - bi$, so $x + \dfrac{1}{x} = 2a$. Similarly, $x^2$ and $x^3$ in \cref{fig:pentagon-z} are also a pair of complex conjugates, corresponding to $e^{\frac{4\pi}{5}i}, e^{\frac{6\pi}{5}i} = e^{-\frac{4\pi}{5}i}$ respectively. Thus we can determine that:
 
 \begin{align*}
 x + \dfrac{1}{x} &= \dfrac{-1 + \sqrt{5}}{2} \\
 x^2 + x^3 &= \dfrac{-1 - \sqrt{5}}{2}
 \end{align*}
 
-其中第一个方程本质上是二次方程$x^2 - \dfrac{\sqrt{5} - 1}{2}x + 1 = 0$，利用求根公式得：
+Where the first equation is essentially a quadratic equation $x^2 - \dfrac{\sqrt{5} - 1}{2}x + 1 = 0$. Using the quadratic formula gives:
 
 \[x_{1, 2} = \dfrac{\frac{\sqrt{5} - 1}{2} \pm i\sqrt{\frac{5 + \sqrt{5}}{2}}}{2}
 \]
 
-它们是一对共轭复数，分别对应\cref{fig:pentagon-z}中的$x, x^4 = x^{-1}$。接下来计算\cref{fig:pentagon-z}中的模$|x - 1|$就知道正五边形的边长了。
+They are a pair of complex conjugates, corresponding to $x$ and $\dfrac{1}{x}$ in \cref{fig:pentagon-z}. We are going to figure out the modulus $|x - 1|$ in \cref{fig:pentagon-z}, which is the side length of the regular pentagon. 
 
 \[
 x - 1 = \frac{\frac{\sqrt{5} - 1}{2} + i\sqrt{\frac{5 + \sqrt{5}}{2}}}{2} - 1 = \frac{\sqrt{5} - 5}{4} + i\frac{\sqrt{\frac{5 + \sqrt{5}}{2}}}{2}
 \]
 
-因此：
+Therefore,
 
 \[
 |x - 1| = \sqrt{\left(\frac{\sqrt{5} - 5}{4}\right)^2 + \left(\frac{\sqrt{\frac{5 + \sqrt{5}}{2}}}{2}\right)^2} = \frac{\sqrt{10 - 2\sqrt{5}}}{2}
 \]
 
-于是作正五边形的问题就转化为：任给长度为1的线段，如何做出长度为$s = \dfrac{\sqrt{10 - 2\sqrt{5}}}{2}$的线段。为了简化问题，我们先求线段$2s$。我们的思路是作一个直角三角形，使其斜边为$2s$。这个三角形的两个直角边不可能都是有理数，否则根据勾股定理，斜边不可能是$\sqrt{10 - 2\sqrt{5}}$这种根号下还有根号的形式。设两个直角边分别是$\sqrt{5} - a$和$b$，然后用勾股定理：
+The problem of construction of a regular pentagon is turned into: given a line segment of length 1, how to construct a line segment of length $s = \dfrac{\sqrt{10 - 2\sqrt{5}}}{2}$. To simplify the problem, we first find the line segment of length $2s$. Our idea is to construct a right triangle with its hypotenuse being $2s$. The two legs of this triangle cannot both be rational numbers, otherwise according to the Pythagorean theorem, the hypotenuse cannot be in the form of $\sqrt{10 - 2\sqrt{5}}$ which has a square root under another square root. Let the two legs be $\sqrt{5} - a$ and $b$, then using the Pythagorean theorem:
 
 \[
 (\sqrt{5} - a)^2 + b^2 = 5 + a^2 + b^2 - 2a\sqrt{5} = 10 - 2\sqrt{5}
 \]
 
-利用待定系数法，$2a = 2$，所以$a = 1$；代入$5 + a^2 + b^2 = 6 + b^2 = 10$，所以$b = 2$。这样直角边为$\sqrt{5} - 1, 2$的直角三角形的斜边是$2s$。将三角形缩小一半，直角边为$\dfrac{\sqrt{5} - 1}{2}, 1$的直角三角形的斜边就是$s$。另一方面，由于$5 = 4 + 1 = 2^2 + 1^2$，这样就可以用1，2为直角边，作出斜边长$\sqrt{5}$的直角三角形。缩小一半的直角三角形其斜边就是$\dfrac{\sqrt{5}}{2}$，然后再截去$\dfrac{1}{2}$就得到了$\dfrac{\sqrt{5} - 1}{2}$。\cref{fig:pentagon-cons}展示了尺规作正五边形的步骤。最后用求得的边长依次截单位圆五次就得到了正五边形。
+Equating the irrational part on both sides, $2a = 2$, so $a = 1$. Substituting back into the equation gives $5 + a^2 + b^2 = 6 + b^2 = 10$, so $b = 2$. Thus, the right triangle with legs $\sqrt{5} - 1$ and $2$ has a hypotenuse of $2s$. Scaling down this triangle by half gives a right triangle with legs $\dfrac{\sqrt{5} - 1}{2}$ and $1$, whose hypotenuse is $s$. On the other hand, since $5 = 4 + 1 = 2^2 + 1^2$, we can construct a right triangle with legs of length 1 and 2, and its hypotenuse is $\sqrt{5}$. Scaling down this triangle by half gives a right triangle with hypotenuse $\dfrac{\sqrt{5}}{2}$, and then cutting off $\dfrac{1}{2}$ gives us $\dfrac{\sqrt{5} - 1}{2}$. \cref{fig:pentagon-cons} shows the steps for constructing a regular pentagon. Finally, using the obtained side length to cut the unit circle five times gives us the regular pentagon.
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.3]{img/pentagon-cons}
- \caption{作正五边形}
+ \caption{Construction of a regular pentagon}
  \label{fig:pentagon-cons}
 \end{figure}
 
 \begin{Exercise}[label={ex:complex}]
-\Question{给出解二次方程$x^2 - px = q$的几何解释。\label{qn:geometric-quadratic}}
+\Question{Give the geometric interpretation to the quadratic equation $x^2 - px = q$. \label{qn:geometric-quadratic}}
 
-\Question{根据代数基本定理，三次方程有三个复数根，卡尔达诺公式给出了方程$x^3 = 6x + 9$的一个根$x_1 = 3$，试求出方程的另外两个根。}
+\Question{By the foundamental theorem of algebra, a cubic equation has three complex roots. Cardano's formula gives one root of the equation $x^3 = 6x + 9$ as $x_1 = 3$. Find the other two roots of the equation.}
 
-\Question{利用邦贝利的方法和卡尔达诺公式，可求出三次方程$x^3 = 15x + 4$的一个根$x_1 = 4$，试求出方程的另外两个根。}
+\Question{Using Bombelli's method and Cardano's formula, one root of the equation $x^3 = 15x + 4$ is $x_1 = 4$. Find the other two roots of the equation.}
 
-\Question{计算规则$\sqrt{ab} = \sqrt{a}\sqrt{b}$在复数下是否成立？如果成立请证明之，如果不成立应怎样挽救？\label{qn:sqrt-of-product}}
+\Question{Is the rule $\sqrt{ab} = \sqrt{a}\sqrt{b}$ valid in complex numbers? If so, prove it; if not, how can it be salvaged? \label{qn:sqrt-of-product}}
 
-\Question{证明任何复数代表的向量乘以$i$相当于向左转$90\degree$。\label{qn:mul-i}}
+\Question{Show that multiplying any complex number represented as a vector by $i$ is equivalent to rotating the vector by $90\degree$ counterclockwise. \label{qn:mul-i}}
 
-\Question{验证复数的共轭满足这样的运算规则：$\overline{a + b} = \overline{a} + \overline{b}$，$\overline{ab} = \overline{a} \cdot \overline{b}$, $\overline{z^n} = (\overline{z})^n$，并据此证明达朗贝尔的发现：若$z$是方程$p(z) = 0$的根，其共轭$\overline{z}$也是方程的根。\label{qn:conjugated-root}}
+\Question{Verify that the conjugate of a complex number satisfies the following rules: $\overline{a + b} = \overline{a} + \overline{b}$, $\overline{ab} = \overline{a} \cdot \overline{b}$, $\overline{z^n} = (\overline{z})^n$, and use these rules to prove d'Alembert's discovery: if $z$ is a root of the equation $p(z) = 0$, then its conjugate $\overline{z}$ is also a root of the equation. \label{qn:conjugated-root}}
 
-\Question{验证哈密尔顿的复数数偶表示满足五大运算定律。\label{qn:pair-arithmetic-rules}}
+\Question{Verify that Hamilton's representation of complex numbers as ordered pairs satisfies the five fundamental arithmetic rules. \label{qn:pair-arithmetic-rules}}
 
-\Question{利用对数函数与指数函数的反函数关系证明换底公式$\log_a x = \dfrac{\log_b x}{\log_b a}$。\label{qn:change-base}}
+\Question{Use the fact that logarithmic function and exponential function are inverse functions to prove the change of base formula $\log_a x = \dfrac{\log_b x}{\log_b a}$. \label{qn:change-base}}
 
-\Question{*利用等角螺线的极坐标方程$r = ke^{b\theta}$证明笛卡尔指出的等角性质：螺线的切线和极径夹角$\Psi$不变（见\cref{fig:equiangular}）提示：如\cref{fig:tagent-to-r}所示，极径$r$旋转过一个小角度$\Delta \theta$，极径增加了$\Delta r$。小圆弧$AC$长$r\Delta \theta$，它与割线$AB$，极径的增量近似组成一个直角三角形$ACB$。当$\Delta \theta \to 0$时，点$A, B$趋向重合，割线$AB$趋近于切线。\label{qn:equiangular}
+\Question{*Use the polar equation of equiangular spiral $r = ke^{b\theta}$ to prove the equiangular property pointed out by Descartes: the angle $\Psi$ between the tangent and the radial line is constant (see \cref{fig:equiangular}). Hint: as shown in \cref{fig:tagent-to-r}, when the radial line $r$ rotates through a small angle $\Delta \theta$, it increases by $\Delta r$. The small arc $AC$ has length $r\Delta \theta$, and it, together with the secant $AB$ and the increment of radial line, approximately forms a right triangle $ACB$. When $\Delta \theta \to 0$, points $A, B$ approach each other, and the secant $AB$ approaches the tangent.
 
   \begin{center}
     \includegraphics[scale=0.33]{img/tagent-to-r}
-    \captionof{figure}{极径旋转小角度$\Delta \theta$}
+    \captionof{figure}{Radial line rotates through a small angle $\Delta \theta$}
     \label{fig:tagent-to-r}
   \end{center}
 }
 
-\Question{*雅各布·伯努利赞美的“虽经沧海，我依故我”也形象地描绘了求导不变$(e^x)' = e^x$的性质，现代数学家这样定义函数$f(x) = e^x$：(1) 导数不变$f'(x) = f(x)$，(2) 函数值$f(0) = 1$。试利用这个定义导出$e^x$的展开式。提示：待定系数法及$(x^n)' = nx^{n-1}$（见命题\ref{thm:derivation-of-power-of-x}）。\label{qn:exp-from-fixed-point}}
+\Question{*Jacob Bernoulli's epitaph, \enquote{Eadem mutata resurgo}, describes the property of the derivative of $e^x$ being unchanged, $(e^x)' = e^x$. Modern mathematicians define the function $f(x) = e^x$ as follows: (1) the derivative is unchanged, $f'(x) = f(x)$, (2) the function value at 0 is 1, $f(0) = 1$. Use this definition to derive the expansion of $e^x$. Hint: method of undetermined coefficients and $(x^n)' = nx^{n-1}$ (see Proposition \ref{thm:derivation-of-power-of-x}). \label{qn:exp-from-fixed-point}}
 
-\Question{*雅各布·伯努利距离发现$e^x$几乎只差一步。在计算复利时，如果年利率不是100\%，而是$x$，当$n \to \infty$时的实际年化收益率是什么？它的级数展开是什么？}
+\Question{*Jacob Bernoulli's discovery of the distance to $e^x$ is almost one step away. When calculating compound interest, if the annual interest rate is not 100\% but $x$, what is the actual annualized return when $n \to \infty$? What is its series expansion? \label{qn:compound-interest}}
 
-\Question{利用复数推导三角函数的和角公式：$\tan(\theta_1 + \theta_2), \sin(\theta_1 + \theta_2), \cos(\theta_1 + \theta_2)$，提示：复数乘法。\label{qn:trigonometry-of-add}}
+\Question{Show the trigonometric addition formulas $\tan(\theta_1 + \theta_2), \sin(\theta_1 + \theta_2), \cos(\theta_1 + \theta_2)$ using complex numbers. Hint: complex multiplication. \label{qn:trigonometry-of-add}}
 
 \end{Exercise}
 
 \begin{Answer}[ref={ex:complex}]
-\Question{给出解二次方程$x^2 - px = q$的几何解释。
+\Question{Give the geometric interpretation to the quadratic equation $x^2 - px = q$.
 
 \vspace{2mm}
 \begin{center}
  \includegraphics[scale=0.5]{img/quadratic3}
- \captionof{figure}{左侧：从正方形$x^2$中切去矩形$px$；右侧：白色面积相等，$q = (x - \dfrac{p}{2})^2 - (\dfrac{p}{2})^2$。}
+ \captionof{figure}{Left: cut a rectangle of area $px$ from a square of area $x^2$; Right: the white area is equal, $q = (x - \dfrac{p}{2})^2 - (\dfrac{p}{2})^2$.}
 \end{center}
 }
 
-\Question{根据代数基本定理，三次方程有三个复数根，卡尔达诺公式给出了方程$x^3 = 6x + 9$的一个根$x_1 = 3$，试求出方程的另外两个根。
+\Question{By the foundamental theorem of algebra, a cubic equation has three complex roots. Cardano's formula gives one root of the equation $x^3 = 6x + 9$ as $x_1 = 3$. Find the other two roots of the equation.
 
 \vspace{2mm}
-对多项式$x^3 - 6x - 9$因式分解。由笛卡尔定理，$x - 3$是一个因子。方法一，用多项式长除法求
+Factor the equation as $x^3 - 6x - 9 = 0$. By Descartes' theorem, $x - 3$ is a factor of the polynomial $x^3 - 6x - 9$. Using polynomial long division or the method of undetermined coefficients, we can factor it as:
 
 \[
 \polylongdiv{x^3-6x-9}{x-3}
 \]
 
-得$x^2 + 3x + 3$。
+Which gives $x^2 + 3x + 3$.
 
-方法二，用待定系数法
+Alternatively, equating the coefficients:
 
 \begin{align*}
 x^3 - 6x - 9 &= (x - 3)(x^2 + ax + b) \\
@@ -1137,19 +1140,19 @@ x^3 - 6x - 9 &= (x - 3)(x^2 + ax + b) \\
   &= x^3 + (a - 3)x^2 + (b - 3a)x - 3b
 \end{align*}
 
-得$a = 3, b = 3$。接下来解二次方程$x^2 + 3x + 3$得另外两个根$x_{2, 3} = \dfrac{-3 \pm i\sqrt{3}}{2}$
+Hence, $a = 3, b = 3$. Solving the quadratic equation $x^2 + 3x + 3 = 0$ gives the other two roots $x_{2, 3} = \dfrac{-3 \pm i\sqrt{3}}{2}$.
 }
 
-\Question{利用邦贝利的方法和卡尔达诺公式，可求出三次方程$x^3 = 15x + 4$的一个根$x_1 = 4$，试求出方程的另外两个根。
+\Question{Using Bombelli's method and Cardano's formula, one root of the equation $x^3 = 15x + 4$ is $x_1 = 4$. Find the other two roots of the equation.
 
 \vspace{2mm}
-如上题，对多项式$x^3 - 15x - 4$因式分解。由笛卡尔定理，$x - 4$是一个因子。用多项式长除法求
+As in the previous exercise, factor the polynomial as $x^3 - 15x - 4 = 0$. By Descartes's theorem, $x - 4$ is a factor. Using polynomial long division,
 
 \[
 \polylongdiv{x^3-15x-4}{x-4}
 \]
 
-或用待定系数法
+Or equating the coefficients:
 
 \begin{align*}
 x^3 - 15x - 4 &= (x - 4)(x^2 + ax + b) \\
@@ -1157,107 +1160,108 @@ x^3 - 15x - 4 &= (x - 4)(x^2 + ax + b) \\
   &= x^3 + (a - 4)x^2 + (b - 4a)x - 4b
 \end{align*}
 
-得$a = 4, b = 1$。解二次方程$x^2 + 4x + 1$得另外两个根$x_{2, 3} = -2 \pm \sqrt{3}$
+Hence $a = 4, b = 1$. Solving the quadratic equation $x^2 + 4x + 1 = 0$ gives the other two roots $x_{2, 3} = -2 \pm \sqrt{3}$
 }
 
-\Question{计算规则$\sqrt{ab} = \sqrt{a}\sqrt{b}$在复数下是否成立？如果成立请证明之，如果不成立应怎样挽救？
+\Question{Is the rule $\sqrt{ab} = \sqrt{a}\sqrt{b}$ valid in complex numbers? If so, prove it; if not, how can it be salvaged? 
 
 \vspace{2mm}
-不成立，否则就会出现
+No, it's invalid, otherwise,
 \[
 ab = \sqrt{a^2b^2} = \sqrt{(-a^2)(-b^2)} = \sqrt{-a^2}\sqrt{-b^2} = (ai)(bi)=-ab
 \]
-当$ab \ne 0$时就会出现矛盾。在复数下，我们要么像欧拉那样，认为$\sqrt{a}$表示$b^2 = a$，即$\pm\sqrt{a}$。要么令$z^2 = ab, x^2 = a, y^2=b$，使得$z^2 = x^2y^2 = (xy)^2$。例如:
+
+A contradiction arises when $ab \ne 0$. In complex numbers, we can either follow Euler's approach and define $\sqrt{a}$ as $b$ such that $b^2 = a$, which means $\pm\sqrt{a}$; or we can let $z^2 = ab, x^2 = a, y^2 = b$, so that $z^2 = x^2y^2 = (xy)^2$. For example:
 
 \[
 36 = 4 \times 9 = (-4)\times(-9) = (2i)^2(3i)^2 = (2i \times 3i)^2 = (-6)^2 = 36
 \]
 }
 
-\Question{证明任何复数代表的向量乘以$i$相当于向左转$90\degree$。
+\Question{Show that multiplying any complex number represented as a vector by $i$ is equivalent to rotating the vector by $90\degree$ counterclockwise.
 
 \begin{proof}
-考虑复数$z = a + bi$。若$a = 0, b \ne 0$，则$z = bi$, $zi = -b$。若$b > 0$则向量从虚轴正方向转向实轴负方向，即左转90度；若$b < 0$，则向量从虚轴负方向转向实轴正方向，也是左转90度。
+For any complex number $z = a + bi$, if $a = 0$ and $b \ne 0$, then $z = bi$, and $zi = -b$. If $b > 0$, the vector rotates from the positive direction of the imaginary axis to the negative direction of the real axis, which is a left turn of 90 degrees; if $b < 0$, the vector rotates from the negative direction of the imaginary axis to the positive direction of the real axis, which is also a left turn of 90 degrees.
 
-若$a \ne 0, b = 0$，则$z = a, zi = ai$。若$a > 0$则向量从实轴正方向转向虚轴正方向，左转90度；若$a < 0$，则向量从实轴负方向转向虚轴负方向，也是左转90度。
+If $a \ne 0, b = 0$, then $z = a, zi = ai$. If $a > 0$, the vector rotates from the positive direction of the real axis to the positive direction of the imaginary axis, which is a left turn of 90 degrees; if $a < 0$, the vector rotates from the negative direction of the real axis to the negative direction of the imaginary axis, which is also a left turn of 90 degrees.
 
-若$ab \ne 0$，$zi = (a + bi)i = ai - b$，令$\theta = arg(z)，\psi = arg(zi)$，有：
+If $ab \ne 0$, then $zi = (a + bi)i = ai - b$. Let $\theta = arg(z), \psi = arg(zi)$, we have:
 
 \[
 \tan \theta \tan \psi = (b/a)(-a/b) = -1
 \]
 
-故$\psi = \theta + \dfrac{\pi}{2}$，左转了90度。
+Hence $\psi = \theta + \dfrac{\pi}{2}$, a left turn of 90 degrees.
 \end{proof}
 }
 
-\Question{验证复数的共轭满足这样的运算规则：$\overline{a + b} = \overline{a} + \overline{b}$，$\overline{ab} = \overline{a} \cdot \overline{b}$, $\overline{z^n} = (\overline{z})^n$，并据此证明达朗贝尔的发现：若$z$是方程$p(z) = 0$的根，其共轭$\overline{z}$也是方程的根。
+\Question{Verify that the conjugate of a complex number satisfies the following rules: $\overline{a + b} = \overline{a} + \overline{b}$, $\overline{ab} = \overline{a} \cdot \overline{b}$, $\overline{z^n} = (\overline{z})^n$, and use these rules to prove d'Alembert's discovery: if $z$ is a root of the equation $p(z) = 0$, then its conjugate $\overline{z}$ is also a root of the equation.
 
 \begin{proof}
-和的共轭：
+Conjugate of sum:
     \begin{align*}
     \overline{a + b} &= \overline{p + qi + r + si} && \text{令}a = p + qi, b = r + si \\
       &= \overline{p + r + (q + s)i} = p + r - (q + s)i &&\text{共轭的定义} \\
       &= p - qi + r - si = \overline{a} + \overline{b}
     \end{align*}
-积的共轭：
+Conjugate of product:
     \begin{align*}
     \overline{ab} &= \overline{(p + qi)(r + si)} \\
       &= \overline{pr - qs + (ps + qr)i} = pr - qs - (ps + qr)i
     \end{align*}
-共轭的积：
+Product of conjugation:
     \begin{align*}
     \overline{a} \cdot \overline{b} &= (p - qi)(r - si) = pr - qs - (ps + qr)i \\
       &= \overline{ab}
     \end{align*}
-令$b = a$带入积的共轭，并重复$n$次即得到$\overline{a^n} = (\overline{a})^n$。
+Let $b = a$ and substitute into the product of conjugation, repeat $n$ times to get $\overline{a^n} = (\overline{a})^n$.
 
-若$z$是方程$p(x) = a_nx^n + \dotsb + a_1 x + a_0 = 0$的根，带入$z$有：
+If $z$ is a root of the equation $p(x) = a_nx^n + \dotsb + a_1 x + a_0 = 0$, then substitute $z$ into,
 
 \begin{align*}
 0 &= a_nz^n + \dotsb + a_1 z + a_0 \\
-\overline{0}  &= \overline{a_nz^n + \dotsb + a_1 z + a_0} && \text{取共轭}\\
-0 &= \overline{a_nz^n} + \dotsb + \overline{a_1 z} + \overline{a_0} && \text{和的共轭}\\
-  &= \overline{a_n}\overline{z^n} + \dotsb + \overline{a_1}\overline{z} + \overline{a_0} && \text{积的共轭}\\
-  &= \overline{a_n}(\overline{z})^n + \dotsb + \overline{a_1}\overline{z} + \overline{a_0} && \text{幂的共轭}\\
-  &= a_n(\overline{z})^n + \dotsb + a_1\overline{z} + a_0 && \text{实数的共轭是本身} \\
+\overline{0}  &= \overline{a_nz^n + \dotsb + a_1 z + a_0} && \text{conjugate}\\
+0 &= \overline{a_nz^n} + \dotsb + \overline{a_1 z} + \overline{a_0} && \text{conjugate of sum}\\
+  &= \overline{a_n}\overline{z^n} + \dotsb + \overline{a_1}\overline{z} + \overline{a_0} && \text{conjugate of product}\\
+  &= \overline{a_n}(\overline{z})^n + \dotsb + \overline{a_1}\overline{z} + \overline{a_0} && \text{conjugate of power}\\
+  &= a_n(\overline{z})^n + \dotsb + a_1\overline{z} + a_0 && \text{conjugate of real numbers} \\
   &= p(\overline{z}) && \qedhere
 \end{align*}
 \end{proof}
 }
 
-\Question{验证哈密尔顿的复数数偶表示满足五大运算定律。
+\Question{Verify that Hamilton's representation of complex numbers as ordered pairs satisfies the five fundamental arithmetic rules.
 
 \begin{proof}
-加法交换律：
+Commutativity of addition:
 \begin{align*}
-(a, b) + (c, d) &= (a + c, b + d) && \text{数偶加法} \\
-  &= (c + a, d + b) && \text{通常的加法交换律} \\
-  &= (c, d) + (a, b) && \text{反向用数偶加法}
+(a, b) + (c, d) &= (a + c, b + d) && \text{sum of pair} \\
+  &= (c + a, d + b) && \text{addition is commutative for normal numbers} \\
+  &= (c, d) + (a, b) && \text{sum of pair, reverse}
 \end{align*}
 
-乘法交换律：
+Commutativity of multiplication:
 \begin{align*}
-(a, b)(c, d) &= (ac - bd, bc + ad) && \text{数偶乘法} \\
-  &= (ca - db, cb + da) && \text{通常的乘法交换律} \\
-  &= (c, d)(a, b) && \text{反向用数偶乘法}
+(a, b)(c, d) &= (ac - bd, bc + ad) && \text{product of pair} \\
+  &= (ca - db, cb + da) && \text{multiplication is commutative for normal numbers} \\
+  &= (c, d)(a, b) && \text{product of pair, reverse}
 \end{align*}
 
-加法结合律：
+Associativity of addition: 
 \begin{align*}
 (a, b) + (c, d) + (e, f) &= (a + c, b + d) + (e, f) \\
   &= (a + c + e, b + d + f) \\
-  &= (a + (c + e), b + (d + f)) && \text{通常的加法结合律} \\
+  &= (a + (c + e), b + (d + f)) && \text{associativity for normal numbers} \\
   &= (a, b), (c + e, d + f) \\
-  &= (a, b) + [(c, d) + (e, f)] && \text{反向用数偶加法}
+  &= (a, b) + [(c, d) + (e, f)] && \text{sum of pair, reverse}
 \end{align*}
 
-乘法结合律：
+Associativity of multiplication:
 \begin{align*}
 (a, b)(c, d)(e, f) &= (ac - bd, ad + bc)(e, f) \\
   &= ((ac - bd)e - (ad + bc)f, (ac - bd)f + (ad + bc)e) \\
   &= (ace - bde - adf - bcf, acf - bdf + ade + bce) \\
-\text{另一方面} \\
+\text{on the other hand} \\
 (a, b)[(c, d)(e, f)] &= (a, b)(ce - df, cf + de)) \\
   &= (a(ce - df) - b(cf + de), a(cf + de) + b(ce - df)) \\
   &= (ace - adf - bcf - bde, acf + ade + bce - bdf) \\
@@ -1265,7 +1269,7 @@ ab = \sqrt{a^2b^2} = \sqrt{(-a^2)(-b^2)} = \sqrt{-a^2}\sqrt{-b^2} = (ai)(bi)=-ab
   &= (a, b)(c, d)(e, f)
 \end{align*}
 
-（左侧）分配律：
+Left distribution:
 \begin{align*}
 (a, b)[(c, d) + (e, f)] &= (a, b)(c + e, d + f) \\
   &= (a(c + e) - b(d + f), a(d + f) + b(c + e)) \\
@@ -1274,19 +1278,19 @@ ab = \sqrt{a^2b^2} = \sqrt{(-a^2)(-b^2)} = \sqrt{-a^2}\sqrt{-b^2} = (ai)(bi)=-ab
   &= (ac - bd, ad + bc) + (ae - bf, af + be) \\
   &= (a, b)(c, d) + (a, b)(e, f)
 \end{align*}
-再由乘法交换律可证明右侧分配律。
+Right distribution holds by the commutativity of multiplication.
 \end{proof}
 }
 
-\Question{利用对数函数与指数函数的反函数关系证明换底公式。
+\Question{Use the fact that logarithmic function and exponential function are inverse functions to prove the change of base formula.
 
   \begin{proof}
     \begin{align*}
       y &= \log_a x && a \ne 1 \\
-      a^y &= x && \text{指数与对数的反函数关系} \\
-      log_b (a^y) &= log_b x && \text{两边取以}b\text{为底的对数} \\
-      y log_b a &= log_b x && \text{对数运算法则} \\
-      y &= \frac{log_b x}{log_b a} && a \ne 1\text{故分母非0} \qedhere
+      a^y &= x && \text{inverse function} \\
+      log_b (a^y) &= log_b x && \text{take logarithm of base }b\text{ for both sides} \\
+      y log_b a &= log_b x && \text{rule of logarithm} \\
+      y &= \frac{log_b x}{log_b a} && a \ne 1\text{, the denominator is not zero} \qedhere
     \end{align*}
   \end{proof}
 }
