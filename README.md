@@ -1,11 +1,11 @@
-A Tour of Numbers
+The Journey of Numbers
 ====
 
 Edition: $\displaystyle \phi = \frac{\sqrt{5} - 1}{2} = 0.618$
 
 2026/02
 
-This repository contains the text of the popular science book, _A Tour of Numbers_. The book provides a historical introduction to numbers. As a central notion in mathematics, numbers connect various areas and  theories. This book includes 33 interesting stories and biographies of great mathematicians in the history of numbers. We completed the Chinese edition (中文) in October 2025 ([PDF file](https://github.com/user-attachments/files/22880853/amathtour-zh-cn.pdf)) and plan to release both the English (preview [PDF](https://github.com/user-attachments/files/25251657/amathtour-en.pdf)) and Chinese editions by the end of 2026.
+This repository contains the text of the popular science book, _The Journey of Numbers_. The book provides a historical introduction to numbers. As a central notion in mathematics, numbers connect various areas and  theories. This book includes 33 interesting stories and biographies of great mathematicians in the history of numbers. We completed the Chinese edition (中文) in October 2025 ([PDF file](https://github.com/user-attachments/files/22880853/amathtour-zh-cn.pdf)) and plan to release both the English (preview [PDF](https://github.com/user-attachments/files/25251657/amathtour-en.pdf)) and Chinese editions by the end of 2026.
 
 Contents
 --------
@@ -39,4 +39,3 @@ We use LuaLaTeX, an extended version of TeX provided in the TeXLive distribution
 --
 
 LIU Xinyu
-
