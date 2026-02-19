@@ -862,15 +862,15 @@ Unfortunately, the mason who did the carving misunderstood the instructions and 
  \centering
   \begin{tikzpicture}[scale=0.1]
       % r = a*e^(b*θ)
-      \def\a{0.1}   
-      \def\b{0.2}   
-      \def\turns{5} 
+      \def\a{0.1}
+      \def\b{0.2}
+      \def\turns{5}
 
       \draw[
           line width=1pt,
           blue!80!black,
           domain=0:{2*pi*\turns},  % domain of the angle
-          samples=360,             
+          samples=360,
           variable=\t
       ] plot (
           {exp(\b*\t)*\a*cos(\t r)},  % x coordinate
@@ -888,7 +888,7 @@ Unfortunately, the mason who did the carving misunderstood the instructions and 
 r = ka^\theta && \theta = \log_{a} \frac{r}{k}
 \end{align*}
 
-\index{change of base formula} 
+\index{change of base formula}
 For any point on the spiral, the angle $\theta$ and the radius $r$ have a logarithmic relationship. Therefore, the French mathematician Pierre Varignon (1654–1722) named this spiral the \enquote{logarithmic spiral}. We have learned the change of base formula in high school: $\log_a x = \dfrac{\ln x}{\ln a}$ (see \cref{qn:change-base} for a proof of this formula), so:
 
 \begin{align*}
@@ -1050,7 +1050,7 @@ Where the first equation is essentially a quadratic equation $x^2 - \dfrac{\sqrt
 \[x_{1, 2} = \dfrac{\frac{\sqrt{5} - 1}{2} \pm i\sqrt{\frac{5 + \sqrt{5}}{2}}}{2}
 \]
 
-They are a pair of complex conjugates, corresponding to $x$ and $\dfrac{1}{x}$ in \cref{fig:pentagon-z}. We are going to figure out the modulus $|x - 1|$ in \cref{fig:pentagon-z}, which is the side length of the regular pentagon. 
+They are a pair of complex conjugates, corresponding to $x$ and $\dfrac{1}{x}$ in \cref{fig:pentagon-z}. We are going to figure out the modulus $|x - 1|$ in \cref{fig:pentagon-z}, which is the side length of the regular pentagon.
 
 \[
 x - 1 = \frac{\frac{\sqrt{5} - 1}{2} + i\sqrt{\frac{5 + \sqrt{5}}{2}}}{2} - 1 = \frac{\sqrt{5} - 5}{4} + i\frac{\sqrt{\frac{5 + \sqrt{5}}{2}}}{2}
@@ -1163,7 +1163,7 @@ x^3 - 15x - 4 &= (x - 4)(x^2 + ax + b) \\
 Hence $a = 4, b = 1$. Solving the quadratic equation $x^2 + 4x + 1 = 0$ gives the other two roots $x_{2, 3} = -2 \pm \sqrt{3}$
 }
 
-\Question{Is the rule $\sqrt{ab} = \sqrt{a}\sqrt{b}$ valid in complex numbers? If so, prove it; if not, how can it be salvaged? 
+\Question{Is the rule $\sqrt{ab} = \sqrt{a}\sqrt{b}$ valid in complex numbers? If so, prove it; if not, how can it be salvaged?
 
 \vspace{2mm}
 No, it's invalid, otherwise,
@@ -1247,7 +1247,7 @@ Commutativity of multiplication:
   &= (c, d)(a, b) && \text{product of pair, reverse}
 \end{align*}
 
-Associativity of addition: 
+Associativity of addition:
 \begin{align*}
 (a, b) + (c, d) + (e, f) &= (a + c, b + d) + (e, f) \\
   &= (a + c + e, b + d + f) \\
@@ -1295,16 +1295,16 @@ Right distribution holds by the commutativity of multiplication.
   \end{proof}
 }
 
-\Question{*利用等角螺线的极坐标方程$r = ke^{b\theta}$证明笛卡尔指出的等角性质：螺线的切线和极径夹角$\Psi$不变（见\cref{fig:equiangular}）
+\Question{*Use the polar equation of equiangular spiral $r = ke^{b\theta}$ to prove the equiangular property pointed out by Descartes: the angle $\Psi$ between the tangent and the radial line is constant (see \cref{fig:equiangular}).
 
   \begin{center}
     \includegraphics[scale=0.33]{img/tagent-to-r}
-    \captionof{figure}{极径旋转小角度$\Delta \theta$}
+    \captionof{figure}{Radial line rotates through a small angle $\Delta \theta$.}
     \label{fig:tagent-to-ra}
   \end{center}
 
   \begin{proof}
-如\cref{fig:tagent-to-ra}所示，极径$r$旋转过一个小角度$\Delta \theta$，极径增加了$\Delta r$。小圆弧$AC$长$r\Delta \theta$，它与割线$AB$，极径的增量近似组成一个直角三角形$ACB$。当$\Delta \theta \to 0$时，点$A, B$趋向重合，割线$AB$趋近于切线。角$ABC = \Psi - \Delta \theta$
+As shown in \cref{fig:tagent-to-ra}, when the radial line $r$ rotates through a small angle $\Delta \theta$, its length increases by $\Delta r$. The length of the small arc $AC$ is $r\Delta \theta$; this arc together with the secant $AB$, the increment of the radial line form a roughly right triangle $ACB$. When $\Delta \theta \to 0$, the two points $A, B$ close to each other, and the secant $AB$ approximates the tagent. The angle $ABC = \Psi - \Delta \theta$.
 
 \begin{align*}
   \tan \Psi &= \lim_{\Delta \theta \to 0} \tan (\Psi - \Delta \theta) = \lim_{\Delta \theta \to 0} \tan \angle ABC \\
@@ -1312,19 +1312,19 @@ Right distribution holds by the commutativity of multiplication.
   &= \frac{r}{\lim_{\Delta \theta \to 0} \dfrac{\Delta r}{\Delta \theta}} = \frac{r}{r'} = \frac{ke^{b\theta}}{(ke^{b\theta})'} && \text{代入}r = ke^{b\theta} \\
   &= \frac{ke^{b\theta}}{kbe^{b\theta}} = \frac{1}{b} && (e^{bx})' = be^{bx}
 \end{align*}
-是一个不依赖于$\theta$的常量，这就证明了螺线的等角性质。
+This is a constant independant of $\theta$, which proves the equiangular property of the spiral.
   \end{proof}
 }
 
-\Question{*雅各布·伯努利赞美的“虽经沧海，我依故我”也形象地描绘了求导不变$(e^x)' = e^x$的性质，现代数学家这样定义函数$f(x) = e^x$：(1) 导数不变$f'(x) = f(x)$，(2) 函数值$f(0) = 1$。试利用这个定义导出$e^x$的展开式。
+\Question{*Jacob Bernoulli's epitaph, \enquote{Eadem mutata resurgo}, describes the property of the derivative of $e^x$ being unchanged, $(e^x)' = e^x$. Modern mathematicians define the function $f(x) = e^x$ as follows: (1) the derivative is unchanged, $f'(x) = f(x)$, (2) the function value at 0 is 1, $f(0) = 1$. Use this definition to derive the expansion of $e^x$.
 
 \vspace{2mm}
-设展开式为$f(x) = a_0 + a_1 x + a_2 x^2 + \dotsb$。由$f(0) = 1$推出：$f(0) = a_0 = 1$。求导并利用$f'(x) = f(x)$有：
+Let the expansion of of $e^x$ be $f(x) = a_0 + a_1 x + a_2 x^2 + \dotsb$. By $f(0) = 1$, hence $f(0) = a_0 = 1$. Taking the derivative and by $f'(x) = f(x)$,
 \begin{align*}
 f'(x) &= a_1 + 2a_2x + 3a_3x^2 + \dotsb + na_nx^{n-1} + \dotsb = f(x) \\
       &= 1 + a_1x + a_2x^2 + \dotsb + a_{n-1}x^{n-1} + \dotsb
 \end{align*}
-由待定系数法得：
+Equating the coefficients:
 \begin{align*}
 a_1 &= 1\\
 a_2 &= \frac{a_1}{2} = \frac{1}{2}\\
@@ -1334,13 +1334,13 @@ a_n &= \frac{a_{n-1}}{n} = \frac{a_{n-2}}{n(n-1)} = \dotsb = \frac{1}{n!} \\
 \dotso
 \end{align*}
 
-故展开式为：
+Therefore, the expansion of $e^x$ is,
 \begin{align*}
 e^x &= f(x) = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \dotsb + \frac{x^n}{n!} + \dotsb
 \end{align*}
 }
 
-\Question{*雅各布·伯努利距离发现$e^x$几乎只差一步。在计算复利时，如果年利率不是100\%，而是$x$，当$n \to \infty$时的实际年化收益率是什么？它的级数展开是什么？
+\Question{*Jacob Bernoulli's discovery of the distance to $e^x$ is almost one step away. When calculating compound interest, if the annual interest rate is not 100\% but $x$, what is the actual annualized return when $n \to \infty$? What is its series expansion?
 
 \vspace{2mm}
 \begin{align*}
@@ -1349,7 +1349,7 @@ e^x &= f(x) = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \dotsb + \frac{x^n}{n!} 
   &= e^x
 \end{align*}
 
-利用广义二项式展开：
+By the general binomial theorem,
 \begin{align*}
 e^x &= \lim_{n \to \infty} (1 + \frac{x}{n})^n \\
   &= \lim_{n \to \infty} (1 + \binom{n}{1}\frac{x}{n} + \binom{n}{2}\frac{x^2}{n^2} + \dotsb \\
@@ -1359,34 +1359,34 @@ e^x &= \lim_{n \to \infty} (1 + \frac{x}{n})^n \\
 \end{align*}
 }
 
-\Question{利用复数推导三角函数的和角公式：$\tan(\theta_1 + \theta_2), \sin(\theta_1 + \theta_2), \cos(\theta_1 + \theta_2)$。
+\Question{Show the trigonometric addition formulas $\tan(\theta_1 + \theta_2), \sin(\theta_1 + \theta_2), \cos(\theta_1 + \theta_2)$ using complex numbers.
 
 \vspace{2mm}
 
-考虑两个复数$z_1 = a_1 + b_1i, z_2 = a_2 + b_2i$，它们的幅角分别为：$\theta_1 = \tan^{-1} \dfrac{b_1}{a_1}, \theta_2 = \tan^{-1} \dfrac{b_2}{a_2}$（忽略实部为0的情况），模为$r_1 = \sqrt{a_1^2 + b_1^2}, r_2 = \sqrt{a_2^2 + b_2^2}$。这两个复数的乘积是：
+For two complex numbers $z_1 = a_1 + b_1i, z_2 = a_2 + b_2i$, their arguments are $\theta_1 = \tan^{-1} \dfrac{b_1}{a_1}, \theta_2 = \tan^{-1} \dfrac{b_2}{a_2}$ respectively (suppose the real part isn't 0), and their moduli are $r_1 = \sqrt{a_1^2 + b_1^2}, r_2 = \sqrt{a_2^2 + b_2^2}$ respectively. Their product is,
 
 \[
 z_1z_2 = (a_1 + b_1i)(a_2 + b_2i) = a_1a_2 - b_1b_2 + (a_1b_2 + b_1a_2)i
 \]
 
-根据复数的几何意义，幅角$arg(z_1z_2) = \theta_1 + \theta_2$, 模$|z_1z_2|= r_1r_2$。
+By the geometric interpretation of complex numbers, the argument of the product is $arg(z_1z_2) = \theta_1 + \theta_2$, and the modulus is $|z_1z_2|= r_1r_2$.
 
 \begin{align*}
-\tan(\theta_1 + \theta_2) &= \tan(arg(z_1z_2)) = \frac{a_1b_2 + b_1a_2}{a_1a_2 - b_1b_2} && \text{忽略分母为0的情况} \\
-  &= \dfrac{\dfrac{b_2}{a_2} + \dfrac{b_1}{a_1}}{1 - \dfrac{b_1}{a_1}\dfrac{b_2}{a_2}} && \text{上下同除以}a_1a_2 \\
+\tan(\theta_1 + \theta_2) &= \tan(arg(z_1z_2)) = \frac{a_1b_2 + b_1a_2}{a_1a_2 - b_1b_2} && \text{suppose the denominator isn't 0} \\
+  &= \dfrac{\dfrac{b_2}{a_2} + \dfrac{b_1}{a_1}}{1 - \dfrac{b_1}{a_1}\dfrac{b_2}{a_2}} && \text{both divided by }a_1a_2 \\
   &= \frac{\tan\theta_2 + \tan\theta_1}{1 - \tan\theta_1 \tan\theta_2}
 \end{align*}
 
-类似地，通过$\sin(\theta_1 + \theta_2) = \dfrac{a_1b_2 + b_1a_2}{r_1r_2}$可以推出正弦、余弦的和角公式。
+Similarly, by $\sin(\theta_1 + \theta_2) = \dfrac{a_1b_2 + b_1a_2}{r_1r_2}$, one can derive the analogous formulas for sine and cosine.
 
 \begin{align*}
-\sin(\theta_1 + \theta_2) &= \sin(arg(z_1z_2)) = \frac{a_1b_2 + b_1a_2}{r_1r_2} && \text{忽略分母为0的情况} \\
+\sin(\theta_1 + \theta_2) &= \sin(arg(z_1z_2)) = \frac{a_1b_2 + b_1a_2}{r_1r_2} && \text{suppose the denominator isn't 0} \\
   &= \frac{a_1}{r_1}\frac{b_2}{r_2} + \frac{b_1}{r_1}\frac{a_2}{r_2} \\
   &= \cos\theta_1 \sin\theta_2 + \sin\theta_1 \cos\theta_2
 \end{align*}
 
 \begin{align*}
-\cos(\theta_1 + \theta_2) &= \cos(arg(z_1z_2)) = \frac{a_1a_2 - b_1b_2}{r_1r_2} && \text{忽略分母为0的情况} \\
+\cos(\theta_1 + \theta_2) &= \cos(arg(z_1z_2)) = \frac{a_1a_2 - b_1b_2}{r_1r_2} && \text{suppose the denominator isn't 0} \\
   &= \frac{a_1}{r_1}\frac{a_2}{r_2} - \frac{b_1}{r_1}\frac{b_2}{r_2} \\
   &= \cos\theta_1 \cos\theta_2 - \sin\theta_1 \sin\theta_2
 \end{align*}
@@ -1405,7 +1405,7 @@ z_1z_2 = (a_1 + b_1i)(a_2 + b_2i) = a_1a_2 - b_1b_2 + (a_1b_2 + b_1a_2)i
 %% "The meaning of the world is the separation of wish and fact. Wish is a force as applied to thinking beings, to realize something. A fulfilled wish is a union of wish and fact. The meaning of the whole world is the separation and the union of fact and wish". [9.4.3]
 %%  Hao Wang’s supplemental biography of Gödel, A Logical Journey, MIT Press, 1996.
 
-\label{sec:FLT-4} \index{费马大定理!n=4}
+\label{sec:FLT-4} \index{Fermat's Last Theorem!n=4}
 著名的费马大定理断言当$n \geq 3$时，$x^n + y^n = z^n$没有正整数解。尽管费马“抱怨”页边太窄，写不下他的证明，但他的确后来给出了$n=4$时$x^4 + y^4 = z^4$无解的证明。并且他还在这个过程中发展出了自己非常自豪的“无穷递降法”（infinite descent）。在此后的200年间，数学家们一直沿着这条路摸索费马大定理的证明\citepage[40-42页]{Edward-1977}。当$n = 4$时，费马发现他只需要证明如下结论就足够了\citepage[247页]{Hardy2009}。
 
 \begin{lemma}
