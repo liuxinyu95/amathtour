@@ -1406,16 +1406,16 @@ Similarly, by $\sin(\theta_1 + \theta_2) = \dfrac{a_1b_2 + b_1a_2}{r_1r_2}$, one
 %%  Hao Wang’s supplemental biography of Gödel, A Logical Journey, MIT Press, 1996.
 
 \label{sec:FLT-4} \index{Fermat's Last Theorem!n=4}
-The renowned Fermat's last theorem, abbreviated as FLT, states there is no solution in natural numbers to the equation $x^n + y^n = z^n$ for integer $n \neq 3$. Although Fermat complained that the margin was too small to contain his proof, he later did proved the case of $n = 4$, that $x^4 + y^4 = z^4$ has no solution in natural numbers. Fermat developed a technique called \emph{infinite descent} in this proof, and he was very proud of it. Indeed, mathematicians in the later 200 years almost all followed Fermat's method for other cases\citepage[p40-42]{Edward-1977}. Fermat found it's sufficient to prove below lemma for the case of $n = 4$\citepage[p247]{Hardy2009}.
+The renowned Fermat's last theorem, abbreviated as FLT, states there is no solution in natural numbers to the equation $x^n + y^n = z^n$ for integer $n \geq 3$. Although Fermat complained that the margin was too small to contain his proof, he later did proved the case of $n = 4$, that $x^4 + y^4 = z^4$ has no solution in natural numbers. Fermat developed a technique called \emph{infinite descent} in this proof, and he was very proud of it. Indeed, mathematicians in the later 200 years almost all followed Fermat's method for other cases\citepage[p40-42]{Edward-1977}. Fermat found it's sufficient to prove below lemma for the case of $n = 4$\citepage[p247]{Hardy2009}.
 
 \begin{lemma}
-方程$x^4 + y^4 = z^2$没有正整数解。
+The equation $x^4 + y^4 = z^2$ has no solution in natural numbers.
 \end{lemma}
 
-的确，如果$x^4 + y^4 = u^4$有解，那么令$z = u^2$，则$x^4 + y^4 = z^2$也有解。这个引理是费马大定理$n = 4$时的充分条件。
+Indeed, if equation $x^4 + y^4 = u^4$ has a solution, let $z = u^2$, then it is also the solution to $x^4 + y^4 = z^2$.
 
 \begin{proof}
-用反证法，假设$x^4 + y^4 = z^2$有正整数解。费马进一步假设，$x, y, z$彼此互素。否则，若任何两个含有公约数$d \ne 1$，则第三个也含有这个因子（见\cref{qn:xyz-coprime}），可以从方程中约去$d$。$x^2, y^2, z$是一组勾股数，根据欧几里得引理\ref{thm:pythagoras-triples}，它们可以表示为：
+Assume for contradiction, that $x^4 + y^4 = z^2$ has some solution in natural numbers. Fermat further assumed $x, y, z$ were coprime of each other. Otherwise if any two have some common divisor $d \ne 1$, then it is also a divisor of the other (see \cref{qn:xyz-coprime}), which can be canceled from the both sides of the equation. Since $x^2, y^2, z$ form a Pythagorean triple, by Euclid's lemma \ref{thm:pythagoras-triples},
 
 \begin{align*}
 x^2 &= 2mn \\
@@ -1423,7 +1423,7 @@ y^2 &= m^2 - n^2 \\
 z &= m^2 + n^2
 \end{align*}
 
-其中$m > n$，互素且奇偶不同。上面的第二个等式可以变形为：$y^2 + n^2 = m^2$。由于$m, n$互素，所以$y, n, m$也是一组勾股数。其中$m$是奇数，$y$是奇数，$n$是偶数。再次用欧几里得引理：
+where $m > n$, they are coprime and in different parity. Convert the second equation to $y^2 + n^2 = m^2$; since $m, n$ are coprime, $y, n, m$ turn out to be a Pythagorean triple, where $m$ is odd, $y$ is odd, $n$ is even. Apply Euclid's lemma again:
 
 \begin{align*}
 n &= 2ab \\
@@ -1431,14 +1431,14 @@ y &= a^2 - b^2 \\
 m &= a^2 + b^2
 \end{align*}
 
-其中$a > b$，互素且奇偶不同。代入$x^2 = 2mn = 4ab(a^2 + b^2)$，这说明$ab(a^2 + b^2)$是一个平方数。但$ab$与$a^2 + b^2$互素（任何素数$p$如果整除$ab$，则要么$p$整除$a$，要么整除$b$。但因为$a, b$互素，所以$p$不同时整除$a, b$，因此$p$不整除$a^2 + b^2$），所以它们也都是平方数(见\cref{qn:coprime-product-as-square})。令$a^2 + b^2 = Z^2$。因为$a, b$互素，若$ab$是平方数，则$a, b$也都是平方数。令$a = X^2, b= Y^2$，则$X^4 + Y^4 = a^2 + b^2 = Z^2$。
+where $a > b$, the are coprime and in different parity. Substitute into $x^2 = 2mn = 4ab(a^2 + b^2)$, which implies $ab(a^2 + b^2)$ is a square. But $ab$ and $a^2 + b^2$ are coprime (if any prime number $p$ divides $ab$, then $p$ divides $a$ or $b$; but since $a, b$ are coprime, $p$ can't divides both $a$ and $b$, hence $p$ does not divide $a^2 + b^2$), it follows that both are squares (see \cref{qn:coprime-product-as-square}). Let $a^2 + b^2 = Z^2$. Since $a, b$ are coprime, if $ab$ is a square, then both $a$ and $b$ are squares. Let $a = X^2, b= Y^2$, it follows that $X^4 + Y^4 = a^2 + b^2 = Z^2$.
 
-现在比较$X^4 + Y^4 = Z^2$与原方程$x^4 + y^4 = z^2$。它们形式一样，但：
+Compare $X^4 + Y^4 = Z^2$ with the original equation $x^4 + y^4 = z^2$. They are in the same form, and,
 \[
 Z < Z^2 = a^2 + b^2 = m < m^2 + n^2 = z
 \]
 
-这样就能不断获得越来越小的正整数$z$，但这是不可能的。
+It generates infinite descent positive integers of $z$, which is impossible.
 \end{proof}
 
 \index{无穷递降法}
