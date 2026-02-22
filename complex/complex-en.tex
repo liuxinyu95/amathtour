@@ -1438,22 +1438,22 @@ Compare $X^4 + Y^4 = Z^2$ with the original equation $x^4 + y^4 = z^2$. They are
 Z < Z^2 = a^2 + b^2 = m < m^2 + n^2 = z
 \]
 
-It generates infinite descent positive integers of $z$, which is impossible.
+It generates smaller and smaller positive integers of $z$ infinitely (infinite descent), which is impossible.
 \end{proof}
 
-\index{无穷递降法}
-这就是无穷递降法的思路，它是一种反证法。从原来的形式$f(x)$推出同样的形式$f(X)$，但正整数$x > X > 0$。由于从任何有限的正整数开始，都不可能产生无穷递降的正整数序列，这样就可以推翻假设。\cref{fig:infinite-descent}形象地描述了无穷递降法。螺丝还有$x$圈没有拧进地面，用螺丝刀拧一阵后，还有$X$圈没有拧进地面。圈数$x > X > 0$是正整数，但螺纹的圈数有限，不可能无限拧下去。
+\index{infinite descent}
+Fermat's method of infinite descent is essentially a proof by contradiction. One deduces from the original form of $f(x)$, by assumption, to the same form of $f(X)$ for positive integers $x > X > 0$. However, from any finite positive number, it impossible to produce infinite descent of positive numbers, which contradict with the assumption. \Cref{fig:infinite-descent} illustrates the method of descent. A bolt remains $x$ rotations of screw to the ground, after twisting for a while, there remains $X$ rotations left, where $x > X > 0$ are positive integers. However, the number of rotations of a bolt is finite, it is impossible to twisting infinitely.
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.3]{img/infinite-descent}
- \caption{无穷递降法的比喻}
+ \caption{Illustration of the method of descent.}
  \label{fig:infinite-descent}
 \end{figure}
 
-\section{费马大定理与复数}
-\index{费马大定理!n=3}
-费马之后大约一个世纪，欧拉在1755年写给哥德巴赫的信中，给出了$n = 3$时$x^3 + y^3 = z^3$没有正整数解的证明\citepage[239页]{Weil-1983}。尽管这个证明有缺陷，但欧拉本质上使用了复数攻克问题。欧拉的证明有2页，读者朋友们只要集中精神就能跟上思路，看懂并欣赏这个证明。
+\section{Fermat's last theorem and complex numbers}
+\index{Fermat's last theorem!n=3}
+About a century after Fermat, Euler wrote a letter to Goldbach in 1755, gave his proof that when $n = 3$, there was no solution to the equation $x^3 + y^3 = z^3$ in integers\citepage[p239]{Weil-1983}. 尽管这个证明有缺陷，但欧拉本质上使用了复数攻克问题。欧拉的证明有2页，读者朋友们只要集中精神就能跟上思路，看懂并欣赏这个证明。
 
 \begin{proof}
 欧拉也使用了无穷递降法，假设$x^3 + y^3 = z^3$有解。和费马一样，他假设$x, y, z$彼此互素，并且其中有且仅有一个是偶数。首先是$x, y$是奇数，$z$是偶数的情况。此时$x \pm y$都是偶数，设$x + y = 2p, x - y = 2q$，解此二元一次方程组得：$x = p + q, y = p - q$。因为$x, y$都是奇数，所以$p, q$奇偶不同。并且因为$x, y$互素，所以$p, q$也互素（因为$p, q$的公约数$d$也整除$p \pm q$，所以也是$x, y$的公约数）。进一步，可以认为$p, q > 0$（否则交换$x, y$），这样：
