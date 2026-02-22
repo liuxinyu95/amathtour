@@ -1453,75 +1453,75 @@ Fermat's method of infinite descent is essentially a proof by contradiction. One
 
 \section{Fermat's last theorem and complex numbers}
 \index{Fermat's last theorem!n=3}
-About a century after Fermat, Euler wrote a letter to Goldbach in 1755, gave his proof that when $n = 3$, there was no solution to the equation $x^3 + y^3 = z^3$ in integers\citepage[p239]{Weil-1983}. 尽管这个证明有缺陷，但欧拉本质上使用了复数攻克问题。欧拉的证明有2页，读者朋友们只要集中精神就能跟上思路，看懂并欣赏这个证明。
+About a century after Fermat, in a letter to Goldbach in 1755, Euler gave a proof of Fermat's last theorem for $n = 3$, that there was no solution to the equation $x^3 + y^3 = z^3$ in integers\citepage[p239]{Weil-1983}. Although contained a defect, he lighted a new direction to solve the problem with complex numbers. Euler's beautiful proof was about 2 pages.
 
 \begin{proof}
-欧拉也使用了无穷递降法，假设$x^3 + y^3 = z^3$有解。和费马一样，他假设$x, y, z$彼此互素，并且其中有且仅有一个是偶数。首先是$x, y$是奇数，$z$是偶数的情况。此时$x \pm y$都是偶数，设$x + y = 2p, x - y = 2q$，解此二元一次方程组得：$x = p + q, y = p - q$。因为$x, y$都是奇数，所以$p, q$奇偶不同。并且因为$x, y$互素，所以$p, q$也互素（因为$p, q$的公约数$d$也整除$p \pm q$，所以也是$x, y$的公约数）。进一步，可以认为$p, q > 0$（否则交换$x, y$），这样：
+Euler applied the method of infinite descent. Assume for contradiction that there is some solution to $x^3 + y^3 = z^3$ in integers. As what Fermat had done, suppose $x, y, z$ are relative prime, one and only one is even. If $x, y$ are odd and $z$ is even, then both $x \pm y$ are even. Let $x + y = 2p, x - y = 2q$, solving this system gives $x = p + q, y = p - q$. As $x, y$ are both odd, the parity of $p, q$ are different. Since $x, y$ are relative prime, so are $p$ and $q$ (because any common divisor $d$ of $p, q$ divides $p \pm q$, hence is also common divisor of $x, y$). Further suppose $p, q > 0$ (otherwise exchange $x, y$), we have:
 
 \begin{align*}
-z^3 &= x^3 + y^3 = (x + y)(x^2 - xy + y^2) && \text{因式分解} \\
-  &= 2p[(p + q)^2 - (p + q)(p - q) + (p - q)^2] && \text{代入}x, y = p \pm q \\
+z^3 &= x^3 + y^3 = (x + y)(x^2 - xy + y^2) && \text{factorization} \\
+  &= 2p[(p + q)^2 - (p + q)(p - q) + (p - q)^2] && \text{substitute }x, y = p \pm q \\
   &= 2p(p^2 + q^2 + \cancel{2pq} - p^2 + q^2 + p^2 + q^2 - \cancel{2pq}) \\
   &= 2p(p^2 + 3q^2) && \text{(*)}
 \end{align*}
 
-当$z$是奇数，$x, y$一奇一偶时，欧拉也得到了同样的结果。不妨设$x$是偶数，首先移项：
+Euler obtained the same result when $z$ was odd and $x, y$ were in different parity. Suppose $x$ is even, move $y^3$ to the right:
 
 \begin{align*}
-x^3 &= z^3 - y^3 = (z - y)(z^2 + zy + y^2) && \text{因式分解} \\
-  &= 2p[(q + p)^2 + (q + p)(q - p) + (q - p)^2] && \text{令}z \pm y = 2p, 2q \text{则}z, y = q \pm p \\
+x^3 &= z^3 - y^3 = (z - y)(z^2 + zy + y^2) && \text{factorization} \\
+  &= 2p[(q + p)^2 + (q + p)(q - p) + (q - p)^2] && \text{let }z \pm y = 2p, 2q \text{, then }z, y = q \pm p \\
   &= 2p(p^2 + 3q^2) && \text{(**)}
 \end{align*}
 
-同样这里$p, q$是互素的正整数且奇偶不同\footnote{明显$x = -y$，是方程$x^3+ y^3 = 0$的一个解，所以$x + y$是一个因式。通过多项式长除可完成$x^3 + y^3$的因式分解。同样$z = y$，是方程$z^3 - y^3 = 0$的一个解，所以$z - y$是一个因式。通过多项式长除可完成$z^3 - y^3$的因式分解。}。接下来欧拉的思路是要证明$2p$和$p^2 + 3q^2$互素，因此它们各自是一个立方数（与费马证明$n = 4$时的思路相似）。但很可惜，它们\underdot{可能}有公因子3。例如3整除$p$，但不整除$q$，仍然满足$p, q$互素，但3此时会整除$p^2 + 3q^2$。于是欧拉分两种情况进行证明：(a) 3不能整除$p$；(b) 3整除$p$。其中(b)经过处理后可以变成(a)。接下来欧拉考虑(a)，因为互素，所以$2p$和$p^2 + 3q^2$都是立方数。
+where $p, q$ are relative prime and in different parity\footnote{It's easy to see $x = -y$ is a root of the equation $x^3+ y^3 = 0$, hence, $x + y$ is a factor, whence one may factorize $x^3 + y^3$ by long division. Int the same way, $z = y$ is a root of the equation $z^3 - y^3 = 0$, hence, $z - y$ is a factor, whence one may factorize $z^3 - y^3$ by long division.}. Euler was going to show that $2p$ and $p^2 + 3q^2$ are relative prime, hence, each is a cube (analogous to Fermat's proof to the case of $n = 4$). Unfortunately, they \emph{may} have 3 as the common divisor. It's possible that 3 divides $p$ but does not divide $q$, even $p, q$ are relative prime, but 3 divides $p^2 + 3q^2$. Euler had to deal with two cases: (a) 3 does not divide $p$; (b) 3 divides $p$. Actually, we'll see later case (b) can be converted to case (a). Euler next focused on case (a). Since being relatively prime, $2p$ and $p^2 + 3q^2$ both are cubes.
 
-现在轮到复数登场了。$i$能帮助我们把熟悉的平方差公式扩展到平方和：$a^2 + b^2 = a^2 - (-b^2) = (a + ib)(a - ib)$。这样就可以对$p^2 + 3q^2$因式分解了：
+Now the complex numbers come. With the irrational number $i$, we extend the difference of squares formula to the sum of squares: $a^2 + b^2 = a^2 - (-b^2) = (a + ib)(a - ib)$. In this way, $p^2 + 3q^2$ can be factorized as,
 
 \[
-p^2 + 3q^2 = (p + i\sqrt{3}q)(p - i\sqrt{3}q) = \text{立方数}
+p^2 + 3q^2 = (p + i\sqrt{3}q)(p - i\sqrt{3}q) = \text{a cube}
 \]
 
-接下来的做法和邦贝利类似，$p \pm i\sqrt{3}q$的乘积是立方数，它们各自是一个立方数，形如$a \pm i\sqrt{3}b$：
+Like what Bombelli had done, the product of $p \pm i\sqrt{3}q$ is a cube, each factor is a cube of $a \pm i\sqrt{3}b$:
 
 \begin{align*}
 p + i\sqrt{3}q &= (a + i\sqrt{3}b)^3 \\
-  &= a^3 + 3a^2bi\sqrt{3} + 3ab^2(-3) + b^3(-3)i\sqrt{3} && \text{二项式展开} \\
+  &= a^3 + 3a^2bi\sqrt{3} + 3ab^2(-3) + b^3(-3)i\sqrt{3} && \text{Binomial expansion} \\
   &= a^3 - 9ab^2 + (3a^2b - 3b^3)i\sqrt{3}
 \end{align*}
 
-用待定系数法有：
+Equating the coefficients:
 
 \begin{align} \label{eq:Euler-gap}
 p &= a^3 - 9ab^2       & q &= 3a^2b - 3b^3 \\
   &= a(a - 3b)(a + 3b) &   &= 3b(a - b)(a + b)
 \end{align}
 
-由于$p, q$互素，所以$a, b$也互素（因为任何$a, b$的公因子也是$p, q$的公因子）并且奇偶相反（否则$p, q$将都是偶数）。由于$2p$也是立方数，所以：
+Since $p, q$ are relatively prime, so are $a$ and $b$ (any common divisor of $a, b$ is also a common divisor of $p, q$) and their parity are different (otherwise, both $p, q$ are even). Because $2p$ is also a cube,
 
 \[
-2p = 2a(a - 3b)(a + 3b) = \text{立方数}
+2p = 2a(a - 3b)(a + 3b) = \text{a cube}
 \]
 
-注意到$2a, a \pm 3b$的公因子也必然是$a$和$3b$的公因子，但$a, b$互素，所以这个公因子只可能是3。但如果3整除$a$，则3也整除$p$，这与情况(a)的预设不符。这样分析下来，$2a, a \pm 3b$是彼此互素的，它们也必然都是立方数。令$2a = Z^3, a - 3b = X^3, a+ 3b = Y^3$，于是：
+Any common divisor of $2a, a \pm 3b$ is also a common divisor of $a$ and $3b$, but $a, b$ are relatively prime, this divisor must be 3. But if 3 divides $a$, then 3 also divides $p$, which conflicts with case (a). Therefore, $2a, a \pm 3b$ are coprime, each is a cube. Let $2a = Z^3, a - 3b = X^3, a+ 3b = Y^3$,
 
 \[
 X^3 + Y^3 = a - \cancel{3b} + a + \cancel{3b} = 2a = Z^3
 \]
 
-这样欧拉就从最初的方程$x^3 + y^3 = z^3$得到了同一形式的方程$X^3 + Y^3 = Z^3$。接下来比较$z, Z$之间的大小。$X^3Y^3Z^3 = 2a(a - 3b)(a + 3b) = 2p$，由式(*)和(**)，如果$z$是偶数，则$X^3Y^3Z^3$整除$z^3$；如果$x$是偶数，则它整除$x^3$。两种情况下都有$X^3Y^3Z^3 < z^3$。如果$Z > 0$则$Z < z$；如果$Z < 0$，可以通过移项把它交换到左边，例如$X^3 + (-Z)^3 = (-Y)^3$，使得$-Y > 0$，然后把$-Y$重新命名为$Z$。经过这样的处理就得到正整数$Z < z$。使用无穷递降法就证明了情况(a)。
+In this way, Euler derived from the original equation $x^3 + y^3 = z^3$ to a new equation $X^3 + Y^3 = Z^3$ in the same form. Next compare $z$ and $Z$. The product $X^3Y^3Z^3 = 2a(a - 3b)(a + 3b) = 2p$, by (*) and (**), if $z$ is even, then $X^3Y^3Z^3$ divides $z^3$; if $x$ is even, then it divides $x^3$; either case gives $X^3Y^3Z^3 < z^3$. If $Z > 0$ then $Z < z$; if $Z < 0$, move it to the left side, e.g., $X^3 + (-Z)^3 = (-Y)^3$, such that $-Y > 0$; then rename $-Y$ as $Z$. It follows that the positive integer $Z < z$, which proves case (a) by infinite descent.
 
-最后证明情况(b)。若3整除$p$，设$p = 3s$，因为$p, q$互素，所以3不能整除$q$。这样
+Finally for case (b), as 3 divides $p$, let $p = 3s$; since $p, q$ are relatively prime, 3 does not divide $q$. Therefore,
 \[
-2p(p^2 + 3q^2) = 2(3s)[(3s)^2 + 3q^2] = 3^2\cdot 2s(3s^2 + q^2) = \text{立方数}
+2p(p^2 + 3q^2) = 2(3s)[(3s)^2 + 3q^2] = 3^2\cdot 2s(3s^2 + q^2) = \text{a cube}
 \]
 
-容易看出$3^2\cdot 2s$和$(3s^2 + q^2)$互素，所以它们各自是一个立方数。复用(a)中的结论\cref{eq:Euler-gap}，有：
+It's easy to see $3^2\cdot 2s$ and $(3s^2 + q^2)$ are relatively prime, hence, each is a cube. Reusing the result of case (a), i.e., \cref{eq:Euler-gap}:
 
 \begin{align*}
 q &= a(a - 3b)(a + 3b)  &  s = 3b(a - b)(a + b)
 \end{align*}
 
-其中$a, b$互素且奇偶相反。因为$3^2\cdot 2s$是立方数，而$3^2\cdot 2 \cdot 3b(a - b)(a + b) = 3^3 \cdot 2b(a - b)(a + b)$，所以$2b(a - b)(a + b)$是立方数。又由于$a, b$互素且奇偶相反，所以$2b, a \pm b$彼此互素，它们每一个都是立方数。令$2b = X^3, a - b = Y^3, a + b = Z^3$，有：
+where $a, b$ are relatively prime and in different parity. Because $3^2\cdot 2s$ is a cube, while $3^2\cdot 2 \cdot 3b(a - b)(a + b) = 3^3 \cdot 2b(a - b)(a + b)$, it follows that $2b(a - b)(a + b)$ is a cube. Since $a, b$ are relatively prime and in different parity, $2b, a \pm b$ are coprime, each is a cube, let $2b = X^3, a - b = Y^3, a + b = Z^3$,
 
 \[
 X^3 + Y^3 = 2b + a - b = a + b = Z^3
