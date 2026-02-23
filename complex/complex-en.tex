@@ -1406,7 +1406,7 @@ Similarly, by $\sin(\theta_1 + \theta_2) = \dfrac{a_1b_2 + b_1a_2}{r_1r_2}$, one
 %%  Hao Wang’s supplemental biography of Gödel, A Logical Journey, MIT Press, 1996.
 
 \label{sec:FLT-4} \index{Fermat's Last Theorem!n=4}
-The renowned Fermat's last theorem, abbreviated as FLT, states there is no solution in natural numbers to the equation $x^n + y^n = z^n$ for integer $n \geq 3$. Although Fermat complained that the margin was too small to contain his proof, he later did proved the case of $n = 4$, that $x^4 + y^4 = z^4$ has no solution in natural numbers. Fermat developed a technique called \emph{infinite descent} in this proof, and he was very proud of it. Indeed, mathematicians in the later 200 years almost all followed Fermat's method for other cases\citepage[p40-42]{Edward-1977}. Fermat found it's sufficient to prove below lemma for the case of $n = 4$\citepage[p247]{Hardy2009}.
+The renowned Fermat's Last Theorem, abbreviated as FLT, states there is no solution in natural numbers to the equation $x^n + y^n = z^n$ for integer $n \geq 3$. Although Fermat complained that the margin was too small to contain his proof, he later did proved the case of $n = 4$, that $x^4 + y^4 = z^4$ has no solution in natural numbers. Fermat developed a technique called \emph{infinite descent} in this proof, and he was very proud of it. Indeed, mathematicians in the later 200 years almost all followed Fermat's method for other cases\citepage[p40-42]{Edward-1977}. Fermat found it's sufficient to prove below lemma for the case of $n = 4$\citepage[p247]{Hardy2009}.
 
 \begin{lemma}
 The equation $x^4 + y^4 = z^2$ has no solution in natural numbers.
@@ -1451,9 +1451,9 @@ Fermat's method of infinite descent is essentially a proof by contradiction. One
  \label{fig:infinite-descent}
 \end{figure}
 
-\section{Fermat's last theorem and complex numbers}
-\index{Fermat's last theorem!n=3}
-About a century after Fermat, in a letter to Goldbach in 1755, Euler gave a proof of Fermat's last theorem for $n = 3$, that there was no solution to the equation $x^3 + y^3 = z^3$ in integers\citepage[p239]{Weil-1983}. Although contained a defect, he lighted a new direction to solve the problem with complex numbers. Euler's beautiful proof was about 2 pages.
+\section{Fermat's Last Theorem and complex numbers}
+\index{Fermat's Last Theorem!n=3}
+About a century after Fermat, in a letter to Goldbach in 1755, Euler gave a proof of Fermat's Last Theorem for $n = 3$, that there was no solution to the equation $x^3 + y^3 = z^3$ in integers\citepage[p239]{Weil-1983}. Although contained a defect, he lighted a new direction to solve the problem with complex numbers. Euler's beautiful proof was about 2 pages.
 
 \begin{proof}
 Euler applied the method of infinite descent. Assume for contradiction that there is some solution to $x^3 + y^3 = z^3$ in integers. As what Fermat had done, suppose $x, y, z$ are relative prime, one and only one is even. If $x, y$ are odd and $z$ is even, then both $x \pm y$ are even. Let $x + y = 2p, x - y = 2q$, solving this system gives $x = p + q, y = p - q$. As $x, y$ are both odd, the parity of $p, q$ are different. Since $x, y$ are relative prime, so are $p$ and $q$ (because any common divisor $d$ of $p, q$ divides $p \pm q$, hence is also common divisor of $x, y$). Further suppose $p, q > 0$ (otherwise exchange $x, y$), we have:
@@ -1544,21 +1544,19 @@ If $a^2 + 3b^2$ is a cube for relatively prime numbers $a, b$, there are integer
 
 \section{Ideal numbers}
 
-There was a dramatic story in the history of Fermat's last theorem. In 1st March 1847, French mathematician Lamé (\cref{fig:Lame}), who successfully proved the case of $n = 7$ for FLT in 1839, announced he was about to completely solve Fermat's last theorem in Paris Academy of Science! He planned to publish the proof soon; this renowned problem had been open for 200 years. Lamé revealed his proof idea to the Academy. Similar to what Euler had done, he factorized $x^n + y^n$ with complex numbers.
-
-1847年，在费马大定理的历史上出现了戏剧性的一幕。3月1日，数学家拉梅（Lamé，他在1839年证明了费马大定理$n = 7$时成立，见\cref{fig:Lame}）在法国科学院兴奋地宣布，他找到了证明费马大定理的方法！他雄心勃勃准备近期发表完整的证明，从而终结这个困扰了数学家200多年的难题。拉梅在科学院透露了他的证明概要。像欧拉一样，他大胆地使用复数作为武器来对$x^n + y^n$进行因式分解。对于分圆方程$z^n = 1$，如果$r$是一个复数根，则：
+There was a dramatic story in the history of Fermat's Last Theorem. In 1st March 1847, French mathematician Lamé (\cref{fig:Lame}), who successfully proved the case of $n = 7$ for FLT in 1839, announced in Paris Academy of Science that he had found a proof of the impossibility of the equation $x^n + y^n = z^n$ for $n \geq 3$ and had therefore completely solved Fermat's Last Theorem! This renowned problem had been open for 200 years. Lamé briefed his sketch proof to the Academy. Similar to what Euler had done, Lamé's basic idea was to factorize $x^n + y^n$ with complex numbers. For cyclotomic equation $z^n = 1$, if $r$ is a complex root, then,
 
 \be \label{eq:Lame-decomposition}
 x^n + y^n = (x + y)(x + ry)(x + r^2y)\dotsm(x + r^{n-1}y)
 \ee
 
-其中$n$是奇数。拉梅也许是这样推理的：根据欧拉公式和棣莫弗公式，令$r = \cos \dfrac{2\pi}{n} + i\sin \dfrac{2\pi}{n}$，则方程$X^n - 1 = 0$有$n$个不同的复数根$1, r, r^2, \dotsc, r^{n-1}$，因而多项式$X^n - 1$可因式分解为$X^n - 1 = (X - 1)(X - r)(X - r^2)\dotsm(X - r^{n-1})$。令$X = -\dfrac{x}{y}$，然后两边同乘以$-y^n$就得到了\cref{eq:Lame-decomposition}。接下来拉梅打算证明，如果$x, y$互素，则所有因子$x + y, x + ry, \dotsc, x + r^{n-1}y$彼此互素。而如果$x^n + y^n = z^n$，即这些互素因子的乘积是一个$n$次方数，则每个因子也必然是$n$次方数。由此可以构造出无穷递降的正整数，从而推翻假设，完成证明。
+where $n$ is odd. Lamé might reason like this: by Euler formula and de Moivre formula, let $r = \cos \dfrac{2\pi}{n} + i\sin \dfrac{2\pi}{n}$, there are $n$ distinct complex roots to the equation $X^n - 1 = 0$, namely, $1, r, r^2, \dotsc, r^{n-1}$, whence the polynomial $X^n - 1$ can be factorized as $X^n - 1 = (X - 1)(X - r)(X - r^2)\dotsm(X - r^{n-1})$. Let $X = -\dfrac{x}{y}$, then multiply both sides by $-y^n$, which gives \cref{eq:Lame-decomposition}. Lamé was going to show: if $x, y$ are relatively prime, then all factors $x + y, x + ry, \dotsc, x + r^{n-1}y$ are coprime. Since $x^n + y^n = z^n$, which means the product of these coprime factors is a $n$-th power, then each factor must be a $n$-th power. From where he could derive infinite descent therefore prove Fermat's Last Theorem.
 
 \begin{figure}[htbp]
  \centering
- \subcaptionbox{拉梅\label{fig:Lame}}{\includegraphics[scale=0.4]{img/lame}}
- \subcaptionbox{柯西\label{fig:Cauchy}}{\includegraphics[scale=0.4]{img/Cauchy}}
- \caption{拉梅与柯西}
+ \subcaptionbox{Lamé\label{fig:Lame}}{\includegraphics[scale=0.4]{img/lame}}
+ \subcaptionbox{Cauchy\label{fig:Cauchy}}{\includegraphics[scale=0.4]{img/Cauchy}}
+ \caption{Lamé and Cauchy}
 \end{figure}
 
 在科学院成员狐疑与惊讶的眼神中，拉梅看了一眼台下的数学家刘维尔（见\cref{fig:Liouville}）说，我不能独占这个荣誉。在几个月前的一次闲谈中，刘维尔提出了这个绝妙的想法。拉梅结束了他的发言后，在一片掌声与悄悄议论中，刘维尔走上讲台。他并没有表现出拉梅那样的热情，谦虚地说使用复数来解决数论问题并不是他的原创——欧拉、拉格朗日、高斯、柯西、雅可比都曾这样使用复数。他给拉梅泼了冷水，指出很多数学家刚开始都会这么想。这个想法的关键在于，一个整数是否可以\underdot{唯一}分解为素因子的积。尽管对于普通的整数成立，但没有充分证据表明可以把这个方法推广到复数上去。
