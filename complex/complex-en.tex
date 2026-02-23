@@ -1527,22 +1527,24 @@ where $a, b$ are relatively prime and in different parity. Because $3^2\cdot 2s$
 X^3 + Y^3 = 2b + a - b = a + b = Z^3
 \]
 
-后面的证明就和(a)一样了：通过正整数$Z < z$得到无穷递降，导出矛盾。
+The remaining is as same as case (a): obtaining positive integers $Z < z$ for infinite descent, a contradiction.
 \end{proof}
 
-但欧拉的证明有一处缺陷，问题出现在\cref{eq:Euler-gap}这一步。我们屡次说因为$p, q$互素，它们的乘积$pq$是一个平方数，所以它们每个都是平方数；它们的乘积$pq$是立方数，所以每个都是立方数；它们的乘积$pq$是$n$次方数，所以每个都是$n$次方数。这个结论对于整数没有问题，因为算术基本定理保证了\underdot{唯一分解}（见\cref{qn:coprime-product-as-square}）。但是欧拉一旦把它推广到复数：$(p + i\sqrt{3}q)(p - i\sqrt{3}q)$是立方数，则$p \pm i\sqrt{3}q$一定是立方数么？这个立方数会不会有别的分解方式？这个问题本质上是问：算术基本定理（唯一分解）对复数成立么？有一个坏消息和一个好消息。好消息是，欧拉证明中的特殊情形是正确的，有办法补救；坏消息是，算术基本定理在复数上一般不成立，例如这两个反例：
+Euler's proof contained fallacy in step of \cref{eq:Euler-gap}. It's common to see search arguments: for relatively prime numbers $p, q$, if their product $pq$ is a square, then each is a square; if the product $pq$ is a cube, then each is a cube; if their product $pq$ is some $n$-th power, the each is a $n$-th power. These arguments are true for integers, for the fundamental theorem of arithmetic implies \emph{unique factorization} (\cref{qn:coprime-product-as-square}). However, when Euler extended it to complex numbers: if $(p + i\sqrt{3}q)(p - i\sqrt{3}q)$ is a cube, is each of $p \pm i\sqrt{3}q$ necessarily a cube? Is there any other factorization of the cube? Essentially, we are asking: is the fundamental theorem of arithmetic (unique factorization) applicable to complex numbers? There is a good news and a bad news. The good news is that, in Euler's case, it's correct, Euler might knew the way to correct the fallacy from his other published result. The bad news is that, the fundamental theorem of arithmetic isn't true in general for complex numbers; here are two counter examples:
 
 \begin{align*}
 4 &= 2 \times 2 = (1 + i\sqrt{3})(1 - i\sqrt{3}) & 6 &= 2 \times 3 = (1 + i\sqrt{5})(1 - i\sqrt{5})
 \end{align*}
 
-其中2, 3是素数，我们后面会证明$1 \pm i\sqrt{3}, 1 \pm i\sqrt{5}$也是“素数”!以事后诸葛亮的角度看，欧拉在1755年写信给哥德巴赫的时候并没有意识到这个问题，但使用他在1747年给出的一个方法可以证明如下结论：
+where 2 and 3 are prime numbers, we'll later show $1 \pm i\sqrt{3}, 1 \pm i\sqrt{5}$ are also \enquote{prime}. In rear sight, Euler wasn't aware this issue at all when wrote to Goldbach in 1755. Nevertheless, he gave a solution in 1747 which led to below result:
 
-\begin{lemma}[欧拉]
-如果$a^2 + 3b^2$是一个立方数，其中$a, b$互素，则存在整数$p, q$使得$a + b\sqrt{-3} = (p + q\sqrt{-3})^3$。
+\begin{lemma}[Euler]
+If $a^2 + 3b^2$ is a cube for relatively prime numbers $a, b$, there are integers $p, q$ satisfying $a + b\sqrt{-3} = (p + q\sqrt{-3})^3$.
 \end{lemma}
 
-\section{理想数}
+\section{Ideal numbers}
+
+There was a dramatic story in the history of Fermat's last theorem. In 1st March 1847, French mathematician Lamé (\cref{fig:Lame}), who successfully proved the case of $n = 7$ for FLT in 1839, announced he was about to completely solve Fermat's last theorem in Paris Academy of Science! He planned to publish the proof soon; this renowned problem had been open for 200 years. Lamé revealed his proof idea to the Academy. Similar to what Euler had done, he factorized $x^n + y^n$ with complex numbers.
 
 1847年，在费马大定理的历史上出现了戏剧性的一幕。3月1日，数学家拉梅（Lamé，他在1839年证明了费马大定理$n = 7$时成立，见\cref{fig:Lame}）在法国科学院兴奋地宣布，他找到了证明费马大定理的方法！他雄心勃勃准备近期发表完整的证明，从而终结这个困扰了数学家200多年的难题。拉梅在科学院透露了他的证明概要。像欧拉一样，他大胆地使用复数作为武器来对$x^n + y^n$进行因式分解。对于分圆方程$z^n = 1$，如果$r$是一个复数根，则：
 
