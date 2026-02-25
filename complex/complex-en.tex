@@ -1589,45 +1589,45 @@ Starting from a school teacher, Kummer ended up with high office in the Academy.
 \section{Gaussian integers}
 
 \index{algebraic numbers}
-要想把整除、素数等概念扩展到复数，首先必须定义什么是“复整数”。最直观的一个想法是扩展成$a + bi$，其中$a, b$是整数。但这还不够，我们看到欧拉似乎把$a + i\sqrt{3}b$看成整数。从历史经验看，方程是发现探索“未知数”的有力武器。通过解一次方程$ax = b$，我们认识到有理数$x = \dfrac{b}{a}$；通过解二次方程，我们认识到无理数；通过解三次方程，我们认识到复数；通过解高次方程，我们认识到有无法用根式表示的数。通过代数基本定理，我们认识到那些无法用根式表示的数也都是复数，它们可以用代数方程定义：
+In order to extend concepts like divide, prime to complex numbers, we need define what is complex integer. An intuitive definition looks like $a + bi$ for integers $a$ and $b$. However, Euler seemed to treat $a + i\sqrt{3}b$ as \enquote{integers}. Historically, people discovered new numbers through equations: through linear equation $ax = b$, recognized rational numbers as $x = \dfrac{b}{a}$; through quadratic equations, recognized irrational numbers; through cubic equations, recognized complex numbers; through higher degree equations, recognized numbers that can't be expressed in radicals; these numbers, by the fundamental theorem of algebra, are complex numbers defined by algebraic equation:
 
 \[
 a_n x^n + a_{n-1} x^{n-1} + \dotsb + a_1 x + a_0 = 0
 \]
 
-\index{超越数}
-其中$a_n, a_{n-1}, ..., a_1, a_0$是整数。为什么系数不是有理数呢？假设它们是有理数$a_i = \dfrac{b_i}{c_i}$，两边乘以分母的最小公倍数，我们就把系数变回了整数。所以系数是整数就足够了。厄米特于1873年，林德曼于1882年分别证明了$e, \pi$不是这样的代数方程的解。为了加以区分，我们把满足代数方程的数叫做代数数（algebraic number），否则叫做超越数（transcendent number），$\pi, e$都是超越数。代数数的定义是抽象的、间接的。和$1 + i\sqrt{2}$不同，我们没有给出代数数的表达式，它们是代数方程的解，存在那里，但可能没法用根式表达。按照这个定义，当$n = 1$时，方程是一次方程$ax + b = 0$，解$x = \dfrac{b}{a}$。如果系数$a = 1$，则$x$是整数；受此启发，我们定义$a_n = 1$时，代数方程：
+\index{transcendent numbers}
+where $a_n, a_{n-1}, ..., a_1, a_0$ are integers. Why needn't these coefficients be rational? Suppose they are, that is, $a_i = \dfrac{b_i}{c_i}$; multiply both sides by the least common multiple of the denominators, consequently, the coefficients change back to integers. Thereby, it's sufficient to assume the coefficients be integers, Hermite in 1873 showed $e$ was not a solution to any of such algebraic equations and Lindemann in 1882 showed $\pi$ was not a solution to any algebraic equations too. We call the numbers that satisfy some algebraic equation algebraic numbers, otherwise, transcendent numbers, therefore, $\pi, e$ are transcendent numbers. Algebraic numbers can be abstract, indirect. Different from numbers like $1 + i\sqrt{2}$, there is no uniformed general expression for algebraic numbers; they are roots to some algebraic equations, but may not be expressed in radicals. By this definition, when $n = 1$, the solution to linear equation $ax + b = 0$ is $x = \dfrac{b}{a}$. If the coefficient $a = 1$, then $x$ is integral; inspired by this, we define when $a_n = 1$, a solution to the algebraic equation:
 
-\index{代数整数}
+\index{algebraic integers}
 \[
 x^n + a_{n-1} x^{n-1} + \dotsb + a_1 x + a_0 = 0
 \]
 
-\index{首一方程} \index{高斯整数} \index{有理整数}
-的解叫做代数整数（algebraic integer），这样的方程叫做“首一方程”（monic equation）。代数整数既包括普通的整数（又叫有理整数rational integer，见\cref{qn:rational-solution-is-integral}），也包括了更复杂的整数。为了避免胡子眉毛一把抓，我们从最简单的二次首一方程开始探索代数整数。当一次项是偶数时，方程$x^2 - 2ax + a^2 + b^2 = 0$的解是$a \pm bi$。高斯最早对这种形式的数进行研究，今天我们把这种数叫做“高斯整数”，用记号$\mathbb{Z}[i]$表示，这个记号暗示了我们把虚数单位$i$加入到整数$\mathbb{Z}$中\footnote{符号$\mathbb{Z}[x]$叫做整数环$\mathbb{Z}$上的一元多项式，它由形如$a_n x^n + a_{n-1} x^{n-1} + \dotsb + a_1 x + a_0$的元素组成，其中$a_0, a_1, \dotsc, a_n \in \mathbb{Z}$是整数。}。
+\index{monic equation} \index{Gaussian integers} \index{rational integers}
+is an \emph{algebraic integer}, such equation is called \emph{monic} equation. Algebraic integers include both normal integers (also named \emph{rational} integers, see \cref{qn:rational-solution-is-integral}) and those more complex ones. We may start from the simplest monic quadratic equations. When the coefficient to the linear term is even, like $x^2 - 2ax + a^2 + b^2 = 0$, its solution is $a \pm bi$. Gauss was the first studied this kind of numbers; we call them Gaussian integers, denoted by $\mathbb{Z}[i]$. This notation indicates that we adjoin\footnote{The notation $\mathbb{Z}[x]$ is called the polynomials in the ring of integers $\mathbb{Z}$, it contains polynomials in the form of $a_n x^n + a_{n-1} x^{n-1} + \dotsb + a_1 x + a_0$, where the coefficients $a_0, a_1, \dotsc, a_n \in \mathbb{Z}$ are integers.} the irrational number $i$ to integers $\mathbb{Z}$.
 
-为了区分代数整数和普通有理整数，我们用希腊字母$\alpha, \beta, \gamma, \dotsc$表示代数整数（附录\ref{ch:greek-letters}有希腊字母的读音），用英文字母$a, b, c, \dotsc$表示有理整数。和普通整数类似，我们很容易验证高斯整数之间的$+, -, \times$运算结果仍然是高斯整数，但除法不一定（正如同普通有理整数之间的除法结果不一定是有理整数）。利用这一点就能定义整除了。如果高斯整数$\alpha = \beta\gamma$是另外两个高斯整数的积，我们称$\beta$整除$\alpha$。接下来的问题有些棘手：(1) 怎样定义带余数的除法？(2) 怎样定义高斯整数中的素数？
+To distinguish algebraic integers from normal, rational integers, we use Greek letters $\alpha, \beta, \gamma, \dotsc$ for algebraic integers (see \cref{ch:greek-letters} for the Greek alphabetic table), use English letters $a, b, c, \dotsc$ for rational integers. Analogous to rational integers, it's easy to verify that the results of $+, -, \times$ between Gaussian integers are still Gaussian integers, but division is not (this is as same as the result of division between normal rational integers may not necessarily be rational integers). It's necessary to define the concept of divide: if a Gaussian integer $\alpha = \beta\gamma$ is the product of two Gaussian integers, then $\beta$ divides $\alpha$. The next two problems are a bit complex: (1) How to define the division algorithm (in terms of quotient and remainder) ? (2) How to define Gaussian prime numbers?
 
-\index{范数}
-带余数的除法需要“更小”这一概念，普通有理整数带余数的除法是$a = bq + r$，其中$r < b$，即余数比除数“更小”。但是复数本质上是向量，不能直接比较大小。例如我们不能说$1 + i$“小于”2。只有复数的模是可以比较大小的，例如$|1 + i| = \sqrt{1^2 + 1^2} = \sqrt{2} < 2 = |2|$。为了解决什么是“更小”的问题，高斯于1832年定义了一个重要的概念：范数（Norm），复数$z = a + bi$的范数为：
+\index{norm}
+The division algorithm involves the concept of \enquote{less than}. Remind the division algorithm for rational integers, namely $a = bq + r$, where $r < b$. It demands the remainder to be \enquote{less than} $b$. However, complex numbers are essentially vectors, which can't be compared directly. We can't say $1 + i$ is \enquote{less than} 2. Only the modulus can be compared, for example, $|1 + i| = \sqrt{1^2 + 1^2} = \sqrt{2} < 2 = |2|$. To make the meaning of \enquote{less than} to be valid, Gauss in 1832 introduced an important concept: norm. The norm of a complex integer $z = a + bi$ is defined as:
 
 \[
 N(z) = a^2 + b^2
 \]
 
-它实际是模的平方，因而总是$\geq 0$，并且和共轭复数有不解之缘：
+It equals the square of modulus, hence is always $\geq 0$. It also closely relates to conjugates:
 
 \[
 N(z) = a^2 + b^2 = z\overline{z} = N(\overline{z})
 \]
 
-范数和模一样，是可乘的（见\cref{qn:norm-is-multiplicative}）：
+Same as the modulus, norm is multiplicative (see \cref{qn:norm-is-multiplicative}):
 
 \[
 N(\alpha\beta) = N(\alpha)N(\beta)
 \]
 
-\index{高斯整数!单位元} \index{高斯整数!相伴}
+\index{Gaussian integers!units} \index{Gaussian integers!associates}
 利用范数，高斯扩展了1的概念。在普通有理整数中，$3 = 3 \times 1$。一旦考虑负整数，情况就丰富起来：$-3 = 3 \times (-1) = -3 \times 1$。但取绝对值的话，情况就统一到：$|3| = |(\pm 3) \times (\pm 1)| = 3 \times 1$。高斯定义范数$N(\mu) = 1$的数是单位元（unit），若$\alpha = \mu \alpha'$，称$\alpha'$是$\alpha$的“相伴元”（associate，英文关联的意思）。这样在上述有理整数的例子中，$-1, 1$都是单位元，而$-3$和3是相伴的。扩展到高斯整数，单位元有4个：
 %% 由$N(\mu) = a^2 + b^2 = 1$，其中$a, b \in \mathbb{Z}$是整数，要么$a^2 = 1, b^2 = 0$，要么$a^2 = 0, b^2 = 1$。分别对应$a = \pm 1, b = 0$和$a = 0, b = \pm 1$，
 $\pm 1, \pm i$。例如$1 + i = (1 - i)i$，因为$|i| = 1$是单位元，所以$1 + i$和$1 - i$是相伴的，如同普通有理整数中相伴的$\pm 3$。单位元还有一个等价的定义：凡是整除1的数叫做单位元。这样$\mu^n = 1$，有趣的是，有理整数的两个单位元分别是$(-1)^0, (-1)^1$；而高斯整数的4个单位元分别是$i^{0, 1, 2, 3}$次幂。读者朋友们，你是否想到了分圆方程？
