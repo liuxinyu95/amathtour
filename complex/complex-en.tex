@@ -1609,7 +1609,7 @@ is an \emph{algebraic integer}, such equation is called \emph{monic} equation. A
 To distinguish algebraic integers from normal, rational integers, we use Greek letters $\alpha, \beta, \gamma, \dotsc$ for algebraic integers (see \cref{ch:greek-letters} for the Greek alphabetic table), use English letters $a, b, c, \dotsc$ for rational integers. Analogous to rational integers, it's easy to verify that the results of $+, -, \times$ between Gaussian integers are still Gaussian integers, but division is not (this is as same as the result of division between normal rational integers may not necessarily be rational integers). It's necessary to define the concept of divide: if a Gaussian integer $\alpha = \beta\gamma$ is the product of two Gaussian integers, then $\beta$ divides $\alpha$. The next two problems are a bit complex: (1) How to define the division algorithm (in terms of quotient and remainder) ? (2) How to define Gaussian prime numbers?
 
 \index{norm}
-The division algorithm involves the concept of \enquote{less than}. Remind the division algorithm for rational integers, namely $a = bq + r$, where $r < b$. It demands the remainder to be \enquote{less than} $b$. However, complex numbers are essentially vectors, which can't be compared directly. We can't say $1 + i$ is \enquote{less than} 2. Only the modulus can be compared, for example, $|1 + i| = \sqrt{1^2 + 1^2} = \sqrt{2} < 2 = |2|$. To make the meaning of \enquote{less than} to be valid, Gauss in 1832 introduced an important concept: norm. The norm of a complex integer $z = a + bi$ is defined as:
+The division algorithm involves the concept of \enquote{less than}. Remind the division algorithm for rational integers, namely $a = bq + r$, where $r < b$. It demands the remainder to be \enquote{less than} $b$. However, complex numbers are essentially vectors, which can't be compared directly. We can't say $1 + i$ is \enquote{less than} 2. Only the modulus can be compared, for example, $|1 + i| = \sqrt{1^2 + 1^2} = \sqrt{2} < 2 = |2|$. To make the meaning of \enquote{less than} valid, Gauss in 1832 introduced an important concept: norm. The norm of a complex integer $z = a + bi$ is defined as:
 
 \[
 N(z) = a^2 + b^2
@@ -1628,37 +1628,34 @@ N(\alpha\beta) = N(\alpha)N(\beta)
 \]
 
 \index{Gaussian integers!units} \index{Gaussian integers!associates}
-利用范数，高斯扩展了1的概念。在普通有理整数中，$3 = 3 \times 1$。一旦考虑负整数，情况就丰富起来：$-3 = 3 \times (-1) = -3 \times 1$。但取绝对值的话，情况就统一到：$|3| = |(\pm 3) \times (\pm 1)| = 3 \times 1$。高斯定义范数$N(\mu) = 1$的数是单位元（unit），若$\alpha = \mu \alpha'$，称$\alpha'$是$\alpha$的“相伴元”（associate，英文关联的意思）。这样在上述有理整数的例子中，$-1, 1$都是单位元，而$-3$和3是相伴的。扩展到高斯整数，单位元有4个：
-%% 由$N(\mu) = a^2 + b^2 = 1$，其中$a, b \in \mathbb{Z}$是整数，要么$a^2 = 1, b^2 = 0$，要么$a^2 = 0, b^2 = 1$。分别对应$a = \pm 1, b = 0$和$a = 0, b = \pm 1$，
-$\pm 1, \pm i$。例如$1 + i = (1 - i)i$，因为$|i| = 1$是单位元，所以$1 + i$和$1 - i$是相伴的，如同普通有理整数中相伴的$\pm 3$。单位元还有一个等价的定义：凡是整除1的数叫做单位元。这样$\mu^n = 1$，有趣的是，有理整数的两个单位元分别是$(-1)^0, (-1)^1$；而高斯整数的4个单位元分别是$i^{0, 1, 2, 3}$次幂。读者朋友们，你是否想到了分圆方程？
-%% 分圆方程的根是单位元吗？
+With the concept of norm, Gauss extended the notion of 1. For normal rational integers, $3 = 3 \times 1$. Things get complicated when considering negative integers: $-3 = 3 \times (-1) = -3 \times 1$, but when taking absolute value, it unifies to $|3| = |(\pm 3) \times (\pm 1)| = 3 \times 1$. Gauss defined a number was a \emph{unit} if its norm $N(\mu) = 1$; if $\alpha = \mu \alpha'$, then call $\alpha'$ is an associate of $\alpha$. In above example of rational integers, $-1, 1$ are units, and $-3$ is an associate of 3. Extending to Gaussian integers, there are four units: $\pm 1, \pm i$. For example, $1 + i = (1 - i)i$, since $|i| = 1$ is a unit, $1 + i$ is associate of $1 - i$, which is analogous to rational integers $\pm 3$. A unit can be equivalently defined as the number that divides 1. It follows that $\mu^n = 1$ and interestingly, the two units of rational integers are $(-1)^0, (-1)^1$; and the four units of Gaussian integers are $i^{0, 1, 2, 3}$. Don't you remind the cyclotomic equations?
 
-范数一举扫清了带余数除法的障碍：一个直观的想法是用高斯整数的$N(\gamma) < N(\beta)$来代替有理整数的$r < b$。这样高斯整数带余数的除法就可定义为：
+The concept of norm allows us to define division algorithm. An intuitive idea is to replace $r < b$ of rational integers with $N(\gamma) < N(\beta)$ of Gaussian integers, such that the division algorithm could be defined as,
 
 \begin{align*}
 \alpha &= \rho \beta + \gamma & \text{其中} \beta &\ne 0, N(\gamma) < N(\beta)
 \end{align*}
 
-但是且慢，给定被除数$\alpha$和除数$\beta$，商$\rho$和余数$\gamma$一定存在么？如果不存在，这个定义就站不住脚了。于是高斯接下来证明了：
+But hold on. Given $\alpha$ and $\beta$, do the quotient $\rho$ and the remainder $\gamma$ necessarily exist? If no, then this definition would be invalid. Gauss showed:
 
-\index{高斯整数!带余数除法}
+\index{Gaussian integers!division algorithm}
 \begin{theorem}
-给定高斯整数$\alpha$和$\beta \ne 0$，存在高斯整数$\rho, \gamma$使得$\alpha = \rho \beta + \gamma$，其中$N(\gamma) < N(\beta)$。
+Given Gaussian integers $\alpha$ and $\beta \ne 0$, there are Gaussian integers $\rho, \gamma$ such that $\alpha = \rho \beta + \gamma$, where $N(\gamma) < N(\beta)$.
 \end{theorem}
 
 \begin{proof}
-令$\rho = m + ni$，其中$m, n$是有理整数，所有$\rho \beta$都可写为：
+Let $\rho = m + ni$, where $m, n$ are rational integers. All the products of $\rho \beta$ are in the form of,
 
 \[
 \rho \beta = (m + ni)\beta = m\beta + ni\beta
 \]
 
-即复数$\beta$的倍数和$i\beta$的倍数的和。在几何上$i\beta$相当于向量$\beta$旋转90度（见\cref{qn:mul-i}）。如\cref{fig:zi}所示，$i\beta$与$\beta$垂直。因此所有的$\rho \beta$分布在边长为$|\beta|$的方格子的交点上。
+It is the sum of some multiple of $\beta$ and some multiple of $i\beta$. The geometric interpretation of $i\beta$ is to turn the vector $\beta$ by 90 degrees (see \cref{qn:mul-i}). As shown in \cref{fig:zi}, $i\beta$ is perpendicular to $\beta$. It turns out all $\rho \beta$ are grids of squared lattice with side length of $|\beta|$.
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.3]{img/zi}
- \caption{高斯整数$\rho \beta$的所有值构成一个网格，$\alpha$落在某个格子中。}
+ \caption{Gaussian integers $\rho \beta$ form a lattice, number $\alpha$ lies inside some square.}
  \label{fig:zi}
 \end{figure}
 
