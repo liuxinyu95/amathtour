@@ -1655,20 +1655,20 @@ It is the sum of some multiple of $\beta$ and some multiple of $i\beta$. The geo
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.3]{img/zi}
- \caption{Gaussian integers $\rho \beta$ form a lattice, number $\alpha$ lies inside some square.}
+ \caption{Gaussian integers $\rho \beta$ form a lattice, number $\alpha$ lies in some square (include boundaries).}
  \label{fig:zi}
 \end{figure}
 
-被除数$\alpha$所代表的向量必然落在某个格子中（包括边）。它到最近的两个边的距离都$\leq \frac{|\beta|}{2}$（如\cref{fig:zi}中$a, b \leq \frac{|\beta|}{2}$）。由三角形两边和大于第三边，有：
+The number $\alpha$ lies in some square (include boundaries). The distance from it to either nearest sides is $\leq \frac{|\beta|}{2}$ (as shown in \cref{fig:zi}, $a, b \leq \frac{|\beta|}{2}$). For any triangle, the length of two sides is longer than the third, therefore,
 
 \[
 |\gamma| = |c| < |a| + |b| \leq \frac{|\beta|}{2} + \frac{|\beta|}{2} = |\beta|
 \]
-两边平方得$N(\gamma) < N(\beta)$。
+Taking square on both sides gives $N(\gamma) < N(\beta)$.
 \end{proof}
 
-\index{高斯整数!欧几里得算法}
-有了带余数除法，就意味着可以使用欧几里得算法了（见第\ref{sec:Euclidean-algorithm}节）。高斯把欧几里得算法扩展到高斯整数。
+\index{Gaussian integers!Euclidean algorithm}
+The existence of division algorithm implies Euclidean algorithm (see \cref{sec:Euclidean-algorithm}). Gauss extended the Euclidean algorithm to Gaussian integers.
 
 \begin{align*}
 \alpha   &= \rho_1 \beta + \gamma_1    & N(\gamma_1) &< N(\beta) \\
@@ -1677,37 +1677,37 @@ It is the sum of some multiple of $\beta$ and some multiple of $i\beta$. The geo
          & \dotso
 \end{align*}
 
-但这个过程不会永远进行下去，因为范数是普通的非负整数，所以必然存在某个$n$使得$N(\beta) > N(\gamma_1) > N(\gamma_2) > \dotsb > N(\gamma_n) > N(\gamma_{n+1})= 0$。即：
+This process can not be endless. Since norm is non-negative, there is some $n$ such that $N(\beta) > N(\gamma_1) > N(\gamma_2) > \dotsb > N(\gamma_n) > N(\gamma_{n+1})= 0$, in other words,
 
 \begin{align*}
 \gamma_{n-2} &= \rho_n \gamma_{n-1} + \gamma_n & N(\gamma_n) &< N(\gamma_{n-1}) \\
-\gamma_{n-1} &= \rho_{n+1} \gamma_n && \text{除尽}
+\gamma_{n-1} &= \rho_{n+1} \gamma_n && \text{no remainder}
 \end{align*}
 
-这样$\gamma_n$整除$\gamma_{n-1} \to$整除$\gamma_{n-2} \to \dotsb \to$整除$\beta \to$整除$\alpha$。所以$\gamma_n$是$\alpha, \beta$的公约数。反之，任何$\alpha, \beta$的公约数$\psi$必然整除$\alpha \to$整除$\beta \to$整除$\gamma_1 \to$整除$\gamma_2 \to \dotsb \to$整除$\gamma_n$。因此$\gamma_n = (\alpha, \beta)$是\underdot{最大}公约数\footnote{这里对应的英文是highest common divisor而不是greatest common divisor，因为复数不能直接比较大小。}。我们给最大两个字加了点是因为：(1) 复数不能直接比较大小，这里“最大”的涵义是任何公约数$\psi$都整除$\gamma_n$。(2) 高斯整数的最大公约数不唯一。如果一个数乘以单位元$\mu\phi = \gamma_n$，则$\phi$也是最大公约数。例如$3 + i$与$1 + 3i$的最大公约数是$-1 + i$，它乘以$-1, \pm i$得到的相伴元$1 - i, i(-1 + i) = -1 - i, -i(-1 + i) = 1 + i$也都是最大公约数。
+Consequently, $\gamma_n$ divides $\gamma_{n-1} \to$ divides $\gamma_{n-2} \to \dotsb \to$ divides $\beta \to$ divides $\alpha$, therefore, $\gamma_n$ is a common divisor of $\alpha, \beta$. Conversely, any common divisor $\psi$ of $\alpha, \beta$ divides $\alpha \to$ divides $\beta \to$ divides $\gamma_1 \to$ divides $\gamma_2 \to \dotsb \to$ divides $\gamma_n$. It follows that $\gamma_n = (\alpha, \beta)$ is a \emph{highest} common divisor \footnote{It is \emph{highest}, but not \emph{greatest}, because we can not directly compare complex numbers.}. We use the term \emph{a highest} because: (1) We can not compare complex numbers directly for their magnitudes; the term \enquote{highest} means any common divisor $\psi$ divides $\gamma_n$. (2) Highest common divisor is not unique, because if a number multiplied by a unit $\mu\phi = \gamma_n$, then $\phi$ is also a highest common divisor. For example, A highest common divisor of $3 + i$ and $1 + 3i$ is $-1 + i$, multiplying it by $-1, \pm i$ gives associates $1 - i, i(-1 + i) = -1 - i, -i(-1 + i) = 1 + i$, which are all highest common divisors.
 
-接下来高斯要回答什么才是素数。一旦引入复数，普通的素数$2, 3, 5, 7, \dotsc$中，有些竟然可以分解，如：$2 = (1 + i)(1 - i), 5 = (2 + i)(2 - i)$。而素数的直观涵义是“基础砖石”，它们能构成其它整数而自己不能被进一步分解。可是究竟什么是“进一步”呢？例如$1 + i = (1 - i)i$，我们此时立即看出高斯定义单位元和相伴元的意义了。如果一个数只能分解为相伴元和单位元的乘积，这不是“进一步”，而是“原地踏步”。于是高斯给出了素数的扩展定义：
+Gauss next defined what were Gaussian primes. Once extending to complex numbers, among those rational primes $2, 3, 5, 7, \dotsc$, some can be factorized, for example, $2 = (1 + i)(1 - i), 5 = (2 + i)(2 - i)$. Intuitively speaking, prime numbers are the \enquote{building blocks}, which should not be further factorized. But what does the term \enquote{further} mean? For example, $1 + i = (1 - i)i$. This is exactly why Gauss introduced the concept unit and associate. If a number can only be factorized by its associates and units, it is by no means of \enquote{further}. Gauss thus defined Gaussian prime as below.
 
-\index{高斯整数!素数}
+\index{Gaussian integers!prime}
 \begin{definition}
-一个高斯整数是素数如果它不等于0或任何单位元，并且只能被和它相伴的数与单位元整除。
+A Gaussian integer is prime if it is not 0 or any unit, and can only be divided by its associates and units.
 \end{definition}
 
-\index{高斯素数} \index{有理素数}
-为了区分，我们把普通整数中的素数叫做“有理素数”，把高斯整数中的素数叫做“高斯素数”。通常用字母$p$表示有理素数，用希腊字母$\pi$来表示代数整数中的素数。注意不要和圆周率混淆。在高斯整数中，一个素数$\pi$有8个因子：$\pm 1, \pm i, \pm \pi, \pm i\pi$。接下来的问题是如何找到这些素数？
+\index{Gaussian prime} \index{rational prime}
+To differentiate from the normal prime numbers, we call such defined numbers \emph{Gaussian prime}, and the normal ones \emph{rational prime}. We use English letter $p$ for rational prime numbers, and Greek letter $\pi$ for Gaussian prime numbers. Definitely it has nothing to do with circles. After extending to Gaussian integers, a prime number $\pi$ has 8 factors: $\pm 1, \pm i, \pm \pi, \pm i\pi$. The next problem is how to find Gaussian primes?
 
 \begin{proposition}\label{thm:prime-norm}
-如果一个高斯整数$\psi$的范数是有理素数$p$，则$\psi$是高斯素数。
+If the norm of a Gaussian integer $\psi$ is some rational prime number $p$, then $\psi$ is a Gaussian prime number.
 \end{proposition}
 
 \begin{proof}
-假设$\psi = \alpha\beta$是两个高斯整数的积，两边取范数：
+Suppose $\psi = \alpha\beta$, a product of two Gaussian integers. Taking norm of both sides:
 
 \begin{align*}
-p &= N(\psi) = N(\alpha\beta) = N(\alpha)N(\beta)  && \text{范数可乘}
+p &= N(\psi) = N(\alpha\beta) = N(\alpha)N(\beta)  && \text{norm is multiplicative}
 \end{align*}
 
-有理素数的因子只有$1, p$。所以$N(\alpha)$和$N(\beta)$中必然有一个是1，因而是单位元。另外一个必然和$\psi$相伴，由定义知$\psi$是高斯素数。
+Since a rational prime number has only two rational factors of $1, p$, it implies either $N(\alpha)$ or $N(\beta)$ is 1, in other words, a unit. The other is an associate of $\psi$. Therefore, $\psi$ is Gaussian prime by definition.
 \end{proof}
 
 根据这个结论，我们马上可以判断$1 \pm i, 2 \pm i, 1 \pm 2i$都是素数（它们的范数$N(1 \pm i) = 1^2 + 1^2 = 2, N(2 \pm i) = N(1 \pm 2i) = 1^2 + 2^2 = 5$都是有理素数）。但这个命题的逆命题不成立，高斯素数的范数并不一定是有理素数。例如$N(3) = 9$，不是有理素数，假设3可以分成两个高斯整数的积$3 = (a + bi)(c + di)$。两边取范数：
