@@ -1710,103 +1710,105 @@ p &= N(\psi) = N(\alpha\beta) = N(\alpha)N(\beta)  && \text{norm is multiplicati
 Since a rational prime number has only two rational factors of $1, p$, it implies either $N(\alpha)$ or $N(\beta)$ is 1, in other words, a unit. The other is an associate of $\psi$. Therefore, $\psi$ is Gaussian prime by definition.
 \end{proof}
 
-根据这个结论，我们马上可以判断$1 \pm i, 2 \pm i, 1 \pm 2i$都是素数（它们的范数$N(1 \pm i) = 1^2 + 1^2 = 2, N(2 \pm i) = N(1 \pm 2i) = 1^2 + 2^2 = 5$都是有理素数）。但这个命题的逆命题不成立，高斯素数的范数并不一定是有理素数。例如$N(3) = 9$，不是有理素数，假设3可以分成两个高斯整数的积$3 = (a + bi)(c + di)$。两边取范数：
+Using this proposition, we immediately knows $1 \pm i, 2 \pm i, 1 \pm 2i$ are all Gaussian prime numbers (Their norms: $N(1 \pm i) = 1^2 + 1^2 = 2, N(2 \pm i) = N(1 \pm 2i) = 1^2 + 2^2 = 5$ are all rational prime numbers). However, the converse of this proposition is not true, in other words, the norm of a Gaussian prime number may not be rational prime. For example, $N(3) = 9$ isn't rational prime, but suppose 3 can be factored into two Gaussian integers $3 = (a + bi)(c + di)$. Take norm of both sides:
 
 \[
 9 = N(3) = N(a + bi)N(c + di) = (a^2 + b^2)(c^2 + d^2)
 \]
 
-很容易验证3不是两个正整数的平方和（3只有一种正整数分解：3 = 2 + 1，其中2不是平方数），因此$a^2 + b^2 = c^2 + d^2 = 3$是不可能的。这样$a^2 + b^2$和$c^2 + d^2$只能是1和9。不管哪个是1，其对应的高斯整数是一个单位元。因此根据定义，3是高斯素数。这提示我们，如果一个有理素数$p$能表示为两个正整数的平方和$p = a^2 + b^2$，则它可分解为$p = (a + bi)(a - bi)$因而不是素数；反之，如果$p$不能表示为平方和，使用类似的推理，假设$p = (a + bi)(c + di)$，取范数：
+It's easy to verify that 3 is not a sum of two squares (3 can be only decomposed to 3 = 2 + 1, where 2 is not a square), hence it's impossible to have $a^2 + b^2 = c^2 + d^2 = 3$. It turns out that $a^2 + b^2$ and $c^2 + d^2$ can only be 1 or 9. Either one with the norm of 1 is a unit of Gaussian integers. Therefore, 3 is Gaussian prime by definition. It also reveals the fact that if a rational prime $p$ is a sum of two squares $p = a^2 + b^2$, then it can be factorized as $p = (a + bi)(a - bi)$, hence is not Gaussian prime; otherwise, if $p$ isn't any sum of two squares, apply the similar argument, suppose $p = (a + bi)(c + di)$ and take norms:
 
 \[
 p^2 = N(p) = N(a + bi)N(c + di) = (a^2 + b^2)(c^2 + d^2)
 \]
 
-因为$p$不是平方和，所以不可$a^2 + b^2 = c^2 + d^2 = p$；故$a^2 + b^2$和$c^2 + d^2$只能是1和$p^2$。不管哪个是1，其对应的高斯整数是单位元，所以$p$是高斯素数。有理素数中只有2是偶数。因为$2 = 1^2 + 1^2$，所以$2 = (1 + i)(1 - i)$不是高斯素数。我们此前已经判断出$1 \pm i$及其相伴元都是素数。剩下的所有奇素数可分为两类：形如$4n + 3$的和形如$4n + 1$的。例如3就是前一类，我们怀疑$4n + 3$形的素数不能拆成平方和，幸运地是我们猜对了。
+Since $p$ is not any sum of two squares, it's impossible to have $a^2 + b^2 = c^2 + d^2 = p$; It turns out that $a^2 + b^2$ and $c^2 + d^2$ can only be 1 or $p^2$. Either one with the norm of 1 is a unit of Gaussian integers. Therefore, $p$ is Gaussian prime. Among the rational prime numbers, only 2 is even. As $2 = 1^2 + 1^2$, hence $2 = (1 + i)(1 - i)$ is not Gaussian prime. We've known that $1 \pm i$ and its associates are Gaussian prime. The remaining odd rational prime numbers fall into two classes: those in $4n + 3$ and in $4n + 1$. As 3 is in the first class, one may guess rational prime numbers in $4n + 3$ are not any sum of two squares. Fortunately, it's true.
 
-\index{平方和}
+\index{sum of two squares}
 \begin{proposition}
-形如$4n + 3$的奇素数不能表示成正整数的平方和。
+The odd prime numbers in $4n + 3$ can not be represented as the sum of two squares.
 \end{proposition}
 
 \begin{proof}
-用反证法，假设$a^2 + b^2 = 4n + 3$。$a, b$的奇偶必然不同，否则它们的平方和是偶数。不妨令$a = 2k + 1, b = 2m$，有：
+Assume for contradiction that $a^2 + b^2 = 4n + 3$ for some integers $a$ and $b$. we claim that the parity of $a, b$ are different otherwise the sum of their squares would be even. Suppose $a = 2k + 1, b = 2m$, substitute in:
 
 \[
 a^2 + b^2 = (2k + 1)^2 + (2m)^2 = 4k^2 + 4k + 1 + 4m^2 = 4(k^2 + k + m^2) + 1
 \]
 
-是$4n + 1$的形式而不是$4n + 3$的形式，矛盾。
+Which is in $4n + 1$ but not $4n + 3$, a contradiction.
 \end{proof}
 
-这样，所有$3, 7, 11, \dotsc$都是高斯素数了。为了处理$4n + 1$形的素数，我们需要一个重要的武器：高斯整数上的算术基本定理。我们的思路和第\ref{sec:fundamental-theorem-of-arithmetic}节一样：通过高斯整数上的欧几里得算法推出算术基本定理。
+It immediately follows that $3, 7, 11, \dotsc$ are Gaussian prime numbers. To deal with rational prime numbers in $4n + 1$, we need a tool, namely the fundamental theorem of arithmetic for Gaussian integers. The idea is as same as in \cref{sec:fundamental-theorem-of-arithmetic}, to derive the fundamental theorem from the Euclidean algorithm for Gaussian integers.
 
 \begin{proposition}
-如果高斯整数$\alpha, \beta$互素，即$(\alpha, \beta) = 1$，并且$\alpha$整除乘积$\beta \psi$，则$\alpha$整除$\psi$。
+If two Gaussian integers $\alpha, \beta$ are relatively prime, that is, $(\alpha, \beta) = 1$, and $\alpha$ divides $\beta \psi$, then $\alpha$ divides $\psi$.
 \end{proposition}
 
 \begin{proof}
-把欧几里得算法中的数都放大$\psi$倍，最后得：
+Multiplying all numbers in the normal Euclidean algorithm by $\psi$, the last step is,
 
 \begin{align*}
-(\alpha \psi, \beta \psi) &= \gamma_n \psi = \psi  && \text{由} 1 = (\alpha, \beta) = \gamma_n
+(\alpha \psi, \beta \psi) &= \gamma_n \psi = \psi  && \text{by } 1 = (\alpha, \beta) = \gamma_n
 \end{align*}
 
-即最大公约数是$\psi$。如果$\alpha$整除$\beta \psi$，由于$\alpha$也整除$\alpha \psi$，因此$\alpha$是公约数，它必然整除最大公约数$\psi$。
+Therefore, the highest common divisor is $\psi$. If $\alpha$ divides $\beta \psi$, since $\alpha$ also divides $\alpha \psi$, then $\alpha$ is a common divisor, which divides the highest common divisor $\psi$.
 \end{proof}
 
 \begin{corollary}\label{thm:Gaussian-primary}
-如果高斯素数$\pi$整除乘积$\alpha \beta$，则$\pi$整除$\alpha$或$\pi$整除$\beta$。
+If a Gaussian prime number $\pi$ divides $\alpha \beta$, then $\pi$ divides $\alpha$ or $\pi$ divides $\beta$.
 \end{corollary}
 
 \begin{proof}
-如果素数$\pi$不整除$\alpha$，则$(\pi, \alpha) = 1$。若$\pi$整除$\alpha \beta$，据上面的命题，$\pi$整除$\beta$。
+Suppose $\pi$ does not divide $\alpha$, then $(\pi, \alpha) = 1$. since $\pi$ divides $\alpha \beta$, by above proposition, $\pi$ divides $\beta$.
 \end{proof}
 
-利用这个推论就可以证明高斯整数上的算术基本定理了。
+This corollary leads to the fundamental theorem of arithmetic for Gaussian integers.
 
-\index{高斯整数!算术基本定理}
-\begin{theorem}[高斯整数上的算术基本定理]
-高斯整数可以唯一分解为高斯素数的乘积，如果不考虑这些素数的顺序、相伴元、有否单位元的话。
+\index{Gaussian integers!fundamental theorem of arithmetic}
+\begin{theorem}[Fundamental theorem of arithmetic for Gaussian integers]
+Every nonzero Gaussian integer can be represented as the product of Gaussian prime numbers \emph{uniquely} up to order, associates, and units.
 \end{theorem}
 
 \begin{proof}
-用反证法，假设某一高斯整数有两种高斯素数分解：
+Assume for contradiction that there is some Gaussian integer has two distinct factorization:
+
 \[
 \pi_1 \pi_2 \dotsm \pi_j = \psi_1 \psi_2 \dotsm \psi_k
 \]
-其中某个素因子$\pi_i$既不是单位元，也不与右侧任何素因子相伴。根据上述推论，因为素数$\pi_i$整除彼此互素数的积$\psi_1 \psi_2 \dotsm \psi_k$，所以$\pi_i$要么整除$\psi_1$，要么整除$\psi_2, \dotsc, $要么整除$\psi_k$。但这是不可能的，因为每个素数$\psi_1, \psi_2, \dotsc, \psi_k$都不可能被不相伴的数整除。因此假设不成立，任何高斯整数只有一种高斯素数分解。
+
+Suppose some prime factor $\pi_i$ is not a unit, nor associate of any prime factor on the right side. By above corollary, since the prime number $\pi_i$ divides the product of relatively prime factors, namely $\psi_1 \psi_2 \dotsm \psi_k$, it follows that $\pi_i$ divides $\psi_1$, or $\psi_2, \dotsc, $ or $\psi_k$. But it's impossible because every prime number $\psi_1, \psi_2, \dotsc, \psi_k$ can not be divided by any non-associate. Therefore, every Gaussian integer has a unique factorization up to order, associates, and units.
 \end{proof}
 
-\index{威尔逊定理}
-现在我们可以调转枪头，分拆$4n + 1$形的有理素数，从而彻底解决高斯素数问题。我们需要用到初等数论中的威尔逊定理（见附录\ref{app:wilsons-theorem}）：如果$p$是素数，则阶乘$(p - 1)! \equiv -1 \pmod p$。
+\index{Wilson's theorem}
+Now we are ready to deal with the rational prime numbers in $4n + 1$, thus completely classify Gaussian primes. We need Wilson's theorem in elementary number theory (see \cref{app:wilsons-theorem}): if $p$ is a prime number, then the factorial $(p - 1)! \equiv -1 \pmod p$.
 
 \begin{lemma}
-存在某个平方和$x^2 + 1$能被形如$p = 4n + 1$的有理素数整除。
+There is some sum of squares in $x^2 + 1$ that can be divided by rational prime number in $p = 4n + 1$.
 \end{lemma}
 
 \begin{proof}
-$p = 4n + 1$，阶乘$(p - 1)!$包含$4n = 2n + 2n$项：
+As $p = 4n + 1$, the factorial $(p - 1)!$ consists of $4n = 2n + 2n$ terms:
 \begin{align*}
 (p - 1)! &= 1 \cdot 2  \dotsm  2n \cdot (2n + 1)  \dotsm  4n \\
-  &= (1 \cdot 2  \dotsm  2n)[(p - 1) \cdot (p - 2)  \dotsm  (p - 2n)] && \text{反转后半段} \\
-  &\equiv (1 \cdot 2  \dotsm 2n)(-1 \cdot -2 \dotsm -2n) \pmod p && \text{由} p - k \equiv k \pmod p \\
-  &\equiv (2n)!(-1)^{2n}(2n)! = [(2n)!]^2 = x^2 \pmod p && \text{令} x = (2n)!
+  &= (1 \cdot 2  \dotsm  2n)[(p - 1) \cdot (p - 2)  \dotsm  (p - 2n)] && \text{reverse the second half} \\
+  &\equiv (1 \cdot 2  \dotsm 2n)(-1 \cdot -2 \dotsm -2n) \pmod p && \text{by } p - k \equiv k \pmod p \\
+  &\equiv (2n)!(-1)^{2n}(2n)! = [(2n)!]^2 = x^2 \pmod p && \text{let } x = (2n)!
 \end{align*}
-另一方面，由威尔逊定理有$(p - 1)! \equiv -1 \pmod p$。所以$x^2 \equiv -1 \pmod p$，即$p$整除某个$x^2 + 1$。
+On the other hand, by Wilson's theorem, $(p - 1)! \equiv -1 \pmod p$, therefore, $x^2 \equiv -1 \pmod p$, that is, $p$ divides some $x^2 + 1$.
 \end{proof}
 
-现在$p = 4n + 1$整除某个$x^2 + 1 = (x + i)(x - i)$。如果$p$也是高斯素数，则$p$整除$x + i$或$x - i$（据推论\ref{thm:Gaussian-primary}）。但是$\dfrac{x}{p} \pm \dfrac{1}{p}i$不可能是高斯整数。这个矛盾说明$p$不是高斯素数，因而必然能分解为乘积：$p = (a + bi)(c + di)$，其中$a + bi$和$c + di$都不是单位元（$a^2 + b^2 \ne 1 \ne c^2 + d^2$）。两边取范数：
+Now rational prime number $p = 4n + 1$ divides some $x^2 + 1 = (x + i)(x - i)$. If $p$ is also a Gaussian prime number, then $p$ divides $x + i$ or $x - i$ (by corollary \ref{thm:Gaussian-primary}). But $\dfrac{x}{p} \pm \dfrac{1}{p}i$ cannot be Gaussian integer, a contradiction. It turns out that $p$ cannot be Gaussian prime, hence can be factorized as $p = (a + bi)(c + di)$, where $a + bi$ and $c + di$ are not both units ($a^2 + b^2 \ne 1 \ne c^2 + d^2$). Take norm of both sides:
 
 \[
 p^2 = N(p) = N(a+bi)N(c+di) = (a^2 + b^2)(c^2 + d^2)
 \]
 
-因此只能是$a^2 + b^2 = c^2 + d^2 = p$。另一方面如果$p = a^2 + b^2 = (a + bi)(a - bi)$。由于$N(a \pm bi) = p$，根据命题\ref{thm:prime-norm}，它们都是高斯素数。接着根据高斯整数的算术基本定理，这种分解是\underdot{唯一}的。所以必然有$a^2 = c^2, b^2 = d^2$。这样我们就解决了$4n + 1$形的素数，并且利用高斯整数证明了如下结论\footnote{1640年12月25日，费马在给梅森的信中提出了这一命题。费马曾多次告诉友人，他用无穷递降法证明了这个猜想，但一直未发现相关的文献资料。一个多世纪后，欧拉在1754年首次给出了该命题的证明。}：
+It can only be $a^2 + b^2 = c^2 + d^2 = p$. On the other hand, if $p = a^2 + b^2 = (a + bi)(a - bi)$, since $N(a \pm bi) = p$ and by proposition \ref{thm:prime-norm}, they are both Gaussian prime numbers. Further by fundamental theorem of arithmetic for Gaussian integers, the factorization is \emph{unique}, therefore, $a^2 = c^2, b^2 = d^2$. This settles down the case of $4n + 1$, and with Gaussian integers, one may prove below result\footnote{In a letter to Mersenne on 25th December 1640, Fermat gave this proposition. Fermat told his friends multiple times that he had proved it by infinite descent, but no document suggest this. About a century later, Euler in 1754 proved this proposition for the first time.}:
 
-\index{费马平方和定理}
-\begin{theorem}[费马平方和定理]
-有理素数$p = 4n + 1$一定可以分解为两个平方和$a^2 + b^2$。
+\index{Fermat's theorem of sum of squares}
+\begin{theorem}[Fermat's theorem of sum of squares]
+Every rational number in $p = 4n + 1$ can be represented as the sum of two squares $a^2 + b^2$.
 \end{theorem}
 
 我们用下面的定理总结上述三种情况：(1) 唯一的偶素数$p = 2$；(2) 形如$4n + 3$的奇素数；(3) 形如$4n + 1$的即素数。
