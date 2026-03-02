@@ -1856,46 +1856,46 @@ It is not by chance that the norm equals the constant term of the quadratic equa
 
 \begin{align*}
 N(\alpha - \rho\beta) & = c^2 = a^2 + b^2  && \text{by Pythagorean theorem} \\
-  &\leq (\frac{\sqrt{2}}{2}|\beta|)^2 + (\frac{1}{2}|\beta|)^2 && a, b\text{none is longer than half side respectively} \\
+  &\leq (\frac{\sqrt{2}}{2}|\beta|)^2 + (\frac{1}{2}|\beta|)^2 && a, b\text{ neither is longer than half side respectively} \\
   &= \frac{3}{4}|\beta|^2 < |\beta|^2 = N(\beta)
 \end{align*}
 
-Let $\gamma = \alpha - \rho \beta$ as needed. Therefore, Euclidean algorithm is valid in $\mathbb{Z}[\sqrt{-2}]$, it follows that the corresponding fundamental theorem of arithmetic is true. However, $\mathbb{Z}[\sqrt{-3}]$ breaks this pattern, here is a counter example:
+Let $\gamma = \alpha - \rho \beta$ as needed. Therefore, Euclidean algorithm is valid in $\mathbb{Z}[\sqrt{-2}]$, it follows that the corresponding fundamental theorem of arithmetic is true. However, $\mathbb{Z}[\sqrt{-3}]$ breaks this pattern; here is a counter example:
 
 \[
 4 = 2 \times 2 = (1 + i\sqrt{3})(1 - i\sqrt{3})
 \]
 
-其中2不能被进一步分解，否则假设$2 = (a + b\sqrt{-3})(c + d\sqrt{-3})$，两边取范数：
+where 2 cannot be further factorized. Otherwise, suppose $2 = (a + b\sqrt{-3})(c + d\sqrt{-3})$, taking norm of both sides:
 
 \[
 4 = N(2) = N(a+b\sqrt{-3})N(c + d\sqrt{-3}) = (a^2 + 3b^2)(c^2 + 3d^2)
 \]
 
-不可能$a^2 + 3b^2 = c^2 + 3d^2 = 2$，这个方程没有整数解。所以$a^2 + 3b^2$或$c^2 + 3d^2$是1，其对应的是单位元，另一个是2的相伴元。这就证明了2不能被分解。$1 \pm i\sqrt{3}$的范数都是4，通过同样的分析，我们知道它们也不能被分解。这样4就有两种分解方式。这是为什么呢？如\ref{fig:Z-sqrt-3}所示，所有$\rho \beta$是由$\beta$和$i\sqrt{3}\beta$张成的矩形网格。任何$\alpha$落在某个矩形中，它距离最近的顶点距离的平方是：
+It's impossible that $a^2 + 3b^2 = c^2 + 3d^2 = 2$, in other words, no solution to this equation in integers. Therefore, either $a^2 + 3b^2$ or $c^2 + 3d^2$ is 1, which corresponds to a unit; the other is an associate of 2. This shows 2 cannot be further factorized. The norms of $1 \pm i\sqrt{3}$ are both 4, one may show they cannot be further factorized in the same way. It turns out there are two distinct ways to factorize 4, in other words, not unique factorization. To understand why, as shown in \cref{fig:Z-sqrt-3}, the products of $\rho \beta$ form a lattice of rectangles spanned by $\beta$ and $i\sqrt{3}\beta$. Any $\alpha$ lies in some rectangle; the square of its distance to the closest corner is,
 
 \begin{align*}
-N(\alpha - \rho \beta) &= c^2 = a^2 + b^2  && \text{勾股定理} \\
-  &\leq (\frac{\sqrt{3}}{2}|\beta|)^2 + (\frac{1}{2}|\beta|)^2 = |\beta|^2 && a, b \leq \text{长宽的一半}
+N(\alpha - \rho \beta) &= c^2 = a^2 + b^2  && \text{by Pythagorean theorem} \\
+  &\leq (\frac{\sqrt{3}}{2}|\beta|)^2 + (\frac{1}{2}|\beta|)^2 = |\beta|^2 && a, b \leq \text{ half side}
 \end{align*}
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.3]{img/z-sqrt-3}
- \caption{$\mathbb{Z}[\sqrt{-3}]$中的整数构成浅灰色网格，积$\rho \beta$构成黑色网格，$\alpha$落在某个格子中。}
+ \caption{The quadratic integers in $\mathbb{Z}[\sqrt{-3}]$ form a lattice in gray color; the products of $\rho \beta$ form a lattice in black color; $\alpha$ lies in some rectangle.}
  \label{fig:Z-sqrt-3}
 \end{figure}
 
-并不一定是$<$。如图中所示，当$\alpha$落在矩形中心时，不存在$\gamma$使得$N(\gamma) < N(\beta)$。因此欧几里得算法在$\mathbb{Z}[\sqrt{-3}]$上不成立，算术基本定理了不成立，分解不一定唯一。这就解释了$4 = 2 \times 2 = (1 + i\sqrt{3})(1 - i\sqrt{3})$。这真是太遗憾了！如果$\alpha$落在矩形中心以外的任何地方都能保证它到最近顶点的距离严格$< |\beta|$，只有中心是个例外。有没有办法补救呢？如\cref{fig:Z-omega}所示，这种情况下矩形的中心$\notin \mathbb{Z}[\sqrt{-3}]$。因而对所有的$\alpha$，都存在$\gamma$使得$N(\gamma) < N(\beta)$。这两种情况有什么区别呢?似乎不同的$\beta$导致不同的结果。
+It is not necessarily $<$. As shown in the figure, when $\alpha$ lies at the center of the rectangle, there does not exist $\gamma$ such that $N(\gamma) < N(\beta)$. Hence Euclidean algorithm isn't applicable to $\mathbb{Z}[\sqrt{-3}]$, in other words, the fundamental theorem of arithmetic isn't true, no unique factorization. This is why $4 = 2 \times 2 = (1 + i\sqrt{3})(1 - i\sqrt{3})$. What a pity! wherever $\alpha$ lies except for the center of the rectangle, the distance from it to the closest corner $< |\beta|$. Given that only the center is the exception, is there a way to save the unique factorization? As shown in \cref{fig:Z-omega}, the center of the rectangle $\notin \mathbb{Z}[\sqrt{-3}]$, in this case, for any integer $\alpha$, there exists some $\gamma$ satisfying $N(\gamma) < N(\beta)$. What's the difference between these two cases? It seems $\beta$ leads to different result.
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.3]{img/z-omega}
- \caption{当$\beta = 2 + \sqrt{3}i$时，任何$\alpha$都不会落在$\rho \beta$网格的中心。此时可以找到$\gamma$使得$N(\gamma) < N(\beta)$。}
+ \caption{When $\beta = 2 + \sqrt{3}i$, any integer $\alpha$ does not lie at the center of the rectangles of $\rho \beta$. There exists some $\gamma$ satisfying $N(\gamma) < N(\beta)$.}
  \label{fig:Z-omega}
 \end{figure}
 
-让我们来分析一下，什么情况下矩形的中心不是二次整数。如\cref{fig:Z-sqrt-3c}所示，考虑任意$\rho \beta$构成的矩形，左下角$A$对应向量$\rho \beta$，根据复数加法的几何意义，右下角$C$对应向量$\rho \beta + \beta$，左上角$C'$对应$\rho \beta + i\sqrt{3}\beta$，即把向量$\beta$旋转90度后放大$\sqrt{3}$倍，再加到$C$上。矩形的中心就是对角线$CC'$的中心，对应向量：
+Let's figure out in what condition, the center of the rectangle does not correspond to quadratic integer. As shown in \cref{fig:Z-sqrt-3c}, consider a rectangle spanned by some $\rho \beta$. The bottom left corner $A$ corresponds to vector $\rho \beta$. By the geometric interpretation of the sum of complex numbers, the bottom right corner $C$ corresponds to vector $\rho \beta + \beta$; the upper left corner $C'$ corresponds to $\rho \beta + i\sqrt{3}\beta$, which rotates the vector $\beta$ by 90 degrees, then scales up by $\sqrt{3}$ times, then adds to $C$. The center of the rectangle is the middle point of diagonal $CC'$, which corresponds to vector:
 
 \[
 \frac{C + C'}{2} = \frac{\rho \beta + \beta + \rho \beta + i\sqrt{3}\beta}{2} = \rho \beta + \frac{1}{2}\beta + \frac{\sqrt{3}}{2}i\beta
@@ -1904,29 +1904,29 @@ N(\alpha - \rho \beta) &= c^2 = a^2 + b^2  && \text{勾股定理} \\
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.3]{img/z-sqrt-3c}
- \caption{$\rho \beta$组成的某个矩形及其中心。}
+ \caption{A rectangle of $\rho \beta$ and its center.}
  \label{fig:Z-sqrt-3c}
 \end{figure}
 
-由于$\rho \beta \in \mathbb{Z}[\sqrt{-3}]$，所以当$\dfrac{1}{2}\beta + \dfrac{\sqrt{3}}{2}i\beta \notin \mathbb{Z}[\sqrt{-3}]$时，矩形的中心不是二次整数。令$\beta = a + bi\sqrt{3}$带入：
+Since $\rho \beta \in \mathbb{Z}[\sqrt{-3}]$, when $\dfrac{1}{2}\beta + \dfrac{\sqrt{3}}{2}i\beta \notin \mathbb{Z}[\sqrt{-3}]$, the center of the rectangle does not correspond to any quadratic integer. Let $\beta = a + bi\sqrt{3}$ and substitute into:
 
 \[
 \frac{a + bi\sqrt{3}}{2} + \frac{(a + bi\sqrt{3})i\sqrt{3}}{2} = \frac{a - 3b}{2} + \frac{a + b}{2}i\sqrt{3}
 \]
 
-如果$a-3b$或$a + b$是奇数，则矩形中心不是二次整数，此时必有$a, b$的奇偶不同。反之，如果$a, b$奇偶相同，矩形中心就是二次整数，欧几里得算法就会失效。在反例$4 = 2 \times 2 = (1 + i\sqrt{3})(1 - i\sqrt{3})$中，$a = b = 1$都是奇数。而在\cref{fig:Z-omega}中，$\beta = 2 + i\sqrt{3}$，其中$a = 2, b=1$奇偶不同，$\alpha$不可能是矩形中心，因此存在欧几里得算法，存在唯一分解。欧拉在证明费马大定理$n=3$时，的的确确要求$a, b$奇偶不同，这样就保证了唯一分解。所以当$a^2 + 3b^2$是立方数时，互素的$(a + bi\sqrt{3})(a - bi\sqrt{3})$每个都是立方数（\cref{qn:coprime-of-conjugates}要求证明$a \pm bi\sqrt{3}$互素）。
+If $a-3b$ or $a + b$ is odd, then the center of the rectangle does not correspond to quadratic integer; in this case, the parity of $a, b$ is different. Conversely, if the parity of $a, b$ are same, the center of the rectangle corresponds to some quadratic integer, the Euclidean algorithm is invalid. For the counter example of $4 = 2 \times 2 = (1 + i\sqrt{3})(1 - i\sqrt{3})$, indeed $a = b = 1$ both are odd. While in the case of \cref{fig:Z-omega}, $\beta = 2 + i\sqrt{3}$, where $a = 2, b=1$ are in different parity, hence $\alpha$ cannot lie at the center of the rectangle, Euclidean algorithm is valid, and unique factorization hold. In Euler's proof to Fermat's Last Theorem of $n=3$, indeed it demands $a, b$ in different parity, which asserts unique factorization. Therefore, when $a^2 + 3b^2$ is a cube, the relatively prime $(a + bi\sqrt{3})(a - bi\sqrt{3})$ each is a cube (\cref{qn:coprime-of-conjugates} asks to show $a \pm bi\sqrt{3}$ are relatively prime).
 
-\index{爱森斯坦整数}
-这样我们就给费马大定理$n=3$划上了句号。关于$\mathbb{Z}[\sqrt{-3}]$还有后继的故事。高斯整数是分布在正方形格子上的复数，爱森斯坦（见\cref{fig:Eisenstein}）在1844年研究了分布在正三角形格子上的复数。今天我们把这样的复数叫做爱森斯坦整数。爱森斯坦发现很简单的首一二次方程$x^2 + x + 1 = 0$有两个解$\omega = \dfrac{-1}{2} \pm \dfrac{i\sqrt{3}}{2}$。根据代数整数的定义，尽管带有$\dfrac{1}{2}$，它们都是代数整数！更一般地，首一二次代数方程$x^2 - (2a - b)x + (a^2 - ab + b^2)$的解为$a + b \omega$。它们构成了爱森斯坦整数$\mathbb{Z}[\omega]$。爱森斯坦进一步定义范数为$N(a + b\omega) = a^2 -ab + b^2$（见\cref{qn:norm-of-z-omega}），并证明了欧几里得算法在$\mathbb{Z}[\omega]$上存在，从而唯一分解定理成立。而$\mathbb{Z}[\sqrt{-3}]$只不过是$\mathbb{Z}[\omega]$的一个子集。
+\index{Eisenstein integers}
+This completes the proof of Fermat's Last Theorem of $n=3$. The story of $\mathbb{Z}[\sqrt{-3}]$ continues. Gaussian integers lie in the lattice of squares in complex plain. Eisenstein (\cref{fig:Eisenstein}) in 1844 studied the complex integers lie in the lattice of equilateral triangles, which are called Eisenstein integers nowadays. The two roots of monic quadratic equation $x^2 + x + 1 = 0$ are $\omega = \dfrac{-1}{2} \pm \dfrac{i\sqrt{3}}{2}$. By the definition of algebraic integers, though with terms of $\dfrac{1}{2}$, they are all algebraic integers! More generally, the roots of monic quadratic equation $x^2 - (2a - b)x + (a^2 - ab + b^2)$ are in the form of $a + b \omega$. They form Eisenstein integers, denoted by $\mathbb{Z}[\omega]$. Eisenstein defined the norm as $N(a + b\omega) = a^2 -ab + b^2$ (see \cref{qn:norm-of-z-omega}), and showed that Euclidean algorithm existed in $\mathbb{Z}[\omega]$, hence unique factorization held. Actually, $\mathbb{Z}[\sqrt{-3}]$ is just a subset of $\mathbb{Z}[\omega]$.
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[scale=0.4]{img/Eisenstein}
-  \caption{爱森斯坦，1823～1852}
+  \caption{Eisenstein, 1823 - 1852}
  \label{fig:Eisenstein}
 \end{figure}
 
-\index{数学家!爱森斯坦}
+\index{Eisenstein}
 \begin{mdframed}
 以下是大数学家韦依为爱森斯坦论文集写的书评\cite{Weil-2024}的开头部分，涵盖了爱森斯坦的一生。这里略作修改。
 
