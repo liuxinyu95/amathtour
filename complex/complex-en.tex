@@ -1937,38 +1937,38 @@ On the 16th of April, 1823, a number of fairies, summoned by Ganesha, the god of
 \end{quotation}
 \end{mdframed}
 
-算术基本定理在高斯整数、$\mathbb{Z}[\sqrt{-2}]$、$\mathbb{Z}[\omega]$上成立是幸运的。一般来说它是不成立的。例如$\mathbb{Z}[\sqrt{-5}]$上的反例$6 = 2 \times 3 = (1 + i\sqrt{5})(1 - i\sqrt{5})$。我们可以证明$2, 3, 1 \pm i\sqrt{5}$都是不可分的。否则假设2可以分解为$(a + bi\sqrt{5})(c + di\sqrt{5})$，两边取范数：
+It is just lucky that the fundamental theorem of arithmetic is applicable to $\mathbb{Z}[\sqrt{-2}]$ and $\mathbb{Z}[\omega]$ as it isn't valid in common. For example, $6 = 2 \times 3 = (1 + i\sqrt{5})(1 - i\sqrt{5})$ in $\mathbb{Z}[\sqrt{-5}]$. One may show that none of $2, 3, 1 \pm i\sqrt{5}$ can be further factorized. Otherwise, suppose 2 can be factorized into $(a + bi\sqrt{5})(c + di\sqrt{5})$, taking norm of both sides:
 
 \[
 4 = N(2) = N(a + bi\sqrt{5})N(c + di\sqrt{5}) = (a^2 + 5b^2)(c^2 + 5d^2）
 \]
 
-首先可以排除$a^2 + 5b^2 = c^2 + 5d^2 = 2$的情况，因为此时$a, b, c, d$没有整数解。只能是$a^2 + 5b^2 = 1$或$c^2 + 5d^2 = 1$。范数为1对应单位元，另一个和2相伴。因此2不可分解。同样可证3不可分解。\cref{qn:1-n-delta-irreducible}要求用同样的方法证明$1 \pm i\sqrt{5}$不可分解。因此$6 = 2 \times 3 = (1 + i\sqrt{5})(1 - i\sqrt{5})$的确有两种分解方式。库默尔为此引入了理想数来挽救唯一分解，这在戴德金手中发展成了抽象武器——理想。
+We may first rule out the case of $a^2 + 5b^2 = c^2 + 5d^2 = 2$ as none integers of $a, b, c, d$ satisfying it. The only possibility is $a^2 + 5b^2 = 1$ or $c^2 + 5d^2 = 1$. The norm of 1 corresponds to unit and the other corresponds to associate of 2, which shows 2 cannot be further factorized. In the same way, 3 cannot be further factorized. \Cref{qn:1-n-delta-irreducible} asks to show $1 \pm i\sqrt{5}$ cannot be further factorized in this way. It turns out that $6 = 2 \times 3 = (1 + i\sqrt{5})(1 - i\sqrt{5})$, having two distinct ways of factorization. To save the unique factorization, Kummer introduced ideal numbers, which was further developed by Dedekind to a powerful tool -- ideal.
 
-\section{理想}
-\index{理想}
-这是北京市东城区高中一年级数学第一课《集合》的一道习题。
+\section{Ideals}
+\index{ideals}
+Here is a homework problem about set theory taken from the mathematical exercise book for grade K10 students in China\footnote{Set theory is the first unit in K10 school math in China.}.
 
 \begin{mdframed}
-若非空数集$I, P$满足：
+Given two non-empty set $I, P$, define $I$ is a \enquote{ideal subset} of $P$ if it satisfies the following:
 
 \begin{enumerate}[(i)]
-\item 对任意的$x \in I$，有$x \in P$；
-\item 对任意的$x, y \in I$，有$x + y \in I$；
-\item 对任意的$x \in I$且对任意的$y \in P$，有$xy \in I$；
+\item $x \in P$ for every $x \in I$;
+\item $x + y \in I$ for any $x, y \in I$;
+\item $xy \in I$ for any $x \in I$ and any $y \in P$.
 \end{enumerate}
 
-则称$I$是$P$的“理想子集”。给出下列四个结论：
+Select \emph{all} correct ones from below statements:
 
 \begin{enumerate}[(a)]
 %%   \renewcommand{\labelenumi}{\textcircled{\theenumi}}
-\item 若$I = \{2k | k \in \mathbb{Z} \}$，则$I$是$\mathbb{Z}$的“理想子集”；
-\item 若$I$是$\mathbb{R}$的“理想子集”，且存在非零实数$a \in I$，则$I = \mathbb{R}$；
-\item 若$I_1, I_2$是$P$的“理想子集”，则$I_1 \cup I_2$也是$P$的“理想子集”；
-\item 若$I_1, I_2$是$P$的“理想子集”，则$I_1 \cap I_2$也是$P$的“理想子集”。
+\item If $I = \{2k | k \in \mathbb{Z} \}$, then $I$ is a \enquote{ideal subset} of $\mathbb{Z}$;
+\item If $I$ is a \enquote{ideal subset} of $\mathbb{R}$, and there exists some non-zero real number $a \in I$, then $I = \mathbb{R}$;
+\item If $I_1, I_2$ are \enquote{ideal subsets} of $P$, then $I_1 \cup I_2$ is a \enquote{ideal subset} of $P$ too;
+\item if $I_1, I_2$ are \enquote{ideal subsets} of $P$, then $I_1 \cap I_2$ is a \enquote{ideal subset} of $P$ too.
 \end{enumerate}
 
-其中正确结论的序号是$\underline{\qquad \qquad}$
+The correct ones are: $\underline{\qquad \qquad}$
 
 \end{mdframed}
 
