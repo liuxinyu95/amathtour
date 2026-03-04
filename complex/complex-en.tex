@@ -1978,10 +1978,12 @@ It only needs elementary set theory to solve this exercise. Property (i) shows $
 For any $x \in I_1 \cap I_2$, we have $x \in I_1 \subseteq P$, hence property (i) holds. For any $x, y \in I_1 \cap I_2$, we have $x, y \in I_1$; since $I_1$ is an \enquote{ideal subset}, hence $x + y \in I_1$. Meanwhile, $x, y \in I_2$ and $I_2$ is also an \enquote{ideal subset}, hence $x + y \in I_2$. It follows that $x + y$ is in both $I_1$ and $I_2$, therefore, $x + y \in I_1 \cap I_2$. This shows $I_1 \cap I_2$ is closed under addition, satisfying property (ii). Finally, for any $x \in I_1 \cap I_2, y \in P$, as $x \in I_1$ and $I_1$ is an \enquote{ideal subset}, hence $xy \in I_1$. Meanwhile, as $x \in I_2$ and $I_2$ is also an \enquote{ideal subset}, hence $xy \in I_2$. Thus $xy$ is in both $I_1$ and $I_2$, therefore, $xy \in I_1 \cap I_2$, satisfying property (iii). This proves $I_1 \cap I_2$ is an \enquote{ideal subset}.
 \end{proof}
 
-最后正确结论的序号是：$\underline{(a), (b), (d)}$。
+Thus the correct options are: $\underline{(a), (b), (d)}$。
 
-\index{环} \index{主理想}
-这道题目意义非凡。它正是戴德金对理想的定义！唯一额外要求是戴德金需要父集合$P$是一个“环”（ring），简单来说，就是定义了加法和乘法，并且含有0、1、正、负元素的集合\footnote{具体来说，要求满足加法、乘法的结合律、交换律，分配律，包含0、1、正、负元素。普通整数、高斯整数、二次整数都是环。由于包含负数，理想对加减法都封闭。}。我们以后用英文字母$R$来表示这个父集合。面对不唯一的分解$6 = 2 \times 3 = (1 + i\sqrt{5})(1 - i\sqrt{5})$，库默尔提出存在一种“理想数”，能够继续对$2, 3, 1 \pm i\sqrt{5}$分解。并且最终理想数的分解是唯一的。但究竟什么是理想数？戴德金的回答令人吃惊，理想(ideal)不再是具体的一个数，而是数的集合，并且是无穷集合！比如上面例子中的所有偶数，它们都是2的倍数，记为$(2)$，所有5的倍数记为$(5)$。如果一个理想$I$是某个$a$的倍数的集合，就叫做\underdot{主理想}（principle ideal），记作$(a)$。这和我们此前定义数的方式大相径庭。历史上第一个用集合来定义数的人是逻辑学家弗雷格。我们知道数具有抽象的含义。3可以代表3个人、三个鸡蛋、图形中的三角等等，这些类\footnote{弗雷格的工作在康托尔之前，他当时使用了“类”（class）一词。康托尔后来使用了德语中的“集合”。}都有三个元素，用哪一个来代表自然数3呢？弗雷格的意见是：全部。即所有能和上述类一一对应的类所组成的、无穷的、抽象的类来定义自然数3。弗雷格的这一定义看起来有些复杂，但是很了不起。它突破了文化背景的限制。不管你是使用何种语言，何种符号，按照弗雷格的方法，对数字3的理解都不会有歧义。
+\index{ring} \index{principal ideal}
+This interesting exercise is exactly how Dedekind defines the concept of ideal! The only additional thing is that Dedekind requires the parent set $P$ to be a \enquote{ring}. Basically, a ring is a set with addition, multiplication, 0 and 1, containing positive and negative elements\footnote{Accurately speaking, a \emph{commutative} ring satisfies associative and commutative law for addition and multiplication, and contains 0, 1, positive and negative elements. For example, the sets of integers, Gaussian integers, quadratic integers are all rings. Because containing negative numbers, they are closed under addition and subtraction.}.
+
+我们以后用英文字母$R$来表示这个父集合。面对不唯一的分解$6 = 2 \times 3 = (1 + i\sqrt{5})(1 - i\sqrt{5})$，库默尔提出存在一种“理想数”，能够继续对$2, 3, 1 \pm i\sqrt{5}$分解。并且最终理想数的分解是唯一的。但究竟什么是理想数？戴德金的回答令人吃惊，理想(ideal)不再是具体的一个数，而是数的集合，并且是无穷集合！比如上面例子中的所有偶数，它们都是2的倍数，记为$(2)$，所有5的倍数记为$(5)$。如果一个理想$I$是某个$a$的倍数的集合，就叫做\underdot{主理想}（principle ideal），记作$(a)$。这和我们此前定义数的方式大相径庭。历史上第一个用集合来定义数的人是逻辑学家弗雷格。我们知道数具有抽象的含义。3可以代表3个人、三个鸡蛋、图形中的三角等等，这些类\footnote{弗雷格的工作在康托尔之前，他当时使用了“类”（class）一词。康托尔后来使用了德语中的“集合”。}都有三个元素，用哪一个来代表自然数3呢？弗雷格的意见是：全部。即所有能和上述类一一对应的类所组成的、无穷的、抽象的类来定义自然数3。弗雷格的这一定义看起来有些复杂，但是很了不起。它突破了文化背景的限制。不管你是使用何种语言，何种符号，按照弗雷格的方法，对数字3的理解都不会有歧义。
 
 \index{弗雷格}
 \begin{figure}[htbp]
