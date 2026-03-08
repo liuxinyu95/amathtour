@@ -2003,7 +2003,7 @@ N(\alpha - \rho \beta) &= c^2 = a^2 + b^2  && \text{勾股定理} \\
 这样理想的包含对应着整数的整除，用一句话概括就是\underdot{整除即包含}。我们可以证明这一结论：
 
 \begin{proposition}
-如果$a$整除$b$，则理想$(a)$包含理想$(b)$。
+$a$整除$b$，当且仅当理想$(a)$包含理想$(b)$。
 \end{proposition}
 
 \begin{proof}
@@ -2013,6 +2013,8 @@ x &= bk  &&\text{其中}k \in R \\
   &= ack &&\text{整除的定义} \\
   &= ak' \in (a) &&\text{令}k' = ck \in R \qedhere
 \end{align*}
+
+反之，理想$(a)$包含理想$(b)$，所以$b$在$(a)$中，而后者包含所有$a$的倍数，即$b = ka$。因此$a$整除$b$。
 \end{proof}
 
 \index{理想!和}
