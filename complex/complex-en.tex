@@ -2135,27 +2135,23 @@ where each of $6, 2 + 2i\sqrt{5}, 3 + 3i\sqrt{5}, (1 + i\sqrt{5})^2$ can be divi
 
 Thus Dedekind saves the unique factorization. $(6)$ is uniquely factorized to $A\overline{A}B\overline{B}$.
 
-\section{Which is more enormous?}
+\section{Infinite numbers}
 
 \index{Galileo's paradox}
-我们数的旅程逐渐接近尾声。我们一路走来，探寻了自然数、零、整数、有理数、无理数、实数、复数、代数数。这些数有的彼此包含，例如自然数是整数的一部分；也有的是彼此独立，例如有理数和无理数。那么谁更多呢？在数的大家庭中，是否我们生活中常见的数更多，而罕见的数较少？也许生活会欺骗我们，也许直觉靠不住。这个问题的困难之处在于，除了零以外，每种数都有无穷多。无穷有多大？自然是要多大有多大，但这样一来怎样比较呢？举例来说，有人认为偶数只有整数的一半，所以整数更多。但是任何整数乘以2，就得到一个偶数，反之，任何偶数除以2，也对应一个整数。这样看来整数和偶数间一一对应，这两个集合似乎又同样多。究竟是整数多还是偶数多呢？现代科学之父伽利略在1636年提出一个类似的悖论。如果将每个自然数平方，得到的新序列$1, 4, 9, 16, 25, \dotsc$和自然数一一对应。这样看来完全平方数和自然数一样多。可是平方数很稀疏，自然数似乎比平方数多得多。这一矛盾被称为“伽利略悖论”。在几何上人们同样发现了类似的悖论。如\cref{fig:circles-paradox}所示，大圆似乎比小圆包含更多的点。但每条半径把两个同心圆上的点连接起来。大圆上任意一点都一一对应到小圆上的一点。这样看来两个圆上的点似乎同样多。伽利略发现无法解释自然数和平方数孰多孰少后说：因此我们不能说自然数构成一个集合。人们拒绝“全体自然数”这类说法。
+Our journey of numbers is gradually coming to the end. Along it, we've explored natural number, zero, integers, rational and irrational numbers, the continuum of real numbers, complex numbers, and algebraic numbers. Some are contained by others, for instance, natural numbers are part of integers; some are mutually exclusive, like the rational and irrational numbers. It's natural to ask which ones are more numerous? Are the numbers commonly in daily life more abundant while the rare ones fewer? Our experiences are not always true; our intuition some times is unreliable. The difficulty of these problems is that, all these are infinite sets except for zero. How big is infinity? Intuitively, it is as large as can be. But then how can we compare infinities? One may argue that even numbers are only half as many as integers, hence are fewer than integers. However, doubling any integer yields an even number, and dividing any even number by 2 gives an integer. From this perspective, every integer corresponds to a even number, so the two sets seem to be equally large. Which argument is correct? Galileo, father of the modern science, made a paradox in his scientific work \emph{Two New Sciences} in 1636: Some numbers are squares, while others are not; therefore, all the numbers, including both squares and non-squares, must be more numerous than just the squares. And yet, for every number there is exactly one square, which forms the sequence $1, 4, 9, 16, 25, \dotsc$ hence, there cannot be more of one than of the other. This paradox is known as Galileo's paradox. Besides numbers, there are similar paradoxes in Geometry. For instance, \cref{fig:circles-paradox} shows two circles at the same centre; every radius connects two points in each circle, which is one to one correspondence between them. There seems to be the same amount of points in each circle. But in our common sense, there seems to be more points in the bigger circle than the smaller one. Galileo thus concluded that the ideas of less, equal, and greater couldn't apply to infinite things like natural numbers, hence rejected term of \enquote{all} the natural numbers.
 
 \begin{figure}[htbp]
  \centering
    \begin{tikzpicture}[
        scale=0.5,
-       circle_style/.style={draw, black, thick}, % 圆的样式：黑色、粗线条
-       radius_style/.style={draw, red, thick, ->} % 半径的样式：红色、粗线条、带箭头
+       circle_style/.style={draw, black, thick},
+       radius_style/.style={draw, red, thick, ->}
    ]
 
-   % 1. 绘制内圆（圆心在坐标原点(0,0)，半径2cm）
    \draw[circle_style] (0,0) circle (2cm);
 
-   % 2. 绘制外圆（同一圆心(0,0)，半径4cm，与内圆同心）
    \draw[circle_style] (0,0) circle (4cm);
 
-   % 3. 绘制半径（从圆心(0,0)指向外圆上的点(4,0)，沿x轴正方向）
-   % 注：箭头指向外圆，因此终点坐标需与外圆半径匹配（x=4cm, y=0，即(4,0)）
    \draw[radius_style] (0,0) -- (4,0);
 
    \fill[black] (0,0) circle (2pt);
@@ -2165,35 +2161,35 @@ Thus Dedekind saves the unique factorization. $(6)$ is uniquely factorized to $A
 
    \end{tikzpicture}
 
- \caption{同心大圆上任意一点都可通过半径对应到小圆上的唯一点}
+ \caption{Every point in the big circle corresponds to a point in the small circle.}
  \label{fig:circles-paradox}
 \end{figure}
 
-\index{集合的势} \index{一一对应}
-两百年后，数学家康托尔重新思考了陷入矛盾的一系列悖论，问题的关键在于根深蒂固的常识——整体大于部分，并不适用于抽象的无限概念。康托尔认为，如果接受“部分能够等于整体”的观点，解决问题的大门就打开了。他提出了用一一对应来比较集合大小的方法。康托尔定义：如果能够建立集合$A$和$B$中元素的一一对应关系，那么两个集合具有相同的基数（cardinal number），或者说它们是“等势”的。对于有限集，这一结论显然正确；推广到无限集，根据此定义，偶数和整数同样多，完全平方数和自然数同样多，小圆和大圆上的点也同样多……戴德金干脆这样定义无穷集合：如果一个集合的部分和整体可以具有相同的基数，那么这个集合是无穷集合\cite{Dedekind-1858}。
+\index{infinite set} \index{one to one correspondence}
+About two hundred years after Galileo, Georg Cantor considered these paradoxes again. He realized the idea in our common sense that a part must be smaller than the whole, isn't necessarily true. If accept the opposite notion that a part can be as large as the whole, although counter-intuitive, then the problem would be solved. Cantor defines two sets be equinumerous -- of the same size (cardinal number) or have same number of elements -- if there is one-to-one correspondence between them. This definition is obviously true for finite sets; when extending to infinite sets, it means there are same amount of even numbers and integers! and same amount of squares and natural numbers; same amount of points in two circles... Dedekind, gave such a definition of infinite set in 1888: if some proper subset of a set is equinumerous to this set, then it is a infinite set\cite{Dedekind-1858}.
 
-\index{希尔伯特无穷旅馆}
-乔治・伽莫夫1947年在科普著作《从一到无穷大》中讲了一个脍炙人口的故事。这则故事来自数学家希尔伯特在1924年冬季的一次演讲\footnote{希尔伯特的讲稿直到2013年才出版。}。有一个神奇的旅馆，拥有无穷多的房间。在旅游旺季的时候，旅馆住满了客人。这一天晚上，又来了一名客人。要是一般的旅馆，就只能拒绝他入住了。旅店经理希尔伯特说：“没问题，住得下。”他于是指挥客人，让1号房间的客人搬到2号房间去，2号房间的客人搬到3号房间去，3号房间的客人搬到4号房间去……每个房间的客人都搬到下一个房间去。这样就空出了1号房间给新来的客人。
+\index{Hilbert's Grand hotel}
+To explain Cantor's idea, Hilbert told an interesting story in a lecture in 1924 (published in 2013). It was later popularized by George Gamow in 1947 through his book \emph{One Two Three... Infinity}. In this story, there was a Grand hotel with infinitely many rooms. It was fully occupied during the hot season. One evening, a tired driver, after passing many \enquote{No vacany} hotels, came to see if there might nonetheless be a room for him. The clerk said: \enquote{No problem, we can make a room for you.} He moved the guest in room 1 to room 2, then moved the guest in room 2 to room 3, and moved the guest in room 3 to room 4, ... He moved every one to the next room. That freed up the first room for this new guest.
 
-故事没有结束。第二天，旅店迎来了一个神奇的旅游团，它有无穷多的游客。经理希尔伯特又说：“没问题，住得下。”他指挥房间里的客人。让1号房间的客人搬到2号房间去，2号房间的客人搬到4号房间去，3号房间的客人搬到6号房间去……每个房间的客人都搬到房间号2倍的那个房间去。由于酒店有无穷多的房间，所以这样一搬，2, 4, 6, ...偶数房间住着原来的客人；而1, 3, 5, ...奇数房间空出来，有无穷多间。刚好可以让旅游团的人住下。故事更加有趣了。到了第三天，旅馆门前车水马龙，来了无穷多的神奇旅游团，每个旅游团都有无穷多位游客。希尔伯特的无穷旅馆还能住下么？
+The story goes on. On the second day, there came a group of infinitely many guests. The clerk said: \enquote{No problem, we can make rooms for everyone.} He moved the new guest who was in room 1 last night to room 2, then moved the guest in room 2 to room 4, and moved the guest in room 3 to room 6, ... He moved every one from room $i$ to room $2i$. Since the hotel had infinitely many rooms, after moving, room 2, 4, 6, ... these even number rooms were occupied with the guests accommodated yesterday, while the room 1, 3, 5, ... these odd number rooms were freed up. There were infinitely many odd numbers rooms that could accommodate everyone. The story does not end. On the third day, there came infinitely many groups of infinitely many guests each. Could the magic Hilbert's hotel accommodate them all?
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.4]{img/Hilbert-hotel-1}
- \caption{希尔伯特无穷旅馆的第一天}
+ \caption{First day of Hilbert's Grand hotel}
  \label{fig:Hilbert-hotel-1}
 \end{figure}
 
-如\cref{fig:Hilbert-hotel-1}所示，在第一天的故事中，每个客人搬到下一个房间去，从而空出1号房间。这建立了图中上下两行灰色圆形之间的一种对应关系$n \leftrightarrow n+1$。不仅如此，即使来了$k$位新客人，我们可以重复这一“腾笼换鸟”的过程$k$次，仍然能够让他们入住。
+As shown in \cref{fig:Hilbert-hotel-1}, on the first day, the clerk moved every guest to the next room to free up room 1. Essentially, he established a 1-to-1 correspondence for shadowed circles between the two rows as $n \leftrightarrow n+1$. More over, Hilbert's grand hotel can accommodate $k$ new guests by repeating this arrangement $k$ times.
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.4]{img/Hilbert-hotel-2}
- \caption{希尔伯特无穷旅馆的第二天}
+ \caption{Second day of Hilbert's Grand hotel}
  \label{fig:Hilbert-hotel-2}
 \end{figure}
 
-第二天的故事如\cref{fig:Hilbert-hotel-2}所示，我们实际上建立了自然数到偶数间的一一映射，从而空出了无穷多奇数房间，而这些空房间又和旅游团的无穷多位客人建立了一一映射，这恰好是奇数到自然数间的一一映射。要想解决希尔伯特旅馆第三天的问题，我们需要在无穷个无穷旅游团和无穷个房间之间建立一一对应。有人说，可以先让第一个旅游团依次入住1, 2, ...号房间，然后让第二个旅游团的第一个客人住在$\infty + 1$号房间，第二个客人住$\infty + 2$号房间……以此类推。但这样的思路行不通。考虑安排客人的过程，第二个旅游团的第一名客人永远不知道第一个旅游团何时入住完，因而无法确定自己应该搬入哪间房。反之，在第一天的故事中，一旦1号房间的客人搬入2号房间，新客人就可以立即入住。尽管每位客人依次搬入下一个房间是一个无穷无尽的过程。第二天的故事也是如此，原1号房间的客人一旦搬到2号房间，旅游团中的第一名客人可以立即搬入空出来的1号房间了，接下来原2号房间的客人搬到4号房间，原3号房间的客人搬到6号房间，此时旅游团中的第2名客人可以立即搬入3号房间了……
+\Cref{fig:Hilbert-hotel-2} shows the solution to the second day. The clerk essentially established 1-to-1 correspondence between natural numbers and even numbers, thus freed up infinitely many odd-numbered rooms. Then he established another 1-to-1 correspondence between these empty rooms and infinitely many new guests, which was exact the 1-to-1 correspondence between odd numbers and natural numbers. To solve the problem on the third day, we need think about how to establish 1-to-1 correspondence between (a) the infinitely many groups of infinity many guests, and (b) the infinity many rooms. One may come to the idea to arrange the guests of the first group to room 1, 2, 3, ... then arrange the guests of the second group to room $\infty + 1, \infty + 2, \dotsc$ However, it does not work when considering the arranging process: the first guest of the second group can never know when the first group completes accommodating, hence has no way to determine which room to check in. In contrast on the first day, the new guest immediately knew room 1 is OK for him after the original guest moved to room 2 even though the entire accommodating process is endless. Same situation happened on the second day: when the original guest in room 1 moved to room 2, the first new guest could move to room 1 immediately. Next, after the guest in room 2 moved to room 4 and the guest in room 3 moved to room 6, then the second new guest could move to room 3...
 
 \begin{figure}[htbp]
 \centering
@@ -2214,15 +2210,15 @@ Thus Dedekind saves the unique factorization. $(6)$ is uniquely factorized to $A
     \draw[-latex, thick] (N\i) to (N\j);
   }
 \end{tikzpicture}
-\caption{对无穷个无穷的一种编号方案}
+\caption{One solution to number the infinity of infinity}
 \label{fig:NNtoN}
 \end{figure}
 
-\cref{fig:NNtoN}给出了一种编号方案。为了方便，我们让每个旅游团的第一个客人编号为0，第二个客人编号为1，第三个客人编号为2……，我们把已经在旅馆中入住的客人编号为0号旅游团，新来的第一个旅游团编号为1号团，第二个旅游团编号为2号团……在这个图中，每个客人就对应无穷伸展的方格子中的一个点。同样我们让旅馆的房间号也从0开始。现在我们按照这个顺序安排入住：第0号团的第0号客人入住0号房间，第0号团的第1号客人入住1号房间，第1号团的第0号客人入住第2号房间，第2号团的第0号客人入住3号房间，第1号团的第1号客人入住4号房间……这样按照图中往返画“之”字形，就可以逐一、并且毫无遗漏地安排每个客人入住。我们在无穷个旅游团的每个客人和无穷个房间之间建立了一一映射。希尔伯特的旅馆神奇地容纳了“二维”的无穷\footnote{还有一种解法使用了欧几里得证明的素数有无穷多的结论。将酒店中每个奇数房间$i$的客人安排到$2^i$房间去。然后将第一个旅游团的每个客人安排到$3^n$房间去，将第二个旅游团的每个客人安排到$5^n$的房间，...第$k$个旅游观的每个客人安排到$p^n$房间去，其中$p$是第$k$个素数。这一解法的缺点是有空房间。例如15号，没有客人入住。}。
+\Cref{fig:NNtoN} gives a numbering solution. For convenient, for each group, label the first guest 0, the second guest 1, the third guest 2, ...; label the guests already accommodated in the hotel as group 0, the first group of guest as group 1, the second group of guest as group 2, ... In this figure, every guest corresponds to a grid point. We also label the hotel rooms beginning from 0. Now we arrange rooms in this order: assign the guest 0 of group 0 to room 0, the guest 1 of group 0 to room 1, the guest 0 of group 1 to room 2, the guest 0 of group 2 to room 3, the guest 1 of group 1 to room 4, ... Along the zig-zag path, assign rooms one by one, without missing any guests, hence establish a 1-to-1 correspondence between every guest in infinitely many groups and the infinity many rooms. Hilbert's Grand hotel surprisingly holds \enquote{two-dimensional} infinity\footnote{The traditional solution uses the Euclid's theorem, that there are infinitely many prime numbers. Empty the odd numbered rooms by sending the guest in room $i$ to room $2^{i}$, then put the first group's guests in rooms $3^{n}$, the second group's guests in rooms $5^{n}$, ... put the $k$-th group's guests in rooms $p^n$, where $p$ is the $k$-th prime number. This solution leaves certain rooms empty, specifically, all odd numbers that are not prime powers, such as 15 or 847, will no longer be occupied.}.
 
-\subsection{一一对应与无穷集合}
+\subsection{One-to-one correspondence and infinite set}
 
-希尔伯特神奇旅馆的故事让人感到吃惊。自然数不仅和它的子集奇数和偶数同样多，并且一维的自然数$n$和二维的自然数对$(m, n)$也同样多。我们可以从自然数开始，利用一一对应，扩展出一系列的无穷集合。
+Hilbert's Grand hotel shows the set of natural numbers is equinumerous with its proper subsets like even/odd numbers. And the sets of one dimensional natural number $n$ and two dimensional pair $(m, n)$ are also equinumerous. Starting from natural numbers, one may extend a series of infinite sets through 1-to-1 correspondence.
 
 \begin{enumerate}[(1)]
 \item \textbf{整数}。如果建立一一对应：
