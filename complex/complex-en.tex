@@ -2553,61 +2553,61 @@ There is a straightforward geometric argument. As shown in \cref{fig:reuleaux}, 
 \end{proof}
 }
 
-\Question{证明$1 \pm i\sqrt{5}$是不可分解的。
+\Question{Show that $1 \pm i\sqrt{5}$ cannot be further factorized.
 
 \begin{proof}
-假设它可以分解为$(a + bi\sqrt{5})(c + di\sqrt{5})$，两边取范数：
+Suppose it can be factorized as $(a + bi\sqrt{5})(c + di\sqrt{5})$, taking norm on both sides:
 
 \[
 6 = 1^2 + 5^2 = N(1 \pm i\sqrt{5}) = N(a + bi\sqrt{5})N(c + di\sqrt{5}) = (a^2 + 5b^2)(c^2 + 5d^2）
 \]
 
-可以排除掉$a^2 + 5b^2 = 2, c^2 + 5d^2 = 3$的情况，此时$a, b, c, d$没有整数解。只能是$a^2 + 5b^2 = 1$或$c^2 + 5d^2 = 1$。范数为1对应单位元，另一个是相伴元。因此$1 \pm i\sqrt{5}$不可分解。
+We rule out the case $a^2 + 5b^2 = 2, c^2 + 5d^2 = 3$ since there is no solution of $a, b, c, d$ in integers. Hence $a^2 + 5b^2 = 1$ or $c^2 + 5d^2 = 1$. The norm of 1 corresponds to unit, and the other is associate, which shows $1 \pm i\sqrt{5}$ cannot be further factorize.
 \end{proof}
 }
 
-\Question{证明理想的和仍是理想。
+\Question{Show that the sum of ideals is an ideal.
 
 \begin{proof}
-令$I = I_1 + I_2 = \{a + b | a \in I_1, b \in I_2\}$，我们要证明$I$满足加法封闭性和缩放封闭性。任意$I$中的$c_1 = a_1 + b_1, c_2 = a_2 + b_2$，其中$a_1, a_2 \in I_1, b_1, b_2 \in I_2$。因$I_1$是理想，故$a_1 + a_2$在$I_1$中，令$a_3 = a_1 + a_2 \in I_1$。同理$b_1 + b_2$在$I_2$中，令$b_3 = b_1 + b_2 \in I_2$。
+Let $I = I_1 + I_2 = \{a + b | a \in I_1, b \in I_2\}$, we are going to show $I$ is closed under addition and scaling. For any $c_1 = a_1 + b_1, c_2 = a_2 + b_2$ in $I$, where $a_1, a_2 \in I_1, b_1, b_2 \in I_2$. Since $I_1$ is an ideal, the sum $a_1 + a_2$ is in $I_1$, let $a_3 = a_1 + a_2 \in I_1$. Similarly, the sum $b_1 + b_2$ is in $I_2$, let $b_3 = b_1 + b_2 \in I_2$.
 
 \begin{align*}
 c_1 + c_2 &= a_1 + b_1 + a_2 + b_2 = (a_1 + a_2) + (b_1 + b_2) \\
-  &= a_3 + b_3 \in I && \text{其中} a_3 \in I_1, b_3 \in I_2
+  &= a_3 + b_3 \in I && \text{where } a_3 \in I_1, b_3 \in I_2
 \end{align*}
 
-满足加法封闭性。对任意父集合$R$中的$r$，任意$I$中的$c = a + b$，其中$a \in I_1, b \in I_2$，由理想性质$ar \in I_1, br \in I_2$，因此:
+It shows the addition is close. For any $r$ in parent set $R$, any $c = a + b$ in $I$, where $a \in I_1, b \in I_2$, by the property of ideal, $ar \in I_1, br \in I_2$, therefore,
 
 \begin{align*}
-cr &= (a + b)r = ar + br \in I  && \text{其中} ar \in I_1, br \in I_2
+cr &= (a + b)r = ar + br \in I  && \text{where } ar \in I_1, br \in I_2
 \end{align*}
-满足缩放封闭性。
+It shows the scaling is close.
 \end{proof}
 }
 
-\Question{理想的父集合$R$中包含0和1，并且任何元素$y$的相反数$-y$也在$R$中。证明 (1) 任何理想中都包含0；(2) 如果$a$在理想中，则$-a$也在理想中。
+\Question{For the parent set $R$ of an ideal, suppose 0 and 1 are in it, and for any element $y$ in $R$, its negative, $-y$ is also in $R$. Prove for any ideal of $R$, (1) 0 is in the ideal; (2) if $a$ is in the ideal, then $-a$ is in the ideal.
 
 \begin{proof}
-任选$a \in I, 0 \in R$，根据理想的定义$a \cdot 0 = 0 \in I$。所以任何理想都包含0。进一步$a \in I$, 因为1在$R$中，所以$-1$也在$R$中。据理想定义$a \cdot (-1) = -a \in I$。
+For any $a \in I, 0 \in R$, by the definition of ideal, $a \cdot 0 = 0 \in I$, which shows 0 is in any ideal. Further, $a \in I$, and since 1 is in $R$, it follows that $-1$ is in $R$. By the definition of ideal, $a \cdot (-1) = -a \in I$.
 \end{proof}
 }
 
-\Question{(0)叫做零理想，(1)叫做单位理想。它们各自包含了什么元素？
+\Question{(0) is called zero ideal, (1) is called unit ideal, what elements are in them respectively?
 
 \vspace{2mm}
-(0)只包含一个元素0，因为0的任何倍都是0。(1)等于父集合$R$，任何$y \in R$，$1y = y \in (1)$。
+(0) has only one element, namely 0, because any multiple of 0 is still 0. (1) is the entire parent set $R$, because for any $y \in R$, it has $1y = y \in (1)$.
 }
 
-\Question{验证如果理想$A$由$(a, b)$产生，理想$B$由$(c, d)$产生，则$AB = (ac, ad, bc, bd)$。
+\Question{Verify that if ideal $A = (a, b) = \{ax + by | x, y \in R\}$ and ideal $B = (c, d)$, then their product $AB = (ac, ad, bc, bd)$.
 
 \vspace{2mm}
-$A = \{\alpha = ar_1 + br_2\}, B = \{\beta = cs_1 + ds_2\}$，其中$r_1, r_2, s_1, s_2$是父集合$R$中的元素。戴德金对理想积的定义可以概括为有限的$\alpha\beta$的和。
+$A = \{\alpha = ar_1 + br_2\}, B = \{\beta = cs_1 + ds_2\}$, where $r_1, r_2, s_1, s_2$ are in parent set $R$. Dedekind's definition of product of ideals can be summarized as the sum of finite many $\alpha\beta$.
 
 \begin{align*}
 AB &= \{ \sum \alpha\beta \} = \{ \sum (ar_1 + br_2)(cs_1 + ds_2) \} \\
   &= \{ \sum (acr_1s_1 + adr_1s_2 + bcr_2s_1 + bdr_2s_2) \} \\
   &= \{ ac\sum (r_1s_1) + ad\sum (r_1s_2) + bc\sum (r_2s_1) + bd\sum (r_2s_2) \} \\
-  &= \{ ac S_1 + ad S_2 + bc S_3 + bd S_4 \} && \text{其中}S_i = \sum (r_js_k) \\
+  &= \{ ac S_1 + ad S_2 + bc S_3 + bd S_4 \} && \text{where }S_i = \sum (r_js_k) \\
   &= (ac, ad, bc, bd)
 \end{align*}
 }
@@ -2629,10 +2629,10 @@ AB &= \{ \sum \alpha\beta \} = \{ \sum (ar_1 + br_2)(cs_1 + ds_2) \} \\
 %% 这说明$A = I^2 = (2)I$有两种分解：(1) 素理想I^2；(2) 非素理想(2)和素理想I的积。
 %% }
 
-\Question{我们用\cref{fig:NNtoN}建立了房间和任意旅游团的客人间的一一映射。第$i$号旅游团的第$j$号客人应该入住几号房间？第$k$个房间里住了哪号旅游团的哪位客人？
+\Question{We establish 1-to-1 correspondence between rooms and guests as shown in \cref{fig:NNtoN}. Which room is the guest $j$ of group $i$ checked in? Conversely, which guest of which group is checked in room $k$?
 
 \vspace{2mm}
-我们约定从0开始计数。用数偶$(i, j)$表示第$i$号旅游图的第$j$号客人。我们列出前面的几个客人和房间的对应关系
+We count from zero, denote guest $j$ of group $i$ by pair $(i, j)$. Below table list the first several mapping between guests and rooms:
 
 \vspace{3mm}
 \begin{adjustbox}{max width=\linewidth}
@@ -2646,27 +2646,27 @@ $i + j$ & 0 & 1 & 1 & 2 & 2 & 2 & 3 & 3 & 3 & 3 & ... \\
 \end{adjustbox}
 \vspace{3mm}
 
-如果同时写下$i+j$的值，我们发现规律是很明显的。共有1个0，2个1，3个2，4个3……这些恰恰是毕达哥拉斯发现的三角形数。记$m = i + j$，对于图中任意格点，它表明在这个点的左下方所有斜线上格点的数目为：$\dfrac{m(m + 1)}{2}$。
+Writing down the sum of $i+j$, there is a pattern: there are 1 of number 0, 2 of number 1, 3 of number 2, 4 of number 3, ... these are exactly the triangle numbers discovered by the Pythagoreans. Let $m = i + j$, there are total $\frac{m(m + 1)}{2}$ grids along the diagonals on the left-bottom side of a given grid.
 
-在这个点所在的斜线上，如果$m$是奇数则向左上前进，$i$增加、$j$减小；如果是偶数则向右下前进。综合起来，我们得到结果：
+Along the diagonal this point belongs to, if $m$ is odd, then the room number increases along the left up direction, $i$ increases, and $j$ decreases; if $m$ is even, then the direction is right-bottom. Summarize the two cases:
 
 \[
-k = \dfrac{m(m + 1)}{2} + \begin{cases} m - j: \text{$m$是奇数} \\
-j: \text{$m$是偶数} \\
+k = \dfrac{m(m + 1)}{2} + \begin{cases} m - j &\text{$m$ is odd} \\
+j &\text{$m$ is even}
 \end{cases}
 \]
 
-进一步，我们可以通过$(-1)^m$来简化这个结果：
+Further, we use $(-1)^m$ to simplify the conditions:
 
 \[
 k = \dfrac{m(m + 2) + (-1)^m (2j - m)}{2}
 \]
 }
 
-\Question{希尔伯特旅馆第三天的故事的解法并不唯一，\cref{fig:PWW-NNtoN}是《无需语言的证明》一书的封面。试根据此图给出另一种编号方案？
+\Question{There are other solutions to the story of Hilbert's Grand hotel on the third day. \Cref{fig:PWW-NNtoN} shows the cover page of \emph{proof without word}. Give a numbering scheme based on this figure.
 \begin{center}
  \includegraphics[scale=0.18]{img/PWW}
- \captionof{figure}{《无需语言的证明》封面局部}
+ \captionof{figure}{From cover page of \emph{Proof without word}}
 \end{center}
 
 \begin{center}
@@ -2687,16 +2687,16 @@ k = \dfrac{m(m + 2) + (-1)^m (2j - m)}{2}
     \draw[-latex, thick] (N\i) to (N\j);
   }
 \end{tikzpicture}
-\captionof{figure}{对无穷个无穷的另一种编号方案}
+\captionof{figure}{Alternative numbering scheme for infinity of infinity}
 \label{fig:NNtoN2}
 \end{center}
 
-如\cref{fig:NNtoN2}所示，每次沿着折尺形前进，每个折尺上有奇数个点。
+As shown in \cref{fig:NNtoN2}, count along the gnomon shaped path. There are odd number of grid points along every gnomon.
 }
 \end{Answer}
 
 \ifx\wholebook\relax \else
-\section{参考答案}
+\section{Answers}
 \shipoutAnswer
 
 \subimport{inc/}{fibonacci-zh-cn}
