@@ -2221,7 +2221,7 @@ As shown in \cref{fig:Hilbert-hotel-1}, on the first day, the clerk moved every 
 Hilbert's Grand hotel shows the set of natural numbers is equinumerous with its proper subsets like even/odd numbers. And the sets of one dimensional natural number $n$ and two dimensional pair $(m, n)$ are also equinumerous. Starting from natural numbers, one may extend a series of infinite sets through 1-to-1 correspondence.
 
 \begin{enumerate}[(1)]
-\item \textbf{整数}。如果建立一一对应：
+\item \textbf{Integers}. Establish the following 1-to-1 correspondence:
 
 \begin{tabular}{ccccccccc}
 0 & 1 & -1 & 2 & -2 & ... & $n$ & $-n$ & ... \\
@@ -2229,9 +2229,9 @@ $\updownarrow$ & $\updownarrow$ & $\updownarrow$ & $\updownarrow$ & $\updownarro
 0 & 1 &  2 & 3 &  4 & ... & $2n - 1$ & $2n$ & ... \\
 \end{tabular}
 
-这样就把整数和自然数对应起来。换一种角度，我们实际上用奇自然数对应了全部正整数，用偶自然数对应了零和全部负整数。这说明整数和自然数一样多。换言之，我们可以用自然数构造整数。
+It extends natural numbers to integers, where the odd natural numbers correspond to positive integers and even natural numbers correspond to negative integers and zero. The set of integers is as infinite as the set of natural numbers.
 
-\item \textbf{有理数}。有理数可以写成$p/q$的形式，其中$q \ne 0$。仿照希尔伯特旅馆第三天的故事，可以在数偶$(p, q)$和自然数之间建立一一对应。我们只要稍作修改就可以建立有理数$p/q$和自然数间的一一对应。先不考虑负数，每当遇到第二个数$q = 0$就跳过，如果$p/q$不是既约分数（含有公因子）就跳过。然后复用(1)中的方法，再把负有理数包含进来，这样就从自然数构造出了有理数。下表给出了前几个自然数到有理数的对应关系：
+\item \textbf{Rational numbers}. Express every rational number as $p/q$, where $q \ne 0$. Analog to the story of Hilbert's Grand hotel on the third day, which established 1-to-1 correspondence between pairs of $(p, q)$ and natural numbers. We adjust it to rational numbers of $p/q$. Put negative numbers aside for now, we skip whenever $q$ is zero or $p/q$ is reducible (with some common divisor greater than 1). Then we re-use the correspondence in (1) to cover negative rational numbers. In this way, we construct rational numbers from natural numbers as shown in below table:
 
 \begin{tabular}{cccccccccc}
 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & ... \\
@@ -2239,30 +2239,30 @@ $\updownarrow$ & $\updownarrow$ & $\updownarrow$ & $\updownarrow$ & $\updownarro
 0 & 1 & $\dfrac{1}{2}$ & $-\dfrac{1}{2}$ & -1 & -2 & $-\dfrac{2}{3}$ & $-\dfrac{1}{3}$ & $\dfrac{1}{3}$ & ... \\
 \end{tabular}
 
-这说明自然数和有理数同样多。
+This shows the set of natural numbers is as infinite as the set of rational numbers.
 
-\index{代数数}
-\item \textbf{代数数}是代数方程的解。对代数方程：
+\index{algebraic numbers}
+\item \textbf{Algebraic numbers} are roots of the algebraic equations:
 
 \[
 a_0 x^n + a_1 x^{n-1} + \dotsb + a_n = 0
 \]
 
-其中$a_0 \ne 0, a_1, \dotsc, a_n$都是整数，构造正整数：
+where $a_0 \ne 0, a_1, \dotsc, a_n$ are integers. Define the positive integer:
 
 \[
 h = n + |a_0| + |a_1| + ... + |a_n|
 \]
 
-它是次数和方程系数绝对值的和。称$h$为方程的高，它总是一个确定的自然数。反之，任给自然数$h$，对应的方程却不止一个。例如$x - 3 = 0, x^3 + 1 = 0, x^3 - 1 = 0, x^2 \pm x + 1 = 0$的高都是4。但对于固定的$h$，以它为高的代数方程只有有限多个。因此我们可以把所有的代数方程枚举出来，先枚举$h=1$的代数方程，再枚举$h=2$的代数方程……如此下去。当然，高同样的方程可以按任意顺序排列。根据代数基本定理，方程复数根的个数等于次数$n$。若考虑重根，则不同的根不超过$n$个。为了枚举代数数，首先把高$h=1$的代数方程（只有一个$x = 0$）的根枚举出，就是0，再把高为2的方程的所有根枚举出。不同方程的根可能是相等的，如果遇到已经枚举过的根就跳过。这样就把代数数同自然数一一对应起来了。因此自然数和代数数同样多，我们可以通过自然数扩展出代数数。
+which is the sum of the degree and coefficients. We call $h$ the height of the equation. Given any equation, $h$ is a definitive natural number; conversely, given a height $h$, there can be multiple equations. For example, the height of equations $x - 3 = 0$, $x^3 + 1 = 0$, $x^3 - 1 = 0$, $x^2 + x + 1 = 0$, and $x^2 - x + 1 = 0$ are all 4. Nevertheless, there are finitely many equations for every $h$, therefore, one may enumerate all equations in this way: first list all equations of height $h=1$, then list the equations of height $h=2$, ... and repeat. The equations with the same heights can be list in arbitrary order. By the fundamental theorem of algebra, the number of roots equals the degree $n$. If taking the duplicated roots into account, then the distinct ones are not more than $n$. To list all algebraic numbers, first enumerate the roots of the equations with height $h=1$ ($x = 0$ is the only such equation, which has 0 as the single root); then enumerate the roots of the equations with height 2. As different equations may share some same root, we skip those if have appeared. In this way, we establish 1-to-1 correspondence between algebraic numbers and natural numbers. It shows the set of algebraic numbers is as infinite as the set of natural numbers.
 \end{enumerate}
 
-\subsection{可数无穷与不可数无穷}
-\index{可数集}
-接下来我们遇到了难题：能否从自然数扩展出实数？包括无理数以及$\pi$，$e$这样的超越数？通过一一对应，可以从自然数扩展出整数、有理数、包含部分无理数的代数数。它们都和自然数间存在一一映射，和自然数一样多。我们把和自然数等势的无穷集合叫作\underdot{可数}无穷。是不是所有的无穷集合都是可数的呢？是否存在更大的无穷呢？1873年11月29日康托尔给戴德金的一封信中提到了这个问题：“取所有的自然数集合，记为$\mathbb{N}$，然后考虑所有实数的集合，记为$\mathbb{R}$。简单来说，问题就是两者是否能够对应起来，使得一个集中的每一个体只对应另一集中一个唯一的个体？乍一看，我们可以说答案是否定的，这种对应不可能，因为前者由离散的部分组成，而后者则构成一个连续统。但从这种说法里我们什么也得不到。虽然我非常倾向认为这两者不能有这样的一个一一对应，但是我找不出理由，我对这事极为关注，也许这理由非常简单。”
+\subsection{Countable and uncountable infinity}
+\index{countable infinite set}
+We have a problem next: can we extend natural numbers to real numbers, including transcendental numbers like $\pi$ and $e$? Through 1-to-1 correspondence, we extend from natural numbers to integers, rationals, and algebraic numbers (including irrational numbers like radicals). The existence of 1-to-1 correspondence between them shows they are equinumerous. A set is called \emph{countable} infinite if it has the same cardinality as the set of natural numbers. Are all infinite sets countable? Are there any larger infinities? Cantor, on 29th November 1873, wrote to Dedekind about this problem, \enquote{take the set of all natural numbers $n$ and denote it $\mathbb{N}$. Further, consider, say, the set of all positive real numbers $x$ and denote it $\mathbb{R}$. Then the question is simply this: can $\mathbb{N}$ be paired with $\mathbb{R}$ in such a way that to every individual of one set corresponds to one and only one individual of the other? At first glance, one says to oneself, \enquote{No, this is impossible, for $\mathbb{N}$ consists of discrete parts and $\mathbb{R}$ is a continuum.} But nothing is proved by this objection. And much as I too feel that $\mathbb{N}$ and $\mathbb{R}$ do not permit such a pairing, I still cannot find the reason. And it is this reason that bothers me; maybe it is very simple.}
 
-\index{对角线证明}
-一个星期后的12月7日，在写给戴德金的信中，康托尔自己回答了这个问题，他发现实数集合不能和自然数集合构成一一对应。这一天可以看作是集合论的诞生日。康托尔曾经给出过两个证明，其中第二个证明最为脍炙人口，称为“对角线证明”。使用反证法，假设区间$(0, 1)$上的全部实数是可数的，可以和自然数一一对应。那么就可以把这个区间里的全部实数列出来$a_0, a_1, a_2, \dotsc, a_n, \dotsc$。将序列中的每个实数表示成小数形式。如果是无理数，它的小数形式是无限不循环的；如果是除不尽的分数，则其小数形式是无限循环的，例如$\dfrac{1}{3} = 0.333\dotsm$；如果能够除尽，利用引理\ref{th:cycle-of-9}，把它变成无限循环小数，例如$\dfrac{1}{2} = 0.5 = 0.4999\dotsm$。于是区间$(0, 1)$中的所有实数可以排成下面的序列：
+\index{diagonal argument}
+One week after on 7th December, Cantor wrote again to Dedekind, telling that he proved it was impossible to establish 1-to-1 correspondence between natural numbers and real numbers, hence real numbers are uncountable. This was the day that set theory born. Cantor had given two proofs, the second one is the renowned {\em diagonal argument}. Assume for contradiction that the real numbers in $(0, 1)$ are countable, so there exits 1-to-1 correspondence to natural numbers. List all real numbers in this interval in decimals, as $a_0, a_1, a_2, \dotsc, a_n, \dotsc$. For irrationals, their decimals are endless non-repeating; for rationals, their decimals may either repeat, for instance, $\dfrac{1}{3} = 0.333...$, or finite that can be turned into repeating by lemma \ref{th:cycle-of-9}, for example:$\dfrac{1}{2} = 0.5 = 0.4999\dotsm$. List all reals in $(0, 1)$ as below:
 
 \begin{align*}
 a_0 &= 0.a_{00}a_{01}a_{02}a_{03}\dotsm\\
@@ -2274,7 +2274,7 @@ a_n &= 0.a_{n0}a_{n1}a_{n2}a_{n3}\dotsm\\
     &\dotso
 \end{align*}
 
-注意$a_0, a_1, a_2, \dotsc$并不一定是按照大小次序排列的。接下来康托尔构造一个数$b = 0.b_0b_1b_2b_3 \dotsm b_n \dotsm$，它的第$n$位数字$b_n \neq a_{nn}$。为了做到这一点，可以规定：若$a_{nn} \neq 5$，就让$b_n = 5$，否则就让$b_n = 6$。这样构造出的$b$一定不等于上述序列中的任何一个数，因为它和第$n$个数的第$n$位数字不相同，也就是对角线上的数字不同。如下方的黑体字所示：
+Note $a_0, a_1, a_2, \dotsc$ are not necessarily ascending. Cantor next constructs a number $b = 0.b_0b_1b_2b_3 \dotsm b_n \dotsm$, where the $n$-th digit $b_n \neq a_{nn}$. To do this, if $a_{nn} \neq 5$, then let $b_n = 5$, else let $b_n = 6$. The constructed number $b$ can't equal any number in above list for it differs from the $n$-th digit of the $n$-th number at least, that is, the diagonal digits are different as shown in bold below:
 
 \begin{align*}
 a_0 &= 0.\pmb{a_{00}}a_{01}a_{02}a_{03}\dotsm \\
@@ -2286,41 +2286,45 @@ a_n &= 0.a_{n0}a_{n1}a_{n2}a_{n3} \dotsm \pmb{a_{nn}}\dotsm \\
     &\dotso
 \end{align*}
 
-此前假设$(0, 1)$间的所有实数都被列出了，无一遗漏。但$b$显然属于这一区间，却被遗漏了，它不等于任何一个$a_i$，导致了矛盾。因此假设不成立，我们无法把$(0, 1)$间的所有实数和自然数之间构造一一映射。有人说，把$b$加进$a_0, a_1, a_2, \dotsc$中不就可以了么？假设$b$加进去后，处于第$m$个位置，我们仍然可以再次构造一个新数$c$，只要让它的第$m$位不等于$b_m$就又出现了一个没有被包含的数。
+However, we assume all real numbers in $(0, 1)$ are list without missing. As $0 < b < 1$, which should be included in the list, but it does not equal any $a_i$, a contradiction. It shows impossible to establish 1-to-1 correspondence between real numbers and natural numbers. One may argue why can't add $b$ to the list of $a_0, a_1, a_2, \dotsc$? Suppose after adding $b$ to the list, its position is the $m$-th number, we then construct another new number $c$, where its $m$-th digit does not equal $b_m$. Therefore, it's another number not being included.
 
-\index{不可数集}
-康托尔的证明简单直观，揭示了一个惊人的事实：$(0, 1)$间的实数集是不可数的！它是比自然数集更大的无穷集合。柯朗和罗宾在《什么是数学》中给出了另一个直观的几何证明。假设单位线段$(0, 1)$之间的点能排成可数的序列$a_1, a_2, a_3, \dotsc$用一个长1/10的区间盖住$a_1$点，用长1/100的区间盖住$a_2$点……用长$1/10^n$的区间盖住$a_n$点，如此下去，则单位线段$(0, 1)$将完全被长为1/10, 1/100, 1/1000……的子区间（可能相互重叠）盖住。但这些子区间的长度总和为等比数列$1/10 + 1/100 + 1/1000 + \dotsb = 1/9 < 1$，让总长度为1/9的区间覆盖长度为1的线段是不可能的。所以假设错误，线段上的点是不可数的\cite{Courant1969}。
+\index{uncountable infinite set}
+Cantor's proof shows a surprising result: the set of real numbers in $(0, 1)$ is uncountable! It is more numerous than the set of natural numbers. Courant and Robbins give a geometric proof in \emph{What is mathematics}. Assume the points in the unit line segment $(0, 1)$ can be enumerated as $a_1, a_2, a_3, ...$ Cover point $a_1$ by an interval of length 1/10, cover point $a_2$ by an interval of length 1/100, ... cover point $a_n$ by an interval of length $1/10^n$, and so on. It follows that the unit line segment (0, 1) is completely covered (with overlaps) by these sub-intervals of length 1/10, 1/100, 1/1000, ... However, the total length of these sub-intervals, which is the sum of a geometric series, is $1/10 + 1/100 + 1/1000 + \dotsb = 1/9 < 1$. It is impossible to cover the line segment of length 1 by intervals of total length 1/9, a contradiction. It shows the points in the line segment are uncountable\cite{Courant1969}.
 
-接下来，我们构造一一映射：$y = \pi x - \dfrac{\pi}{2}$。它把区间$(0, 1)$中的每个实数映射到区间$(-\dfrac{\pi}{2}, \dfrac{\pi}{2})$中，无一遗漏。因此这一区间内的实数集也是不可数的。我们压上最后一根稻草，再构造一一映射：$y = \tan(x)$。它把区间$-\dfrac{\pi}{2}$到$\dfrac{\pi}{2}$中的每一个实数，无一遗漏地映射到了全体实数集上。还有一种几何方法可以将单位线段一一映射到全体实数上：将单位线段弄弯成为长度为1的半圆弧，然后在圆外画一条无限长的直线$L$。从圆心到$L$上任意一点$P$的连线必然与圆弧相交于一点$Q$。这样就形成了一一映射，如\cref{fig:seg-to-line}所示。据此，康托尔得到了结论：实数集不是可数集，它是比可数集更高等级的无穷。康托尔称之为不可数集。
+As the next step, establish 1-to-1 correspondence: $y = \pi x - \frac{\pi}{2}$. It sends every real number in $(0, 1)$ to $(-\frac{\pi}{2}, \frac{\pi}{2})$ without any missing. We immediately conclude that the real numbers in this new interval are uncountable. Finally, establish another 1-to-1 correspondence: $ y = tan(x)$. It sends every real number between $-\frac{\pi}{2}$ and $\frac{\pi}{2}$ to the set of all real numbers without any missing. There is another geometric solution to establish 1-to-1 correspondence between the unit line segment and real numbers. Bend the line segment to a semicircle of length 1, then draw an infinite line $L$ outside the circle. From any point $P$ in $L$, connect it with the centre of the circle, it intersects with the arc at a point $Q$, as in \cref{fig:seg-to-line}. Cantor therefore concluded the set of real numbers was not countable. It is a higher level of infinity than countable sets, namely the uncountable infinite set.
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.6]{img/seg-to-line}
- \caption{将长度为1的半圆弧映射到实数轴}
+ \caption{map a semicircle of length 1 to all real numbers.}
  \label{fig:seg-to-line}
 \end{figure}
 
 \index{连续统假设}
-这自然让人联想到线段上的点。在欧几里得《原本》中，点被定义为没有大小的部分，而线被认为由点组成。直线上存在无理数，或者说有理数不能够填充直线，但实数是可以填充直线的。根据上面的证明，单位线段上的点和任何长度线段上的点，以及无限长的直线上的点，也就是和数轴上稠密的点是一样多的，都是不可数集。同心圆上的点也同样多，也都是不可数集。同样令人吃惊的是无理数与有理数的比较。直观上任何两个有理数之间，存在着无穷多的无理数；任何两个无理数之间，也存在着无穷多的有理数，它们似乎一样多。然而康托尔的证明揭示出有理数是可数的，而无理数是不可数的。这说明无理数远远多于有理数。再进一步，由于代数数是可数的，这说明像$\pi, e$这样的超越数是不可数的，它们要远远多于代数数。故事到此并没有划上句号，康托尔思考在自然数的可数无穷与连续统的不可数无穷之间是否存在着其它等级的无穷？这导致了连续统假设的提出。康托尔终其一生屡次努力也没能证明或推翻这一假设。大数学家希尔伯特在1900年的国际数学家大会上把连续统假设列在最重大的23个问题之首。此后经过哥德尔和保罗·寇恩的努力于1968年证明了连续假设和公理集合论系统是彼此独立的。这意味着人们无法在集合论内证明连续统假设的正确性与否。
+In Euclid's {\em Elements}, \enquote{a point is that which has no part.}, and line consists of points. There are irrational numbers in the line, in other words, rationals can't fully cover a line, while real numbers can. The above proof shows the points in the unit line segment, the points in a line segment of any length, and the points in infinitely long line, for instance, the number line, they are all uncountable infinite sets of the same cardinality. So as the points in circles at the same centre. Comparing rationals and irrationals, for any two distinct rational numbers, there are infinitely many irrational numbers in between; for any two distinct irrational numbers, there are also infinitely many rational numbers in between. Although seems same, by Cantor's theory, rational numbers are countable, but irrational numbers are uncountable. Irrationals are more numerous than rationals. Further, we've seen that algebraic numbers are countable, but the transcendental numbers like $\pi$ and $e$, are uncountable, hence more numerous than algebraic numbers. Cantor did not stop but went on considering if exists any infinite set that between countable infinite set like natural numbers and uncountable infinite set like continuum of reals. This led to the conjecture of continuum hypothesis in 1878. He tried for many years but was unable to prove it. Continuum hypothesis became the first on Hilbert's list of 23 important open questions that was presented at ICM in 1900 in Paris. Through the work of Gödel and Paul Cohen, it was proven in 1963 that the continuum hypothesis is independent of the axiomatic set theory system. This implies that one can neither prove nor disprove the continuum hypothesis within set theory.
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.5]{img/Cantor}
- \caption{格奥尔格·康托尔（1845-1918）}
+ \caption{Georg Cantor, 1845 - 1918}
  \label{fig:Cantor}
 \end{figure}
 
 \begin{mdframed}
-\index{数学家!康托尔}
-康托尔（见\ref{fig:Cantor}）是德国数学家，集合论的创始人。1845年3月3日生于俄罗斯圣彼得堡，他一生的大部分时间是在德国度过的。康托尔的父亲是具有犹太血统的丹麦商人，母亲出身艺术世家。1856年举家迁居德国的法兰克福。尽管康托尔较早就显示出了数学才能，他的父亲却希望他成为一名工程师，因为这样更容易求职和谋生。直到17岁时，康托尔的父亲才逐渐意识到不应该把自己的意见强加给儿子。他得到父亲的允许，进入大学学习数学。康托尔给父亲回信道：“你自己也能体会到你的信使我多么高兴。这封信确定了我的未来……现在我很幸福，因为我看到如果我按照自己的感情选择，不会使你不高兴。我希望你能活到在我身上找到乐趣，亲爱的父亲；从此以后我的灵魂，我整个人，都为我的天职活着；一个人渴望做什么，凡是他的内心强制他去做的，他都会成功！”\cite{HanXueTao16}
+\index{Cantor}
+Georg Cantor (\cref{fig:Cantor}) was the founder of set theory. He was born in 1845 in the western merchant colony of Saint Petersburg, Russia, and brought up in the city until he was eleven. His father was a successful merchant, and member of the Saint Petersburg stock exchange; his mother came from a family well-known of music. When his father became ill, the family moved to Germany Frankfurt in 1856. Cantor demonstrated exceptional skill in mathematics in school. But his father wanted Cantor to became \enquote{a shining star in the engineering firmament}. However, at the age of 17, Cantor had sought his father's permission to study mathematics at university and he was overjoyed when eventually his father consented\cite{HanXueTao16}.
 
-1862年，康托尔进入苏黎世大学，1863年转入柏林大学攻读数学和神学，受教于数学家库默尔、魏尔斯特拉斯、克罗内克。1866年曾去哥廷根学习一个学期。1867年他在库默尔的指导下以解决整系数不定方程的论文获得博士学位。当时的数学界正在魏尔斯特拉斯的领导下进行着重建微积分严密基础的运动，康托尔也很快转入这一研究方向。在工作中，他意识到必须研究作为微积分基础的实数点集，这成为了集合论研究的开端。
+He entered the Polytechnic of Zürich in 1862, then moved to the University of Berlin in 1863. He attended lectures by Leopold Kronecker, Karl Weierstrass and Ernst Kummer. He spent the summer of 1866 at the University of Göttingen. Cantor was a good student, and he received his doctorate degree in 1867 with the dissertation on number theory. Cantor later took up a position at the University of Halle, where he spent his entire career.
 
-1872年康托尔在瑞士旅游中偶遇了数学家戴德金。两人后来成为亲密的朋友，常年保持通信。1874年29岁的康托尔发表了关于集合论的第一篇革命性论文。康托尔开始显示他非凡的独创力。在随后的十几年中，他几乎独自一人把集合论推向深入，引领了数学中无穷的革命。在他最伟大的、最具创见的时期，康托尔却没有能得到应有的认可。他没能取得柏林大学的教授职位。他的大部分研究时光是在哈雷大学度过的。这是一所不大出名、薪金微薄的学院。他的成果在当时很难被理解。由于太过颠覆传统，加之无穷集合引发了罗素悖论，人们对集合论的基础和可靠性产生了怀疑（后来策梅罗、弗兰克尔、冯·诺伊曼等人通过公理集合论来避免罗素悖论，今天人们把康托尔的集合论叫做朴素集合论）。康托尔遭到了许多人的反对，其中反对最激烈的是他的老师，柏林学派的代表人物克罗内克。克罗内克有一句名言：“上帝创造了自然数，其余都是人的工作。”他批判康托尔的无穷集合和超限数理论不是数学而是神秘主义，是一类危险的数学疯狂。他认为数学在康托尔的领导下正在走向疯人院。除了克罗内克之外，还有一些著名的数学家也对集合论发表了反对意见，包括法国数学家庞加莱，他说：“我个人，而且还不只我一个人，认为重点在于，切勿引进一些不能用有限个文字去完全定义好的东西。”他把集合论当作一个有趣的“病理学的情形”来谈，并且预测说：“后一代将把集合论当作一种疾病，而人们已经从中恢复过来了”。德国数学家赫尔曼·外尔认为，康托尔关于基数的等级观点是“雾上之雾”。施瓦兹原来是康托尔的好友，但他由于反对集合论而同康托尔断交。
+At that time, many mathematicians were trying to rebuild the rigorous logical foundation of analysis led by Weierstrass. Cantor was also influenced by this movement. He soon realized the importance to study real numbers as the basis of calculus, which became the beginning of set theory research. In 1872, he met and began a friendship with the young mathematician Richard Dedekind while on holiday in Switzerland. Even in Cantor's honeymoon in Harz mountains, Cantor spent much time in mathematical discussions with Dedekind. They started a long time correspondence between each other.
 
-于是悲剧的结局不是集合论进入了疯人院，而是康托尔进入了疯人院。1884年5月，他第一次精神崩溃。在他一生的随后岁月中，这种崩溃以不同强度反复发生，把他从社会上赶进精神病院这个避难所。1904年在两个女儿的陪同下，他出席了第三届国际数学家大会。会上他的精神受到严重刺激，立即被送进医院。在他生命的最后十年，他大都处于严重的抑郁状态中，并在哈雷大学的精神病诊所度过了漫长的岁月。他最后一次住进精神病院是1917年5月，直至1918年1月去世。
+In 1874, Cantor published his first revolutionary paper about set theory at the age of 29. It marked as the beginning of set theory as a branch of mathematics. With the extraordinary ingenuity, Cantor established set theory in the following ten years almost alone, leading the revolution of infinity in mathematics. However, he was not well recognized during his most creative period. He desired, but was not able to obtain a professor chair at the University of Berlin. He spent his career at the University of Halle, which was a infamous university with a meager salary. Cantor's theory was originally regarded as so counterintuitive – even shocking. People found paradoxes hidden in infinity sets (see Russell's paradox in next chapter). Cantor's work encountered resistance from mathematical contemporaries. Among them, some were famous mathematicians, including his teacher, the leading mathematician in Berlin, Leopold Kronecker. He had a famous saying: \enquote{God made the integers, all else is the work of man.} He objected to Cantor's theory about infinity and transfinite numbers, said it was not mathematics but mysticism. Mathematics was headed for the madhouse under Cantor. Henri Poincaré referred to Cantor's work as a \enquote{disease} from which mathematics would eventually be cured. Poincaré said, \enquote{There is no actual infinite; the Cantorians have forgotten this, and that is why they have fallen into contradiction.} Later Hermann Weyl criticized Cantor's hierarchy of infinities as \enquote{fog on fog}. Hermann Schwartz was originally a friend of Cantor, but he stopped the correspondence with Cantor as opposition to Cantor's ideas continued to grow.
 
-在瑞士苏黎世召开的第一届国际数学家大会上，康托尔的集合论得到了公开的承认和称赞。苏黎世理工大学教授胡尔维茨（Hurwitz，Adolf，1859－1919）在综合报告中，明确地阐述康托尔集合论对函数论的进展所起的巨大推动作用，这破天荒第一次向国际数学界显示康托尔的集合论不是可有可无的哲学，而是真正对数学发展起作用的理论工具。在分组会上，法国数学家阿达玛也报告康托尔对他的工作的重要作用。随着时间的推移，人们逐渐认识到集合论的重要性。希尔伯特高度赞誉康托尔的集合论“是数学天才最优秀的作品”，“是人类纯粹智力活动的最高成就之一”，“是这个时代所能夸耀的最巨大的工作”。
+The tragedy was not the set theory, but Cantor went to the madhouse. Cantor suffered his first known bout of depression in May 1884. During the rest of his life, the depression recurred several times with different intensity, driving him from the community into the mental hospital refuge.
+%% In 1904 he was agitated by a paper presented by Julius König at the Third International Congress of Mathematicians. The paper was read in front of his daughters and colleagues. Cantor was shaken, and sent to hospital again.
+Cantor retired in 1913, living in poverty (because of the war conditions). In June 1917, he entered the sanatorium for the last time and continually wrote to his wife asking to be allowed to go home. Cantor died on January 6, 1918, in the sanatorium where he had spent the last year of his life.
+
+Cantor's set theory was publicly acknowledged and praised at the first ICM held in Zurich in 1897. Adolf Hurwitz (1859 - 1919) openly expressed his great admiration of Cantor and proclaimed him as one by whom the theory of functions has been enriched. Jacques Hadamard expressed his opinion that the notions of the theory of sets were known and indispensable instruments. Over time, people gradually realized the importance of set theory. Hilbert praised Cantor's work as \enquote{the finest product of mathematical genius and one of the supreme achievements of purely intellectual human activity.}
 \end{mdframed}
 
 \begin{Exercise}[label={ex:algebraic}]
