@@ -233,10 +233,10 @@ In the kingdom of cat, octal numerals are used because a cat has four \enquote{f
 
 \begin{example}
 \index{hexadecimal}
-Programmers often use hexadecimal (16-based) system. Numbers 0, 1, ..., 9 are reused, followed with A, B, C, D, E, F to represent 10 to 15. A year of 365 days is decomposed to $365 = 1 \times 16^2 + 6 \times 16 + 13$, which is 16D in hexadecimal. $2024 = 7 \times 16^2 + 14 \times 16 + 8$, which is 7E8 in hexadecimal.
+Programmers often use hexadecimal (16-based) system. Numbers are 0, 1, ..., 9, followed with A, B, C, D, E, F to represent 10 to 15. A year of 365 days is decomposed to $365 = 1 \times 16^2 + 6 \times 16 + 13$, which is 16D in hexadecimal. $2024 = 7 \times 16^2 + 14 \times 16 + 8$, which is 7E8 in hexadecimal.
 \end{example}
 
-One big issue with Roman numbers is ambiguity; there are multiple ways to write a number and different numbers may share the same written form. Can it be solved by positional system? Of course we see 8 = 08 = 008 in elevator, digital clock, and odometer. The value keeps unchanged when adding zeros to the left. Let's rule out this case, assume $a_m \ne 0$ in \cref{eq:pos-rep}, then the positional representation is unique for any number (see \cref{qn:unique-pos-rep}).
+A big issue of Roman numbers is ambiguity. There are multiple ways to write a number and different numbers may share the same written form. Can it be solved by positional system? Of course 8 = 08 = 008 as we see in elevator panel, digital clock, odometer, and etc. The value is unchanged when adding zeros to the left. Let's rule out this case and assume $a_m \ne 0$ in \cref{eq:pos-rep}, then the positional representation is unique for any number (see \cref{qn:unique-pos-rep}).
 
 %
 \begin{figure}[htbp]
@@ -247,7 +247,7 @@ One big issue with Roman numbers is ambiguity; there are multiple ways to write 
 \end{figure}
 
 \index{Hindu-Arabic numeral system} \index{zero} \index{Brahmagupta} \label{sec:hindu-arabic-numerals}
-Both Babylonian and Mayan numerals disappeared. They didn't suit for computations, for the digits less than 20 or 60 were not represented by single symbols, and the mixed base is complex. Our present positional numeral system was developed by Hindus and brought to western through the hand of Arabic. It's called the Hindu-Arabic system. The symbol of 1, 4, and 6 appeared in the Ashoka inscriptions around 3rd century BCE; then 2, 3, 4, 5, 6, 7, 9 appeared in the Nasik caves of 1st or 2nd century CE. We can see the clue that 2 came from `$=$' and 3 came from `$\equiv$'. Although Indian mathematician Brahmagupta defined zero in the 7th century \cite{MacTutor-Brahmagupta-2000}, but we haven't seen the symbol 0 until the 9th century (see \cref{fig:hindu-arabic-numerals}). Hindus used a dot or a small circle for zero at first, naming it as sunya, which means vacant in Sanskrit. Then it was translated into Arabic ṣifr, which means kept intact. When the Arabic mathematical book by al-Khwarizmi was translated into Latin in 1140, the sound of this word was retained, but the meaning was ignored. It finally became zero in English.
+Babylonian numerals and Mayan numerals disappeared. They are not suitable for daily computations. In both cases, a digit was not represented by a single symbol, and the mixed base is complex. Our present positional numeral system was developed by the Hindus and was brought to western through the Arabians. Therefore, it's called the Hindu-Arabic system. The symbols of 1, 4, and 6 first appeared in the Ashoka inscriptions around 3rd century BCE, then the symbols of 2, 3, 4, 5, 6, 7, 9 appeared in the Nasik caves of 1st or 2nd century CE. There were clues showing that 2 came from \enquote{$=$} and 3 came from \enquote{$\equiv$.} Although Indian mathematician Brahmagupta defined zero in the 7th century \cite{MacTutor-Brahmagupta-2000}, the widely used symbol \enquote{0} did not appear until the 9th century (see \cref{fig:hindu-arabic-numerals}). The Hindus used a dot or a small circle for zero at first, naming it as \emph{sunya}, which means vacant in Sanskrit. Then it was translated into Arabic \emph{ṣifr}, which means kept intact. When the Arabic mathematical book by al-Khwarizmi was translated into Latin in 1140, the sound of this word was retained, but the meaning was ignored. It finally became zero in English.
 
 \begin{figure}[htbp]
  \centering
@@ -258,21 +258,21 @@ Both Babylonian and Mayan numerals disappeared. They didn't suit for computation
 
 \begin{mdframed}
 \index{al-Khwarizmi} \label{sec:Khwarizmi}
-Arabic civilization flourished from the beginning of 7th century. Arabic scholars collected and translated the mathematics of Greece, Byzantium, and India after Roman empire collapsed in the 8th century. Al-Mamum became the sixth Caliph and ruled the empire from Baghdad in 813. in 830, he founded an academy called the House of Wisdom where became the center of scientific and philosophy of that time. Al-Manum also built up a library and observatories. Al-Khwarizmi (about 780 - 850 CE, \cref{fig:kwarizmi}) arrived Baghdad in 813; he was one of the famous scholars at the House of Wisdom (\cref{fig:HoW}). We know few details about al-Khwarizmi; even his name looks like a nick name. The prefix `al-' means coming from; it indicates he was native of Khwārizmī, a place in the south of the Aral Sea in central Asia (today belongs partly to Uzbekistan and partly to Turkmenistan).
+The Arabic civilization flourished from the beginning of the 7th century. Arabic scholars collected and translated the mathematics of Greece, Byzantium, and India after Roman empire collapsed in the 8th century. Al-Mamum became the sixth Caliph and ruled the empire from Baghdad in 813 CE. in 830 CE, he founded an academy called the House of Wisdom, which became the center of scientific and philosophy of that time. Al-Manum also built up a library and observatories. Al-Khwarizmi (about 780 - 850 CE, \cref{fig:kwarizmi}) arrived Baghdad in 813; he was one of the famous scholars at the House of Wisdom (\cref{fig:HoW}). We know few details about al-Khwarizmi; even his name looks like a nickname. The prefix \enquote{al-} means coming from; it indicates he was native of Khwārizmī, a place in the south of the Aral Sea in central Asia (belongs partly to Uzbekistan and partly to Turkmenistan at present).
 
-Al-Khwarizmi worked on elementary algebra. His most famous and important work is the treatise {\em Hisab al-jabr w'al-muqabala} (The Compendious Book on Calculation by Completion and Balancing in 820 CE). It was translated into Latin in the 12th century; its title gives us the word `algebra'. This work is a compilation of rules to find the solutions of linear and quadratic equations. There was no symbolic notations by that time, Instead, al-Khwarizmi systematically presented the rules with intuitive geometric demonstrations. It also contains sections on calculating areas and volumes of geometric figures; al-Khwarizmi also applied algebra to solve them.
+Al-Khwarizmi worked on elementary algebra. His most famous and important work is the treatise {\em Hisab al-jabr w'al-muqabala} (The Compendious Book on Calculation by Completion and Balancing) in 820 CE, which was translated into Latin later in the 12th century. Its title gives us the word \enquote{algebra}, which was derived from \emph{al-jabr}. This work is a compilation of rules to find the solutions of linear and quadratic equations. There was no symbolic notations by that time, instead, al-Khwarizmi systematically presented the rules with intuitive geometric demonstrations. It also contains sections on calculating areas and volumes of geometric shapes, which, as al-Khwarizmi showed, could be solved with algebraic method.
 
-His second work (written in 825 CE) introduced Hindu-Arabic numerals and their arithmetic. It was translated to Latin in the same century with the title {\em Liber Algoritmi de numero Indorum} (Al-Khwārizmī Concerning the Hindu Art of Reckoning). From the translation of his name, Algoritmi, in Latin, the word algorithm derives\cite{Britannica-25}.
+His second work (written in 825 CE) introduced Hindu-Arabic numerals and their arithmetic. It was translated to Latin in the same century with the title {\em Liber Algoritmi de numero Indorum} (Al-Khwārizmī Concerning the Hindu Art of Reckoning). From the translation of his name, Algoritmi, in Latin, the term algorithm derives\cite{Britannica-25}.
 \end{mdframed}
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.3]{img/HoW}
- \caption{Scholars in library of the `House of Wisdom', Baghdad 1237 CE}
+ \caption{Scholars in library of the \enquote{House of Wisdom,} Baghdad 1237 CE}
  \label{fig:HoW}
 \end{figure}
 
-The decimal positional system has big advantage in computing, particularly when handle big numbers. One can imagine how hard to calculate in Roman numbers, for example, value of MMXXV $-$ CXXXVII, while a primary school kid can find the result like below:
+The decimal positional system has big advantage in computing, particularly when handling big numbers. One can imagine how hard to calculate in Roman numbers, for example, value of MMXXV $-$ CXXXVII, while a primary school kid can find the result as below:
 
 \begin{center}
 \opsub[voperator=bottom]{2025}{137}
