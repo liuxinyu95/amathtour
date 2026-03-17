@@ -1406,16 +1406,16 @@ Similarly, by $\sin(\theta_1 + \theta_2) = \dfrac{a_1b_2 + b_1a_2}{r_1r_2}$, one
 %%  Hao Wang’s supplemental biography of Gödel, A Logical Journey, MIT Press, 1996.
 
 \label{sec:FLT-4} \index{Fermat's Last Theorem!n=4}
-The renowned Fermat's Last Theorem, abbreviated as FLT, states there is no solution in natural numbers to the equation $x^n + y^n = z^n$ for integer $n \geq 3$. Although Fermat complained that the margin was too small to contain his proof, he later did proved the case of $n = 4$, that $x^4 + y^4 = z^4$ has no solution in natural numbers. Fermat developed a technique called \emph{infinite descent} in this proof, and he was very proud of it. Indeed, mathematicians in the later 200 years almost all followed Fermat's method for other cases\citepage[p40-42]{Edward-1977}. Fermat found it's sufficient to prove below lemma for the case of $n = 4$\citepage[p247]{Hardy2009}.
+The renowned Fermat's Last Theorem, abbreviated as FLT, states there is no solution in nonzero integers to the equation $x^n + y^n = z^n$ for integer $n \geq 3$. Although Fermat complained that the margin was too small to contain his proof, he later did proved the case of $n = 4$, that $x^4 + y^4 = z^4$ has no solution in positive integers. Fermat developed a technique called \emph{infinite descent} in this proof, and he was very proud of it. Indeed, mathematicians in the later 200 years almost all followed Fermat's method for other cases\citepage[p40-42]{Edward-1977}. Fermat found it's sufficient to prove below lemma for the case of $n = 4$\citepage[p247]{Hardy2009}.
 
 \begin{lemma}
-The equation $x^4 + y^4 = z^2$ has no solution in natural numbers.
+The equation $x^4 + y^4 = z^2$ has no solution in positive integers.
 \end{lemma}
 
 Indeed, if equation $x^4 + y^4 = u^4$ has a solution, let $z = u^2$, then it is also the solution to $x^4 + y^4 = z^2$.
 
 \begin{proof}
-Assume for contradiction, that $x^4 + y^4 = z^2$ has some solution in natural numbers. Fermat further assumed $x, y, z$ were coprime of each other. Otherwise if any two have some common divisor $d \ne 1$, then it is also a divisor of the other (see \cref{qn:xyz-coprime}), which can be canceled from the both sides of the equation. Since $x^2, y^2, z$ form a Pythagorean triple, by Euclid's lemma \ref{thm:pythagoras-triples},
+Assume for contradiction, that $x^4 + y^4 = z^2$ has some solution in positive integers. Fermat further assumed $x, y, z$ were coprime of each other. Otherwise if any two have some common divisor $d \ne 1$, then it is also a divisor of the other (see \cref{qn:xyz-coprime}), which can be canceled from the both sides of the equation. Since $x^2, y^2, z$ form a Pythagorean triple, by Euclid's lemma \ref{thm:pythagoras-triples},
 
 \begin{align*}
 x^2 &= 2mn \\

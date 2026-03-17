@@ -9,23 +9,23 @@ $p$ is prime if and only if the factorial $(p - 1)! \equiv -1 \pmod p$.
 where the factorial $(p - 1)! = 1 \times 2 \times 3 \dotsm (p - 1)$. In other words, this factorial plus 1 can be divided by $p$. We first prove a lemma.
 
 \begin{lemma}
-For natural number $a$ less than prime $p$, there exists unique natural number $b$ less than $p$, such that $ab \equiv 1 \pmod p$. We call $b$ the inverse of $a$ under the multiplication modular $p$.
+For positive integer $a$ less than prime $p$, there exists unique positive integer $b$ less than $p$, such that $ab \equiv 1 \pmod p$. We call $b$ the inverse of $a$ under the multiplication modular $p$.
 \end{lemma}
 
 \begin{proof}
-$a$ and $p$ are relatively prime, that is, $(a, p) = 1$. By Bézout's identity, there are $x, y$, such that $ax + py = 1$. It follows that $p$ divides $ax - 1$, that is, $ax \equiv 1 \pmod p$. Let $b = x + pk$; adjust the integer $k$ such that $0 < b < p$. Next, we are going to show the uniqueness. Suppose there is some natural number $b' < p$ satisfying $ab' \equiv 1 \pmod p$, taking their difference:
+$a$ and $p$ are relatively prime, that is, $(a, p) = 1$. By Bézout's identity, there are $x, y$, such that $ax + py = 1$. It follows that $p$ divides $ax - 1$, that is, $ax \equiv 1 \pmod p$. Let $b = x + pk$; adjust the integer $k$ such that $0 < b < p$. Next, we are going to show the uniqueness. Suppose there is some positive integer $b' < p$ satisfying $ab' \equiv 1 \pmod p$, taking their difference:
 
 \[
 ab - ab' \equiv a(b - b') \equiv 1 - 1 \equiv 0 \pmod p
 \]
 
-Therefore, $p$ divides $a(b - b')$. Since $p$ does not divide $a$, it follows that $p$ divides $b - b'$, but both natural numbers $b, b'$ are less than $p$, therefore, $b = b'$.
+Therefore, $p$ divides $a(b - b')$. Since $p$ does not divide $a$, it follows that $p$ divides $b - b'$, but both positive integers $b, b'$ are less than $p$, therefore, $b = b'$.
 \end{proof}
 
 We are going to prove Wilson's theorem with this lemma. The idea is to rearrange the factors of the factorial $(p - 1)!$, pair everyone with its inverse under the multiplication modular $p$:
 
 \begin{proof}
-By the lemma of inverse modular $p$, for every natural number $a$ less than $p$, there is unique inverse, namely the natural number $b$, such that $ab \equiv 1 \pmod p$. Rearrange the factorial:
+By the lemma of inverse modular $p$, for every positive integer $a$ less than $p$, there is unique inverse, namely the positive integer $b$, such that $ab \equiv 1 \pmod p$. Rearrange the factorial:
 
 \begin{align*}
 (p - 1)! &= 1 \times 2 \times 3 \dotsm (p - 1)  \\
