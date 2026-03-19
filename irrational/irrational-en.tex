@@ -123,7 +123,7 @@ The Pythagoreans studied the numbers and the their relations to nature. They dev
 \label{fig:oblong-num}
 \end{figure}
 
-\Cref{fig:triangular-num} and \cref{fig:oblong-num} show the triangular numbers and oblong numbers. It's easy to see a oblong number is two times of a triangular number, and a triangular number is the sum of the first $n$ natural numbers. In this way, the Pythagoreans discovered the formula to the sum of progressive number series:
+\Cref{fig:triangular-num} and \cref{fig:oblong-num} show the triangular numbers and oblong numbers. It's easy to see a oblong number is two times of a triangular number, and a triangular number is the sum of the first $n$ positive integers. In this way, the Pythagoreans discovered the formula to the sum of progressive number series:
 
 \[
 1 + 2 + 3 + ... + n = \frac{1}{2}n(n+1)
@@ -250,7 +250,7 @@ a^2 + b^2 &= (2m + 1)^2 + (2n + 1)^2 & \text{both }a, b\text{ are odd} \\
 The remainder of this value divided by 4 is 2, but no matter $c$ is even or odd, the remainder of $c^2$ divided by 4 can not be 2, for even, $(2k)^2 = 4k^2$ can be divided by 4; for odd, $(2k + 1)^2 = 4(k^2 + k) + 1$ gives remainder 1. Therefore, $a$ and $b$ can not both be odd, but an odd and an even. We may let one, for example the first, be the even and the other be odd. Now the problem turns to find those Pythagorean triples, consisting numbers being coprime and the first being even. The solution was given as Lemma 1 in Book X of \emph{The Elements}\footnote{We use algebraic symbols here for easy understanding; Euclid stated in geometric language\citepage[p330]{Elements}.}
 
 \begin{lemma}[Euclid, Lemma 1, Book X of Elements] \label{thm:pythagoras-triples}
-For equation $x^2 + y^2 = z^2$, where $x, y, z$ are coprime and $x$ is even, \underdot{all} solutions in natural numbers are:
+For equation $x^2 + y^2 = z^2$, where $x, y, z$ are coprime and $x$ is even, \underdot{all} solutions in positive integers are:
 \be
 \begin{cases}
 x = 2mn \\
@@ -258,7 +258,7 @@ y = m^2 - n^2 \\
 z = m^2 + n^2
 \end{cases}
 \ee
-where $m > n$ are natural numbers in opposite parity.
+where $m > n$ are positive integers in opposite parity.
 \end{lemma}
 
 This lemma covers \emph{all} solutions; there are not any Pythagorean triples out of scope. In other words, it is \emph{necessary and sufficient}.
@@ -286,7 +286,7 @@ $x$ is even, $y, z$ are odd, hence $z \pm y$ are odd. It follows that both $\dfr
 \frac{z-y}{2} &= n^2
 \end{align*}
 
-where $m > n$ are natural numbers. Adding the two equations cancels $y$ and gives $z = m^2 + n^2$; subtracting the two equations cancels $z$ and gives $y = m^2 - n^2$; finally substituting into \cref{eq:x-as-z-pm-y} gives: $x^2 = 2m^2 2n^2$, hence $x = 2mn$.
+where $m > n$ are positive integers. Adding the two equations cancels $y$ and gives $z = m^2 + n^2$; subtracting the two equations cancels $z$ and gives $y = m^2 - n^2$; finally substituting into \cref{eq:x-as-z-pm-y} gives: $x^2 = 2m^2 2n^2$, hence $x = 2mn$.
 \end{proof}
 
 For example, taking $m = 2, n = 1$ gives the triple of (3, 4, 5); taking $m = 3, n = 2$ gives the triple of (12, 5, 13). All Pythagorean triples are:
@@ -295,7 +295,7 @@ For example, taking $m = 2, n = 1$ gives the triple of (3, 4, 5); taking $m = 3,
 x = 2mnr, \quad y = r(m^2 - n^2), \quad z = r(m^2 + n^2)
 \ee
 
-where $r$ any natural number.
+where $r$ is any positive integer.
 
 \begin{figure}[htbp]
  \centering
@@ -820,7 +820,7 @@ There can be multiple common measures, so it makes sense to define the \emph{gre
 To find the greatest common measure of two given commensurable magnitudes.
 \end{proposition}
 
-We brief the Euclidean algorithm in \cref{sec:gcd-minus} to compute the greatest common divisor of two natural numbers. In the \emph{Elements}, it was actually extended to geometric magnitudes, such as line segments, as a generic algorithm. The original algorithm given by Euclid only required recursive subtraction, hence could be implemented by ruler and compass. perfectly. Below is the definition:
+We brief the Euclidean algorithm in \cref{sec:gcd-minus} to compute the greatest common divisor of two positive integers. In the \emph{Elements}, it was actually extended to geometric magnitudes, such as line segments, as a generic algorithm. The original algorithm given by Euclid only required recursive subtraction, hence could be implemented by ruler and compass. perfectly. Below is the definition:
 
 \[
 (a, b) = \begin{cases}
@@ -1043,7 +1043,7 @@ a & $3b - 2a$ & pour $B$ to $A$ \\
 \label{tab:jug-ops}
 \end{table}
 
-The key point is that, whatever operations, the water in each jug is $ax + by$ litres for some integral $x$ and $y$. We known from the proof of Bézout's identity, the least positive volume of water is the greatest common measure $d$ of $a$ and $b$. One is able to obtain $c$ litres of water if and only if $d$ measures\footnote{For integral capacities, if and only if the greatest common divisor $d$ divides $c$} $c$, and $c$ doesn't exceed the capacity of the bigger jug. For example, one can not get 5 litres of waters with two jugs of 4 litres and 6 litres, because the greatest common divisor of 4 and 6 is 2, which does not divide 5 (In other words, one can't get odd litres of water with two jugs of even litres capacity). If $a$ and $b$ are coprime, of which the greatest common divisor $(a, b) = 1$, then one is able to get any $c$ litres of water, where $c$ is a natural number is less than the capacity of the bigger jag.
+The key point is that, whatever operations, the water in each jug is $ax + by$ litres for some integral $x$ and $y$. We known from the proof of Bézout's identity, the least positive volume of water is the greatest common measure $d$ of $a$ and $b$. One is able to obtain $c$ litres of water if and only if $d$ measures\footnote{For integral capacities, if and only if the greatest common divisor $d$ divides $c$} $c$, and $c$ doesn't exceed the capacity of the bigger jug. For example, one can not get 5 litres of waters with two jugs of 4 litres and 6 litres, because the greatest common divisor of 4 and 6 is 2, which does not divide 5 (In other words, one can't get odd litres of water with two jugs of even litres capacity). If $a$ and $b$ are coprime, of which the greatest common divisor $(a, b) = 1$, then one is able to get any $c$ litres of water, where $c$ is a positive integer less than the capacity of the bigger jag.
 
 Though one can tell if it's possible to get $c$ litres of water by examine the greatest common divisor $d$, he doesn't know the detailed steps. We may work out the steps from the two integers $x$ and $y$ satisfying $ax + by = c$ such that if $x > 0$ and $y < 0$, we fill $A$ for $x$times and empty $B$ for $y$ times; otherwise if $x < 0$, $y > 0$, then empty $A$ for $x$ times and fill $B$ for $y$ times. For example, suppose the bigger jug has capacity of $a=5$ litres, the smaller jug has capacity of $b=3$ litres, and the goal is to get $c=4$ litres of water; by $4 = 3 \times 3 - 5$, that is $x = -1$ and $y = 3$, design steps as \cref{tab:designed-jugs-ops}.
 
@@ -1102,7 +1102,7 @@ The side and diagonal of a square are not commensurable.
 \end{figure}
 
 \begin{proof}
-In the 19th century, Scottish mathematician George Chrystal reconstructed the Greek proof. Assume for contradiction there exists some segment $c$ that measures the side and diagonal of a square, let the side be $nc$ and the diagonal be $mc$, where $m$ and $n$ are natural numbers. As shown in \cref{fig:irrational}, taking the side as radius, draw an arc around $A$ as the center, which intersects the diagonal $AC$ at point $E$. Then draw a line from $E$ perpendicular to the diagonal and intersects side $BC$ at point $F$.
+In the 19th century, Scottish mathematician George Chrystal reconstructed the Greek proof. Assume for contradiction there exists some segment $c$ that measures the side and diagonal of a square, let the side be $nc$ and the diagonal be $mc$, where $m$ and $n$ are positive integers. As shown in \cref{fig:irrational}, taking the side as radius, draw an arc around $A$ as the center, which intersects the diagonal $AC$ at point $E$. Then draw a line from $E$ perpendicular to the diagonal and intersects side $BC$ at point $F$.
 
 For arc, the length of $AE$ equals the square side, hence the length of EC equals $(m - n)c$. Since EF is perpendicular to AC and $\angle ECF$ is $45\degree$, ECF is a isosceles right triangle; the two sides $|EC| = |EF|$. The two right triangles, $\triangle AEF$ and $\triangle ABF$ are congruent because they share a side of $AF$ and AE equals AB. Thereby, $|EF| = |FB|$, it follows that $|EC| = |EF| = |FB|$, so the length of FB equals $(m - n)c$ too. The length of CF which is CB minus FB, equals $nc - (m - n)c = (2n - m)c$. We list them side by side as below.
 
@@ -1120,7 +1120,7 @@ For arc, the length of $AE$ equals the square side, hence the length of EC equal
 \end{array}
 \]
 
-As $m$ and $n$ are natural numbers, and $c$ measures diagonal $CF$ and side $CE$. In the same way, we can construct smaller and smaller squares and repeat infinitely, while $c$ measures the side and diagonal of each small square. Since $m$ and $n$ are finite natural numbers, the process can't be endless, a contradiction. Therefore, the side and diagonal of a square are not commensurable.
+As $m$ and $n$ are positive integers, and $c$ measures diagonal $CF$ and side $CE$. In the same way, we can construct smaller and smaller squares and repeat infinitely, while $c$ measures the side and diagonal of each small square. Since $m$ and $n$ are finite positive integers, the process can't be endless, a contradiction. Therefore, the side and diagonal of a square are not commensurable.
 \end{proof}
 
 Analog to square, \cref{qn:pentagon-irrational} requires to show the side and diagonal of a pentagon are not commensurable. In this way, Euclid gave the criterion of differentiate rationals and irrationals: whether Euclidean algorithm terminates. He also used this criterion to define rational magnitude and irrational magnitude.
@@ -1166,11 +1166,11 @@ $p$ divides the first term on the left, and since $p$ divides $ab$, it also divi
 We shall prove the fundamental theorem of arithmetic with this lemma.
 
 \begin{proof}
-Assume for contradiction, there is some natural number $n$ with two distinct prime factorization:
+Assume for contradiction, there is some positive integer $n$ with two distinct prime factorization:
 \[
 p_1 p_2 \dotsm p_j = q_1 q_2 \dotsm q_k
 \]
-Where there is some prime factor $p_i$ on the left different from any prime number on the right. Since the prime $p_i$ divides the product $n = q_1 q_2 \dotsm q_k$, where $q_i$ are coprime, by Euclidean lemma, $p_i$ divides $q_1$, or divides $q_2$, ..., or divides $q_k$. But it's impossible because every prime number, $q_1, q_2, \dotsc, q_k$ can not be divided by any other prime number, a contradiction. Therefore, any natural number $n$ has a unique factorization.
+Where there is some prime factor $p_i$ on the left different from any prime number on the right. Since the prime $p_i$ divides the product $n = q_1 q_2 \dotsm q_k$, where $q_i$ are coprime, by Euclidean lemma, $p_i$ divides $q_1$, or divides $q_2$, ..., or divides $q_k$. But it's impossible because every prime number, $q_1, q_2, \dotsc, q_k$ can not be divided by any other prime number, a contradiction. Therefore, any positive integer $n$ has a unique factorization.
 \end{proof}
 
 The fundamental theorem of arithmetic is also called the unique factorization theorem. Kummer, when studied Fermat's last theorem in 1843, realized that the unique factorization theorem might not necessary true for complex numbers, where algebraic number theory arose (see chapter 7).
@@ -2047,19 +2047,19 @@ Let $m = 1, 2, \dotsc, n$ to obtain $n$ equations:
 (n+1)^3 - n^3 &= 3\cdot n^2 + 3\cdot n + 1
 \end{align*}
 
-Add these $n$ equations; the left remains $(n+1)^3$ and $-1^3$ only as other terms all being canceled; the sum of squares and natural numbers appear on the right:
+Add these $n$ equations; the left remains $(n+1)^3$ and $-1^3$ only as other terms all being canceled; the sum of squares and positive integers appear on the right:
 
 \[
 (n+1)^3 - 1^3 = 3(1^2 + 2^2 + \dotsb + n^2) + 3(1 + 2 + \dotsb + n) + n
 \]
 
-Substitute the closed form of the sum of natural numbers in,
+Substitute the closed form of the sum of positive integers in,
 \begin{align*}
 1^2 + 2^2 + \dotsb + n^2 &= \frac{(n+1)^3 - 1^3 - 3\frac{n(n+1)}{2} - n}{3} \\
  &= \frac{n(n+1)(2n+1)}{6} && \text{simplified}
 \end{align*}
 
-This is the closed form of the sum of squares. We may obtain the sum of the cubes base on this result: (1) by binomial theorem, $(m + 1)^4 = m^4 + 4m^3 + 6m^2 + 4m + 1$, give the formula of $(m + 1)^4 - m^4$. (2) substitute $m = 1, 2, \dotsc, n$ in, it gives $n$ equations. (3) add these $n$ equations, the left remains $(m + 1)^4 - 1^4$ after canceling other terms, the right side becomes $4S_3 + 6S_2 + 4S_1 + n$, where $S_2$ is the sum of squares, equals $\dfrac{n(n+1)(2n+1)}{6}$, and $S_1$ is the sum of natural numbers, equals $\dfrac{n(n+1)}{2}$. Simplify it to the closed form of $S_3$, the sum of cubes (see \cref{qn:sum-of-cubics}). Repeat to give the closed forms of $S_4$ (sum of $i^4$), $S_5$ (sum of $i^5$), and so on.
+This is the closed form of the sum of squares. We may obtain the sum of the cubes base on this result: (1) by binomial theorem, $(m + 1)^4 = m^4 + 4m^3 + 6m^2 + 4m + 1$, give the formula of $(m + 1)^4 - m^4$. (2) substitute $m = 1, 2, \dotsc, n$ in, it gives $n$ equations. (3) add these $n$ equations, the left remains $(m + 1)^4 - 1^4$ after canceling other terms, the right side becomes $4S_3 + 6S_2 + 4S_1 + n$, where $S_2$ is the sum of squares, equals $\dfrac{n(n+1)(2n+1)}{6}$, and $S_1$ is the sum of positive integers, equals $\dfrac{n(n+1)}{2}$. Simplify it to the closed form of $S_3$, the sum of cubes (see \cref{qn:sum-of-cubics}). Repeat to give the closed forms of $S_4$ (sum of $i^4$), $S_5$ (sum of $i^5$), and so on.
 
 The next two examples both related to Fermat. He found a beautiful theorem in 1636, named Fermat's little theorem nowadays. It first appeared in correspondence with his friend Bernard Frénicle de Bessy in 18th October 1640. Fermat didn't publish any proof before his death. The first published proof was given by Euler in 1736, almost a century later. However, Leibniz had almost the same proof before 1683 in his unpublished manuscripts. It's called \enquote{little} to distinguish with the renowned Fermat's last theorem.
 
@@ -2085,7 +2085,7 @@ By induction assumption, $p$ divides $a^p - a$ and $p$ divides each $\dbinom{p}{
 \binom{p}{k} = \frac{p!}{k!(p-k)!} = \frac{1\cdot2\dotsm p}{(1\cdot2\dotsm k)(1 \cdot 2 \dotsm (p-k))}
 \]
 
-The prime factor $p$ of the nominator can't be divided by any factor of the denominator (since any natural number less than $p$ can't divide the prime number $p$). While all the coefficients of $\dbinom{p}{k}$ are integral, hence $p$ divides every term after $a^p - a$. It follows that $p$ divides $(a + 1)^p - (a + 1)$, which shows $p$ divides $a^p - a = a(a^{p-1} -1)$ for any $a$，and if $p$ does not divide $a$, then $p$ divides $a^{p-1} - 1$.
+The prime factor $p$ of the nominator can't be divided by any factor of the denominator (since any positive integer less than $p$ can't divide the prime number $p$). While all the coefficients of $\dbinom{p}{k}$ are integral, hence $p$ divides every term after $a^p - a$. It follows that $p$ divides $(a + 1)^p - (a + 1)$, which shows $p$ divides $a^p - a = a(a^{p-1} -1)$ for any $a$，and if $p$ does not divide $a$, then $p$ divides $a^{p-1} - 1$.
 \end{proof}
 
 This is roughly the most elegant \emph{elementary} proof to Fermat's little theorem\footnote{The most elegant proof is through Lagrange's theorem in group theory.}. \Ref{app:fermat-little-theorem} provides a combinatorial proof for comparison. It's after all Weil's thought, there were not any documents, letters, or notes as evidence. Fermat was definitely very familiar with the binomial theorem, but only Pascal in Fermat's period consciously used induction in rigorous manner\cite{Stillwell-2010}.
@@ -2108,7 +2108,7 @@ In 1621, a young man about 20 years old just bought a new published book in Pari
 \enquote{It is impossible for a cube to be a sum of two cubes, a fourth power to be a sum of two fourth powers, or in general for any number that is a power greater than the second to be the sum of two like powers. I have discovered a truly remarkable proof [of this theorem], but this margin is too small to contain it.}
 \end{quotation}
 
-With algebraic notation, what Fermat stated was that there was no solution in natural numbers to the equation $x^n + y^n = z^n$ for integer $n \geq 3$. But where was the proof? Many mathematicians tried to prove it, but all failed for 358 years! This young man was Pierre de Fermat. Among all the theorems conjectured by Fermat, this was the last one to be proved, hence called Fermat's last theorem. Finally, Andrew Wiles proved it in 1995.
+With algebraic notation, what Fermat stated was that there was no solution in nonzero integers to the equation $x^n + y^n = z^n$ for integer $n \geq 3$. But where was the proof? Many mathematicians tried to prove it, but all failed for 358 years! This young man was Pierre de Fermat. Among all the theorems conjectured by Fermat, this was the last one to be proved, hence called Fermat's last theorem. Finally, Andrew Wiles proved it in 1995.
 
 Pierre de Fermat (\cref{fig:Fermat}) was a French mathematician, born about August 1601. His father was a wealthy leather merchant. He became a lawyer at the Parlement of Toulouse French after grown up. In 1630, he bought the office of a councillor at the Parlement of Toulouse, one of the High Courts of Judicature in France, and was sworn in by the Grand Chambre in May 1631. He held this office for the rest of his life. Fermat thereby became entitled to change his name from Pierre Fermat to Pierre de Fermat. He was fluent in six languages. Fermat studied mathematics in his spare time. But the mathematical achievements made by Fermat were the peak of his time. Fermat's pioneering work in analytic geometry was circulated in manuscript form in 1636\footnote{The 8 pages paper, {\em Introduction to Plane and Solid Loci} was completed in 1630, but it was published posthumously in 1679, 14 years after Fermat's death.}. Together with René Descartes, he was one of the two leading mathematicians of the first half of the 17th Century developed analytic geometry. Fermat and Blaise Pascal laid the foundation for the theory of probability through their correspondence in 1654. They are now regarded as joint founders of probability theory. In physics, Fermat generalized the principle of least time as \enquote{light travels between two given points along the path of shortest time.} The term Fermat's principle was named in recognition of him. Fermat also contributed to the early development of calculus. But Fermat's crowning achievement was in the theory of numbers.
 
@@ -2781,7 +2781,7 @@ Remind that in multiplication, the \enquote{empty product} results in the multip
 Substitute $m = 1, 2, \dotsc, n$ in, and add them up:
 
 \[(n+1)^4 - 1^4 = 4S_3 + 6S_2 + 4S_1 + n\]
-where $S_i = 1^i + 2^i + 3^i + \dotsb + n^i$, is the sum of the $i$-th powers of the first $n$ natural numbers. Therefore,
+where $S_i = 1^i + 2^i + 3^i + \dotsb + n^i$, is the sum of the $i$-th powers of the first $n$ positive integers. Therefore,
 \begin{align*}
 S_3 &= \frac{(n + 1)^4 - 1 - 6S_2 - 4S_1 - n}{4}  \\
     &= \frac{(n+1)^4 - 6\frac{n(n+1)(2n+1)}{6} - 4\frac{n(n+1)}{2} - n - 1}{4} \\

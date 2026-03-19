@@ -62,7 +62,7 @@ The win of Hindu-Arabic system gave 0 \enquote{citizenship,} legitimate to use. 
 
 What does make 0 different from $1, 2, 3, \dotsc$ preventing it from being a first class citizen? It's the value, or magnitude. The value of 1 is 1, for example, the length of 1cm, the mass of 1 gram, the unit of 1 sheep... the value of 2 represents the length of 2cm, the mass of 2 grams, the units of 2 sheep... But what's the value of 0? It has no value. 0 is a placeholder, but not a number because it has no value\cite{Seife-2000}. 0 is so different that it breaks those rules work well for $1, 2, 3, \dotsc$ for example:
 
-\label{sec:archimedes-axiom}
+\label{sec:archimedes-axiom} \label{sec:mul-as-zoom}
 \begin{enumerate}[1)]
 \item Archimedes axiom. A number\footnote{All numbers refer to natural number in this section.} increases when being added to itself. Archimedes treated it as an axiom: for any non-zero $m < n$, there is a time that $m + m + \dotsb + m > n$. \index{Archimedes axiom}
 
@@ -108,7 +108,6 @@ But $0 + 0 = 0$ does not increase, $0 + 0 + 0 + \cdots$ will never exceed any nu
  \label{fig:grid-vanish}
 \end{figure}
 
-\label{sec:mul-as-zoom}
 Multiplication also means scaling. When scaling a ruler 2 times, not only the total length of the ruler, but also the unit length between marks doubled; when scaling 3 times, both the total and the unit length tripled as shown in \cref{fig:ruler-vanish}. If scaling down to $\frac{1}{3}$, then we get a small ruler. But what if scaling 0 (times 0)? The ruler together with the marks collapses to a dot; it vanishes.
 
 \begin{figure}[htbp]
@@ -571,7 +570,7 @@ The effect of negating a number $a \rightsquigarrow -a$ amounts to multiplying i
 
 \subsection{Scaling}
 \index{number line!scaling}
-Multiplication means scaling (\cref{sec:mul-as-zoom}). $\times 2$ scale up the number line two times; $\times 3$ scale up three times; $\div 2$ scale down the number line to $\frac{1}{2}$; $\div 3$ scale down to $\frac{1}{3}$. Division is multiplicative inverse; thus $\div 2$ amounts to $\times \frac{1}{2}$, which scales down to $\frac{1}{2}$; $\div 3$ scale down to $\frac{1}{3}$. In this way, we may generalize division as multiplication:
+Multiplication means scaling (\cref{sec:mul-as-zoom}). $\times 2$ scales up the number line two times; $\times 3$ scales up three times; $\div 2$ scales down the number line to $\frac{1}{2}$; $\div 3$ scales down to $\frac{1}{3}$. Division is multiplicative inverse; thus $\div 2$ amounts to $\times \frac{1}{2}$, which scales down to $\frac{1}{2}$; $\div 3$ scales down to $\frac{1}{3}$. In this way, we may generalize division as multiplication:
 
 \begin{center}
   \begin{tabular}{c|c|c|c}
@@ -581,7 +580,7 @@ Multiplication means scaling (\cref{sec:mul-as-zoom}). $\times 2$ scale up the n
   \end{tabular}
 \end{center}
 
-The scaling factor can be negative. As mentioned above, $\times (-1)$ amounts to negating, which inverses the number line; $\times (-2)$ amounts to scaling up 2 times followed by inverting: $(-1) \times 2$; it also amounts to inverting followed by scaling up 2 times: $2 \times (-1) = (-1) \times 2$. $\times (-3)$ amounts to scaling up 3 times followed by inverting, or inverting followed by scaling up 3 times. Below table generalizes multiplication and division:
+The scaling factor can be negative, thus $\times (-1)$ amounts to negating, which inverses the number line; $\times (-2)$ amounts to scaling up 2 times followed by inverting: $(-1) \times 2$; it also amounts to inverting followed by scaling up 2 times: $2 \times (-1) = (-1) \times 2$; and $\times (-3)$ amounts to scaling up 3 times followed by inverting, or inverting followed by scaling up 3 times. Below table generalizes multiplication and division:
 
 \begin{center}
   \begin{tabular}{c|c|c|c|c|c|c}
@@ -591,11 +590,11 @@ The scaling factor can be negative. As mentioned above, $\times (-1)$ amounts to
   \end{tabular}
 \end{center}
 
-There is a special case: when $\times 0$, the number line collapses into a point. The operations can be composed: translation of $a$ followed by translation of $b$ amounts to translation of $b$ followed by translation of $a$; that $a + b = b + a$ is the commutative law of addition. Scaling with $a$ followed by scaling with $b$ amounts to scaling with $b$ followed by scaling with $a$; that $ab = ba$ is the commutative law of multiplication. We leave the explanation of the association law with number line as \cref{qn:assiciative-numline}.
+There is a special case: when $\times 0$, the number line collapses into a point. The operations can be composed: translation of $a$ followed by translation of $b$ amounts to translation of $b$ followed by translation of $a$, that is, $a + b = b + a$, the commutative law of addition. Scaling with $a$ followed by scaling with $b$ amounts to scaling with $b$ followed by scaling with $a$, that is, $ab = ba$, the commutative law of multiplication. We leave the interpretation of the association law with number line as \cref{qn:assiciative-numline}.
 
-There are complex composition such as translation followed by scaling or inverting, for example, $x \rightsquigarrow ax + b$ which scaling with $a$ followed by translation of $-b$. \Cref{qn:transform-numline} applies translation followed by scaling.
+There are complex composition such as translation followed by scaling or inverting, for example, $x \rightsquigarrow ax + b$ which scales with $a$ followed by translation of $-b$. \Cref{qn:transform-numline} applies translation followed by scaling.
 
-\section{Unit}
+\section{Units}
 \index{unit} \label{sec:unit}
 0 and negative numbers are the first class citizen as those of 1, 2, 3, ... they have ordinal meaning (the valid and definitive position on the number line) and  cardinal meaning (the valid and definitive value). 0 is special; it is the origin, the staring point, the symbol of nothing. Is there any other number as special as 0? Below table compares 1 with 0:
 
@@ -608,14 +607,14 @@ There are complex composition such as translation followed by scaling or inverti
   a + 0 &= 0 + a = a  &  1 \times a  &= a \times 1 =  a
 \end{align*}
 
-Adding 0 to any number leaves that number unchanged; multiplying any number (including 0) by 1 leaves that number unchanged. Let us see the effective of 0 and 1 to the number line:
+Adding 0 to any number leaves that number unchanged; multiplying any number (including 0) by 1 leaves that number unchanged. Here is the list of effects of 0 and 1 to the number line:
 
 \begin{enumerate}[1)]
 \item Addition moves the number line to the left or right. $+a$ moves the number line by $-a$ (moves left when $a > 0$; moves right when $a < 0$), 0 fixes the number line under addition.
 \item Multiplication scales up or down the number line. $\times a$ scales the number line $a$ times (scale up when $|a| > 1$; scale down when $0 < |a| < 1$), 1 fixes the number line under multiplication.
 \end{enumerate}
 
-For any number $a$, there is one and only one additive symmetric number to 0, which is its inverse, $-a$, satisfying $a + (-a) = 0$. For any number $a \ne 0$, there is one and only one multiplicative symmetric number to 1, which is its reciprocal, $\frac{1}{a}$, satisfying $a \times \frac{1}{a} = 1$. But 0 does not have reciprocal. Which one is more special, 0 or 1?
+For any number $a$, there is one and only one additive symmetric number to 0, which is its opposite, $-a$, satisfying $a + (-a) = 0$. For any number $a \ne 0$, there is one and only one multiplicative symmetric number to 1, which is its reciprocal, $\frac{1}{a}$, satisfying $a \times \frac{1}{a} = 1$. But 0 does not have reciprocal. Which one is more special, 0 or 1?
 
 There are plenty of things behaving like 0 and 1. For example, we call a sequence of characters a string. Word, phrases, sentences are strings, hence ``apple'', ``hello'', ``to be or not to be'', `` '' (a space) are all strings. One can concatenate strings, like ``hello'' $\doubleplus$ `` '' = ``hello '', ``hello '' $\doubleplus$ ``apple'' = ``hello apple''. A string that doesn't contain any character is empty, namely the empty string ``''. Concatenating any string with the empty string leaves that string unchanged:
 
