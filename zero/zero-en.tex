@@ -616,13 +616,13 @@ Adding 0 to any number leaves that number unchanged; multiplying any number (inc
 
 For any number $a$, there is one and only one additive symmetric number to 0, which is its opposite, $-a$, satisfying $a + (-a) = 0$. For any number $a \ne 0$, there is one and only one multiplicative symmetric number to 1, which is its reciprocal, $\frac{1}{a}$, satisfying $a \times \frac{1}{a} = 1$. But 0 does not have reciprocal. Which one is more special, 0 or 1?
 
-There are plenty of things behaving like 0 and 1. For example, we call a sequence of characters a string. Word, phrases, sentences are strings, hence ``apple'', ``hello'', ``to be or not to be'', `` '' (a space) are all strings. One can concatenate strings, like ``hello'' $\doubleplus$ `` '' = ``hello '', ``hello '' $\doubleplus$ ``apple'' = ``hello apple''. A string that doesn't contain any character is empty, namely the empty string ``''. Concatenating any string with the empty string leaves that string unchanged:
+There are plenty of things behaving like 0 and 1. For example, we call a sequence of characters a string. Word, phrases, and sentences are strings, hence ``apple'', ``hello'', ``to be or not to be'', `` '' (a space) are all strings. One may concatenate strings, like ``hello'' $\doubleplus$ `` '' = ``hello '', ``hello '' $\doubleplus$ ``apple'' = ``hello apple''. A string containing no character is empty, namely the empty string ``''. Concatenating any string with the empty string leaves that string unchanged:
 
 \[
 \text{``''} \doubleplus S = S \doubleplus \text{``''} = S
 \]
 
-For example, ``'' $\doubleplus$ ``hello'' = ``hello'' $\doubleplus$ ``'' = ``hello''. Define the union of two sets is a set that contains all distinct elements from the two, for example $\{a, b, c\} \cup \{1, 2, 3\} = \{a, b, c, 1, 2, 3\}$, $\{a, b, c\} \cup \{c, d, e\} = \{a, b, c, d, e\}$. Taking the union of any set with the empty set $\varnothing$ leaves that set unchanged:
+For example, ``'' $\doubleplus$ ``hello'' = ``hello'' $\doubleplus$ ``'' = ``hello''. Define the union of two sets as the set containing all distinct elements from the two, for example $\{a, b, c\} \cup \{1, 2, 3\} = \{a, b, c, 1, 2, 3\}$, $\{a, b, c\} \cup \{c, d, e\} = \{a, b, c, d, e\}$. Taking the union of any set with the empty set $\varnothing$ leaves that set unchanged:
 
 \[
 \varnothing \cup S = S \cup \varnothing = S
@@ -634,38 +634,38 @@ For example, $\varnothing \cup \{a, b, c\} = \{a, b, c\} \cup \varnothing = \{a,
   e \odot a = a \odot e = a
 \]
 
-for any element $a$ of $M$, then $e$ is a unit of $M$ under $\odot$. We may check with this definition that, 0 is a unit under addition in the set of numbers; 1 is a unit under multiplication in the set of numbers excluding 0; empty string is a unit under concatenation in the set of strings; empty set is a unit under union in the \emph{set of sets}. A unit is a first class citizen as other elements in the set, and it is special and unique (see \cref{qn:unique-e}). For this reason, we call it {\em the} unit.
+for any element $a$ of $M$, then $e$ is a unit of $M$ under $\odot$. We may check with this definition that, 0 is a unit of the set of numbers under addition; 1 is a unit of the set of numbers excluding 0 under multiplication; empty string is a unit of the set of strings under concatenation; empty set is a unit of the \emph{set of sets} under union. A unit is a first class citizen as other elements in the set, and it is special and unique (see \cref{qn:unique-e}). For this reason, we call it {\em the} unit.
 
 \index{inverse}
-For element $a$ in a set, if there is some element $b$ in that set satisfying $a \odot b = e$, then we call $b$ the inverse of $a$. For example, the additive inverse of any number $a$ is $-a$ because $a + (-a) = 0$; the multiplicative inverse of any non-zero number $a$ is $\frac{1}{a}$ because $a \times \frac{1}{a} = 1$. Inverse does not always exist necessarily, for example, strings don't have inverse under concatenation except for the empty string; sets don't have inverse under union except for the empty set. Inverse enables us to simplify four arithmetic operations ($+, -, \times, \div$) to two: $a - b$ is $a$ plus the additive inverse of $b$, $a \div b$ is $a$ times the multiplicative inverse of $b$ (the reciprocal).
+For element $a$ in a set, if there is some element $b$ in that set satisfying $a \odot b = e$, then we call $b$ the inverse of $a$. For example, the additive inverse of any number $a$ is $-a$ because $a + (-a) = 0$; the multiplicative inverse of any non-zero number $a$ is $\frac{1}{a}$ because $a \times \frac{1}{a} = 1$. Inverse does not always exist necessarily, for example, strings don't have inverse under concatenation except for the empty string; sets don't have inverse under union except for the empty set. Inverse allows us to simplify four arithmetic operations ($+, -, \times, \div$) to two: $a - b$ is $a$ plus the additive inverse of $b$, $a \div b$ is $a$ times the multiplicative inverse of $b$ (the reciprocal).
 
 \section{Peano's axioms}
 \label{sec:peano-axioms}
-Giuseppe Peano, an Italian mathematician, established an axiomatic system for natural numbers in 1889. His started from zero, and applied counting operation to cover natural numbers. There are five axioms:
+Giuseppe Peano, an Italian mathematician, established an axiomatic system for natural numbers in 1889. He started from zero and applied counting operation to cover natural numbers. There are five axioms:
 
 \index{Peano's axioms}
-\begin{enumerate}[{Axiom} 1)]
+\begin{enumerate}[{Axiom} (1)]
 \item 0 is a natural number.
 \item (counting) For every natural number $n$, there is a successor $n'$.
 \end{enumerate}
 
-It seems one can define infinitely many natural numbers with these two axioms; from 0, the next is 1, followed by 2, 3, ..., $n$, and $n + 1$, ... However, here is a counter example: a set of two numbers $\{0, 1\}$. Define 1 as the successor of 0, while 0 as the successor of 1. It well satisfies the above two axioms although unexpected. We need the third axiom to exclude this situation.
+It seems one can define infinitely many natural numbers with these two axioms; from 0, the next is 1, followed by 2, 3, ..., $n$, and $n + 1$, ... However, here is a counter example: a set of two numbers $\{0, 1\}$. Define 1 as the successor of 0, while 0 as the successor of 1. It well satisfies the above two axioms exceptionally. We need the third axiom to exclude this situation.
 
-\begin{enumerate}[{Axiom} 1)]
+\begin{enumerate}[{Axiom} (1)]
   \setcounter{enumi}{2}
   \item 0 is not the successor of any natural number.
 \end{enumerate}
 
 However, it's still not enough. For another counter example: a set of $\{0, 1, 2\}$. Define 1 as the successor of 0, 2 as the successor of 1, and 2 as the successor of 2 itself. It satisfies all the three axioms. We need the fourth:
 
-\begin{enumerate}[{Axiom} 1)]
+\begin{enumerate}[{Axiom} (1)]
   \setcounter{enumi}{3}
   \item The successors are distinct. If $m$ and $n$ have the same successor, then they are identical, i.e. $m = n$ if and only if $m' = n'$.
 \end{enumerate}
 
-Hold on, it is still insufficient. For another counter example: set \{0, 0.5, 1, 1.5, 2, 2.5, ...\}. Define 1 as the successor of 0, 2 as the successor of 1... define 1.5 as the successor of 0.5, 2.5 as the successor of 1.5... But 0.5 is not the successor of any number. We need the last axiom to exclude such `unreachable' elements.
+But it is still insufficient. For another counter example: set \{0, 0.5, 1, 1.5, 2, 2.5, ...\}. Define 1 as the successor of 0, 2 as the successor of 1... define 1.5 as the successor of 0.5, 2.5 as the successor of 1.5... But 0.5 is not the successor of any number. We need the last axiom to exclude such \enquote{unreachable} elements.
 
-\begin{enumerate}[{Axiom} 1)]
+\begin{enumerate}[{Axiom} (1)]
   \setcounter{enumi}{4}
   \item If some subset $S$ of natural numbers contains 0, and every element in $S$ has a successor, then $S$ is $\mathbb{N}$.
 \end{enumerate}
@@ -694,7 +694,7 @@ Let us verify $2+3$ with this definition. 2 is the successor of the successor of
 0'' + 0''' = (0'' + 0'')' = (0'' + 0')'' = (0'' + 0)''' = (0'')''' = 0'''''
 \]
 
-Indeed, it is the five times successor of 0, which is 5. We may understand this definition with number line: to move from $a$ on the number line to the right by $b'$, one first move by $b$ and then move by 1. Such kind of definition that includes a definition of itself is called {\em recursive}. It breaks down a problem into some same smaller problems. In the definition of addition, the original problem of $a + b'$ is {\em recursively} converted to the problem of $a + b$, which reduces the `level' of the complexity by 1. If $b \ne 0$, then continuously reducing the complexity; if $b = 0$, then the recursion terminates at $a + 0 = a$. Here 0 is called the exit of the recursion. We next define multiplication for natural numbers:\index{natural numbers!multiplication}
+Indeed, it is the five times successor of 0, which is 5. We may interpret this definition with the number line: to move from $a$ on the number line to the right by $b'$, one first move by $b$ and then move by 1; when the movement is 0, then $a$ is fixed. Such kind of definition that includes a definition of itself is called {\em recursive}. It breaks down a problem into some same smaller problems. In the definition of addition, the original problem of $a + b'$ is {\em recursively} converted to the problem of $a + b$, which reduces the \enquote{level} of the complexity by 1. If $b \ne 0$, then continuously reducing the complexity; if $b = 0$, then the recursion terminates at $a + 0 = a$. Here 0 is called the exit of the recursion. We next define multiplication for natural numbers:\index{natural numbers!multiplication}
 
 \be
 \begin{laligned}
@@ -704,7 +704,7 @@ a \cdot b' &= a \cdot b + a
 \label{eq:peano-multiply}
 \ee
 
-The definition of multiplication consists of two parts: the product of any natural number and 0 is 0, and the product of $a$ and the successor of $b$ equals $a$ plus the product of $a$ and $bf$. The latter can be expressed as $a \cdot (b+1) = a \cdot b + a \cdot 1$. Let's verify it with $2 \times 3$:
+The definition of multiplication consists of two parts: the product of any natural number and 0 is 0, and the product of $a$ and the successor of $b$ equals $a$ plus the product of $a$ and $b$. The latter can be expressed as $a \cdot (b+1) = a \cdot b + a \cdot 1$. Let's verify it with $2 \times 3$:
 
 \begin{align*}
 0'' \times 0''' & = 0'' \times 0'' + 0'' = 0'' \times 0' + 0'' + 0'' = 0'' \times 0 + 0'' + 0'' + 0'' \\
@@ -713,7 +713,7 @@ The definition of multiplication consists of two parts: the product of any natur
                 & = (0'''' + 0')' = (0'''' + 0)'' = (0'''')'' = 0''''''
 \end{align*}
 
-Indeed, it's the six times successor of 0, which is 6. The definition of multiplication is recursive too; it breaks down the problem of calculating $a \cdot b'$ into two sub-problems: (1) recursively calculate $a \cdot b$ (reduce the level of complexity by 1); (2) add $a$ to the result of the first problem. The recursion terminates when $b$ decreases to 0. The idea of the recursive method is `divide and conquer'; it is powerful and widely used, particularly in the modern computer system.
+Indeed, it's the six times successor of 0, which is 6. The definition of multiplication is recursive too; it breaks down the problem of calculating $a \cdot b'$ into two sub-problems: (1) recursively calculate $a \cdot b$ (reduce the level of complexity by 1); (2) add $a$ to the result of the first problem. The recursion terminates when $b$ decreases to 0. The idea of the recursive method is \enquote{divide and conquer;} it is powerful and widely used, particularly in modern computer systems.
 
 \index{associativity of addition} \label{sec:add-assoc}
 It turns out that neither the associativity nor the commutativity of addition or multiplication is axiom. One can prove them all with Peano's axioms. For example, to prove $(a + b) + c= a + (b + c)$, the associativity of addition by induction, first, we show it holds when $c=0$. According to the first rule of addition:
@@ -731,7 +731,7 @@ Second, assume $(a + b) + c = a + (b + c)$ holds, we are going to show $(a + b) 
              &= a + (b + c') && \text{2nd rule of +, (converse)} & \mbox{\qed}
 \end{align*}
 
-It proves the associativity of addition. However, it is a bit complex to prove the commutativity of addition; \cref{app:add-commutativity} gives a proof.
+hence proves the associativity of addition. However, it is a bit complex to prove the commutativity of addition; \cref{app:add-commutativity} gives a proof.
 
 \begin{mdframed}
 \index{Peano}
@@ -742,9 +742,9 @@ It proves the associativity of addition. However, it is a bit complex to prove t
  \label{fig:Peano}
 \end{center}
 
-Giuseppe Peano was an mathematician, logician, and linguist. He was born and raised on a farm at Spinetta, a hamlet now belonging to Cuneo, Italy. He entered the University of Turin in 1876, graduating in 1880 with high honors, after which the University employed him to teach calculus course. In 1887, Peano married Carola Crosio. In 1886, he began teaching concurrently at the Royal Military Academy. From 1880s, Peano started to study mathematical logic. He published Peano's axioms, a formal foundation for the natural numbers in 1889. Peano started the \emph{Formulario} Project. It was to be an `Encyclopedia of Mathematics', containing all known formulae and theorems. In 1900, the Second International Congress of Mathematicians was held in Paris. At the conference Peano met Bertrand Russell and gave him a copy of \emph{Formulario}. Russell was so struck by Peano's innovative logical symbols that he left the conference and returned home to study Peano's text\cite{M-Kline-2007}.
+Giuseppe Peano was a mathematician, logician, and linguist. He was born and raised on a farm at Spinetta, a hamlet now belonging to Cuneo, Italy. He entered the University of Turin in 1876, graduating in 1880 with high honors, after which the University employed him to teach calculus course. In 1887, Peano married Carola Crosio. In 1886, he began teaching concurrently at the Royal Military Academy. From 1880s, Peano started to study mathematical logic. He published Peano's axioms, a formal foundation for the natural numbers in 1889. Peano started the \emph{Formulario} Project. It was to be an \enquote{Encyclopedia of Mathematics,} containing all known formulae and theorems. In 1900, the Second International Congress of Mathematicians was held in Paris. At the conference Peano met Bertrand Russell and gave him a copy of \emph{Formulario}. Russell was so struck by Peano's innovative logical symbols that he left the conference and returned home to study Peano's text\cite{M-Kline-2007}.
 
-When Russell and Whitehead wrote {\em Principia Mathematica}, they were deeply influenced by Peano. Peano played a key role in the axiomatization of mathematics and was a leading pioneer in the development of mathematical logic and set theory. As part of this effort, he made key contributions to the modern rigorous and systematic treatment of the method of mathematical induction. He spent most of his career teaching mathematics at the University of Turin. He also developed an international auxiliary language, Latino sine flexione (`Latin without inflections', later called Interlingua), which is a simplified version of classical Latin. Although Peano put a lot of effort to rewrite his works in the new language, few people read it. On the other hand, his early works in French influenced many mathematicians, especially to Bourbaki school. Peano died on April 20th, 1932.
+When Russell and Whitehead wrote {\em Principia Mathematica}, they were deeply influenced by Peano. Peano played a key role in the axiomatization of mathematics and was a leading pioneer in the development of mathematical logic and set theory. As part of this effort, he made key contributions to the modern rigorous and systematic treatment of the method of mathematical induction. He spent most of his career teaching mathematics at the University of Turin. He also developed an international auxiliary language, Latino sine flexione (Latin without inflections, later called Interlingua), which is a simplified version of classical Latin. Although Peano put a lot of effort to rewrite his works in the new language, few people read it. On the other hand, his early works in French influenced many mathematicians, especially to Bourbaki school. Peano died on April 20th, 1932.
 \end{mdframed}
 
 \begin{Exercise}[label={ex:zero}]
@@ -774,7 +774,7 @@ When Russell and Whitehead wrote {\em Principia Mathematica}, they were deeply i
 \Question{View the area of rectangle as multiplication. When the width is 0, the area of $0 \times 5$ disappears. What shape does the rectangle become?
 
 \vspace{2mm}
-On one hand, consider the width keeps decreasing; the rectangle is narrowing and is closing to a line segment with length of 5. By Euclid's definition: line has no width. The dimension of width disappears, leaving only one dimension of height. On the other hand, point has no size by Euclid; no length or width, which corresponds to $0 \times 0$.
+On one hand, consider the width keeps decreasing; the rectangle is narrowing and is closing to \emph{a line segment with length of 5}. By Euclid's definition: line has no width. The dimension of width disappears, leaving only one dimension of height. On the other hand, point has no size by Euclid's definition; no length or width, which corresponds to $0 \times 0$.
 }
 
 \Question{When shall we count from 1? when shall we count from 0?
@@ -840,7 +840,7 @@ We need consider if it regards ordinal meaning or cardinal meaning; whether rega
 
 \Question{Show that the additive inverse is unique.
   \begin{proof}
-    Assume $b$ is another additive inverse of $a$, we are going to show $b = -a$:
+    Suppose $b$ is another additive inverse of $a$, we are going to show $b = -a$:
     \begin{align*}
       0     & = b + a     & \text{additive inverse} \\
       0 - a & = b + a - a & -a \text{ on both sides} \\
@@ -863,7 +863,7 @@ Since $2x + 1 = 2(x + \frac{1}{2})$, the transformation is to first move {\em le
 
 \Question{Show that a unit is unique.
 \begin{proof}
-Assume there is another unit $e'$, which satisfies $e' \odot a = a \odot e' = a$ for any element $a$. We are going to show $e = e'$:
+Suppose there is another unit $e'$, which satisfies $e' \odot a = a \odot e' = a$ for any element $a$. We are going to show $e = e'$:
 \begin{align*}
 e &= e \odot e' & e'\text{ is a unit} & \\
   &= e'         & e\text{ is a unit}  &\qedhere
