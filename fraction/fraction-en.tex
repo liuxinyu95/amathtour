@@ -401,7 +401,7 @@ As the result may not be in its lowest terms, the author continued with a specia
 \frac{b}{a} + \frac{c}{a} = \frac{b + c}{a}
 \ee
 
-For addition, the author of \emph{Nine chapters} didn't convert the fractions to their terms with the least common denominator, but merely multiplied the denominators. We skip the subtraction part in \emph{Nine chapters} as it is similar to addition. When comparing two fractions, it's not so obvious which one is greater as comparing two natural numbers, for example between $\dfrac{4}{7}$ and $\dfrac{3}{5}$. The author gave a remarkable general rule, which was essentially to compare the difference with zero by converting the two fractions of $\dfrac{b}{a}$ and $\dfrac{d}{c}$ to $bc$ and $ad$ and comparing. After defining the mean value of multiple fractions, the author extended it to the applications, like, \enquote{Now there are seven persons dividing the money of eight and one third, how much does each individual get? The answer is one and four twenty-first for each.} It is $8\dfrac{1}{3} \div 7 = 1\dfrac{4}{21}$. The author explained, \enquote{Put the number of persons as the denominator, the total money as the nominator, then reduce it to the lowest term.} The author did not consider the application of fractional denominator. The last part was about the multiplication of fractions:
+For addition, the author of \emph{Nine chapters} didn't convert the fractions to their terms with the least common denominator, but merely multiplied the denominators. We skip the subtraction part in \emph{Nine chapters} as it is similar to addition. When comparing two fractions, it's not so obvious which one is greater as comparing two natural numbers, for example between $\dfrac{4}{7}$ and $\dfrac{3}{5}$. The author gave a remarkable general rule, which was essentially to compare the difference with zero by converting the two fractions of $\dfrac{b}{a}$ and $\dfrac{d}{c}$ to $bc$ and $ad$ and comparing. After defining the mean value of multiple fractions, the author extended it to the applications, like, \enquote{Now there are seven persons dividing the money of eight and one third, how much does each individual get? The answer is one and four twenty-first for each.} It is $8\dfrac{1}{3} \div 7 = 1\dfrac{4}{21}$. The author explained, \enquote{Put the number of persons as the denominator, the total money as the nominator, then reduce it to the lowest terms.} The author did not consider the application of fractional denominator. The last part was about the multiplication of fractions:
 
 \begin{enumerate}[1)]
 \item Now there is a land with length of four seventh a step and width of three fifth a step, what is the area? The answer is twelve thirty-fifth of a square step ($\dfrac{4}{7} \times \dfrac{3}{5} = \dfrac{12}{35}$).
@@ -491,18 +491,18 @@ The left side $0.999\cdots$ looks obviously different from the right side 1, why
 The proposition does not hold for finitely many 9. Even if there are $n = 10000$ of 9 because $9.99\cdots9$ (a 9 as whole number and 9999 places of 9) subtract $0.99\cdots9$ (a 0 as whole number and 10000 places of 9) gives $8.99\cdots91$, hence $x = \dfrac{8.99\cdots91}{9} \ne 1$. The 10 thousand digits terminating decimal $0.99\cdots9 \ne 1$. The proposition shows that the sum of infinitely many positives, $\dfrac{9}{10} + \dfrac{9}{100} + \cdots = 1$, is a finite value\footnote{Alternatively, one may prove with the concept of limitation: the decimal of $n$ places, $0.99\cdots9 = 1 - 0.00\cdots01 = 1 - \dfrac{1}{10^{n+1}}$; taking limit, $0.999\cdots = \lim\limits_{n\to\infty} (1 - \dfrac{1}{10^{n+1}}) = 1 - \lim\limits_{n\to\infty} \dfrac{1}{10^{n+1}} = 1 - 0 = 1$.}.
 
 \begin{corollary}
-  For any non-terminating decimal $0.a_1a_2\cdots$, the sum of infinitely many fractions: $a_1 \dfrac{1}{10} + a_2 \dfrac{1}{100} + \cdots$ is finite.
+  For any non-terminating decimal $0.a_1a_2\cdots$, the sum of infinitely many fractions: $a_1 \dfrac{1}{10} + a_2 \dfrac{1}{100} + \cdots$, is finite.
 \end{corollary}
 
 \begin{proof}
-  For every place $0 \leq a_i \leq 9$, the sum
+  For every decimal place $0 \leq a_i \leq 9$, the sum
   \begin{align*}
 0 \leq 0.a_1 a_2 \cdots = a_1\frac{1}{10} + a_2\frac{1}{10^2} + \cdots \leq \frac{9}{10} + \frac{9}{10^2} + \cdots = 0.999\cdots = 1 & \qedhere
   \end{align*}
 \end{proof}
 
 \index{paradoxes of Zeno!Achilles paradox}
-Though the fact of $0.a_1a_2\cdots \leq 1$ looks obvious, it's a remarkable mathematical and logical statement that the sum of infinitely many positive values are finite. It's the key to solve a paradox with a history over two thousand years. Zeno of Elea (about 490 - 425 BCE) a Greek philosopher, designed four paradoxes; the first one called Achilles paradox was the most popular. Achilles, the greatest warrior in Trojan war according to Homer's \emph{Iliad}, was fleet-footed. However, Zeno argued that Achilles when started behind a slow-moving tortoise in a race, would never catch up with it. Because Achilles must first reach the point $A$ where the tortoise started, by which time the tortoise would have moved ahead to point $B$; by the time Achilles traversed the distance to this latter point $B$, the tortoise would have moved ahead to another point $C$, and so on. Although the distance between Achilles and the tortoise got closer and closer, Achilles was always left behind the tortoise, as shown in \cref{fig:Achilles-paradox}.
+Though the fact of $0.a_1a_2\cdots \leq 1$ looks obvious, it's a remarkable mathematical and logical statement that the sum of infinitely many positive values are finite. It's the key to solve a paradox with a history over two thousand years. The Greek philosopher Zeno of Elea (c. 490 - 425 BCE) designed four paradoxes; the first one called Achilles paradox was the most popular. Achilles, the greatest warrior in Trojan war according to Homer's \emph{Iliad}, was fleet-footed. However, Zeno argued that Achilles when started behind a slow-moving tortoise in a race, would never catch it up. Because Achilles must first reach the point $A$ where the tortoise started, by which time the tortoise would have moved ahead to point $B$; by the time Achilles traversed the distance to this latter point $B$, the tortoise would have moved ahead to another point $C$, and so on. Although the distance between Achilles and the tortoise got closer and closer, Achilles was always left behind the tortoise, as shown in \cref{fig:Achilles-paradox}.
 
 \begin{figure}[htbp]
  \centering
@@ -511,15 +511,15 @@ Though the fact of $0.a_1a_2\cdots \leq 1$ looks obvious, it's a remarkable math
  \label{fig:Achilles-paradox}
 \end{figure}
 
-This is counter our common sense. We learn from school math how to solve such problem through the method of `relative motion'. Denote the speed of the tortoise by $v_1$, the speed of Achilles by $v_2$; the relative speed of Achilles to the tortoise was $v_2 - v_1$. If the tortoise started head of Achilles by $s$, then Achilles would catch up and overtook the tortoise by the time of $t = \dfrac{s}{v_2 - v_1}$. However, it was not until Galileo, that the concept of relative motion was established systematically. Zeno's argument seemed so sound that the paradox attracted many great minds in history. Lewis Carrol and Douglas Hofstadter took Achilles and the tortoise as figures in their literary works.
+This is counter our common sense. We learn from school math how to solve such problem through the method of \enquote{relative motion.} Denote the speed of the tortoise by $v_1$, the speed of Achilles by $v_2$; the relative speed of Achilles to the tortoise is $v_2 - v_1$. If the tortoise starts head of Achilles by $s$, then Achilles will catch up and overtake the tortoise by the time of $t = \dfrac{s}{v_2 - v_1}$. However, it was not until Galileo, that the concept of relative motion was established systematically. Zeno's argument seemed so sound that the paradox attracted many great minds in history. Lewis Carrol and Douglas Hofstadter took Achilles and the tortoise as figures in their literary works.
 
-In Analysis, it's common to solve Achilles paradox with the concept of limitation. Alternatively, we may solve it with the tool: the decimal as the sum of fractions. Let's quantify the problem for easy understanding. Suppose Achilles was 10 times faster than the tortoise, i.e., $v_2 : v_1 = 10$; the tortoise started a head by the distance $s = 100$ pous\footnote{1 pous $\approx$ 0.308 feet in ancient Greece.}. According to Zeno, Achilles need first traverse $s = 100$ pous, by which time the tortoise would have moved $\dfrac{1}{10}s = 10$ pous ahead; then Achilles traversed this 10 pous, by which time the tortoise would have moved another$\dfrac{1}{100}s = 1$ pous, ... the total distance Achilles need to traverse would be:
+In Analysis, it's common to solve Achilles paradox with the concept of limitation. Alternatively, we may solve it with the tool, namely the decimal as the sum of fractions. Let's quantify the problem for easy understanding. Suppose Achilles was 10 times faster than the tortoise, i.e., $v_2 : v_1 = 10$; the tortoise started a head by the distance $s = 100$ pous\footnote{1 pous $\approx$ 0.308 feet in ancient Greece.}. According to Zeno, Achilles needs first traverse $s = 100$ pous, by which time the tortoise will have moved $\dfrac{1}{10}s = 10$ pous ahead; then Achilles traverses this 10 pous, by which time the tortoise will have moved another$\dfrac{1}{100}s = 1$ pous, ... the total distance Achilles needs to traverse will be:
 
 \[
 s(1 + \frac{1}{10} + \frac{1}{100} + \cdots) = 100\times(1 + 0.1 + 0.01 + \cdots) = 100 \times 1.11\cdots = 111.11\cdots
 \]
 
-Suppose the fleet-footed Achilles run 100 pous in 9 second; he need run another 0.9 second for the next 10 pous, and another 0.09 second for the next 1 pous, ..., the total time would be:
+Suppose the fleet-footed Achilles runs 100 pous in 9 second; he needs run another 0.9 second for the next 10 pous, and another 0.09 second for the next 1 pous, ..., the total time will be:
 
 \begin{align*}
 9 + 0.9 + 0.09 + \cdots &= 9.99\cdots = 10 \times 0.99\cdots & \\
@@ -527,15 +527,15 @@ Suppose the fleet-footed Achilles run 100 pous in 9 second; he need run another 
                         &= 10
 \end{align*}
 
-Hence Achilles caught up the tortoise in 10 seconds according to Zeno's logic.
+Hence Achilles will catch up the tortoise in 10 seconds according to Zeno's logic.
 
 \subsection{Repeating decimals}
 \index{repeating decimals}
-To convert irreducible fraction $\dfrac{b}{a}$ to decimal, one divides $b$ by $a$. The division terminates sometimes, for example, $\dfrac{1}{2} = 0.5$, $\dfrac{1}{8} = 0.125$, $\dfrac{1}{25} = 0.4$, otherwise repeating, for example, $\dfrac{1}{3} = 0.\dot{3} = 0.333\cdots$, $\dfrac{1}{7} = 0.\dot{1}\dot{4}\dot{2}\dot{8}\dot{5}\dot{7}$. In what condition does it terminate? and in what condition does not? It seems depend on our luck; in fact, we are very unlucky: it repeats in common. Below theorem tells how unlucky we are.
+To convert irreducible fraction $\dfrac{b}{a}$ to decimal, one divides $b$ by $a$. The division terminates sometimes, for example, $\dfrac{1}{2} = 0.5$, $\dfrac{1}{8} = 0.125$, $\dfrac{1}{25} = 0.4$, otherwise repeating, for example, $\dfrac{1}{3} = 0.\dot{3} = 0.333\cdots$, $\dfrac{1}{7} = 0.\dot{1}\dot{4}\dot{2}\dot{8}\dot{5}\dot{7}$. In what condition does it terminate? and in what condition does not? It seems to depend on our luck; in fact, we are very unlucky: it repeats in common. Below theorem tells how unlucky we are.
 
 \index{terminating decimals}
 \begin{theorem} \label{thm:finite-decimal}
-  A irreducible fraction $\dfrac{b}{a}$ can be expressed as terminating decimal if and only if $\dfrac{b}{a} = \dfrac{b}{2^{\alpha}5^{\beta}}$, where $\alpha$ and $\beta$ are non-negative integers.
+  An irreducible fraction $\dfrac{b}{a}$ can be expressed as terminating decimal if and only if $\dfrac{b}{a} = \dfrac{b}{2^{\alpha}5^{\beta}}$, where $\alpha$ and $\beta$ are non-negative integers.
 \end{theorem}
 
 \begin{proof}
@@ -555,12 +555,12 @@ Conversely, expand the $n$-places decimal $0.a_1 a_2 \cdots a_n$ to sum of fract
   &= \frac{B}{2^n 5^n} = \frac{b}{a} & \text{in the lowest terms}
 \end{align*}
 
-Because the factors of the denominator $10^n = 2^n 5^n$ are all powers of 2 and 5, so are the factors of the lowest term $a$.
+Because the factors of the denominator $10^n = 2^n 5^n$ are all powers of 2 and 5, so are the factors of $a$ in the lowest term.
 \end{proof}
 
-It turns out if there is any factor besides 2 and 5 for any irreducible fraction, like 3, 7, 11, ... then the decimal does not terminate. We may extend this theorem to $b$-based decimals, which don't terminate if the denominator contains any factor that does not divide $b$. This explains why the repeating decimal $\dfrac{5}{12} = 0.41666\cdots$ terminates as Babylonian 60-based decimal 0, 25; and why $\dfrac{5}{14}$ repeats even as Babylonian decimal. In particular, any fractions not in the form of $\dfrac{b}{2^n}$ does not terminate as binary decimal, which leads to rounding error in computer system.
+It turns out if there is any factor besides 2 and 5 for any irreducible fraction, like 3, 7, 11, ... then the decimal does not terminate. We may extend this theorem to $b$-based decimal, which does not terminate if the denominator contains any factor that does not divide $b$. This explains why the repeating decimal $\dfrac{5}{12} = 0.41666\cdots$ terminates as Babylonian sexagesimal (60-based) of 0, 25; and why $\dfrac{5}{14}$ repeats even as Babylonian sexagesimal. In particular, any fractions not in the form of $\dfrac{b}{2^n}$ does not terminate as binary, which leads to rounding error in computer system.
 
-The decimal of fractions either terminates or repeats (the next chapter shows fraction can't produce non-terminating non-repeating decimal); Among those repeating, some have periodic cycle of 1 digit, like $\dfrac{1}{3} = 0.\dot{3}$, some have cycle of 2 digits, like $\dfrac{5}{11} = 0.\dot{4}\dot{5}$, some even longer, like $\dfrac{1}{7} = 0.\dot{1}\dot{4}\dot{2}\dot{8}\dot{5}\dot{7}$; some is pure repeating, some is mixed, like $\dfrac{5}{12} = 0.41\dot{6}$. What are the rules?
+The decimal of fractions either terminates or repeats (the next chapter shows that fraction can't produce non-terminating non-repeating decimal); among those repeating, some have periodic cycle of 1 digit, like $\dfrac{1}{3} = 0.\dot{3}$, some have cycle of 2 digits, like $\dfrac{5}{11} = 0.\dot{4}\dot{5}$, some even longer, like $\dfrac{1}{7} = 0.\dot{1}\dot{4}\dot{2}\dot{8}\dot{5}\dot{7}$; some is pure repeating, some is mixed, like $\dfrac{5}{12} = 0.41\dot{6}$. What are the rules behind?
 
 \begin{proposition}
 The decimal of $\dfrac{a}{9}$ is $0.\dot{a} = 0.aaa\cdots$
@@ -568,7 +568,7 @@ The decimal of $\dfrac{a}{9}$ is $0.\dot{a} = 0.aaa\cdots$
 
 \begin{proof}
   \begin{align*}
-    \text{令}x &= 0.\dot{a} = 0.aaa\cdots && \\
+    \text{let }x &= 0.\dot{a} = 0.aaa\cdots && \\
            10x &= a.aaa\cdots && \\
        10x - x &= 9x = a.aaa\cdots - 0.aaa = a && \\
              x &= \frac{a}{9} && \qedhere
@@ -654,7 +654,7 @@ In arrow paradox, Zeno stated that for motion to occur, an object must change th
 \end{center}
 
 \index{Zeno's paradoxes!moving rows paradox}
-The moving row paradox is also known as stadium paradox. It is also about dividing time into atomic points. As in \cref{fig:Moving-rows-paradox}, there are three rows in the stadium. Each row being composed of an equal number of bodies. At the beginning, they are all aligned. At the smallest time duration, row A stays, row B moves to the right one space unit, while row $\Gamma$ moves to the left one space unit. To row B, row $\Gamma$ actually moves two space units. It means, there should be time duration that $\Gamma$ moves one space unit relative to $B$. And it is the half time of the smallest duration. Since the smallest duration is atomic, it involves the conclusion that half a given time is equal to that time.
+The moving row paradox, also known as the stadium paradox, is about dividing time into atomic points too. As in \cref{fig:Moving-rows-paradox}, there are three rows in the stadium. Each row being composed of an equal number of bodies. At the beginning, they are all aligned. At the smallest time duration, row A stays, row B moves to the right one space unit, while row $\Gamma$ moves to the left one space unit. To row B, row $\Gamma$ actually moves two space units. It means, there should be time duration that $\Gamma$ moves one space unit relative to $B$. And it is the half time of the smallest duration. Since the smallest duration is atomic, it involves the conclusion that half a given time is equal to that time.
 
 \begin{center}
  \includegraphics[scale=0.3]{img/moving-rows-paradox}
@@ -666,7 +666,7 @@ Although Zeno's paradoxes are easy to understand, the arguments are confusing: m
 \end{mdframed}
 
 \section{Fractions as numbers}
-In some sense, fractions were quite different from natural numbers of 0, 1, 2, 3, ... a fraction has two compounds: nominator and denominator; it has different forms, including decimal, percentage, expression of division, and ratio ($a:b$), all are fractions essentially. The last two demonstrate a particular feature that natural numbers of 0, 1, 2, 3... do not have: $\dfrac{1}{2} = \dfrac{2}{4} = \dfrac{50}{100} = 3 \div 6 = 7:14 = \cdots$, a definitive value with \emph{multiple} representations. Varies of expressions may evaluate to the same value (or ratio).  Below are some questions when one wants to treat fractions and natural numbers uniformly as `numbers':
+In some sense, fractions were quite different from natural numbers of 0, 1, 2, 3, ... a fraction has two compounds: nominator and denominator; it has different forms, including decimal, percentage, expression of division, and ratio ($a:b$), all are fractions essentially. The last two demonstrate a particular feature that natural numbers of 0, 1, 2, 3... do not have: $\dfrac{1}{2} = \dfrac{2}{4} = \dfrac{50}{100} = 3 \div 6 = 7:14 = \cdots$, a definitive value with \emph{multiple} representations. Varies of expressions may evaluate to the same value (or ratio).  Below are some questions when one wants to treat fractions and natural numbers uniformly as \enquote{numbers.}
 
 \begin{enumerate}[Q1.]
 \item Which fractions (ratios) are identical?
@@ -676,7 +676,7 @@ In some sense, fractions were quite different from natural numbers of 0, 1, 2, 3
 \end{enumerate}
 
 \index{equivalence relation} \label{sec:frac-equiv}
-For Q1, if $\dfrac{b}{a} = \dfrac{d}{c}$ holds, multiply $ac$ to both sides, it turns out $bc = ad$; this is known as `cross-multiplication' as shown in \cref{fig:cross-mul}. It also applies to the equation of ratios: the `inner' and `outer' products of $b : a = d : c$ are same, i.e., $bc = ad$. This is because the two forms, fraction and ratio，are essentially same. In mathematics, we call a relation $\sim$ \underdot{equivalence} if below three properties hold:
+For Q1, if $\dfrac{b}{a} = \dfrac{d}{c}$ holds, multiply $ac$ to both sides, it turns out $bc = ad$; this is known as \enquote{cross-multiplication} as shown in \cref{fig:cross-mul}. It also applies to the equation of ratios: the \enquote{inner} and \enquote{outer} products of $b : a = d : c$ are identical, i.e., $bc = ad$. This is because the two forms, fraction and ratio，are essentially same. In mathematics, we call a relation \enquote{$\sim$} \underdot{equivalence} if below three properties hold:
 
 \begin{enumerate}[P1.]
 \item Reflective: $a \sim a$;
@@ -685,7 +685,7 @@ For Q1, if $\dfrac{b}{a} = \dfrac{d}{c}$ holds, multiply $ac$ to both sides, it 
 \end{enumerate}
 
 \index{equivalence relation!fractions}
-Let's verify $bc = ad$ is an equivalence relation satisfying them. First for the reflective property, comparing $\dfrac{b}{a}$ with itself, it's plainly that $ab = ab$; next for symmetric property, if $bc = ad$ holds for $\dfrac{b}{a}$ and $\dfrac{d}{c}$, then $ad = bc$ also hold for $\dfrac{d}{c}$ and $\dfrac{b}{a}$; last for transitive property, if $bc = ad$ holds for $\dfrac{b}{a}$ and $\dfrac{d}{c}$, and $de = cf$ holds for $\dfrac{d}{c}$ and $\dfrac{f}{e}$, multiply the two equations: $bcde = adcf$. Since the denominator $c \ne 0$, it can be canceled to give $bde = adf$. If $d \ne 0$ which can be further canceled to $be = af$; otherwise if $d = 0$, then $bc = ad = 0 = de = cf$, hence $b = f = 0$, which gives $be = af$ too. It follows the relation holds for $\dfrac{b}{a}$ and $\dfrac{f}{e}$.
+Obviously, the normal \enquote{=} satisfies them, hence is an equivalence relation. Let's verify $bc = ad$ is an equivalence relation. First for the reflective property, comparing $\dfrac{b}{a}$ with itself, it's plainly that $ab = ab$; next for symmetric property, if $bc = ad$ holds for $\dfrac{b}{a}$ and $\dfrac{d}{c}$, then $ad = bc$ also hold for $\dfrac{d}{c}$ and $\dfrac{b}{a}$; last for transitive property, if $bc = ad$ holds for $\dfrac{b}{a}$ and $\dfrac{d}{c}$, and $de = cf$ holds for $\dfrac{d}{c}$ and $\dfrac{f}{e}$, multiply the two equations: $bcde = adcf$. Since the denominator $c \ne 0$, it can be canceled to give $bde = adf$. If $d \ne 0$ which can be further canceled to $be = af$; otherwise if $d = 0$, then $bc = ad = 0 = de = cf$, hence $b = f = 0$, which gives $be = af$ too. It follows that the relation holds for $\dfrac{b}{a}$ and $\dfrac{f}{e}$.
 
 \begin{figure}[htbp]
  \centering
@@ -695,9 +695,9 @@ Let's verify $bc = ad$ is an equivalence relation satisfying them. First for the
 \end{figure}
 
 \index{irreducible fraction} \index{lowest terms}
-With this equivalence relation, one can tell any two fractions (and ratios) equivalent. Among all equivalent fractions, we chose the $\dfrac{b}{a}$, where $a, b$ have no common divisor except 1 (their greatest common divisor is $(a, b) = 1$, called coprime or relatively prime), as the \emph{representative}, which is called the irreducible fraction (or in the lowest terms). The only exception is 0, which we chosen as the representative of $\dfrac{0}{a}$. Such representative is unique for if $\dfrac{b}{a} = \dfrac{d}{c}$ both irreducible and their denominators are coprime, by the equivalence relationship $bc = ad$, it implies $c$ divides $ad$; meanwhile since $c$ and $d$ are coprime, $c$ divides $a$. It follows that $a$ and $c$ divides each other, hence identical, i.e., $a = c$. In the same way, $b = d$, which shows the representative irreducible fraction is unique.
+With this equivalence relation, one can tell any two fractions (and ratios) equivalent. Among all equivalent fractions, we choose the $\dfrac{b}{a}$, where $a, b$ have no common divisor except 1 (their greatest common divisor $(a, b) = 1$, called coprime or relatively prime) as the \emph{representative}, which is called the irreducible fraction (or in the lowest terms). The only exception is 0, which we chosen as the representative of $\dfrac{0}{a}$. Such representative is unique for if $\dfrac{b}{a} = \dfrac{d}{c}$ both are irreducible and their denominators are coprime, by the equivalence relation $bc = ad$, it implies $c$ divides $ad$; meanwhile since $c$ and $d$ are coprime, $c$ divides $a$. It follows that $a$ and $c$ divides each other, hence identical, i.e., $a = c$. In the same way, $b = d$, which shows the representative irreducible fraction is unique.
 
-It's natural to ask why need such equivalence relationship? why not check if the fractions reduce to the same lowest terms? People did compare by reduction at the beginning as we see in the book of \emph{Nine chapters} and as we were taught at school. However, as the numbers get bigger, people realized division is harder than multiplication. For example, it's a bit hard to compare $\dfrac{8723}{22814}$ and $\dfrac{143}{374}$ by reduction even with a calculator or applying Euclidean algorithm. But it's easy to multiply, which is fast, and compare the product of $8723 \times 374 = 3262402$ and $22814 \times 143 = 3262402$, which are obviously identical. This equivalence relationship can be extended to fractional expressions, for example, for $\dfrac{x^5 - 1}{x^3 - 1}$ and $\dfrac{1 + x + x^2 + x^3 + x^4}{1 + x + x^2}$, it's a bit hard to factorize\footnote{One solution is based on the obvious fact that $1^n - 1 = 0$, consequently, $x-1$ is a factor of $x^n-1$. Then by long division method, one can factorize it.} and reduce to lowest terms, but multiplication is much easier:
+It's natural to ask why need such equivalence relation? why not just check if the fractions reduce to the same lowest terms? People did compare by reduction at the beginning as we've seen in the book of \emph{Nine chapters} and as what we were taught at school. However, as the numbers get bigger, people realized division is much harder than multiplication. For example, it's a bit hard to compare $\dfrac{8723}{22814}$ and $\dfrac{143}{374}$ by reduction even with a calculator or applying Euclidean algorithm. But it's easy to multiply, which is fast, and compare the product of $8723 \times 374 = 3262402$ and $22814 \times 143 = 3262402$, which are obviously identical. This equivalence relation can be extended to fractional expressions, for example, given $\dfrac{x^5 - 1}{x^3 - 1}$ and $\dfrac{1 + x + x^2 + x^3 + x^4}{1 + x + x^2}$, it's a bit hard to factorize\footnote{One solution is based on the obvious fact that $1^n - 1 = 0$, consequently, $x-1$ is a factor of $x^n-1$. Then by long division method, one can factorize it.} and reduce to the lowest terms, but multiplication is much easier:
 
 \begin{align*}
 (x^3 - 1)(1 + x + x^2 + x^3 + x^4) &= \cancel{x^3} + \cancel{x^4} + x^5 + x^6 + x^7 - 1 - x - x^2 - \cancel{x^3} - \cancel{x^4} \\
@@ -706,13 +706,13 @@ It's natural to ask why need such equivalence relationship? why not check if the
   &= x^7 + x^6 + x^5 - x^2 - x - 1
 \end{align*}
 
-It shows the two fractions equal. This justifies why mathematicians generalize the abstract concept of equivalence relationship and chose the cross-multiplication as its application to fractions and ratios.
+It shows the two fractions equal. This justifies why mathematicians generalize the abstract concept of equivalence relation and choose the cross-multiplication as its application to fractions and ratios.
 
 \vspace{3mm}
-For Q2, we may reuse the method in \emph{Nine chapters}, comparing through the difference of $\dfrac{b}{a} - \dfrac{d}{c}$ with 0. It amounts to comparing the nominators after reducing them to the same denominators. As any whole number $n$ equals $\dfrac{n}{1}$, we unify the comparison across whole numbers and fractions simply to comparison of fractions. The ordering across whole numbers, fractions, and decimals sorts out their positions on the number line.
+For Q2, we may reuse the method in the \emph{Nine chapters}, comparing through the difference of $\dfrac{b}{a} - \dfrac{d}{c}$ with 0. It amounts to comparing the nominators after reducing them to the same denominators. As any whole number $n$ equals $\dfrac{n}{1}$, we unify the comparison across whole numbers and fractions simply to comparison between fractions. The ordering across whole numbers, fractions, and decimals sorts out their positions on the number line.
 
 \vspace{3mm}
-For Q3, the arithmetic operations were also given in \emph{Nine chapters}, which can be summarized as: for $+/-$, reduce to the common denominator then add/subtract the nominators; for $\times$, multiply the nominators and denominators respectively, followed by reduction. The reciprocal of a number $n \ne 0$ is $\dfrac{1}{n}$ because $n\dfrac{1}{n} = \dfrac{n}{n} = 1$. If $n$ is fractional, expressed as $\dfrac{b}{a}$, then its reciprocal is $\dfrac{a}{b}$ because $\dfrac{b}{a}\dfrac{a}{b} = 1$. It shows that a fraction is itself a expression of division, hence the reciprocal is a bridge between division and multiplication:
+For Q3, the arithmetic operations were also given in the \emph{Nine chapters}, which can be summarized as: for $+/-$, reduce to the common denominator then add/subtract the nominators; for $\times$, multiply the nominators and denominators respectively, followed by reduction. The reciprocal of a number $n \ne 0$ is $\dfrac{1}{n}$ because $n\dfrac{1}{n} = \dfrac{n}{n} = 1$. If $n$ is fractional, expressed as $\dfrac{b}{a}$, then its reciprocal is $\dfrac{a}{b}$ because $\dfrac{b}{a}\dfrac{a}{b} = 1$. It shows that a fraction is itself a expression of division, hence the reciprocal is a bridge between division and multiplication:
 
 \[
 \frac{b}{a} = b \div a = b \times 1 \div a = b \times \frac{1}{a}
@@ -734,7 +734,7 @@ By converting any whole number $n$ to $\dfrac{n}{1}$, we unify the arithmetic op
 
 \vspace{3mm}
 \index{close}
-For Q4, fraction provides a unified way to express numbers: a whole number $n$ including 0 can be expressed as $\dfrac{n}{1}$, terminating and repeating decimals can be expressed as $\dfrac{b}{a}, a \ne 0$. This `family' of numbers (the set of fractions) is called \emph{rationals}, denoted by $\mathbb{Q}$. We'll explain this name in chapter 4. For every number $x$ of integers $\mathbb{Z}$, it has a negative (additive reverse) number $-x$, but only $\pm 1$ has reciprocal (multiplicative reverse). For every non-zero number $x$ of rationals $\mathbb{Q}$, it has a reciprocal (multiplicative reverse) $\dfrac{1}{x}$. The addition and subtraction are not closed for natural numbers $\mathbb{N}$, for example, $1 - 3 = -2 \notin \mathbb{N}$, but they are closed for integers $\mathbb{Z}$: for any two integers $m, n$, $m \pm n \in \mathbb{Z}$ always hold. While the arithmetic operations are not closed for integers $\mathbb{Z}$ because $1 \div 2 = \dfrac{1}{2} = 0.5 \notin \mathbb{Z}$, but they are closed for rationals $\mathbb{Q}$: for any two rationals $p, q$, the result of $p \pm q, pq, \dfrac{p}{q} (q \ne 0)$ are always in $\mathbb{Q}$.
+For Q4, fraction provides a unified way to express numbers: a whole number $n$ including 0 can be expressed as $\dfrac{n}{1}$, terminating and repeating decimals can be expressed as $\dfrac{b}{a}, a \ne 0$. This \enquote{family} of numbers (the set of fractions) is called \emph{rationals}, denoted by $\mathbb{Q}$. We'll explain this name in chapter 4. For every number $x$ of integers $\mathbb{Z}$, it has a negative (additive reverse) number $-x$, but only $\pm 1$ has reciprocal (multiplicative reverse). For every non-zero number $x$ of rationals $\mathbb{Q}$, it has a reciprocal (multiplicative reverse) $\dfrac{1}{x}$. The addition and subtraction are not closed for natural numbers $\mathbb{N}$, for example, $1 - 3 = -2 \notin \mathbb{N}$, but they are closed for integers $\mathbb{Z}$: for any two integers $m, n$, $m \pm n \in \mathbb{Z}$ always hold. While the arithmetic operations are not closed for integers $\mathbb{Z}$ because $1 \div 2 = \dfrac{1}{2} = 0.5 \notin \mathbb{Z}$, but they are closed for rationals $\mathbb{Q}$: for any two rationals $p, q$, the result of $p \pm q, pq, \dfrac{p}{q} (q \ne 0)$ are always in $\mathbb{Q}$.
 
 The five arithmetic laws hold for fractions, we only verify the associative law for addition and the distribution law and leave the remaining three as \cref{qn:arithmatic-law-fraction}.
 \begin{proof}
