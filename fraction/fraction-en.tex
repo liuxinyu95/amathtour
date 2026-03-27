@@ -734,9 +734,9 @@ By converting any whole number $n$ to $\dfrac{n}{1}$, we unify the arithmetic op
 
 \vspace{3mm}
 \index{close}
-For Q4, fraction provides a unified way to express numbers: a whole number $n$ including 0 can be expressed as $\dfrac{n}{1}$, terminating and repeating decimals can be expressed as $\dfrac{b}{a}, a \ne 0$. This \enquote{family} of numbers (the set of fractions) is called \emph{rationals}, denoted by $\mathbb{Q}$. We'll explain this name in chapter 4. For every number $x$ of integers $\mathbb{Z}$, it has a negative (additive reverse) number $-x$, but only $\pm 1$ has reciprocal (multiplicative reverse). For every non-zero number $x$ of rationals $\mathbb{Q}$, it has a reciprocal (multiplicative reverse) $\dfrac{1}{x}$. The addition and subtraction are not closed for natural numbers $\mathbb{N}$, for example, $1 - 3 = -2 \notin \mathbb{N}$, but they are closed for integers $\mathbb{Z}$: for any two integers $m, n$, $m \pm n \in \mathbb{Z}$ always hold. While the arithmetic operations are not closed for integers $\mathbb{Z}$ because $1 \div 2 = \dfrac{1}{2} = 0.5 \notin \mathbb{Z}$, but they are closed for rationals $\mathbb{Q}$: for any two rationals $p, q$, the result of $p \pm q, pq, \dfrac{p}{q} (q \ne 0)$ are always in $\mathbb{Q}$.
+For Q4, fraction provides a unified way to express numbers: a whole number $n$ including 0 can be expressed as $\dfrac{n}{1}$, terminating and repeating decimals can be expressed as $\dfrac{b}{a}, a \ne 0$. This \enquote{family} of numbers (the set of fractions) is called \emph{rationals}, denoted by $\mathbb{Q}$. We'll explain this name in chapter 4. In the set $\mathbb{Z}$ of integers, every number $x$ has its additive inverse, namely the negative $-x$; in contrast, none except $\pm 1$ has its multiplicative reverse, namely the reciprocal, because only $1 \times 1 = (-1) \times (-1) = 1$. But in the set $\mathbb{Q}$ of rationals, every non-zero number $x$ has its multiplicative reverse of $\dfrac{1}{x}$. The addition and subtraction are not closed for natural numbers $\mathbb{N}$, for example, $1 - 3 = -2 \notin \mathbb{N}$, but they are closed for integers $\mathbb{Z}$: for any two integers $m, n$, $m \pm n \in \mathbb{Z}$ always hold. While the arithmetic operations are not closed for integers $\mathbb{Z}$ because $1 \div 2 = \dfrac{1}{2} = 0.5 \notin \mathbb{Z}$, but they are closed for rationals $\mathbb{Q}$: for any two rationals $p, q$, the result of $p \pm q, pq, \dfrac{p}{q} (q \ne 0)$ are always in $\mathbb{Q}$.
 
-The five arithmetic laws hold for fractions, we only verify the associative law for addition and the distribution law and leave the remaining three as \cref{qn:arithmatic-law-fraction}.
+The five arithmetic laws hold for fractions. We only verify the associative law for addition and the distribution law and leave the remaining three as \cref{qn:arithmatic-law-fraction}.
 \begin{proof}
 Associative law for fractions:
 \begin{align*}
@@ -760,57 +760,57 @@ We only show the left side distribution law, the right one rests on commutative 
 
 \vspace{3mm}
 \index{equal temperament}
-Return to the legend of Pythagoras. After the discovery of the theory of music, that fractions ruled the harmonic sound, how to tune the seven strings of a lyre? If add an eighth string, then its length should be half of the first string, such that to get an octave. Pythagoras found overlapping a perfect fifth (ratio $3:2$) to a perfect four (ratio $4:3$) is an octave because $\dfrac{3}{2} \times \dfrac{4}{3} = 2$. He used the ratio $3:2$ of a perfect fifth as a basis scale, multiplied a geometric series:
+Return to the legend of Pythagoras. After the discovery of the theory of music that fractions rule the harmonic sound, how to tune the seven strings of a lyre? If add an eighth string, then its length should be half of the first string, such that to get an octave. Pythagoras found overlapping a perfect fifth (ratio $3:2$) to a perfect four (ratio $4:3$) was an octave because $\dfrac{3}{2} \times \dfrac{4}{3} = 2$. He used the ratio $3:2$ of a perfect fifth as the basis scale and multiplied a geometric series:
 
 \[
 (\frac{3}{2})^{-1}, (\frac{3}{2})^0, (\frac{3}{2})^{1}, (\frac{3}{2})^2, (\frac{3}{2})^{3}, (\frac{3}{2})^4, (\frac{3}{2})^{5} = \frac{2}{3}, 1, \frac{3}{2}, \frac{9}{4}, \frac{27}{8}, \frac{81}{16}, \frac{243}{32}
 \]
 
-Where the last four were greater than 2, which exceeded an octave. Pythagoras divided them by either 2 or 4, which mapped them back to the octave, then reordered them as:
+where the last four were greater than 2, which exceeded an octave. Pythagoras divided them by either 2 or 4, which mapped them back to the octave, thus reordered them to:
 
 \[
 1, \frac{9}{8}, \frac{81}{64}, \frac{4}{3}, \frac{3}{2}, \frac{27}{16}, \frac{243}{128}, \frac{2}{1}
 \]
 
-It gave the ratio of each tone to the base. To list the ratio between each adjacent tones, he calculate the quotient between every two numbers:
+It gave the ratio of each tone to the base. To list the ratio between each adjacent tones, he calculated the quotient between every two numbers:
 
 \[
 \frac{9}{8}, \frac{9}{8}, \frac{256}{243}, \frac{9}{8}, \frac{9}{8}, \frac{9}{8}, \frac{256}{243}
 \]
 
 \index{tonality}
-In music theory, the greater ratio $9:8$ is called a whole tone (step, W), the less ratio $256:243$ is called a semitone (half step, H). This list, W - W - H - W - W -W - H, is called a major scale. Musical works based on major scale typically create sense of warmth, cheerfulness, and resolution. Another type, known as minor scale, which shifts the list to W - H - W - W - H - W - W; it typically create sense of mellowness and introspection. Is there a harmonic 12-tone equal temperament? Unfortunately, it was out of what Pythagoras could design with fractions. To work out a 12-tone totality, we need setup 5 whole tones, 2 semitones, in total $5 \times 2 + 2 = 12$ ratios within an octave of $2:1$, which satisfy:
+In music theory, the greater ratio $9:8$ is called a whole tone (step, W), the less ratio $256:243$ is called a semitone (half step, H). This list, W - W - H - W - W -W - H, is called a major scale. Musical works based on major scale typically create sense of warmth, cheerfulness, and resolution. Another type, known as minor scale, which shifts the list to W - H - W - W - H - W - W; it typically creates sense of mellowness and introspection. Is there a harmonic 12-tone equal temperament? Unfortunately, it was out of what Pythagoras could design with fractions. To work out a 12-tone totality, we need setup 5 whole tones, 2 semitones, in total $5 \times 2 + 2 = 12$ ratios within an octave of $2:1$, which satisfy:
 
 \[
 1 = \alpha^0, \alpha^1, \alpha^2, \alpha^3, \alpha^4, \alpha^5, \alpha^6, \alpha^7, \alpha^8, \alpha^9, \alpha^{10}, \alpha^{11}, \alpha^{12} = 2
 \]
 
-It has a solution: $\alpha = \sqrt[12]{2}$, but it is not a fraction! While pursuing the sound of heaven, let's continue our tour of numbers.
+It has a solution: $\alpha = \sqrt[12]{2}$, but is not a fraction! While pursuing the sound of heaven, let's continue our journey of numbers.
 
 \begin{Exercise}[label={ex:fractions}]
-\Question{The term harmonic mean comes after Pythagoras's music theory. Pythagoras was trying to insert a string with length $h$ between two strings with lengths of $a$ and $b$, such that they produce harmonic sound. He found the reciprocal of $h$ is at the `middle' of the reciprocal of $a$ and the reciprocal of $b$, which is, \index{harmonic mean}
+\Question{The term \enquote{harmonic mean} comes after Pythagoras's music theory. Pythagoras was trying to insert a string with length $h$ between two strings with lengths of $a$ and $b$, such that they produce harmonic sound. He found the reciprocal of $h$ is at the \enquote{middle} of the reciprocals of $a$ and $b$, which is, \index{harmonic mean}
 \[
 \frac{1}{h} - \frac{1}{a} = \frac{1}{b} - \frac{1}{h}
 \]
 
-That is why the harmonic mean is also known as the mean of reciprocals. Verify that: 1) A boat travels between $A$ and $B$ with different speed: $v_1$ for go, and $v_2$ for back. The average speed $v$ is the harmonic mean of $v_1$ and $v_2$. 2) Connect two resisters $R_1$ and $R_2$ in parallel, it's equivalent to connect \emph{two} same resisters of $R$, where $R$ is the harmonic mean of $R_1$ and $R_2$.
+That is why the harmonic mean is also known as the mean of reciprocals. Verify that: 1) A boat travels between $A$ and $B$ with different speed: go at $v_1$ and back at $v_2$, then the average speed $v$ is the harmonic mean of $v_1$ and $v_2$; 2) Connect two resisters $R_1$ and $R_2$ in parallel, it's equivalent to connect \emph{two} same resisters of $R$, where $R$ is the harmonic mean of $R_1$ and $R_2$.
 }
 
-\Question{*Verify $\dfrac{2}{p} = \dfrac{1}{a} + \dfrac{1}{b}$ equals $(2a - p)(2b - p) = p^2$, and use this fact to show: for any prime $p$ greater than 2, $\dfrac{2}{p}$ can be \underdot{unique} decomposed into two Egyptian fractions as $\dfrac{2}{p} = \dfrac{1}{a} + \dfrac{1}{b} (a \ne b)$.\label{qn:unique-decompose-r}}
+\Question{*Verify $\dfrac{2}{p} = \dfrac{1}{a} + \dfrac{1}{b}$ equals $(2a - p)(2b - p) = p^2$, and use this fact to show: for any prime $p$ greater than 2, $\dfrac{2}{p}$ can be \underdot{uniquely} decomposed into two Egyptian fractions as $\dfrac{2}{p} = \dfrac{1}{a} + \dfrac{1}{b} (a \ne b)$.\label{qn:unique-decompose-r}}
 
-\Question{Show that Erdős-Straus conjecture is true for all even number $n$.}
+\Question{Show that Erdős-Straus conjecture is true for every even number $n$.}
 
 \Question{Explain why it's sufficient to show Erdős-Straus conjecture is true for all primes?}
 
 \Question{Show that Erdős-Straus conjecture is true for all primes of $4k+3$. Hint: use the result of \cref{qn:unique-decompose-r}.}
 
-\Question{*For the puzzle that three sons divide $n$ animals in the proportions of $\dfrac{1}{a}$, $\dfrac{1}{b}$, and $\dfrac{1}{c}$, where the eldest gets more than the second, the second gets more than the youngest, and they return the borrowed one at last, find all possible $n, a, b, c$, you may write a program to enumerate all solutions, but this exercise can be solved manually. Hint: the problem is to find all solutions in integers for the equation $\dfrac{n}{n+1} = \dfrac{1}{a} + \dfrac{1}{b} + \dfrac{1}{c}$, where $a < b < c$. Since every son gets at least one animal, what is the least $n$? How to show that $a$ can not exceed 3, hence can only be 2? \label{qn:three-sons}}
+\Question{*For the puzzle that three sons divide $n$ animals in the proportions of $\dfrac{1}{a}$, $\dfrac{1}{b}$, and $\dfrac{1}{c}$, where the eldest gets more than the second, the second gets more than the youngest, and they return the borrowed one at last, find all possible $n, a, b, c$. You may write a program to enumerate all solutions, but this exercise can be solved manually. Hint: the problem is to find all solutions in integers for the equation $\dfrac{n}{n+1} = \dfrac{1}{a} + \dfrac{1}{b} + \dfrac{1}{c}$, where $a < b < c$. Since every son gets at least an animal, what is the least $n$? How to show that $a$ can not exceed 3, hence can only be 2? \label{qn:three-sons}}
 
-\Question{*By $0.999\cdots = 1$, any terminating decimal has two forms: $X.a_1a_2 \cdots a_m000\cdots$ and $X.a_1a_2 \cdots b999\cdots$, where $b = a_m - 1$, $X$ is the whole number part. Show that, except for this special case, the decimal of any value $x$ is unique, where $0 < x < 1$.}
+\Question{*By $0.999\cdots = 1$, any terminating decimal has two forms: $X.a_1a_2 \cdots a_m000\cdots$ and $X.a_1a_2 \cdots b999\cdots$, where $b = a_m - 1$ and $X$ is the whole number part. Show that, except for this special case, the decimal of any value $x$ is unique, where $0 < x < 1$.}
 
 \Question{Show that the fraction of any repeating decimal $0.\dot{a_1} \dot{a_2} \cdots \dot{a_n}$ is $\dfrac{a_1 a_2 \cdots a_n}{99 \cdots 9} = \dfrac{a_1 a_2 \cdots a_n}{10^{n+1} - 1}$. \label{qn:cyclic-decimal}}
 
-\Question{Use fractions and Lemma \ref{th:cycle-of-9} to show: Atalanta first traverses $\dfrac{1}{2}$ distance, then traverse half of the remaining, which is $\dfrac{1}{4}$ distance, and repeats, she will walk to the end of the path. Hint: using sum of fractions and binary decimal.\label{qn:dichotomy-paradox}}
+\Question{Use fractions and Lemma \ref{th:cycle-of-9} to show: Atalanta first traverses $\dfrac{1}{2}$ distance, then traverses half of the remaining, which is $\dfrac{1}{4}$ distance, and repeats, she will walk to the end of the path. Hint: using sum of fractions and binary decimal.\label{qn:dichotomy-paradox}}
 
 \Question{Verify the additive/multiplicative commutative laws, and multiplicative associative law for fractions.\label{qn:arithmatic-law-fraction}}
 \end{Exercise}
@@ -850,7 +850,7 @@ R &= \frac{2}{\frac{1}{R_1} + \frac{1}{R_2}} = \frac{2R_1 R_2}{R_1 + R_2}
 Each resister on the right is the harmonic mean of $R_1$ and $R_2$.
 }
 
-\Question{Verify $\dfrac{2}{p} = \dfrac{1}{a} + \dfrac{1}{b}$ equals $(2a - p)(2b - p) = p^2$, and use this fact to show: for any prime $p$ greater than 2, $\dfrac{2}{p}$ can be \underdot{unique} decomposed into two Egyptian fractions as $\dfrac{2}{p} = \dfrac{1}{a} + \dfrac{1}{b} (a \ne b)$.
+\Question{Verify $\dfrac{2}{p} = \dfrac{1}{a} + \dfrac{1}{b}$ equals $(2a - p)(2b - p) = p^2$, and use this fact to show: for any prime $p$ greater than 2, $\dfrac{2}{p}$ can be \underdot{uniquely} decomposed into two Egyptian fractions as $\dfrac{2}{p} = \dfrac{1}{a} + \dfrac{1}{b} (a \ne b)$.
 
   \begin{proof}
   \begin{align*}
@@ -860,18 +860,18 @@ Each resister on the right is the harmonic mean of $R_1$ and $R_2$.
   4ab - 2pa - 2pb + p^2 & = p^2 & \text{both sides } + p^2 \\
   (2a - p)(2b - p) & = p^2 & \text{factorize}
   \end{align*}
-  Since $p$ is prime, $p^2$ can only have factors of 1, $p$, or $p^2$; by $a \ne b$, we can exclude $p$, hence $2a - p = 1$ and $2b - p = p^2$, hence,
+  Since $p$ is prime, $p^2$ can only have factors of 1, $p$, or $p^2$; by $a \ne b$, we rule out $p$, and let $2a - p = 1$ and $2b - p = p^2$, hence,
   \[
   a = \frac{p+1}{2}, b = \frac{p(p+1)}{2}
   \]
-  As $p$ is odd prime, $a$ is integral, thereby,
+  As $p$ is odd prime, $p + 1$ is even, hence both $a$ and $b$ are integral, thereby,
   \[
   \frac{2}{p} = \frac{1}{\frac{1}{2}(p + 1)} + \frac{1}{\frac{1}{2}p(p+1)} \qedhere
   \]
   \end{proof}
 }
 
-\Question{Show that Erdős-Straus conjecture is true for all even number $n$.
+\Question{Show that Erdős-Straus conjecture is true for every even number $n$.
 
 \vspace{2mm}
 Let $n = 2m$, so that $\dfrac{4}{2m} = \dfrac{2}{m}$, which is \cref{th:decompose-of-2-n}.
@@ -902,20 +902,20 @@ Note, \[
 \Question{Find all possible values of $n, a, b, c$, such that the three sons divide $n$ animals in the proportions of $\dfrac{1}{a}$, $\dfrac{1}{b}$, and $\dfrac{1}{c}$, where the eldest gets more than the second, the second gets more than the youngest, and they return the borrowed one at last.
 
 \vspace{2mm}
-We give a pure mathematical solution, followed with a `brute force' program for comparison. The problem amounts to finding all natural numbers satisfying the equation:
+We give a pure mathematical solution, followed with a \enquote{brute force} program for comparison. The problem amounts to finding all natural numbers satisfying the equation:
 
 \[
 \frac{n}{n+1} = \frac{1}{a} + \frac{1}{b} + \frac{1}{c}, a < b < c
 \]
 
-With the one borrowed animal, the sons were able to divide $n+1$ animals into three parts of $\dfrac{n + 1}{a}$, $\dfrac{n + 1}{b}$, and $\dfrac{n + 1}{c}$, whose sum is $n$, such that they could return the last animal. Let $n' = n + 1$, be the number including the borrowed animal, we write above equation in $n'$ as:
+With the one borrowed animal, the sons are able to divide $n+1$ animals into three parts of $\dfrac{n + 1}{a}$, $\dfrac{n + 1}{b}$, and $\dfrac{n + 1}{c}$, whose sum is $n$, such that they can return the last animal. Let $n' = n + 1$, be the number including the borrowed animal, we write above equation in $n'$ as:
 
 \be
 \frac{n'-1}{n'} = \frac{1}{a} + \frac{1}{b} + \frac{1}{c}
 \label{eq:equation-of-inherit}
 \ee
 
-We need decrease $n'$ by 1 to give $n$ finally. With the one borrowed animal, $a, b, c$ all divide $n'$. We shall first show: the eldest son could get only $\dfrac{1}{2}$ animals, hence, $a$ can only be 2.
+We need decrease $n'$ by 1 to give $n$ finally. With the one borrowed animal, $a, b, c$ all divide $n'$. We shall first show: the eldest son can get only $\dfrac{1}{2}$ animals, hence, $a$ can only be 2.
 
 \begin{proof}
 Assume $a \geq 3$, since $a < b < c$,
@@ -924,7 +924,7 @@ Assume $a \geq 3$, since $a < b < c$,
 \frac{1}{a} + \frac{1}{b} + \frac{1}{c} \leq \frac{1}{3} + \frac{1}{4} + \frac{1}{5} = \frac{47}{60}
 \]
 
-The youngest son got at least one animal; what the second son got were more than this, which were at least two; and the eldest got even more, which were at least three; plus the borrowed one animal, the sum $n' > 3 + 2 + 1 = 6$, hence,
+The youngest son gets at least an animal; what the second son gets are more than this, which are at least two; and the eldest gets even more, which are at least three; plus the borrowed one animal, the sum $n' > 3 + 2 + 1 = 6$, hence,
 
 \[
 \frac{n'-1}{n'} = 1 - \frac{1}{n'} > 1 - \frac{1}{6} = \frac{5}{6} = \frac{50}{60} > \frac{47}{60} \geq \frac{1}{a} + \frac{1}{b} + \frac{1}{c}
@@ -948,7 +948,7 @@ Assume $b \geq 5$, since $b < c$,
 \frac{1}{a} + \frac{1}{b} + \frac{1}{c} \leq \frac{1}{2} + \frac{1}{5} + \frac{1}{6} = \frac{13}{15} \approx 0.87
 \]
 
-As $a, b, c$ all divide $n'$ and $a = 2$, $n'$ must be even. We deduced $n' > 6$ as above, the first even number being greater 6 is 8, hence,
+As $a, b, c$ all divide $n'$ and $a = 2$, $n'$ must be even. We claim $n' > 6$ as above, the first even number being greater than 6 is 8, hence,
 
 \[
 \frac{n'-1}{n'} = 1 - \frac{1}{n'} \geq 1 - \frac{1}{8} = \frac{7}{8} = 0.875 > 0.87 \geq \frac{1}{a} + \frac{1}{b} + \frac{1}{c}
@@ -995,12 +995,12 @@ It turns out when $b \geq 5$, equation \cref{eq:equation-of-inherit} can't hold,
 Note the solution of 11 + 1 animals, although appears in both cases, the distribution differs. There are 7 solutions in total.
 
 \vspace{3mm}
-We write a program to enumerate all possible $a, b, c$, test whether the sum of their reciprocals being the form of $\dfrac{n + 1}{n}$. We enumerate $a$ from 2, 3, 4, ... As $a < b < c$, we enumerate $b$ from $a + 1$ and enumerate $c$ from $b + 1$. We need estimate the upper limits of $a, b, c$ such that the program terminates. Since $a < b < c$, the upper limit of $c$ is also the upper limit of $a$ and $b$. The youngest son got at least 1 animal, hence, $c \leq n'$, we deduce from \cref{eq:equation-of-inherit}:
+We write a program to enumerate all possible $a, b, c$, and test whether the sum of their reciprocals being the form of $\dfrac{n + 1}{n}$. We enumerate $a$ from 2, 3, 4, ... As $a < b < c$, we enumerate $b$ from $a + 1$ and enumerate $c$ from $b + 1$. We need estimate the upper limits of $a, b, c$ such that the program terminates. Since $a < b < c$, the upper limit of $c$ is also the upper limit of $a$ and $b$. The youngest son gets at least 1 animal, hence, $c \leq n'$, we deduce from \cref{eq:equation-of-inherit}:
 
 \begin{align*}
   1 - \frac{1}{n'} &= \frac{1}{a} + \frac{1}{b} + \frac{1}{c} \\
   1 - \frac{1}{n'} - \frac{1}{c} &= \frac{1}{a} + \frac{1}{b} \leq \frac{1}{2} + \frac{1}{3} = \frac{5}{6} \\
-  \frac{1}{6} &\leq \frac{1}{n'} + \frac{1}{c} \leq \frac{1}{c} + \frac{1}{c} & \text{The youngest son got at least 1, } \frac{1}{n'} \leq \frac{1}{c} \\
+  \frac{1}{6} &\leq \frac{1}{n'} + \frac{1}{c} \leq \frac{1}{c} + \frac{1}{c} & \text{The youngest son gets at least 1, } \frac{1}{n'} \leq \frac{1}{c} \\
   \frac{1}{6} &\leq \frac{2}{c} \Rightarrow c \leq 12
 \end{align*}
 
@@ -1022,7 +1022,7 @@ for a in range(2, 11):
             d = a*b*c - a*b - b*c - a*c
             if d > 0:
                 n = a*b*c // d
-                if n % a == 0 and n % d == 0 and n % c == 0:
+                if n % a == 0 and n % b == 0 and n % c == 0:
                     s.append((a, b, c))
 print(s)
 \end{lstlisting}
@@ -1058,7 +1058,7 @@ contradict with \cref{eq:decimal-a-eq-b}.
 
   \begin{proof}
     \begin{align*}
-    \text{设} x &= 0.\dot{a_1} \dot{a_2} \cdots \dot{a_n} \\
+    \text{let } x &= 0.\dot{a_1} \dot{a_2} \cdots \dot{a_n} \\
     10^n x & = a_1a_2\cdots a_n . \dot{a_1} \dot{a_2} \cdots \dot{a_n} \\
     10^n x - x &= a_1a_2\cdots a_n \\
     x &= \frac{a_1a_2\cdots a_n}{10^n - 1} = \frac{a_1a_2\cdots a_n}{99 \cdots 9} && \qedhere
@@ -1066,7 +1066,7 @@ contradict with \cref{eq:decimal-a-eq-b}.
   \end{proof}
 }
 
-\Question{Use sum of fractions to show: Atalanta first traverses $\dfrac{1}{2}$ distance, then traverse half of the remaining, which is $\dfrac{1}{4}$ distance, and repeats, she will walk to the end of the path.
+\Question{Use sum of fractions to show: Atalanta first traverses $\dfrac{1}{2}$ distance, then traverses half of the remaining, which is $\dfrac{1}{4}$ distance, and repeats, she will walk to the end of the path.
 
 \vspace{2mm}
 Analogue to decimal $0.99\cdots = 1$, in binary $0.11\cdots = 1$, because:
@@ -1089,7 +1089,7 @@ Atalanta first traverses $\dfrac{1}{2}$, which is 0.1 in binary; next traverses 
 Commutative law for addition:
 \begin{align*}
   \frac{b}{a} + \frac{d}{c} &= \frac{bc + ad}{ac} \\
-  &= \frac{ad + bc}{ac} & \text{apply integral commutative law to nominator} \\
+  &= \frac{ad + bc}{ac} & \text{apply the commutative law to the nominator} \\
   &= \frac{ad}{ac} + \frac{bc}{ac} = \frac{d}{c} + \frac{b}{a}
 \end{align*}
 

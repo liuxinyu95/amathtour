@@ -8,7 +8,7 @@ def inherit():
                 d = a*b*c - a*b - b*c - a*c
                 if d > 0:
                     n = a*b*c // d
-                    if n % a == 0 and n % d == 0 and n % c == 0:
+                    if n % a == 0 and n % b == 0 and n % c == 0:
                         s.append((a, b, c))
     return s
 
