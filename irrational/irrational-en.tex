@@ -1219,7 +1219,7 @@ x = 1 + \dfrac{1}{2 + \dfrac{1}{\dfrac{12}{6}}}
  \label{fig:cont-frac}
 \end{figure}
 
-It shows the process of Euclidean algorithm forms continued fraction. \Cref{fig:cont-frac} gives geometric explanation of constructing continued fraction with the Euclidean algorithm. We know any irrational number, by \cref{th:irrational-gcm}, is incommensurable, hence the Euclidean algorithm won't terminate. Thus when applying Euclidean algorithm to a irrational number $x$, it constructs infinite continued fraction. For example, $x = \sqrt{2}$, is irrational,
+It shows the process of Euclidean algorithm forms continued fraction. \Cref{fig:cont-frac} gives geometric explanation of constructing continued fraction with the Euclidean algorithm. We know any irrational number, by \cref{th:irrational-gcm}, is incommensurable, hence the Euclidean algorithm won't terminate. Thus when applying Euclidean algorithm to an irrational number $x$, it generates infinite continued fraction. For example, $x = \sqrt{2}$ is irrational,
 
 \begin{enumerate}[{Step} 1, ]
 \item Because $1 < 2 < 4$, taking square root, $1 < \sqrt{2} < 2$. Therefore, the integral part of $x = \sqrt{2}$ is $n_1 = 1$, and the remaining part is $x - n_1 = \sqrt{2} - 1$; put them together,
@@ -1230,18 +1230,18 @@ It shows the process of Euclidean algorithm forms continued fraction. \Cref{fig:
   \begin{align*}
     x' = \dfrac{1}{\sqrt{2} - 1} = \dfrac{\sqrt{2} + 1}{(\sqrt{2} - 1)(\sqrt{2} + 1)} = \dfrac{\sqrt{2} + 1}{2 - 1} = \sqrt{2} + 1
   \end{align*}
-  Since $1 < \sqrt{2} < 2$, add 1 to both sides, $2 < \sqrt{2} + 1 < 3$. Therefore, the integral part of $x' = \sqrt{2} + 1$ is $n_2 = 2$, and the remaining part is $x' - n_2 = \sqrt{2} + 1 - 2 = \sqrt{2} - 1$, which, in turn, is as same as the remaining part in step 1. Put them together,
+  Since $1 < \sqrt{2} < 2$, add 1 to both sides, $2 < \sqrt{2} + 1 < 3$. Therefore, the integral part of $x' = \sqrt{2} + 1$ is $n_2 = 2$, and the remaining part is $x' - n_2 = \sqrt{2} + 1 - 2 = \sqrt{2} - 1$, which, in turn, is same as the remaining part in step 1. Put them together,
 \[
  \sqrt{2} = 1 + \dfrac{1}{2 + \dfrac{1}{\sqrt{2} - 1}}
 \]
 \end{enumerate}
-It repeats onward. Thereby, the infinite continued fraction form of $\sqrt{2}$ is,
+It repeats onward. Thereby, the infinite continued fraction of $\sqrt{2}$ is,
 
 \[
  \sqrt{2} = 1 + \dfrac{1}{2 + \dfrac{1}{2 + \dfrac{1}{2 + \dfrac{1}{\dotso}}}}
 \]
 
-One can image how hard to print continued fractions before the invention of modern computer. Mathematicians introduced a notation to address this problem, namely $[n_1; n_2, n_3, \dotso]$. Note the first deliminator is semicolon, followed with commas. In this notation, the irrational number $\sqrt{2} = [1; 2, 2, \dotso]$. With a minor change: $\sqrt{2} + 1 = [2; 2, 2, \dotso]$ forms a perfect repeating cycle. \Cref{qn:phi-continue-frac} ask to work out the continued fraction form of the golden ratio $\phi$. When compare with the relation of fractions and decimals: a rational number can be represented in finite or repeating decimal, but a irrational number can only be represented in infinite non-repeating decimal; a rational number can be represented in finite continued fraction, and some infinite non-repeating decimals can be represented in repeating continued fraction. Are there any numbers can only be represented in infinite non-repeating continued fraction? Yes, for example, the renown $\pi$ is such a number. Let's continue our tour of numbers.
+One can image how hard to print continued fractions before the invention of modern computer. Mathematicians introduced a notation to address this problem, namely $[n_1; n_2, n_3, \dotso]$. Note the first deliminator is semicolon, followed with commas. In this notation, the irrational number $\sqrt{2} = [1; 2, 2, \dotso]$. With a minor change: $\sqrt{2} + 1 = [2; 2, 2, \dotso]$ forms a perfect repeating cycle. \Cref{qn:phi-continue-frac} asks to work out the continued fraction of the golden ratio $\phi$. Comparing with the relation of fractions and decimals: a rational number can be represented in finite or repeating decimal, but an irrational number can only be represented in infinite non-repeating decimal; a rational number can be represented in finite continued fraction, and some infinite non-repeating decimals can be represented in repeating continued fraction. Are there any numbers can be represented only in infinite non-repeating continued fraction? Yes, for example, the renowned $\pi$ is such a number. Let's continue our tour of numbers.
 
 \begin{Exercise}[label={ex:irrationals}]
 \Question{What is the formula of pentagon numbers (\cref{fig:pentagon-numbers})?
@@ -1259,7 +1259,7 @@ One can image how hard to print continued fractions before the invention of mode
 \end{center}
 }
 
-\Question{\Cref{fig:mosaic} show the mosaic paved in a hotel. How does it interpret Pythagorean theorem?
+\Question{\Cref{fig:mosaic} shows the mosaic paved in a hotel. How does it interpret Pythagorean theorem?
 \begin{center}
  \includegraphics[scale=0.4]{img/mosaic}
  \captionof{figure}{Pythagorean theorem in paved mosaic}
@@ -1269,7 +1269,7 @@ One can image how hard to print continued fractions before the invention of mode
 
 \Question{$a, b$ are coprime odd numbers, show that $\dfrac{a \pm b}{2}$ are coprime. \label{qn:coprime-of-half-a-pm-b}}
 
-\Question{The fundamental theorem of arithmetic state that every positive integer (except the number 1) can be represented in exactly one way apart from rearrangement as a product of one or more primes. Use this theorem to show: given $a, b$ being coprime, if $ab = c^2$, then both $a$ and $b$ are squares. \label{qn:coprime-product-as-square}}
+\Question{The fundamental theorem of arithmetic states that every positive integer (except 1) can be represented in exactly one way apart from rearrangement as a product of one or more primes. Use this theorem to show: given $a, b$ being coprime, if $ab = c^2$, then both $a$ and $b$ are squares. \label{qn:coprime-product-as-square}}
 
 \Question{Find all prime numbers within 100 with sieve of Eratosthenes. \label{qn:seive-of-eratosthenes-100}}
 
@@ -1279,15 +1279,15 @@ One can image how hard to print continued fractions before the invention of mode
 
 \Question{The two legs of a compass close naturally due to gravity when lifted off the plane in ancient Greek times, which couldn't be used to mark off a segment directly as it does today. Given a line segment $AB$, how to mark its length off a line $l$ with such a compass? \label{qn:mark-off-segment}}
 
-\Question{In the proof to the Euclidean algorithm, it states \enquote{, for the chain of remainders: $b > r_0 > r_1 > r_2 > \dotsb \ge 0$, since the remainder can't be negative and the starting number is finite, it eventually terminates.} Why can not $r_{n}$ infinitely close to 0 but not be 0? Why does the algorithm terminate? What does the precondition that $a$ and $b$ are commensurable assert?}
+\Question{For the argument in the proof to the Euclidean algorithm, \enquote{for the chain of remainders: $b > r_0 > r_1 > r_2 > \dotsb \ge 0$, since the remainder can't be negative and the starting number is finite, it eventually terminates.} Why can not $r_{n}$ infinitely close to 0 but not be 0? Why does the algorithm terminate? What does the precondition that $a$ and $b$ are commensurable assert?}
 
 \Question{For linear Diophantine equation $ax + by = c$, suppose $x_1$, $y_1$ and $x_2$, $y_2$ are two pairs of integral solution. Show that the minimum of $|x_1 - x_2|$ is $b/(a, b)$ and the minimum of $|y_1 - y_2|$ is $a/(a, b)$.}
 
-\Question{List the fewest steps to obtain 6 litres of water with two jugs of 9 and 4 litres. \label{qn:best-steps-water}}
+\Question{List the fewest steps to obtain 6 litres of water with two jugs of 9 litres and 4 litres. \label{qn:best-steps-water}}
 
 \Question{Show that the side and diagonal of a regular pentagon are incommensurable. \label{qn:pentagon-irrational}}
 
-\Question{What the continued fraction of the golden ratio $\phi = \frac{1 + \sqrt{5}}{2}$? \label{qn:phi-continue-frac}}
+\Question{What is the continued fraction of the golden ratio $\phi = \frac{1 + \sqrt{5}}{2}$? \label{qn:phi-continue-frac}}
 
 \end{Exercise}
 
@@ -1296,7 +1296,7 @@ One can image how hard to print continued fractions before the invention of mode
 \begin{Answer}[ref={ex:irrationals}]
 \Question{The formula of pentagon numbers.
 
-As shown in \cref{fig:pentagon-numbers}, starting from 1, at each time when the side increases by 1, the pentagon number increases by $4, 7, 10, \dotsc$, which is 3 times of the side plus 1. The series are $4 = 3\times 1 + 1, 7 = 3\times 2 + 1, 10 = 3\times 3 + 1, \dotsc, 3(n-1) + 1$. The pentagon number $S_n$ is,
+As shown in \cref{fig:pentagon-numbers}, starting from 1, at each time when the side increases by 1, the pentagon number increases by $4, 7, 10, \dotsc$, which is 3 times of the side plus 1. The series of increments are $4 = 3\times 1 + 1, 7 = 3\times 2 + 1, 10 = 3\times 3 + 1, \dotsc, 3(n-1) + 1$. The pentagon number $S_n$ is,
 
 \begin{align*}
   S_n & = 1 + (3\times 1 + 1) + (3\times 2 + 1) + \dotsb + (3(n-1) + 1) \\
@@ -1331,12 +1331,12 @@ See the lines in \cref{fig:pythagoras-mosaic}.
 
 \Question{If $a, b$ are coprime, show that $\dfrac{a \pm b}{2}$ are coprime.
   \begin{proof}
-    Denote the greatest common divisor of $\dfrac{a \pm b}{2}$ by $d$, such that $dm = \dfrac{a + b}{2}, dn = \dfrac{a - b}{2}$, for some integers $m, n$. Their sum is $a = dm + dn = d(m + n)$, hence $d$ divides $a$; their difference is $b = dm - dn = d (m - n)$, hence $d$ divides $b$, thereby, $d$ is a common divisor of $a, b$. But $a, b$ are coprime, hence $d$ can only be 1, which implies $\dfrac{a \pm b}{2}$ are coprime.
+    Denote the greatest common divisor of $\dfrac{a \pm b}{2}$ by $d$, such that $dm = \dfrac{a + b}{2}, dn = \dfrac{a - b}{2}$ for some integers $m, n$. Their sum is $a = dm + dn = d(m + n)$, hence $d$ divides $a$; their difference is $b = dm - dn = d (m - n)$, hence $d$ divides $b$, thereby, $d$ is a common divisor of $a, b$. But $a, b$ are coprime, hence $d$ can only be 1, which implies $\dfrac{a \pm b}{2}$ are coprime.
   \end{proof}
 }
 \Question{$a, b$ are coprime, if $ab = c^2$, show that both $a$ and $b$ are squares.
   \begin{proof}
-    By the fundamental theorem of arithmetic, represent $a, b$ as product of primes: $a = p_1^{a_1} p_2^{a_2} \dotsm p_n^{a_n}, b = q_1^{b_1} q_2^{b_2} \dotsm q_m^{b_m}$, where $p_i, q_j$ are prime. As $a, b$ are coprime, 1 is their only common divisor, hence $p_i \ne q_j$. Their product is a square $c^2 = p_1^{a_1} p_2^{a_2} \dotsm p_n^{a_n} q_1^{b_1} q_2^{b_2} \dotsm q_m^{b_m}$, which implies $a_i, b_j$ are all even, therefore, $a, b$ are both squares.
+    By the fundamental theorem of arithmetic, represent $a, b$ as product of prime numbers: $a = p_1^{a_1} p_2^{a_2} \dotsm p_n^{a_n}$ and $b = q_1^{b_1} q_2^{b_2} \dotsm q_m^{b_m}$ where $p_i, q_j$ are prime. As $a, b$ are coprime, 1 is their only common divisor, hence $p_i \ne q_j$. Their product is a square $c^2 = p_1^{a_1} p_2^{a_2} \dotsm p_n^{a_n} q_1^{b_1} q_2^{b_2} \dotsm q_m^{b_m}$, which implies $a_i, b_j$ are all even, therefore, $a, b$ are both squares.
   \end{proof}
 }
 
@@ -1349,13 +1349,14 @@ See the lines in \cref{fig:pythagoras-mosaic}.
 7) &2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, \\
    &47, \cancel{49}, 53, 59, 61, 67, 71, 73, \cancel{77}, 79, 83, 89, \cancel{91}, 97 && \text{filter out multiples of 7} \\
 \to &2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, \\
-&47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97 && 11^2 > 100 \text{ done}
+&47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97 && 11^2 > 100 \text{, done.}
   \end{align*}
 }
 
 
 \Question{Given a line segment $AB$, (1) draw a line perpendicular to it at $A$; (2) draw a line perpendicular to it through a point $C$ out of $AB$.
 
+\vspace{2mm}
 (1) As shown in \cref{fig:perp-of-point}, extend $AB$ backward; draw a circle at center of $A$ with radius of $AB$, which intersects $BA$ at $B'$. Draw two circles at the center of $B$ and $B'$ with radius of $BB'$. Connect the two intersections $CD$ of the circle, which is the perpendicular line to be constructed.
 \begin{center}
  \includegraphics[scale=0.25]{img/perp}
@@ -1399,7 +1400,7 @@ As $a, b$ are commensurable, let $a = nc, b = mc$. By the division algorithm $a 
 \Question{For linear Diophantine equation $ax + by = c$, suppose $x_1$, $y_1$ and $x_2$, $y_2$ are two pairs of integral solution. Show that the minimum of $|x_1 - x_2|$ is $b/(a, b)$ and the minimum of $|y_1 - y_2|$ is $a/(a, b)$.
 
 \vspace{2mm}
-Denote the greatest common divisor of $a, b$ by $d = (a, b)$. Suppose $x_0, y_0$ for a pair of solution to $ax + by = c$, then below is another pair of solution:
+Denote the greatest common divisor of $a, b$ by $d = (a, b)$. Suppose a pair of $x_0, y_0$ is the solution to $ax + by = c$, then the following is another pair of solution:
 
 \[
 \begin{dcases}
@@ -1423,7 +1424,7 @@ a (x - x_0) + b (y - y_0)  &= 0 && \text{subtract two equations} \\
 \dfrac{a}{d} (x - x_0) &= -\dfrac{b}{d} (y - y_0)  && \text{move to the right}
 \end{align*}
 
-$\dfrac{a}{d}$ divides the left, hence it also divides the right. But $(\dfrac{a}{d}, \dfrac{b}{d}) = 1$, they are coprime, therefore, $\dfrac{a}{d}$ divides $(y - y_0)$, let
+Since $d$ is the gcd of $a$ and $b$, the integer $\dfrac{a}{d}$ divides the right side. But $(\dfrac{a}{d}, \dfrac{b}{d}) = 1$, are coprime, therefore, $\dfrac{a}{d}$ divides $(y - y_0)$, let
 
 \begin{align*}
 y - y_0 &= k \dfrac{a}{d},  &&\text{for some integer }k \\
@@ -1434,7 +1435,7 @@ x &= x_0 - k \dfrac{b}{d} && \text{substitute back}
 Which proves that all solutions are in this form. For any two pairs of solution, their different is minimized when $k = 1$. Therefore, the minimum of $|x_1 - x_2|$ is $b/(a, b)$ and the minimum of $|y_1 - y_2|$ is $a/(a, b)$.
 }
 
-\Question{List the fewest steps to obtain 6 litres of water with two jugs of 9 and 4 litres.
+\Question{List the fewest steps to obtain 6 litres of water with two jugs of 9 litres and 4 litres.
 
 \vspace{2mm}
 \[(0,0) \to (9,0) \to (5,4) \to (5,0) \to (1,4) \to (1,0) \to (0,1) \to (9,1) \to (6,4) \]
@@ -1453,7 +1454,7 @@ Assume for contradiction, they are commensurable. Denote the side by $mc$, the d
 \end{center}
 }
 
-\Question{What the continued fraction of the golden ratio $\phi = \frac{1 + \sqrt{5}}{2}$?
+\Question{What is the continued fraction of the golden ratio $\phi = \frac{1 + \sqrt{5}}{2}$?
 
 \vspace{2mm}
 
@@ -1481,7 +1482,7 @@ The Greeks discovered irrational numbers by ruler and compass, which couldn't be
 
 \section{geometric construction and arithmetic}
 \label{sec:geometric-arthimetic} \index{geometric construction}
-In Euclidean algorithm, one needs cut off segment $b$ from $a$, which corresponds to subtraction of $a - b$. The reverse construction of extending segment $a$ by length of $b$ (marked off) corresponds to addition of $a + b$ (see \cref{qn:mark-off-segment}). How to realize multiplication of $ab$? one may draw a rectangle with length of $a$ and width of $b$, of which the area is $ab$. However, what the Greeks considering was to draw a ling segment with the length of $ab$, and they figured this out from the tool of similar triangles.
+In Euclidean algorithm, one needs cut off segment $b$ from $a$, which corresponds to subtraction of $a - b$. The reverse construction of extending segment $a$ by length of $b$ (marked off) corresponds to addition of $a + b$ (see \cref{qn:mark-off-segment}). How to realize multiplication of $ab$? one may draw a rectangle with length of $a$ and width of $b$, of which the area is $ab$. However, what the Greeks concerning was to draw a ling segment with the length of $ab$, and they figured this out from the tool of similar triangles.
 
 \begin{figure}[htbp]
  \centering
@@ -1495,7 +1496,7 @@ Given a unit line segment (of length 1), and two segments of length $a$ and $b$,
 \end{proposition}
 
 \begin{proof}
-As shown in 如\cref{fig:product}, draw a perpendicular line to the unit segment AD (of length 1) at one end and mark off AC of length $b$ (see \cref{qn:perp-of-point}); then extend the unit segment and mark off BD of length $a$. Connect CD to construct a triangle ACD. Draw the parallel line to CD through point B (see \cref{qn:parallel-through-p}), which intersects the extension of AC at point E; it form a bigger triangle of AEB. It follows that the smaller triangle ACD is similar to the bigger triangle AEB (can you justify it?), therefore,
+As shown in \cref{fig:product}, draw a perpendicular line to the unit segment AD (of length 1) at one end and mark off AC of length $b$ (see \cref{qn:perp-of-point}); then extend the unit segment and mark off BD of length $a$. Connect CD to construct a triangle ACD. Draw the parallel line to CD through point B (see \cref{qn:parallel-through-p}), which intersects the extension of AC at point E; it form a bigger triangle of AEB. It follows that the smaller triangle ACD is similar to the bigger triangle AEB (can you justify it?), therefore,
 
 \begin{align*}
 \dfrac{1}{b} & = \dfrac{AD}{AC} = \dfrac{AB}{AE} = \dfrac{1 + a}{b + x} && \text{by similar triangles} \\
@@ -1518,7 +1519,7 @@ Given a unit line segment (of length 1) and a segment of length $a$, it is possi
 \end{figure}
 
 \begin{proof}
-As shown in \cref{fig:reciprocal}, draw a perpendicular line to the unit line segment AD (of length 1) at one end and mark off AC of length $a$; extend AC and mark off CE of length 1. Connect CD to form a triangle ACD. Draw a parallel line to CD through point E, which intersects the extension of AD at point B. Connect BD to from a bigger triangle AEB. Sine the smaller triangle ACD is similar to the bigger triangle AEB (can you justify it?),
+As shown in \cref{fig:reciprocal}, draw a perpendicular line to the unit line segment AD (of length 1) at one end and mark off AC of length $a$; extend AC and mark off CE of length 1. Connect CD to form a triangle ACD. Draw a parallel line to CD through point E, which intersects the extension of AD at point B. Connect BD to from a bigger triangle AEB. Since the smaller triangle ACD is similar to the bigger triangle AEB (can you justify it?),
 
 \begin{align*}
 \frac{1}{a} &= \frac{AD}{AC} = \frac{AB}{AE} = \frac{1 + x}{1 + a}  && \text{by similar triangles} \\
@@ -1527,7 +1528,7 @@ x &= \frac{1 + a}{a} - 1 = \frac{1}{a} && \text{the length of BD is }\frac{1}{a}
 \end{align*}
 \end{proof}
 
-This realizes the reciprocal operation, based on which one can further realizes division. It shows that all the arithmetic operations of $+, -, \times, \div$ have their corresponding geometric realization. Given two segments of length $a$ and $b$, by Pythagorean theorem, it's possible to construct a line segment of length $\sqrt{a^2 + b^2}$. We are going to show how to construct a line segment of length $\sqrt{a}$ directly.
+This realizes the reciprocal operation, from which one can further realize division. It shows that all the arithmetic operations of $+, -, \times, \div$ have their corresponding geometric realization. Given two segments of length $a$ and $b$, by Pythagorean theorem, it's possible to construct a line segment of length $\sqrt{a^2 + b^2}$. We are going to show how to construct a line segment of length $\sqrt{a}$ directly.
 
 \begin{proposition}\label{thm:sqrt-a}
 Given a unit line segment and a line segment of length $a$, it is possible to construct a line of length $\sqrt{a}$.
@@ -1554,7 +1555,7 @@ Thus the operation of extracting square root as well as the arithmetic operation
 
 \subsection{Regular polygons}
 \index{regular polygon}
-The Greeks constructed many regular polygons with ruler and compass. The side in most cases is irrational. The simplest regular polygon is the equilateral triangle. As shown in \cref{fig:polygon}, given a line segment AB, draw two arcs with the radius of AB at the center of A and B respectively; denote their intersection by C; connecting ABC gives a equilateral triangle. The regular quadrilateral is a square, which can be constructed by connecting the four ends of two perpendicular diameters of a circle. If the radius of the circle is 1, by Pythagorean theorem, the side length is $\sqrt{2}$. From a regular $n$-gon, one can construct a regular $2n$-gon in this way: draw perpendicular bisector of each side, they intersect at a point, which is the circumcenter. Each perpendicular bisector intersects the circumcircle at a point; for each of this point, connect it and the two vertexes next to it of the original $n$-gon, which gives a regular $2n$-gon. For example, the hexagon in \cref{fig:polygon} is obtained from a equilateral.
+The Greeks constructed many regular polygons with ruler and compass. The side length in most cases is irrational. The simplest regular polygon is the equilateral triangle. As shown in \cref{fig:polygon}, given a line segment AB, draw two arcs with the radius of AB at the center of A and B respectively; denote their intersection by C; connecting ABC gives a equilateral triangle. The regular quadrilateral is a square, which can be constructed by connecting the four ends of two perpendicular diameters of a circle. If the radius of the circle is 1, by Pythagorean theorem, the side length is $\sqrt{2}$. From a regular $n$-gon, one can construct a regular $2n$-gon in this way: draw perpendicular bisector of each side, they intersect at a point, which is the circumcenter. Each perpendicular bisector intersects the circumcircle at a point; for each of this point, connect it and the two vertexes next to it of the original $n$-gon, which gives a regular $2n$-gon. For example, the hexagon in \cref{fig:polygon} is obtained from a equilateral.
 
 \begin{figure}[htbp]
  \centering
@@ -1564,9 +1565,9 @@ The Greeks constructed many regular polygons with ruler and compass. The side in
 \end{figure}
 
 \index{geometric construction!regular pentagon}
-Connect each vertex and its circumcircle, which divides the regular hexagon into 6 small equilateral triangles. It follows that if the radius of the circumcircle is 1 then the side of the regular hexagon is 1. For the inscribed equilateral triangle, each side together with two radii of length 1 form a isosceles triangle, whose two sides span $120\degree$. Based on this, it's easy to calculate the side of the inscribed equilateral triangle is $\sqrt{3}$. One may `double' a square to obtain a regular octagon; we leave it as exercise to calculate the side length of the regular octagon. It's a bit hard to construct a regular pentagon, nevertheless, the Greeks worked it out. We show two solutions here and another solution in chapter 6.
+Connecting each vertex and the center of its circumcircle, which divides the regular hexagon into 6 small equilateral triangles. It follows that if the radius of the circumcircle is 1 then the side of the regular hexagon is 1. For the inscribed equilateral triangle, each side together with two radii of length 1 form a isosceles triangle, whose two sides span $120\degree$. From this, it's easy to calculate the side of the inscribed equilateral triangle is $\sqrt{3}$. One may \enquote{double} a square to obtain a regular octagon; we leave it as exercise to calculate the side length of the regular octagon. It's a bit hard to construct a regular pentagon, nevertheless, the Greeks worked it out. We show two solutions here and another solution in chapter 6.
 
-\Ref{sec:pentagon-edge} shows when the diagonal of a regular pentagon is 1, the side length is the golden ratio $\phi = \dfrac{\sqrt{5}-1}{2}$. The problem turns out how to construct a line segment of length $\phi$? We know, by Pythagorean theorem, $5 = 2^2 + 1^2$. Given a unit line segment, double it to form a right triangle, the length of its hypotenuse, by Pythagorean theorem, is $\sqrt{2^2 + 1^2} = \sqrt{5}$. Halve the right triangle gives $\dfrac{\sqrt{5}}{2}$; cut the shorter side (of length $\dfrac{1}{2}$) off the hypotenuse, one gets a segment of length$\dfrac{\sqrt{5}-1}{2}$.
+\Cref{sec:pentagon-edge} shows that if the diagonal length of a regular pentagon is 1, then the side length is the golden ratio $\phi = \dfrac{\sqrt{5}-1}{2}$. The problem turns out to be: how to construct a line segment of length $\phi$? We know, by Pythagorean theorem, $5 = 2^2 + 1^2$. Given a unit line segment, double it to form a right triangle, the length of its hypotenuse, by Pythagorean theorem, is $\sqrt{2^2 + 1^2} = \sqrt{5}$. Halve the right triangle gives $\dfrac{\sqrt{5}}{2}$; cut the shorter side (of length $\dfrac{1}{2}$) off the hypotenuse, one gets a segment of length$\dfrac{\sqrt{5}-1}{2}$.
 
 \begin{figure}[htbp]
  \centering
@@ -1584,7 +1585,7 @@ As shown in \cref{fig:phi}, draw a unit circle and two perpendicular diameters. 
  \label{fig:pentagon-phi}
 \end{figure}
 
-Next, from a radius of length 1 and the segment of length $\phi$, one may construct a isosceles triangle, namely AHG as shown in \cref{fig:pentagon-phi}(side length of 1, $\phi$, and $\phi$; first draw the base segment, then draw two arcs at the center of each end with radius of $\phi$; finally, connect their intersection and the two ends), and isosceles triangle AGF (side length of 1, 1, and $\phi$), and isosceles triangle AIF (side length of 1, $\phi$, and $\phi$); these three triangles form a regular pentagon.
+Next, from a radius of length 1 and the segment of length $\phi$, one may construct a isosceles triangle, namely AHG as shown in \cref{fig:pentagon-phi} (side length of 1, $\phi$, and $\phi$; first draw the base segment, then draw two arcs at the center of each end with radius of $\phi$; finally, connect their intersection and the two ends), and isosceles triangle AGF (side length of 1, 1, and $\phi$), and isosceles triangle AIF (side length of 1, $\phi$, and $\phi$); these three triangles form a regular pentagon.
 
 The second construction comes from Euclid's \emph{Elements}. When connect the center of a regular pentagon (the center of its circumcircle) and its five vertexes, it divides $360\degree$ into five angles each of $360 \div 5 = 72\degree$. To obtain such an angle, Euclid's idea was to construct a special isosceles triangle, as shown in \cref{fig:isosceles72}, whose base angle is two times of the angle between two sides. Since the sum of angles of a triangle is $180\degree$, it means $\alpha + 2(2\alpha) = 180\degree$, hence the angle between two sides is $\dfrac{1}{5}$ of $180\degree$, which is $36\degree$, and the base angle is $72\degree$.
 
@@ -1613,7 +1614,7 @@ From the above explanation, it's sufficient to show it's possible to construct a
 \end{proof}
 
 \index{Gauss} \label{sec:Gauss-17-gon}
-We'll give the third construction of regular pentagon in Chapter 6 based on complex number and Euler's formula. The Greeks met great difficulty in constructing regular heptagon with ruler and compass. About 2,000 years later in 1792, a young man was about to choose between theology and mathematician. He was born in Brunswick as the only child of a poor family. His father earned living mainly from manual labor. At the age of seven, he started elementary school. His teacher once asked the students to calculate the sum of $1 + 2 + \dotsb + 100$; he observed that $1 + 100 = 2 + 99 = \dotso = 50 + 51 = 101$, in total 50 such pairs, so the answer was 5050. This amazed his teachers. Later, duke of Brunswick heard about him and granted him financial assistance to continue his education. At the age of 15 when thinking about if next to study theology or mathematics, the young man proved a regular polygon of 17 sides can be constructed by ruler and compass alone\cite{Gauss-Britannia-2025}. Being so exciting and motivated, that he decided to devoted to mathematics. This young man was Carl Friedrich Gauss.
+We'll give the third construction of regular pentagon in Chapter 6 based on complex numbers and Euler's formula. The Greeks met great difficulty in constructing regular heptagon with ruler and compass. About 2,000 years later in 1792, a young man was about to choose between theology and mathematician. He was born in Brunswick as the only child of a poor family. His father earned living mainly from manual labor. At the age of seven, he started elementary school. His teacher once asked the students to calculate the sum of $1 + 2 + \dotsb + 100$; he observed that $1 + 100 = 2 + 99 = \dotso = 50 + 51 = 101$, in total 50 such pairs, so the answer was 5050. This amazed his teachers. Later, duke of Brunswick heard about him and granted him financial assistance to continue his education. At the age of 15 when thinking about if next to study theology or mathematics, the young man proved a regular polygon of 17 sides can be constructed by ruler and compass alone\cite{Gauss-Britannia-2025}. Being so exciting and motivated, that he decided to devoted to mathematics. This young man was Carl Friedrich Gauss.
 
 \begin{figure}[htbp]
  \centering
@@ -1654,10 +1655,10 @@ The Greeks didn't know about this, nevertheless, they strictly followed the trad
 It was not until the 19 century, as the development of abstract algebra, particularly field theory, group theory, and Galois theory, that people finally solved all three problems -- they are all insoluble; it's impossible to duplicate the cube, trisect of an arbitrary angle, or square the circle with ruler and compass only\footnote{Wantzel proved that neither duplication of the cube nor trisection of an angle was geometric constructible; Lindemann proved $\pi$ was a transcendental number in 1882, hence the problem of squaring the circle was non-constructible.}.
 
 \index{analytic geometry}
-Despite it need abstract algebra and field theory to prove Gauss-Wantzel theorem, we may give some simplified explanation to it (see the prove outline in \cref{app:gauss-wantzel-theorem}). In the 17th century, Descartes developed analytic geometry (also known as coordinate geometry, Fermat independently developed analytic geometry with Descartes), reestablished geometry on top of algebra (equation and function). It gave the new interpretation on the ancient Greek ruler and compass construction.
+Though it needs abstract algebra and field theory to prove Gauss-Wantzel theorem, we may give some simplified explanation to it (see the prove outline in \cref{app:gauss-wantzel-theorem}). In the 17th century, Descartes developed analytic geometry (also known as coordinate geometry, Fermat independently developed analytic geometry with Descartes), reestablished geometry on top of algebra (equation and function). It gave the new interpretation on the ancient Greek ruler and compass construction.
 
 \subsubsection{The straight line through two points}
-A straight line in a plan can be described by function $y = kx + b$, where $k$ is the slope, and $b$ is the interception. Vertical lines are specially represented as $x = a$. The postulate 1 in Euclid's \emph{Elements} \enquote{, To draw a straight line from any point to any point.} is interpreted in analytic geometry as the straight line that passes through two points of $(x_1, y_1)$ and $(x_2, y_2)$, where $x_1 \ne x_2$. The two points satisfy the same linear equation:
+A straight line in a plan can be described by function $y = kx + b$, where $k$ is the slope, and $b$ is the interception. Vertical lines are specially represented as $x = a$. The postulate 1 in Euclid's \emph{Elements}, \enquote{To draw a straight line from any point to any point} is interpreted in analytic geometry as the straight line that passes through two points of $(x_1, y_1)$ and $(x_2, y_2)$. When $x_1 \ne x_2$, then the two points satisfy the same linear equation:
 
 \[
 \begin{cases}
@@ -1697,7 +1698,7 @@ y = k_2 x + b_2
 \end{cases}
 \]
 
-If the two lines are not parallel ($k_1 \ne k_2$), then the solution is uniquely determined. If $k_1 = k_2$ but $b_1 \ne b_2$, then the two lines are parallel, hence no solution, no intersection. If $k_1 = k_2$ and $b_1 = b_2$, then the two lines overlap, they have infinitely many \enquote{intersections}. Basically, for nonparallel lines intersect; if the coefficients of the linear equations are in set $K$ containing rationals, then the coordinates of the intersection are in $K$.
+If the two lines are not parallel ($k_1 \ne k_2$), then the solution is uniquely determined. If $k_1 = k_2$ but $b_1 \ne b_2$, then the two lines are parallel, hence no solution, no intersection. If $k_1 = k_2$ and $b_1 = b_2$, then the two lines overlap, they have infinitely many \enquote{intersections.} Basically, nonparallel lines intersect; if the coefficients of the linear equations are in set $K$ containing rationals, then the coordinates of the intersection are in $K$.
 
 The relation between a line and a circle is described by a system of,
 
@@ -1733,9 +1734,9 @@ The relation between two circles is described by two equations,
 \end{cases}
 \]
 
-We can convert it to a quadratic equation, then by its discriminant, $\Delta >, =, < 0$, to determine if the two circles are separate (including the case that a circle is inside the other without touching), externally/internally tangent to each other, or intersect each other. Basically, for line and circle, circle and circle, the coordinates of their intersection, if exists, are solutions to some quadratic equation. The coefficients may not be rational, for example, in \cref{fig:P1}, neither the slope $k$ nor intercept $b$ of the linear equation describing line CE is rational.
+We can convert it to a quadratic equation, then by its discriminant, $\Delta >, =, < 0$, to determine if the two circles are separate (including the case that a circle is inside the other without touching), externally/internally tangent to each other, or intersect each other. Basically, for line and circle, circle and circle, the coordinates of their intersection, if exist, are solutions to some quadratic equation. The coefficients may not be rational, for example, in \cref{fig:P1}, neither the slope $k$ nor intercept $b$ of the linear equation describing line CE is rational.
 
-As such, we describe ruler and compass construction with equations through Descartes's analytical geometry. This is the tool that helps us understand the capability/limitation of geometric construction. Given two points A and B in a plane, we define one as the origin $(0, 0)$, the other as $(1, 0)$, hence also define the unit segment of length 1. We may conduct a round of ruler and compass construction, including: (1) connect all known points to form a set of straight lines, $\mathbf{L}_1$; (2) draw circles at the center of each point, with the radius of each known segment; denote this set of circles by $\mathbf{C}_1$; (3) mark the intersections between lines, lines and circles, and circles; denote the set of these points by $\mathbf{P}_1$.
+As such, we describe ruler and compass construction with equations through Descartes's analytical geometry. This is the tool that helps us understand the capability/limitation of geometric construction. Given two points A and B in a plane, we define one point as the origin $(0, 0)$, the other as $(1, 0)$, hence also define the unit segment of length 1. We may conduct a round of ruler and compass construction, including: (1) connect all known points to form a set of straight lines, $\mathbf{L}_1$; (2) draw circles at the center of each point, with the radius of each known segment; denote this set of circles by $\mathbf{C}_1$; (3) mark the intersections between lines, lines and circles, and circles; denote the set of these points by $\mathbf{P}_1$.
 
 \begin{figure}[htbp]
  \centering
@@ -1744,13 +1745,13 @@ As such, we describe ruler and compass construction with equations through Desca
  \label{fig:P1}
 \end{figure}
 
-As shown in \cref{fig:P1}, after the first round of ruler and compass construction, we obtained a line, two circles, and six points. \emph{All} the constructed length are solutions to some linear or quadratic equations with rational coefficients. Denote the set of these numbers by $K_1$. We next conduct the second round of ruler and compass construction, including: (1) connect all points in $\mathbf{P}_1$ to form a new set of lines $\mathbf{L}_2$; (2) Draw circles with every point $O$ in $\mathbf{P}_1$ as the center, every segment of two points $M, N$ in $\mathbf{P}_1$ as the radius; denote the set of these circles by $\mathbf{C}_2$; (3) Mark the intersections between lines in $\mathbf{L}_2$, between every line in $\mathbf{L}_2$ and every circle in $\mathbf{C}_2$, and between circles in $\mathbf{C}_2$; denote the set of these points by $\mathbf{P}_2$.
+As shown in \cref{fig:P1}, after the first round of ruler and compass construction, we obtain a line, two circles, and six points. \emph{All} the constructed lengths are solutions to some linear or quadratic equations with rational coefficients. Denote the set of these numbers by $K_1$. We next conduct the second round of ruler and compass construction, including: (1) connect all points in $\mathbf{P}_1$ to form a new set of lines $\mathbf{L}_2$; (2) Draw circles with every point $O$ in $\mathbf{P}_1$ as the center, every segment of two points $M, N$ in $\mathbf{P}_1$ as the radius; denote the set of these circles by $\mathbf{C}_2$; (3) Mark the intersections between lines in $\mathbf{L}_2$, between every line in $\mathbf{L}_2$ and every circle in $\mathbf{C}_2$, and between circles in $\mathbf{C}_2$; denote the set of these points by $\mathbf{P}_2$.
 
 The constructed magnitudes from the second round are solutions to linear and quadratic equations with coefficients in $K_1$; denote the set of these magnitudes as $K_2$. We repeat, round after round, which construct more and more magnitudes in $K_1, K_2, K_3, \dotsc$ including numbers like $1 + \sqrt{2} + \sqrt{2\sqrt{3} - \sqrt{5}}$. Can you give some more examples?
 
-The size of the set, as the round of construction increases, grows exponentially. The construction continues infinitely, every round is equivalent to solving linear and quadratic equations with coefficients constructed from previous round. The set of all constructible numbers is infinite, however, it does not contain $\sqrt[3]{2}$ (see \cref{app:gauss-wantzel-theorem}). Because it is not a solution to any linear or quadratic equation with rational coefficients, nor a solution to any linear or quadratic equation with coefficients in $K_1$, nor a solution to any linear or quadratic equation with coefficients in $K_2$ ... It can not be constructed by ruler and compass\footnote{$\sqrt[3]{2}$ is the unique real solution to cubic equation $x^3 - 2 = 0$, the other two roots are complex numbers of $-\sqrt[3]{2}\dfrac{1 \pm \sqrt{3}}{2}$, see chapter 6.}. Thereby, it's impossible to duplicate a cube. As shown in \cref{fig:heptagon}, the side length of a regular polygon of $n$ sides is $x = 2\sin(\dfrac{360\degree}{2n})$. It can be constructed by ruler and compass if and only if it is a solution to some linear or quadratic equation with coefficients in some $K_i$ (i.e., in $K_{i+1}$).
+The size of the set, as the round of construction increases, grows exponentially. The construction continues infinitely, every round is equivalent to solving linear and quadratic equations with coefficients constructed from previous round. The set of all constructible numbers is infinite, however, it does not contain $\sqrt[3]{2}$ (see \cref{app:gauss-wantzel-theorem}). Because it is not a solution to any linear or quadratic equation with rational coefficients, nor a solution to any linear or quadratic equation with coefficients in $K_1$, nor a solution to any linear or quadratic equation with coefficients in $K_2$ ... It can not be constructed by ruler and compass\footnote{$\sqrt[3]{2}$ is the unique real solution to cubic equation $x^3 - 2 = 0$, the other two roots are complex numbers of $-\sqrt[3]{2}\dfrac{1 \pm \sqrt{3}}{2}$, see chapter 6.}. Thereby, it's impossible to duplicate a cube. As shown in \cref{fig:heptagon}, the side length of a regular polygon of $n$ sides is $x = 2\sin(\dfrac{360\degree}{2n})$. It can be constructed by ruler and compass if and only if it is a solution to some linear or quadratic equation with coefficients in some $K_i$ (hence the side length is in $K_{i+1}$).
 
-By Gauss-Wantzel theorem, the regular polygon of 18 sides can't be constructed by ruler and compass because $18 = 2 \times 3^2$, isn't product of distinct Fermat's prime numbers and power of 2. It follows that, $\dfrac{1}{18}$ of $360\degree$, namely $20\degree$, can not be constructed, hence it's impossible to trisect $60\degree$. This shows the problem of trisection of an angle is unsolvable.
+By Gauss-Wantzel theorem, the regular polygon of 18 sides can't be constructed by ruler and compass because $18 = 2 \times 3^2$, isn't product of distinct Fermat's prime numbers and power of 2. It follows that, $\dfrac{1}{18}$ of $360\degree$, namely $20\degree$, can not be constructed, hence it's impossible to trisect $60\degree$. This shows the problem of trisection of an angle is insoluble.
 
 \begin{figure}[htbp]
  \centering
