@@ -3,9 +3,9 @@ The Journey of Numbers
 
 Edition: $\displaystyle \phi = \frac{\sqrt{5} - 1}{2} = 0.618$
 
-2026/03
+2026/04
 
-This repository contains the text of the popular science book, _The Journey of Numbers_. The book provides a historical introduction to numbers. As a central notion in mathematics, numbers connect various areas and  theories. This book includes 33 interesting stories and biographies of great mathematicians in the history of numbers. The book is available in English ([PDF under proofreading](https://github.com/user-attachments/files/25886450/amathtour-en.pdf)) and Chinese (中文) ([PDF](https://github.com/user-attachments/files/25886455/amathtour-zh-cn.pdf)).
+This repository contains the text of the popular science book, _The Journey of Numbers_. The book provides a historical introduction to numbers. As a central notion in mathematics, numbers connect various areas and  theories. This book includes 33 interesting stories and biographies of great mathematicians in the history of numbers. The book is available in English ([PDF under proofreading](https://github.com/user-attachments/files/26494220/amathtour-en.pdf)) and Chinese (中文) ([PDF](https://github.com/user-attachments/files/26494224/amathtour-zh-cn.pdf)).
 
 Contents
 --------
