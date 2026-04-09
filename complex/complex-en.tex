@@ -137,7 +137,7 @@ Which is exactly the number in the first column. This table evidently shows that
 \]
 
 \index{geometric solution to the quadratic equations}
-where $s$ is the area and $d$ is the diagonal. By substituting $b = \dfrac{s}{a}$ into the second equation, we get a quadratic equation in terms of $a^2$, which is $(a^2)^2 - d^2 a^2 + s^2 = 0$. Since there was no algebraic symbol system at that time, and the Babylonians described the process of solving quadratic equations in words. Before learning the quadratic formula in middle school, we usually introduce the \enquote{completing the square} method, which is essentially an algebraic solution. The Arab mathematician Al-Khwarizmi, in his book \emph{Al-Kitab al-Mukhtasar fi Hisab al-Jabr wal-Muqabala}\footnote{This is the original Arabic title of \emph{The Compendious Book on Calculation by Completion and Balancing}, see \cref{sec:Khwarizmi}}, also followed the Greek tradition and provided a geometric explanation for quadratic equations. If $a \ne 0$, we can transform the general quadratic equation $ax^2 + bx + c = 0$ into a form where the coefficient of the quadratic term is 1, and move the constant term to the right side, obtaining $x^2 + \dfrac{b}{a}x = -\dfrac{c}{a}$. Let $p = \dfrac{b}{a}$ and $q = -\dfrac{c}{a}$, we shall solve the equation $x^2 + px = q$ using geometric methods. If $p > 0$, \cref{fig:quadratic1} illustrates the geometric meaning of the left side of the equation. The term $q$ corresponds to the area of a square with side length $x$ plus the area of a rectangle with length $p$ and width $x$.
+where $s$ is the area and $d$ is the diagonal. By substituting $b = \dfrac{s}{a}$ into the second equation, we get a quadratic equation in terms of $a^2$, which is $(a^2)^2 - d^2 a^2 + s^2 = 0$. Since there was no algebraic symbols at that time, the Babylonians described the process of solving quadratic equations in words. Prior to the quadratic formula, we usually learn the \enquote{completing the square} method in school, which is essentially an algebraic solution. The Arabic mathematician Al-Khwarizmi, in his book \emph{The Compendious Book on Calculation by Completion and Balancing}\footnote{The original Arabic title is \emph{Al-Kitab al-Mukhtasar fi Hisab al-Jabr wal-Muqabala}, see \cref{sec:Khwarizmi}}, also followed the Greek tradition, providing geometric explanation for quadratic equations. If $a \ne 0$, we can transform the general quadratic equation $ax^2 + bx + c = 0$ into a form where the coefficient of the quadratic term is 1, and move the constant term to the right side, obtaining $x^2 + \dfrac{b}{a}x = -\dfrac{c}{a}$. Let $p = \dfrac{b}{a}$ and $q = -\dfrac{c}{a}$, we shall solve the equation $x^2 + px = q$ using geometric method. If $p > 0$, \cref{fig:quadratic1} illustrates the geometric interpretation of the left side of the equation. The term $q$ corresponds to the area of a square with side length $x$ plus the area of a rectangle with length $p$ and width $x$.
 
 \begin{figure}[htbp]
   \centering
@@ -147,13 +147,13 @@ where $s$ is the area and $d$ is the diagonal. By substituting $b = \dfrac{s}{a}
 \end{figure}
 
 \index{completing the square}
-The method of completing squares has a geometric interpretation: it involves cutting the rectangle into two smaller rectangles of equal length $\dfrac{p}{2}$ and width $x$ (see the left side of \cref{fig:quadratic2}), then moving one of them to the bottom of the square, and adding a small square with side length $\dfrac{p}{2}$ (see the black square on the right side of \cref{fig:quadratic2}) to form a larger square with side length $x + \dfrac{p}{2}$. The white areas in both diagrams are equal, which means:
+The method of completing square involves cutting the rectangle into two smaller rectangles of equal length $\dfrac{p}{2}$ and width $x$ (see the left side of \cref{fig:quadratic2}), then moving one to the bottom, and adding a small square with side length $\dfrac{p}{2}$ (the black square on the right side of \cref{fig:quadratic2}) to form a larger square with side length $x + \dfrac{p}{2}$. The white areas in both diagrams are equal, which means:
 
 \begin{align*}
- \left(x + \frac{p}{2}\right)^2 &= q + \left(\frac{p}{2}\right)^2 &&\text{the area of the large square equals the sum of white and black areas} \\
+ \left(x + \frac{p}{2}\right)^2 &= q + \left(\frac{p}{2}\right)^2 &&\text{sum of white and black areas} \\
  x + \frac{p}{2} &= \pm \sqrt{q + \left(\frac{p}{2}\right)^2} &&\text{taking square root on both sides} \\
  x &= -\frac{p}{2} \pm \sqrt{q + \frac{p^2}{4}} \\
- x &= -\frac{b}{2a} \pm \sqrt{-\frac{c}{a} + \frac{b^2}{4a^2}} &&\text{substituting back } p = \frac{b}{a}, q= -\frac{c}{a} \\
+ x &= -\frac{b}{2a} \pm \sqrt{-\frac{c}{a} + \frac{b^2}{4a^2}} &&\text{substituting} p = \frac{b}{a}, q= -\frac{c}{a} \text{back} \\
  x &= \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
 \end{align*}
 
@@ -165,7 +165,7 @@ The method of completing squares has a geometric interpretation: it involves cut
 \end{figure}
 
 \index{Cardano formula}
-This is the formula for solving quadratic equations. However, during the time of Al-Khwarizmi, negative numbers were not accepted, so when the linear term is negative, a geometric interpretation of $x^2 - px = q$ is needed; when the constant term is negative, a geometric interpretation of $x^2 - q = px$ is needed (see \cref{qn:geometric-quadratic}). Cardano followed this tradition in \emph{Ars magna}, providing both algebraic solutions and geometric interpretations for cubic equations. Let's first introduce the algebraic solution. For a general cubic equation $a_3x^3 + a_2x^2 + a_1x + a_0 = 0, a_3 \ne 0$, we first divide both sides by $a_3$ to make the coefficient of the cubic term equal to 1, obtaining $x^3 + \dfrac{a_2}{a_3} x^2 + \dfrac{a_1}{a_3} x + \dfrac{a_0}{a_3} = 0$. Renaming the coefficients as $x^3 + ax^2 + bx + c = 0$. Around the end of the 14th century, mathematicians in Florence discovered that by substituting $x = y - \dfrac{a}{3}$, the quadratic term can be eliminated:
+This is the formula for solving quadratic equations. However, during Al-Khwarizmi's living time, negative numbers were not accepted, so when the linear term is negative, a geometric interpretation of $x^2 - px = q$ is needed; when the constant term is negative, a geometric interpretation of $x^2 - q = px$ is needed (see \cref{qn:geometric-quadratic}). Cardano followed this tradition in \emph{Ars magna}, providing both algebraic solutions and geometric interpretations for cubic equations. We first introduce the algebraic solution. For a general cubic equation $a_3x^3 + a_2x^2 + a_1x + a_0 = 0, a_3 \ne 0$, first divide both sides by $a_3$ to make the coefficient of the cubic term to be 1, obtaining $x^3 + \dfrac{a_2}{a_3} x^2 + \dfrac{a_1}{a_3} x + \dfrac{a_0}{a_3} = 0$. Renaming the coefficients as $x^3 + ax^2 + bx + c = 0$. By the end of the 14th century, mathematicians in Florence discovered that by substituting $x = y - \dfrac{a}{3}$, the quadratic term can be eliminated:
 
 \begin{align*}
 (y - \frac{a}{3})^3 + a(y - \frac{a}{3})^2 + b(y - \frac{a}{3}) + c &= 0  \\
@@ -187,7 +187,7 @@ What Ferro discovered was the solution to \cref{eq:cubic-linear}, while the solu
 \begin{align*}
 y^3 = (u + v)^3 &= u^3 + 3u^2v + 3uv^2 + v^3 && \text{binomial expansion} \\
   &= u^3 + v^3 + 3uv(u + v) \\
-  &= u^3 + v^3 + 3uvy && \text{代入} y = u + v \\
+  &= u^3 + v^3 + 3uvy && \text{substitute} y = u + v \\
   &= (3uv)y + (u^3 + v^3) = py + q
 \end{align*}
 
@@ -200,19 +200,19 @@ equating the coefficients of $y$ and the constant terms, we get:
 \end{cases}
 \]
 
-This is a system of two equations in terms of $u$ and $v$. From the first equation, we can express $v$ as $v = \dfrac{p}{3u}$, and substitute it into the second equation to get:
+This is a system of two equations in terms of $u$ and $v$. From the first equation, we can express $v$ as $v = \dfrac{p}{3u}$, then substitute it into the second equation to get:
 
 \[
 u^3 + (\frac{p}{3u})^3 = q
 \]
 
-It is acutally a quadratic equation in terms of $u^3$, that is, $(u^3)^2 - qu^3 + (\dfrac{p}{3})^3 = 0$. Using the quadratic formula, we can solve for $u^3$:
+It is acutally a quadratic equation in terms of $u^3$, that is, $(u^3)^2 - qu^3 + (\dfrac{p}{3})^3 = 0$. Applying the quadratic formula solves for $u^3$:
 
 \[
 u^3 = \frac{q}{2} \pm \sqrt{\left(\frac{q}{2}\right)^2 - \left(\frac{p}{3}\right)^3}
 \]
 
-Since $u$ and $v$ are symmetric in the above system of equations, $v^3$ must have the same form. We can let them take these two roots respectively:
+Since $u$ and $v$ are symmetric in above system, $v^3$ must have the same form. Let them take these two roots respectively:
 
 \[
 \begin{dcases}
@@ -222,14 +222,14 @@ v^3 = \dfrac{q}{2} - \sqrt{\left(\dfrac{q}{2}\right)^2 - \left(\dfrac{p}{3}\righ
 \]
 
 \index{Cardano formula}
-They satisfy $u^3 + v^3 = q$. Finally, since $y = u + v$, we can obtain the root of the equation:
+They satisfy $u^3 + v^3 = q$. Finally, since $y = u + v$, we obtain the root of the equation:
 
 \be \label{eq:cardano}
 y = u + v = \sqrt[3]{\frac{q}{2} + \sqrt{\left(\frac{q}{2}\right)^2 - \left(\frac{p}{3}\right)^3}} + \sqrt[3]{\frac{q}{2} - \sqrt{\left(\frac{q}{2}\right)^2 - \left(\frac{p}{3}\right)^3}}
 \ee
 
 \index{geometric solution to cubic equations} \label{sec:geometric-cubic-solution}
-This is the Cardano formula for solving cubic equations. We can further find the unknown $x$ using $x = y - \dfrac{a}{3}$. We will next solve the cubic equation $y^3 + py = q$ using geometric methods. As shown in \cref{fig:cube-decompose}, we can cut a large cube with side length $r$ into 5 parts: a small cube with side length $r-s$ at the lower left front corner; a small cube with side length $s$ at the upper right back corner; and three rectangular prisms with length $r$, width $r-s$, and height $s$, located at the upper left, lower right front, and lower right back corners respectively. The volume of the large cube equals the sum of the volumes of these 5 parts, that is:
+This is the Cardano formula for solving cubic equations. We can further find the unknown $x$ using $x = y - \dfrac{a}{3}$. We will next solve the cubic equation $y^3 + py = q$ using geometric methods. As shown in \cref{fig:cube-decompose}, cut a large cube with side length $r$ into 5 parts: a small cube with side length $r-s$ at the lower left front corner; a small cube with side length $s$ at the upper right back corner; and three rectangular prisms with length $r$, width $r-s$, and height $s$, located at the upper left, lower right front, and lower right back corners respectively. The volume of the large cube equals the sum of the volumes of these 5 parts, that is:
 
 \begin{figure}[htbp]
   \centering
