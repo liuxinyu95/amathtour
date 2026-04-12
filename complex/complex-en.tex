@@ -379,21 +379,57 @@ Legendre soon forgot about this encounter. He was busy with his research and the
 % , the smooth and flowing arguments, the solid calculations, and the precise conclusions that perfectly combined numbers, geometry, and trigonometry.
 Legendre decided to contact this young man immediately and have an in-depth discussion. However, he searched through the paper but could not find any name or address. How could this be? This young man might come again in a few days, Legendre decided to wait. Day after day, from late autumn to early winter, the first snow had already fallen in Paris. But the young man never showed up again. Will this young man publish his paper directly in a journal? Then I can find him. Legendre went to the library and checked mathematical journals from the past few months, but was disappointed again. The young man might be discouraged by Legendre's response that day and give up on this research. On November 2, Legendre sent this paper to his friend and collaborator François Français, with a brief comment praising the young man for his love of scholarship without seeking fame, and noting that although was a draft, it was sufficiently innovative.
 
-François Français mainly studied partial differential equations, and although his work was often praised by the French Academy, he rarely published during his lifetime. After François Français's death in 1810, his brother Jacques Français discovered this memoir on complex numbers while organizing his papers. He published it in September 1813 under the title \emph{New Principles of Geometry of Position and an Explanation of the Symbol of Imaginary Numbers}. Jacques Français showed true scholarly spirit; he did not claim this achievement as his own. At the end of the paper, he pointed out that these ideas came from an unknown mathematician and he asked that the mathematician should make himself known so that he might receive the credit for his ideas. Soon after the article by Jacques Français appeared in Gergonne's famous journal\emph{Annales de mathématiques}, a person named Argand responded that he was that unknown author and sent a slightly modified manuscript titled \emph{A Treatise on a Method of Representing Imaginary Numbers in Geometric Constructions}. Argand added new applications in it. This already dramatic event then attracted the attention of many mathematicians: Jacques Français, Argand, and Servois engaged in a heated discussion in \emph{Annales de mathématiques}. Servois believed that complex numbers must be treated with pure algebra, while Jacques Français and Argand advocated for the effectiveness of geometric representation. Argand then demonstrated the power of geometric representation of complex numbers - he proved the fundamental theorem of algebra. From today's perspective, although there are some flaws, it is one of the clearest and most elegant proofs. Argand's work was ahead of its time, but unfortunately, we do not know who he really is! He only signed as \enquote{Argand} in all his papers, but not the full name.Which one among many people named Argand is he? We only know that he appeared in Paris in 1806, and the paper published in 1813 was sent from Paris. Some speculate that he might be Jean Robert Argand, an accountant and amateur mathematician living in Paris, but the age does not match. In 1806, Legendre described him as a \emph{young} man, but Jean Robert Argand was already 38 years old at that time\cite{MacTour-Argand}.
+François Français mainly studied partial differential equations, and although his work was often praised by the French Academy, he rarely published during his lifetime. After François Français's death in 1810, his brother Jacques Français discovered this memoir on complex numbers while organizing his papers. He published it in September 1813 under the title \emph{New Principles of Geometry of Position and an Explanation of the Symbol of Imaginary Numbers}. Jacques Français showed true scholarly spirit: he did not claim this achievement as his own. At the end of the paper, he pointed out that these ideas came from an unknown mathematician and he asked that the mathematician should make himself known so that he might receive the credit for his ideas. Soon after the article by Jacques Français appeared in Gergonne's famous journal\emph{Annales de mathématiques}, a person named Argand responded that he was that unknown author and sent a slightly modified manuscript titled \emph{A Treatise on a Method of Representing Imaginary Numbers in Geometric Constructions}. Argand added new applications in it. This already dramatic event then attracted the attention of many mathematicians: Jacques Français, Argand, and Servois engaged in a heated discussion in \emph{Annales de mathématiques}. Servois believed that complex numbers must be treated with pure algebra, while Jacques Français and Argand advocated for the effectiveness of geometric representation. Argand then demonstrated the power of geometric representation of complex numbers - he proved the fundamental theorem of algebra. From today's perspective, although there are some flaws, it is one of the clearest and most elegant proofs. Argand's work was ahead of its time, but unfortunately, we do not know who he really is! He only signed as \enquote{Argand} in all his papers, but not the full name.Which one among many people named Argand is he? We only know that he appeared in Paris in 1806, and the paper published in 1813 was sent from Paris. Some speculate that he might be Jean Robert Argand, an accountant and amateur mathematician living in Paris, but the age does not match. In 1806, Legendre described him as a \emph{young} man, but Jean Robert Argand was already 38 years old at that time\cite{MacTour-Argand}.
 
 \index{Argand diagram}
 Our story mainly comes from the letters between Legendre and François Français, and the paper by Jacques Français. To commemorate Argand's achievements, today we call \cref{fig:Argand-diagram} the \enquote{Argand diagram}, which appears in classrooms around the world\cite{Weisstein-2025}.
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[scale=0.33]{img/argand-diagram}
+  \begin{tikzpicture}[
+      % >=Stealth,
+      font=\normalsize
+  ]
+
+  % Axes
+  \draw[->] (-0.5,0) -- (4,0) node[below] {$x$ (real)};
+  \draw[->] (0,-0.5) -- (0,3.5) node[above] {$y\mathrm{i}$ (imaginary)};
+
+  % Point z = a + bi
+  \coordinate (z) at (3,2.5);
+  \coordinate (a) at (3, 0);
+  \coordinate (b) at (0, 2.5);
+  \fill (z) circle (1.5pt);
+
+  % Vector r
+  \draw[thick,->] (0,0) -- (z) node[midway, above left] {$r$};
+
+  % Horizontal (real part: a)
+  \draw[dashed] (z) -- (z|-0,0) node[below] {$a$};
+  \fill (a) circle (1.5pt);
+
+  % Vertical (imaginary part: b)
+  \node[left] at (b) {$b$};
+  \fill (b) circle (1.5pt);
+
+  % Labels on sides
+  \node at (3.7, 1.25) {$r\sin\theta$};
+  \node[below] at (1.2, 0) {$r\cos\theta$};
+
+  % Angle theta atan(2.5/3) = 39.8 degree
+  \draw (0.8,0) arc[start angle=0, end angle=39.8, radius=0.8] node[midway, right] {$\theta$};
+
+  % Label z = a + bi
+  \node[above right] at (z) {$a+b\mathrm{i}$};
+  \end{tikzpicture}
+  %%\includegraphics[scale=0.33]{img/argand-diagram}
   \caption{Argand diagram}
  \label{fig:Argand-diagram}
 \end{figure}
 
 \subsection{The geometric interpretation of complex numbers}
 \index{The geometric interpretation of complex numbers}
-A picture is worth a thousand words. We can immediately see from the Argand diagram that a complex number $z$ consists of two parts: the real part $a$ and the imaginary part $bi$. The imaginary axis creatively extends vertically upwards, and the real axis and the imaginary axis are perpendicular to each other, forming the complex plane. A complex number is represented as a vector from the origin to the point with coordinates $(a, b)$ in the complex plane. Drawn as a line segment with an arrow, this vector is $a + bi$. The imaginary unit $i$ is not any real number because it is not on the real axis at all. If we say that any number $a$ on the real axis multiplied by $-1$ corresponds to a \enquote{turning back}, becoming a negative number $-a$ pointing to the other side, then multiplying $a$ by $i$ corresponds to \enquote{turning left by $90\degree$}, becoming $ai$ on the imaginary axis; multiplying by $i$ again corresponds to \enquote{turning left by another $90\degree$}, returning to the real axis pointing to the other side as $-a$. Two turns of $90\degree$ correspond to a turn of $180\degree$, which perfectly explains why $i^2 = -1$. We can immediately see from the Pythagorean theorem that the length of the line segment represented by the vector $a + bi$ is $r = \sqrt{a^2 + b^2}$, which is called the modulus of the complex number $z$, denoted as $|z|$. The angle between the vector and the real axis is called the argument of the complex number, denoted as $\arg(z)$. From the definition of trigonometric functions, we immediately know that the real part and imaginary part of a complex number can be expressed as: $a = r\cos\theta, b = r\sin\theta$, thus there are two equivalent representations for a complex number:
+A picture is worth a thousand words. We can immediately see from the Argand diagram that a complex number $z$ consists of two parts: the real part $a$ and the imaginary part $bi$. The imaginary axis creatively extends vertically upwards, together with the horizontal real axis, forming the complex plane. A complex number is represented as a vector from the origin to the point with coordinates $(a, b)$ in the complex plane. Drawn as a line segment with an arrow, this vector is $a + bi$. The imaginary unit $i$ is not any real number because it is not on the real axis at all. If we say that any number $a$ on the real axis multiplied by $-1$ corresponds to a \enquote{turning back}, becoming $-a$ pointing to the other side, then multiplying $a$ by $i$ corresponds to \enquote{turning left by $90\degree$,} becoming $ai$ on the imaginary axis; multiplying by $i$ again corresponds to \enquote{turning left by another $90\degree$,} returning to the real axis pointing to the other side as $-a$. Two turns of $90\degree$ correspond to a turn of $180\degree$, which perfectly explains why $i^2 = -1$. We can immediately see from the Pythagorean theorem that the length of the line segment represented by the vector $a + bi$ is $r = \sqrt{a^2 + b^2}$, which is called the modulus of the complex number $z$, denoted as $|z|$. The angle between the vector and the real axis is called the argument of the complex number, denoted as $\arg(z)$. From the definition of trigonometric functions, we immediately know that the real part and imaginary part of a complex number can be expressed as: $a = r\cos\theta, b = r\sin\theta$, thus there are two equivalent representations for a complex number:
 
 \[
 a + bi = r\cos\theta + ir\sin\theta = r(\cos\theta + i\sin\theta)
@@ -403,12 +439,12 @@ Argand diagram algo gives a clear interpretation to the multiplication of comple
 
 \begin{align*}
 z_1z_2 &= r_1(\cos\theta_1 + i\sin\theta_1) \cdot r_2(\cos\theta_2 + i\sin\theta_2) \\
-  &= r_1r_2[\cos\theta_1\cos\theta_2 - \sin\theta_1\sin\theta_2 + i(\sin\theta_1\cos\theta_2 + \cos\theta_1\sin\theta_2)] && \text{expanding }, i^2 = -1 \\
-  &= r_1r_2[\cos(\theta_1 + \theta_2) + i\sin(\theta_1 + \theta_2)] && \text{sum of angles formulas}
+  &= r_1r_2[\cos\theta_1\cos\theta_2 - \sin\theta_1\sin\theta_2 + i(\sin\theta_1\cos\theta_2 + \cos\theta_1\sin\theta_2)] && \text{expanding, } i^2 = -1 \\
+  &= r_1r_2[\cos(\theta_1 + \theta_2) + i\sin(\theta_1 + \theta_2)] && \text{sum of angles}
 \end{align*}
 
 \label{sec:proof-to-machin}
-Thus when multiplying two complex numbers, we multiply their moduli and add their arguments. The mathematician Abraham de Moivre (1667–1754) multiplied two complex numbers with modulus 1 and the same argument to get:
+Thus when multiplying two complex numbers, multiply their moduli and add their arguments. Abraham de Moivre (1667–1754) multiplied two complex numbers of modulus 1 and the same argument to get:
 
 \[
 (\cos \theta + i\sin \theta)^2 = \cos (\theta + \theta) + i\sin (\theta + \theta) = \cos 2\theta + i\sin 2\theta
@@ -421,18 +457,18 @@ Further, multiplying $n$ such complex numbers together gives the famous de Moivr
 (\cos \theta + i\sin \theta)^n = \cos n\theta + i\sin n\theta
 \ee
 
-Argand's geometric interpretation of complex numbers is a perfect example of the integration of numbers, geometry, vectors, and trigonometry. To demonstrate the power of the combination of numbers and shapes that complex numbers possess, we will give an elegant proof of Machin's formula (see \cref{sec:machin-formula}). People found Leibniz's formula for $\pi$ converges very slow, they found below series converges much faster:
+Argand's geometric interpretation is a perfect example of the integration of numbers, geometry, vectors, and trigonometry. To demonstrate its power, we will give an elegant proof to Machin's formula (see \cref{sec:machin-formula}). In contract to Leibniz's formula of $\pi$, which converges very slow, below series converges much faster:
 
 \[
 \frac{\pi}{4} = \tan^{-1} \frac{1}{2} + \tan^{-1} \frac{1}{3}
 \]
 
 \begin{proof}
- The argument of a complex number $z = a + bi$ is given by $\arg(z) = \tan^{-1}\dfrac{b}{a}$. The right side of the above equation can be seen as the sum of two arguments, which correspond to the complex numbers $z_1 = 2 + i$ and $z_2 = 3 + i$. When multiplying two complex numbers, their arguments add up, that is, $\arg(z_1 z_2) = \arg(z_1) + \arg(z_2)$.
+The argument of a complex number $z = a + bi$ is given by $\arg(z) = \tan^{-1}\dfrac{b}{a}$. The right side of the above equation can be seen as the sum of two arguments, which correspond to the complex numbers $z_1 = 2 + i$ and $z_2 = 3 + i$. When multiplying two complex numbers, their arguments add up, that is, $\arg(z_1 z_2) = \arg(z_1) + \arg(z_2)$.
 
 \begin{align*}
 z_1 z_2 &= (2+i)(3+i) = (6 - 1) + (2 + 3)i = 5 + 5i \\
-arg(5 + 5i) &= arg(2+i) + arg(3+i) && \text{add arguments when multiply complex numbers} \\
+arg(5 + 5i) &= arg(2+i) + arg(3+i) && \text{add arguments when multiplying} \\
 \frac{\pi}{4} &= \tan^{-1}\frac{5}{5} = \tan^{-1}\frac{1}{2} + \tan^{-1}\frac{1}{3} && \text{see \cref{fig:machin1}} \qedhere
 \end{align*}
 \end{proof}
@@ -465,7 +501,7 @@ The argument of $z$ is exactly $\dfrac{\pi}{4}$.
 \end{proof}
 
 \index{Conjugate complex numbers}
-This is supposed to be the shortest and most elegant proof of Machin's formula. This proof reveals a geometric property of complex numbers: if a complex number $z = a + bi$ has an argument $\theta$, where $b \ne 0$, then the complex number $a - bi$ has an argument $\tan^{-1}\dfrac{-b}{a} = -\theta$. Let $\overline{z} = a - bi$ be the conjugate of $z$. Thus, dividing by $a + bi$ corresponds to multiplying by $a - bi$ in terms of the angle of rotation. We can conveniently convert division into multiplication using conjugate complex numbers. In particular, since $z\overline{z} = (a + bi)(a - bi) = a^2 + b^2 = |z|^2$, we have:
+This is supposed to be the shortest and most elegant proof of Machin's formula. It reveals a geometric property of complex numbers: if a complex number $z = a + bi$ has an argument $\theta$, where $b \ne 0$, then the complex number $a - bi$ has an argument $\tan^{-1}\dfrac{-b}{a} = -\theta$. Let $\overline{z} = a - bi$ be the conjugate of $z$. Thus, dividing by $a + bi$ corresponds to multiplying by $a - bi$ in terms of the angle of rotation. We can conveniently convert division into multiplication through conjugate complex numbers. In particular, since $z\overline{z} = (a + bi)(a - bi) = a^2 + b^2 = |z|^2$, we have:
 
 \[
 \frac{1}{z} = \frac{\overline{z}}{z\overline{z}} = \frac{1}{|z|^2}\overline{z}
@@ -477,7 +513,7 @@ When the modulus of $z$ is 1, we have $\dfrac{1}{z} = \overline{z}$. For example
 \frac{1}{\cos\theta + i\sin\theta} = \cos\theta - i\sin\theta
 \]
 
-All complex numbers on the unit circle satisfy this condition. \cref{qn:trigonometry-of-add} requires us to derive the sum of angles formulas for trigonometric functions using complex number operations.
+All complex numbers on the unit circle satisfy this. \cref{qn:trigonometry-of-add} asks to derive the sum of angles formulas for trigonometric functions with complex numbers.
 
 \subsection{The foundamental theorem of algebra}
 

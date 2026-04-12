@@ -385,7 +385,43 @@ xy = 40
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[scale=0.33]{img/argand-diagram}
+  \begin{tikzpicture}[
+      % >=Stealth,
+      font=\normalsize
+  ]
+
+  % Axes
+  \draw[->] (-0.5,0) -- (4,0) node[below] {$x$ (real)};
+  \draw[->] (0,-0.5) -- (0,3.5) node[above] {$y\mathrm{i}$ (imaginary)};
+
+  % Point z = a + bi
+  \coordinate (z) at (3,2.5);
+  \coordinate (a) at (3, 0);
+  \coordinate (b) at (0, 2.5);
+  \fill (z) circle (1.5pt);
+
+  % Vector r
+  \draw[thick,->] (0,0) -- (z) node[midway, above left] {$r$};
+
+  % Horizontal (real part: a)
+  \draw[dashed] (z) -- (z|-0,0) node[below] {$a$};
+  \fill (a) circle (1.5pt);
+
+  % Vertical (imaginary part: b)
+  \node[left] at (b) {$b$};
+  \fill (b) circle (1.5pt);
+
+  % Labels on sides
+  \node at (3.7, 1.25) {$r\sin\theta$};
+  \node[below] at (1.2, 0) {$r\cos\theta$};
+
+  % Angle theta atan(2.5/3) = 39.8 degree
+  \draw (0.8,0) arc[start angle=0, end angle=39.8, radius=0.8] node[midway, right] {$\theta$};
+
+  % Label z = a + bi
+  \node[above right] at (z) {$a+b\mathrm{i}$};
+  \end{tikzpicture}
+  %% \includegraphics[scale=0.33]{img/argand-diagram}
   \caption{阿尔冈图}
  \label{fig:Argand-diagram}
 \end{figure}
