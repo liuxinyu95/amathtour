@@ -385,10 +385,7 @@ xy = 40
 
 \begin{figure}[htbp]
   \centering
-  \begin{tikzpicture}[
-      % >=Stealth,
-      font=\normalsize
-  ]
+  \begin{tikzpicture}[font=\normalsize]
 
   % Axes
   \draw[->] (-0.5,0) -- (4,0) node[below] {$x$ (real)};
@@ -474,7 +471,32 @@ arg(5 + 5i) &= arg(2+i) + arg(3+i) && \text{复数相乘幅角相加} \\
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[scale=0.33]{img/machin1}
+  \begin{tikzpicture}[font=\normalsize]
+
+  % Axes
+  \draw[->] (-0.5,0) -- (6,0) node[below] {$x$ (real)};
+  \draw[->] (0,-0.5) -- (0,6) node[above] {$y\mathrm{i}$ (imaginary)};
+
+  \coordinate (z) at (5, 5);  % z = 5 + 5i
+  \coordinate (z1) at (2, 1); % z1 = 2 + i
+  \coordinate (z2) at (3, 1); % z2 = 3 + i
+
+  % Vector z
+  \draw[thick,->] (0,0) -- (z) node[above] {$z = z_1z_2 = 5 + 5i$};
+
+  \draw[dashed] (z) -- (z|-0,0) node[below] {$5$};
+  \fill (5,0) circle (1.5pt);
+  \fill (0, 5) circle (1.5pt) node[left] {$5i$};;
+
+  \draw[thick,->] (0, 0) -- (z1) node[above right] {$z_1 = 2 + i$};
+  \draw[thick,->] (0, 0) -- (z2) node[below right] {$z_2 = 3 + i$};
+  \fill (3, 0) circle (1.5pt) node[below] {$3$};
+  \fill (2, 0) circle (1.5pt) node[below] {$2$};
+  \fill (0, 1) circle (1.5pt) node[left] {$i$};
+
+  \draw (0.8,0) arc[start angle=0, end angle=45, radius=0.8] node[midway, right] {$45\degree$};
+  \end{tikzpicture}
+  %% \includegraphics[scale=0.33]{img/machin1}
   \caption{$(2 + i)(3 + i) = 5 + 5i$}
  \label{fig:machin1}
 \end{figure}
