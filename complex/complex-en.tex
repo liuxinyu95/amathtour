@@ -635,7 +635,7 @@ The illegitimate child, the foster family, and the constant changes in his educa
 \end{mdframed}
 
 \index{pure algebraic definition of complex numbers}
-The geometric interpretation of complex numbers provides an intuitive explanation and gives them a legitimate status. However, some mathematicians insisted that numbers, as the epitome of mathematical abstraction, have meaning in their form alone. Remind that how Van der Waerden formalized negative numbers using pairs of numbers in \cref{sec:z-as-pair}. William Hamilton similarly formalized complex numbers using pairs of numbers. In 1831, Hamilton defined complex numbers as ordered pairs of values $(a, b)$ with the following rules for operations:
+The geometric interpretation of complex numbers provides an intuitive explanation and gives them a legitimate meaning. However, some mathematicians insisted that numbers, as the epitome of mathematical abstraction, have meaning in their form alone. Remind that how Van der Waerden formalized negative numbers using pairs of numbers in \cref{sec:z-as-pair}. William Hamilton similarly formalized complex numbers using pairs of numbers. In 1831, Hamilton defined complex numbers as ordered pairs of values $(a, b)$ with the following arithmetic rules:
 
 \begin{itemize}
 \item addition of complex numbers: $(a, b) + (c, d) = (a + c, b + d)$
@@ -646,14 +646,14 @@ This definition is free from the \enquote{infamous} $\sqrt{-1}$, which was consi
 
 \[(0, 1)(0, 1) = (0 \times 1 - 1 \times 1, 1 \times 0 + 0 \times 1) = (-1, 0)\]
 
-\Cref{qn:pair-arithmetic-rules} asks to verify that the five arithmetic laws (commutative, associative, and distributive laws for addition and multiplication) hold for complex numbers defined in this way. This definition explicitly emphasizes that complex numbers, symbolized with $\mathbb{C}$, are compound. The real part of a complex number $z$ is denoted as $Re(z)$, which is the first two letters of Real; the imaginary part is denoted as $Im(z)$, which is the first two letters of Imaginary.
+\Cref{qn:pair-arithmetic-rules} asks to verify that the five arithmetic laws (commutative, associative laws for addition and multiplication, and the distributive law) hold for complex numbers defined in this way. This definition explicitly emphasizes that complex numbers, symbolized with $\mathbb{C}$, are compound. The real part of a complex number $z$ is denoted as $Re(z)$, which is the first two letters of Real; the imaginary part is denoted as $Im(z)$, which is the first two letters of Imaginary.
 
 %% Biography of Hamilton
 
 \section{A story of \textit{e}}
 
 \index{compound interest} \index{Jacob Bernoulli}
-Argand diagram beautifully connects complex numbers, geometry, and trigonometry, but this is not enough to show how magical complex numbers are. The real magic of complex numbers comes from another mystical constant $e$. However, unlike $\pi$, which was discovered by various civilizations in ancient times, $e$ was hidden behind nature, governing the reproduction of life, the accumulation of wealth, the passage of time... It wasn't until the development of calculus that people finally recognized the true nature of $e$. In 1683, Swiss mathematician Jacob Bernoulli (1655–1705) pondered the problem of financial \enquote{compound interest}, which was commonly found in scary usury. For example, suppose Antonio borrowed 100 ducats\footnote{Antonio and Shylock were characters in Shakespeare's \emph{The Merchant of Venice}, and ducat was the gold coin unit in Venice at that time.} from Shylock with a monthly interest rate of 5\%. After one month, Antonio had to repay $100 \times (1 + 5\%) = 105$ ducats. If Antonio failed to repay, after two months, he would owe $100 \times (1 + 5\%) \times (1 + 5\%) = 100 \times (1 + 5\%)^2 = 110.25$ ducats. Note that the interest from the first month was added to the principal to calculate the amount owed for the second month. Compound interest grows exponentially. If Antonio borrowed for a year, he would owe $100 \times (1 + 5\%)^{12} = 179.59 \approx 180$ ducats; if for two years, he would owe $322.5$ ducats in debt, more than three times the original principal. While Jacob Bernoulli's problem was about savings: if one deposits 100 ducats in a bank with an annual interest rate of 100\%, then at the end of the year, he will have $200$ ducats including principal and interest. If withdraws all the principal and interest every 6 months and then deposits it again, assuming the bank continuously calculates interest, the interest for 6 months is less than 100\%, only 50\%. But since interest is calculated twice by the end of the year, the total amount will be $100 \times (1 + \frac{1}{2} \times 100\%)^2 = 225$ ducats. This way one can get more than withdrawing all the money at the end of the year. If withdraws all the money every quarter and deposits it again, then interest is calculated 4 times, each time at $25\%$, and one will get $100 \times (1 + \frac{1}{4} \times 100\%)^4 \approx 244.14$ ducats at the end of the year. If withdraws and deposits every month, one will get $100 \times (1 + \frac{1}{12} \times 100\%)^{12} \approx 261.3$ ducats at the end of the year. Based on this, dividing the amount obtained at the end of the year by the principal of 100 ducats, we can derive the relationship between the actual annualized interest rate\footnote{In banking, the annual percentage rate (APR) and the actual annualized interest rate (Internal Rate of Return, IRR) are different concepts. The former is calculated using simple interest, while the latter is calculated using compound interest.} and the number of times $n$ of withdrawing and depositing:
+Argand diagram beautifully connects complex numbers, geometry, and trigonometry, but this is not enough to show how magical complex numbers are. The magic of complex numbers is closely related to another mystical constant $e$. However, unlike $\pi$, which was discovered by many civilizations in ancient times, $e$ was hidden behind nature, governing the reproduction of life, the accumulation of wealth, the passage of time... It wasn't until the development of calculus that people finally recognized the true nature of $e$. In 1683, Swiss mathematician Jacob Bernoulli (1655–1705) pondered the problem of financial \enquote{compound interest}, which was commonly found in usury. For example, suppose Antonio borrowed 100 ducats\footnote{Antonio and Shylock were characters in Shakespeare's \emph{The Merchant of Venice}, and ducat was the gold coin unit in Venice at that time.} from Shylock with a monthly interest rate of 5\%. After a month, Antonio had to repay $100 \times (1 + 5\%) = 105$ ducats. If Antonio failed to repay, after two months, he would owe $100 \times (1 + 5\%) \times (1 + 5\%) = 100 \times (1 + 5\%)^2 = 110.25$ ducats. Note that the interest from the first month was added to the principal to calculate the amount owed for the second month. Compound interest grows exponentially. If Antonio borrowed for a year, he would owe $100 \times (1 + 5\%)^{12} = 179.59 \approx 180$ ducats; for two years, he would owe $322.5$ ducats in debt, more than three times the original principal. While Jacob Bernoulli's problem was about savings: if one deposits 100 ducats in a bank with an annual interest rate of 100\%, then at the end of the year, he will have $200$ ducats including principal and interest. If withdraws all the principal and interest every 6 months and then deposits it again, assuming the bank continuously calculates interest, the interest for 6 months is less than 100\%, only 50\%. But since interest is calculated twice by the end of the year, the total amount will be $100 \times (1 + \frac{1}{2} \times 100\%)^2 = 225$ ducats. In this way one gets more than withdrawing all the money at the end of the year. If withdraws all the money every quarter and deposits it again, then the interest is calculated 4 times, each time at $25\%$, and one will get $100 \times (1 + \frac{1}{4} \times 100\%)^4 \approx 244.14$ ducats at the end of the year. If withdraws and deposits every month, one will get $100 \times (1 + \frac{1}{12} \times 100\%)^{12} \approx 261.3$ ducats at the end of the year. Based on this, dividing the amount obtained at the end of the year by the principal of 100 ducats, we can derive the relationship between the actual annualized interest rate\footnote{In banking, the annual percentage rate (APR) and the actual annualized interest rate (Internal Rate of Return, IRR) are different concepts. The former is calculated using simple interest, while the latter is calculated using compound interest.} and the number of times $n$ of withdrawing and depositing:
 
 \be
 (1 + \frac{1}{n})^n
@@ -684,7 +684,7 @@ Jacob Bernoulli discovered that although increasing the frequency of withdrawing
 e = \lim_{n \to \infty} (1 + \frac{1}{n})^n
 \ee
 
-This is the constant $e$ defined in high school mathematics classes. It is the first constant in the history of mathematics to be defined using limits. However, Jacob Bernoulli neither named this constant nor patiently calculated its value. He only estimated the range of this constant using the binomial theorem\cite{MacTour-e}:
+This is the constant $e$ defined in high school math. It is the first constant in the history of mathematics to be defined using limits. However, Jacob Bernoulli neither named this constant nor patiently calculated its value. He only estimated the range of this constant using the binomial theorem\cite{MacTour-e}:
 
 \begin{proposition}[Jacob Bernoulli]
 The range of the constant $e$ is: $2 < e < 3$
@@ -709,14 +709,14 @@ e &= 2 + \frac{1}{2!}\frac{n-1}{n} + \frac{1}{3!}\frac{n-1}{n}\frac{n-2}{n} + \d
 \end{proof}
 
 \index{Johann Bernoulli}
-$e$ is well known as the base of the natural logarithm, how does it connected with compound interest? Jacob's brother Johann Bernoulli studied the properties of exponentials. Before that, people only considered logarithms as pure numbers, not as functions, and even printed long logarithm tables for convenient calculations. Johann Bernoulli connected logarithms and exponentials from the perspective of functions:
+$e$ is well known as the base of the natural logarithm, how does it connected with compound interest? Jacob's brother Johann Bernoulli studied the properties of exponentials. Before that, people only considered logarithms as pure numbers, not as functions, and even printed long table of logarithms for calculations. Johann Bernoulli connected logarithms and exponentials from the perspective of functions:
 
 \index{exponential functions} \index{logarithmic functions}
 \begin{align*}
   y = a^x && x = \log_a y
 \end{align*}
 
-This is a pair of functions and their inverses. When $a = e$, it becomes:
+This is a pair of function and its inverse. When $a = e$, it becomes:
 
 \begin{align*}
   y = e^x && x = \ln y
@@ -731,10 +731,10 @@ This is a pair of functions and their inverses. When $a = e$, it becomes:
 \end{figure}
 
 \index{John Napier} \index{Logarithm}
-It changes the starting point of the history of $e$ to 1618, when the Scottish mathematician John Napier invented logarithms (see \cref{fig:napier}) and printed the first logarithm tables. Coincidentally, the base of the earliest logarithm tables was not 10, but the natural logarithm $e$. Of course, Napier did not realize the existence of the constant $e$; he just wanted to solve the problem of complex multiplication calculations. At that time, astronomical observations and navigation often involved multiplication calculations with huge numbers. We now know that when calculating $Z = XY$, if we let $X = a^x$ and $Y = a^y$, then $Z = a^{x + y}$. So we only need to look up the logarithms $x$ and $y$ corresponding to $X$ and $Y$ in the logarithm tables, add them together to get $z = x + y$, and then look up the number $Z$ corresponding to the logarithm $z$ in the tables. Later, English mathematician Henry Briggs reminded Napier that it would be more convenient and practical to use logarithms with base 10. But by then, Napier was already old and unable to undertake the huge calculations to make this change. The selfless Briggs took it upon himself to create logarithm tables with base 10 and published them in Napier's name\cite{Amerson-2021}.
+This connection allows us to trace the history of $e$ back to 1618, when the Scottish mathematician John Napier invented logarithms (see \cref{fig:napier}). Coincidentally, the base of the earliest logarithm tables printed by Napier was not 10, but the natural logarithm $e$. Of course, Napier did not know the existence of the constant $e$; he just wanted to solve the problem of complex multiplications. At that time, astronomical observations and navigation often involved multiplication with huge numbers. We know that when calculating $Z = XY$, if let $X = a^x$ and $Y = a^y$, then $Z = a^{x + y}$, so we only need to look up the logarithms $x$ and $y$ corresponding to $X$ and $Y$ in the logarithm tables, add them together to get $z = x + y$, and then look up the number $Z$ corresponding to the logarithm $z$ in the tables. Later, English mathematician Henry Briggs reminded Napier that it would be more convenient and practical to use logarithms with base 10. But by then, Napier was already old and unable to undertake the huge calculations to make this change. The selfless Briggs took it upon himself to create logarithm tables with base 10 and published them in Napier's name\cite{Amerson-2021}.
 
 \index{Mercator map}
-Logorithm is a revolutionary invention in terms of computational efficiency, and it is a product of the Age of Exploration. You must have seen world maps printed on paper. Mapping the spherical surface of the Earth onto a rectangular piece of paper without distortion is a difficult problem, and mathematically, it is unsolvable. The world map we commonly see is called the \enquote{Mercator map,} named after the geographer Gerardus Mercator (1512–1594), a cartographer and geographer from Flanders (now Belgium). The Mercator projection imagines rolling a rectangular piece of paper into a cylinder, then placing a transparent globe inside this cylinder so that the equator just touches the cylindrical surface (see \cref{fig:mercator}). At this point, if we place a lamp at the center of the globe, the shadow of the globe will appear on the paper. By tracing this shadow with a pen and then unrolling the paper, we get the Mercator map. The Mercator map preserves directions and shapes well, but areas and distances become increasingly distorted as you move closer to the poles.
+Logorithm is a revolutionary invention in terms of computational efficiency, and is a product of the Age of Exploration. You must have seen world maps printed on paper. Mapping the spherical surface of the Earth onto a rectangular piece of paper without distortion is a difficult problem, and mathematically unsolvable. The world map we commonly see is called the \enquote{Mercator map,} named after Gerardus Mercator (1512–1594), a cartographer and geographer from Flanders (now Belgium). The Mercator projection imagines rolling a rectangular piece of paper into a cylinder, then placing a transparent globe inside it so that the equator just touches the cylindrical surface (see \cref{fig:mercator}). If place a lamp at the center of the globe, the shadow of the globe will appear on the paper. By tracing this shadow with a pen and then unrolling the paper, we get the Mercator map. The Mercator map preserves directions and shapes well, but areas and distances become increasingly distorted as you move closer to the poles.
 
 \begin{figure}[htbp]
  \centering
@@ -744,7 +744,7 @@ Logorithm is a revolutionary invention in terms of computational efficiency, and
 \end{figure}
 
 \index{Naturual logarithm}
-There was another Mercator, the mathematician Nicolaus Mercator (1620–1687), whose original name was Niklaus Kauffman, and later changed his family name to Mercator. It was a common thing to do at that time. Mercator was the Latin form of \enquote{merchant}. In 1668, Nicolaus Mercator published a book about logarithms, in which he named the logarithm with base $e$ as the \enquote{natural logarithm}. Although this work came after Jacob Bernoulli's discovery of $e$, Mercator was unaware of the existence of $e$. We have to wait for Euler to name this constant.
+There was another Mercator, the mathematician Nicolaus Mercator (1620–1687), whose original name was Niklaus Kauffman, and later changed his family name to Mercator. It was a common thing at that time. Mercator was the Latin form of \enquote{merchant}. In 1668, Nicolaus Mercator published a book about logarithms, in which he named the logarithm with base $e$ as the \enquote{natural logarithm.} Although this work came after Jacob Bernoulli's discovery of $e$, Mercator was unaware of it. We have to wait for Euler to name this constant.
 
 \subsection{The most beatiful formula}
 Leonhard Euler was a student of Johann Bernoulli. When he was thinking along the direction of exponential v.s. logarithmics, he discovered a surprising and beautiful result: the derivative of $e^x$ is itself.
@@ -762,7 +762,7 @@ By the definition of deriative:
 (e^x)' = \lim_{\Delta x \to 0} \frac{e^{x + \Delta x} - e^x}{\Delta x} = \lim_{\Delta x \to 0} \frac{e^xe^{\Delta x} - e^x}{\Delta x} = e^x\lim_{\Delta x \to 0} \frac{e^{\Delta x} - 1}{\Delta x}
 \ee
 
-In Jacob Bernoulli's definition of $e$, taking the reciprocal of $n$, we let $t = \frac{1}{n}$, we get:
+In Jacob Bernoulli's definition of $e$, taking the reciprocal of $n$, let $t = \frac{1}{n}$, we get:
 
 \be \label{eq:def2-of-e}
 e = \lim_{n \to \infty} (1 + \frac{1}{n})^n = \lim_{t \to 0} (1 + t)^{\frac{1}{t}}
@@ -771,11 +771,11 @@ e = \lim_{n \to \infty} (1 + \frac{1}{n})^n = \lim_{t \to 0} (1 + t)^{\frac{1}{t
 Let $u = e^{\Delta x} - 1$, then using the inverse relationship between logarithmic and exponential functions pointed out by Johann Bernoulli: $\Delta x = \ln (1 + u)$. Substituting into the above limit:
 
 \begin{align*}
-\lim_{\Delta x \to 0} \frac{e^{\Delta x} - 1}{\Delta x} &= \lim_{u \to 0} \frac{u}{\ln (1 + u)} = \lim_{u \to 0} \frac{1}{\frac{1}{u}\ln (1 + u)} && \text{by } b \ln a = \ln a^b \\
-  &= \lim_{u \to 0} \frac{1}{\ln (1 + u)^{\frac{1}{u}}} && \text{by \cref{eq:def2-of-e}} \\
-  &= \lim_{u \to 0} \frac{1}{\ln e} = 1 && \text{by } \ln e = 1
+\lim_{\Delta x \to 0} \frac{e^{\Delta x} - 1}{\Delta x} &= \lim_{u \to 0} \frac{u}{\ln (1 + u)} = \lim_{u \to 0} \frac{1}{\frac{1}{u}\ln (1 + u)} \\
+  &= \lim_{u \to 0} \frac{1}{\ln (1 + u)^{\frac{1}{u}}} && \text{by } b \ln a = \ln a^b \\
+  &= \frac{1}{\ln e} = 1 && \text{by \cref{eq:def2-of-e} and } \ln e = 1
 \end{align*}
-Substituting this result back into \cref{eq:derive-of-e} proves that $(e^x)' = e^x$.
+Substituting this back into \cref{eq:derive-of-e} proves that $(e^x)' = e^x$.
 \end{proof}
 
 It implies that the derivative of derivative of $e^x$ is also itself, because: $(e^x)'' = ((e^x)')' = (e^x)' = e^x$. No matter how many times we take the derivative of $e^x$, the result is always $e^x$. Substituting this result into the Maclaurin formula (see \cref{eq:maclaurin}) gives the famous series expansion:
@@ -793,7 +793,7 @@ With the series expansion, Euler could do something that Jacob Bernoulli couldn'
 e = 1 + \frac{1}{1!} + \frac{1}{2!} + \frac{1}{3!} + \dotsb
 \ee
 
-Euler calculated the first 20 terms of the series and summed them up to get an approximation of $e$ with 18 decimal places: $e = 2.718281828459045235$. Euler achieved this in 1731 at the age of 24. He was so excited that he wrote a letter to his good friend Goldbach to share these results. In the letter, he gave this constant a name: \enquote{$e$.} Many people thought it was the first letter of Euler's name, and some said it was the first letter of \enquote{exponential,} but actually neither is true. Euler had a habit of using vowel letters a, e, i, o, u to name constants, and coincidentally, a had already been used before, so Euler used the second vowel letter e.
+Euler calculated the first 20 terms of the series and summed them up to get an approximation of $e$ with 18 decimal places: $e = 2.718281828459045235$. Euler achieved this in 1731 at the age of 24. He was so excited that he wrote a letter to his good friend Goldbach to share these results. In the letter, he gave this constant a name: \enquote{$e$.} Many people thought it was the first letter of Euler's name, and some said it was the first letter of \enquote{exponential,} but actually neither is true. Euler had a habit of using vowel letters a, e, i, o, u to name constants, and coincidentally, letter a had already been used before, so Euler used the second vowel letter e.
 
 %% e isn't called Euler's constant. Euler's constant is \gamma in the sum of harmonic series:
 %% \( \sum_{n \leq x} \frac{1}{n} = \ln x + \gamma + O(\frac{1}{x}) \)
@@ -805,7 +805,7 @@ Euler clearly stated in his letter to Goldbach that $e$ was the value of $(1 + \
 \cos x &= 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \dotsb
 \end{align*}
 
-Euler discovered the relationship between complex numbers and $e$ by substituting the variable $ix$ into the series expansion of $e^x$.
+Euler discovered the relationship between complex numbers and $e$ by substituting $ix$ into the series expansion of $e^x$.
 
 \begin{align*}
 e^{ix} &= 1 + (ix) + \frac{(ix)^2}{2!} + \frac{(ix)^3}{3!} + \frac{(ix)^4}{4!} + \dotsb \\
@@ -815,7 +815,7 @@ e^{ix} &= 1 + (ix) + \frac{(ix)^2}{2!} + \frac{(ix)^3}{3!} + \frac{(ix)^4}{4!} +
 \end{align*}
 
 \index{Euler formula}
-This is the formula $e^{i\theta} = \cos \theta + i\sin \theta$ that we learned in high school mathematics classes. The geometric meaning of the right side is very clear: it is a complex number on the Argand diagram with modulus 1 and argument $\theta$. This gives a geometric meaning to $re^{i\theta}$, which is a complex number with modulus $r$ and argument $\theta$. Further combining with De Moivre's formula (see \cref{eq:de-Moivre}), we get:
+This is the formula $e^{i\theta} = \cos \theta + i\sin \theta$ that we learned in high school math. The geometric meaning of the right side is very clear: it is a complex number on the Argand diagram with modulus 1 and argument $\theta$. Thus the geometric meaning of $re^{i\theta}$ is a complex number with modulus $r$ and argument $\theta$. Further combining with De Moivre's formula (see \cref{eq:de-Moivre}), we get:
 
 \[
 e^{in\theta} = \cos n\theta + i\sin n\theta = (\cos \theta + i\sin \theta)^n = (e^{i\theta})^n
@@ -827,7 +827,7 @@ This means that the $n$-th power of a vector on the unit circle with argument $\
 e^{i\pi} = \cos \pi + i\sin \pi = -1
 \ee
 
-This special case, $e^{i\pi} + 1 = 0$ is called Euler's identity. Many people consider it the most beautiful formula in the universe, as it magically connects two famous irrational numbers $e$ and $\pi$, the imaginary unit $i$, the additive identity 0, and the multiplicative identity 1 together.
+This special case, $e^{i\pi} + 1 = 0$ is called Euler's identity. Many people consider it is the most beautiful formula, as it magically connects two famous irrational numbers $e$ and $\pi$, the imaginary unit $i$, the additive identity 0, and the multiplicative identity 1 together.
 
 \begin{figure}[htbp]
   \centering
@@ -858,13 +858,13 @@ Euler's extraordinary knowledge, inexhaustible creative energy, and unprecedente
 
 Among the many remarkable aspects of Euler's work, one that stands out is his ability to write for different audiences. \emph{The Letters to a German Princess} is one of the most successful popular books on science ever written, and the Elements of Algebra, which is still in print. Euler placed great emphasis on clear and understandable expression. Many of the mathematical symbols we are familiar with today were carefully chosen by Euler, such as $\pi$ (1736), the imaginary unit $i$ (1777), $e$ (1748), the trigonometric functions $\sin$ and $\cos$ (1748), $tg$ (1753), $\Delta x$ (1755), the summation symbol $\sum$ (1755), and the function notation $f(x)$ (1734) \cite{HanXueTao2009}.
 
-On 18 September 1783, Euler was having dinner with his friends. Uranus had just been discovered, and Euler listed the essentials for calculating the orbit of Uranus. After dinner, while drinking tea and playing with his granddaughter, his pipe suddenly fell from his hand. He said, \enquote{My pipe}, and bent down to pick it up, but never stood up again. He murmured, \enquote{I am dead...} and thus \enquote{stopped calculating and living} (French mathematician Condorcet's words).
+On 18 September 1783, Euler was having dinner with his friends. Uranus had just been discovered, and Euler listed the essentials for calculating the orbit of Uranus. After dinner, while drinking tea and playing with his granddaughter, his pipe suddenly fell from his hand. He said, \enquote{My pipe,} and bent down to pick it up, but never stood up again. He murmured, \enquote{I am dead...} and thus \enquote{stopped calculating and living} (French mathematician Condorcet's words).
 \end{mdframed}
 
 \subsection{Eadem mutata resurgo}
 
 \index{Equiangular spiral} \index{Logarithmic spiral}
-Despite not being able to see Euler's achievements, Jacob Bernoulli foresaw the birth of $e^x$ during his lifetime. In 1638, Descartes discovered a magical spiral called the \enquote{equiangular spiral}, also known as the \enquote{logarithmic spiral} (see \cref{fig:decartes-equiangular-spiral}).
+Despite being unable to see Euler's achievements, Jacob Bernoulli foresaw the birth of $e^x$ during his lifetime. In 1638, Descartes discovered a magical spiral called the \enquote{equiangular spiral}, also known as the \enquote{logarithmic spiral} (see \cref{fig:decartes-equiangular-spiral}).
 
 \begin{figure}[htbp]
  \centering
@@ -887,11 +887,12 @@ r = ka^\theta
 \]
 
 \index{Spiral mirabilis}
-where $k$ and $a$ are constants. So when $\theta$ increases by a factor of 2, $r$ increases to $r^2$; when $\theta$ increases by a factor of 3, $r$ increases to $r^3$, and so on... \cref{qn:equiangular} requires proving that Torricelli's definition and Descartes's definition are equivalent. Jacob Bernoulli conducted in-depth research on this spiral and discovered many fascinating properties. The most astonishing is that no matter how you transform it, scale it, take its evolute, involute, or pedal curve, the result is always the same - the same shape of spiral. In 1692, he named this fascinating spiral the \enquote{spiral mirabilis} and decided to engrave this spiral on his tombstone after his death, as shown in \cref{fig:bernoulli-tomb} \cite{MacTour-Equiangular}. He left a famous Latin epitaph: Eadem mutata resurgo, which translates to \emph{Though changed, I shall arise the same} in English \cite{Maor-2010}. The content of the epitaph is:
+where $k$ and $a$ are constants. So when $\theta$ increases by a factor of 2, $r$ increases to $r^2$; when $\theta$ increases by a factor of 3, $r$ increases to $r^3$, and so on... \cref{qn:equiangular} asks to prove that Torricelli's definition and Descartes's definition are equivalent. Jacob Bernoulli conducted in-depth research on this spiral and discovered many fascinating properties. The most astonishing is that no matter how you transform it, scale it, take its evolute, involute, or pedal curve, the result is always the same - the same shape of spiral. In 1692, he named this fascinating spiral the \enquote{spiral mirabilis} and decided to engrave this spiral on his tombstone after his death, as shown in \cref{fig:bernoulli-tomb} \cite{MacTour-Equiangular}. He left a famous Latin epitaph: Eadem mutata resurgo, which translates to \emph{Though changed, I shall arise the same} in English \cite{Maor-2010}. The content of the epitaph is:
 
 \begin{figure}[htbp]
  \centering
  \subcaptionbox{Jacob Bernoulli's tomb stone. \label{fig:bernoulli-tomb}}{\includegraphics[scale=0.4]{img/bernoulli-tomb}}
+ \qquad
  \subcaptionbox{The spiral on the tombstone\label{fig:bernoulli-epitaph}}{\includegraphics[scale=0.4]{img/bernoulli-epitaph}}
  \caption{Jacob Bernoulli's epitaph: Eadem mutata resurgo\cite{MacTour-Bernoulli-tomb}}
 \end{figure}
@@ -959,7 +960,7 @@ For any point on the spiral, the angle $\theta$ and the radius $r$ have a logari
 r &= k e^{b\theta}
 \end{align*}
 
-Thus, we have obtained the polar coordinate equation of the equiangular spiral with base $e$. This formula was beyond Jacob Bernoulli's imagination, but it can easily reveal why \enquote{Eadem mutata resurgo.}
+Thus, we have obtained the polar coordinate equation of the equiangular spiral with base $e$. This formula was beyond Jacob Bernoulli's imagination, but it helps to reveal why \enquote{Eadem mutata resurgo.}
 
 \begin{proposition}[Jacob Bernoulli]
 The shape of the equiangular spiral remains unchanged after scaling.
@@ -999,7 +1000,7 @@ r &= c^n = e^{\ln(c^n)} && \text{change base} \\
 \end{align*}
 \end{proof}
 
-It isn't by accident that the equiangular spiral arises everywhere. De Moivre used the method of equating coefficients to find the general term formula of the Fibonacci sequence, which satisfies the equation of the equiangular spiral when $n$ is large (see \cref{app:fibonacci-formula}). The growth of many creatuers and plants satisfy the Fibonacci formula, such as the growth of the nautilus shell (see \cref{fig:nautilus}), broccoli, and sunflower florets, thus presenting the shape of an equiangular spiral.
+It isn't by accident that the equiangular spiral arises everywhere. De Moivre used the method of equating coefficients to find the general term formula of the Fibonacci sequence, which satisfies the equation of the equiangular spiral when $n$ is large (see \cref{app:fibonacci-formula}). The growth of many creatuers and plants satisfy the Fibonacci formula, such as the nautilus shell (see \cref{fig:nautilus}), broccoli, and sunflower florets, thus presenting the shape of an equiangular spiral.
 
 \begin{figure}[htbp]
  \centering
@@ -1008,14 +1009,14 @@ It isn't by accident that the equiangular spiral arises everywhere. De Moivre us
  \label{fig:nautilus}
 \end{figure}
 
-Complex numbers are quite different from the numbers we were familiar with before. Whether it's natural numbers, rational numbers, or irrational numbers, they all have a specific position on the number line. Complex numbers, however, jump out of the number line and come to the complex plane. The previous numbers were one-dimensional, with a definite size and a specific position on the number line. Complex numbers, on the other hand, are two-dimensional; whether represented by real and imaginary parts or by modulus and argument, it takes two quantities to determine a complex number. Two complex numbers usually cannot be compared in size; we can only compare their moduli. Despite being so peculiar, complex numbers can still be calculated with each other and with real numbers, and they satisfy the previously known arithmetic laws, including the commutative and associative properties of addition and multiplication, and the distributive property of multiplication over addition. The distance between two real numbers $a$ and $b$ on the number line is $|a - b|$, while the distance between two complex numbers $z_1 = x_1 + y_1i$ and $z_2 = x_2 + y_2i$ in the complex plane is $|z_1 - z_2|$. This is because:
+Complex numbers are quite different from the numbers we've been familiar with: natural numbers, rational numbers, irrational numbers, they all have a specific position on the number line. Complex numbers, however, jump out of the number line and come to the complex plane. Real numbers are one-dimensional, with a definite size and a specific position on the number line. Complex numbers, on the other hand, are two-dimensional; either represented by real and imaginary parts or by modulus and argument, it takes two quantities to determine a complex number. Two complex numbers usually cannot be compared in size; we can only compare their moduli. Despite being so peculiar, complex numbers can still be calculated with each other and with real numbers, and they satisfy the common arithmetic laws, including the commutative and associative laws of addition and multiplication, and the distributive law of multiplication over addition. The distance between two real numbers $a$ and $b$ on the number line is $|a - b|$, while the distance between two complex numbers $z_1 = x_1 + y_1i$ and $z_2 = x_2 + y_2i$ on the complex plane is $|z_1 - z_2|$. This is because:
 
 \[
 |z_1 - z_2| = |(x_1 - x_2) + (y_1 - y_2)i| = \sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}
 \]
 
 \index{Multiplicativity of modulus of complex numbers}
-Which indeed corresponds to the distance between two points $(x_1, y_1)$ and $(x_2, y_2)$ on the Cartesian plane. The absolute value of real numbers satisfies multiplicativity, that is: $|ab| = |a||b|$; the modulus of complex numbers also satisfies multiplicativity $|z_1z_2| = |z_1||z_2|$, which can be proven by (also can be proven using Euler's formula):
+Which indeed corresponds to the distance between two points $(x_1, y_1)$ and $(x_2, y_2)$ on the Cartesian plane. The absolute value of real numbers is multiplicative, that is: $|ab| = |a||b|$; the modulus of complex numbers is also multiplicative $|z_1z_2| = |z_1||z_2|$, which can be proven by (also can be proven using Euler's formula):
 
 \begin{align*}
 |z_1z_2|^2 &= |(x_1 + y_1i)(x_2 + y_2i)|^2 = |(x_1x_2 - y_1y_2) + (x_1y_2 + y_1x_2)i|^2 \\
@@ -1023,27 +1024,58 @@ Which indeed corresponds to the distance between two points $(x_1, y_1)$ and $(x
   &= |z_1|^2|z_2|^2
 \end{align*}
 
-Where (*) was first discovered by the ancient Greek mathematician Diophantus when he was studying the sum of squares in number theory\footnote{Diophantus's \emph{Arithmetica}, Book III, Problem 19 states that 65 can be expressed as the sum of squares in two different ways: $7^2 + 4^2$ and $8^2 + 1^2$, because 65 is the product of 13 and 5, and both of them are also sums of squares ($13 = 3^2 + 2^2, 5 = 2^2 + 1^2$).}. Complex numbers opened the door to a new world. They are incredibly powerful, not only solving previously difficult problems but also posing unexpected ones.
+Where (*) was first discovered by the ancient Greek mathematician Diophantus when he was studying the sum of squares in number theory\footnote{Diophantus's \emph{Arithmetica}, Book III, Problem 19 states that 65 can be expressed as the sum of squares in two different ways: $7^2 + 4^2$ and $8^2 + 1^2$, because 65 is the product of 13 and 5, and both of them are also sums of squares ($13 = 3^2 + 2^2, 5 = 2^2 + 1^2$).}. Complex numbers open the door to a new world. They are incredibly powerful, not only solving previously difficult problems but also posing unexpected ones.
 
 \section{Regular pentagon}
 \label{sec:pentagon-equation} \index{geometric construction of regular pentagon}
 
-Complex numbers are a powerful tool for solving equations. Here we will show how to use complex numbers to solve the problem of geometric construction of a regular pentagon. The combination of Euler's formula and De Moivre's formula gives a new geometric meaning to the equation $x^n = 1$. If a complex number $z = re^{i\theta}$ is a root of the equation, then:
+Complex numbers are a powerful tool for solving equations. Here we show how to use complex numbers to solve the problem of geometric construction of a regular pentagon. The combination of Euler's formula and De Moivre's formula gives a new geometric meaning to the equation $x^n = 1$. If a complex number $z = re^{i\theta}$ is a root of the equation, then:
 
 \[
 1 = z^n = (re^{i\theta})^n = r^ne^{in\theta} = r^n(\cos n\theta + i\sin n\theta)
 \]
 
-It follows that the modulus $r = 1$ and the argument $n\theta = 2k\pi$, where $k$ is an integer (this is because $\sin 2k\pi = 0, \cos 2k\pi = 1$), so the argument of $z$ is $\theta = \dfrac{2k\pi}{n}$. Thus the roots can be expressed as: $z = 1e^{\frac{2k\pi}{n}i} = e^{\frac{2k\pi}{n}i}$. Geometrically, this represents $n$ points on the unit circle in the complex plane, as shown in \cref{fig:heptagon-z}.
+It follows that the modulus $r = 1$ and the argument $n\theta = 2k\pi$ for some integer $k$ (this is because $\sin 2k\pi = 0, \cos 2k\pi = 1$), so the argument of $z$ is $\theta = \dfrac{2k\pi}{n}$. Thus the roots can be expressed as: $z = 1e^{\frac{2k\pi}{n}i} = e^{\frac{2k\pi}{n}i}$. Geometrically, this represents $n$ points on the unit circle on the complex plane, as shown in \cref{fig:heptagon-z}.
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[scale=0.33]{img/heptagon-z}
-  \caption{The roots of $x^n = 1$ are the $n$ vertices of a regular $n$-gon in the complex plane.}
+  \begin{tikzpicture}[scale=3]
+  \draw[dashed, black] (0,0) circle (1);   % Unit circle
+
+  \draw[dashed] (-1.2, 0) -- (1.3, 0);  % horizontal line
+  \draw[->] (0, 0) -- (1.1, 0) node[right] {$\mathrm{Re}$};        % real axis (positive)
+
+  % n = 7 (heptagon)
+  \def\n{7}
+  \foreach \k in {0,...,\n} {
+    \pgfmathsetmacro\theta{\k*360/\n}
+    \pgfmathsetmacro\phi{(\k+1)*360/\n}
+    \fill (\theta:1) circle (0.5pt);
+    \draw (0,0) -- (\theta:1);
+    \ifnum \k=5
+      \draw[blue, dashed] (\theta:1) -- (\phi:1);
+    \else
+      \draw[blue] (\theta:1) -- (\phi:1);
+    \fi
+  }
+
+  % Labels
+  \node[above right] at (0:1) {$1$};
+  \node[above right] at ({360/\n}:1) {$e^{\frac{2\pi}{n}i} = \cos \frac{2\pi}{n} + i \sin \frac{2\pi}{n}$};
+  \node[above] at ({2*360/\n}:1) {$e^{\frac{4\pi}{n}i}$};
+  \node[below right] at ({6*360/\n}:1) {$e^{\frac{2(n-1)\pi}{n}i} = e^{-\frac{2\pi}{n}i}$};
+
+  % Draw angles
+  \draw (0.2, 0) arc[start angle=0, end angle={360/\n}, radius=0.2] node[midway, right] {$\theta = \frac{2\pi}{n}$};
+  \node at ({1.5*360/\n}:0.2) {$\theta$};
+  \node at ({-0.5*360/\n}:0.2) {$-\theta$};
+  \end{tikzpicture}
+  % \includegraphics[scale=0.33]{img/heptagon-z}
+  \caption{The roots of $x^n = 1$ are the $n$ vertices of a regular $n$-gon on the complex plane.}
  \label{fig:heptagon-z}
 \end{figure}
 
-As circle is periodic, $e^{\frac{2k\pi}{n}i}$ coincides with itself after rotating an integer number of circles. When $k = 0, 1, 2, \dotsc, n-1$, $e^{\frac{2k\pi}{n}i}$ are $n$ different roots. Their arguments are $0, \theta, 2\theta, \dotsc, (n-1)\theta$ respectively, which divides the unit circle into $n$ equal parts. Therefore, the equation $x^n = 1$ is called the "cyclotomic equation". Connecting these $n$ roots in the complex plane forms a regular $n$-gon.
+As circle is periodic, $e^{\frac{2k\pi}{n}i}$ coincides with itself after rotating an integral number of circles. When $k = 0, 1, 2, \dotsc, n-1$, $e^{\frac{2k\pi}{n}i}$ are $n$ different roots. Their arguments are $0, \theta, 2\theta, \dotsc, (n-1)\theta$ respectively, which divides the unit circle into $n$ equal parts. Therefore, the equation $x^n = 1$ is called the "cyclotomic equation". Connecting these $n$ roots in the complex plane forms a regular $n$-gon.
 
 The simpliest regular polygon is the equilateral triangle with $n = 3$. The equation $x^3 = 1$ has three complex roots: $1, e^{\frac{2\pi}{3}i}, e^{\frac{4\pi}{3}i} = e^{-\frac{2\pi}{3}i}$. Among them:
 
@@ -1155,7 +1187,7 @@ Equating the irrational part on both sides, $2a = 2$, so $a = 1$. Substituting b
 
 \Question{Use the fact that logarithmic function and exponential function are inverse functions to prove the change of base formula $\log_a x = \dfrac{\log_b x}{\log_b a}$. \label{qn:change-base}}
 
-\Question{*Use the polar equation of equiangular spiral $r = ke^{b\theta}$ to prove the equiangular property pointed out by Descartes: the angle $\Psi$ between the tangent and the radial line is constant (see \cref{fig:equiangular}). Hint: as shown in \cref{fig:tagent-to-r}, when the radial line $r$ rotates through a small angle $\Delta \theta$, it increases by $\Delta r$. The small arc $AC$ has length $r\Delta \theta$, and it, together with the secant $AB$ and the increment of radial line, approximately forms a right triangle $ACB$. When $\Delta \theta \to 0$, points $A, B$ approach each other, and the secant $AB$ approaches the tangent.
+\Question{*Use the polar equation of equiangular spiral $r = ke^{b\theta}$ to prove the equiangular property pointed out by Descartes: the angle $\Psi$ between the tangent and the radial line is constant (see \cref{fig:equiangular}). Hint: as shown in \cref{fig:tagent-to-r}, when the radial line $r$ rotates through a small angle $\Delta \theta$, it increases by $\Delta r$. The small arc $AC$ has length $r\Delta \theta$, and it, together with the secant $AB$ and the increment of radial line, approximately forms a right triangle $ACB$. When $\Delta \theta \to 0$, points $A, B$ approach each other, and the secant $AB$ approaches the tangent. \label{qn:equiangular}
 
   \begin{center}
     \includegraphics[scale=0.33]{img/tagent-to-r}
