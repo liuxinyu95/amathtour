@@ -1448,7 +1448,7 @@ e^x &= \lim_{n \to \infty} (1 + \frac{x}{n})^n \\
 
 \vspace{2mm}
 
-考虑两个复数$z_1 = a_1 + b_1i, z_2 = a_2 + b_2i$，它们的幅角分别为：$\theta_1 = \tan^{-1} \dfrac{b_1}{a_1}, \theta_2 = \tan^{-1} \dfrac{b_2}{a_2}$（忽略实部为0的情况），模为$r_1 = \sqrt{a_1^2 + b_1^2}, r_2 = \sqrt{a_2^2 + b_2^2}$。这两个复数的乘积是：
+考虑两个非零复数$z_1 = a_1 + b_1i, z_2 = a_2 + b_2i$，它们的幅角分别为：$\theta_1 = \tan^{-1} \dfrac{b_1}{a_1}, \theta_2 = \tan^{-1} \dfrac{b_2}{a_2}$（忽略实部为0的情况），模为$r_1 = \sqrt{a_1^2 + b_1^2}, r_2 = \sqrt{a_2^2 + b_2^2}$。这两个复数的乘积是：
 
 \[
 z_1z_2 = (a_1 + b_1i)(a_2 + b_2i) = a_1a_2 - b_1b_2 + (a_1b_2 + b_1a_2)i
@@ -1475,6 +1475,8 @@ z_1z_2 = (a_1 + b_1i)(a_2 + b_2i) = a_1a_2 - b_1b_2 + (a_1b_2 + b_1a_2)i
   &= \frac{a_1}{r_1}\frac{a_2}{r_2} - \frac{b_1}{r_1}\frac{b_2}{r_2} \\
   &= \cos\theta_1 \cos\theta_2 - \sin\theta_1 \sin\theta_2
 \end{align*}
+
+对于分母为零的情况：$a_1 = 0$或$a_2 = 0$或$a_1a_2 - b_1b_2 = 0$，它们对应$\theta_{1,2} = \pm \frac{\pi}{2}$或$\theta_1 + \theta_2 = \pm \frac{\pi}{2}$，这里略去。
 }
 
 \end{Answer}

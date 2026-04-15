@@ -1106,13 +1106,13 @@ The three roots on the unit circle are evenly spaced at angles of $120^\circ$ (o
 \label{fig:3rd-root-of-1}
 \end{figure}
 
-Similarly, the five roots of the equation $x^5 = 1$ are evenly spaced at angles of $72^\circ$ (or $\frac{2\pi}{5}$ radians), which means they form a regular pentagon inscribed in the unit circle, as shown in \cref{fig:pentagon-z}. Once construct the root $x$ in above figure, the distance from $x$ to 1 in the complex plane, namely $|x - 1|$, is the length of the side of the regular pentagon. The equation $x^5 - 1 = 0$ obviously has a root at $x = 1$. By the factor theorem, $x - 1$ is a factor of the polynomial $x^5 - 1$. Using polynomial long division (or reverse engineering with geometric series), we can factor it as:
+Similarly, the five roots of the equation $x^5 = 1$ are evenly spaced at angles of $72^\circ$ (or $\frac{2\pi}{5}$ radians), which means they form a regular pentagon inscribed in the unit circle, as shown in \cref{fig:pentagon-z}. Once construct the root $x$ in this figure, the distance from $x$ to 1 in the complex plane, namely $|x - 1|$, is the length of the side of the regular pentagon. The equation $x^5 - 1 = 0$ obviously has a root at $x = 1$. By Descartes  theorem, $x - 1$ is a factor of the polynomial $x^5 - 1$. Using polynomial long division (or sum of geometric series), we can factor it as:
 
 \[
 x^5 - 1 = (x - 1)(x^4 + x^3 + x^2 + x + 1)
 \]
 
-Next is to solve the quartic equation $x^4 + x^3 + x^2 + x + 1 = 0$ to find the remaining four vertices in \cref{fig:pentagon-z}. This quartic equation is quite special; if we divide it by $x^2$, it becomes a symmetric form (since 0 is not a root of the equation, we have $x \ne 0$):
+Next is to solve the quartic equation $x^4 + x^3 + x^2 + x + 1 = 0$ to find the remaining four vertices in \cref{fig:pentagon-z}. This equation is quite special: if divided by $x^2$, it becomes a symmetric form (since 0 is not a root of the equation, we have $x \ne 0$):
 
 \begin{figure}[htbp]
   \centering
@@ -1131,14 +1131,14 @@ Treat $x + \dfrac{1}{x}$ as an unknown, and notice that: $(x + \dfrac{1}{x})^2 =
 (x + \frac{1}{x})^2 + (x + \frac{1}{x}) - 1 = 0
 \]
 
-Let $y = x + \dfrac{1}{x}$, the above equation becomes $y^2 + y - 1 = 0$. Solving this quadratic equation gives $y_{1,2} = \dfrac{-1 \pm \sqrt{5}}{2}$. Using Euler's formula, if $x = e^{i\theta}$, then $\dfrac{1}{x} = x^{-1} = e^{-i\theta}$, so $x$ and $\dfrac{1}{x}$ are complex conjugates (see $x$ and $x^4 = x^{-1}$ in \cref{fig:pentagon-z}). If $x = a + bi$, then $\dfrac{1}{x} = a - bi$, so $x + \dfrac{1}{x} = 2a$. Similarly, $x^2$ and $x^3$ in \cref{fig:pentagon-z} are also a pair of complex conjugates, corresponding to $e^{\frac{4\pi}{5}i}, e^{\frac{6\pi}{5}i} = e^{-\frac{4\pi}{5}i}$ respectively. Thus we can determine that:
+Let $y = x + \dfrac{1}{x}$, the above equation becomes $y^2 + y - 1 = 0$. Solving this quadratic equation gives $y_{1,2} = \dfrac{-1 \pm \sqrt{5}}{2}$. By Euler's formula, if $x = e^{i\theta}$, then $\dfrac{1}{x} = x^{-1} = e^{-i\theta}$, so $x$ and $\dfrac{1}{x}$ are complex conjugates (see $x$ and $x^4 = x^{-1}$ in \cref{fig:pentagon-z}). If $x = a + bi$, then $\dfrac{1}{x} = a - bi$, so $x + \dfrac{1}{x} = 2a$. Similarly, $x^2$ and $x^3$ in \cref{fig:pentagon-z} are also a pair of complex conjugates, corresponding to $e^{\frac{4\pi}{5}i}, e^{\frac{6\pi}{5}i} = e^{-\frac{4\pi}{5}i}$ respectively. Thus we can determine that:
 
 \begin{align*}
 x + \dfrac{1}{x} &= \dfrac{-1 + \sqrt{5}}{2} \\
 x^2 + x^3 &= \dfrac{-1 - \sqrt{5}}{2}
 \end{align*}
 
-Where the first equation is essentially a quadratic equation $x^2 - \dfrac{\sqrt{5} - 1}{2}x + 1 = 0$. Using the quadratic formula gives:
+Where the first equation is essentially a quadratic equation $x^2 - \dfrac{\sqrt{5} - 1}{2}x + 1 = 0$. Applying the quadratic formula gives:
 
 \[x_{1, 2} = \dfrac{\frac{\sqrt{5} - 1}{2} \pm i\sqrt{\frac{5 + \sqrt{5}}{2}}}{2}
 \]
@@ -1155,13 +1155,13 @@ Therefore,
 |x - 1| = \sqrt{\left(\frac{\sqrt{5} - 5}{4}\right)^2 + \left(\frac{\sqrt{\frac{5 + \sqrt{5}}{2}}}{2}\right)^2} = \frac{\sqrt{10 - 2\sqrt{5}}}{2}
 \]
 
-The problem of construction of a regular pentagon is turned into: given a line segment of length 1, how to construct a line segment of length $s = \dfrac{\sqrt{10 - 2\sqrt{5}}}{2}$. To simplify the problem, we first find the line segment of length $2s$. Our idea is to construct a right triangle with its hypotenuse being $2s$. The two legs of this triangle cannot both be rational numbers, otherwise according to the Pythagorean theorem, the hypotenuse cannot be in the form of $\sqrt{10 - 2\sqrt{5}}$ which has a square root under another square root. Let the two legs be $\sqrt{5} - a$ and $b$, then using the Pythagorean theorem:
+Thus the problem of constructing a regular pentagon turns out to be: given a line segment of length 1, how to construct a line segment of length $s = \dfrac{\sqrt{10 - 2\sqrt{5}}}{2}$. To simplify the problem, we first construct $2s$. Our idea is to construct a right triangle with its hypotenuse being $2s$. The two legs of this triangle cannot both be rational numbers, otherwise according to the Pythagorean theorem, the hypotenuse cannot be in the form of $\sqrt{10 - 2\sqrt{5}}$ which has a square root under another square root. Let the two legs be $\sqrt{5} - a$ and $b$, then applying the Pythagorean theorem:
 
 \[
 (\sqrt{5} - a)^2 + b^2 = 5 + a^2 + b^2 - 2a\sqrt{5} = 10 - 2\sqrt{5}
 \]
 
-Equating the irrational part on both sides, $2a = 2$, so $a = 1$. Substituting back into the equation gives $5 + a^2 + b^2 = 6 + b^2 = 10$, so $b = 2$. Thus, the right triangle with legs $\sqrt{5} - 1$ and $2$ has a hypotenuse of $2s$. Scaling down this triangle by half gives a right triangle with legs $\dfrac{\sqrt{5} - 1}{2}$ and $1$, whose hypotenuse is $s$. On the other hand, since $5 = 4 + 1 = 2^2 + 1^2$, we can construct a right triangle with legs of length 1 and 2, and its hypotenuse is $\sqrt{5}$. Scaling down this triangle by half gives a right triangle with hypotenuse $\dfrac{\sqrt{5}}{2}$, and then cutting off $\dfrac{1}{2}$ gives us $\dfrac{\sqrt{5} - 1}{2}$. \cref{fig:pentagon-cons} shows the steps for constructing a regular pentagon. Finally, using the obtained side length to cut the unit circle five times gives us the regular pentagon.
+Equating the irrational part on both sides, $2a = 2$, so $a = 1$. Substituting back into the equation gives $5 + a^2 + b^2 = 6 + b^2 = 10$, so $b = 2$. Thus, the right triangle with legs $\sqrt{5} - 1$ and $2$ has a hypotenuse of $2s$. Making it half gives a right triangle with legs $\dfrac{\sqrt{5} - 1}{2}$ and $1$, whose hypotenuse is $s$. On the other hand, since $5 = 4 + 1 = 2^2 + 1^2$, we can construct a right triangle with legs of length 1 and 2, and its hypotenuse is $\sqrt{5}$. Scaling down this triangle by half gives a right triangle with hypotenuse $\dfrac{\sqrt{5}}{2}$, and then cutting off $\dfrac{1}{2}$ gives $\dfrac{\sqrt{5} - 1}{2}$. \cref{fig:pentagon-cons} shows the steps for constructing a regular pentagon. Finally, using the obtained side length to cut the unit circle five times gives the regular pentagon.
 
 \begin{figure}[htbp]
  \centering
@@ -1177,17 +1177,17 @@ Equating the irrational part on both sides, $2a = 2$, so $a = 1$. Substituting b
 
 \Question{Using Bombelli's method and Cardano's formula, one root of the equation $x^3 = 15x + 4$ is $x_1 = 4$. Find the other two roots of the equation.}
 
-\Question{Is the rule $\sqrt{ab} = \sqrt{a}\sqrt{b}$ valid in complex numbers? If so, prove it; if not, how can it be salvaged? \label{qn:sqrt-of-product}}
+\Question{Is the rule $\sqrt{ab} = \sqrt{a}\sqrt{b}$ valid for complex numbers? If so, prove it; if not, how can it be salvaged? \label{qn:sqrt-of-product}}
 
 \Question{Show that multiplying any complex number represented as a vector by $i$ is equivalent to rotating the vector by $90\degree$ counterclockwise. \label{qn:mul-i}}
 
-\Question{Verify that the conjugate of a complex number satisfies the following rules: $\overline{a + b} = \overline{a} + \overline{b}$, $\overline{ab} = \overline{a} \cdot \overline{b}$, $\overline{z^n} = (\overline{z})^n$, and use these rules to prove d'Alembert's discovery: if $z$ is a root of the equation $p(z) = 0$, then its conjugate $\overline{z}$ is also a root of the equation. \label{qn:conjugated-root}}
+\Question{Verify that the conjugation of complex numbers satisfies the following rules: $\overline{a + b} = \overline{a} + \overline{b}$, $\overline{ab} = \overline{a} \cdot \overline{b}$, $\overline{z^n} = (\overline{z})^n$, and use these rules to prove d'Alembert's discovery: if $z$ is a root of the equation $p(z) = 0$, then its conjugate $\overline{z}$ is also a root. \label{qn:conjugated-root}}
 
-\Question{Verify that Hamilton's representation of complex numbers as ordered pairs satisfies the five fundamental arithmetic rules. \label{qn:pair-arithmetic-rules}}
+\Question{Verify that Hamilton's representation of complex numbers as ordered pairs satisfies the five arithmetic laws. \label{qn:pair-arithmetic-rules}}
 
-\Question{Use the fact that logarithmic function and exponential function are inverse functions to prove the change of base formula $\log_a x = \dfrac{\log_b x}{\log_b a}$. \label{qn:change-base}}
+\Question{From the fact that logarithmic function and exponential function are inverse functions, prove the change of base formula $\log_a x = \dfrac{\log_b x}{\log_b a}$. \label{qn:change-base}}
 
-\Question{*Use the polar equation of equiangular spiral $r = ke^{b\theta}$ to prove the equiangular property pointed out by Descartes: the angle $\Psi$ between the tangent and the radial line is constant (see \cref{fig:equiangular}). Hint: as shown in \cref{fig:tagent-to-r}, when the radial line $r$ rotates through a small angle $\Delta \theta$, it increases by $\Delta r$. The small arc $AC$ has length $r\Delta \theta$, and it, together with the secant $AB$ and the increment of radial line, approximately forms a right triangle $ACB$. When $\Delta \theta \to 0$, points $A, B$ approach each other, and the secant $AB$ approaches the tangent. \label{qn:equiangular}
+\Question{*With the polar equation of equiangular spiral $r = ke^{b\theta}$, prove the equiangular property pointed out by Descartes: the angle $\Psi$ between the tangent and the radial line is constant (see \cref{fig:equiangular}). Hint: as shown in \cref{fig:tagent-to-r}, when the radial line $r$ rotates through a small angle $\Delta \theta$, it increases by $\Delta r$. The small arc $AC$ has length $r\Delta \theta$, and it, together with the secant $AB$ and the increment of radial line, approximately forms a right triangle $ACB$. When $\Delta \theta \to 0$, points $A, B$ approach each other, and the secant $AB$ approaches the tangent. \label{qn:equiangular}
 
   \begin{center}
     \includegraphics[scale=0.33]{img/tagent-to-r}
@@ -1196,9 +1196,9 @@ Equating the irrational part on both sides, $2a = 2$, so $a = 1$. Substituting b
   \end{center}
 }
 
-\Question{*Jacob Bernoulli's epitaph, \enquote{Eadem mutata resurgo}, describes the property of the derivative of $e^x$ being unchanged, $(e^x)' = e^x$. Modern mathematicians define the function $f(x) = e^x$ as follows: (1) the derivative is unchanged, $f'(x) = f(x)$, (2) the function value at 0 is 1, $f(0) = 1$. Use this definition to derive the expansion of $e^x$. Hint: method of undetermined coefficients and $(x^n)' = nx^{n-1}$ (see Proposition \ref{thm:derivation-of-power-of-x}). \label{qn:exp-from-fixed-point}}
+\Question{*Jacob Bernoulli's epitaph, \enquote{Eadem mutata resurgo}, describes the property of the derivative of $e^x$ being unchanged, $(e^x)' = e^x$. Modern mathematicians define the function $f(x) = e^x$ as follows: (1) the derivative is unchanged, $f'(x) = f(x)$, (2) the function value at 0 is 1, $f(0) = 1$. Use this definition to derive the expansion of $e^x$. Hint: equating the coefficients with $(x^n)' = nx^{n-1}$ (see Proposition \ref{thm:derivation-of-power-of-x}). \label{qn:exp-from-fixed-point}}
 
-\Question{*Jacob Bernoulli's discovery of the distance to $e^x$ is almost one step away. When calculating compound interest, if the annual interest rate is not 100\% but $x$, what is the actual annualized return when $n \to \infty$? What is its series expansion? \label{qn:compound-interest}}
+\Question{*Jacob Bernoulli's discovery is almost one step away from $e^x$. When calculating the compound interest, if the annual interest rate is not 100\% but $x$, what is the actual annualized return when $n \to \infty$? What is its series expansion? \label{qn:compound-interest}}
 
 \Question{Show the trigonometric addition formulas $\tan(\theta_1 + \theta_2), \sin(\theta_1 + \theta_2), \cos(\theta_1 + \theta_2)$ using complex numbers. Hint: complex multiplication. \label{qn:trigonometry-of-add}}
 
@@ -1217,15 +1217,13 @@ Equating the irrational part on both sides, $2a = 2$, so $a = 1$. Substituting b
 \Question{By the foundamental theorem of algebra, a cubic equation has three complex roots. Cardano's formula gives one root of the equation $x^3 = 6x + 9$ as $x_1 = 3$. Find the other two roots of the equation.
 
 \vspace{2mm}
-Factor the equation as $x^3 - 6x - 9 = 0$. By Descartes' theorem, $x - 3$ is a factor of the polynomial $x^3 - 6x - 9$. Using polynomial long division or the method of undetermined coefficients, we can factor it as:
+Factor the equation as $x^3 - 6x - 9 = 0$. By Descartes' theorem, $x - 3$ is a factor of the polynomial $x^3 - 6x - 9$. Apply the polynomial long division, we can factor it as:
 
 \[
 \polylongdiv{x^3-6x-9}{x-3}
 \]
 
-Which gives $x^2 + 3x + 3$.
-
-Alternatively, equating the coefficients:
+which gives $x^2 + 3x + 3$. Alternatively, equating the coefficients of,
 
 \begin{align*}
 x^3 - 6x - 9 &= (x - 3)(x^2 + ax + b) \\
@@ -1253,13 +1251,13 @@ x^3 - 15x - 4 &= (x - 4)(x^2 + ax + b) \\
   &= x^3 + (a - 4)x^2 + (b - 4a)x - 4b
 \end{align*}
 
-Hence $a = 4, b = 1$. Solving the quadratic equation $x^2 + 4x + 1 = 0$ gives the other two roots $x_{2, 3} = -2 \pm \sqrt{3}$
+Hence $a = 4, b = 1$. Solving the quadratic equation $x^2 + 4x + 1 = 0$ gives the other two roots $x_{2, 3} = -2 \pm \sqrt{3}$.
 }
 
-\Question{Is the rule $\sqrt{ab} = \sqrt{a}\sqrt{b}$ valid in complex numbers? If so, prove it; if not, how can it be salvaged?
+\Question{Is the rule $\sqrt{ab} = \sqrt{a}\sqrt{b}$ valid for complex numbers? If so, prove it; if not, how can it be salvaged?
 
 \vspace{2mm}
-No, it's invalid, otherwise,
+No, it is not valid, otherwise,
 \[
 ab = \sqrt{a^2b^2} = \sqrt{(-a^2)(-b^2)} = \sqrt{-a^2}\sqrt{-b^2} = (ai)(bi)=-ab
 \]
@@ -1288,13 +1286,13 @@ Hence $\psi = \theta + \dfrac{\pi}{2}$, a left turn of 90 degrees.
 \end{proof}
 }
 
-\Question{Verify that the conjugate of a complex number satisfies the following rules: $\overline{a + b} = \overline{a} + \overline{b}$, $\overline{ab} = \overline{a} \cdot \overline{b}$, $\overline{z^n} = (\overline{z})^n$, and use these rules to prove d'Alembert's discovery: if $z$ is a root of the equation $p(z) = 0$, then its conjugate $\overline{z}$ is also a root of the equation.
+\Question{Verify that the conjugation of complex numbers satisfies the following rules: $\overline{a + b} = \overline{a} + \overline{b}$, $\overline{ab} = \overline{a} \cdot \overline{b}$, $\overline{z^n} = (\overline{z})^n$, and use these rules to prove d'Alembert's discovery: if $z$ is a root of the equation $p(z) = 0$, then its conjugate $\overline{z}$ is also a root.
 
 \begin{proof}
 Conjugate of sum:
     \begin{align*}
-    \overline{a + b} &= \overline{p + qi + r + si} && \text{令}a = p + qi, b = r + si \\
-      &= \overline{p + r + (q + s)i} = p + r - (q + s)i &&\text{共轭的定义} \\
+    \overline{a + b} &= \overline{p + qi + r + si} && \text{let }a = p + qi, b = r + si \\
+      &= \overline{p + r + (q + s)i} = p + r - (q + s)i &&\text{conjugation} \\
       &= p - qi + r - si = \overline{a} + \overline{b}
     \end{align*}
 Conjugate of product:
@@ -1323,7 +1321,7 @@ If $z$ is a root of the equation $p(x) = a_nx^n + \dotsb + a_1 x + a_0 = 0$, the
 \end{proof}
 }
 
-\Question{Verify that Hamilton's representation of complex numbers as ordered pairs satisfies the five fundamental arithmetic rules.
+\Question{Verify that Hamilton's representation of complex numbers as ordered pairs satisfies the five arithmetic laws.
 
 \begin{proof}
 Commutativity of addition:
@@ -1375,7 +1373,7 @@ Right distribution holds by the commutativity of multiplication.
 \end{proof}
 }
 
-\Question{Use the fact that logarithmic function and exponential function are inverse functions to prove the change of base formula.
+\Question{From the fact that logarithmic function and exponential function are inverse functions, prove the change of base formula.
 
   \begin{proof}
     \begin{align*}
@@ -1388,7 +1386,7 @@ Right distribution holds by the commutativity of multiplication.
   \end{proof}
 }
 
-\Question{*Use the polar equation of equiangular spiral $r = ke^{b\theta}$ to prove the equiangular property pointed out by Descartes: the angle $\Psi$ between the tangent and the radial line is constant (see \cref{fig:equiangular}).
+\Question{*With the polar equation of equiangular spiral $r = ke^{b\theta}$, prove the equiangular property pointed out by Descartes: the angle $\Psi$ between the tangent and the radial line is constant (see \cref{fig:equiangular}).
 
   \begin{center}
     \includegraphics[scale=0.33]{img/tagent-to-r}
@@ -1402,7 +1400,7 @@ As shown in \cref{fig:tagent-to-ra}, when the radial line $r$ rotates through a 
 \begin{align*}
   \tan \Psi &= \lim_{\Delta \theta \to 0} \tan (\Psi - \Delta \theta) = \lim_{\Delta \theta \to 0} \tan \angle ABC \\
   &= \lim_{\Delta \theta \to 0} \frac{r\Delta \theta}{\Delta r} = \lim_{\Delta \theta \to 0} \frac{r}{\frac{\Delta r}{\Delta \theta}} \\
-  &= \frac{r}{\lim_{\Delta \theta \to 0} \dfrac{\Delta r}{\Delta \theta}} = \frac{r}{r'} = \frac{ke^{b\theta}}{(ke^{b\theta})'} && \text{代入}r = ke^{b\theta} \\
+  &= \frac{r}{\lim_{\Delta \theta \to 0} \dfrac{\Delta r}{\Delta \theta}} = \frac{r}{r'} = \frac{ke^{b\theta}}{(ke^{b\theta})'} && \text{substitute }r = ke^{b\theta} \\
   &= \frac{ke^{b\theta}}{kbe^{b\theta}} = \frac{1}{b} && (e^{bx})' = be^{bx}
 \end{align*}
 This is a constant independant of $\theta$, which proves the equiangular property of the spiral.
@@ -1412,7 +1410,7 @@ This is a constant independant of $\theta$, which proves the equiangular propert
 \Question{*Jacob Bernoulli's epitaph, \enquote{Eadem mutata resurgo}, describes the property of the derivative of $e^x$ being unchanged, $(e^x)' = e^x$. Modern mathematicians define the function $f(x) = e^x$ as follows: (1) the derivative is unchanged, $f'(x) = f(x)$, (2) the function value at 0 is 1, $f(0) = 1$. Use this definition to derive the expansion of $e^x$.
 
 \vspace{2mm}
-Let the expansion of of $e^x$ be $f(x) = a_0 + a_1 x + a_2 x^2 + \dotsb$. By $f(0) = 1$, hence $f(0) = a_0 = 1$. Taking the derivative and by $f'(x) = f(x)$,
+Let the expansion of of $e^x$ be $f(x) = a_0 + a_1 x + a_2 x^2 + \dotsb$. By $f(0) = 1$, it follows that $f(0) = a_0 = 1$. Taking the derivative and by $f'(x) = f(x)$,
 \begin{align*}
 f'(x) &= a_1 + 2a_2x + 3a_3x^2 + \dotsb + na_nx^{n-1} + \dotsb = f(x) \\
       &= 1 + a_1x + a_2x^2 + \dotsb + a_{n-1}x^{n-1} + \dotsb
@@ -1433,12 +1431,12 @@ e^x &= f(x) = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \dotsb + \frac{x^n}{n!} 
 \end{align*}
 }
 
-\Question{*Jacob Bernoulli's discovery of the distance to $e^x$ is almost one step away. When calculating compound interest, if the annual interest rate is not 100\% but $x$, what is the actual annualized return when $n \to \infty$? What is its series expansion?
+\Question{*Jacob Bernoulli's discovery is almost one step away from $e^x$. When calculating the compound interest, if the annual interest rate is not 100\% but $x$, what is the actual annualized return when $n \to \infty$? What is its series expansion?
 
 \vspace{2mm}
 \begin{align*}
-\lim_{n \to \infty} (1 + \frac{x}{n})^n &= \lim_{n \to \infty} (1 + \frac{x}{n})^{\frac{n}{x}x} && \text{其中} x \ne 0 \\
-  &= [\lim_{n' \to \infty} (1 + \frac{1}{n'})^{n'}]^x && \text{令} n' = \frac{n}{x} \\
+\lim_{n \to \infty} (1 + \frac{x}{n})^n &= \lim_{n \to \infty} (1 + \frac{x}{n})^{\frac{n}{x}x} && \text{where } x \ne 0 \\
+  &= [\lim_{n' \to \infty} (1 + \frac{1}{n'})^{n'}]^x && \text{let } n' = \frac{n}{x} \\
   &= e^x
 \end{align*}
 
@@ -1456,33 +1454,35 @@ e^x &= \lim_{n \to \infty} (1 + \frac{x}{n})^n \\
 
 \vspace{2mm}
 
-For two complex numbers $z_1 = a_1 + b_1i, z_2 = a_2 + b_2i$, their arguments are $\theta_1 = \tan^{-1} \dfrac{b_1}{a_1}, \theta_2 = \tan^{-1} \dfrac{b_2}{a_2}$ respectively (suppose the real part isn't 0), and their moduli are $r_1 = \sqrt{a_1^2 + b_1^2}, r_2 = \sqrt{a_2^2 + b_2^2}$ respectively. Their product is,
+For two nonzero complex numbers $z_1 = a_1 + b_1i, z_2 = a_2 + b_2i$, suppose neither real part is 0, their arguments are $\theta_1 = \tan^{-1} \dfrac{b_1}{a_1}, \theta_2 = \tan^{-1} \dfrac{b_2}{a_2}$ and their moduli are $r_1 = \sqrt{a_1^2 + b_1^2}, r_2 = \sqrt{a_2^2 + b_2^2}$ respectively. Their product is,
 
 \[
 z_1z_2 = (a_1 + b_1i)(a_2 + b_2i) = a_1a_2 - b_1b_2 + (a_1b_2 + b_1a_2)i
 \]
 
-By the geometric interpretation of complex numbers, the argument of the product is $arg(z_1z_2) = \theta_1 + \theta_2$, and the modulus is $|z_1z_2|= r_1r_2$.
+By the geometric interpretation of complex numbers, the argument of the product is $arg(z_1z_2) = \theta_1 + \theta_2$, and the modulus is $|z_1z_2|= r_1r_2$. Suppose the real part of $z_1z_2 \ne 0$,
 
 \begin{align*}
-\tan(\theta_1 + \theta_2) &= \tan(arg(z_1z_2)) = \frac{a_1b_2 + b_1a_2}{a_1a_2 - b_1b_2} && \text{suppose the denominator isn't 0} \\
-  &= \dfrac{\dfrac{b_2}{a_2} + \dfrac{b_1}{a_1}}{1 - \dfrac{b_1}{a_1}\dfrac{b_2}{a_2}} && \text{both divided by }a_1a_2 \\
+\tan(\theta_1 + \theta_2) &= \tan(arg(z_1z_2)) = \frac{a_1b_2 + b_1a_2}{a_1a_2 - b_1b_2} \\
+  &= \dfrac{\dfrac{b_2}{a_2} + \dfrac{b_1}{a_1}}{1 - \dfrac{b_1}{a_1}\dfrac{b_2}{a_2}} && \text{both sides divided by }a_1a_2 \\
   &= \frac{\tan\theta_2 + \tan\theta_1}{1 - \tan\theta_1 \tan\theta_2}
 \end{align*}
 
 Similarly, by $\sin(\theta_1 + \theta_2) = \dfrac{a_1b_2 + b_1a_2}{r_1r_2}$, one can derive the analogous formulas for sine and cosine.
 
 \begin{align*}
-\sin(\theta_1 + \theta_2) &= \sin(arg(z_1z_2)) = \frac{a_1b_2 + b_1a_2}{r_1r_2} && \text{suppose the denominator isn't 0} \\
+\sin(\theta_1 + \theta_2) &= \sin(arg(z_1z_2)) = \frac{a_1b_2 + b_1a_2}{r_1r_2} && \text{as } z_1z_2 \ne 0 \text{ implies } r_1r_2 \ne 0 \\
   &= \frac{a_1}{r_1}\frac{b_2}{r_2} + \frac{b_1}{r_1}\frac{a_2}{r_2} \\
   &= \cos\theta_1 \sin\theta_2 + \sin\theta_1 \cos\theta_2
 \end{align*}
 
 \begin{align*}
-\cos(\theta_1 + \theta_2) &= \cos(arg(z_1z_2)) = \frac{a_1a_2 - b_1b_2}{r_1r_2} && \text{suppose the denominator isn't 0} \\
+\cos(\theta_1 + \theta_2) &= \cos(arg(z_1z_2)) = \frac{a_1a_2 - b_1b_2}{r_1r_2} \\
   &= \frac{a_1}{r_1}\frac{a_2}{r_2} - \frac{b_1}{r_1}\frac{b_2}{r_2} \\
   &= \cos\theta_1 \cos\theta_2 - \sin\theta_1 \sin\theta_2
 \end{align*}
+
+The remaining cases of $a_1 = 0$, $a_2 = 0$, or $a_1a_2 - b_1b_2 = 0$ are skipped; they correspond to $\theta_{1,2} = \pm \frac{\pi}{2}$ or $\theta_1 + \theta_2 = \pm \frac{\pi}{2}$ which are easy to verify.
 }
 
 \end{Answer}
