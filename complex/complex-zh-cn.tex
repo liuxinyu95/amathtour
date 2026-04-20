@@ -1843,7 +1843,7 @@ a^2 + b^2 = (2k + 1)^2 + (2m)^2 = 4k^2 + 4k + 1 + 4m^2 = 4(k^2 + k + m^2) + 1
 (\alpha \psi, \beta \psi) &= \gamma_n \psi = \psi  && \text{由} 1 = (\alpha, \beta) = \gamma_n
 \end{align*}
 
-即最大公约数是$\psi$。如果$\alpha$整除$\beta \psi$，由于$\alpha$也整除$\alpha \psi$，因此$\alpha$是公约数，它必然整除最大公约数$\psi$。
+即$\psi$是最大公约数。如果$\alpha$整除$\beta \psi$，由于$\alpha$也整除$\alpha \psi$，因此$\alpha$是公约数，它必然整除最大公约数$\psi$。
 \end{proof}
 
 \begin{corollary}\label{thm:Gaussian-primary}
@@ -1881,7 +1881,7 @@ $p = 4n + 1$，阶乘$(p - 1)!$包含$4n = 2n + 2n$项：
 \begin{align*}
 (p - 1)! &= 1 \cdot 2  \dotsm  2n \cdot (2n + 1)  \dotsm  4n \\
   &= (1 \cdot 2  \dotsm  2n)[(p - 1) \cdot (p - 2)  \dotsm  (p - 2n)] && \text{反转后半段} \\
-  &\equiv (1 \cdot 2  \dotsm 2n)(-1 \cdot -2 \dotsm -2n) \pmod p && \text{由} p - k \equiv k \pmod p \\
+  &\equiv (1 \cdot 2  \dotsm 2n)(-1 \cdot -2 \dotsm -2n) \pmod p && \text{由} p - k \equiv -k \pmod p \\
   &\equiv (2n)!(-1)^{2n}(2n)! = [(2n)!]^2 = x^2 \pmod p && \text{令} x = (2n)!
 \end{align*}
 另一方面，由威尔逊定理有$(p - 1)! \equiv -1 \pmod p$。所以$x^2 \equiv -1 \pmod p$，即$p$整除某个$x^2 + 1$。

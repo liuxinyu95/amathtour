@@ -1689,7 +1689,7 @@ a_n x^n + a_{n-1} x^{n-1} + \dotsb + a_1 x + a_0 = 0
 \]
 
 \index{transcendent numbers}
-where $a_n, a_{n-1}, ..., a_1, a_0$ are integers. Why needn't these coefficients be rational? Suppose they are, that is, $a_i = \dfrac{b_i}{c_i}$; multiply both sides by the least common multiple of the denominators, consequently, the coefficients change back to integers. Thereby, it's sufficient to assume the coefficients be integers, Hermite in 1873 showed $e$ was not a solution to any of such algebraic equations and Lindemann in 1882 showed $\pi$ was not a solution to any algebraic equations too. We call the numbers that satisfy some algebraic equation algebraic numbers, otherwise, transcendent numbers, therefore, $\pi, e$ are transcendent numbers. Algebraic numbers can be abstract, indirect. Different from numbers like $1 + i\sqrt{2}$, there is no uniformed general expression for algebraic numbers; they are roots to some algebraic equations, but may not be expressed in radicals. By this definition, when $n = 1$, the solution to linear equation $ax + b = 0$ is $x = \dfrac{b}{a}$. If the coefficient $a = 1$, then $x$ is integral; inspired by this, we define when $a_n = 1$, a solution to the algebraic equation:
+where $a_n, a_{n-1}, ..., a_1, a_0$ are integers. Why needn't these coefficients be rational? Suppose they are, that is, $a_i = \dfrac{b_i}{c_i}$; multiply both sides by the least common multiple of the denominators, consequently, the coefficients change back to integers. Thereby, it's sufficient to assume the coefficients be integers, Hermite in 1873 showed $e$ was not a solution to any of such algebraic equations and Lindemann in 1882 showed $\pi$ was not a solution to any algebraic equations too. We call the numbers that satisfy some algebraic equation algebraic numbers, otherwise, transcendent numbers, therefore, $\pi, e$ are transcendent numbers. Algebraic numbers can be abstract and indirect. Different from numbers like $1 + i\sqrt{2}$, there is no uniform general expression for algebraic numbers; they are roots to some algebraic equations, but may not be expressed in radicals. By this definition, when $n = 1$, the solution to linear equation $ax + b = 0$ is $x = \dfrac{b}{a}$. If the coefficient $a = 1$, then $x$ is integral; inspired by this, we define when $a_n = 1$, a solution to the algebraic equation:
 
 \index{algebraic integers}
 \[
@@ -1697,12 +1697,12 @@ x^n + a_{n-1} x^{n-1} + \dotsb + a_1 x + a_0 = 0
 \]
 
 \index{monic equation} \index{Gaussian integers} \index{rational integers}
-is an \emph{algebraic integer}, such equation is called \emph{monic} equation. Algebraic integers include both normal integers (also named \emph{rational} integers, see \cref{qn:rational-solution-is-integral}) and those more complex ones. We may start from the simplest monic quadratic equations. When the coefficient to the linear term is even, like $x^2 - 2ax + a^2 + b^2 = 0$, its solution is $a \pm bi$. Gauss was the first studied this kind of numbers; we call them Gaussian integers, denoted by $\mathbb{Z}[i]$. This notation indicates that we adjoin\footnote{The notation $\mathbb{Z}[x]$ is called the polynomials in the ring of integers $\mathbb{Z}$, it contains polynomials in the form of $a_n x^n + a_{n-1} x^{n-1} + \dotsb + a_1 x + a_0$, where the coefficients $a_0, a_1, \dotsc, a_n \in \mathbb{Z}$ are integers.} the irrational number $i$ to integers $\mathbb{Z}$.
+is an \emph{algebraic integer}, such equation is called \emph{monic} equation. Algebraic integers include both normal integers (also called \emph{rational} integers, see \cref{qn:rational-solution-is-integral}) and those more complex ones. We may start from the simplest monic quadratic equations. When the coefficient to the linear term is even, like $x^2 - 2ax + a^2 + b^2 = 0$, the solution is $a \pm bi$. Because Gauss was the first who studied this kind of numbers, they are called Gaussian integers, denoted by $\mathbb{Z}[i]$. This notation indicates \enquote{adjoin\footnote{The notation $\mathbb{Z}[x]$ is called the polynomials in the ring of integers $\mathbb{Z}$, it contains polynomials in the form of $a_n x^n + a_{n-1} x^{n-1} + \dotsb + a_1 x + a_0$, where the coefficients $a_0, a_1, \dotsc, a_n \in \mathbb{Z}$ are integers.} the irrational number $i$ to integers $\mathbb{Z}$.}
 
-To distinguish algebraic integers from normal, rational integers, we use Greek letters $\alpha, \beta, \gamma, \dotsc$ for algebraic integers (see \cref{ch:greek-letters} for the Greek alphabetic table), use English letters $a, b, c, \dotsc$ for rational integers. Analogous to rational integers, it's easy to verify that the results of $+, -, \times$ between Gaussian integers are still Gaussian integers, but division is not (this is as same as the result of division between normal rational integers may not necessarily be rational integers). It's necessary to define the concept of divide: if a Gaussian integer $\alpha = \beta\gamma$ is the product of two Gaussian integers, then $\beta$ divides $\alpha$. The next two problems are a bit complex: (1) How to define the division algorithm (in terms of quotient and remainder) ? (2) How to define Gaussian prime numbers?
+To distinguish algebraic integers from normal, rational integers, we use Greek letters $\alpha, \beta, \gamma, \dotsc$ for algebraic integers (see Appendix \ref{ch:greek-letters} for the Greek alphabetic table), use English letters $a, b, c, \dotsc$ for rational integers. Analogous to rational integers, it's easy to verify that the results of $+, -, \times$ between Gaussian integers are still Gaussian integers, but division is not (this is same as the fact that the result of division between normal rational integers may not necessarily be rational integers). It's necessary to define \enquote{$\beta$ divides $\alpha$} if the Gaussian integer $\alpha = \beta\gamma$ for some Gaussian integers $\gamma$. The next two problems are a bit complex: (1) How to define the division algorithm (in terms of quotient and remainder) ? (2) How to define Gaussian prime numbers?
 
 \index{norm}
-The division algorithm involves the concept of \enquote{less than}. Remind the division algorithm for rational integers, namely $a = bq + r$, where $r < b$. It demands the remainder to be \enquote{less than} $b$. However, complex numbers are essentially vectors, which can't be compared directly. We can't say $1 + i$ is \enquote{less than} 2. Only the modulus can be compared, for example, $|1 + i| = \sqrt{1^2 + 1^2} = \sqrt{2} < 2 = |2|$. To make the meaning of \enquote{less than} valid, Gauss in 1832 introduced an important concept: norm. The norm of a complex integer $z = a + bi$ is defined as:
+The division algorithm involves the notion of \enquote{less than}. Remind the division algorithm for rational integers, namely $a = bq + r$, where $r < b$. It demands the remainder to be \enquote{less than} $b$. However, complex numbers are essentially vectors, which can't be compared directly. We can't say $1 + i$ is \enquote{less than} 2. Only the modulus can be compared, for example, $|1 + i| = \sqrt{1^2 + 1^2} = \sqrt{2} < 2 = |2|$. To make the meaning of \enquote{less than} valid, Gauss in 1832 introduced an important concept: norm. The norm of a complex integer $z = a + bi$ is defined as:
 
 \[
 N(z) = a^2 + b^2
@@ -1721,12 +1721,12 @@ N(\alpha\beta) = N(\alpha)N(\beta)
 \]
 
 \index{Gaussian integers!units} \index{Gaussian integers!associates}
-With the concept of norm, Gauss extended the notion of 1. For normal rational integers, $3 = 3 \times 1$. Things get complicated when considering negative integers: $-3 = 3 \times (-1) = -3 \times 1$, but when taking absolute value, it unifies to $|3| = |(\pm 3) \times (\pm 1)| = 3 \times 1$. Gauss defined a number was a \emph{unit} if its norm $N(\mu) = 1$; if $\alpha = \mu \alpha'$, then call $\alpha'$ is an associate of $\alpha$. In above example of rational integers, $-1, 1$ are units, and $-3$ is an associate of 3. Extending to Gaussian integers, there are four units: $\pm 1, \pm i$. For example, $1 + i = (1 - i)i$, since $|i| = 1$ is a unit, $1 + i$ is associate of $1 - i$, which is analogous to rational integers $\pm 3$. A unit can be equivalently defined as the number that divides 1. It follows that $\mu^n = 1$ and interestingly, the two units of rational integers are $(-1)^0, (-1)^1$; and the four units of Gaussian integers are $i^{0, 1, 2, 3}$. Don't you remind the cyclotomic equations?
+With the concept of norm, Gauss extended the notion of 1. For normal rational integers, $3 = 3 \times 1$. Things get complicated when considering negative integers: $-3 = 3 \times (-1) = -3 \times 1$, but when taking absolute value, it unifies to $|3| = |(\pm 3) \times (\pm 1)| = 3 \times 1$. Gauss defined a number $\mu$ being a \emph{unit} if its norm $N(\mu) = 1$; if $\alpha = \mu \alpha'$, then call $\alpha'$ is an associate of $\alpha$. In above example of rational integers, $-1, 1$ are units, and $-3$ is an associate of 3. Extending to Gaussian integers, there are four units: $\pm 1, \pm i$. For example, $1 + i = (1 - i)i$, since $|i| = 1$ is a unit, $1 + i$ is associate of $1 - i$, which is analogous to rational integers $\pm 3$. A unit can be equivalently defined as the number that divides 1. It follows that $\mu^n = 1$ and interestingly, the two units of rational integers are $(-1)^0, (-1)^1$; and the four units of Gaussian integers are $i^{0, 1, 2, 3}$. Don't they remind you of the cyclotomic equations?
 
 The concept of norm allows us to define division algorithm. An intuitive idea is to replace $r < b$ of rational integers with $N(\gamma) < N(\beta)$ of Gaussian integers, such that the division algorithm could be defined as,
 
 \begin{align*}
-\alpha &= \rho \beta + \gamma & \text{其中} \beta &\ne 0, N(\gamma) < N(\beta)
+\alpha &= \rho \beta + \gamma & \text{where } \beta &\ne 0 \text{ and } N(\gamma) < N(\beta)
 \end{align*}
 
 But hold on. Given $\alpha$ and $\beta$, do the quotient $\rho$ and the remainder $\gamma$ necessarily exist? If no, then this definition would be invalid. Gauss showed:
@@ -1737,7 +1737,7 @@ Given Gaussian integers $\alpha$ and $\beta \ne 0$, there are Gaussian integers 
 \end{theorem}
 
 \begin{proof}
-Let $\rho = m + ni$, where $m, n$ are rational integers. All the products of $\rho \beta$ are in the form of,
+Suppose $\rho = m + ni$, where $m, n$ are rational integers. All the products of $\rho \beta$ are in the form of,
 
 \[
 \rho \beta = (m + ni)\beta = m\beta + ni\beta
@@ -1777,9 +1777,9 @@ This process can not be endless. Since norm is non-negative, there is some $n$ s
 \gamma_{n-1} &= \rho_{n+1} \gamma_n && \text{no remainder}
 \end{align*}
 
-Consequently, $\gamma_n$ divides $\gamma_{n-1} \to$ divides $\gamma_{n-2} \to \dotsb \to$ divides $\beta \to$ divides $\alpha$, therefore, $\gamma_n$ is a common divisor of $\alpha, \beta$. Conversely, any common divisor $\psi$ of $\alpha, \beta$ divides $\alpha \to$ divides $\beta \to$ divides $\gamma_1 \to$ divides $\gamma_2 \to \dotsb \to$ divides $\gamma_n$. It follows that $\gamma_n = (\alpha, \beta)$ is a \emph{highest} common divisor \footnote{It is \emph{highest}, but not \emph{greatest}, because we can not directly compare complex numbers.}. We use the term \emph{a highest} because: (1) We can not compare complex numbers directly for their magnitudes; the term \enquote{highest} means any common divisor $\psi$ divides $\gamma_n$. (2) Highest common divisor is not unique, because if a number multiplied by a unit $\mu\phi = \gamma_n$, then $\phi$ is also a highest common divisor. For example, A highest common divisor of $3 + i$ and $1 + 3i$ is $-1 + i$, multiplying it by $-1, \pm i$ gives associates $1 - i, i(-1 + i) = -1 - i, -i(-1 + i) = 1 + i$, which are all highest common divisors.
+Consequently, $\gamma_n$ divides $\gamma_{n-1} \to$ divides $\gamma_{n-2} \to \dotsb \to$ divides $\beta \to$ divides $\alpha$, therefore, $\gamma_n$ is a common divisor of $\alpha, \beta$. Conversely, any common divisor $\psi$ of $\alpha, \beta$ divides $\alpha \to$ divides $\beta \to$ divides $\gamma_1 \to$ divides $\gamma_2 \to \dotsb \to$ divides $\gamma_n$. It follows that $\gamma_n = (\alpha, \beta)$ is a \emph{highest} common divisor \footnote{It is \emph{highest}, but not \emph{greatest}, because we can not directly compare complex numbers.}. We use the term \emph{a highest} because: (1) We can not compare complex numbers directly for their magnitudes; the term \enquote{highest} means any common divisor $\psi$ divides $\gamma_n$. (2) Highest common divisor is not unique, because if a number multiplied by a unit $\mu\phi = \gamma_n$, then $\phi$ is also a highest common divisor. For example, a highest common divisor of $3 + i$ and $1 + 3i$ is $-1 + i$, multiplying it by $-1, \pm i$ gives associates $1 - i, i(-1 + i) = -1 - i, -i(-1 + i) = 1 + i$, which are all highest common divisors.
 
-Gauss next defined what were Gaussian primes. Once extending to complex numbers, among those rational primes $2, 3, 5, 7, \dotsc$, some can be factorized, for example, $2 = (1 + i)(1 - i), 5 = (2 + i)(2 - i)$. Intuitively speaking, prime numbers are the \enquote{building blocks}, which should not be further factorized. But what does the term \enquote{further} mean? For example, $1 + i = (1 - i)i$. This is exactly why Gauss introduced the concept unit and associate. If a number can only be factorized by its associates and units, it is by no means of \enquote{further}. Gauss thus defined Gaussian prime as below.
+Gauss next defined Gaussian primes. Once extending to complex numbers, among those rational primes $2, 3, 5, 7, \dotsc$, some can be factorized, for example, $2 = (1 + i)(1 - i), 5 = (2 + i)(2 - i)$. Intuitively speaking, prime numbers are the \enquote{building blocks}, which should not be further factorized. But what does the term \enquote{further} mean? For example, $1 + i = (1 - i)i$. This is exactly why Gauss introduced the concept unit and associate. If a number can only be factorized by its associates and units, it is by no means of \enquote{further}. Gauss thus defined Gaussian prime as below.
 
 \index{Gaussian integers!prime}
 \begin{definition}
@@ -1787,10 +1787,10 @@ A Gaussian integer is prime if it is not 0 or any unit, and can only be divided 
 \end{definition}
 
 \index{Gaussian prime} \index{rational prime}
-To differentiate from the normal prime numbers, we call such defined numbers \emph{Gaussian prime}, and the normal ones \emph{rational prime}. We use English letter $p$ for rational prime numbers, and Greek letter $\pi$ for Gaussian prime numbers. Definitely it has nothing to do with circles. After extending to Gaussian integers, a prime number $\pi$ has 8 factors: $\pm 1, \pm i, \pm \pi, \pm i\pi$. The next problem is how to find Gaussian primes?
+To differentiate from the normal prime numbers, we call such numbers \emph{Gaussian prime}, and the normal ones \emph{rational prime}. We use English letter $p$ for rational prime numbers, and Greek letter $\pi$ for Gaussian prime numbers. Definitely it has nothing to do with circles. After extending to Gaussian integers, a prime number $\pi$ has 8 factors: $\pm 1, \pm i, \pm \pi, \pm i\pi$. The next problem is how to find Gaussian primes?
 
 \begin{proposition}\label{thm:prime-norm}
-If the norm of a Gaussian integer $\psi$ is some rational prime number $p$, then $\psi$ is a Gaussian prime number.
+If the norm of a Gaussian integer $\psi$ is some rational prime number $p$, then $\psi$ is Gaussian prime.
 \end{proposition}
 
 \begin{proof}
@@ -1803,19 +1803,19 @@ p &= N(\psi) = N(\alpha\beta) = N(\alpha)N(\beta)  && \text{norm is multiplicati
 Since a rational prime number has only two rational factors of $1, p$, it implies either $N(\alpha)$ or $N(\beta)$ is 1, in other words, a unit. The other is an associate of $\psi$. Therefore, $\psi$ is Gaussian prime by definition.
 \end{proof}
 
-Using this proposition, we immediately knows $1 \pm i, 2 \pm i, 1 \pm 2i$ are all Gaussian prime numbers (Their norms: $N(1 \pm i) = 1^2 + 1^2 = 2, N(2 \pm i) = N(1 \pm 2i) = 1^2 + 2^2 = 5$ are all rational prime numbers). However, the converse of this proposition is not true, in other words, the norm of a Gaussian prime number may not be rational prime. For example, $N(3) = 9$ isn't rational prime, but suppose 3 can be factored into two Gaussian integers $3 = (a + bi)(c + di)$. Take norm of both sides:
+From this proposition, we immediately knows $1 \pm i, 2 \pm i, 1 \pm 2i$ are all Gaussian prime numbers (Their norms: $N(1 \pm i) = 1^2 + 1^2 = 2, N(2 \pm i) = N(1 \pm 2i) = 1^2 + 2^2 = 5$ are all rational prime numbers). However, the converse of this proposition is not true, in other words, the norm of a Gaussian prime number may not be rational prime. For example, $N(3) = 9$ isn't rational prime, but suppose 3 can be factored into two Gaussian integers $3 = (a + bi)(c + di)$. Take norm of both sides:
 
 \[
 9 = N(3) = N(a + bi)N(c + di) = (a^2 + b^2)(c^2 + d^2)
 \]
 
-It's easy to verify that 3 is not a sum of two squares (3 can be only decomposed to 3 = 2 + 1, where 2 is not a square), hence it's impossible to have $a^2 + b^2 = c^2 + d^2 = 3$. It turns out that $a^2 + b^2$ and $c^2 + d^2$ can only be 1 or 9. Either one with the norm of 1 is a unit of Gaussian integers. Therefore, 3 is Gaussian prime by definition. It also reveals the fact that if a rational prime $p$ is a sum of two squares $p = a^2 + b^2$, then it can be factorized as $p = (a + bi)(a - bi)$, hence is not Gaussian prime; otherwise, if $p$ isn't any sum of two squares, apply the similar argument, suppose $p = (a + bi)(c + di)$ and take norms:
+It's easy to verify that 3 is not a sum of two squares (3 can be only decomposed to 3 = 2 + 1, where 2 is not a square), hence it's impossible to have $a^2 + b^2 = c^2 + d^2 = 3$. It turns out that $a^2 + b^2$ and $c^2 + d^2$ can only be 1 or 9. Either one with the norm of 1 is a unit. Therefore, 3 is Gaussian prime by definition. It also reveals the fact that if a rational prime $p$ is a sum of two squares $p = a^2 + b^2$, then it can be factorized as $p = (a + bi)(a - bi)$, hence is not Gaussian prime; otherwise, if $p$ isn't sum of any two squares, by the similar argument, suppose $p = (a + bi)(c + di)$ and take norms:
 
 \[
 p^2 = N(p) = N(a + bi)N(c + di) = (a^2 + b^2)(c^2 + d^2)
 \]
 
-Since $p$ is not any sum of two squares, it's impossible to have $a^2 + b^2 = c^2 + d^2 = p$; It turns out that $a^2 + b^2$ and $c^2 + d^2$ can only be 1 or $p^2$. Either one with the norm of 1 is a unit of Gaussian integers. Therefore, $p$ is Gaussian prime. Among the rational prime numbers, only 2 is even. As $2 = 1^2 + 1^2$, hence $2 = (1 + i)(1 - i)$ is not Gaussian prime. We've known that $1 \pm i$ and its associates are Gaussian prime. The remaining odd rational prime numbers fall into two classes: those in $4n + 3$ and in $4n + 1$. As 3 is in the first class, one may guess rational prime numbers in $4n + 3$ are not any sum of two squares. Fortunately, it's true.
+Since $p$ is not sum of two squares, it's impossible to have $a^2 + b^2 = c^2 + d^2 = p$; It turns out that $a^2 + b^2$ and $c^2 + d^2$ can only be 1 or $p^2$. Either one with the norm of 1 is a unit. Therefore, $p$ is Gaussian prime. Among the rational prime numbers, only 2 is even. As $2 = 1^2 + 1^2$, hence $2 = (1 + i)(1 - i)$ is not Gaussian prime. We've known that $1 \pm i$ and its associates are Gaussian prime. The remaining odd rational prime numbers fall into two classes: those in $4n + 3$ and others in $4n + 1$. As 3 is in the first class, one may guess rational prime numbers in $4n + 3$ are not sum of any two squares. Fortunately, it's true.
 
 \index{sum of two squares}
 \begin{proposition}
@@ -1823,7 +1823,7 @@ The odd prime numbers in $4n + 3$ can not be represented as the sum of two squar
 \end{proposition}
 
 \begin{proof}
-Assume for contradiction that $a^2 + b^2 = 4n + 3$ for some integers $a$ and $b$. we claim that the parity of $a, b$ are different otherwise the sum of their squares would be even. Suppose $a = 2k + 1, b = 2m$, substitute in:
+Assume for contradiction that $a^2 + b^2 = 4n + 3$ for some integers $a$ and $b$. We claim that the parity of $a, b$ are different otherwise the sum of their squares would be even. Suppose $a = 2k + 1, b = 2m$, substitute in:
 
 \[
 a^2 + b^2 = (2k + 1)^2 + (2m)^2 = 4k^2 + 4k + 1 + 4m^2 = 4(k^2 + k + m^2) + 1
@@ -1832,20 +1832,20 @@ a^2 + b^2 = (2k + 1)^2 + (2m)^2 = 4k^2 + 4k + 1 + 4m^2 = 4(k^2 + k + m^2) + 1
 Which is in $4n + 1$ but not $4n + 3$, a contradiction.
 \end{proof}
 
-It immediately follows that $3, 7, 11, \dotsc$ are Gaussian prime numbers. To deal with rational prime numbers in $4n + 1$, we need a tool, namely the fundamental theorem of arithmetic for Gaussian integers. The idea is as same as in \cref{sec:fundamental-theorem-of-arithmetic}, to derive the fundamental theorem from the Euclidean algorithm for Gaussian integers.
+It immediately follows that $3, 7, 11, \dotsc$ are Gaussian prime numbers. To deal with rational prime numbers in $4n + 1$, we need a tool, namely the fundamental theorem of arithmetic for Gaussian integers. The idea is same as in \cref{sec:fundamental-theorem-of-arithmetic}, to derive the fundamental theorem from the Euclidean algorithm for Gaussian integers.
 
 \begin{proposition}
 If two Gaussian integers $\alpha, \beta$ are relatively prime, that is, $(\alpha, \beta) = 1$, and $\alpha$ divides $\beta \psi$, then $\alpha$ divides $\psi$.
 \end{proposition}
 
 \begin{proof}
-Multiplying all numbers in the normal Euclidean algorithm by $\psi$, the last step is,
+Multiplying all numbers in the Euclidean algorithm (applied to $\alpha$ and $\beta$) by $\psi$, the last step is,
 
 \begin{align*}
 (\alpha \psi, \beta \psi) &= \gamma_n \psi = \psi  && \text{by } 1 = (\alpha, \beta) = \gamma_n
 \end{align*}
 
-Therefore, the highest common divisor is $\psi$. If $\alpha$ divides $\beta \psi$, since $\alpha$ also divides $\alpha \psi$, then $\alpha$ is a common divisor, which divides the highest common divisor $\psi$.
+Therefore, $\psi$ is a highest common divisor. If $\alpha$ divides $\beta \psi$, since $\alpha$ also divides $\alpha \psi$, then $\alpha$ is a common divisor, which divides any highest common divisor $\psi$.
 \end{proof}
 
 \begin{corollary}\label{thm:Gaussian-primary}
@@ -1885,7 +1885,7 @@ As $p = 4n + 1$, the factorial $(p - 1)!$ consists of $4n = 2n + 2n$ terms:
 \begin{align*}
 (p - 1)! &= 1 \cdot 2  \dotsm  2n \cdot (2n + 1)  \dotsm  4n \\
   &= (1 \cdot 2  \dotsm  2n)[(p - 1) \cdot (p - 2)  \dotsm  (p - 2n)] && \text{reverse the second half} \\
-  &\equiv (1 \cdot 2  \dotsm 2n)(-1 \cdot -2 \dotsm -2n) \pmod p && \text{by } p - k \equiv k \pmod p \\
+  &\equiv (1 \cdot 2  \dotsm 2n)(-1 \cdot -2 \dotsm -2n) \pmod p && \text{by } p - k \equiv -k \pmod p \\
   &\equiv (2n)!(-1)^{2n}(2n)! = [(2n)!]^2 = x^2 \pmod p && \text{let } x = (2n)!
 \end{align*}
 On the other hand, by Wilson's theorem, $(p - 1)! \equiv -1 \pmod p$, therefore, $x^2 \equiv -1 \pmod p$, that is, $p$ divides some $x^2 + 1$.
