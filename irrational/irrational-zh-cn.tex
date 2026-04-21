@@ -1110,7 +1110,57 @@ $A$ & $B$ & 操作 \\
 
 \begin{figure}[htbp]
  \centering
- \includegraphics[scale=1.5]{img/irrational}
+ %% \usetikzlibrary{calc,intersections,angles}
+  \begin{tikzpicture}[
+      >=stealth,
+      dot/.style={circle, fill=blue, minimum size=4pt, inner sep=0},
+      redline/.style={red, thick},
+      dashedline/.style={dashed, black},
+  ]
+
+  % 1. 绘制正方形 ABCD
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (4,0);
+  \coordinate (C) at (4,4);
+  \coordinate (D) at (0,4);
+
+  \draw (A) rectangle (C);
+
+  % 顶点
+  \node[dot, label=below left:{$A$}] at (A) {};
+  \node[dot, label=below right:{$B$}] at (B) {};
+  \node[dot, label=above right:{$C$}] at (C) {};
+  \node[dot, label=above left:{$D$}] at (D) {};
+
+  % 5. 点 F（扇形与BC的交点）
+  \coordinate (F) at (4, 1.657); % 4*(sqrt(2) - 1)
+  \node[dot, label=right:{$F$}] at (F) {};
+
+  % 标注 CF
+  \node[right] at ($(C)!0.5!(F)$) {$2n-m$};
+
+  % 灰色阴影三角形 ABF
+  \fill[gray!30] (A) -- (B) -- (F) -- cycle;
+  \draw[dashedline] (A) -- (F);
+
+  % 2. 绘制扇形（四分之一圆）
+  \draw (D) arc (90:0:4); % 以A为圆心，半径AB=4
+
+  % 3. 对角线 AC
+  \draw[redline] (A) -- (C);
+  \coordinate (E) at ($(A)!0.707!(C)$); % 1/sqrt(2) = 1.414/2 = 0.707
+  \node[dot, label=below:{$E$}] at (E) {};
+  \node[red, above left] at ($(A)!0.3!(C)$) {$m$};
+  \node[red, above right] at ($(E)!0.5!(C)$) {$m-n$};
+
+  % 4. 标注 DC 边
+  \node[red, above] at ($(D)!0.5!(C)$) {$n$};
+
+  \coordinate (G) at (5.172, 2.828);  % (4*(2 - *1/sqrt(2)), 4*1/sqrt(2)
+  \node[dot] at (G) {};
+  \draw (C) -- (E) -- (F) -- (G) -- cycle;
+  \end{tikzpicture}
+ %% \includegraphics[scale=1.5]{img/irrational}
  \caption{正方形的边长和对角线}
  \label{fig:irrational}
 \end{figure}
