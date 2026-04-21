@@ -3,6 +3,7 @@
 \label[appendix]{app:add-commutativity}
 
 \index{加法交换律}
+\begin{proof}
 为了证明加法交换律$a + b = b + a$，我们首先证明三个结论。一、对于任何自然数都有：
 
 \be
@@ -80,9 +81,10 @@ a + b' & = (a + b)' & \text{根据加法定义的第二条规则} \\
        & = b + a' & \text{加法定义的第二条规则} \\
        & = b + a + 1 & \text{结论二：\cref{eq:one-succ}} \\
        & = b + 1 + a & \text{结论三：\cref{eq:one-commu}} \\
-       & = (b + 1) + a & \text{第\ref{sec:add-assoc}证明的加法结合律} \\
+       & = (b + 1) + a & \text{第\ref{sec:add-assoc}节证明的加法结合律} \\
        & = b' + a & \text{结论三：\cref{eq:one-commu}}
 \end{array}
 \]
 
 这样就使用皮亚诺公理，完整地证明了加法的交换律\citepage[p147-148页]{StepanovRose15}。
+\end{proof}

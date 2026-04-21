@@ -9,24 +9,24 @@
 We need the basic knowledge of complex numbers to understand this proof outline, readers may read Chapter 6 first. This theorem states that a regular polygon with $n$ sides can be constructed by ruler and compass if and only if $n = 2^k p_1 p_2 \dotsm p_m$ where $p_i$ are distinct Fermat primes.
 
 \subsection{Field} \index{field}
-We need the concept of field, an important concept in abstract algebra, to rigorously define the scope of all numbers that can be constructed by ruler and compass. Galois was the first one who consciously used this concept, but he did not give it a name. In 1871, Dedekind gave it the name of körper which corresponds to the English term \enquote{field}. 
+We need field, an important concept in abstract algebra, to rigorously define the scope of all numbers that can be constructed by ruler and compass. Galois was the first one who consciously used this concept, but he did not give it a name. In 1871, Dedekind named it körper which corresponds to the English term \enquote{field}.
 
 \begin{definition}
 A set $\mathbf{F}$ is called a field if it has two operations, addition and multiplication, and satisfies the following axioms:
 \begin{enumerate}[(1)]
-\item Associativity. Both addition and multiplication are associative, i.e.:
+\item Associativity. Both addition and multiplication are associative:
   \begin{align*}
     a + b + c &= a + (b + c) \\
     abc &= a(bc)
   \end{align*}
 
-\item Commutativity. Both addition and multiplication are commutative, i.e.:
+\item Commutativity. Both addition and multiplication are commutative:
   \begin{align*}
     a + b &= b + a \\
     ab &= ba
   \end{align*}
 
-\item Distributivity. Multiplication distributes over addition, that is, $(a + b)c = ac + bc$. And by the commutativity, hence, $c(a + b) = ca + cb$ also holds.
+\item Distributivity. Multiplication distributes over addition, that is, $(a + b)c = ac + bc$. And by the commutativity, $c(a + b) = ca + cb$ also holds.
 \item 0 is the unit element for addition, 1 is the unit element for multiplication (see Section \ref{sec:unit}), and $0 \ne 1$, i.e.:
 \[
 a + 0 = 0 + a = a \qquad a1 = 1a = a
@@ -36,17 +36,17 @@ a + 0 = 0 + a = a \qquad a1 = 1a = a
 \[
 a + b = b + a = 0
 \]
-This condition essentially defines subtraction.
+This essentially defines subtraction and negative.
 
 \item The inverse of multiplication exists for any non-zero element, i.e., for any non-zero $a \in \mathbf{F}$, there exists $b \in \mathbf{F}$ such that:
 \[
 ab = ba = 1
 \]
-This condition essentially defines division.
+This essentially defines division and reciprocal.
 \end{enumerate}
 \end{definition}
 
-You may have noticed that a field is merely a set that allows arithmetic operations of $+, -, \times$, and $\div$. For example, the set $\mathbb{Q}$ of rational numbers, $\mathbb{R}$ of real numbers, and $\mathbb{C}$ of complex numbers are all fields. Are there any more refined fields? For example, larger than $\mathbb{Q}$ but smaller than $\mathbb{R}$? To this end, we introduce the notation $\mathbb{Q}(\sqrt{a})$, where $a$ is a positive and square free integer. Let us use $\mathbb{Q}(\sqrt{2})$ for example. It is the set of all numbers that can be obtained by evaluating polynomials,
+You may have noticed that a field is merely a set that allows arithmetic operations of $+, -, \times$, and $\div$. For example, the set $\mathbb{Q}$ of rational numbers, $\mathbb{R}$ of real numbers, and $\mathbb{C}$ of complex numbers are all fields. Are there any more refined fields? For example, larger than $\mathbb{Q}$ but smaller than $\mathbb{R}$? To this end, we introduce the notation $\mathbb{Q}(\sqrt{a})$, where $a$ is a positive and square free integer. For example, $\mathbb{Q}(\sqrt{2})$ is the set of all numbers that can be obtained by evaluating polynomials,
 
 \be
 x = a_0 + a_1 x + a_2 x^2 + \dotsb + a_n x^n
@@ -218,7 +218,7 @@ But for big $n$, it's impractical to count the coprime numbers one by one. Consi
             &= p^m(1-\dfrac{1}{p})
 \end{align*}
 
-Next consider the product of two different prime powers, $n = p^u q^v$. We first remove all multiples of $p$ from 1 to $n-1$, then remove all multiples of $q$, but some integers are multiples of both $p$ and $q$, therefore, we need add back those multiples of $pq$ (the inclusion-exclusion principle). 
+Next consider the product of two different prime powers, $n = p^u q^v$. We first remove all multiples of $p$ from 1 to $n-1$, then remove all multiples of $q$, but some integers are multiples of both $p$ and $q$, therefore, we need add back those multiples of $pq$ (the inclusion-exclusion principle).
 
 \begin{align*}
 \phi(p^uq^v) &=  (n - 1) - (\dfrac{n}{p} - 1) - (\dfrac{n}{q} - 1) + (\dfrac{n}{pq} - 1) \\
@@ -284,7 +284,7 @@ With this result, we have:
 Which conflicts with the assumption that $p = 2^m + 1$ is prime. Therefore, $m$ has no odd factors, it must be a power of 2, denoted by $m = 2^n$, hence $p = 2^{2^n} + 1$.
 \end{proof}
 
-Substituting $p_i = 2^{n_i} + 1$ into the expression of $n$, the number of sides of the regular polygon, 
+Substituting $p_i = 2^{n_i} + 1$ into the expression of $n$, the number of sides of the regular polygon,
 
 \[
 n = 2^a p_1 p_2 \dotsm p_k

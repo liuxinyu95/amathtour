@@ -2,56 +2,57 @@
 \phantomsection
 \label[appendix]{app:add-commutativity}
 
-To prove the commutativity of addition $a + b = b + a$, we prepare three things. The first states that, for any natural number $a$, we have:
+\begin{proof}
+To prove the commutativity of addition $a + b = b + a$, we prepare three things. The first states that, for any natural number $a$,
 
 \be
 0 + a = a
 \label{eq:left-zero}
 \ee
 
-It means the zero on the left side can be cancelled for addition. When $a = 0$, according to the first rule of addition, it holds:
+When $a = 0$, by the first rule of addition,
 
 \[
 0 + 0 = 0
 \]
 
-As the induction, assume $0 + a = a$ holds, we are going to show that $0 + a' = a'$.
+for induction, assume $0 + a = a$ holds, we are going to show $0 + a' = a'$.
 
 \begin{align*}
 0 + a' & = (0 + a)' && \text{second rule of addition} \\
        & = a'       && \text{induction assumption}
 \end{align*}
 
-Next we define the successor of 0 be 1, and prove the second fact:
+Next we define the successor of 0 be 1, that is, $0' = 1$, then show,
 
 \be
 a' = a + 1
 \label{eq:one-succ}
 \ee
 
-It means the successor of any natural number is this number plus 1. This is because:
+It means adding a number by 1 gives its successor. This is because:
 
 \begin{align*}
 a' & = (a + 0)' && \text{first rule of addition} \\
    & = a + 0'   && \text{second rule of addition} \\
-   & = a + 1    && \text{1 is defined as the successor of 0}
+   & = a + 1    && \text{1 is the successor of 0}
 \end{align*}
 
-The third thing we are going to prove is the starting case:
+The third thing we are going to show is,
 
 \be
 a + 1 = 1 + a
 \label{eq:one-commu}
 \ee
 
-When $a = 0$, we have:
+By induction on $a$, when $a = 0$,
 
 \begin{align*}
-0 + 1 & = 1     && \text{We proved the left 0 can be cancelled} \\
+0 + 1 & = 1     && \text{by \cref{eq:left-zero}} \\
       & = 1 + 0 && \text{first rule of addition}
 \end{align*}
 
-For induction case, assume $a + 1 = 1 + a$ holds, we are going to show $a' + 1 = 1 + a'$.
+For induction, assume $a + 1 = 1 + a$ holds, we are going to show $a' + 1 = 1 + a'$.
 
 \begin{align*}
 a' + 1 & = a' + 0'        && \text{1 is the successor of 0} \\
@@ -62,16 +63,18 @@ a' + 1 & = a' + 0'        && \text{1 is the successor of 0} \\
        & = 1 + a'         && \text{second rule of addition}
 \end{align*}
 
-On top of these three results, we can prove the commutative law of addition. We first show that when $b = 0$ it holds. According to the first rule of addition, we have $a + 0 = a$; While from the first result we proved, $0 + a = a$ holds too. Hence $a + 0 = 0 + a$. Then we prove the induction case. Assume $a + b = b + a$ holds, we are going to show $a + b' = b' + a$.
+From these three results, we next prove the commutativity of addition. We first show that when $b = 0$ it holds. According to the first rule of addition, $a + 0 = a$; while by \cref{eq:left-zero}, $0 + a = a$, hence $a + 0 = 0 + a$. For induction case, assume $a + b = b + a$ holds, we are going to show $a + b' = b' + a$.
 
 \begin{align*}
 a + b' & = (a + b)' && \text{second rule of addition} \\
        & = (b + a)' && \text{induction assumption} \\
        & = b + a'   && \text{second rule of addition} \\
-       & = b + a + 1 && \text{second result we proved. \cref{eq:one-succ}} \\
-       & = b + 1 + a && \text{third result we proved. \cref{eq:one-commu}} \\
-       & = (b + 1) + a && \text{associative law proved in chapter 1} \\
-       & = b' + a  && \text{third result we proved. \cref{eq:one-commu}}
+       & = b + a + 1 && \text{by \cref{eq:one-succ}} \\
+       & = b + 1 + a && \text{by \cref{eq:one-commu}} \\
+       & = (b + 1) + a && \text{associativity proven in \cref{sec:add-assoc}} \\
+       & = b' + a  && \text{by \cref{eq:one-commu}}
 \end{align*}
 
-It proves the commutativity of addition with Peano's axioms\cite[p147-148]{StepanovRose15}.
+It proves the commutativity of addition with Peano's axioms\citepage[p147-148]{StepanovRose15}.
+
+\end{proof}
