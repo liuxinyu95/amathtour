@@ -1097,7 +1097,47 @@ The side and diagonal of a square are not commensurable.
 
 \begin{figure}[htbp]
  \centering
- \includegraphics[scale=1.5]{img/irrational}
+ \begin{tikzpicture}[
+      >=stealth,
+      dot/.style={circle, fill=blue, minimum size=4pt, inner sep=0},
+      redline/.style={red, thick},
+      dashedline/.style={dashed, black},
+  ]
+  % Square vertices ABCD
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (4,0);
+  \coordinate (C) at (4,4);
+  \coordinate (D) at (0,4);
+  \coordinate (E) at ($(A)!0.707!(C)$); % 1/sqrt(2) = 1.414/2 = 0.707,
+                                        % intersect of the arc and diagonal
+  \coordinate (F) at (4, 1.657);        % 4*(sqrt(2) - 1)
+  \coordinate (G) at (5.172, 2.828);    % (4*(2 - *1/sqrt(2)), 4*1/sqrt(2)
+
+  \draw (A) rectangle (C);
+  \fill[gray!30] (A) -- (B) -- (F) -- cycle;
+  \draw[dashedline] (A) -- (F);
+  \draw (D) arc (90:0:4); % the arc at the center of A
+  \draw (C) -- (E) -- (F) -- (G) -- cycle;
+  \draw[redline] (A) -- (C);
+  \draw[redline] (D) -- (C);
+
+  % Labels -- dots
+  \node[dot, label=below left:{$A$}] at (A) {};
+  \node[dot, label=below right:{$B$}] at (B) {};
+  \node[dot, label=above right:{$C$}] at (C) {};
+  \node[dot, label=above left:{$D$}] at (D) {};
+  \node[dot, label=below:{$E$}] at (E) {};
+  \node[dot, label=right:{$F$}] at (F) {};
+  \node[dot] at (G) {};
+
+  % Labels -- segments
+  \node[red, above left] at ($(A)!0.5!(C)$) {$mc$};
+  \node[red, above] at ($(D)!0.5!(C)$) {$nc$};
+  \node at ($(E)!0.45!(C)$) {$(m-n)c$};
+  \node at ($(C)!0.5!(F)$) {$(2n-m)c$};
+
+  \end{tikzpicture}
+ % \includegraphics[scale=1.5]{img/irrational}
  \caption{Side and diagonal of a square}
  \label{fig:irrational}
 \end{figure}
@@ -1580,7 +1620,71 @@ As shown in \cref{fig:phi}, draw a unit circle and two perpendicular diameters. 
 
 \begin{figure}[htbp]
  \centering
- \includegraphics[scale=0.35]{img/pentagon-phi}
+  \begin{tikzpicture}[
+      >=stealth,
+      dot/.style={circle, fill=black, minimum size=3pt, inner sep=0},
+      bluedot/.style={circle, fill=blue, minimum size=4pt, inner sep=0},
+      pinkline/.style={magenta, thick},
+      redline/.style={red, thick},
+      cyanline/.style={cyan, thick},
+      dashedline/.style={black, dashed},
+      scale=1.5
+  ]
+
+  % --- Coordinates ---
+  \pgfmathsetmacro\elenhalf{(sqrt(5)-1)/2}
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (2,0);
+  \coordinate (C) at (0,2);
+  \coordinate (D) at (1,0);
+  \coordinate (E) at (-\elenhalf*2, 0);   % at (-(sqrt(5)-1)/2, 0)
+  \coordinate (G) at (-2,0);
+  \coordinate (H) at ({180-36}:\elenhalf*2);
+  \coordinate (F) at ({180+36}:2);
+  \coordinate (I) at ({180+72}:\elenhalf*2);
+
+  % --- Circle and Axes ---
+  \draw[thick] (A) circle (2);
+  \draw[black, thick] (-2.2,0) -- (2.2,0);
+  \draw[black, thick] (0,-2.2) -- (0,2.2);
+
+  \draw[redline] (C) -- (D);
+  \draw[dashed] (C) arc[start angle=116.6, end angle=180, radius={sqrt(5)}];
+  \draw (H) arc[start angle={180-36}, end angle=180, radius={\elenhalf*2}];
+
+  % Show how to determine H
+  \draw (H) arc[start angle={180-36}, end angle={180-36-10}, radius={\elenhalf*2}];
+  \draw (H) arc[start angle={36}, end angle={36+10}, radius={\elenhalf*2}];
+  \draw (H) arc[start angle={36}, end angle={36-10}, radius={\elenhalf*2}];
+
+  % Points
+  \node[bluedot, label=above right:{$A$}] at (A) {}; % origin
+  \node[bluedot, label=right:{$B$}] at (B) {};       % right intersect
+  \node[dot, label=above right:{$C$}] at (C) {};     % top intersect
+  \node[dot, label=above right:{$D$}] at (D) {};     % 1/2 of AB
+  \node[dot, label=below:{$E$}] at (E) {};
+  \node[dot, label=left:{$G$}] at (G) {};
+  \node[dot, label=above left:{$H$}] at (H) {};
+  \node[dot, label=below left:{$F$}] at (F) {};
+  \node[dot, label=below right:{$I$}] at (I) {};
+
+  % Labels
+  \node[above right] at ($(C)!0.5!(D)$) {$\frac{\sqrt{5}}{2}$};
+  \node[black, right] at ($(A)!0.5!(C)$) {$1$};
+  \node[black, below] at ($(A)!0.5!(D)$) {$1/2$};
+
+  % --- Cyan line AE ---
+  \draw[cyanline] (E) -- (A);
+  \node[below] at ($(E)!0.5!(A)$) {$\frac{\sqrt{5}-1}{2}$};
+
+  \draw[pinkline] (G) -- (H);
+  \draw[pinkline] (H) -- (A);
+  \draw[pinkline] (A) -- (F);
+  \draw[pinkline] (F) -- (I);
+  \draw[pinkline] (I) -- (A);
+  \draw[pinkline] (G) -- (F);
+  \end{tikzpicture}
+ % \includegraphics[scale=0.35]{img/pentagon-phi}
  \caption{From AE and a radius of length 1, construct three isosceles triangles, which in turn form a regular pentagon.}
  \label{fig:pentagon-phi}
 \end{figure}
@@ -1682,7 +1786,7 @@ Solving this system of two unknowns, namely $k$ and $b$: subtract the two equati
 
 When $x_1 = x_2$, then the line that passes the two points is vertical, the equation is $x = x_1$. Denote the distance between the two points by $r$, by Pythagorean theorem, $(x_2 - x_1)^2 + (y_2 - y_1)^2 = r^2$, then $r = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$. In other words, $r$ is a square root; it is the positive solution of a quadratic equation defined by the Pythagorean theorem (with $r$ as the unknown). Essentially, the meaning of \enquote{to draw a straight line from any point to any point} in analytic geometry is this: suppose the coordinates of the two points are in set $K$ (for example, $K = \mathbb{Q}$ means the coordinates are rational points. $K$ may be \enquote{bigger} set containing rationals), then the straight line is a linear function with coefficients in $K$. The distance between the two points is a solution of a quadratic equation with coefficients in $K$.
 
-Given a straight line and a point, one may draw the perpendicular line through this point. In analytical geometry, the perpendicular line to a line defined by $y = kx + b$ has the form of $y = -\dfrac{1}{k} x + b'$, where $k \ne 0$. If it passes point $(x_0, y_0)$, then $y_0 = -\dfrac{1}{k} x_0 + b'$, whence, $b' = y_0 + \dfrac{1}{k}$. For the special case of vertical line $x = a$, the perpendicular line (horizontal) has the form of $y = b$. If it passes point $(x_0, y_0)$, then the equation is determined by $y = y_0$. Basically, if the slope of the given line and the coordinate that the perpendicular line passed through are in set $K$ containing rationals, then the perpendicular line is some linear equation with coefficients in $K$.
+Given a straight line and a point, one may draw the perpendicular line through this point. In analytical geometry, the perpendicular line to a line defined by $y = kx + b$ has the form of $y = -\dfrac{1}{k} x + b'$, where $k \ne 0$. If it passes point $(x_0, y_0)$, then $y_0 = -\dfrac{1}{k} x_0 + b'$, whence, $b' = y_0 + \dfrac{1}{k}x_0$. For the special case of vertical line $x = a$, the perpendicular line (horizontal) has the form of $y = b$. If it passes point $(x_0, y_0)$, then the equation is determined by $y = y_0$. Basically, if the slope of the given line and the coordinate that the perpendicular line passed through are in set $K$ containing rationals, then the perpendicular line is some linear equation with coefficients in $K$.
 
 \subsubsection{A circle with a center and radius}
 
@@ -2177,7 +2281,7 @@ These rules, known as the modular arithmetic rules, allow us to use intermediate
 a^{11} = a^{8 + 2 + 1} \equiv ((a^2)^2)^2a^2a \pmod{n}
 \]
 
-What we need to calculate is the remainder of $a^2$ divided by $n$, then the remainder of $(a^2)^2$ divided by $n$, then the remainder of $((a^2)^2)^2$ divided by $n$, and so on. If represent $n$ in binary, for example, $n = 11$ is represented as $1011$ in binary, we only need to calculate the remainder for those bits with value 1, which are $a$, $a^2$, and $a^8$. This is a logarithmic time algorithm, that is, the time complexity is $O(\lg n)$. Therefore, Fermat primality test is very fast. However, a number may not necessarily be prime even passes the test. For example, 341 = 11 $\times$ 31, but $2^{340} \equiv 1 \pmod{341}$. To deal with the \enquote{false positive} issue, people have made a series of improvements. One idea is to increase the number of witnesses. People found that once a number fails the Fermat test, then at least half of the numbers less than $n$ also fail\citepage[p26]{Algorithms-DPV}.
+What we need to calculate is the remainder of $a^2$ divided by $n$, then the remainder of $(a^2)^2$ divided by $n$, then the remainder of $((a^2)^2)^2$ divided by $n$, and so on. If represent $n - 1$ in binary, for example, $n - 1 = 11$ is represented as $1011$ in binary, we only need to calculate the remainder for those bits with value 1, which are $a$, $a^2$, and $a^8$. This is a logarithmic time algorithm, that is, the time complexity is $O(\lg n)$. Therefore, Fermat primality test is very fast. However, a number may not necessarily be prime even passes the test. For example, 341 = 11 $\times$ 31, but $2^{340} \equiv 1 \pmod{341}$. To deal with the \enquote{false positive} issue, people have made a series of improvements. One idea is to increase the number of witnesses. People found that once a number fails the Fermat test, then at least half of the numbers less than $n$ also fail\citepage[p26]{Algorithms-DPV}.
 
 \begin{proposition} \label{thm:fermat-test}
 For positive integer $a < n$ that is coprime to $n$, if $a^{n-1} \not\equiv 1 \pmod n$, then among all choices of $a < n$, at least half of them also fail the Fermat test.
