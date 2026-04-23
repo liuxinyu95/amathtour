@@ -59,42 +59,42 @@ x = a_0 + a_1 \sqrt{2} + a_2 (\sqrt{2})^2 + \dotsb + a_n (\sqrt{2})^n
 \label{eq:polynomial-sqrt2}
 \ee
 
-Don't be scared by the above expression. Since $(\sqrt{2})^2 = 2$ is rational, $(\sqrt{2})^4, (\sqrt{2})^6, \dotsc$ are all rational; since $(\sqrt{2})^3 = 2\sqrt{2}$ is of the form $a\sqrt{2}$, $(\sqrt{2})^5 = 4\sqrt{2}$ is of the form $a\sqrt{2}$, etc., all odd terms in \ref{eq:polynomial-sqrt2} are rationals $p_i$, and all even terms are $q_i \sqrt{2}$. Collecting terms, it simplifies to:
+Don't be scared by this expression. Since $(\sqrt{2})^2 = 2$ is rational, $(\sqrt{2})^4, (\sqrt{2})^6, \dotsc$ are all rational; since $(\sqrt{2})^3 = 2\sqrt{2}$ is of the form $a\sqrt{2}$, $(\sqrt{2})^5 = 4\sqrt{2}$ is of the form $a\sqrt{2}$, etc., all odd terms in \ref{eq:polynomial-sqrt2} are rationals $p_i$, and all even terms are $q_i \sqrt{2}$. Collecting terms, it simplifies to:
 
 \[
 x = p + q\sqrt{2}
 \]
 
-where $p, q$ are rationals, in other words, $\mathbb{Q}(\sqrt{2})$ contains all numbers of the form $p + q\sqrt{2}$, and:
+where $p, q$ are rationals, in other words, $\mathbb{Q}(\sqrt{2})$ contains all numbers of the form $p + q\sqrt{2}$, and,
 
 \begin{proposition}
-All numbers of the form $p + q\sqrt{2}$, after $+, -, \times$, and $\div$ operations, still remain in $\mathbb{Q}(\sqrt{2})$, where $p, q$ are rationals.
+All numbers of the form $p + q\sqrt{2}$ for some rationals $p$ and $q$, after $+, -, \times$, and $\div$ operations, still remain in $\mathbb{Q}(\sqrt{2})$.
 \end{proposition}
 
 \begin{proof}
-The sum and difference are in form of $(a + b\sqrt{2}) \pm (c + d\sqrt{2}) = (a \pm c) + (b \pm d)\sqrt{2}$, which is still in the form of $p + q\sqrt{2}$, hence in $\mathbb{Q}(\sqrt{2})$.
+The sum and difference are in the form of $(a + b\sqrt{2}) \pm (c + d\sqrt{2}) = (a \pm c) + (b \pm d)\sqrt{2}$, which are still in the form of $p + q\sqrt{2}$, hence in $\mathbb{Q}(\sqrt{2})$.
 
-The product is in form of $(a + b\sqrt{2})(c + d\sqrt{2}) = (ac + 2bd) + (bc + ad)\sqrt{2}$, which is still in the form of $p + q\sqrt{2}$, hence in $\mathbb{Q}(\sqrt{2})$.
+The product is in the form of $(a + b\sqrt{2})(c + d\sqrt{2}) = (ac + 2bd) + (bc + ad)\sqrt{2}$, which is still in the form of $p + q\sqrt{2}$, hence in $\mathbb{Q}(\sqrt{2})$.
 
 The result of division is,
 
 \begin{align*}
-\frac{a + b\sqrt{2}}{c + d\sqrt{2}} &= \frac{(a + b\sqrt{2})(c - d\sqrt{2})}{(c + d\sqrt{2})(c - d\sqrt{2})} &&\text{multiply the nominator and denominator by }c - d\sqrt{2} \\
+\frac{a + b\sqrt{2}}{c + d\sqrt{2}} &= \frac{(a + b\sqrt{2})(c - d\sqrt{2})}{(c + d\sqrt{2})(c - d\sqrt{2})} &&\text{multiply the (de)nominator by }c - d\sqrt{2} \\
 &= \frac{(ac - 2bd) + (bc - ad)\sqrt{2}}{c^2 - 2d^2} &&\text{difference of squares} \\
 &= \frac{ac - 2bd}{c^2 - 2d^2} + \frac{bc - ad}{c^2 - 2d^2}\sqrt{2}
 \end{align*}
-It is still in the form of $p + q\sqrt{2}$, hence in $\mathbb{Q}(\sqrt{2})$.
+which is still in the form of $p + q\sqrt{2}$, hence in $\mathbb{Q}(\sqrt{2})$.
 \end{proof}
 
-This proves that $\mathbb{Q}(\sqrt{2})$ is a field. What is special about this field? We know that the equation $x^2 - 2 = 0$ has no solution in the rational field, i.e., there is no rational number $q$ such that $q^2 = 2$. However, it does have solutions in $\mathbb{Q}(\sqrt{2})$, which are $x_{1, 2} = \pm \sqrt{2}$. After \emph{adjoin} the irrational number $\sqrt{2}$ to $\mathbb{Q}$, the field is extended (enlarged). This shows that a field can be contained in another field, and there can be ordering among fields,for example:
+This proves that $\mathbb{Q}(\sqrt{2})$ is a field. What is special about this field? We know that the equation $x^2 - 2 = 0$ has no solution in the rational field, i.e., there is no rational number $q$ such that $q^2 = 2$. However, it does have solutions in $\mathbb{Q}(\sqrt{2})$, which are $x_{1, 2} = \pm \sqrt{2}$. After \emph{adjoining} the irrational number $\sqrt{2}$ to $\mathbb{Q}$, the field is extended (enlarged). This shows that a field can be contained in another field, and there can be ordering among fields, for example:
 
 \[
 \mathbb{Q} \subset \mathbb{Q}(\sqrt{2}) \subset \mathbb{R} \subset \mathbb{C}
 \]
 
-After construct the length of $\sqrt{2}$ (the diagonal of a unit square) by ruler and compass, all lengths that can be constructed by ruler and compass through arithmetic operations (see \cref{sec:geometric-arthimetic}) are exactly the set $\mathbb{Q}(\sqrt{2})$. Given a length $a$, since we can construct a line segment of length $\sqrt{a}$ (see proposition \ref{thm:sqrt-a}), we can obtain the field $\mathbb{Q}(\sqrt{a})$.
+After constructing the length of $\sqrt{2}$ (the diagonal of a unit square) by ruler and compass, all lengths that can be constructed by ruler and compass through arithmetic operations (see \cref{sec:geometric-arthimetic}) are exactly the set $\mathbb{Q}(\sqrt{2})$. Given a length $a$, since we can construct a line segment of length $\sqrt{a}$ (see proposition \ref{thm:sqrt-a}), we can obtain the field $\mathbb{Q}(\sqrt{a})$.
 
-The second important thing of $\mathbb{Q}(\sqrt{2})$ is that the \enquote{dimension} changes after adjoining $\sqrt{2}$ to $\mathbb{Q}$. The rational numbers have only one dimension: $\{q | q \in \mathbb{Q}\}$, while $\mathbb{Q}(\sqrt{2})$ has two: $\{p + q \sqrt{2} | p, q \in \mathbb{Q}\}$, we need two variables $p, q$ to determine a value, the dimension is doubled. We use the notation:
+The second important thing of $\mathbb{Q}(\sqrt{2})$ is that the \enquote{dimension} changes after adjoining $\sqrt{2}$ to $\mathbb{Q}$. The rational numbers have only one dimension: $\{q | q \in \mathbb{Q}\}$, while $\mathbb{Q}(\sqrt{2})$ has two: $\{p + q \sqrt{2} | p, q \in \mathbb{Q}\}$, we need two variables $p, q$ to determine a value; the dimension is doubled. We use the notation:
 
 \[
 [\mathbb{Q}(\sqrt{2}) : \mathbb{Q}] = 2
@@ -105,11 +105,11 @@ to qualify the dimension change. It is not hard to imagine that if we construct 
 \begin{align*}
   \mathbb{Q}(\sqrt{2})(\sqrt{3}) &= \{a + b \sqrt{3} | a, b \in \mathbb{Q}(\sqrt{2}) \} \\
   &= \{p + q \sqrt{2} + (r + s\sqrt{2})\sqrt{3} \} && a, b \text{ are in the form of } p + q\sqrt{2} \\
-  &= \{p + q \sqrt{2} + r\sqrt{3} + s\sqrt{6} \}
+  &= \{p + q \sqrt{2} + r\sqrt{3} + s\sqrt{6} \} && p, q, r, s \in \mathbb{Q}
 \end{align*}
 
 \index{field extension}
-There are 4 variables $p, q, r, s$ in the above expression; the dimension changes to 4, being doubled again. It is equivalent to adjoining two irrationals $\sqrt{2}, \sqrt{3}$ to the rational field, denoted by $\mathbb{Q}(\sqrt{2}, \sqrt{3})$. We call this process \emph{field extension}. It means the ruler and compass construction is a process of field extension: continuously solving quadratic equations and adjoining $\sqrt{a}, \sqrt{b}, \dotsc$ to form a chain of field extensions:
+There are 4 variables $p, q, r, s$ in this expression; the dimension changes to 4, being doubled again. It is equivalent to adjoining two irrationals $\sqrt{2}, \sqrt{3}$ to the rational field, denoted by $\mathbb{Q}(\sqrt{2}, \sqrt{3})$. We call this process \emph{field extension}. It means the ruler and compass construction is a process of field extension: continuously solving quadratic equations and adjoining $\sqrt{a}, \sqrt{b}, \dotsc$ to form a chain of field extensions:
 
 \be
 \mathbb{Q} \subset K_1 \subset K_2 \subset \dotsb \subset K_m
@@ -121,12 +121,12 @@ Whatever constructed length being adjoined, since ruler and compass can only sol
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.5]{../img/double-cube}
- \caption{The polynomial $a_0 + a_1\sqrt[3]{2} + a_2(\sqrt[3]{2})^2 + \dotsb + a_n(\sqrt[3]{2})^n$, by collecting terms, can be simplified to the form $p + q\sqrt[3]{2} + r(\sqrt[3]{2})^2$. Hence $[\mathbb{Q}(\sqrt[3]{2}) : \mathbb{Q}] = 3$, which is not in the chain of field extensions in ruler and compass construction.}
+ \caption{The polynomial $a_0 + a_1\sqrt[3]{2} + a_2(\sqrt[3]{2})^2 + \dotsb + a_n(\sqrt[3]{2})^n$, by collecting terms, can be simplified to the form of $p + q\sqrt[3]{2} + r(\sqrt[3]{2})^2$. Hence $[\mathbb{Q}(\sqrt[3]{2}) : \mathbb{Q}] = 3$, which is not in the chain of field extensions of ruler and compass construction.}
  \label{fig:double-cube}
 \end{figure}
 
 \subsection{Cyclotomic equations} \index{cyclotomic equations}
-Gauss transformed the problem of constructing a regular polygon with $n$ sides by ruler and compass into the problem of dividing the circumference of a unit circle into $n$ equal parts, and further transformed it into the problem of finding all complex roots of the equation $x^n - 1 = 0$ by using complex numbers. This special equation is called a \emph{cyclotomic equation}, which has $n$ complex roots: $\zeta_0 = 1, \zeta_1, \dotsc, \zeta_{n-1}$, any $\zeta_k$ satisfies $(\zeta_k)^n = 1$, hence also called \emph{$n$-th roots of unity}. According to Euler's formula and De Moivre's theorem learned in high school, the roots of unity can be expressed using trigonometric functions:
+Gauss transformed the problem of constructing a regular polygon of $n$ sides by ruler and compass into the problem of dividing the circumference of a unit circle into $n$ equal parts, then further transformed it into the problem of finding all \emph{complex} roots of the equation $x^n - 1 = 0$. This special equation, known as the \emph{cyclotomic equation}, has $n$ complex roots: $\zeta_0 = 1, \zeta_1, \dotsc, \zeta_{n-1}$. Because any $\zeta_k$ satisfies $(\zeta_k)^n = 1$, hence is called \emph{$n$-th roots of unity}. According to Euler's formula and De Moivre's theorem learned in high school math, the roots of unity can be expressed in trigonometric functions:
 
 \be
 \zeta_k = e^{i\frac{2k\pi}{n}} = \cos(\frac{2k\pi}{n}) + i\sin(\frac{2k\pi}{n})
@@ -173,7 +173,7 @@ Therefore, the equilateral triangle can be constructed by ruler and compass.
 
 Therefore, the square can be constructed by ruler and compass.
 
-\item For equation $x^6 - 1 = 0$, there are six roots: $1, \dfrac{-1 \pm i\sqrt{3}}{2}, -1, \dfrac{1 \pm i\sqrt{3}}{2}$. We choose and adjoin two independent ones among them, namely, $\{\zeta_0 = 1, \zeta_5 = \dfrac{-1 - i\sqrt{3}}{2}\}$ to the rational field $\mathbb{Q}$ to form an extension:
+\item For equation $x^6 - 1 = 0$, there are six roots: $\pm 1, \dfrac{\pm 1 \pm i\sqrt{3}}{2}$. We choose and adjoin two independent ones among them, namely, $\{\zeta_0 = 1, \zeta_5 = \dfrac{-1 - i\sqrt{3}}{2}\}$ to the rational field $\mathbb{Q}$ to form an extension:
 
 \begin{align*}
 [\mathbb{Q}(1, \zeta_5) : \mathbb{Q}] &= [\mathbb{Q}(\zeta_5) : \mathbb{Q}] = 2 && \text{By the result of (1)}
@@ -182,7 +182,7 @@ Therefore, the square can be constructed by ruler and compass.
 Therefore, the regular hexagon can be constructed by ruler and compass.
 \end{enumerate}
 
-Don't you find a pattern? we needn't check all $n$ roots, but only the independent ones. A root is independent if it cannot be expressed in terms of other roots. Returning to De Moivre's theorem, these $n$ roots are:
+Don't you find a pattern? we needn't check all $n$ roots, but only the independent ones. A root is independent if it cannot be expressed in terms of other roots. Returning to Euler's theorem, these $n$ roots are:
 
 \[
 \zeta_0 = e^0 = 1, \zeta_1 = e^{1\frac{2\pi}{n}i}, \dotsb, \zeta_{n-1} = e^{(n - 1)\frac{2\pi}{n}i}
@@ -195,7 +195,7 @@ If an integer $b$ divides $a$, that is $a = bc$, then,
 \]
 
 \index{Euler totient function} \index{Euler function}
-It follows that $\zeta_a$ is not independent, but can be expressed in terms of $\zeta_b$. How many independent integers are there among $1, 2, \dotsc, n-1$? Euler defined a function $\phi(n)$, called the Euler totient function (or simply Euler function), which counts the number of integers from $1$ to $n-1$ that are coprime to $n$, and $\phi(n)$ is exactly the number of independent roots of unity. This is because if $n$ and some integer $a$ have a common factor $b$ greater than 1 (not coprime), then $a = bc$, and by the above result, $\zeta_a$ is not independent. We adjoin these $\phi(n)$ independent roots to $\mathbb{Q}$ to get the field $K_m$ where all roots of the equation $x^n - 1 = 0$ lie, any number in this field can be expressed as: $a_1 \zeta_a + a_2\zeta_b + \dotsb + a_{\phi(n)}\zeta_z$.
+It follows that $\zeta_a$ is not independent, but can be expressed in terms of $\zeta_b$. How many independent integers are there among $1, 2, \dotsc, n-1$? Euler defined a function $\phi(n)$, called the Euler totient function (or simply Euler function), which counts the number of integers from $1$ to $n-1$ that are coprime to $n$, thus $\phi(n)$ is exactly the number of independent roots of unity. This is because if $n$ and some integer $a$ have a common factor $b$ greater than 1 (not coprime), then $a = bc$, and by the above result, $\zeta_a$ is not independent. We adjoin these $\phi(n)$ independent roots to $\mathbb{Q}$ to get the field $K_m$ where all roots of the equation $x^n - 1 = 0$ lie, any number in this field can be expressed as: $a_1 \zeta_a + a_2\zeta_b + \dotsb + a_{\phi(n)}\zeta_z$.
 
 \be
 [K_m : \mathbb{Q}] = [\mathbb{Q}(\zeta_a, \zeta_b, \dotsc, \zeta_z) : \mathbb{Q}] = \phi(n)
@@ -208,7 +208,7 @@ On the other hand, if a regular $n$-gon can be constructed by ruler and compass,
 \label{eq:euler-function-as-power-of-2}
 \ee
 
-where $m$ is some positive integer, then the regular $n$-gon can be constructed by ruler and compass; otherwise, it cannot. Given $n$, how to calculate $\phi(n)$? For small $n$, we can directly count the numbers for those among $1, 2, \dotsc, n - 1$ bing coprime to $n$. Particularly, if $n = p$ is prime, then all integers from 1 to $p-1$ are coprime to $p$, hence $\phi(p) = p - 1$. Merely with this, we are able to claim it's impossible to construct the regular heptagon, in which $n = 7$, is a prime number. All integers from 1 to 6 are coprime to 7, so $\phi(7) = 6$, but 6 is not a power of 2, therefore, the regular heptagon is not constructible. For regular hexagon $n = 6$, only 1 and 5 are coprime to 6; $\phi(6) = 2 = 2^1$, hence is constructible. For regular heptadecagon, $n = 17$ is prime; $\phi(17) = 16 = 2^4$, it is constructible as what Gauss proved. For regular octadecagon $n = 18$, the numbers coprime to 18 are: 1, 5, 7, 11, 13, 17, hence $\phi(18) = 6$, which is not a power of 2; it is not constructible.
+where $m$ is some positive integer, then the regular $n$-gon can be constructed by ruler and compass; otherwise, it cannot. Given $n$, how to calculate $\phi(n)$? For small $n$, we can directly count the numbers for those among $1, 2, \dotsc, n - 1$ being coprime to $n$. Particularly, if $n = p$ is prime, then all integers from 1 to $p-1$ are coprime to $p$, hence $\phi(p) = p - 1$. Merely with this, we are able to claim it's impossible to construct the regular heptagon, in which $n = 7$, is a prime number. All integers from 1 to 6 are coprime to 7, so $\phi(7) = 6$, but 6 is not a power of 2, therefore, the regular heptagon is not constructible. For regular hexagon $n = 6$, only 1 and 5 are coprime to 6; $\phi(6) = 2 = 2^1$, hence is constructible. For regular heptadecagon, $n = 17$ is prime; $\phi(17) = 16 = 2^4$, it is constructible as what Gauss proved. For regular octadecagon $n = 18$, the numbers coprime to 18 are: 1, 5, 7, 11, 13, 17, hence $\phi(18) = 6$, which is not a power of 2; it is not constructible.
 
 But for big $n$, it's impractical to count the coprime numbers one by one. Consider $\phi(p^m)$ for a prime $p$ raised to some power of $m$. To find the numbers from 1 to $p^m - 1$ that are coprime to $p^m$, we need remove the multiples of $p$, namely, $p, 2p, 3p, \dotsc, p^m - p$; If divide each by $p$, we get the sequence of $1, 2, 3, ..., p^{m-1} - 1$, in total $p^{m-1} - 1$ numbers. Therefore, the value of Euler function for $p^m$ is:
 

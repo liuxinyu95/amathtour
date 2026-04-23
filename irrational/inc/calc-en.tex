@@ -2,7 +2,7 @@
 \phantomsection
 \label[appendix]{app:calculus}
 
-Observe the sine function $\sin x$ and the \underdot{radian} $x$ on the unit circle (as shown in \cref{fig:unit-circle-trigonometric}), the arc length PQ is equal to $x$, when it approaches 0, the $\sin x$ approaches the arc length, that is:
+Observe the sine function $\sin x$ and the \underdot{radian} $x$ on the unit circle (as shown in \cref{fig:unit-circle-trigonometric}), the arc length PQ equals $x$; when it approaches 0, the $\sin x$ approaches the arc length, that is,
 
 \begin{figure}[htbp]
   \centering
@@ -40,14 +40,14 @@ Observe the sine function $\sin x$ and the \underdot{radian} $x$ on the unit cir
 
 \index{squeeze theorem} \index{sandwich theorem}
 \begin{proof}
-We are going to use the famous \underdot{Squeeze Theorem} (also called the Sandwich Theorem) to prove this limit. Draw a tangent line at point $Q$ in \cref{fig:unit-circle-trigonometric} that intersects the extension of $OP$, thus forming a right triangle with the outer arc $PQ$. Its two legs are 1 and $\tan x$ respectively. Now consider the inscribed right triangle formed by the arc $PQ$ (its two legs are $\cos x$ and $\sin x$ respectively), the area of the sector formed by the arc $PQ$, denoted by $S$, and the area of the circumscribed right triangle formed by the arc $PQ$, denoted by $S_o$:
+We are going to use the famous \underdot{Squeeze Theorem} (also called the Sandwich Theorem) to prove this limit. Draw a tangent line at point $Q$ in \cref{fig:unit-circle-trigonometric} that intersects the extension of $OP$, thus forming a right triangle with the outer arc $PQ$. Its two legs are 1 and $\tan x$ respectively. Now consider the inscribed right triangle formed by the arc $PQ$ (its two legs are $\cos x$ and $\sin x$ respectively), denote its area by $S_i$; the area of the sector formed by the arc $PQ$, denoted by $S$, and the area of the circumscribed right triangle formed by the arc $PQ$, denoted by $S_o$:
 
 \begin{align*}
   S_i &< S < S_o \\
   \frac{1}{2}\cos x \sin x &< \frac{1}{2}x < \frac{1}{2}1\cdot \tan x \\
   \cos x \sin x &< x < \tan x = \frac{\sin x}{\cos x} \\
   \cos x &< \frac{x}{\sin x} < \frac{1}{\cos x} &&\text{divided both sides by }\sin x \\
-  \frac{1}{\cos x} &> \frac{\sin x}{x} > \cos x && \text{reciprocal of all three sides} \\
+  \frac{1}{\cos x} &> \frac{\sin x}{x} > \cos x && \text{Taking reciprocal} \\
 \end{align*}
 Suppose $x > 0$, now take the limit $x \to 0^+$. The limits of $\cos x$ and its reciprocal are both 1. So the limit of $\dfrac{\sin x}{x}$, which is squeezed in between, must also be 1. One may also prove the case when $x < 0$, approaching from the left side.
 \end{proof}
@@ -68,7 +68,7 @@ Where the series $A(x) = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + 
 
 \begin{align*}
 A(x) &= 1 \cdot B(x) + R_1(x) && \text{quotient is 1, remainder is }R_1(x) \\
-R_1(x) &= A(x) - B(x) && \text{the quotient 1 can cancel the constant term} \\
+R_1(x) &= A(x) - B(x) && \text{quotient 1 cancels the constant term} \\
   &= -(\frac{1}{2!} - \frac{1}{3!})x^2 + (\frac{1}{4!} - \frac{1}{5!})x^4 -(\frac{1}{6!} - \frac{1}{7!})x^6 + \dotsb \\
   &= - \frac{2}{3!}x^2 + \frac{4}{5!}x^4 - \frac{6}{7!}x^6 + \dotsb \\
   &= - \frac{1}{3}\frac{1}{1!}x^2 + \frac{1}{5}\frac{1}{3!}x^4 - \frac{1}{7}\frac{1}{5!}x^6 + \dotsb \\
