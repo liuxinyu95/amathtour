@@ -303,9 +303,9 @@ When looking back, the Egyptian fractions were hard to use and compute, and in s
   \hline
   $\frac{4}{12}$ & triens   & one third & $\frac{1}{24}$ & semuncia   & half a uncia  \\
   \hline
-  $\frac{5}{12}$ & quincunx & five uncia & $\frac{1}{48}$ & sicilicus &  \\
+  $\frac{5}{12}$ & quincunx & five uncia & $\frac{1}{48}$ & sicilicus &  a quarter of uncia \\
   \hline
-  $\frac{6}{12}$ & semis    & half    & $\frac{1}{72}$ & scriptulum    &  \\
+  $\frac{6}{12}$ & semis    & half    & $\frac{1}{72}$ & scriptulum    &  one sixth of uncia \\
   \hline
   $\frac{7}{12}$ & septunx  & seven uncia & $\frac{1}{144}$ & scripulum  &  $\frac{1}{12} \times \frac{1}{12}$ \\
   \hline
@@ -578,7 +578,7 @@ The decimal of $\dfrac{a}{9}$ is $0.\dot{a} = 0.aaa\cdots$
 It explains $\dfrac{1}{3} = \dfrac{3}{9} = 0.\dot{3} = 0.333\cdots$, further,
 
 \begin{proposition} \label{th:cyclic-decimal}
-The fraction of the repeating decimal $0.\dot{a_1} \dot{a_2} \cdots \dot{a_n}$ is $\dfrac{a_1 a_2 \cdots a_n}{99 \cdots 9} = \dfrac{a_1 a_2 \cdots a_n}{10^{n+1} - 1}$.
+The fraction of the repeating decimal $0.\dot{a_1} \dot{a_2} \cdots \dot{a_n}$ is $\dfrac{a_1 a_2 \cdots a_n}{99 \cdots 9} = \dfrac{a_1 a_2 \cdots a_n}{10^{n} - 1}$.
 \end{proposition}
 
 We leave the proof as \cref{qn:cyclic-decimal}. Let's verify it with $\dfrac{1}{7}$:
@@ -598,7 +598,7 @@ Hence,
 By this proposition, we can easily tell the decimal of some fractions, like $\dfrac{2}{11}$, $\dfrac{4}{33}$, the former is $\dfrac{2}{11} = \dfrac{2 \times 9}{11 \times 9} = \dfrac{18}{99} = 0.\dot{1}\dot{8}$. The proposition also gives clue to the periodic cycle. If the lowest terms of $\dfrac{a_1 a_2 \cdots a_n}{99 \cdots 9}$ is $\dfrac{b}{a}$, then $ak = 999 \cdots 9$ for some integer $k$. It turns out that $ak + 1 = 100 \cdots 0$. If the remainder of $100\cdots 0$ (total $n$ digits of 0) divided by $a$ is 1, then the periodic cycle of $\dfrac{b}{a}$ contains \emph{at most} $n$ digits. The periodic cycle only depends on the denominator\footnote{In number theory, Fermat's theorem asserts the remainder of a prime $p$ dividing $10^{p-1}$ is 1. For example, the remainder of 7 dividing 1000000 is 1. The periodic cycle of $\dfrac{b}{7}$ contains 6 digits. Although the remainder of 11 dividing $10^{11-1} = 10000000000$ is 1, the periodic cycle of $\dfrac{2}{11} = 0.\dot{1}\dot{8}$ contains 2 digits. We need additional tool, i.e., Euler theorem in number theory, to get the definitive number of digits of a periodic cycle. Refer to chapter IX of \emph{An introduction to the theory of numbers} by Hardy and Wright.}. Below theorem answers where the periodic cycle starts.
 
 \begin{theorem}\label{thm:cyclic-decimal}
-For irreducible proper fraction $\dfrac{b}{2^{\alpha} 5^{\beta} q}$, where $q$ can't be divided by 2 or 5, let $n = \max(\alpha, \beta)$, then the decimal starts repeating after the decimal point by $n$ places, and the periodic cycle contains $m$ digits, where the remainder of $10^{m+1}$ divided by $q$ is 1.
+For irreducible proper fraction $\dfrac{b}{2^{\alpha} 5^{\beta} q}$, where $q$ can't be divided by 2 or 5, let $n = \max(\alpha, \beta)$, then the decimal starts repeating after the decimal point by $n$ places, and the periodic cycle contains $m$ digits, where the remainder of $10^{m}$ divided by $q$ is 1.
 \end{theorem}
 
 \begin{proof}
@@ -608,10 +608,10 @@ We first show the first $n$ places don't repeat:
 10^n \frac{b}{2^{\alpha} 5^{\beta} q} = \frac{2^n 5^n b}{2^{\alpha} 5^{\beta} q} = \frac{2^{n - \alpha} 5^{n - \beta} b}{q} = X + \frac{b'}{q}
 \]
 
-Which is the mixed number after multiplied by $10^n$, where $X$ is the whole number part satisfying $0 \leq X < 10^n$. Since the remainder of $10^{m+1}$ divided by $q$ is 1, it follows that $q$ divides $10^{m+1} - 1$:
+Which is the mixed number after multiplied by $10^n$, where $X$ is the whole number part satisfying $0 \leq X < 10^n$. Since the remainder of $10^{m}$ divided by $q$ is 1, it follows that $q$ divides $10^{m} - 1$:
 
 \begin{align*}
-  (10^{m+1} - 1) \frac{b'}{q} &= k b' = a_1 a_2 \cdots a_m & \text{is integral}\\
+  (10^{m} - 1) \frac{b'}{q} &= k b' = a_1 a_2 \cdots a_m & \text{is integral}\\
                 \frac{b'}{q} &= \frac{a_1 a_2 \cdots a_m}{99\cdots9} & m\text{ digits of }9
 \end{align*}
 Which is a repeating decimal by proposition \ref{th:cyclic-decimal}.
@@ -808,7 +808,7 @@ That is why the harmonic mean is also known as the mean of reciprocals. Verify t
 
 \Question{*By $0.999\cdots = 1$, any terminating decimal has two forms: $X.a_1a_2 \cdots a_m000\cdots$ and $X.a_1a_2 \cdots b999\cdots$, where $b = a_m - 1$ and $X$ is the whole number part. Show that, except for this special case, the decimal of any value $x$ is unique, where $0 < x < 1$.}
 
-\Question{Show that the fraction of any repeating decimal $0.\dot{a_1} \dot{a_2} \cdots \dot{a_n}$ is $\dfrac{a_1 a_2 \cdots a_n}{99 \cdots 9} = \dfrac{a_1 a_2 \cdots a_n}{10^{n+1} - 1}$. \label{qn:cyclic-decimal}}
+\Question{Show that the fraction of any repeating decimal $0.\dot{a_1} \dot{a_2} \cdots \dot{a_n}$ is $\dfrac{a_1 a_2 \cdots a_n}{99 \cdots 9} = \dfrac{a_1 a_2 \cdots a_n}{10^{n} - 1}$. \label{qn:cyclic-decimal}}
 
 \Question{Use fractions and Lemma \ref{th:cycle-of-9} to show: Atalanta first traverses $\dfrac{1}{2}$ distance, then traverses half of the remaining, which is $\dfrac{1}{4}$ distance, and repeats, she will walk to the end of the path. Hint: using sum of fractions and binary decimal.\label{qn:dichotomy-paradox}}
 
@@ -1054,7 +1054,7 @@ contradict with \cref{eq:decimal-a-eq-b}.
   \end{proof}
 }
 
-\Question{Show that the fraction of any repeating decimal $0.\dot{a_1} \dot{a_2} \cdots \dot{a_n}$ is $\dfrac{a_1 a_2 \cdots a_n}{99 \cdots 9} = \dfrac{a_1 a_2 \cdots a_n}{10^{n+1} - 1}$.
+\Question{Show that the fraction of any repeating decimal $0.\dot{a_1} \dot{a_2} \cdots \dot{a_n}$ is $\dfrac{a_1 a_2 \cdots a_n}{99 \cdots 9} = \dfrac{a_1 a_2 \cdots a_n}{10^{n} - 1}$.
 
   \begin{proof}
     \begin{align*}

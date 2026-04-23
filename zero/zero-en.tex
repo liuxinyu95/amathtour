@@ -533,7 +533,7 @@ Why is the motion opposite to $a$? Denote the number line before moving by $A$, 
 
 \subsection{Inverse}
 \index{additive inverse} \index{number line!inverse}
-When negate every number, the number line is inverse (rotate $180\degree$ against the origin).
+When negate every number, the number line is inverse (rotate $180\degree$ against the origin as shown in \cref{fig:negate-number-line}).
 
 \begin{figure}[htpb]
   \centering
@@ -560,10 +560,10 @@ When negate every number, the number line is inverse (rotate $180\degree$ agains
 
 The number line restores when negating twice; rotate $180\degree$, then rotate $180\degree$ again, it is equivalent to rotate $360\degree$, and is equivalent to fix.
 
-\btab{ccccc}
-  $\rightarrow$ & invert & $\leftarrow$ & invert & $\rightarrow$ \\
+\btab{c|ccccc}
+  number line & $\rightarrow$ & invert & $\leftarrow$ & invert & $\rightarrow$ \\
 \hline
-  $a$           & negate & $-a$       & negate & $-(-a) = a$
+  number & $a$           & negate & $-a$       & negate & $-(-a) = a$
 \etab
 
 The effect of negating a number $a \rightsquigarrow -a$ amounts to multiplying it by $-1$, as $-a = a (-1) = (-1) a$. Negating twice restores a number explains why negative times negative is positive: $-(-a) = (-1)(-a) = a$.
@@ -616,7 +616,7 @@ Adding 0 to any number leaves that number unchanged; multiplying any number (inc
 
 For any number $a$, there is one and only one additive symmetric number to 0, which is its opposite, $-a$, satisfying $a + (-a) = 0$. For any number $a \ne 0$, there is one and only one multiplicative symmetric number to 1, which is its reciprocal, $\frac{1}{a}$, satisfying $a \times \frac{1}{a} = 1$. But 0 does not have reciprocal. Which one is more special, 0 or 1?
 
-There are plenty of things behaving like 0 and 1. For example, we call a sequence of characters a string. Word, phrases, and sentences are strings, hence ``apple'', ``hello'', ``to be or not to be'', `` '' (a space) are all strings. One may concatenate strings, like ``hello'' $\doubleplus$ `` '' = ``hello '', ``hello '' $\doubleplus$ ``apple'' = ``hello apple''. A string containing no character is empty, namely the empty string ``''. Concatenating any string with the empty string leaves that string unchanged:
+There are plenty of things behaving like 0 and 1. For example, we call a sequence of characters a string. Word, phrases, and sentences are strings, hence ``apple'', ``hello'', ``to be or not to be'', `` '' (a space) are all strings. One may concatenate\footnote{We use $\doubleplus$ but not $+$ because string concatenation isn't commutative, for counter example, abc $\doubleplus$ de = abcde $\ne$ deabc = de $\doubleplus$ abc.} strings, like ``hello'' $\doubleplus$ `` '' = ``hello '', ``hello '' $\doubleplus$ ``apple'' = ``hello apple''. A string containing no character is empty, namely the empty string ``''. Concatenating any string with the empty string leaves that string unchanged:
 
 \[
 \text{``''} \doubleplus S = S \doubleplus \text{``''} = S
