@@ -797,7 +797,7 @@ r : 1 &= 1 : \frac{r}{2}  && \text{Similar} \\
 r^2 &= 2
 \end{align*}
 
-Therefore, $r = \sqrt{2}$. It explains why the length-to-width ratio of ISO papers equals $\sqrt{2}$. Since irrational, it is non-repeating decimal, hence there is precision loss after rounding or unit changing. For example, the ratio of $B5$ is $250/176 = 1.42$. One may figure out the size of A0 by himself: since A0 covers $1 m^2$, let the width be $a$, the length be $a\sqrt{2}$; the area $s = a^2\sqrt{2} = 1$. Solving this equation gives $a = \sqrt{\frac{1}{\sqrt{2}}} \approx 0.841 m$. Hence the length is $1 / 0.841 = 1.189 m$, which is exactly as same as \cref{fig:ISO216}. At the same time, one may deduce the definition of B series: a B0 paper covers area of $\sqrt{2} m^2$. Each size of $B$ series is $\sqrt{2}$ times to the size of A series. We can further reason out that, when manufacturing rectangular bricks or tiles, to make them easy cutting to similar pieces, the length-to-width ratio must be $\sqrt{2}$. In this way, we demystified and clarified the rumors with rationality and mathematics. Some may think its dull, not romantic at all. While, the reasoning process itself is beautiful, reveals the theories and rules of nature and human activities. Aren't these theories and rules harmonic, beautiful, and romantic?
+Therefore, $r = \sqrt{2}$. It explains why the length-to-width ratio of ISO papers equals $\sqrt{2}$. Since irrational, it is non-repeating decimal, hence there is precision loss after rounding or unit changing. For example, the ratio of $B5$ is $250/176 = 1.42$. One may figure out the size of A0 by himself: since A0 covers $1 m^2$, let the width be $a$, the length be $a\sqrt{2}$; the area $s = a^2\sqrt{2} = 1$. Solving this equation gives $a = \sqrt{\frac{1}{\sqrt{2}}} \approx 0.841 m$. Hence the length is $1 / 0.841 \approx 1.189 m$, which is exactly as same as \cref{fig:ISO216}. At the same time, one may deduce the definition of B series: a B0 paper covers area of $\sqrt{2} m^2$. Each size of $B$ series is $\sqrt{2}$ times to the size of A series. We can further reason out that, when manufacturing rectangular bricks or tiles, to make them easy cutting to similar pieces, the length-to-width ratio must be $\sqrt{2}$. In this way, we demystified and clarified the rumors with rationality and mathematics. Some may think its dull, not romantic at all. While, the reasoning process itself is beautiful, reveals the theories and rules of nature and human activities. Aren't these theories and rules harmonic, beautiful, and romantic?
 
 \index{Luogeng Hua} \index{optimization method}
 We end this section with \enquote{the last lecture} of Chinese mathematician, Luogeng Hua\footnote{Hua died of a heart attack at the end of this lecture he gave in Tokyo on 12 June 1985 at the age of 74. The lecture was titled \emph{Theory, application, and its popularization}. After the lecture, Hua walked towards his wheelchair in applause, but unfortunately collapsed to the ground. He died at 10 PM that same night\citepage[p21]{ZhangJianan-2017}.}.
@@ -1819,14 +1819,14 @@ Substitute the second equation to the first,
 & (x - a)^2 + (kx + c - b)^2 = r^2  &&\text{substitute }y = kx + c \\
 & x^2 + a^2 - 2ax + k^2x^2 + d^2 + 2kdx - r^2 =0 && \text{let }d = c - b \\
 & (1 + k^2)x^2 + 2(kd - a)x + a^2 + d^2 - r^2 = 0 && \text{collect terms} \\
-& Ax^2 + 2Bx + C = 0
+& Ax^2 + Bx + C = 0
 \end{align*}
 
-where $A = 1 + k^2, B = kd - a, C = a^2 + d^2 - r^2$, the discriminant of this quadratic equation is $\Delta = \sqrt{4B^2 - 4AC} = 2\sqrt{B^2 - AC}$. There are three cases:
+where $A = 1 + k^2, B = 2(kd - a), C = a^2 + d^2 - r^2$, the discriminant of this quadratic equation is $\Delta = \sqrt{B^2 - 4AC}$. There are three cases:
 \begin{itemize}
-\item if $B^2 < AC$, the line is separate from the circle, hence no intersection.
-\item if $B^2 = AC$, the line is tangent to the circle, they have exactly one common point.
-\item if $B^2 > AC$, the line intersects the circle, they have two distinct common points.
+\item if $B^2 < 4AC$, the line is separate from the circle, hence no intersection.
+\item if $B^2 = 4AC$, the line is tangent to the circle, they have exactly one common point.
+\item if $B^2 > 4AC$, the line intersects the circle, they have two distinct common points.
 \end{itemize}
 
 The relation between two circles is described by two equations,
@@ -1853,7 +1853,7 @@ As shown in \cref{fig:P1}, after the first round of ruler and compass constructi
 
 The constructed magnitudes from the second round are solutions to linear and quadratic equations with coefficients in $K_1$; denote the set of these magnitudes as $K_2$. We repeat, round after round, which construct more and more magnitudes in $K_1, K_2, K_3, \dotsc$ including numbers like $1 + \sqrt{2} + \sqrt{2\sqrt{3} - \sqrt{5}}$. Can you give some more examples?
 
-The size of the set, as the round of construction increases, grows exponentially. The construction continues infinitely, every round is equivalent to solving linear and quadratic equations with coefficients constructed from previous round. The set of all constructible numbers is infinite, however, it does not contain $\sqrt[3]{2}$ (see \cref{app:gauss-wantzel-theorem}). Because it is not a solution to any linear or quadratic equation with rational coefficients, nor a solution to any linear or quadratic equation with coefficients in $K_1$, nor a solution to any linear or quadratic equation with coefficients in $K_2$ ... It can not be constructed by ruler and compass\footnote{$\sqrt[3]{2}$ is the unique real solution to cubic equation $x^3 - 2 = 0$, the other two roots are complex numbers of $-\sqrt[3]{2}\dfrac{1 \pm \sqrt{3}}{2}$, see chapter 6.}. Thereby, it's impossible to duplicate a cube. As shown in \cref{fig:heptagon}, the side length of a regular polygon of $n$ sides is $x = 2\sin(\dfrac{360\degree}{2n})$. It can be constructed by ruler and compass if and only if it is a solution to some linear or quadratic equation with coefficients in some $K_i$ (hence the side length is in $K_{i+1}$).
+The size of the set, as the round of construction increases, grows exponentially. The construction continues infinitely, every round is equivalent to solving linear and quadratic equations with coefficients constructed from previous round. The set of all constructible numbers is infinite, however, it does not contain $\sqrt[3]{2}$ (see \cref{app:gauss-wantzel-theorem}). Because it is not a solution to any linear or quadratic equation with rational coefficients, nor a solution to any linear or quadratic equation with coefficients in $K_1$, nor a solution to any linear or quadratic equation with coefficients in $K_2$ ... It can not be constructed by ruler and compass\footnote{$\sqrt[3]{2}$ is the unique real solution to cubic equation $x^3 - 2 = 0$, the other two roots are complex numbers of $-\sqrt[3]{2}\dfrac{1 \pm \sqrt{3}}{2}$, see chapter 6.}. Thereby, it's impossible to duplicate a cube. From \cref{fig:heptagon} further, the side length of a regular polygon of $n$ sides is $x = 2\sin(\dfrac{360\degree}{2n})$. It can be constructed by ruler and compass if and only if it is a solution to some linear or quadratic equation with coefficients in some $K_i$ (hence the side length is in $K_{i+1}$).
 
 By Gauss-Wantzel theorem, the regular polygon of 18 sides can't be constructed by ruler and compass because $18 = 2 \times 3^2$, isn't product of distinct Fermat's prime numbers and power of 2. It follows that, $\dfrac{1}{18}$ of $360\degree$, namely $20\degree$, can not be constructed, hence it's impossible to trisect $60\degree$. This shows the problem of trisection of an angle is insoluble.
 
@@ -2557,7 +2557,7 @@ This infinite series converges much faster than Leibniz's formula. The 10th term
 \frac{\pi}{4} = 4\tan^{-1} \frac{1}{5} - \tan^{-1} \frac{1}{239}
 \ee
 
-He used this formula to calculate $\pi$ to 100 decimal places. Today, people are competing to compute $\pi$ to many decimal places; it has become a challenge to the performance of computer algorithms. In 2025, the world record has been calculated to 3 million decimal places. $\pi$ has become a culture. In 2011, the International Mathematical Union designated March 14th of each year as International Mathematics Day, also known as \enquote{Pi Day}, to celebrate \enquote{the beauty and importance of mathematics in our daily lives.}
+He used this formula to calculate $\pi$ to 100 decimal places. Today, people are competing to compute $\pi$ to many decimal places; it has become a challenge to the performance of computer algorithms. In 2025, the world record has been calculated to 300,000,000,000,000 decimal places. $\pi$ has become a culture. In 2011, the International Mathematical Union designated March 14th of each year as International Mathematics Day, also known as \enquote{Pi Day}, to celebrate \enquote{the beauty and importance of mathematics in our daily lives.}
 
 \begin{figure}[htbp]
  \centering
@@ -2759,7 +2759,7 @@ Dedekind thus defined a partition of the line into two sets $(A_1, A_2)$, where 
 When analyze the set of all rational numbers using Dedekind cuts, we find that rational numbers are not continuous. For example, if $A_1$ contains all rational numbers less than or equal to 2, and $A_2$ contains all rational numbers greater than 2, this partition defines the rational number 2. However, consider a counterexample: let the lower class $A_1$ contain all negative rational numbers and non-negative rational numbers whose squares are less than or equal to 2; let the upper class $A_2$ contain the remaining rational numbers. It is not difficult to see that in this partition, the lower class does not have a maximum number, and the upper class does not have a minimum number. This shows that there are gaps between rational numbers, and if we cut through these gaps, the knife will fall into emptiness. This partition actually defines a new number $\sqrt{2}$, but it is not a rational number, as shown in \cref{fig:Dedekind-cut}.
 
 \begin{align*}
-A_1 &= \{r | r^2 < 2\}  & A_2 &= \{r | r^2 > 2\}
+A_1 &= \{r | r^2 \leq 2\}  & A_2 &= \{r | r^2 > 2\}
 \end{align*}
 
 \label{sec:Dedekind-cut}
@@ -2819,12 +2819,12 @@ However, this move turned out to be a blessing in disguise. In Brauschweig, Dede
   \begin{proof}
 The error between $\pi$ and $\dfrac{355}{113}$ is,
 \[
-\delta \approx |\frac{355}{133} - 3.1415926| = 2.67 \times 10^{-7}
+\delta \approx |\frac{355}{113} - 3.1415926| = 2.67 \times 10^{-7}
 \]
 Assume there is some irreducible fraction $\dfrac{b}{a}$ that is closer to $\pi$, then
 
 \[
-|\frac{b}{a} - \frac{355}{113}| \leq |\frac{b}{a} - \pi| + |\pi - \frac{355}{133}| \leq \delta + \delta = 2\delta
+|\frac{b}{a} - \frac{355}{113}| \leq |\frac{b}{a} - \pi| + |\pi - \frac{355}{113}| \leq \delta + \delta = 2\delta
 \]
 Simplifying the left-hand side:
 \[
@@ -2899,7 +2899,7 @@ S_3 &= \frac{(n + 1)^4 - 1 - 6S_2 - 4S_1 - n}{4}  \\
     &= \frac{(n+1)^4 - n(n+1)(2n+1) - 2n(n+1) -(n+1)}{4} \\
     &= \frac{(n+1)[(n+1)^3 - n(2n+1) - (2n+1)])}{4} \\
     &= \frac{(n+1)^2[(n+1)^2 - 2n - 1]}{4} \\
-    &= (\frac{n(n+1)}{2})^2 = (S_2)^2
+    &= (\frac{n(n+1)}{2})^2 = (S_1)^2
 \end{align*}
 }
 
@@ -2977,19 +2977,20 @@ f'(x) & = \lim_{\Delta x \to 0} \frac{f(x+\Delta x) - f(x)}{\Delta x} \\
 \Question{Compute approximate values of $\pi$ using the first few terms of the Leibniz formula and the Machin formula, and compare their convergence rates. If you know programming, try calculating an approximate value of $\pi$ using the first 100 terms.
 
 \vspace{2mm}
-Leibniz formula:
+Leibniz formula (first 7 terms):
 \[
-4(1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \frac{1}{9} - \frac{1}{11} + \frac{1}{13}) = 3.28
+\pi = 4\frac{\pi}{4} = 4(1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \frac{1}{9} - \frac{1}{11} + \frac{1}{13}) = 3.28
 \]
 
-Machin formula:
+Machin formula (first 7 terms):
 \begin{align*}
- & 4[4(1 - \frac{1}{3}\frac{1}{5} + \frac{1}{5}(\frac{1}{5})^3 - \frac{1}{7}(\frac{1}{5})^5 + \frac{1}{9}(\frac{1}{5})^7 - \frac{1}{11}(\frac{1}{5})^9 + \frac{1}{13}(\frac{1}{5})^{11}) - \\
-& (1 - \frac{1}{3}\frac{1}{239} + \frac{1}{5}(\frac{1}{239})^3 - \frac{1}{7}(\frac{1}{239})^5 + \frac{1}{9}(\frac{1}{239})^7 - \frac{1}{11}(\frac{1}{239})^9 + \frac{1}{13}(\frac{1}{239})^{11})] \\
+\pi &= 4\frac{\pi}{4} = 4[4\tan^{-1}\frac{1}{5} - \tan^{-1}\frac{1}{239}] \\
+ &= 4[4(\frac{1}{5} - \frac{1}{3}(\frac{1}{5})^3 + \frac{1}{5}(\frac{1}{5})^6 - \frac{1}{7}(\frac{1}{5})^7 + \frac{1}{9}(\frac{1}{5})^9 - \frac{1}{11}(\frac{1}{5})^{11} + \frac{1}{13}(\frac{1}{5})^{13}) - \\
+& (\frac{1}{239} - \frac{1}{3}(\frac{1}{239})^3 + \frac{1}{5}(\frac{1}{239})^5 - \frac{1}{7}(\frac{1}{239})^7 + \frac{1}{9}(\frac{1}{239})^9 - \frac{1}{11}(\frac{1}{239})^{11} + \frac{1}{13}(\frac{1}{239})^{13})] \\
 = & 3.1415926536
 \end{align*}
 
-Scratch program for calculating $\pi$ using Leibniz formula:
+Scratch program for calculating $\pi$ using Leibniz formula (first 100 terms):
 
 \begin{center}
  \includegraphics[scale=0.4]{img/scratch-leibniz}
@@ -2997,7 +2998,7 @@ Scratch program for calculating $\pi$ using Leibniz formula:
  \label{fig:scratch-leibniz}
 \end{center}
 
-Scratch program for calculating $\pi$ using Machin formula:
+Scratch program for calculating $\pi$ using Machin formula (first 100 terms):
 \begin{center}
  \includegraphics[scale=0.4]{img/scratch-machin}
  \captionof{figure}{Machin formula calculation, result: 3.141593}

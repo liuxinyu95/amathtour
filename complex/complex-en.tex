@@ -1938,7 +1938,7 @@ is about quadratic integers in $\mathbb{Z}[\sqrt{-3}]$. What Gauss did for $\mat
 The norm of quadratic integers $\xi = a + b\sqrt{-m}$ is $N(\xi) = \xi\overline{\xi} = (a + b\sqrt{-m})(a - b\sqrt{-m}) = a^2 + mb^2$.
 \end{definition}
 
-It is not by chance that the norm equals the constant term of the quadratic equation (see \cref{qn:quadratic-norm}). In $\mathbb{Z}[\sqrt{-2}]$, the norm is $a^2 + 2b^2$ and the units are $\mu = \pm 1$. We next check whether Euclidean algorithm is valid in $\mathbb{Z}[\sqrt{-2}]$, in other words, for any quadratic integers $\alpha, \beta \ne 0$, whether there are quadratic integers $\rho, \gamma$ satisfying $\alpha = \rho \beta + \gamma$ and $N(\gamma) < N(\beta)$. Suppose $\rho = m + n\sqrt{-2}$, then $\rho \beta = m\beta + n\sqrt{-2}\beta$ is a lattice of rectangles spanned by vectors $\beta$ and $i\sqrt{2}\beta$ as shown in \cref{fig:Z-sqrt-2}. Since $i\sqrt{2}\beta$ is obtained by rotating $\beta$ by 90 degrees, followed by scaling up $\sqrt{2}$ times, the width of the rectangle is $|\beta|$ and the length is $\sqrt{2}|\beta|$. Any quadratic integer $\alpha$ lies in some rectangle, hence the square of its distance to the closest corner, by Pythagorean theorem, is,
+It is not by chance that the norm equals the constant term of the quadratic equation (see \cref{qn:quadratic-norm}). In $\mathbb{Z}[\sqrt{-2}]$, the norm is $a^2 + 2b^2$ and the units are $\mu = \pm 1$. We next check whether Euclidean algorithm is valid in $\mathbb{Z}[\sqrt{-2}]$, in other words, for any quadratic integers $\alpha, \beta \ne 0$, whether there are quadratic integers $\rho, \gamma$ satisfying $\alpha = \rho \beta + \gamma$ and $N(\gamma) < N(\beta)$. Suppose $\rho = m + n\sqrt{-2}$, then $\rho \beta = m\beta + n\sqrt{-2}\beta$ is a rectangular lattice spanned by vectors $\beta$ and $i\sqrt{2}\beta$ as shown in \cref{fig:Z-sqrt-2}. Since $i\sqrt{2}\beta$ is obtained by rotating $\beta$ by 90 degrees, followed by scaling up $\sqrt{2}$ times, the width of the rectangle is $|\beta|$ and the length is $\sqrt{2}|\beta|$. Any quadratic integer $\alpha$ lies in some rectangle, hence the square of its distance to the closest corner, by Pythagorean theorem, is,
 
 \begin{figure}[htbp]
  \centering
@@ -1965,7 +1965,7 @@ where 2 cannot be further factorized. Otherwise, suppose $2 = (a + b\sqrt{-3})(c
 4 = N(2) = N(a+b\sqrt{-3})N(c + d\sqrt{-3}) = (a^2 + 3b^2)(c^2 + 3d^2)
 \]
 
-It's impossible that $a^2 + 3b^2 = c^2 + 3d^2 = 2$, in other words, no solution to this equation in integers. Therefore, either $a^2 + 3b^2$ or $c^2 + 3d^2$ is 1, which corresponds to a unit; the other is an associate of 2. This shows 2 cannot be further factorized. The norms of $1 \pm i\sqrt{3}$ are both 4, one may show they cannot be further factorized in the same way. It turns out there are two distinct ways to factorize 4, in other words, not unique factorization. To understand why, as shown in \cref{fig:Z-sqrt-3}, the products of $\rho \beta$ form a lattice of rectangles spanned by $\beta$ and $i\sqrt{3}\beta$. Any $\alpha$ lies in some rectangle; the square of its distance to the closest corner is,
+It's impossible that $a^2 + 3b^2 = c^2 + 3d^2 = 2$, in other words, no solution to this equation in integers. Therefore, either $a^2 + 3b^2$ or $c^2 + 3d^2$ is 1, which corresponds to a unit; the other is an associate of 2. This shows 2 cannot be further factorized. The norms of $1 \pm i\sqrt{3}$ are both 4, one may show they cannot be further factorized in the same way. It turns out there are two distinct ways to factorize 4, in other words, not unique factorization. To understand why, as shown in \cref{fig:Z-sqrt-3}, the products of $\rho \beta$ form a rectangular lattice spanned by $\beta$ and $i\sqrt{3}\beta$. Any $\alpha$ lies in some rectangle; the square of its distance to the closest corner is,
 
 \begin{align*}
 N(\alpha - \rho \beta) &= c^2 = a^2 + b^2  && \text{by Pythagorean theorem} \\
@@ -2010,7 +2010,7 @@ Since $\rho \beta \in \mathbb{Z}[\sqrt{-3}]$, when $\dfrac{1}{2}\beta + \dfrac{\
 If $a-3b$ or $a + b$ is odd, then the center of the rectangle does not correspond to quadratic integer; in this case, $a, b$ are in different parity. Conversely, if $a, b$ are in same parity, then the center of the rectangle corresponds to some quadratic integer, the Euclidean algorithm is invalid. For the counter example of $4 = 2 \times 2 = (1 + i\sqrt{3})(1 - i\sqrt{3})$, indeed $a = b = 1$ both are odd. While in the case of \cref{fig:Z-omega}, $\beta = 2 + i\sqrt{3}$, where $a = 2, b=1$ are in different parity, hence $\alpha$ cannot lie at the center of the rectangle, Euclidean algorithm is valid, and unique factorization holds. In Euler's proof to Fermat's Last Theorem of $n=3$, indeed it demands $a, b$ in different parity, which asserts unique factorization. Therefore, when $a^2 + 3b^2$ is a cube, the relatively prime $(a + bi\sqrt{3})(a - bi\sqrt{3})$ each is a cube (\cref{qn:coprime-of-conjugates} asks to show $a \pm bi\sqrt{3}$ are relatively prime).
 
 \index{Eisenstein integers}
-This completes the proof of Fermat's Last Theorem of $n=3$. The story of $\mathbb{Z}[\sqrt{-3}]$ continues. Gaussian integers lie in the lattice of squares in complex plane. Eisenstein (\cref{fig:Eisenstein}) in 1844 studied the complex integers lie in the lattice of equilateral triangles, which are called Eisenstein integers nowadays. The two roots of monic quadratic equation $x^2 + x + 1 = 0$ are $\omega = \dfrac{-1}{2} \pm \dfrac{i\sqrt{3}}{2}$. By the definition of algebraic integers, though with terms of $\dfrac{1}{2}$, they are all algebraic integers! More generally, the roots of monic quadratic equation $x^2 - (2a - b)x + (a^2 - ab + b^2)$ are in the form of $a + b \omega$. They form Eisenstein integers, denoted by $\mathbb{Z}[\omega]$. Eisenstein defined the norm as $N(a + b\omega) = a^2 -ab + b^2$ (see \cref{qn:norm-of-z-omega}), and showed that Euclidean algorithm existed in $\mathbb{Z}[\omega]$, hence unique factorization held. Actually, $\mathbb{Z}[\sqrt{-3}]$ is just a subset of $\mathbb{Z}[\omega]$.
+This completes the proof of Fermat's Last Theorem of $n=3$. The story of $\mathbb{Z}[\sqrt{-3}]$ continues. Gaussian integers lie in the square lattice in complex plane. Eisenstein (\cref{fig:Eisenstein}) in 1844 studied the complex integers lie in the hexagonal lattice, which are called Eisenstein integers nowadays. The two roots of monic quadratic equation $x^2 + x + 1 = 0$ are $\omega = \dfrac{-1}{2} \pm \dfrac{i\sqrt{3}}{2}$. By the definition of algebraic integers, though with terms of $\dfrac{1}{2}$, they are all algebraic integers! More generally, the roots of monic quadratic equation $x^2 - (2a - b)x + (a^2 - ab + b^2)$ are in the form of $a + b \omega$. They form Eisenstein integers, denoted by $\mathbb{Z}[\omega]$. Eisenstein defined the norm as $N(a + b\omega) = a^2 -ab + b^2$ (see \cref{qn:norm-of-z-omega}), and showed that Euclidean algorithm existed in $\mathbb{Z}[\omega]$, hence unique factorization held. Actually, $\mathbb{Z}[\sqrt{-3}]$ is just a subset of $\mathbb{Z}[\omega]$.
 
 \begin{figure}[htbp]
   \centering
@@ -2156,7 +2156,7 @@ Every ideal of Gaussian integers is a principal ideal.
 For any ideal $I$ of Gaussian integers, denote the non-zero Gaussian integer with the minimum norm as $\beta$. By the definition of norm, $\beta$ exists as long as $I \ne (0)$. We claim that $I = (\beta)$, otherwise there exists some $\alpha \in I$, but $a \notin (\beta)$. From the Euclidean algorithm, $\gamma = \alpha - \beta \rho$ and the norm $N(\gamma) < N(\beta)$. By the definition of ideal, $\alpha \in I, \beta \rho \in I$, hence $\gamma = \alpha - \beta \rho \in I$. But the norm of $\gamma$ is less than the norm of $\beta$, contradicts with our selection that $\beta$ is the non-zero Gaussian integers with the \emph{minimum} norm. Therefore, $\gamma = 0$, which proves $\beta$ divides $\alpha$.
 \end{proof}
 
-There is geometric interpretation to this result. For every non-zero Gaussian integer $\beta$, its multiples $\rho \beta$ form a lattice of squares with side length of $|\beta|$. While the multiples of $\beta$ exactly forms the ideal of $(\beta)$. In particular, the ideal of $(1)$ is a lattice of unit squares. Every ideal of Gaussian integers is a lattice of squares, which are similar to (1), as shown in \cref{fig:zi}. Similarly for $\mathbb{Z}[\sqrt{-2}]$, the multiples of any $\beta$ lie in the lattice of rectangles with length of $\sqrt{2}|\beta|$ and width of $|\beta|$. Every ideal in $\mathbb{Z}[\sqrt{-2}]$ is a principal ideal, corresponding to a similar lattice of squares (with the length to width ratio of $\sqrt{2}$, as shown in \cref{fig:Z-sqrt-2}).
+There is geometric interpretation to this result. For every non-zero Gaussian integer $\beta$, its multiples $\rho \beta$ form a square lattice with side length of $|\beta|$. While the multiples of $\beta$ exactly forms the ideal of $(\beta)$. In particular, the ideal of $(1)$ is a square lattice of unit length. Every ideal of Gaussian integers is a square lattice, which are similar to (1), as shown in \cref{fig:zi}. Similarly for $\mathbb{Z}[\sqrt{-2}]$, the multiples of any $\beta$ lie in the rectangular lattice with length of $\sqrt{2}|\beta|$ and width of $|\beta|$. Every ideal in $\mathbb{Z}[\sqrt{-2}]$ is a principal ideal, corresponding to a similar square lattice (with the length to width ratio of $\sqrt{2}$, as shown in \cref{fig:Z-sqrt-2}).
 
 However, $\mathbb{Z}[\sqrt{-5}]$ exceptionally contains different lattice (not similar). The unique factorization fails for $\mathbb{Z}[\sqrt{-5}]$; for counter example, $6 = 2 \times 3 = (1 + i\sqrt{5})(1 - i\sqrt{5})$. Consider the sum of ideals:
 
@@ -2172,7 +2172,7 @@ A &= (2) + (1 + i\sqrt{5}) = \{2\alpha + (1 + i\sqrt{5})\beta | \alpha, \beta \i
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.3]{img/ideal-sum}
- \caption{The algebraic integers in $\mathbb{Z}{\sqrt{-5}}$ lie in the gray lattice; the lattice of triangles in black is $(2, 1 + i\sqrt{5})$.}
+ \caption{The algebraic integers in $\mathbb{Z}{\sqrt{-5}}$ lie in the gray lattice; the black lattice is $(2, 1 + i\sqrt{5})$.}
  \label{fig:ideal-sum}
 \end{figure}
 
@@ -2189,7 +2189,7 @@ Equating the real and imaginary parts:
 \pm 1 &= 2m + n & n = 0
 \end{align*}
 
-It turns out $m = \pm\dfrac{1}{2}$, contradicting with that $m$ is an integer. Therefore, $A = (2, 1 + i\sqrt{5})$ is not a principal ideal, whose lattice is not the shape of rectangles, but triangles as shown in \cref{fig:ideal-sum}. Despite a non-principal ideal, $A$ acts like \enquote{the highest common divisor.} As \enquote{to divide is to contain,} $A$ contains (2), it acts like a divisor of 2; meanwhile, $A$ contains $(1 + i\sqrt{5})$, it also acts like a divisor of $1 + i\sqrt{5}$; therefore, $A$ acts like the highest common divisor of 2 and $1 + i\sqrt{5}$ (analogue to rational integers and Gaussian integers, if the highest common divisor of $a$ and $b$ is $d = (a, b)$, then $(a) + (b) = (d)$).
+It turns out $m = \pm\dfrac{1}{2}$, contradicting with that $m$ is an integer. Therefore, $A = (2, 1 + i\sqrt{5})$ is not a principal ideal, whose lattice is not rectangular, but parallelogrammic as shown in \cref{fig:ideal-sum}. Despite a non-principal ideal, $A$ acts like \enquote{the highest common divisor.} As \enquote{to divide is to contain,} $A$ contains (2), it acts like a divisor of 2; meanwhile, $A$ contains $(1 + i\sqrt{5})$, it also acts like a divisor of $1 + i\sqrt{5}$; therefore, $A$ acts like the highest common divisor of 2 and $1 + i\sqrt{5}$ (analogue to rational integers and Gaussian integers, if the highest common divisor of $a$ and $b$ is $d = (a, b)$, then $(a) + (b) = (d)$).
 
 Moreover, $A$ acts like a prime. Let's see how the principal ideal $(p)$ generated by a rational prime $p$ behaves. First of all, a prime $p \ne 1$. Actually the ideal (1) is the set of all integers (see \cref{qn:trivial-ideals}), and indeed, the ideal $(p)$ is not $\mathbb{Z}$ because it does not include 1. Second, $p$ can be divided only by 1 and itself. By \enquote{to divide is to contain,} only ideal (1), namely all integers, and $(p)$ itself contain $(p)$; any other ideal does not contain $(p)$. It's similar for $A$: first, $A$ is not identical to (1) as we've shown that $1 \notin A$; second, any other ideal except (1) and $A$ itself does not contain $A$; otherwise, suppose there is some ideal $I$ containing $A$ and $I$ has some element not in $A$, denoted by $\alpha = 2m + 1 + n(1 + i\sqrt{5})$. But altering it to $\alpha - 1 = 2m + n(1 + i\sqrt{5})$, which belongs to $A$; negating it, $1 - \alpha$ also belongs to $A$ (see \cref{qn:zero-in-ideal}). Now $\alpha \in I, 1 - \alpha \in A \subset I$, by the definition of ideal, $\alpha + (1 - \alpha) = 1 \in I$. Therefore, $I = (1)$.
 
@@ -2521,7 +2521,7 @@ One may apply d'Alembert theorem (see \cref{qn:conjugated-root}) and Viète's th
   &= a^2 + mb^2 + pa + q + b(2a + p)\sqrt{m}  && (*)
 \end{align*}
 
-As $m \ne 0$ and square free, $b(2a + p) = 0$, negate it to $-b(2a + p) = 0$. Substituting $-b$ into (*) yields:
+As $m \ne 0$ and square free, $b(2a + p) = 0$, negate it to $-b(2a + p) = 0$. Replacing $b$ in (*) with $-b$ yields:
 
 \begin{align*}
 a^2 + m(-b)^2 + pa + q - b(2a + p)\sqrt{m} &= 0  \\
@@ -2604,11 +2604,11 @@ Note the norm of $\omega$ is $N(\omega) = (-\dfrac{1}{2})^2 + (\dfrac{\sqrt{3}}{
 \Question{Draw the lattice of Eisenstein integers of $\rho \beta$.
 
 \vspace{2mm}
-The units in above exercise span the lattice of Eisenstein integers. As shown in \cref{fig:integers-of-z-omega}, Eisenstein integers lie in the lattice of equilateral triangles. Let $\rho = m + n\omega$, where $m, n$ are integers. $\rho \beta = m\beta + n\omega\beta$. By Euler's identity, $\omega = e^{i\frac{2\pi}{3}}$, multiplying by $\omega$ is turning left by 120 degrees. Therefore, $\rho \beta$ are lattice of equilateral triangles generated by $\beta$ and the vector from rotating it by 120 degrees.
+The units in above exercise span the lattice of Eisenstein integers. As shown in \cref{fig:integers-of-z-omega}, Eisenstein integers lie in the hexagonal lattice. Let $\rho = m + n\omega$, where $m, n$ are integers. $\rho \beta = m\beta + n\omega\beta$. By Euler's identity, $\omega = e^{i\frac{2\pi}{3}}$, multiplying by $\omega$ is turning left by 120 degrees. Therefore, $\rho \beta$ are hexagonal lattice generated by $\beta$ and the vector from rotating it by 120 degrees.
 
 \begin{center}
   \includegraphics[scale=0.2]{img/z-omega1}
-  \captionof{figure}{Eisenstein integers lie in the gray lattice of equilateral triangles; $\rho \beta$ is a similar lattice in black color.}
+  \captionof{figure}{Eisenstein integers lie in the gray hexagonal lattice; $\rho \beta$ is a similar lattice in black color.}
   \label{fig:integers-of-z-omega}
 \end{center}
 }
