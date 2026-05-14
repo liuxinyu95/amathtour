@@ -58,9 +58,9 @@
 \usepackage{textcomp}
 \usepackage{mdframed}
 \usepackage{sourcecodepro}
-\usepackage{cleveref}
 \usepackage{etoolbox}
 \usepackage{csquotes}
+\usepackage{aliascnt, cleveref}
 
 \titleformat{\paragraph}
 {\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
@@ -252,12 +252,18 @@
 
 \renewcommand{\theQuestion}{\theExercise.\arabic{Question}} % for question reference
 \renewcommand{\QuestionNB}{\theExercise.\arabic{Question}.\ } % for question presentation
-\crefname{Exercise}{Exercise}{Exercises}
-\crefalias{Question}{Exercise}
+
+% example: folktheorem{proposition}{Proposition}
+\newcommand{\folktheorem}[2]{
+  \ifcsname #1 \endcsname \else
+    \newaliascnt{#1}{theorem}
+    \newtheorem{#1}[#1]{#2}
+    \aliascntresetthe{#1}
+  \fi
+}
 
 % For Chinese Language support
 \DeclareOption{cn}{
-
   % detect and select Chinese font
   % ------------------------------
   % fc-list :lang=zh    % list all Chinese fonts
@@ -305,25 +311,27 @@
   \addto\captionsenglish{\renewcommand{\tablename}{表}}
   \addto\captionsenglish{\renewcommand{\proofname}{证明}}
 
-  \newtheorem{axiom}{公理}[section]
   \newtheorem{theorem}{定理}[section]
-  \newtheorem{lemma}[theorem]{引理}
-  \newtheorem{proposition}[theorem]{命题}
-  \newtheorem{corollary}[theorem]{推论}
-  \newtheorem{definition}[theorem]{定义}
-  \newtheorem{example}{例}[section]
+  \folktheorem{axiom}{公理}
+  \folktheorem{lemma}{引理}
+  \folktheorem{proposition}{命题}
+  \folktheorem{corollary}{推论}
+  \folktheorem{definition}{定义}
+  \folktheorem{example}{例}
 
   \renewcommand\ExerciseName{练习}
   \renewcommand\AnswerName{答案}
   \renewcommand\AnswerListName{答案}
+
   \crefname{Exercise}{练习}{练习}
   \crefname{equation}{式}{式}
   \crefname{figure}{图}{图}
   \crefname{table}{表}{表}
-  \crefname{proposition}{命题}{命题}
   \crefname{theorem}{定理}{定理}
+  \crefname{proposition}{命题}{命题}
   \crefname{lemma}{引理}{引理}
   \crefname{corollary}{推论}{推论}
+  \crefname{example}{例}{例}
   \crefname{section}{章节}{章节}
   \crefname{appendix}{附录}{附录}
   \crefname{page}{页}{页}
@@ -361,33 +369,34 @@
 
   \theoremstyle{plain}
   \ifdefined\theorem\else
-  \newtheorem{theorem}{Theorem}[section]
+    \newtheorem{theorem}{Theorem}[section]
   \fi
 
-  \ifdefined\lemma\else
-  \newtheorem{lemma}[theorem]{Lemma}
-  \fi
+  \folktheorem{lemma}{Lemma}
+  \crefname{lemma}{lemma}{lemmas}
+  \Crefname{lemma}{Lemma}{Lemmas}
 
-  \ifdefined\proposition\else
-  \newtheorem{proposition}[theorem]{Proposition}
-  \fi
+  \folktheorem{proposition}{Proposition}
+  \crefname{proposition}{proposition}{propositions}
+  \Crefname{proposition}{Proposition}{Propositions}
 
-  \ifdefined\corollary\else
-  \newtheorem{corollary}[theorem]{Corollary}
-  \fi
+  \folktheorem{corollary}{Corollary}
+  \crefname{corollary}{corollary}{corollaries}
+  \Crefname{corollary}{Corollary}{Corollaries}
 
   \theoremstyle{definition}
-  \ifdefined\axiom\else
-  \newtheorem{axiom}{Axiom}[section]
-  \fi
+  \folktheorem{axiom}{Axiom}
 
-  \ifdefined\definition\else
-  \newtheorem{definition}[theorem]{Definition}
-  \fi
+  \folktheorem{definition}{Definition}
+  \crefname{definition}{definition}{definitions}
+  \Crefname{definition}{Definition}{Definitions}
 
-  \ifdefined\example\else
-  \newtheorem{example}{Example}[section]
-  \fi
+  \folktheorem{example}{Example}
+  \crefname{example}{example}{examples}
+  \Crefname{example}{Example}{Examples}
+
+  \crefname{Exercise}{exercise}{exercises}
+  \Crefname{Exercise}{Exercise}{Exercises}
 
   \newcommand{\underdot}{\emph}
 
