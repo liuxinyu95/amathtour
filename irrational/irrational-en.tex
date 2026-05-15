@@ -1317,7 +1317,7 @@ One may image how hard to print continued fractions before the invention of mode
 
 \Question{Suppose $a, b$ are coprime odd numbers, show that $\dfrac{a \pm b}{2}$ are coprime. \label{qn:coprime-of-half-a-pm-b}}
 
-\Question{The fundamental theorem of arithmetic states that every positive integer (except 1) can be represented in exactly one way apart from rearrangement as a product of one or more primes. Use this theorem to show: given $a, b$ being coprime, if $ab = c^2$, then both $a$ and $b$ are squares. \label{qn:coprime-product-as-square}}
+\Question{The fundamental theorem of arithmetic states that every positive integer (except 1) can be represented in exactly one way apart from rearrangement as a product of one or more primes. Use this theorem to show: given relatively prime $a, b$, if $ab = c^2$, then both $a$ and $b$ are squares. \label{qn:coprime-product-as-square}}
 
 \Question{Find all prime numbers within 100 with sieve of Eratosthenes. \label{qn:seive-of-eratosthenes-100}}
 
@@ -1325,11 +1325,11 @@ One may image how hard to print continued fractions before the invention of mode
 
 \Question{Given a line $l$ and a point $p$ out of it, draw a line parallel to $l$ through $p$. \label{qn:parallel-through-p}}
 
-\Question{The two legs of a compass close naturally due to gravity when lifted off the plane in ancient Greek times, which couldn't be used to mark off a segment directly as it does today. Given a line segment $AB$, how to mark its length off a line $l$ with such a compass? \label{qn:mark-off-segment}}
+\Question{The two legs of a compass close naturally when lifted off the plane in ancient times, which couldn't be used to mark off a segment directly as today. Given a line segment $AB$, how to mark its length off a line $l$ with such a compass? \label{qn:mark-off-segment}}
 
 \Question{For the argument in the proof to the Euclidean algorithm, \enquote{for the chain of remainders: $b > r_0 > r_1 > r_2 > \dotsb \ge 0$, since the remainder can't be negative and the starting number is finite, it eventually terminates.} Why can not $r_{n}$ infinitely close to 0 but not be 0? Why does the algorithm terminate? What does the precondition that $a$ and $b$ are commensurable assert?}
 
-\Question{For linear Diophantine equation $ax + by = c$, suppose $x_1$, $y_1$ and $x_2$, $y_2$ are two pairs of integral solution. Show that the minimum of $|x_1 - x_2|$ is $b/(a, b)$ and the minimum of $|y_1 - y_2|$ is $a/(a, b)$.}
+\Question{For linear Diophantine equation $ax + by = c$, suppose $x_1$, $y_1$ and $x_2$, $y_2$ are two pairs of integral solution. Show that the minimum of $|x_1 - x_2|$ is $b/(a, b)$ and the minimum of $|y_1 - y_2|$ is $a/(a, b)$ where $(a, b)$ is the greatest common divisor of $a$ and $b$.}
 
 \Question{List the fewest steps to obtain 6 litres of water with two jugs of 9 litres and 4 litres. \label{qn:best-steps-water}}
 
@@ -1377,12 +1377,12 @@ See the lines in \cref{fig:pythagoras-mosaic}.
 \end{center}
 }
 
-\Question{If $a, b$ are coprime, show that $\dfrac{a \pm b}{2}$ are coprime.
+\Question{If $a, b$ are coprime odd numbers, show that $\dfrac{a \pm b}{2}$ are coprime.
   \begin{proof}
     Denote the greatest common divisor of $\dfrac{a \pm b}{2}$ by $d$, such that $dm = \dfrac{a + b}{2}, dn = \dfrac{a - b}{2}$ for some integers $m, n$. Their sum is $a = dm + dn = d(m + n)$, hence $d$ divides $a$; their difference is $b = dm - dn = d (m - n)$, hence $d$ divides $b$, thereby, $d$ is a common divisor of $a, b$. But $a, b$ are coprime, hence $d$ can only be 1, which implies $\dfrac{a \pm b}{2}$ are coprime.
   \end{proof}
 }
-\Question{$a, b$ are coprime, if $ab = c^2$, show that both $a$ and $b$ are squares.
+\Question{Suppose $a, b$ are coprime, if $ab = c^2$, show that both $a$ and $b$ are squares.
   \begin{proof}
     By the fundamental theorem of arithmetic, represent $a, b$ as product of prime numbers: $a = p_1^{a_1} p_2^{a_2} \dotsm p_n^{a_n}$ and $b = q_1^{b_1} q_2^{b_2} \dotsm q_m^{b_m}$ where $p_i, q_j$ are prime. As $a, b$ are coprime, 1 is their only common divisor, hence $p_i \ne q_j$. Their product is a square $c^2 = p_1^{a_1} p_2^{a_2} \dotsm p_n^{a_n} q_1^{b_1} q_2^{b_2} \dotsm q_m^{b_m}$, which implies $a_i, b_j$ are all even, therefore, $a, b$ are both squares.
   \end{proof}
@@ -1405,7 +1405,7 @@ See the lines in \cref{fig:pythagoras-mosaic}.
 \Question{Given a line segment $AB$, (1) draw a line perpendicular to it at $A$; (2) draw a line perpendicular to it through a point $C$ out of $AB$.
 
 \vspace{2mm}
-(1) As shown in \cref{fig:perp-of-point}, extend $AB$ backward; draw a circle at center of $A$ with radius of $AB$, which intersects $BA$ at $B'$. Draw two circles at the center of $B$ and $B'$ with radius of $BB'$. Connect the two intersections $CD$ of the circle, which is the perpendicular line to be constructed.
+(1) As shown in \cref{fig:perp-of-point}, extend $AB$ backward; draw a circle at the center of $A$ with radius of $AB$, which intersects $BA$ at $B'$. Draw two circles at the center of $B$ and $B'$ with radius of $BB'$. Connect the two intersections $CD$ of the circle, which is the perpendicular line to be constructed.
 \begin{center}
  \includegraphics[scale=0.25]{img/perp}
  \captionof{figure}{Perpendicular line through an end.}
@@ -1427,7 +1427,7 @@ See the lines in \cref{fig:pythagoras-mosaic}.
 From the previous exercise, firstly, draw a perpendicular line $m$ to $l$ through point $p$, then draw another perpendicular line $n$ to $m$ through $p$. It follows that line $l$ is parallel to $n$.
 }
 
-\Question{The two legs of a compass close naturally due to gravity when lifted off the plane in ancient Greek times, which couldn't be used to mark off a segment directly as it does today. Given a line segment $AB$, how to mark its length off a line $l$ with such a compass?
+\Question{The two legs of a compass close naturally when lifted off the plane in ancient times, which couldn't be used to mark off a segment directly as today. Given a line segment $AB$, how to mark its length off a line $l$ with such a compass?
 
 \begin{center}
  \includegraphics[scale=0.3]{img/mark-off}
