@@ -2749,9 +2749,9 @@ Clearly, this definition was influenced by the Pythagorean concept of commensura
 \subsection{Dedekind cut}
 \index{Dedekind cut}
 
-To address the issue of rigor in the foundations of calculus, mathematicians in the 19th century began to rethink some of the confusing concepts used by Newton, Leibniz, Euler, and others, including infinitesimals and infinite series. Through the work of Cauchy and Weierstrass, concepts such as limits and convergence were finally established. However, one fundamental problem remained unresolved: the notion of real numbers or \enquote{continuum}. Calculus, with strong practical background, is a powerful tool for solving physical world problems. Natural numbers are discrete, one by one, and rational numbers were seen by the Greeks as the result of measuring things with a given ruler. In reality however, almost all physical quantities, like length, speed, force, temperature, pressure, and etc., are continuous and incommensurable. People recognized the continuity of the real world where arose the notion of continuum. Calculus was built on the continuity of real numbers. However, there lacked of a satisfactory rigorous definition of real numbers. Interpreting rational numbers as the points on a line, they are dense, meaning that between any two rational numbers, no matter how close they are, there always exists another rational number. However, there are gaps, for example, the point at the position of $\sqrt{2}$ does not correspond to any rational number. In other words, rational numbers are incomplete and discontinuous. But what does a seamless and complete continuum exactly mean to describe a line?
+To address the issue of rigor in the foundations of calculus, mathematicians in the 19th century began to rethink some of the confusing concepts used by Newton, Leibniz, Euler, and others, including infinitesimals and infinite series. Through the work of Cauchy and Weierstrass, concepts such as limits and convergence were finally established. However, one fundamental problem remained unresolved: the notion of real numbers or \enquote{continuum}. Calculus, with strong practical background, is a powerful tool for solving physical world problems. Natural numbers are discrete, one by one, and rational numbers were seen by the Greeks as the result of measuring things with a given ruler. In reality however, almost all physical quantities, like length, speed, force, temperature, pressure, and etc., concern continuous and incommensurable. People recognized the continuity of the real world where arose the notion of continuum. However, there lacked of a satisfactory rigorous definition of real numbers on which Calculus was built. Interpreting rational numbers as the points on a line, they are dense, meaning that between any two rational numbers, no matter how close they are, there always exists another rational number. However, there are gaps, for example, the point at the position of $\sqrt{2}$ does not correspond to any rational number. In other words, rational numbers are incomplete and discontinuous. But what does a seamless and complete continuum exactly mean to describe a line?
 
-Dedekind, after years of consideration, finally came up with an idea in 1858 — known as the Dedekind cut. Imagine a sharp \enquote{knife} cutting through the number line, dividing it into two parts\citepage[p196]{HanXueTao16}, Let $A_1$ be the set containing all rational numbers on the left part and $A_2$ be the set containing all rational numbers on the right. Dedekind calls $A_1$ the lower class and $A_2$ the higher class. Every rational number in $A_1$ is less than any rational number in $A_2$. There are two different cases. If the cutting position is at some rational point on the number line, for example at 2 or $-\frac{1}{7}$, then this rational number is either the maximum number in $A_1$ or the minimum number in $A_2$. For example the cutting,
+Dedekind, after years of consideration, finally came up with an idea in 1858 — known as the Dedekind cut. Imagine a sharp \enquote{knife} cutting through the number line, dividing it into two parts\citepage[p196]{HanXueTao16}, Let $A_1$ be the set containing all rational numbers from the left part and $A_2$ be the set containing all rational numbers from the right part. Dedekind calls $A_1$ the lower class and $A_2$ the higher class. Every rational number in $A_1$ is less than any rational number in $A_2$. There are two different cases: if the cutting position is at some rational point on the number line, for example at 2 or $-\frac{1}{7}$, then this rational number is either the maximum number in $A_1$ or the minimum number in $A_2$. For example the partition,
 
 \begin{align*}
 A_1 &= \{r | r \leq 2\}  & A_2 &= \{r | r > 2\}
@@ -2763,7 +2763,7 @@ where 2 is the maximum in $A_1$. However, if the cutting isn't at any rational p
 A_1 &= \{r | r^2 \leq 2\}  & A_2 &= \{r | r^2 > 2\}
 \end{align*}
 
-It is not difficult to see that in this partition, the lower class $A_1$ does not have a maximum (rational) number, and the upper class $A_2$ does not have a minimum (rational) number.Dedekind thus defines this pair of sets, $(A_1, A_2)$, as the irrational number $\sqrt{2}$, definitely this is not a rational number, as shown in \cref{fig:Dedekind-cut}.
+It is not difficult to see that in this partition, the lower class $A_1$ does not have a maximum (rational) number, and the upper class $A_2$ does not have a minimum (rational) number. Dedekind thus defines this pair of sets, $(A_1, A_2)$, as the irrational number $\sqrt{2}$, definitely this is not a rational number, as shown in \cref{fig:Dedekind-cut}.
 
 \begin{figure}[htbp]
  \centering
@@ -2773,7 +2773,7 @@ It is not difficult to see that in this partition, the lower class $A_1$ does no
 \end{figure}
 
 \label{sec:Dedekind-cut}
-Dedekind's concludes that every partition of rational numbers corresponds to a real number. A partition that includes an endpoint (where $A_1$ has a maximum rational number or $A_2$ has a minimum rational number) is called a rational number, while a partition that does not include an endpoint (where $A_1$ has no maximum rational number and $A_2$ has no minimum rational number) is called an irrational number. The set of real numbers, denoted by $\mathbb{R}$, includes both rational and irrational numbers. Dedekind's cut defined real numbers using only rational numbers, and every point on the line can be represented by a real number. The concept of Dedekind cuts provides a basis for the continuity of real numbers.
+Dedekind concludes that every partition of rational numbers corresponds to a real number. A partition that includes an endpoint (where $A_1$ has a maximum rational number or $A_2$ has a minimum rational number) is called a rational number, while a partition that does not include an endpoint (where $A_1$ has no maximum rational number and $A_2$ has no minimum rational number) is called an irrational number. The set of real numbers, denoted by $\mathbb{R}$, includes both rational and irrational numbers. Dedekind's cut defines real numbers using only rational numbers, and every point on the line can be represented by a real number. The concept of Dedekind cuts provides a basis for the continuity of real numbers.
 
 It took more than two thousand years from the discovery of irrational numbers by the Pythagorean school to Dedekind's rigorous definition of real numbers\footnote{In the same year, Weierstrass defined irrational numbers using the theory of bounded monotone sequences, and Cantor defined them using the theory of rational number sequences, thus building up the theory of real numbers. It can be said that they all arrived at the same destination through different paths.}. Dedekind himself was very satisfied with this definition. He clearly remembered the day when inspiration struck and proudly said\citepage[p1]{Dedekind-1858}:
 
@@ -2801,7 +2801,7 @@ However, this move turned out to be a blessing in disguise. In Brauschweig, Dede
 
 \Question{Show that Zu Chongzhi's approximation $\dfrac{355}{113}$ is the closest fraction to $\pi$ among all fractions with denominators less than 10,000. Hint: Use Zu's approximation $3.1415926 < \pi < 3.1415927$.\label{qn:113355best}}
 
-\Question{Calculate $\sqrt{3}$ to three decimal places using the method of the ancients. \label{qn:calc-sqrt3}}
+\Question{Calculate $\sqrt{3}$ to three decimal places using the method in ancient times. \label{qn:calc-sqrt3}}
 
 \Question{Factorial $n! = 1 \times 2 \times 3 \dotsm n$ can also be defined recursively as $n! = n \times (n - 1)!$. Use this to show that $0! = 1$.\label{qn:zero-factorial}}
 
@@ -2811,7 +2811,7 @@ However, this move turned out to be a blessing in disguise. In Brauschweig, Dede
 
 \Question{Use the generalized binomial theorem to expand $\dfrac{1}{\sqrt{1 - x^2}}$. }
 
-\Question{Show that $\lim_{x \to 0} \dfrac{\cos x - 1}{x} = 0$ using the limit $\lim_{\Delta x \to 0} \dfrac{\sin x}{x} = 1$. Hint: Use the double angle formula for cosine to show that $\cos x = 1 - 2\sin^2 \dfrac{x}{2}$.\label{qn:cos-1-to-x}}
+\Question{Show that $\lim_{x \to 0} \dfrac{\cos x - 1}{x} = 0$ using the limit $\lim_{x \to 0} \dfrac{\sin x}{x} = 1$. Hint: Use the double angle formula for cosine to show that $\cos x = 1 - 2\sin^2 \dfrac{x}{2}$.\label{qn:cos-1-to-x}}
 
 \Question{Find the derivative of $\cos x$.\label{qn:derivative-cos}}
 
@@ -2840,7 +2840,7 @@ Simplifying the left-hand side:
 \[
 \frac{|113b - 355a|}{113a} = \frac{k}{113a} \leq 2\delta
 \]
-where $k = |113b - 355a| \geq 1$ is a positive integer. Therefore:
+where $k = |113b - 355a| \geq 1$ is a positive integer. Therefore,
 
 \begin{align*}
 1 &\leq k \leq 113a \cdot 2\delta  \\
@@ -2850,7 +2850,7 @@ The denominator of any fraction closer to $\pi$ must be at least 16586, which is
   \end{proof}
 }
 
-\Question{Calculate $\sqrt{3}$ to three decimal places using the method of the ancients.
+\Question{Calculate $\sqrt{3}$ to three decimal places using the method in ancient times.
 
 \vspace{2mm}
 First, extimate the integral part: $1^2 < 3 < 2^2 = 4$, hence the integral part is 1. Next, estimate the tenths digit:
@@ -2939,7 +2939,7 @@ The key step is:
 \end{align*}
 }
 
-\Question{Show that $\lim_{x \to 0} \dfrac{\cos x - 1}{x} = 0$ using the limit $\lim_{\Delta x \to 0} \dfrac{\sin x}{x} = 1$. Hint: Use the double angle formula for cosine to show that $\cos x = 1 - 2\sin^2 \dfrac{x}{2}$.
+\Question{Show that $\lim_{x \to 0} \dfrac{\cos x - 1}{x} = 0$ using the limit $\lim_{x \to 0} \dfrac{\sin x}{x} = 1$. Hint: Use the double angle formula for cosine to show that $\cos x = 1 - 2\sin^2 \dfrac{x}{2}$.
 
   \begin{proof}
     By the sum angle formula for cosine, $\cos(\alpha + \beta) = \cos \alpha \cos \beta - \sin \alpha \sin \beta$, substituting $\alpha = \beta$ gives the double angle formula:
