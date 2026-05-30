@@ -918,7 +918,7 @@ they miss so much.
 \end{mdframed}
 
 \index{Achimedes spiral}
-Unfortunately, the mason who did the carving misunderstood the instructions and gave him an Archimedean spiral instead, as shown in \cref{fig:bernoulli-epitaph}. What is the difference between these two spirals? The Archimedean spiral has equal spacing between each turn, while the equiangular spiral has spacing that follows a geometric progression (see \cref{fig:equiangular-spiral}). If we express them in polar coordinates, the equation of the Archimedean spiral is $r = a\theta$. When we rotate the Archimedean spiral at a constant speed, the intersection points with the coordinate axes will translate at a constant speed. So why is this spiral also called a \enquote{logarithmic spiral}? From the perspective of inverse functions:
+Unfortunately, the mason who did the carving misunderstood the instructions and gave him an Archimedean spiral instead, as shown in \cref{fig:bernoulli-epitaph}. What is the difference between these two spirals? The Archimedean spiral has equal spacing between each turn, while the equiangular spiral has spacing that follows a geometric progression (see \cref{fig:equiangular-spiral}). If we express them in polar coordinates, the equation of the Archimedean spiral is $r = a\theta$. When rotating the Archimedean spiral at a constant speed, the intersection points with the coordinate axes translates at a constant speed. So why is this spiral also called a \enquote{logarithmic spiral}? From the perspective of inverse functions:
 
 \begin{figure}[htbp]
  \centering
@@ -951,7 +951,7 @@ r = ka^\theta && \theta = \log_{a} \frac{r}{k}
 \end{align*}
 
 \index{change of base formula}
-For any point on the spiral, the angle $\theta$ and the radius $r$ have a logarithmic relationship. Therefore, the French mathematician Pierre Varignon (1654–1722) named this spiral the \enquote{logarithmic spiral}. We have learned the change of base formula in high school: $\log_a x = \dfrac{\ln x}{\ln a}$ (see \cref{qn:change-base} for a proof of this formula), so:
+For any point on the spiral, the angle $\theta$ and the radius $r$ have a logarithmic relationship. Therefore, the French mathematician Pierre Varignon (1654–1722) named this spiral the \enquote{logarithmic spiral}. By the change of base formula learned in high school: $\log_a x = \dfrac{\ln x}{\ln a}$ (see \cref{qn:change-base} for a proof),
 
 \begin{align*}
 \theta &= \log_a \frac{r}{k} = \frac{\ln \frac{r}{k}}{\ln a} && \text{change of base}\\
@@ -960,7 +960,7 @@ For any point on the spiral, the angle $\theta$ and the radius $r$ have a logari
 r &= k e^{b\theta}
 \end{align*}
 
-Thus, we have obtained the polar coordinate equation of the equiangular spiral with base $e$. This formula was beyond Jacob Bernoulli's imagination, but it helps to reveal why \enquote{Eadem mutata resurgo.}
+Thus, obtains the polar coordinate equation of the equiangular spiral with base $e$. This formula, though was unknown to Jacob Bernoulli, reveals why \enquote{Eadem mutata resurgo.}
 
 \begin{proposition}[Jacob Bernoulli]
 The shape of the equiangular spiral remains unchanged after scaling.
@@ -972,7 +972,7 @@ By the polar coordinate equation of equiangular spiral $r = ke^{b\theta}$, scali
 \begin{align*}
 r' &= (ak)e^{b\theta} = e^{\ln a} k e^{b\theta} \\
    &= ke^{b\theta}e^{\ln a} = k e^{b\theta + \ln a} \\
-   &= ke^{b(\theta + \theta_0)} && \text{令} \theta_0 = \frac{\ln a}{b}
+   &= ke^{b(\theta + \theta_0)} && \text{let } \theta_0 = \frac{\ln a}{b}
 \end{align*}
 
 It is equivalent to rotating the angle by $\theta_0$, and the shape of the spiral remains unchanged after rotation.
@@ -1009,14 +1009,14 @@ It isn't by accident that the equiangular spiral arises everywhere. De Moivre us
  \label{fig:nautilus}
 \end{figure}
 
-Complex numbers are quite different from the numbers we've been familiar with: natural numbers, rational numbers, irrational numbers, they all have a specific position on the number line. Complex numbers, however, jump out of the number line and come to the complex plane. Real numbers are one-dimensional, with a definite size and a specific position on the number line. Complex numbers, on the other hand, are two-dimensional; either represented by real and imaginary parts or by modulus and argument, it takes two quantities to determine a complex number. Two complex numbers usually cannot be compared in size; we can only compare their moduli. Despite being so peculiar, complex numbers can still be calculated with each other and with real numbers, and they satisfy the common arithmetic laws, including the commutative and associative laws of addition and multiplication, and the distributive law of multiplication over addition. The distance between two real numbers $a$ and $b$ on the number line is $|a - b|$, while the distance between two complex numbers $z_1 = x_1 + y_1i$ and $z_2 = x_2 + y_2i$ on the complex plane is $|z_1 - z_2|$. This is because:
+Complex numbers are quite distinctive: natural numbers, rational numbers, irrational numbers, they all have a definitive position on the number line. Complex numbers, however, jump out of the number line and come to the complex plane. Real numbers are one-dimensional, corresponding to the points on the number line. Complex numbers, on the other hand, are two-dimensional; either represented by real and imaginary parts or by modulus and argument, it takes two quantities to determine a complex number. Two complex numbers usually cannot be compared directly; we can only compare their moduli (distances from the origin). Despite these peculiarities, complex numbers can be calculated with each other and with real numbers, and they satisfy the common arithmetic laws, including the commutative and associative laws of addition and multiplication, and the distributive law of multiplication over addition. The distance between two real numbers $a$ and $b$ on the number line is $|a - b|$, while the distance between two complex numbers $z_1 = x_1 + y_1i$ and $z_2 = x_2 + y_2i$ on the complex plane is $|z_1 - z_2|$. This is because:
 
 \[
 |z_1 - z_2| = |(x_1 - x_2) + (y_1 - y_2)i| = \sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}
 \]
 
 \index{Multiplicativity of modulus of complex numbers}
-Which indeed corresponds to the distance between two points $(x_1, y_1)$ and $(x_2, y_2)$ on the Cartesian plane. The absolute value of real numbers is multiplicative, that is: $|ab| = |a||b|$; the modulus of complex numbers is also multiplicative $|z_1z_2| = |z_1||z_2|$, which can be proven by (also can be proven using Euler's formula):
+Which indeed corresponds to the distance between two points $(x_1, y_1)$ and $(x_2, y_2)$ on the Cartesian plane. The absolute value of real numbers is multiplicative, that is: $|ab| = |a||b|$; the modulus of complex numbers is also multiplicative $|z_1z_2| = |z_1||z_2|$, which can be proven by (alternatively by Euler's formula):
 
 \begin{align*}
 |z_1z_2|^2 &= |(x_1 + y_1i)(x_2 + y_2i)|^2 = |(x_1x_2 - y_1y_2) + (x_1y_2 + y_1x_2)i|^2 \\
@@ -1024,7 +1024,7 @@ Which indeed corresponds to the distance between two points $(x_1, y_1)$ and $(x
   &= |z_1|^2|z_2|^2
 \end{align*}
 
-Where (*) was first discovered by the ancient Greek mathematician Diophantus when he was studying the sum of squares in number theory\footnote{Diophantus's \emph{Arithmetica}, Book III, Problem 19 states that 65 can be expressed as the sum of squares in two different ways: $7^2 + 4^2$ and $8^2 + 1^2$, because 65 is the product of 13 and 5, and both of them are also sums of squares ($13 = 3^2 + 2^2, 5 = 2^2 + 1^2$).}. Complex numbers open the door to a new world. They are incredibly powerful, not only solving previously difficult problems but also posing unexpected ones.
+Where (*) was first discovered by Diophantus when studying the sum of squares in number theory\footnote{Diophantus's \emph{Arithmetica}, Book III, Problem 19 states that 65 can be expressed as the sum of squares in two different ways: $7^2 + 4^2$ and $8^2 + 1^2$, because 65 is the product of 13 and 5, and both of them are also sums of squares ($13 = 3^2 + 2^2, 5 = 2^2 + 1^2$).}. Complex numbers open the door to a new world. They are incredibly powerful, not only solving prior difficult problems but also posing unexpected ones.
 
 \section{Regular pentagon}
 \label{sec:pentagon-equation} \index{geometric construction of regular pentagon}
