@@ -1029,7 +1029,7 @@ Where (*) was first discovered by Diophantus when studying the sum of squares in
 \section{Regular pentagon}
 \label{sec:pentagon-equation} \index{geometric construction of regular pentagon}
 
-Complex numbers are a powerful tool for solving equations. Here we show how to use complex numbers to solve the problem of geometric construction of a regular pentagon. The combination of Euler's formula and De Moivre's formula gives a new geometric meaning to the equation $x^n = 1$. If a complex number $z = re^{i\theta}$ is a root of the equation, then:
+Complex numbers are a powerful tool for solving equations. Here we show how to construct a regular pentagon with complex numbers. The combination of Euler's formula and De Moivre's formula gives a new geometric interpretation on the equation $x^n = 1$. Suppose the complex number $z = re^{i\theta}$ is a root of the equation, then:
 
 \[
 1 = z^n = (re^{i\theta})^n = r^ne^{in\theta} = r^n(\cos n\theta + i\sin n\theta)
@@ -1106,7 +1106,7 @@ The three roots on the unit circle are evenly spaced at angles of $120^\circ$ (o
 \label{fig:3rd-root-of-1}
 \end{figure}
 
-Similarly, the five roots of the equation $x^5 = 1$ are evenly spaced at angles of $72^\circ$ (or $\frac{2\pi}{5}$ radians), which means they form a regular pentagon inscribed in the unit circle, as shown in \cref{fig:pentagon-z}. Once construct the root $x$ in this figure, the distance from $x$ to 1 in the complex plane, namely $|x - 1|$, is the length of the side of the regular pentagon. The equation $x^5 - 1 = 0$ obviously has a root at $x = 1$. By Descartes  theorem, $x - 1$ is a factor of the polynomial $x^5 - 1$. Using polynomial long division (or sum of geometric series), we can factor it as:
+Similarly, the five roots of the equation $x^5 = 1$ are evenly spaced at angles of $72^\circ$ (or $\frac{2\pi}{5}$ radians), which means they form a regular pentagon inscribed in the unit circle, as shown in \cref{fig:pentagon-z}. Once construct the root $x$ in this figure, the distance from $x$ to 1 in the complex plane, namely $|x - 1|$, is the side length of the regular pentagon. The equation $x^5 - 1 = 0$ obviously has a root at $x = 1$. By Descartes  theorem, $x - 1$ is a factor of the polynomial $x^5 - 1$. Using polynomial long division (or sum of geometric series), we can factor it as:
 
 \[
 x^5 - 1 = (x - 1)(x^4 + x^3 + x^2 + x + 1)
@@ -1173,21 +1173,21 @@ Equating the irrational part on both sides, $2a = 2$, so $a = 1$. Substituting b
 \begin{Exercise}[label={ex:complex}]
 \Question{Give the geometric interpretation to the quadratic equation $x^2 - px = q$. \label{qn:geometric-quadratic}}
 
-\Question{By the foundamental theorem of algebra, a cubic equation has three complex roots. Cardano's formula gives one root of the equation $x^3 = 6x + 9$ as $x_1 = 3$. Find the other two roots of the equation.}
+\Question{By the foundamental theorem of algebra, a cubic equation has three complex roots. Cardano's formula gives a root of the equation $x^3 = 6x + 9$ as $x_1 = 3$. Find the other two roots.}
 
-\Question{Using Bombelli's method and Cardano's formula, one root of the equation $x^3 = 15x + 4$ is $x_1 = 4$. Find the other two roots of the equation.}
+\Question{Applying Bombelli's method and Cardano's formula to the equation $x^3 = 15x + 4$, which gives a root of $x_1 = 4$. Find the other two roots.}
 
-\Question{Is the rule $\sqrt{ab} = \sqrt{a}\sqrt{b}$ valid for complex numbers? If so, prove it; if not, how can it be salvaged? \label{qn:sqrt-of-product}}
+\Question{Is the rule $\sqrt{ab} = \sqrt{a}\sqrt{b}$ valid for complex numbers? If so, prove it; if not, how to revamp? \label{qn:sqrt-of-product}}
 
-\Question{Show that multiplying any complex number represented as a vector by $i$ is equivalent to rotating the vector by $90\degree$ counterclockwise. \label{qn:mul-i}}
+\Question{Show that multiplying any complex number by $i$ is equivalent to rotating the vector of this complex number by $90\degree$ counterclockwise. \label{qn:mul-i}}
 
-\Question{Verify that the conjugation of complex numbers satisfies the following rules: $\overline{a + b} = \overline{a} + \overline{b}$, $\overline{ab} = \overline{a} \cdot \overline{b}$, $\overline{z^n} = (\overline{z})^n$, and use these rules to prove d'Alembert's discovery: if $z$ is a root of the equation $p(z) = 0$, then its conjugate $\overline{z}$ is also a root. \label{qn:conjugated-root}}
+\Question{Verify that the conjugation of complex number satisfies the following rules: $\overline{a + b} = \overline{a} + \overline{b}$, $\overline{ab} = \overline{a} \cdot \overline{b}$, $\overline{z^n} = (\overline{z})^n$, and use them to show d'Alembert's discovery: if $z$ is a root of the equation $p(z) = 0$, so is its conjugate $\overline{z}$. \label{qn:conjugated-root}}
 
 \Question{Verify that Hamilton's representation of complex numbers as ordered pairs satisfies the five arithmetic laws. \label{qn:pair-arithmetic-rules}}
 
-\Question{From the fact that logarithmic function and exponential function are inverse functions, prove the change of base formula $\log_a x = \dfrac{\log_b x}{\log_b a}$. \label{qn:change-base}}
+\Question{From the fact that logarithmic function and exponential function are inverses, prove the change of base formula $\log_a x = \dfrac{\log_b x}{\log_b a}$. \label{qn:change-base}}
 
-\Question{*With the polar equation of equiangular spiral $r = ke^{b\theta}$, prove the equiangular property pointed out by Descartes: the angle $\Psi$ between the tangent and the radial line is constant (see \cref{fig:equiangular}). Hint: as shown in \cref{fig:tagent-to-r}, when the radial line $r$ rotates through a small angle $\Delta \theta$, it increases by $\Delta r$. The small arc $AC$ has length $r\Delta \theta$, and it, together with the secant $AB$ and the increment of radial line, approximately forms a right triangle $ACB$. When $\Delta \theta \to 0$, points $A, B$ approach each other, and the secant $AB$ approaches the tangent. \label{qn:equiangular}
+\Question{*With the polar equation of equiangular spiral $r = ke^{b\theta}$, show the equiangular property discovered by Descartes: the angle $\Psi$ between the tangent and the radial line is constant (see \cref{fig:equiangular}). Hint: as shown in \cref{fig:tagent-to-r}, when the radial line $r$ rotates through a small angle $\Delta \theta$, it increases by $\Delta r$. The small arc $AC$ with length $r\Delta \theta$, and it, together with the secant $AB$ and the increment of radial line, approximates a right triangle $ACB$. When $\Delta \theta \to 0$, points $A, B$ approach each other, and the secant $AB$ approaches the tangent. \label{qn:equiangular}
 
   \begin{center}
     \includegraphics[scale=0.33]{img/tagent-to-r}
@@ -1196,7 +1196,7 @@ Equating the irrational part on both sides, $2a = 2$, so $a = 1$. Substituting b
   \end{center}
 }
 
-\Question{*Jacob Bernoulli's epitaph, \enquote{Eadem mutata resurgo}, describes the property of the derivative of $e^x$ being unchanged, $(e^x)' = e^x$. Modern mathematicians define the function $f(x) = e^x$ as follows: (1) the derivative is unchanged, $f'(x) = f(x)$, (2) the function value at 0 is 1, $f(0) = 1$. Use this definition to derive the expansion of $e^x$. Hint: equating the coefficients with $(x^n)' = nx^{n-1}$ (see Proposition \ref{thm:derivation-of-power-of-x}). \label{qn:exp-from-fixed-point}}
+\Question{*Jacob Bernoulli's epitaph, \enquote{Eadem mutata resurgo}, describes the property of the derivative of $e^x$ being unchanged, $(e^x)' = e^x$. Some define the function $f(x) = e^x$ as the following: (1) the derivative is unchanged, $f'(x) = f(x)$, (2) the function value at 0 is 1, $f(0) = 1$. Use this definition to derive the expansion of $e^x$. Hint: equating the coefficients with $(x^n)' = nx^{n-1}$ (see Proposition \ref{thm:derivation-of-power-of-x}). \label{qn:exp-from-fixed-point}}
 
 \Question{*Jacob Bernoulli's discovery is almost one step away from $e^x$. When calculating the compound interest, if the annual interest rate is not 100\% but $x$, what is the actual annualized return when $n \to \infty$? What is its series expansion? \label{qn:compound-interest}}
 
@@ -1210,14 +1210,14 @@ Equating the irrational part on both sides, $2a = 2$, so $a = 1$. Substituting b
 \vspace{2mm}
 \begin{center}
  \includegraphics[scale=0.5]{img/quadratic3}
- \captionof{figure}{Left: cut a rectangle of area $px$ from a square of area $x^2$; Right: the white area is equal, $q = (x - \dfrac{p}{2})^2 - (\dfrac{p}{2})^2$.}
+ \captionof{figure}{Left: cut a rectangle of area $px$ from a square of area $x^2$; Right: the white areas are equal, $q = (x - \dfrac{p}{2})^2 - (\dfrac{p}{2})^2$.}
 \end{center}
 }
 
-\Question{By the foundamental theorem of algebra, a cubic equation has three complex roots. Cardano's formula gives one root of the equation $x^3 = 6x + 9$ as $x_1 = 3$. Find the other two roots of the equation.
+\Question{By the foundamental theorem of algebra, a cubic equation has three complex roots. Cardano's formula gives a root of the equation $x^3 = 6x + 9$ as $x_1 = 3$. Find the other two roots.
 
 \vspace{2mm}
-Factor the equation as $x^3 - 6x - 9 = 0$. By Descartes' theorem, $x - 3$ is a factor of the polynomial $x^3 - 6x - 9$. Apply the polynomial long division, we can factor it as:
+Factor $x^3 - 6x - 9$. By Descartes' theorem, $x - 3$ is a factor. Applying the polynomial long division,
 
 \[
 \polylongdiv{x^3-6x-9}{x-3}
@@ -1234,16 +1234,16 @@ x^3 - 6x - 9 &= (x - 3)(x^2 + ax + b) \\
 Hence, $a = 3, b = 3$. Solving the quadratic equation $x^2 + 3x + 3 = 0$ gives the other two roots $x_{2, 3} = \dfrac{-3 \pm i\sqrt{3}}{2}$.
 }
 
-\Question{Using Bombelli's method and Cardano's formula, one root of the equation $x^3 = 15x + 4$ is $x_1 = 4$. Find the other two roots of the equation.
+\Question{Applying Bombelli's method and Cardano's formula to the equation $x^3 = 15x + 4$, which gives a root of $x_1 = 4$. Find the other two roots.
 
 \vspace{2mm}
-As in the previous exercise, factor the polynomial as $x^3 - 15x - 4 = 0$. By Descartes's theorem, $x - 4$ is a factor. Using polynomial long division,
+As in the previous exercise, factor $x^3 - 15x - 4$. By Descartes's theorem, $x - 4$ is a factor. Applying the polynomial long division,
 
 \[
 \polylongdiv{x^3-15x-4}{x-4}
 \]
 
-Or equating the coefficients:
+or equating the coefficients:
 
 \begin{align*}
 x^3 - 15x - 4 &= (x - 4)(x^2 + ax + b) \\
@@ -1254,7 +1254,7 @@ x^3 - 15x - 4 &= (x - 4)(x^2 + ax + b) \\
 Hence $a = 4, b = 1$. Solving the quadratic equation $x^2 + 4x + 1 = 0$ gives the other two roots $x_{2, 3} = -2 \pm \sqrt{3}$.
 }
 
-\Question{Is the rule $\sqrt{ab} = \sqrt{a}\sqrt{b}$ valid for complex numbers? If so, prove it; if not, how can it be salvaged?
+\Question{Is the rule $\sqrt{ab} = \sqrt{a}\sqrt{b}$ valid for complex numbers? If so, prove it; if not, how to revamp?
 
 \vspace{2mm}
 No, it is not valid, otherwise,
@@ -1262,19 +1262,19 @@ No, it is not valid, otherwise,
 ab = \sqrt{a^2b^2} = \sqrt{(-a^2)(-b^2)} = \sqrt{-a^2}\sqrt{-b^2} = (ai)(bi)=-ab
 \]
 
-A contradiction arises when $ab \ne 0$. In complex numbers, we can either follow Euler's approach and define $\sqrt{a}$ as $b$ such that $b^2 = a$, which means $\pm\sqrt{a}$; or we can let $z^2 = ab, x^2 = a, y^2 = b$, so that $z^2 = x^2y^2 = (xy)^2$. For example:
+A contradiction arises when $ab \ne 0$. For complex numbers, we can either follow Euler's approach that defines $\sqrt{a}$ as $b$ such that $b^2 = a$, which means $\pm\sqrt{a}$; or let $z^2 = ab, x^2 = a, y^2 = b$, so that $z^2 = x^2y^2 = (xy)^2$. For example:
 
 \[
 36 = 4 \times 9 = (-4)\times(-9) = (2i)^2(3i)^2 = (2i \times 3i)^2 = (-6)^2 = 36
 \]
 }
 
-\Question{Show that multiplying any complex number represented as a vector by $i$ is equivalent to rotating the vector by $90\degree$ counterclockwise.
+\Question{Show that multiplying any complex number by $i$ is equivalent to rotating the vector of this complex number by $90\degree$ counterclockwise.
 
 \begin{proof}
-For any complex number $z = a + bi$, if $a = 0$ and $b \ne 0$, then $z = bi$, and $zi = -b$. If $b > 0$, the vector rotates from the positive direction of the imaginary axis to the negative direction of the real axis, which is a left turn of 90 degrees; if $b < 0$, the vector rotates from the negative direction of the imaginary axis to the positive direction of the real axis, which is also a left turn of 90 degrees.
+For any complex number $z = a + bi$, if $a = 0$ and $b \ne 0$, then $z = bi$, and $zi = -b$. If $b > 0$, the vector rotates from the positive direction of the imaginary axis to the negative direction of the real axis, which is a left turn of $90\degree$; if $b < 0$, the vector rotates from the negative direction of the imaginary axis to the positive direction of the real axis, which is also a left turn of $90\degree$.
 
-If $a \ne 0, b = 0$, then $z = a, zi = ai$. If $a > 0$, the vector rotates from the positive direction of the real axis to the positive direction of the imaginary axis, which is a left turn of 90 degrees; if $a < 0$, the vector rotates from the negative direction of the real axis to the negative direction of the imaginary axis, which is also a left turn of 90 degrees.
+If $a \ne 0, b = 0$, then $z = a, zi = ai$. If $a > 0$, the vector rotates from the positive direction of the real axis to the positive direction of the imaginary axis, which is a left turn of $90\degree$; if $a < 0$, the vector rotates from the negative direction of the real axis to the negative direction of the imaginary axis, which is also a left turn of $90\degree$.
 
 If $ab \ne 0$, then $zi = (a + bi)i = ai - b$. Let $\theta = arg(z), \psi = arg(zi)$, we have:
 
@@ -1282,11 +1282,11 @@ If $ab \ne 0$, then $zi = (a + bi)i = ai - b$. Let $\theta = arg(z), \psi = arg(
 \tan \theta \tan \psi = (b/a)(-a/b) = -1
 \]
 
-Hence $\psi = \theta + \dfrac{\pi}{2}$, a left turn of 90 degrees.
+Hence $\psi = \theta + \dfrac{\pi}{2}$, a left turn of $90\degree$.
 \end{proof}
 }
 
-\Question{Verify that the conjugation of complex numbers satisfies the following rules: $\overline{a + b} = \overline{a} + \overline{b}$, $\overline{ab} = \overline{a} \cdot \overline{b}$, $\overline{z^n} = (\overline{z})^n$, and use these rules to prove d'Alembert's discovery: if $z$ is a root of the equation $p(z) = 0$, then its conjugate $\overline{z}$ is also a root.
+\Question{Verify that the conjugation of complex number satisfies the following rules: $\overline{a + b} = \overline{a} + \overline{b}$, $\overline{ab} = \overline{a} \cdot \overline{b}$, $\overline{z^n} = (\overline{z})^n$, and use them to show d'Alembert's discovery: if $z$ is a root of the equation $p(z) = 0$, so is its conjugate $\overline{z}$.
 
 \begin{proof}
 Conjugate of sum:
@@ -1373,7 +1373,7 @@ Right distribution holds by the commutativity of multiplication.
 \end{proof}
 }
 
-\Question{From the fact that logarithmic function and exponential function are inverse functions, prove the change of base formula.
+\Question{From the fact that logarithmic function and exponential function are inverses, prove the change of base formula.
 
   \begin{proof}
     \begin{align*}
@@ -1386,7 +1386,7 @@ Right distribution holds by the commutativity of multiplication.
   \end{proof}
 }
 
-\Question{*With the polar equation of equiangular spiral $r = ke^{b\theta}$, prove the equiangular property pointed out by Descartes: the angle $\Psi$ between the tangent and the radial line is constant (see \cref{fig:equiangular}).
+\Question{*With the polar equation of equiangular spiral $r = ke^{b\theta}$, show the equiangular property discovered by Descartes: the angle $\Psi$ between the tangent and the radial line is constant (see \cref{fig:equiangular}).
 
   \begin{center}
     \includegraphics[scale=0.33]{img/tagent-to-r}
@@ -1395,7 +1395,7 @@ Right distribution holds by the commutativity of multiplication.
   \end{center}
 
   \begin{proof}
-As shown in \cref{fig:tagent-to-ra}, when the radial line $r$ rotates through a small angle $\Delta \theta$, its length increases by $\Delta r$. The length of the small arc $AC$ is $r\Delta \theta$; this arc together with the secant $AB$, the increment of the radial line form a roughly right triangle $ACB$. When $\Delta \theta \to 0$, the two points $A, B$ close to each other, and the secant $AB$ approximates the tagent. The angle $ABC = \Psi - \Delta \theta$.
+As shown in \cref{fig:tagent-to-ra}, when the radial line $r$ rotates through a small angle $\Delta \theta$, its length increases by $\Delta r$. The length of the small arc $AC$ is $r\Delta \theta$; this arc together with the secant $AB$, the increment of the radial line approximates a right triangle $ACB$. When $\Delta \theta \to 0$, the two points $A, B$ close to each other, and the secant $AB$ approximates the tagent. The angle $ABC = \Psi - \Delta \theta$.
 
 \begin{align*}
   \tan \Psi &= \lim_{\Delta \theta \to 0} \tan (\Psi - \Delta \theta) = \lim_{\Delta \theta \to 0} \tan \angle ABC \\
@@ -1407,7 +1407,7 @@ This is a constant independant of $\theta$, which proves the equiangular propert
   \end{proof}
 }
 
-\Question{*Jacob Bernoulli's epitaph, \enquote{Eadem mutata resurgo}, describes the property of the derivative of $e^x$ being unchanged, $(e^x)' = e^x$. Modern mathematicians define the function $f(x) = e^x$ as follows: (1) the derivative is unchanged, $f'(x) = f(x)$, (2) the function value at 0 is 1, $f(0) = 1$. Use this definition to derive the expansion of $e^x$.
+\Question{*Jacob Bernoulli's epitaph, \enquote{Eadem mutata resurgo}, describes the property of the derivative of $e^x$ being unchanged, $(e^x)' = e^x$. Some define the function $f(x) = e^x$ as the following: (1) the derivative is unchanged, $f'(x) = f(x)$, (2) the function value at 0 is 1, $f(0) = 1$. Use this definition to derive the expansion of $e^x$.
 
 \vspace{2mm}
 Let the expansion of of $e^x$ be $f(x) = a_0 + a_1 x + a_2 x^2 + \dotsb$. By $f(0) = 1$, it follows that $f(0) = a_0 = 1$. Taking the derivative and by $f'(x) = f(x)$,
