@@ -2,13 +2,13 @@
 \phantomsection
 \label[appendix]{app:fibonacci-formula}
 
-Mathematician de Moivre defines a function $f(x)$ whose coefficients are Fibonacci numbers:
+De Moivre defines a function $f(x)$ whose coefficients are Fibonacci numbers:
 
 \be
 f(x) = F_0 + F_1 x + F_2 x^2 + \dotsb + F_n x^n + \dotsb
 \ee
 
-where $F_0 = 0, F_1 = 1, F_2 = 1, F_3 = 2, F_4 = 3, F_5 = 5, F_4 = 8, \dotsc$. He then list the result of $xf(x)$ and $x^2f(x)$ out:
+where $F_0 = 0, F_1 = 1, F_2 = 1, F_3 = 2, F_4 = 3, F_5 = 5, F_4 = 8, \dotsc$. He then lists the result of $xf(x)$ and $x^2f(x)$ out:
 
 \be
 xf(x) = F_0 x + F_1 x^2 + F_2 x^3 + \dotsb + F_{n-1} x^n + \dotsb
@@ -18,14 +18,14 @@ xf(x) = F_0 x + F_1 x^2 + F_2 x^3 + \dotsb + F_{n-1} x^n + \dotsb
 x^2f(x) = F_0 x^2 + F_1 x^3 + F_2 x^4 + \dotsb + F_{n-2} x^n + \dotsb
 \ee
 
-By the recursive definition of Fibonacci numbers, $F_n = F_{n-1} + F_{n-2}$, de Moivre further compute $f(x) - (xf(x) + x^2f(x))$:
+By the recursive definition of Fibonacci numbers, $F_n = F_{n-1} + F_{n-2}$, de Moivre further computes $f(x) - (xf(x) + x^2f(x))$:
 
 \begin{align*}
 f(x) - (xf(x) + x^2f(x)) &= F_0 + (F_1 - F_0)x + \\
   & \quad (F_2 - (F_1 + F_0))x^2 + \\
   & \quad (F_3 - (F_2 + F_1))x^3 + \dotsb + \\
   & \quad (F_n - (F_{n-1} + F_{n-2})x^n + \dotsb \\
-f(x)(1 - x - x^2) &= 0 + (1 - 0)x  = x && \text{由}F_n = F_{n-1} + F_{n-2} \\
+f(x)(1 - x - x^2) &= 0 + (1 - 0)x  = x && \text{by }F_n = F_{n-1} + F_{n-2} \\
 f(x) &= \frac{x}{1 - x - x^2}
 \end{align*}
 
