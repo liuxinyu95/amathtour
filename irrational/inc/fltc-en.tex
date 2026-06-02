@@ -3,22 +3,18 @@
 \label[appendix]{app:fermat-little-theorem}
 
 \index{Fermat's little theorem}
-We now introduce a combinatorial proof of Fermat's little theorem.%% \cite{Wiki-FLT-proof}
+This combinatorial proof does not require much mathematical knowledge. The core idea is that counting the same thing in two different ways gives the same result.
 
 \begin{proof}
-Consider $a$ different colors of beads, and we want to string a necklace of length $p$, where $p$ is a prime number. Obviously, there are $a^p$ different strings, because each position in the string can be chosen from $a$ colors of beads, and there are $p$ positions to choose.
-
-For example, if we have two colors of beads $A$ red and $B$ green, and we want to string a necklace of length 5, that is, $a = 2, p = 5$, there are $2^5 = 32$ different strings:
+Suppose there are beads in $a$ different colors and we are going to make necklaces each consisting of $p$ beads, where $p$ is a prime number. We first connect $p$ beads into a string, then connect the two ends to form a necklace. Obviously, there are $a^p$ different strings, because for each bead, one may choose from $a$ colors and there are $p$ beads in total. For example, if there are two colors: $A$ red and $B$ green, and we want to string a necklace of 5 beads, that is, $a = 2, p = 5$, there are $2^5 = 32$ different strings:
 
 \begin{verbatim}
   AAAAA, AAAAB, AAABA, ..., BBBBA, BBBBB.
 \end{verbatim}
 
-Which corresponds to: Red Red Red Red Red, Red Red Red Red Green, Red Red Red Green Red, ..., Green Green Green Green Red, Green Green Green Green Green.
+We are going to show that among these $a^p$ strings, if removing $a$ strings in the same color (i.e., \texttt{AAAAA} and \texttt{BBBBB} in above example), the remaining $a^p - a$ strings can be partitioned into groups each with exactly $p$ strings. In other words, $p$ divides $a^p - a$.
 
-We are going to prove that among these $a^p$ strings of beads, if we remove $a$ strings that are all the same color (in the above example, the strings \texttt{AAAAA} and \texttt{BBBBB}), the remaining $a^p - a$ strings can be partitioned into several groups, each has exactly $p$ strings. In other words, $p$ divides $a^p - a$.
-
-Next, consider the necklaces made by connecting the ends of the strings together. Some different strings may become the same necklace. If a string can be transformed into another by rotation, these two strings must make the same necklace. For example, the following 5 strings of beads can make the same necklace:
+When connecting the string ends to form necklaces, some distinct strings may give the same necklace. If a string can be transformed into another by \enquote{rotation,} they give the same necklace (as \cref{fig:string-rotate}). For example, the following 5 strings give the same necklace:
 
 \begin{verbatim}
   AAAAB, AAABA, AABAA, ABAAA, BAAAA.
@@ -26,13 +22,13 @@ Next, consider the necklaces made by connecting the ends of the strings together
 
 \begin{figure}[htbp]
   \centering
-  \subcaptionbox{A necklace consists of 3 colors represents 7 distinct strings: \texttt{ABCBAAC}, \texttt{BCBAACA}, \texttt{CBAACAB}, \texttt{BAACABC}, \texttt{AACABCB}, \texttt{ACABCBA}, \texttt{CABCBAA}}[0.45\linewidth]{\includegraphics[scale=0.2]{../img/bracelet-rotate}} \quad
+  \subcaptionbox{A necklace consists of 3 colors represents 7 distinct strings: \texttt{ABCBAAC}, \texttt{BCBAACA}, \texttt{CBAACAB}, \texttt{BAACABC}, \texttt{AACABCB}, \texttt{ACABCBA}, \texttt{CABCBAA}\label{fig:string-rotate}}[0.45\linewidth]{\includegraphics[scale=0.2]{../img/bracelet-rotate}} \quad
   \subcaptionbox{A necklace in one color represents only one string: \texttt{AAAAAAA}}[0.45\linewidth]{\includegraphics[scale=0.2]{../img/bracelet-identical}}
-  \caption{Grouping strings by necklaces.}
+  \caption{Grouping strings into necklaces.}
   \label{fig:bracelet}
 \end{figure}
 
-By this way, the 32 strings of beads in the above example can be grouped into 5 different necklaces with different colors and 2 necklaces with the same color:
+In this way, one may group the 32 strings in above example into 7 distinct necklaces, among which 2 are in the same color:
 
 \begin{verbatim}
   [AAABB, AABBA, ABBAA, BBAAA, BAAAB];
@@ -44,7 +40,7 @@ By this way, the 32 strings of beads in the above example can be grouped into 5 
   [BBBBB].
 \end{verbatim}
 
-How many different strings can a necklace represent? If a string $S$ is made by connecting several identical substrings $T$, and $T$ cannot be further split into identical substrings, then the necklace made by $S$ can represent $|T|$ different strings, where $|T|$ denotes the length of the string $T$. For example, the string $S=$\texttt{ABBABBABBABB} is made by connecting several identical substrings $T=$\texttt{ABB}, if we rotate one bead at a time, we can get 3 different strings:
+To see how many different strings a necklace represent, if a string $S$ is a repeat of substrings $T$, while $T$ is not a repeat of any substring, then the necklace made out of $S$ represents $|T|$ distinct strings, where $|T|$ denotes the length of $T$. For example, $S=$\texttt{ABBABBABBABB} is a repeat of $T=$\texttt{ABB}; if rotating one bead a time, one gets 3 distinct strings:
 
 \begin{verbatim}
   ABBABBABBABB,
@@ -52,7 +48,7 @@ How many different strings can a necklace represent? If a string $S$ is made by 
   BABBABBABBAB.
 \end{verbatim}
 
-Except these three strings, no other string can be obtained by rotating the string $S$. the length of the substring \texttt{ABB} is 3, further rotation will just give the same three strings again. In summary, all the $a^p$ strings of beads can be divided into two categories: one contains the strings in one same color; the other contains the strings with different colors, but since the length $p$ of these strings is a prime number, they cannot be formed by connecting several identical substrings together. Therefore, any necklace made by such a string represents $p$ different strings. There are $a^p - a$ such strings, and they can be partitioned into several groups by connecting them into necklaces, each group has exactly $p$ strings, representing one different necklace. Therefore, $a^p - a = a(a^{p-1} - 1)$ must be divisible by $p$. Since $a$ and $p$ are coprime, $p$ must divide $a^{p-1} - 1$.
-\end{proof}
+Except these three, no other strings can be obtained by rotating $S$. The length of the substring \texttt{ABB} is 3; further rotation just give the same three strings. Note that $S$ is a repeat of substring $T$ if and only if the length $|T|$ divides the length $|S|$.
 
-This combinatorial proof does not require much mathematical knowledge. The core idea is that counting the same thing in two different ways must yield the same result.
+In summary, all the $a^p$ strings can be divided into two classes: one contains the strings in the same color; the other contains the strings in different colors. Since the length $p$ is prime, those strings in different colors can \emph{not} be repeat of substrings because only 1 divides $p$. Therefore, any such necklace in different colors represents $p$ distinct strings. There are $a^p - a$ such strings, which can be partitioned into groups for distinct necklaces, each group has exactly $p$ strings. Therefore, $p$ divides $a^p - a = a(a^{p-1} - 1)$. Since $a$ and $p$ are coprime, $p$ divides $a^{p-1} - 1$.
+\end{proof}
