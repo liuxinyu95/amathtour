@@ -180,7 +180,7 @@ Any $\dfrac{2}{n}$ can be decomposed into Egyptian fractions. \label{th:decompos
 \begin{proof}
   \begin{align*}
     \frac{2}{n} &= \frac{1}{n} + \frac{1}{n} && \\
-                &= \frac{1}{n} + \frac{1}{n+1} + \frac{1}{n(n+1)} & \text{by proposition \ref{th:egyptian-fraction-split}} & \qedhere
+                &= \frac{1}{n} + \frac{1}{n+1} + \frac{1}{n(n+1)} & \text{by \cref{th:egyptian-fraction-split}} & \qedhere
   \end{align*}
 \end{proof}
 
@@ -188,7 +188,7 @@ We can obtain a better result when $n$ is odd: $\dfrac{2}{n}$ can be decomposed 
 
 \begin{proof}
   \begin{align*}
-    \frac{1}{n} &= \frac{1}{n+1} + \frac{1}{n(n+1)} & \text{by proposition \ref{th:egyptian-fraction-split}} & \\
+    \frac{1}{n} &= \frac{1}{n+1} + \frac{1}{n(n+1)} & \text{by \cref{th:egyptian-fraction-split}} & \\
     \frac{2}{n} &= \frac{2}{n+1} + \frac{2}{n(n+1)} & \text{both sides} \times 2 & \\
                 &= \frac{1}{\frac{1}{2}(n+1)} + \frac{1}{n\frac{1}{2}(n+1)} & n + 1\text{ is even; nominator and denominator} \div 2 &\qedhere
   \end{align*}
@@ -524,7 +524,7 @@ Suppose the fleet-footed Achilles runs 100 pous in 9 second; he needs run anothe
 
 \begin{align*}
 9 + 0.9 + 0.09 + \cdots &= 9.99\cdots = 10 \times 0.99\cdots & \\
-                        &= 10 \times 1 & \text{by Lemma \ref{th:cycle-of-9}} \\
+                        &= 10 \times 1 & \text{by \cref{th:cycle-of-9}} \\
                         &= 10
 \end{align*}
 
@@ -615,7 +615,7 @@ Which is the mixed number after multiplied by $10^n$, where $X$ is the whole num
   (10^{m} - 1) \frac{b'}{q} &= k b' = a_1 a_2 \cdots a_m & \text{is integral}\\
                 \frac{b'}{q} &= \frac{a_1 a_2 \cdots a_m}{99\cdots9} & m\text{ digits of }9
 \end{align*}
-Which is a repeating decimal by proposition \ref{th:cyclic-decimal}.
+Which is a repeating decimal by \cref{th:cyclic-decimal}.
 \end{proof}
 
 For example, $\dfrac{5}{12} = 0.41\dot{6}$, where $12 = 2^2 \times 5^0 \times 3$, the greater one of the exponents 2 and 0 is 2, hence the periodic cycle starts after 2 places; as $q = 3$, the remainder of $10^1 / 3$ is 1, the cycle contains 1 digit.
@@ -637,7 +637,7 @@ Zeno of Elea (about 495 - 430 BCE) was a Greek philosopher and mathematician, wh
 \end{center}
 
 \index{Zeno's paradoxes!dichotomy paradox}
-Besides the Achilles paradox, the other three are: dichotomy paradox, arrow paradox, and the moving row paradox. The dichotomy paradox was about Atalanta, a virgin huntress in Greek mythology. Suppose Atalanta is going to walk to the end of a path. Before travelling there, she needs travel halfway; before traveling halfway, she needs travel a quarter; before traveling a quarter, she needs travel one-eighth, and so on (\cref{fig:dichotomy-paradox}). This description requires one to complete infinitely many tasks, which Zeno believed was impossible. The paradoxical conclusion then would be that travel over any finite distance can neither be completed nor begin, and so all motion must be an illusion. \Cref{qn:dichotomy-paradox} asks to solve this paradox with an extension of Lemma \ref{th:cycle-of-9}.
+Besides the Achilles paradox, the other three are: dichotomy paradox, arrow paradox, and the moving row paradox. The dichotomy paradox was about Atalanta, a virgin huntress in Greek mythology. Suppose Atalanta is going to walk to the end of a path. Before travelling there, she needs travel halfway; before traveling halfway, she needs travel a quarter; before traveling a quarter, she needs travel one-eighth, and so on (\cref{fig:dichotomy-paradox}). This description requires one to complete infinitely many tasks, which Zeno believed was impossible. The paradoxical conclusion then would be that travel over any finite distance can neither be completed nor begin, and so all motion must be an illusion. \Cref{qn:dichotomy-paradox} asks to solve this paradox with an extension of \cref{th:cycle-of-9}.
 
 \begin{center}
  \includegraphics[scale=0.4]{img/dichotomy-paradox}
@@ -811,7 +811,7 @@ That is why the harmonic mean is also known as the mean of reciprocals. Verify t
 
 \Question{Show that the fraction of any repeating decimal $0.\dot{a_1} \dot{a_2} \cdots \dot{a_n}$ is $\dfrac{a_1 a_2 \cdots a_n}{99 \cdots 9} = \dfrac{a_1 a_2 \cdots a_n}{10^{n} - 1}$. \label{qn:cyclic-decimal}}
 
-\Question{Use fractions and Lemma \ref{th:cycle-of-9} to show: Atalanta first traverses $\dfrac{1}{2}$ distance, then traverses half of the remaining, which is $\dfrac{1}{4}$ distance, and repeats, she will walk to the end of the path. Hint: using sum of fractions and binary decimal.\label{qn:dichotomy-paradox}}
+\Question{Use fractions and \cref{th:cycle-of-9} to show: Atalanta first traverses $\dfrac{1}{2}$ distance, then traverses half of the remaining, which is $\dfrac{1}{4}$ distance, and repeats, she will walk to the end of the path. Hint: using sum of fractions and binary decimal.\label{qn:dichotomy-paradox}}
 
 \Question{Verify the additive/multiplicative commutative laws, and multiplicative associative law for fractions.\label{qn:arithmatic-law-fraction}}
 \end{Exercise}
@@ -875,7 +875,7 @@ Each resister on the right is the harmonic mean of $R_1$ and $R_2$.
 \Question{Show that Erdős-Straus conjecture is true for every even number $n$.
 
 \vspace{2mm}
-Let $n = 2m$, so that $\dfrac{4}{2m} = \dfrac{2}{m}$, which is proposition \ref{th:decompose-of-2-n}.
+Let $n = 2m$, so that $\dfrac{4}{2m} = \dfrac{2}{m}$, which is \cref{th:decompose-of-2-n}.
 }
 
 \Question{Explain why it's sufficient to show Erdős-Straus conjecture is true for all primes?
@@ -895,7 +895,7 @@ Note, \[
       \frac{4}{p} &= \frac{2}{\frac{1}{2}(p + 1)} + \frac{2}{\frac{1}{2}p(p + 1)} & \text{both sides } \times 2 & \\
       \frac{4}{4k + 3} &= \frac{2}{\frac{1}{2}(4k + 4)} + \frac{2}{\frac{1}{2}(4k + 3)(4k + 4)} & \text{substitute } p = 4k + 3 & \\
                        &= \frac{1}{k + 1} + \frac{1}{(4k + 3)(k + 1)} & & \\
-                       &= \frac{1}{k + 2} + \frac{1}{(k + 1)(k + 2)} + \frac{1}{(4k + 3)(k + 1)} & \text{by proposition \ref{th:egyptian-fraction-split}} & \qedhere
+                       &= \frac{1}{k + 2} + \frac{1}{(k + 1)(k + 2)} + \frac{1}{(4k + 3)(k + 1)} & \text{by \cref{th:egyptian-fraction-split}} & \qedhere
     \end{align*}
   \end{proof}
 }

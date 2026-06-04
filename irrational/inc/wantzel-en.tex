@@ -27,7 +27,7 @@ A set $\mathbf{F}$ is called a field if it has two operations, addition and mult
   \end{align*}
 
 \item Distributivity. Multiplication distributes over addition, that is, $(a + b)c = ac + bc$. And by the commutativity, $c(a + b) = ca + cb$ also holds.
-\item 0 is the unit element for addition, 1 is the unit element for multiplication (see Section \ref{sec:unit}), and $0 \ne 1$, i.e.:
+\item 0 is the unit element for addition, 1 is the unit element for multiplication (see \cref{sec:unit}), and $0 \ne 1$, i.e.:
 \[
 a + 0 = 0 + a = a \qquad a1 = 1a = a
 \]
@@ -59,7 +59,7 @@ x = a_0 + a_1 \sqrt{2} + a_2 (\sqrt{2})^2 + \dotsb + a_n (\sqrt{2})^n
 \label{eq:polynomial-sqrt2}
 \ee
 
-Don't be scared by this expression. Since $(\sqrt{2})^2 = 2$ is rational, $(\sqrt{2})^4, (\sqrt{2})^6, \dotsc$ are all rational; since $(\sqrt{2})^3 = 2\sqrt{2}$ is of the form $a\sqrt{2}$, $(\sqrt{2})^5 = 4\sqrt{2}$ is of the form $a\sqrt{2}$, etc., all odd terms in \ref{eq:polynomial-sqrt2} are rationals $p_i$, and all even terms are $q_i \sqrt{2}$. Collecting terms, it simplifies to:
+Don't be scared by this expression. Since $(\sqrt{2})^2 = 2$ is rational, $(\sqrt{2})^4, (\sqrt{2})^6, \dotsc$ are all rational; since $(\sqrt{2})^3 = 2\sqrt{2}$ is of the form $a\sqrt{2}$, $(\sqrt{2})^5 = 4\sqrt{2}$ is of the form $a\sqrt{2}$, etc., all odd terms in \cref{eq:polynomial-sqrt2} are rationals $p_i$, and all even terms are $q_i \sqrt{2}$. Collecting terms, it simplifies to:
 
 \[
 x = p + q\sqrt{2}
@@ -92,7 +92,7 @@ It shows that $\mathbb{Q}(\sqrt{2})$ is a field. What is special about this fiel
 \mathbb{Q} \subset \mathbb{Q}(\sqrt{2}) \subset \mathbb{R} \subset \mathbb{C}
 \]
 
-After constructing the length of $\sqrt{2}$ (the diagonal of a unit square) by ruler and compass, all lengths that can be constructed by ruler and compass through arithmetic operations (see \cref{sec:geometric-arthimetic}) are exactly the set $\mathbb{Q}(\sqrt{2})$. Given a length $a$, since we can construct a line segment of length $\sqrt{a}$ (see proposition \ref{thm:sqrt-a}), we can obtain the field $\mathbb{Q}(\sqrt{a})$.
+After constructing the length of $\sqrt{2}$ (the diagonal of a unit square) by ruler and compass, all lengths that can be constructed by ruler and compass through arithmetic operations (see \cref{sec:geometric-arthimetic}) are exactly the set $\mathbb{Q}(\sqrt{2})$. Given a length $a$, since we can construct a line segment of length $\sqrt{a}$ (see \cref{thm:sqrt-a}), we can obtain the field $\mathbb{Q}(\sqrt{a})$.
 
 The second important thing of $\mathbb{Q}(\sqrt{2})$ is that the \enquote{dimension} changes after adjoining $\sqrt{2}$ to $\mathbb{Q}$. The rational numbers have only one dimension: $\{q | q \in \mathbb{Q}\}$, while $\mathbb{Q}(\sqrt{2})$ has two: $\{p + q \sqrt{2} | p, q \in \mathbb{Q}\}$, we need two variables $p, q$ to determine a value; the dimension is doubled. We use the notation:
 

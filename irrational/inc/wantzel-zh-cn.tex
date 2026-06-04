@@ -58,7 +58,7 @@ x = a_0 + a_1 \sqrt{2} + a_2 (\sqrt{2})^2 + \dotsb + a_n (\sqrt{2})^n
 \label{eq:polynomial-sqrt2}
 \ee
 
-这个数看似吓人，其实是个“纸老虎”。因为$(\sqrt{2})^2 = 2$是有理数，$(\sqrt{2})^4, (\sqrt{2})^6, \dotsc$都是有理数；$(\sqrt{2})^3 = 2\sqrt{2}$是$a\sqrt{2}$的形式，$(\sqrt{2})^5 = 4\sqrt{2}$是$a\sqrt{2}$的形式……所以\ref{eq:polynomial-sqrt2}的所有奇数项都是有理数$p_i$，所有的偶数项都是$q_i\sqrt{2}$，合并同类项后得：
+这个数看似吓人，其实是个“纸老虎”。因为$(\sqrt{2})^2 = 2$是有理数，$(\sqrt{2})^4, (\sqrt{2})^6, \dotsc$都是有理数；$(\sqrt{2})^3 = 2\sqrt{2}$是$a\sqrt{2}$的形式，$(\sqrt{2})^5 = 4\sqrt{2}$是$a\sqrt{2}$的形式……所以\cref{eq:polynomial-sqrt2}的所有奇数项都是有理数$p_i$，所有的偶数项都是$q_i\sqrt{2}$，合并同类项后得：
 
 \[
 x = p + q\sqrt{2}
@@ -91,7 +91,7 @@ x = p + q\sqrt{2}
 \mathbb{Q} \subset \mathbb{Q}(\sqrt{2}) \subset \mathbb{R} \subset \mathbb{C}
 \]
 
-用尺规作出长为$\sqrt{2}$的线段（边长为1的正方形的对角线）后，再用尺规进行加减乘除运算（见第\ref{sec:geometric-arthimetic}节）能作出的所有长度就是集合$\mathbb{Q}(\sqrt{2})$。给定长度$a$，由于我们能用尺规作出$\sqrt{a}$长的线段（见命题\ref{thm:sqrt-a}），所以能获得域$\mathbb{Q}(\sqrt{a})$。
+用尺规作出长为$\sqrt{2}$的线段（边长为1的正方形的对角线）后，再用尺规进行加减乘除运算（见第\ref{sec:geometric-arthimetic}节）能作出的所有长度就是集合$\mathbb{Q}(\sqrt{2})$。给定长度$a$，由于我们能用尺规作出$\sqrt{a}$长的线段（见\cref{thm:sqrt-a}），所以能获得域$\mathbb{Q}(\sqrt{a})$。
 
 第二个重要的意义在于，把无理数$\sqrt{2}$加入有理数$\mathbb{Q}$后，“维度”变了。有理数只有一个维度：$\{q | q \in \mathbb{Q}\}$，而$\mathbb{Q}(\sqrt{2})$有两个维度：$\{p + q \sqrt{2} | p, q \in \mathbb{Q}\}$，我们需要两个变量$p, q$才能确定一个值，维度扩大了2倍。我们用符号：
 
