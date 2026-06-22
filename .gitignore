@@ -4,6 +4,7 @@ semantic.cache
 *#
 .#*
 *.synctex.gz
+*.synctex(busy)
 *.ltjruby
 *.aux
 *.dvi
