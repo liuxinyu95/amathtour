@@ -20,7 +20,7 @@ This book aims to build a virtual museum tracing the journey of numbers — a jo
 Contents
 --------
 
-- Preface
+- Forward
 - Chapter 1, **Numeral systems** \
 Covers numeral systems in ancient Egypt, Babylonia, Rome, China, and Maya. Shows how language influenced numbers. Introduces the widely used Hindu–Arabic (positional decimal) numeral system and explains why it has advantages for calculation. Briefly introduces the binary numeral system and computers.
 - Chapter 2, **Zero** \
