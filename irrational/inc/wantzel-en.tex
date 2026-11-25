@@ -59,7 +59,7 @@ x = a_0 + a_1 \sqrt{2} + a_2 (\sqrt{2})^2 + \dotsb + a_n (\sqrt{2})^n
 \label{eq:polynomial-sqrt2}
 \ee
 
-Don't be scared by this expression. Since $(\sqrt{2})^2 = 2$ is rational, $(\sqrt{2})^4, (\sqrt{2})^6, \dotsc$ are all rational; since $(\sqrt{2})^3 = 2\sqrt{2}$ is of the form $a\sqrt{2}$, $(\sqrt{2})^5 = 4\sqrt{2}$ is of the form $a\sqrt{2}$, etc., all odd terms in \cref{eq:polynomial-sqrt2} are rationals $p_i$, and all even terms are $q_i \sqrt{2}$. Collecting terms, it simplifies to:
+Do not be intimidated by this expression. Since $(\sqrt{2})^2 = 2$ is rational, $(\sqrt{2})^4, (\sqrt{2})^6, \dotsc$ are all rational; since $(\sqrt{2})^3 = 2\sqrt{2}$ is of the form $a\sqrt{2}$, $(\sqrt{2})^5 = 4\sqrt{2}$ is of the form $a\sqrt{2}$, etc., all odd terms in \cref{eq:polynomial-sqrt2} are rationals $p_i$, and all even terms are $q_i \sqrt{2}$. Collecting terms, it simplifies to:
 
 \[
 x = p + q\sqrt{2}
@@ -79,7 +79,7 @@ The product is in the form of $(a + b\sqrt{2})(c + d\sqrt{2}) = (ac + 2bd) + (bc
 The result of division is,
 
 \begin{align*}
-\frac{a + b\sqrt{2}}{c + d\sqrt{2}} &= \frac{(a + b\sqrt{2})(c - d\sqrt{2})}{(c + d\sqrt{2})(c - d\sqrt{2})} &&\text{multiply the (de)nominator by }c - d\sqrt{2} \\
+\frac{a + b\sqrt{2}}{c + d\sqrt{2}} &= \frac{(a + b\sqrt{2})(c - d\sqrt{2})}{(c + d\sqrt{2})(c - d\sqrt{2})} &&\text{multiply the (de)numerator by }c - d\sqrt{2} \\
 &= \frac{(ac - 2bd) + (bc - ad)\sqrt{2}}{c^2 - 2d^2} &&\text{difference of squares} \\
 &= \frac{ac - 2bd}{c^2 - 2d^2} + \frac{bc - ad}{c^2 - 2d^2}\sqrt{2}
 \end{align*}
@@ -154,7 +154,7 @@ x^n - 1 = \Phi_1(x)\Phi_a(x)\Phi_b(x) \dotsm \Phi_d(x)
 where $a, b, \dotsc, d$ run through all factors of $n$, and $\Phi_i(x)$ is the $i$-th cyclotomic polynomial. For example, the factors of 4 are 1, 2, 4, so $x^4 - 1 = \Phi_1(x)\Phi_2(x)\Phi_4(x)$; the factors of 18 are 1, 2, 3, 6, 9, 18, so $x^{18} - 1 = \Phi_1(x)\Phi_2(x)\Phi_3(x)\Phi_6(x)\Phi_9(x)\Phi_{18}(x)$. The most special case happens when $n$ is a prime $p$, in which case Gauss proved in 1801 that the $p$-th cyclotomic polynomial $\Phi_p(x) = x^{p-1} + \dotsb + x + 1$ is irreducible (cannot be factored over rationals). Since a prime $p$ has only two factors $1$ and $p$, we have $x^p - 1 = \Phi_1(x)\Phi_p(x) = (x - 1)(x^{p-1} + \dotsb + x + 1)$.
 
 \subsection{Euler totient function}
-Let us return to the original problem: to determine whether a regular $n$-gon can be constructed by ruler and compass, we only need to determine whether all $n$-th roots of unity are in the chain of field extensions \cref{eq:tower-of-geometric-field-ext}. It means that for any $n$-th root of unity $\zeta_i$, there exists some extension $K_m = \mathbb{Q}(\zeta_i)$. Then $\zeta_i$ can be expressed as a solution of a series of quadratic equations, hence can be constructed by ruler and compass. Since $[K_m : \mathbb{Q}] = 2^m$, i.e., $[\mathbb{Q}(\zeta_i) : \mathbb{Q}] = 2^m$, we only need to determine whether the dimension expands by $2^m$ for some integer $m$ after adjoining the root $\zeta_i$ to $\mathbb{Q}$. Acutally, we needn't check $\zeta_0, \zeta_1, \dotsc, \zeta_{n-1}$ one by one, for example:
+Let us return to the original problem: to determine whether a regular $n$-gon can be constructed by ruler and compass, we only need to determine whether all $n$-th roots of unity are in the chain of field extensions \cref{eq:tower-of-geometric-field-ext}. It means that for any $n$-th root of unity $\zeta_i$, there exists some extension $K_m = \mathbb{Q}(\zeta_i)$. Then $\zeta_i$ can be expressed as a solution of a series of quadratic equations, hence can be constructed by ruler and compass. Since $[K_m : \mathbb{Q}] = 2^m$, i.e., $[\mathbb{Q}(\zeta_i) : \mathbb{Q}] = 2^m$, we only need to determine whether the dimension expands by $2^m$ for some integer $m$ after adjoining the root $\zeta_i$ to $\mathbb{Q}$. Actually, we need not check $\zeta_0, \zeta_1, \dotsc, \zeta_{n-1}$ one by one, for example:
 
 \begin{enumerate}[(1)]
 \item For equation $x^3 - 1 = 0$, there are three roots: $1, \dfrac{-1 \pm i\sqrt{3}}{2}$. The root $\zeta_0 = 1$ is rational. We may skip the root $\zeta_2 = \dfrac{-1 - i\sqrt{3}}{2}$ because after adjoin $\zeta_1 = \dfrac{-1 + i\sqrt{3}}{2}$ to $\mathbb{Q}$, we have $\zeta_2 \in \mathbb{Q}(\zeta_1)$ (because any $a + b \zeta_2$ can be written as $(a - b) - b \zeta_1$, and one may further verify that $\zeta_2 = \zeta_1^2$). Among these three roots, only two are independent. We add $\{1, \zeta_1\}$ to the rational field $\mathbb{Q}$ to form an extension:
@@ -182,7 +182,7 @@ Therefore, the square can be constructed by ruler and compass.
 Therefore, the regular hexagon can be constructed by ruler and compass.
 \end{enumerate}
 
-Don't you find a pattern? we needn't check all $n$ roots, but only the independent ones. A root is independent if it cannot be expressed in terms of other roots. Returning to Euler's theorem, these $n$ roots are:
+Do you notice a pattern? we need not check all $n$ roots, but only the independent ones. A root is independent if it cannot be expressed in terms of other roots. Returning to Euler's theorem, these $n$ roots are:
 
 \[
 \zeta_0 = e^0 = 1, \zeta_1 = e^{1\frac{2\pi}{n}i}, \dotsb, \zeta_{n-1} = e^{(n - 1)\frac{2\pi}{n}i}
@@ -208,9 +208,9 @@ On the other hand, if a regular $n$-gon can be constructed by ruler and compass,
 \label{eq:euler-function-as-power-of-2}
 \ee
 
-where $m$ is some positive integer, then the regular $n$-gon can be constructed by ruler and compass; otherwise, it cannot. Given $n$, how to calculate $\phi(n)$? For small $n$, we can directly count the numbers for those among $1, 2, \dotsc, n - 1$ being coprime to $n$. Particularly, if $n = p$ is prime, then all integers from 1 to $p-1$ are coprime to $p$, hence $\phi(p) = p - 1$. Merely with this, we are able to claim it's impossible to construct the regular heptagon, in which $n = 7$, is a prime number. All integers from 1 to 6 are coprime to 7, so $\phi(7) = 6$, but 6 is not a power of 2, therefore, the regular heptagon is not constructible. For regular hexagon $n = 6$, only 1 and 5 are coprime to 6; $\phi(6) = 2 = 2^1$, hence is constructible. For regular heptadecagon, $n = 17$ is prime; $\phi(17) = 16 = 2^4$, it is constructible as what Gauss proved. For regular octadecagon $n = 18$, the numbers coprime to 18 are: 1, 5, 7, 11, 13, 17, hence $\phi(18) = 6$, which is not a power of 2; it is not constructible.
+where $m$ is some positive integer, then the regular $n$-gon can be constructed by ruler and compass; otherwise, it cannot. Given $n$, how to calculate $\phi(n)$? For small $n$, we can directly count the numbers for those among $1, 2, \dotsc, n - 1$ being coprime to $n$. Particularly, if $n = p$ is prime, then all integers from 1 to $p-1$ are coprime to $p$, hence $\phi(p) = p - 1$. Merely with this, we are able to claim it is impossible to construct the regular heptagon, in which $n = 7$, is a prime number. All integers from 1 to 6 are coprime to 7, so $\phi(7) = 6$, but 6 is not a power of 2, therefore, the regular heptagon is not constructible. For regular hexagon $n = 6$, only 1 and 5 are coprime to 6; $\phi(6) = 2 = 2^1$, hence is constructible. For regular heptadecagon, $n = 17$ is prime; $\phi(17) = 16 = 2^4$, it is constructible as what Gauss proved. For regular octadecagon $n = 18$, the numbers coprime to 18 are: 1, 5, 7, 11, 13, 17, hence $\phi(18) = 6$, which is not a power of 2; it is not constructible.
 
-But for big $n$, it's impractical to count the coprime numbers one by one. Consider $\phi(p^m)$ for a prime $p$ raised to some power of $m$. To find the numbers from 1 to $p^m - 1$ that are coprime to $p^m$, we need remove the multiples of $p$, namely, $p, 2p, 3p, \dotsc, p^m - p$; If divide each by $p$, we get the sequence of $1, 2, 3, ..., p^{m-1} - 1$, in total $p^{m-1} - 1$ numbers. Therefore, the value of Euler function for $p^m$ is:
+But for big $n$, it is impractical to count the coprime numbers one by one. Consider $\phi(p^m)$ for a prime $p$ raised to some power of $m$. To find the numbers from 1 to $p^m - 1$ that are coprime to $p^m$, we need remove the multiples of $p$, namely, $p, 2p, 3p, \dotsc, p^m - p$; If divide each by $p$, we get the sequence of $1, 2, 3, ..., p^{m-1} - 1$, in total $p^{m-1} - 1$ numbers. Therefore, the value of Euler function for $p^m$ is:
 
 \begin{align*}
 \phi(p^m) &= (p^m - 1) - (p^{m-1} - 1) \\

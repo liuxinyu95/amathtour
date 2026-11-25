@@ -13,7 +13,7 @@ For positive integer $a$ less than prime $p$, there exists unique positive integ
 \end{lemma}
 
 \begin{proof}
-$a$ and $p$ are relatively prime, that is, $(a, p) = 1$. By Bézout's identity, there are $x, y$, such that $ax + py = 1$. It follows that $p$ divides $ax - 1$, that is, $ax \equiv 1 \pmod p$. Let $b = x + pk$; adjust the integer $k$ such that $0 < b < p$. Next, we are going to show the uniqueness. Suppose there is some positive integer $b' < p$ satisfying $ab' \equiv 1 \pmod p$, taking their difference:
+$a$ and $p$ are relatively prime, that is, $(a, p) = 1$. By Bézout's identity, there are $x, y$, such that $ax + py = 1$. It follows that $p$ divides $ax - 1$, that is, $ax \equiv 1 \pmod p$. Let $b = x + pk$; adjust the integer $k$ such that $0 < b < p$. Next, we will show the uniqueness. Suppose there is some positive integer $b' < p$ satisfying $ab' \equiv 1 \pmod p$, taking their difference:
 
 \[
 ab - ab' \equiv a(b - b') \equiv 1 - 1 \equiv 0 \pmod p
@@ -22,7 +22,7 @@ ab - ab' \equiv a(b - b') \equiv 1 - 1 \equiv 0 \pmod p
 Therefore, $p$ divides $a(b - b')$. Since $p$ does not divide $a$, it follows that $p$ divides $b - b'$, but both positive integers $b, b'$ are less than $p$, therefore, $b = b'$.
 \end{proof}
 
-We are going to prove Wilson's theorem with this lemma. The idea is to rearrange the factors of the factorial $(p - 1)!$, pair everyone with its inverse under the multiplication modular $p$:
+We will prove Wilson's theorem using this lemma. The idea is to rearrange the factors of the factorial $(p - 1)!$, pair each factor with its inverse under the multiplication modular $p$:
 
 \begin{proof}
 By the lemma of inverse modular $p$, for every positive integer $a$ less than $p$, there is unique inverse, namely the positive integer $b$, such that $ab \equiv 1 \pmod p$. Rearrange the factorial:
@@ -41,5 +41,5 @@ Conversely, if $p$ is composite, there are three cases: (1) $p = 4$, then $(p - 
 q^2 - 2q + 1 &> 2 \\
 2q &< q^2 - 1 = p - 1
 \end{align*}
-It follows that both $q, 2q$ are factors of the factorial $(p - 1)!$, that is $2q^2 = 2p$ is a factor, which implies $p$ divides this factorial, but not remains $-1$. (3) $p = ab$, where $a, b$ both greater than 1 and less than $p$, hence they are factors of the factorial $(p - 1)!$. Therefore, $p = ab$ divides the factorial, but does not remain $-1$. Summarizing the three cases, $p$ cannot be composite, but prime.
+It follows that both $q$ and $2q$ are factors of $(p-1)!$. Thus $2q^2=2p$ is a factor, which implies $p$ divides $(p-1)!$, so it cannot give remainder $-1$ modulo $p$. (3) $p=ab$, where $a,b>1$ and $a,b<p$; hence $a$ and $b$ are factors of $(p-1)!$. Therefore $p=ab$ divides $(p-1)!$, so it cannot give remainder $-1$. In all three cases, $p$ cannot be composite; hence $p$ is prime.
 \end{proof}

@@ -2,13 +2,13 @@
 \phantomsection
 \label[appendix]{app:even-perfect-number}
 
-Euler proves that any even perfect number is an Euclidean perfect number. To do this, he developed a powerful tool, $\sigma$ function. For any whole number $n$, define $\sigma(n)$ as the sum of all its factors. Note the factors need not be proper, hence $n$ itself is included in this sum. For example, $\sigma(1) = 1$, $\sigma(2) = 1 + 2 = 3$, $\sigma(6) = 1 + 2 + 3 + 6 = 12$, $\sigma(9) = 1 + 3 + 9 = 13$, $\sigma(28) = 1 + 2 + 4 + 7 + 14 + 28 = 56$. There are some interesting properties of the $\sigma$ function, for example, for any prime number $p$, the value $\sigma(p) = 1 + p$. By the definition of perfect number, $\sigma(n) = 2n$ if $n$ is perfect, this is because the sum of all proper factors is $n$, plus $n$ itself equals $2n$. Euler also discovered that $\sigma$ function is multiplicative in some sense:
+Euler proved that every even perfect number is a Euclidean perfect number. To do this, he developed a powerful tool, $\sigma$ function. For any whole number $n$, define $\sigma(n)$ as the sum of all its factors. Note the factors need not be proper, hence $n$ itself is included in this sum. For example, $\sigma(1) = 1$, $\sigma(2) = 1 + 2 = 3$, $\sigma(6) = 1 + 2 + 3 + 6 = 12$, $\sigma(9) = 1 + 3 + 9 = 13$, $\sigma(28) = 1 + 2 + 4 + 7 + 14 + 28 = 56$. There are some interesting properties of the $\sigma$ function, for example, for any prime number $p$, the value $\sigma(p) = 1 + p$. By the definition of perfect number, $\sigma(n) = 2n$ if $n$ is perfect, this is because the sum of all proper factors is $n$, plus $n$ itself equals $2n$. Euler also discovered that $\sigma$ function is multiplicative in some sense:
 
 \begin{lemma}
 If $a, b$ are coprime, then $\sigma(ab) = \sigma(a)\sigma(b)$.
 \end{lemma}
 
-We need a proposition in order to proof this lemma:
+We need the following proposition to prove this lemma:
 
 \begin{proposition}
 If $a, b$ are coprime, then any factor of $ab$ is a product of some factor of $a$ and some factor of $b$.
@@ -24,10 +24,10 @@ d &= p_1^{c_1} p_2^{c_2} \dotsm p_n^{c_n} q_1^{d_1} q_2^{d_2} \dotsm q_m^{d_m}  
 \end{align*}
 \end{proof}
 
-We are going to show Euler's $\sigma$ function is multiplicative.
+We will now show that Euler's $\sigma$ function is multiplicative.
 
 \begin{proof}
-Denote all factors of $a$ by $1, a_1, a_2, \dotsc, a$, and their sum is $\sigma(a)$ by definition; denote all factors of $b$ by $1, b_1, b_2, \dotsc, b$, and their sum is $\sigma(b)$. Since $a, b$ are coprime, any factor of $ab$ is the product of some factor of $a$ and some factor of $b$. We list all factors of $ab$ in below order:
+Denote all factors of $a$ by $1, a_1, a_2, \dotsc, a$, and their sum is $\sigma(a)$ by definition; denote all factors of $b$ by $1, b_1, b_2, \dotsc, b$, and their sum is $\sigma(b)$. Since $a, b$ are coprime, any factor of $ab$ is the product of some factor of $a$ and some factor of $b$. We list all factors of $ab$ in the following order:
 
 \begin{align*}
 \sigma(ab)
@@ -42,7 +42,7 @@ Denote all factors of $a$ by $1, a_1, a_2, \dotsc, a$, and their sum is $\sigma(
 \end{align*}
 \end{proof}
 
-We shall show Euler's even perfect number theorem with this lemma. \index{Euler's even perfect number theorem}
+We will prove Euler's even perfect number theorem with this lemma. \index{Euler's even perfect number theorem}
 
 \begin{theorem}[Euler's even perfect number]
 Any even perfect number is an Euclidean perfect number, which is in the form of $2^n(2^{n+1}-1)$, where $2^{n+1}-1$ is prime.
@@ -74,7 +74,7 @@ Compare the above equations:
 (2^{n+1}-1)\sigma(b) &= \sigma(N) = 2^{n+1}b \\
 \frac{b}{\sigma(b)} &= \frac{2^{n+1} - 1}{2^{n+1}} \\
 \end{align*}
-For the fraction on the right, their nominator and denominator differ by 1, hence is irreducible. Therefor, for the fraction on the left, their nominator and denominator are some multiples of the right side:
+For the fraction on the right, the numerator and denominator differ by 1, so it is irreducible. Therefore, the numerator and denominator of the fraction on the left must be multiples of the corresponding terms on the right:
 
 \[
 b = (2^{n+1} - 1)c, \quad \sigma(b) = 2^{n+1}c
@@ -87,12 +87,12 @@ where $c$ is some integer. If $c > 1$, then the factor of $b$ contains at least 
           &= 1 + (2^{n+1} -1)c + c &\text{substitute } b = (2^{n+1} - 1)c \\
           &= 1 + 2^{n+1}c - \cancel{c} + \cancel{c} > 2^{n+1}c = \sigma(b) &\text{substitute } \sigma(b) = 2^{n+1}c
 \end{align*}
-The result $\sigma(b) > \sigma(b)$ is obviously absurd, hence $c > 1$ can't be hold, it implies $c=1$, and $b = 2^{n+1} - 1$, it follows that the perfect number $N = 2^nb = 2^n(2^{n+1}-1)$. We shall next show $2^{n+1}-1$ is prime. Note:
+The result $\sigma(b)>\sigma(b)$ is impossible. Hence $c>1$ cannot hold, so $c=1$ and $b=2^{n+1}-1$. It follows that the perfect number $N=2^nb=2^n(2^{n+1}-1)$. We will next show $2^{n+1}-1$ is prime. Note:
 
 \begin{align*}
 \sigma(2^{n+1} - 1) &= \sigma(b) \\
           &= 2^{n+1}c = 2^{n+1} & \text{by }c = 1 \\
           &=1 + (2^{n + 1} - 1)
 \end{align*}
-It turns out that $2^{n+1}-1$ only has two factors: 1 and $2^{n+1} - 1$ itself, therefor, is prime. This proves any even perfect number is an Euclidean perfect number.
+It turns out that $2^{n+1}-1$ only has two factors: 1 and $2^{n+1} - 1$ itself, therefore, is prime. This proves any even perfect number is an Euclidean perfect number.
 \end{proof}

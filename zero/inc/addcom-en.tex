@@ -3,7 +3,7 @@
 \label[appendix]{app:add-commutativity}
 
 \begin{proof}
-To prove the commutativity of addition $a + b = b + a$, we prepare three things. The first states that, for any natural number $a$,
+To prove the commutativity of addition, $a+b=b+a$, we need three facts. The first states that, for any natural number $a$,
 
 \be
 0 + a = a
@@ -16,21 +16,21 @@ When $a = 0$, by the first rule of addition,
 0 + 0 = 0
 \]
 
-for induction, assume $0 + a = a$ holds, we are going to show $0 + a' = a'$.
+For the inductive step, assume $0+a=a$. We will show $0+a'=a'$.
 
 \begin{align*}
 0 + a' & = (0 + a)' && \text{second rule of addition} \\
        & = a'       && \text{induction assumption}
 \end{align*}
 
-Next we define the successor of 0 be 1, that is, $0' = 1$, then show,
+Next, we define 1 as the successor of 0, that is, $0'=1$, and show
 
 \be
 a' = a + 1
 \label{eq:one-succ}
 \ee
 
-It means adding a number by 1 gives its successor. This is because:
+This means that adding 1 to a number gives its successor:
 
 \begin{align*}
 a' & = (a + 0)' && \text{first rule of addition} \\
@@ -38,7 +38,7 @@ a' & = (a + 0)' && \text{first rule of addition} \\
    & = a + 1    && \text{1 is the successor of 0}
 \end{align*}
 
-The third thing we are going to show is,
+The third fact we will prove is
 
 \be
 a + 1 = 1 + a
@@ -52,7 +52,7 @@ By induction on $a$, when $a = 0$,
       & = 1 + 0 && \text{first rule of addition}
 \end{align*}
 
-For induction, assume $a + 1 = 1 + a$ holds, we are going to show $a' + 1 = 1 + a'$.
+For the inductive step, assume $a+1=1+a$. We will show $a'+1=1+a'$.
 
 \begin{align*}
 a' + 1 & = a' + 0'        && \text{1 is the successor of 0} \\
@@ -63,7 +63,7 @@ a' + 1 & = a' + 0'        && \text{1 is the successor of 0} \\
        & = 1 + a'         && \text{second rule of addition}
 \end{align*}
 
-From these three results, we next prove the commutativity of addition. We first show that when $b = 0$ it holds. According to the first rule of addition, $a + 0 = a$; while by \cref{eq:left-zero}, $0 + a = a$, hence $a + 0 = 0 + a$. For induction case, assume $a + b = b + a$ holds, we are going to show $a + b' = b' + a$.
+Using these three results, we now prove commutativity. First, we show that it holds when $b=0$. By the first rule of addition, $a+0=a$; by \cref{eq:left-zero}, $0+a=a$. Hence $a+0=0+a$. For the inductive step, assume $a+b=b+a$. We will show $a+b'=b'+a$.
 
 \begin{align*}
 a + b' & = (a + b)' && \text{second rule of addition} \\
