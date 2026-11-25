@@ -5,7 +5,7 @@ Edition: $\displaystyle \phi = \frac{\sqrt{5} - 1}{2} = 0.618$
 
 2026/11
 
-This repository contains the text of the popular math book, _The Journey of Numbers_. The book provides a historical introduction to numbers. As a central notion in mathematics, numbers connect various areas and  theories. This book includes 33 interesting stories and biographies of great mathematicians in the history of numbers. The book is available in English ([PDF](https://github.com/user-attachments/files/28531753/amathtour-en.pdf)) and Chinese (中文) ([PDF](https://github.com/user-attachments/files/28538604/amathtour-zh-cn.pdf)).
+This repository contains the text of the popular math book, _The Journey of Numbers_. The book provides a historical introduction to numbers. As a central notion in mathematics, numbers connect various areas and  theories. This book includes 33 interesting stories and biographies of great mathematicians in the history of numbers. The book is available in English ([PDF](https://github.com/user-attachments/files/35413463/amathtour-en.pdf)) and Chinese (中文) ([PDF](https://github.com/user-attachments/files/28538604/amathtour-zh-cn.pdf)).
 
 Forward
 --------
